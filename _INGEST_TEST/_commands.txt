@@ -1,0 +1,16 @@
+
+-------- Good with 3 nodes ---------------------
+
+Start time: 2026-04-13 13:43:28
+python3 ingest_chunks.py \
+    --file hits.tsv \
+    --database hits_100b \
+    --table hits \
+    --parallel 170 \
+    --chunk-size 20000 \
+    --total-rows 130000000000 \
+    --create-sql create.sql \
+    --async-insert-busy-timeout-max-ms 60000 \
+    --async-insert-max-data-size 2147483648
+
+-------------------------------------------------
