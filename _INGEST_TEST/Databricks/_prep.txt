@@ -1,0 +1,13 @@
+# 1. Make sure venv support is installed
+sudo apt-get update
+sudo apt-get install -y python3-venv
+
+# 2. Create a venv just for Databricks SQL
+python3 -m venv ~/.venvs/dbsql
+
+# 3. Activate it
+source ~/.venvs/dbsql/bin/activate
+
+# 4. Install dependencies
+pip install --upgrade pip
+pip install "databricks-sql-connector" pyarrow

@@ -1,0 +1,76 @@
+{
+  "provider": "snowflake",
+  "service": "warehouse_compute",
+  "currency": "USD",
+
+  "pricing": [
+    {
+      "cloud": "aws",
+      "region": "us-east-1",
+      "plan": "standard",
+
+      "credit_price_per_hour": 2.00,
+
+      "warehouses": [
+        { "name": "Gen2 X-Small",  "credits_per_hour": 1.35 },
+        { "name": "Gen2 Small",    "credits_per_hour": 2.7 },
+        { "name": "Gen2 Medium",   "credits_per_hour": 5.4 },
+        { "name": "Gen2 Large",    "credits_per_hour": 10.8 },
+        { "name": "Gen2 X-Large",  "credits_per_hour": 21.6 },
+        { "name": "Gen2 2X-Large", "credits_per_hour": 43.2 },
+        { "name": "Gen2 3X-Large", "credits_per_hour": 86.4 },
+        { "name": "Gen2 4X-Large", "credits_per_hour": 172.8 }
+      ],
+      "storage": {
+          "storage": 23.0,
+          "storage_price_unit": 1000000000000
+      }
+    },
+
+    {
+      "cloud": "aws",
+      "region": "us-east-1",
+      "plan": "enterprise",
+
+      "credit_price_per_hour": 3.00,
+
+      "warehouses": [
+        { "name": "Gen2 X-Small",  "credits_per_hour": 1.35 },
+        { "name": "Gen2 Small",    "credits_per_hour": 2.7 },
+        { "name": "Gen2 Medium",   "credits_per_hour": 5.4 },
+        { "name": "Gen2 Large",    "credits_per_hour": 10.8 },
+        { "name": "Gen2 X-Large",  "credits_per_hour": 21.6 },
+        { "name": "Gen2 2X-Large", "credits_per_hour": 43.2 },
+        { "name": "Gen2 3X-Large", "credits_per_hour": 86.4 },
+        { "name": "Gen2 4X-Large", "credits_per_hour": 172.8 }
+      ],
+      "storage": {
+          "storage": 23.0,
+          "storage_price_unit": 1000000000000
+      }
+    },
+
+    {
+      "cloud": "aws",
+      "region": "us-east-1",
+      "plan": "business_critical",
+
+      "credit_price_per_hour": 4.00,
+
+      "warehouses": [
+        { "name": "Gen2 X-Small",  "credits_per_hour": 1.35 },
+        { "name": "Gen2 Small",    "credits_per_hour": 2.7 },
+        { "name": "Gen2 Medium",   "credits_per_hour": 5.4 },
+        { "name": "Gen2 Large",    "credits_per_hour": 10.8 },
+        { "name": "Gen2 X-Large",  "credits_per_hour": 21.6 },
+        { "name": "Gen2 2X-Large", "credits_per_hour": 43.2 },
+        { "name": "Gen2 3X-Large", "credits_per_hour": 86.4 },
+        { "name": "Gen2 4X-Large", "credits_per_hour": 172.8 }
+      ],
+      "storage": {
+          "storage": 23.0,
+          "storage_price_unit": 1000000000000
+      }
+    }
+  ]
+}
