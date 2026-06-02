@@ -1,31 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
 #
-# Repeatedly load hits_{0..99}.parquet into ClickHouse Cloud
-# until TARGET rows are reached. If DATABASE.hits does not exist,
-# it is created from the provided create SQL file.
+# Perform a single load iteration from hits_{0..99}.parquet
+# into DATABASE.hits.
 #
 # Environment variables required:
 #   export FQDN="your-service-fqdn.clickhouse.cloud"
 #   export PASSWORD="your_password"
 #
 # Usage:
-#   ./load_until_from_url.sh [--database DB] [--target ROWS] [--create-sql FILE]
+#   ./load_once_from_url.sh [--database DB] [--create-sql FILE]
 #
 # Examples:
-#   ./load_until_from_url.sh
-#   ./load_until_from_url.sh --database mydb
-#   ./load_until_from_url.sh --database mydb --target 2000000000
-#   ./load_until_from_url.sh --database mydb --create-sql schema.sql
+#   ./load_once_from_url.sh
+#   ./load_once_from_url.sh --database mydb
+#   ./load_once_from_url.sh --database mydb --create-sql schema.sql
 #
 # Defaults:
 #   database     = default
-#   target_rows  = 1,000,000,000
 #   create_sql   = create.sql
 # -------------------------------------------------------------
 
 DATABASE="default"
-TARGET="1000000000"
 TABLE="hits"
 CREATE_SQL="create.sql"
 
@@ -34,10 +30,6 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     --database)
       DATABASE="$2"
-      shift 2
-      ;;
-    --target)
-      TARGET="$2"
       shift 2
       ;;
     --create-sql)
@@ -93,32 +85,21 @@ if [[ "$(table_exists)" != "1" ]]; then
 fi
 
 echo "Database: $DATABASE"
-echo "Target rows: $TARGET"
 
 before="$(row_count)"
-echo "Current rows in $DATABASE.$TABLE: $before"
+echo "Rows before load: $before"
 
-iter=0
-while :; do
-  current="$(row_count)"
-  printf "Rows: %s\r" "$current"
+echo "===== Running single load iteration ====="
 
-  if [[ "$current" =~ ^[0-9]+$ ]] && (( current >= TARGET )); then
-    echo
-    echo "Target reached (>= $TARGET). Done."
-    break
-  fi
+cli --time --query "
+  INSERT INTO $TABLE
+  SELECT *
+  FROM urlCluster(default, 'https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_{0..99}.parquet')
+"
 
-  iter=$((iter+1))
-  echo
-  echo "===== Iteration #$iter: loading rows into $DATABASE.$TABLE ====="
+after="$(row_count)"
+echo "Rows after load:  $after"
 
-  cli --time --query "
-    INSERT INTO $TABLE
-    SELECT *
-    FROM urlCluster(default, 'https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_{0..99}.parquet')
-  "
-done
-
-final="$(row_count)"
-echo "Final rows in $DATABASE.$TABLE: $final"
+delta=$(( after - before ))
+echo "Rows inserted:    $delta"
+echo "Done."

@@ -1,0 +1,49 @@
+
+
+python3 databricks_stage_and_ingest.py \
+    --target 'workspace.clickbench.`100b_clustered`' \
+    --stage-only
+
+
+python3 databricks_stage_and_ingest.py \
+    --target 'workspace.clickbench.`100b_clustered`' \
+    --skip-stage --total-rows 10000000 --commit-rows 10000000 --parallel 1
+
+
+python3 databricks_stage_and_ingest.py \
+    --target 'workspace.clickbench.`100b_clustered`' \
+    --skip-stage \
+    --total-rows 5000000000 \
+    --commit-rows 10000000 \
+    --parallel 2 \
+    --target-rps 1000000
+
+
+
+
+
+-------------------------------------------------------
+
+
+cd ~/CostBench/databricks/clickbench
+
+
+python run_bench.py --machine 4X-Large --db-name clickbench --table-name 100b_clustered
+
+python collect_metrics_v2.py --machine 4X-Large
+→ reads runs_4X-Large.json
+→ writes metrics_4X-Large.json
+
+
+python summarize_results.py --machine 4X-Large
+→ reads metrics_4X-Large.json
+→ writes result_4X-Large.json
+
+cp clickbench_4X-Large.json large/results_100B/clickbench_clustered_4X-Large.json
+
+cd ~/CostBench/databricks/
+
+./enrich.sh clickbench/large/results_100B/clickbench_clustered_4X-Large.json \
+            pricings/sql_serverless_compute.json \
+            results_100B/clickbench_clustered_4X-Large_enriched.json \
+            --cloud aws --region us-east-1 --plan premium

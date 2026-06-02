@@ -233,7 +233,6 @@
     ]
   ],
   "provider": "aws",
-  "region": "us-east-1",
   "costs": [
     {
       "tier": "Basic",
