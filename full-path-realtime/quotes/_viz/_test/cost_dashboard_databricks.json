@@ -1,0 +1,21 @@
+{
+  "source_file": "/dev/fd/63",
+  "system": "Databricks",
+  "version": "4.1.0 0000000000000000000000000000000000000000",
+  "warehouse_size": "X-Small",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "plan": "premium",
+  "iterations_included": 163,
+  "queries_per_iteration": 4,
+  "total_runtime_seconds": 747.194,
+  "costs": [
+    {
+      "tier": "premium",
+      "warehouse_size": "X-Small",
+      "dbu_per_hour": 6.0,
+      "dbu_price_per_hour": 0.70,
+      "total_compute_cost_usd": 0.87173
+    }
+  ]
+}

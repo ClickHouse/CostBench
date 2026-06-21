@@ -1,0 +1,41 @@
+
+
+./summarize_queries.sh ../results/dashboard_20260611.jsonl \
+    pricings/sql_serverless_compute.json \
+    dashboard.json \
+    --cloud aws --region us-east-1 --plan premium --iterations 163
+
+
+./summarize_queries.sh ../results/drilldown_20260611.jsonl \
+    pricings/sql_serverless_compute.json \
+    drilldown.json \
+    --cloud aws --region us-east-1 --plan premium --iterations 30
+
+
+./summarize_ingest_compute.sh \
+    pricings/sql_serverless_compute.json ingest.json \
+    --warehouse-size 2X-Small --hours 27 \
+    --rows 100000000000 --rows-per-sec 1000000 \
+    --cloud aws --region us-east-1 --plan premium
+
+
+./summarize_clustering.sh \
+    ../results/system_tables/clustering-raw_table-details.md \
+    pricings/sql_serverless_compute.json \
+    clustering_raw_table.json \
+    --cloud aws --region us-east-1 --plan premium
+
+
+./summarize_clustering.sh \
+    ../results/system_tables/clustering-mv_table-details.md \
+    pricings/sql_serverless_compute.json \
+    clustering_mv_table.json \
+    --cloud aws --region us-east-1 --plan premium
+
+
+./summarize_mv_refresh.sh \
+    ../results/system_tables/refresh-mv_table-details.md \
+    pricings/sql_serverless_compute.json \
+    mv_refresh.json \
+    --cloud aws --region us-east-1 --plan premium
+

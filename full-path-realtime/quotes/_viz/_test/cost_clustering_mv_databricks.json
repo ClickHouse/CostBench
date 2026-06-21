@@ -1,0 +1,29 @@
+{
+  "source_file": "clustering-mv_table-details.md",
+  "system": "Databricks",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "plan": "premium",
+  "total_operations": 7,
+  "total_dbu": 0.74225,
+  "breakdown": [
+    {
+      "operation_type": "ANALYZE",
+      "operations": 2,
+      "total_dbu": 0.004144777754059344
+    },
+    {
+      "operation_type": "CLUSTERING",
+      "operations": 5,
+      "total_dbu": 0.7381028294629323
+    }
+  ],
+  "costs": [
+    {
+      "tier": "premium",
+      "dbu_price_per_dbu": 0.70,
+      "total_dbu": 0.74225,
+      "total_cost_usd": 0.51957
+    }
+  ]
+}

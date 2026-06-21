@@ -1,0 +1,25 @@
+{
+  "source_file": "drilldown_20260609T154023Z.jsonl",
+  "system": "ClickHouse Cloud (AWS)",
+  "version": "26.4.1.1790",
+  "machine": "64GiB",
+  "mem_gib": 64,
+  "cluster_size": 1,
+  "iterations_included": 30,
+  "queries_per_iteration": 1,
+  "total_runtime_seconds": 46.205,
+  "costs": [
+    {
+      "tier": "Basic",
+      "total_compute_cost_usd": 0.0224
+    },
+    {
+      "tier": "Scale",
+      "total_compute_cost_usd": 0.03065
+    },
+    {
+      "tier": "Enterprise",
+      "total_compute_cost_usd": 0.04008
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+```sql
+SELECT
+    SUM(credits_used)
+FROM SNOWFLAKE.ACCOUNT_USAGE.MATERIALIZED_VIEW_REFRESH_HISTORY
+WHERE table_name    = 'QUOTES_DAILY'
+  AND database_name = 'BENCH2COST'
+  AND schema_name   = 'STOCKHOUSE'
+```
+
+| SUM(CREDITS_USED) |
+|---:|
+| 3.602176008 |

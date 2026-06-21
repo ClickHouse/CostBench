@@ -1,0 +1,34 @@
+{
+  "source_file": "clustering-raw_table-details.md",
+  "system": "Databricks",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "plan": "premium",
+  "total_operations": 33,
+  "total_dbu": 143.06624,
+  "breakdown": [
+    {
+      "operation_type": "ANALYZE",
+      "operations": 5,
+      "total_dbu": 1.9998640054231298
+    },
+    {
+      "operation_type": "CLUSTERING",
+      "operations": 21,
+      "total_dbu": 135.97978188220375
+    },
+    {
+      "operation_type": "COMPACTION",
+      "operations": 7,
+      "total_dbu": 5.086594939953248
+    }
+  ],
+  "costs": [
+    {
+      "tier": "premium",
+      "dbu_price_per_dbu": 0.70,
+      "total_dbu": 143.06624,
+      "total_cost_usd": 100.14637
+    }
+  ]
+}

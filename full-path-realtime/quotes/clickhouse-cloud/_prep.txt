@@ -1,0 +1,14 @@
+# 1. Make sure venv support is installed
+sudo apt-get update
+sudo apt-get install -y python3-venv
+
+# 2. Create a venv for the ingester
+python3 -m venv ~/.venvs/ch-ingest
+
+# 3. Activate it
+source ~/.venvs/ch-ingest/bin/activate
+
+# 4. Install dependencies
+pip install --upgrade pip
+pip install clickhouse-connect pyarrow
+pip install thriftpy2
