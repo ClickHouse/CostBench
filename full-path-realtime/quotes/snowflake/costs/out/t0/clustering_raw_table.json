@@ -1,0 +1,28 @@
+{
+  "source_file": "clustering-raw_table-details.md",
+  "system": "Snowflake",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "total_periods": 32,
+  "total_credits": 54.12467,
+  "costs": [
+    {
+      "tier": "standard",
+      "credit_price_per_credit": 2.00,
+      "total_credits": 54.12467,
+      "total_cost_usd": 108.24935
+    },
+    {
+      "tier": "enterprise",
+      "credit_price_per_credit": 3.00,
+      "total_credits": 54.12467,
+      "total_cost_usd": 162.37402
+    },
+    {
+      "tier": "business_critical",
+      "credit_price_per_credit": 4.00,
+      "total_credits": 54.12467,
+      "total_cost_usd": 216.49869
+    }
+  ]
+}

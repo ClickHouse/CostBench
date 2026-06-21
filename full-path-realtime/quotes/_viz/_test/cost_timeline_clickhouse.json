@@ -1,0 +1,12 @@
+{
+  "system": "ClickHouse",
+  "tier": "Enterprise",
+  "components": {
+    "Ingest": {
+      "type": "flat",
+      "total_usd": 21.0762,
+      "hours": 27
+    }
+  },
+  "max_elapsed_h": 27
+}

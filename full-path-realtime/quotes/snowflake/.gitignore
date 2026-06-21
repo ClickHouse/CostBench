@@ -1,0 +1,25 @@
+# =============================================================================
+# Snowflake benchmark — secrets & local artifacts. NEVER commit credentials.
+# (The repo-root .gitignore also covers out/, __pycache__, .venv, .DS_Store, .env*.)
+# =============================================================================
+
+# --- Secrets: key-pair, profiles, env files, AWS session tokens ---
+keys/
+*.p8
+*.pem
+profile.json
+.sfenv
+_credentials_aws.txt
+.env
+.env.*
+!.env.example
+
+# --- Runner output / logs (regenerated each run) ---
+out/
+ingest.log
+*.log
+
+# --- Local / generated ---
+__pycache__/
+*.py[cod]
+.DS_Store

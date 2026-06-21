@@ -1,0 +1,25 @@
+{
+  "source_file": "dashboard_20260609T154019Z.jsonl",
+  "system": "ClickHouse Cloud (AWS)",
+  "version": "26.4.1.1790",
+  "machine": "64GiB",
+  "mem_gib": 64,
+  "cluster_size": 1,
+  "iterations_included": 163,
+  "queries_per_iteration": 4,
+  "total_runtime_seconds": 11.902,
+  "costs": [
+    {
+      "tier": "Basic",
+      "total_compute_cost_usd": 0.00577
+    },
+    {
+      "tier": "Scale",
+      "total_compute_cost_usd": 0.00789
+    },
+    {
+      "tier": "Enterprise",
+      "total_compute_cost_usd": 0.01032
+    }
+  ]
+}

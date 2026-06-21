@@ -1,0 +1,37 @@
+{
+  "system": "ClickHouse Cloud",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "nodes": 2,
+  "mem_gib_per_node": 8,
+  "total_mem_gib": 16,
+  "duration_hours": 27,
+  "rows_ingested": 100000000000,
+  "rows_per_sec": 1000000,
+  "costs": [
+    {
+      "tier": "Basic",
+      "nodes": 2,
+      "mem_gib_per_node": 8,
+      "total_mem_gib": 16,
+      "compute_price_per_8gib_hour": 0.2181100,
+      "total_compute_cost_usd": 11.77794
+    },
+    {
+      "tier": "Scale",
+      "nodes": 2,
+      "mem_gib_per_node": 8,
+      "total_mem_gib": 16,
+      "compute_price_per_8gib_hour": 0.29846,
+      "total_compute_cost_usd": 16.11684
+    },
+    {
+      "tier": "Enterprise",
+      "nodes": 2,
+      "mem_gib_per_node": 8,
+      "total_mem_gib": 16,
+      "compute_price_per_8gib_hour": 0.3903,
+      "total_compute_cost_usd": 21.0762
+    }
+  ]
+}

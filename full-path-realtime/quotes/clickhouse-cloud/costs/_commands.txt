@@ -1,0 +1,16 @@
+mkdir out
+
+
+./summarize_queries.sh ../results/mv/dashboard_20260609T154019Z.jsonl out/dashboard.json --iterations 163
+
+./summarize_queries.sh ../results/raw/drilldown_20260617T162929Z.jsonl out/drilldown.json --iterations 39
+
+
+
+
+./summarize_ingest_compute.sh out/ingest.json \
+    --nodes 2 --mem-gib 8 --hours 28 \
+    --rows 100000000000 --rows-per-sec 1000000 \
+    --cloud aws --region us-east-1
+
+

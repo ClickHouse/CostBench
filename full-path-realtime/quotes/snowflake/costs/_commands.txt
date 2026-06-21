@@ -1,0 +1,92 @@
+
+------------------------------------------------------------------------------------------------------------------------
+-- T0
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+./summarize_queries.sh ../results/t0/dashboard_20260609T154304Z.jsonl \
+    pricings/gen2_warehouse.json \
+    out/t0/dashboard.json \
+    --cloud aws --region us-east-1 --iterations 163
+
+
+./summarize_queries.sh ../results/t0/drilldown_20260617T155914Z.jsonl \
+    pricings/gen2_warehouse.json \
+    out/t0/drilldown.json  \
+    --cloud aws --region us-east-1 --iterations 39
+
+
+
+./summarize_ingest_compute.sh \
+    pricings/gen2_warehouse.json out/t0/ingest.json \
+    --warehouse-size "Gen2 X-Small" --hours 28 \
+    --rows 100000000000 --rows-per-sec 1000000 \
+    --cloud aws --region us-east-1
+
+
+./summarize_clustering.sh \
+    ../results/system_tables/clustering-raw_table-details.md \
+    pricings/gen2_warehouse.json \
+    out/t0/clustering_raw_table.json \
+    --cloud aws --region us-east-1
+
+
+
+./summarize_clustering.sh \
+    ../results/system_tables/clustering-mv_table-details.md \
+    pricings/gen2_warehouse.json \
+    out/t0/clustering_mv_table.json \
+    --cloud aws --region us-east-1
+
+
+./summarize_mv_refresh.sh \
+    ../results/system_tables/refresh-mv_table-details.md \
+    pricings/gen2_warehouse.json \
+    out/t0/mv_refresh.json \
+    --cloud aws --region us-east-1
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- T1
+------------------------------------------------------------------------------------------------------------------------
+
+
+./summarize_queries.sh ../results/t1/dashboard_20260617T154602Z.jsonl \
+    pricings/interactive_warehouse.json \
+    out/t1/dashboard.json \
+    --cloud aws --region us-east-1 --iterations 176
+
+
+./summarize_queries.sh ../results/t1/drilldown_20260617T154602Z.jsonl \
+    pricings/interactive_warehouse.json \
+    out/t1/drilldown.json  \
+    --cloud aws --region us-east-1 --iterations 39
+
+
+
+./summarize_ingest_compute.sh \
+    pricings/gen2_warehouse.json out/t1/ingest.json \
+    --warehouse-size "Gen2 X-Small" --hours 28 \
+    --rows 100000000000 --rows-per-sec 1000000 \
+    --cloud aws --region us-east-1
+
+
+ ./summarize_ingest_compute.sh \
+    pricings/gen2_warehouse.json out/t1/refresh_large.json \
+    --warehouse-size "Gen2 Large" --hours 28 \
+    --rows 100000000000 --rows-per-sec 1000000 \
+    --cloud aws --region us-east-1
+
+  ./summarize_ingest_compute.sh \
+    pricings/gen2_warehouse.json out/t1/refresh_xlarge.json \
+    --warehouse-size "Gen2 X-Large" --hours 28 \
+    --rows 100000000000 --rows-per-sec 1000000 \
+    --cloud aws --region us-east-1
+
+
+
+
+
+

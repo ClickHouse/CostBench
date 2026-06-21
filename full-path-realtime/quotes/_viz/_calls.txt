@@ -1,0 +1,122 @@
+# Quotes ingest benchmark — chart renders.
+# Runs with uv — deps (matplotlib/numpy) come from each script's inline PEP 723 metadata,
+# so no venv setup is needed and the folder is self-contained / copy-anywhere.
+# Add more systems by dropping dashboard_<system>.jsonl / drilldown_<system>.jsonl
+# into _test/ — the renderer auto-detects the system from each file's `system` field.
+# (Tip: `uv run generate.py` is the single driver; the per-chart commands below are for tweaks.)
+
+PY="uv run"
+
+# --- Query-latency summary (grouped bars): P99 single-query latency per system ---
+# --agg one of median|mean|p90|p95|p99 (default median).
+$PY render_query_latency.py \
+  --workload "Dashboard (vs MV)=_test/dashboard_*.jsonl" \
+  --workload "Drilldown (vs raw)=_test/drilldown_*.jsonl" \
+  --agg p99 --out _out/query_latency.png \
+  --title "P99 query latency by workload (~100B rows, ~1M EPS ingest)"
+
+# --- Query cost (3 bars per system) — one chart per workload, log + linear ---
+# Cost JSONs staged from <vendor>/costs/{dashboard,drilldown}.json. --tier picks the pricing
+# tier (default enterprise); systems lacking it fall back to their only/cheapest tier.
+$PY render_query_cost.py --tier enterprise \
+  --workload "Dashboard (vs MV)=_test/cost_dashboard_*.json" \
+  --out _out/query_cost_dashboard.png --title "Dashboard query cost — enterprise tier"
+$PY render_query_cost.py --tier enterprise \
+  --workload "Drilldown (vs raw)=_test/cost_drilldown_*.json" \
+  --out _out/query_cost_drilldown.png --title "Drilldown query cost — enterprise tier"
+# linear-scale variants (exaggerate the magnitude gap)
+$PY render_query_cost.py --tier enterprise --yscale linear \
+  --workload "Dashboard (vs MV)=_test/cost_dashboard_*.json" \
+  --out _out/query_cost_dashboard_linear.png --title "Dashboard query cost — enterprise tier — linear"
+$PY render_query_cost.py --tier enterprise --yscale linear \
+  --workload "Drilldown (vs raw)=_test/cost_drilldown_*.json" \
+  --out _out/query_cost_drilldown_linear.png --title "Drilldown query cost — enterprise tier — linear"
+
+# --- Ingest-cost composition (stacked bars): ingest + clustering + MV refresh per system ---
+# ClickHouse sorts + rolls up AT ingest (one "Everything" bar); Snowflake/Databricks bill
+# separately for automatic clustering and MV refresh. Clustering raw+MV are passed under one
+# "Clustering" component (the renderer sums files that map to the same vendor). Same labels /
+# colours as cost_over_time.py. Component JSONs staged from <vendor>/costs/.
+$PY render_ingest_cost.py \
+  --component "Ingest=_test/cost_ingest_*.json" \
+  --component "Clustering=_test/cost_clustering_raw_*.json,_test/cost_clustering_mv_*.json" \
+  --component "MV refresh=_test/cost_mv_refresh_*.json" \
+  --tier enterprise --out _out/ingest_cost.png \
+  --title "Ingest cost composition (enterprise tier, ~100B rows @ ~1M EPS, 27h)"
+
+# --- Cumulative cost over time, stacked by component (ingest / clustering / MV refresh) ---
+# First normalize the per-period system-table data into _test/cost_timeline_<vendor>.json,
+# then render. ClickHouse has only the ingest layer; SF/DBX show clustering + refresh
+# continuing to bill after the ingest window (the "lag tail").
+$PY build_cost_timeline.py
+$PY render_cost_over_time.py _test/cost_timeline_*.json \
+  --out _out/cost_over_time.png \
+  --title "Cumulative ingest + prep cost over time (enterprise tier, ~100B rows)"
+
+# --- Dashboard (4 queries vs the MV) — raw lines ---
+$PY render_latency.py _test/dashboard_*.jsonl \
+  --out _out/dashboard.png \
+  --title "Dashboard query latency vs data volume (vs MV, ~1M EPS)" \
+  --query-labels "Single-symbol summary;Watchlist summary;Top movers;Daily activity"
+
+# --- Dashboard — 7-point rolling-median trend (raw shown faint) ---
+$PY render_latency.py _test/dashboard_*.jsonl \
+  --out _out/dashboard_smooth.png --smooth 7 --no-raw \
+  --title "Dashboard query latency vs volume (vs MV) — 7-pt median" \
+  --query-labels "Single-symbol summary;Watchlist summary;Top movers;Daily activity"
+
+# --- Drilldown (1 query vs the raw table) ---
+$PY render_latency.py _test/drilldown_*.jsonl \
+  --out _out/drilldown.png \
+  --title "Drilldown query latency vs data volume (vs raw table, ~1M EPS)" \
+  --query-labels "Symbol drilldown (raw)"
+
+$PY render_latency.py _test/drilldown_*.jsonl \
+  --out _out/drilldown_smooth.png --smooth 5 --no-raw \
+  --title "Drilldown query latency vs volume (vs raw) — 5-pt median" \
+  --query-labels "Symbol drilldown (raw)"
+
+# --- Linear-y smooth set (x stays log; latency axis linear to show magnitude gap) ---
+$PY render_latency.py _test/dashboard_*.jsonl \
+  --out _out/dashboard_smooth_linear.png --smooth 7 --yscale linear --no-raw \
+  --title "Dashboard query latency vs volume (vs MV) — 7-pt median, linear y" \
+  --query-labels "Single-symbol summary;Watchlist summary;Top movers;Daily activity"
+
+$PY render_latency.py _test/drilldown_*.jsonl \
+  --out _out/drilldown_smooth_linear.png --smooth 5 --yscale linear --no-raw \
+  --title "Drilldown query latency vs volume (vs raw) — 5-pt median, linear y" \
+  --query-labels "Symbol drilldown (raw)"
+
+# --- MV freshness lag vs base-table row count: Snowflake serverless MV vs ClickHouse (flat 0s) ---
+# --volume-from maps each lag poll's timestamp -> raw_rows (interpolated from the dashboard
+# runner JSONL of the same run), so the x-axis is data volume instead of elapsed time.
+# NOTE: row-count mode maps every poll against ONE volume file, so keep it to the system that
+# file belongs to (Snowflake here). Databricks is a separate run -> use the time chart below.
+$PY render_mv_lag.py _test/mv_latency_snowflake.jsonl \
+  --volume-from _test/dashboard_snowflake.jsonl \
+  --out _out/mv_lag.png --smooth 9 --no-raw \
+  --title "MV freshness lag vs data volume: Snowflake vs ClickHouse (~1M EPS)"
+
+# --- MV lag over TIME with data volume on a second y-axis (dual-axis), first 24h, ALL systems ---
+# x = elapsed hours per system from ITS OWN ingest start (clipped to 24 via --xmax);
+# left y = MV lag (min); right y = Snowflake rows ingested (grey dashed line).
+# Inputs: Snowflake mv_latency JSONL + Databricks refresh-lag CSV; ClickHouse = flat 0 baseline.
+$PY render_mv_lag.py _test/mv_latency_snowflake.jsonl _test/mv_lag_databricks.csv \
+  --volume-line _test/dashboard_snowflake.jsonl --xmax 24 \
+  --out _out/mv_lag_time_volume.png --smooth 9 --no-raw \
+  --title "MV freshness lag over first 24h, with data volume (~1M EPS)"
+
+# --- Storage size: raw table vs MV across systems (2-panel bars, bytes + bytes/row) ---
+# Numbers live in _test/storage.json (active compressed on-disk; see the note field there).
+$PY render_storage.py _test/storage.json \
+  --out _out/storage.png \
+  --title "Storage size — raw table vs MV (active, compressed; ~100B rows)"
+
+# --- Snowflake Automatic-Clustering lag (STOCKHOUSE_2 re-run): depth ramp + AC credits/hr ---
+# Two panels: avg clustering depth over time (raw ramps, MV sawtooths) + AC credits/hr bars
+# (steady ~0.7/hr during ingest, ~28-credit catch-up spike after ingest stops at ~30.6h).
+$PY render_clustering_lag.py _test/clustering_lag_snowflake.jsonl \
+  --credits _test/clustering_credits_snowflake.csv --stop-hours 30.6 \
+  --depth-scale linear --credits-scale linear --raw-only \
+  --out _out/clustering_lag.png \
+  --title "Snowflake Automatic-Clustering lag, raw table (STOCKHOUSE_2, ~1M EPS, 109B rows)"

@@ -1,0 +1,17 @@
+{
+  "source_file": "refresh-mv_table-details.md",
+  "system": "Databricks",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "plan": "premium",
+  "total_days": 3,
+  "total_dbu": 110.9051,
+  "costs": [
+    {
+      "tier": "premium",
+      "dbu_price_per_dbu": 0.70,
+      "total_dbu": 110.9051,
+      "total_cost_usd": 77.63357
+    }
+  ]
+}

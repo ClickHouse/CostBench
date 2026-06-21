@@ -1,0 +1,57 @@
+# Terminal 1: start ingest
+tmux new -s benchmark_ingest
+FQDN=... PASSWORD=...
+python3 ingest_parquet_dir.py --dir ~/data/stockhouse --pattern '*.parquet' \
+    --database test1 --table quotes --parallel 2 --row-groups-per-insert 4 \
+    --create-sql create.sql --target-rps 1000000
+
+# Terminal 2: dashboard runner (every 10 min)
+tmux new -s benchmark_dashboard
+FQDN=... PASSWORD=...
+./run_dashboard.sh \
+    --database test1 \
+    --output-dir results/mv \
+    "ClickHouse Cloud (AWS)" "64GiB" 1 "" 0
+
+# Terminal 3: drilldown runner (every hour)
+tmux new -s benchmark_drilldown
+FQDN=... PASSWORD=...
+./run_drilldown.sh \
+    --database test1 \
+    --output-dir results/raw \
+    "ClickHouse Cloud (AWS)" "64GiB" 1 "" 0
+
+
+
+
+
+
+
+
+
+python3 ingest_parquet_dir.py \
+    --dir /home/ubuntu/data/stockhouse \
+    --pattern '*.parquet' \
+    --max-files 10 \
+    --database test1 \
+    --table quotes \
+    --parallel 2 \
+    --row-groups-per-insert 4 \
+    --create-sql create.sql \
+    --target-rps 1000000
+
+
+
+
+
+
+
+python3 ingest_parquet_dir.py \
+    --dir /home/ubuntu/data/stockhouse \
+    --pattern '*.parquet' \
+    --database test1 \
+    --table quotes \
+    --parallel 2 \
+    --row-groups-per-insert 8 \
+    --create-sql create.sql \
+    --target-rps 1000000

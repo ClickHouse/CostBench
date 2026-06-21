@@ -1,0 +1,19 @@
+{
+  "system": "Databricks",
+  "warehouse_size": "2X-Small",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "plan": "premium",
+  "duration_hours": 27,
+  "rows_ingested": 100000000000,
+  "rows_per_sec": 1000000,
+  "costs": [
+    {
+      "tier": "premium",
+      "warehouse_size": "2X-Small",
+      "dbu_per_hour": 4.0,
+      "dbu_price_per_hour": 0.70,
+      "total_compute_cost_usd": 75.6
+    }
+  ]
+}
