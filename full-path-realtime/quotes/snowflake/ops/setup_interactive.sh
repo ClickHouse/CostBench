@@ -41,10 +41,10 @@ def run(sql, label):
 for s in ["use role ACCOUNTADMIN","use database BENCH2COST",f"use schema {SCHEMA}"]:
     run(s, s)
 
-# Per-warehouse size: aggregate IT refresh needs MEDIUM (Small lagged); raw IT refresh fine on XSMALL.
+# Per-warehouse size.
 for wh, size in ((AGG_WH, AGG_SIZE), (RAW_WH, RAW_SIZE)):
     run(f"""create warehouse if not exists {wh} with warehouse_type=STANDARD
-            resource_constraint=STANDARD_GEN_2 warehouse_size={size} auto_suspend=60
+            resource_constraint=STANDARD_GEN_2 warehouse_size={size}
             auto_resume=TRUE initially_suspended=TRUE""", f"warehouse {wh} (Gen2 {size})")
 
 run(f"""create or replace interactive table QUOTES_DAILY_IT
