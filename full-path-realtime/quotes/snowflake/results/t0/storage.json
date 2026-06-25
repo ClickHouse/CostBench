@@ -1,11 +1,13 @@
 {
   "raw": [
     {"system": "ClickHouse (AWS)", "bytes": 388514215808, "rows": 113219565734},
-    {"system": "Snowflake",        "bytes": 626411195904, "rows": 105546024533}
+    {"system": "Snowflake",        "bytes": 626411195904, "rows": 105546024533},
+    {"system": "Databricks",       "bytes": 704753961457, "rows": 102602170057}
   ],
   "mv": [
     {"system": "ClickHouse (AWS)", "bytes": 60894528,  "rows": 1884551},
-    {"system": "Snowflake",        "bytes": 478583808, "rows": 1719669}
+    {"system": "Snowflake",        "bytes": 478583808, "rows": 1719669},
+    {"system": "Databricks",       "bytes": 74044112,  "rows": 1667846}
   ],
-  "note": "active on-disk size, compressed; T0 (STOCKHOUSE standard). Snowflake MV rows = logical (sym,day) groups (physical 14.88M); from results/storage-size-{raw,mv}.md."
+  "note": "Storage size represents active compressed on-disk data. ClickHouse metrics are derived from system.parts (bytes_on_disk, rows); Snowflake storage comes from INFORMATION_SCHEMA.TABLE_STORAGE_METRICS and row counts from INFORMATION_SCHEMA.TABLES; Databricks from DESCRIBE DETAIL Total Size (bytes)."
 }

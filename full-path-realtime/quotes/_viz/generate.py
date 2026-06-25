@@ -90,7 +90,7 @@ def _vtok(system):
 
 # Each builder returns the renderer argv (list) for the chosen vendors, or None to skip
 # (e.g. the required input vendors aren't selected). `out`/`dpi` come from the CLI.
-def build(name, vs, out_dir, dpi):
+def build(name, vs, out_dir, dpi, benchmark_tier=None):
     out = out_dir
     dpi_args = ["--dpi", str(dpi)] if dpi else []
     cluster_x = TEST / "dashboard_snowflake.jsonl"   # Snowflake volume source for MV-lag x/right-axis
@@ -126,8 +126,13 @@ def build(name, vs, out_dir, dpi):
             fd, data_path = tempfile.mkstemp(prefix="storage_filtered_", suffix=".json")
             with open(fd, "w") as f:
                 json.dump(d, f)
-        return ["render_storage.py", data_path, "--out", str(out / "storage.png"), *dpi_args,
-                "--title", "Storage size — raw table vs MV (active, compressed on disk)"]
+        argv = ["render_storage.py", data_path, "--out", str(out / "storage.png"), *dpi_args,
+                "--title", "Storage size — raw table vs MV (active, compressed on disk)",
+                "--clickhouse-usd-per-tb", "25.30", "--snowflake-usd-per-tb", "23.0",
+                "--databricks-usd-per-tb", "23.0"]
+        if benchmark_tier:
+            argv += ["--tier", benchmark_tier]
+        return argv
 
     if name == "query_latency":
         d, r = _dash(vs), _drill(vs)
@@ -339,6 +344,8 @@ def main():
                     metavar="C", help="Charts to render (default: all). See --list.")
     ap.add_argument("--out-dir", default=str(HERE / "_out"), help="Output directory (default _out).")
     ap.add_argument("--dpi", type=int, default=None, help="Override render DPI.")
+    ap.add_argument("--benchmark-tier", choices=["T0", "T1", "T2"], default=None,
+                    help="Benchmark tier — passed to render_storage.py for panel titles.")
     ap.add_argument("--list", action="store_true", help="List chart names and exit.")
     args = ap.parse_args()
 
@@ -357,7 +364,7 @@ def main():
 
     rendered, skipped = 0, []
     for name in args.charts:
-        argv = build(name, args.vendors, out_dir, args.dpi)
+        argv = build(name, args.vendors, out_dir, args.dpi, args.benchmark_tier)
         if argv is None:
             skipped.append(name)
             print(f"  skip {name} (selected vendors lack the required input)", file=sys.stderr)
