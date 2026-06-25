@@ -1,0 +1,15 @@
+{
+  "raw": [
+    {"system": "ClickHouse (AWS)", "bytes": 388514215808, "rows": 113219565734},
+     {"system": "Snowflake", "bytes": 3975336993792,"rows": 226439131468, "details": {"standard": {"bytes": 752651995648, "rows": 113219565734}, "interactive": {"bytes": 3222684998144, "rows": 113219565734}}}
+  ],
+  "mv": [
+    {"system": "ClickHouse (AWS)", "bytes": 60894528,  "rows": 1884551},
+    {
+      "system": "Snowflake",
+      "bytes": 104871424,
+      "rows": 1858616
+    }
+  ],
+    "note": "Storage size represents active compressed on-disk data. ClickHouse metrics are derived from system.parts (bytes_on_disk, rows); Snowflake storage comes from INFORMATION_SCHEMA.TABLE_STORAGE_METRICS and row counts from INFORMATION_SCHEMA.TABLES. The raw tables section on Snowflake is the sum of the raw standard and interactive tables."
+}

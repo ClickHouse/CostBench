@@ -48,7 +48,7 @@ The quotes data comes from **[Massive](https://massive.com/)**, a US market-data
 redistribution**, so this repo ships only the ingest/query scripts and the aggregated results —
 **not** the dataset itself. To reproduce the benchmark you bring your own Massive data.
 
-**Getting the data (no partnership required):**
+**Getting the data:**
 
 The dataset is a **capture of Massive's real-time quotes WebSocket**, recorded to daily Parquet
 files — not a historical pull. To reproduce it:
@@ -119,76 +119,3 @@ Read query pattern:
 
 - Every 10 minutes: 4 queries against the MV simulating a live dashboard
 - Every hour: 1 drill-down query against the raw data table
-
-## Results
-
-Query latency is the server-side execution time, sampled as the table grows to ~100B rows.
-Lines are a rolling median over the per-iteration samples; axes are log scale.
-Chart renderers and inputs are in [`_viz/`](_viz) (`_viz/_calls.txt` reproduces every chart).
-
-### Dashboard latency (4 queries vs the MV)
-
-![Dashboard query latency vs data volume](_viz/_out/dashboard_smooth.png)
-
-### Drill-down latency (1 query vs the raw table)
-
-![Drill-down query latency vs data volume](_viz/_out/drilldown_smooth.png)
-
-### MV freshness lag
-
-How far behind each system's MV falls under sustained 1M eps, over the first 24h, with rows
-ingested on the right axis. ClickHouse's MV is synchronous (always in sync, flat 0s);
-Databricks' refresh-triggered MV stays within its refresh interval (~8–10 min); Snowflake's
-serverless MV sawtooths up to ~72 min behind.
-
-![MV freshness lag over first 24h with data volume](_viz/_out/mv_lag_time_volume.png)
-
-### Storage size
-
-Current active compressed on-disk size of the raw table and the MV, per system, each bar
-labelled with its total row count. Excludes Snowflake time-travel + fail-safe and Databricks
-time-travel — the active footprint only.
-
-![Storage size — raw table vs MV](_viz/_out/storage.png)
-
-ClickHouse's raw table is the smallest (362 GiB) even though it holds the most rows (113.2B),
-vs Snowflake 583 GiB (105.5B rows) and Databricks 656 GiB (102.6B rows). ClickHouse and
-Databricks MVs are comparable (58 / 71 MiB); Snowflake's MV is ~8× larger (456 MiB) because it
-stores un-compacted physical aggregate fragments (14.88M physical rows over 1.72M logical
-`(sym, day)` groups).
-
-#### Why the storage differs (hypotheses)
-
-These are informed guesses from how each engine stores data, not per-column measurements.
-
-**Raw table** (~3.4 vs 5.9 vs 6.9 bytes/row; identical data, and ClickHouse has the *most*
-rows yet is smallest — so it's purely storage efficiency):
-
-- **Strength of physical ordering** (likely the biggest factor). All three "cluster by
-  (sym, t)", but ClickHouse's `ORDER BY (sym, t)` is a *hard total sort*, so `sym` becomes long
-  identical runs and `t` is monotonic within each sym → adjacent values are near-identical and
-  the compressor gets very long matches. Snowflake and Databricks clustering is *approximate,
-  background* ordering, so those same columns compress less well.
-- **Type representation & codecs.** ClickHouse stores native fixed-width `UInt*/Float64` and is
-  built to crush sorted integer/timestamp columns (and could go further with explicit
-  `Delta`/`DoubleDelta`/`Gorilla` codecs). Snowflake maps ints to `NUMBER(20,0)` with
-  general-purpose auto-encoding; Databricks uses Spark's default Parquet encodings, the least
-  aggressive of the three.
-- **Hidden metadata (Databricks).** `delta.enableRowTracking=true` materializes per-row
-  `_row_id` / `_commit_version` columns into the data files — extra bytes on 100B rows — plus
-  Parquet page/footer overhead; a likely reason it's the largest.
-- **Incompressible floor.** `bp`/`ap` are `Float64` prices (high-entropy) that compress poorly
-  everywhere; they set a common floor, and the spread above it is all in the
-  integer/timestamp/low-cardinality columns where ClickHouse's strict sort + native types win.
-
-**MV** (Snowflake ~8× the others — a fragmentation story, not bigger data): Snowflake's MV holds
-14.88M physical rows over 1.72M logical groups because each incremental maintenance pass
-*appends* partial-aggregate fragments and compaction is lazy; per *physical* row it's ~32 B —
-the same as ClickHouse per logical row — so the data is compact, there are just ~8.6× as many
-rows (a forced compaction would shrink it). ClickHouse vs Databricks (58 vs 71 MiB) is a wash:
-both store ~one compact row per `(sym, day)` group; Databricks' edge is Parquet/Delta per-file
-overhead, which weighs more on a tiny table.
-
-Caveats: all point-in-time (not fully settled); compression settings weren't normalized; and
-Snowflake's number excludes time-travel (1.06 TiB) + fail-safe (787 GiB), so total stored bytes
-diverge even more than the active-footprint chart.

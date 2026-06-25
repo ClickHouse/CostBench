@@ -106,11 +106,18 @@ $PY render_mv_lag.py _test/mv_latency_snowflake.jsonl _test/mv_lag_databricks.cs
   --out _out/mv_lag_time_volume.png --smooth 9 --no-raw \
   --title "MV freshness lag over first 24h, with data volume (~1M EPS)"
 
-# --- Storage size: raw table vs MV across systems (2-panel bars, bytes + bytes/row) ---
+# --- Storage size: raw table vs MV across systems (2-panel bars, bytes + cost) ---
 # Numbers live in _test/storage.json (active compressed on-disk; see the note field there).
+# Pricing: ClickHouse $25.30/TB, Snowflake $23.0/TB per month.
 $PY render_storage.py _test/storage.json \
   --out _out/storage.png \
   --title "Storage size — raw table vs MV (active, compressed; ~100B rows)"
+
+# --- T0 vs T1 storage comparison (ClickHouse vs Snowflake) ---
+$PY render_storage.py --compare \
+  T0=../snowflake/results/t0/storage.json \
+  T1=../snowflake/results/t1/storage.json \
+  --out _out/storage_t0_t1.png
 
 # --- Snowflake Automatic-Clustering lag (STOCKHOUSE_2 re-run): depth ramp + AC credits/hr ---
 # Two panels: avg clustering depth over time (raw ramps, MV sawtooths) + AC credits/hr bars

@@ -63,14 +63,18 @@ case "$TN" in
     stage "$SF/dashboard_*.jsonl" "$TEST/dashboard_snowflake.jsonl"
     stage "$SF/mv_latency*.jsonl" "$TEST/mv_latency_snowflake.jsonl"
     stage "$SF/storage.json"      "$TEST/storage.json"
+    VENDORS="clickhouse snowflake databricks"
     CHARTS="query_latency dashboard dashboard_smooth drilldown drilldown_smooth mv_lag storage" ;;
   t1|t2|t1v*|t2v*)
     stage "$SF/drilldown_*.jsonl" "$TEST/drilldown_snowflake_it.jsonl"
     stage "$SF/dashboard_*.jsonl" "$TEST/dashboard_snowflake_it.jsonl"
     stage "$SF/it_refresh.csv"    "$TEST/it_refresh_snowflake_it.csv"
     stage "$SF/storage.json"      "$TEST/storage.json"
+    VENDORS="clickhouse snowflake"
     CHARTS="it_query_latency it_dashboard_smooth it_drilldown_smooth it_lag storage" ;;
 esac
+
+VENDORS="${VENDORS:-clickhouse snowflake}"
 
 if [ "$staged" -eq 0 ]; then
   echo "ERROR: no inputs found to stage — collect results into $SF (and the CH baseline into $CH) first." >&2
@@ -84,5 +88,40 @@ if [ -f "$TEST/storage.json" ] && grep -q '"bytes": *null' "$TEST/storage.json";
 fi
 
 echo "rendering -> $OUT"
-uv run generate.py --vendors clickhouse snowflake --charts $CHARTS --out-dir "$OUT"
+TIER_ARG=()
+case "$TN" in
+  t0) TIER_ARG=(--benchmark-tier T0) ;;
+  t1|t2|t1v*|t2v*) TIER_ARG=(--benchmark-tier T1) ;;
+esac
+uv run generate.py --vendors $VENDORS --charts $CHARTS --out-dir "$OUT" "${TIER_ARG[@]}"
+
+# Combined T0 vs T1 storage comparison (when both result dirs exist).
+SF_T0="$HERE/../snowflake/results/t0/storage.json"
+SF_T1="$HERE/../snowflake/results/t1/storage.json"
+if [ -f "$SF_T0" ] && [ -f "$SF_T1" ]; then
+  echo "rendering combined storage comparison -> $HERE/_out/storage_t0_t1.png"
+  uv run render_storage.py --compare \
+    "T0=$SF_T0" "T1=$SF_T1" \
+    --out "$HERE/_out/storage_t0_t1.png"
+fi
+
+if [ "$TN" = "t0" ] && [ -f "$SF_T0" ]; then
+  echo "rendering T0 ClickHouse vs Snowflake storage -> $OUT/storage_ch_sf.png"
+  uv run render_storage.py "$SF_T0" --tier T0 --vendors clickhouse snowflake \
+    --out "$OUT/storage_ch_sf.png" \
+    --title "Storage — T0 standard MV (ClickHouse vs Snowflake)"
+  echo "rendering T0 ClickHouse vs Databricks storage -> $OUT/storage_ch_db.png"
+  uv run render_storage.py "$SF_T0" --tier T0 --vendors clickhouse databricks \
+    --out "$OUT/storage_ch_db.png" \
+    --title "Storage — T0 standard MV (ClickHouse vs Databricks)"
+fi
+
+if [[ "$TN" == t1* ]] && [ -f "$SF_T1" ]; then
+  echo "rendering T1 ClickHouse vs Snowflake (split) storage -> $OUT/storage_ch_sf.png"
+  uv run render_storage.py "$SF_T1" --tier T1 --vendors clickhouse snowflake \
+    --split-snowflake \
+    --out "$OUT/storage_ch_sf.png" \
+    --title "Storage — T1 interactive tables (ClickHouse vs Snowflake)"
+fi
+
 echo "done: charts in $OUT  (any 'skip' lines above = optional input not collected yet)"
