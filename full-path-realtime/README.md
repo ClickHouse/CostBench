@@ -14,3 +14,4 @@ Unlike query-only benchmarks, these workloads cover the full path from data inge
 ## Workloads
 
 - `quotes/` — stock quotes benchmark using bid/ask market data.
+- `hits/` — web analytics data.

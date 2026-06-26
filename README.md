@@ -1,89 +1,143 @@
 # CostBench
 
-**An open benchmark for cloud data warehouse cost-performance — performance-per-dollar, not just speed.**
+**An open benchmark for real-time analytics system cost-performance across the complete analytics path.**
 
-CostBench measures how much performance each dollar actually buys you on the major cloud data warehouses, so teams can choose the system that delivers the most value for real-time analytical workloads.
+CostBench measures how much performance each dollar actually buys you — not only when a query runs, but across the full system path that makes real-time analytics possible: fresh data in, query-ready data maintained, fast answers out, and the cost of keeping that path running.
 
-📊 **[Explore the results in the interactive benchmark explorer →](https://clickhouse.com/blog/cloud-data-warehouses-cost-performance-comparison#interactive-benchmark-explorer)**
+> [!NOTE]
+> **Why static query benchmarks are incomplete**
+>
+> Most database benchmarks load a static dataset once, let the system fully prepare it, then run each query multiple times and report the fastest hot-cache result. That measures repeated reads over stable, already-prepared data. It does not show the time and cost of making fresh data query-ready, or how queries behave when they run continuously over data that keeps changing, while ingest, maintenance, and refresh work keep running in parallel.
 
----
+That is why CostBench focuses on **full-path cost-performance** to answer the question that matters:
 
-## Why cost-performance, not just performance
-
-Most benchmarks tell you how fast a query runs. That is useful, but incomplete. In cloud data platforms, speed and cost are inseparable.
-
-If warehouse A is faster than warehouse B, A looks better on a performance chart. But if A costs three times more to run, you could spend the same budget on a larger configuration of B, get more compute, and finish the workload faster than A for less money overall.
-
-That comparison is hard because every platform exposes cost differently — credits, DBUs, slot-seconds, compute units, RPUs. The unit names differ, but the underlying question is the same:
-
-> **How much compute did the system need to finish the workload, and what did that compute cost?**
-
-CostBench answers that question directly, on equal footing across vendors.
+> **Where do you get the most real-time analytics performance per dollar across the full path?**
 
 ## What CostBench measures
 
-CostBench frames cost-performance along two dimensions:
+A real-time analytics benchmark needs to measure the system end to end:
 
-- **Read-side cost-performance** — how much query performance you get per dollar.
-- **Full-path cost-performance** — how efficiently each dollar turns fresh ingest into query-ready data.
+![The five stages of full-path cost-performance](docs/images/full-path-cost-performance-stages.gif)
 
-Together, they answer the question that matters when picking a platform: *which system gives you the most performance per dollar for real-time analytical workloads?*
+1. Fresh data arrives continuously.
+2. The system writes that data and makes it query-ready.
+3. Raw data is kept in a layout that supports fast drill-down queries.
+4. Pre-aggregated data is maintained for low-latency dashboard queries.
+5. Queries are served continuously while ingest, maintenance, and refresh work keep running.
 
-The current release focuses on the **read side** (analytical queries over already-loaded data). Initial **write-side** results are also available, starting with Snowflake as a contrast point for ClickHouse; broader full-path coverage is coming.
+CostBench captures the cost and latency of those stages together, because different systems spend work in different places. One system may spend more on ingest. Another may spend more on background clustering, refresh compute, or query execution. A read-only query benchmark cannot show that full tradeoff.
 
-Each dimension is its own benchmark, with its own workload, scales, and billing logic:
+CostBench is therefore **not a bulk-load or backfill benchmark**. It simulates a real-time analytics system where fresh data is continuously generated at the source and must become query-ready as it arrives.
 
-- **[Read-side benchmark →](query-side-only/)** — query cost-performance over already-loaded data.
-- **[Full-path benchmark →](full-path-realtime/)** — the cost of keeping continuously ingested data query-ready.
+## Methodology: full-path real-time cost-performance
+
+The CostBench methodology measures the full real-time analytics path:
+
+- continuous ingest at a fixed rate,
+- raw-data organization for efficient drill-down queries,
+- continuously maintained pre-aggregations,
+- freshness of derived data,
+- continuous query serving while data keeps arriving,
+- and the cost of keeping all of that running.
+
+This is the methodology described in the first end-to-end real-time analytics blog: [The end-to-end cost-performance of real-time analytics: Snowflake vs. ClickHouse Cloud](https://clickhouse.com/blog/real-time-analytics-cost-performance-snowflake-vs-clickhouse)
+
+
+## Legacy methodology: read-side and write-side components
+
+Earlier CostBench work measured important parts of the analytics path separately. Those results are still useful, but they are no longer the main methodology.
+
+### Read-side cost-performance
+
+The original read-side benchmark measured query cost-performance over already-loaded, already-prepared datasets. It compared how much query performance each dollar bought across major cloud data warehouses.
+
+That methodology is useful for understanding query-engine efficiency, but it does not measure the cost of making fresh data query-ready, maintaining derived data, or serving queries while ingest and maintenance continue in parallel.
+
+Related blog:
+
+- **[How the 5 major cloud data warehouses compare on cost-performance](https://clickhouse.com/blog/cloud-data-warehouses-cost-performance-comparison)** — full read-side results at 1B / 10B / 100B rows, including the interactive explorer.
+
+Repository path:
+
+- **[Legacy read-side benchmark →](query-side-only/)**
+
+### Query-ready raw data
+
+The next step measured one write-side component of the real-time path: what it costs to keep continuously ingested raw data query-ready.
+
+That benchmark focused on newly written raw data and physical organization. It did not include continuously maintained pre-aggregations or continuous query serving while ingest and maintenance continued. The full-path methodology expands on that by measuring ingest, raw-data organization, pre-aggregation freshness, refresh cost, and query execution together.
+
+Related blog:
+
+- **[Agentic analytics starts with query-ready data: the write-side cost of Snowflake vs. ClickHouse](https://clickhouse.com/blog/write-side-cost-performance-snowflake-clickhouse)** — measuring what it costs to keep continuously ingested data query-ready.
 
 ## Systems covered
 
-CostBench currently runs the same workload across the five major cloud data warehouses:
+CostBench has benchmark coverage across major cloud data warehouses, depending on the methodology and workload:
 
 - ClickHouse Cloud
 - Snowflake
-- Databricks (SQL Serverless)
+- Databricks SQL Serverless
 - Google BigQuery
 - Amazon Redshift Serverless
 
-Each system's actual compute billing model is applied to the raw runtimes, so cost numbers reflect what you would really be charged.
+The full-path real-time methodology is being expanded over time across more systems, ingest paths, datasets, and concurrency levels.
 
-## Methodology in brief
+## How CostBench compares cost-performance
 
-The same principles apply to every benchmark in this repository:
+Cloud data warehouses expose cost through different units: credits, DBUs, slot-seconds, compute units, RPUs, serverless service credits, warehouse runtime, and storage. CostBench normalizes those vendor-specific billing models into a common question:
 
-- **Real data, real workloads.** Production-derived workloads run over real, anonymized datasets at meaningful scale, rather than synthetic micro-benchmarks.
-- **Real billing models.** Each vendor's actual compute and storage pricing is applied to the measured runtimes and normalized to a common basis, so costs are comparable across engines.
-- **One comparable metric.** Runtime and cost are combined into a single cost-performance score, so systems can be ranked on equal footing.
-- **Transparent, open, and reproducible.** Every workload, configuration, pricing model, and raw result is published, so any number can be inspected and re-run.
+> How much work did the system need to complete the workload, and what did that work cost?
 
-The detailed methodology for each benchmark — the exact workload, scales, and per-vendor billing logic — lives with that benchmark, in [`query-side-only/`](query-side-only/) and [`full-path-realtime/`](full-path-realtime/).
+For full-path benchmarks, CostBench combines:
+
+- fresh-data path cost,
+- query cost,
+- query runtime,
+- freshness behavior,
+- and the system configuration required to keep the workload running.
+
+This makes it possible to compare systems even when they move work to different parts of the architecture, such as ingest compute, background clustering, materialized-view refresh, scheduled refresh warehouses, or query-serving compute.
 
 ## Open and reproducible
 
-Cost-performance claims should be inspectable. The repository publishes:
+CostBench is open so benchmark claims can be inspected, reproduced, and improved.
 
-- the workload and query set,
-- scripts used to run each system,
-- per-vendor configurations and cluster sizes,
-- pricing models and assumptions used for cost calculation,
-- raw JSON result files with per-query runtimes, compute cost, and storage cost,
-- the methodology behind the unified cost-performance score.
+The repository publishes:
 
-If a result looks surprising, you can inspect the setup that produced it. If a configuration can be improved, it can be reviewed and corrected in the open — issues and pull requests are welcome.
+- workload definitions,
+- schema and table definitions,
+- ingest scripts,
+- query workloads,
+- system configurations,
+- pricing assumptions,
+- raw result files,
+- cost calculations,
+- and methodology notes for each benchmark.
+
+If a result looks surprising, you can inspect the setup that produced it. If a configuration can be improved, it can be reviewed and corrected in the open.
+
+Issues and pull requests are welcome.
 
 ## Read more
 
-Four companion blog posts walk through the motivation, billing models, results, and write-side analysis in detail:
+### Current full-path methodology
 
 - **[Introducing CostBench: an open benchmark for data warehouse cost-performance](https://clickhouse.com/blog/costbench-data-warehouse-cost-performance)** — what CostBench is and why cost-performance matters in the agentic era.
-- **[How the 5 major cloud data warehouses really bill you: a unified, engineer-friendly guide](https://clickhouse.com/blog/how-cloud-data-warehouses-bill-you)** — credits, DBUs, compute units, slot-seconds, RPUs, explained on equal footing.
-- **[How the 5 major cloud data warehouses compare on cost-performance](https://clickhouse.com/blog/cloud-data-warehouses-cost-performance-comparison)** — full read-side results at 1B / 10B / 100B rows, including the [interactive explorer](https://clickhouse.com/blog/cloud-data-warehouses-cost-performance-comparison#interactive-benchmark-explorer).
-- **[Agentic analytics starts with query-ready data: the write-side cost of Snowflake vs. ClickHouse](https://clickhouse.com/blog/write-side-cost-performance-snowflake-clickhouse)** — measuring what it costs to keep continuously ingested data query-ready.
+- **[The end-to-end cost-performance of real-time analytics: Snowflake vs. ClickHouse Cloud](https://clickhouse.com/blog/real-time-analytics-cost-performance-snowflake-vs-clickhouse)** — full-path real-time analytics cost-performance: continuous ingest, query-ready data, pre-aggregation freshness, and continuous query serving.
+
+### Legacy component benchmarks
+
+- **[How the 5 major cloud data warehouses compare on cost-performance](https://clickhouse.com/blog/cloud-data-warehouses-cost-performance-comparison)** — read-side cost-performance at 1B / 10B / 100B rows, including the interactive explorer.
+- **[Agentic analytics starts with query-ready data: the write-side cost of Snowflake vs. ClickHouse](https://clickhouse.com/blog/write-side-cost-performance-snowflake-clickhouse)** — the cost of keeping continuously ingested raw data query-ready.
+
+### Billing model background
+
+- **[How the 5 major cloud data warehouses really bill you: a unified, engineer-friendly guide](https://clickhouse.com/blog/how-cloud-data-warehouses-bill-you)** — credits, DBUs, compute units, slot-seconds, and RPUs explained on equal footing.
 
 ## Contributing
 
-CostBench is open precisely so configurations and pricing assumptions can be reviewed in the open. If you spot a setup that can be improved, a pricing detail that should be updated, or a vendor configuration worth adding, please open an issue or pull request.
+CostBench is open because cost-performance claims should be reviewable. If you spot a setup that can be improved, a pricing detail that should be updated, or a vendor configuration worth adding, please contact us.
 
 ## License
 
