@@ -1,0 +1,43 @@
+https://s3.eu-west-3.amazonaws.com/public-pme/hits_100B/2000x50m_span_27h46m40s_rps_1m/hits_p*.parquet
+
+https://s3.eu-west-3.amazonaws.com/public-pme/hits_100B_feed/hits_p*.parquet
+
+https://s3.eu-west-3.amazonaws.com/public-pme/hits_100B/2000x50m_span_27h46m40s_rps_1m/hits_p00000.parquet
+
+
+
+- (1) clear folder
+aws s3 rm s3://public-pme/hits_100B_feed/ --recursive
+
+- (2) seed folder
+aws s3 cp \
+  s3://public-pme/hits_100B/2000x50m_span_27h46m40s_rps_1m/hits_p00000.parquet \
+  s3://public-pme/hits_100B_feed/hits_p00000.parquet
+
+- (3) Create the pipeline - initial load ingests the real 50M rows from file 0 - wait until that happened...
+
+- (4) Run for 27 hours
+./rolling_s3_copy.py \
+  --dest-bucket public-pme \
+  --dest-prefix hits_100B_feed/ \
+  --eps 1000000 \
+  --start-index 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+./rolling_s3_copy.py \
+  --dest-bucket public-pme \
+  --dest-prefix hits_100B_feed/ \
+  --eps 1000000 \
+  --dry-run
+
