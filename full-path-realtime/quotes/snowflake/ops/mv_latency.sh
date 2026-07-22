@@ -1,8 +1,10 @@
 #!/bin/bash
-# Poll SHOW MATERIALIZED VIEWS for QUOTES_DAILY every N seconds and append one
+# Poll SHOW MATERIALIZED VIEWS for the rollup MV every N seconds and append one
 # JSON line per poll (all SHOW columns + polled_at UTC) to a JSONL file.
-# SHOW is metadata-only (no warehouse), so this is ~free to run.
-#   bash mv_latency.sh [interval_sec] [output_file]
+# SHOW is metadata-only (no warehouse), so this is ~free to run. `behind_by` is the lag signal
+# and works for a regular MV (T0: QUOTES_DAILY) and an interactive MV (T2: QUOTES_DAILY_IMV).
+# MV name comes from SF_MV_TABLE (default QUOTES_DAILY); schema from SF_SCHEMA.
+#   SF_MV_TABLE=QUOTES_DAILY_IMV bash mv_latency.sh [interval_sec] [output_file]
 #     interval_sec : default 60
 #     output_file  : default out/mv_latency.jsonl
 # Run detached for a long experiment:
@@ -36,8 +38,9 @@ def connect():
     cur=c.cursor(); cur.execute('use role ACCOUNTADMIN'); return c,cur
 con,cur=connect()
 SCHEMA=os.environ.get('SF_SCHEMA','STOCKHOUSE')
-SQL=f"SHOW MATERIALIZED VIEWS LIKE 'QUOTES_DAILY' IN SCHEMA BENCH2COST.{SCHEMA}"
-print(f"Polling every {INTERVAL:g}s -> {OUT} (Ctrl-C to stop)", file=sys.stderr, flush=True)
+MV=os.environ.get('SF_MV_TABLE','QUOTES_DAILY')
+SQL=f"SHOW MATERIALIZED VIEWS LIKE '{MV}' IN SCHEMA BENCH2COST.{SCHEMA}"
+print(f"Polling {MV} in {SCHEMA} every {INTERVAL:g}s -> {OUT} (Ctrl-C to stop)", file=sys.stderr, flush=True)
 def slp(s):
     t=0.0
     while t<s and not stop['v']:

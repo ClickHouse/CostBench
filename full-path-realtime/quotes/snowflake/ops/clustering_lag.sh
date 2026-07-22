@@ -1,9 +1,12 @@
 #!/bin/bash
 # Track CLUSTERING LAG over time during a clustered re-run — the analogue of mv_latency.sh
-# for the MV refresh lag. Polls SYSTEM$CLUSTERING_INFORMATION for the raw table (QUOTES,
-# clustered by (sym,t)) and the MV (QUOTES_DAILY, clustered by (sym,day)) every N seconds and
-# appends one JSON line per poll with each object's average_depth / average_overlaps /
-# total_partition_count + polled_at UTC.
+# for the MV refresh lag. Polls SYSTEM$CLUSTERING_INFORMATION for the raw table (SF_RAW_TABLE,
+# default QUOTES; T2: QUOTES_IT, clustered by (sym,t)) and the rollup (SF_MV_TABLE, default
+# QUOTES_DAILY) every N seconds and appends one JSON line per poll with each object's
+# average_depth / average_overlaps / total_partition_count + polled_at UTC.
+# Set SF_CLUSTER_MV=0 to sample the raw only (T2: the interactive MV has no CLUSTER BY).
+# Prefer running on the TRACKING warehouse (set SF_WAREHOUSE=$SF_TRACK_WAREHOUSE) so it does not
+# perturb the measured read warehouse.
 #
 # WHY: clustering depth/overlap is the only "how far behind is Automatic Clustering" signal,
 # and it is POINT-IN-TIME — Snowflake never historizes it (unlike ACCOUNT_USAGE.AUTOMATIC_
@@ -49,7 +52,11 @@ def connect():
 con,cur=connect()
 # (object label, fully-qualified name) — clustering key is the table's DEFINED key, so omit it.
 SCHEMA=os.environ.get('SF_SCHEMA','STOCKHOUSE')
-OBJS=[('raw',f'BENCH2COST.{SCHEMA}.QUOTES'), ('mv',f'BENCH2COST.{SCHEMA}.QUOTES_DAILY')]
+RAW=os.environ.get('SF_RAW_TABLE','QUOTES')      # T2: QUOTES_IT (clustered by sym,t)
+MV=os.environ.get('SF_MV_TABLE','QUOTES_DAILY')  # T2: QUOTES_DAILY_IMV is NOT clustered -> skip via SF_CLUSTER_MV=0
+OBJS=[('raw',f'BENCH2COST.{SCHEMA}.{RAW}')]
+if os.environ.get('SF_CLUSTER_MV','1')!='0' and MV:
+    OBJS.append(('mv',f'BENCH2COST.{SCHEMA}.{MV}'))
 def info(name):
     cur.execute(f"select system$clustering_information('{name}')")
     d=json.loads(cur.fetchone()[0])
