@@ -51,13 +51,3 @@ python run_drilldown.py  --database BENCH2COST --queries t2/queries_raw_it.sql  
 
 Compare against the warehouse-based ledger: COPY-ingest wh + 2 refresh whs + read wh.
 
-## Open items to verify against the account (none run yet — live benchmark in progress)
-1. **Snowpipe Streaming HPA available in eu-west-2** and the pipe can target an interactive table.
-2. **`CREATE INTERACTIVE MATERIALIZED VIEW` exact syntax** — whether it accepts `CLUSTER BY`, and
-   whether maintenance is **serverless** (ideal — keeps the "no warehouse" win) or needs
-   `WAREHOUSE = BENCH2COST_GEN2_SMALL_STREAM`. This determines whether the rollup is truly
-   warehouse-free. (`setup_streaming.sql` currently omits the warehouse clause — add it if creation errors.)
-3. **`profile.json` schema** for the installed `snowpipe-streaming` SDK version (keys/host) — the
-   streamer writes a best-effort profile from env; adjust if the SDK rejects it.
-4. **IMV refresh-history**: confirm `INTERACTIVE_TABLE_REFRESH_HISTORY` vs `MATERIALIZED_VIEW_REFRESH_HISTORY`
-   covers the IMV, so the existing `ops/it_refresh.sh` (or an MV variant) tracks it.
