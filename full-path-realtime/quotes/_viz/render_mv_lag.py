@@ -241,6 +241,16 @@ def rolling_median(ys, window):
     return out
 
 
+def rolling_mean(ys, window):
+    """Centered moving average — rides through the refresh sawtooth more smoothly than the
+    median (which snaps between the low/high of each cycle)."""
+    n, half, out = len(ys), window // 2, []
+    for i in range(n):
+        lo, hi = max(0, i - half), min(n, i + half + 1)
+        out.append(sum(ys[lo:hi]) / (hi - lo))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -263,6 +273,11 @@ def main():
                          "raw line).")
     ap.add_argument("--no-baseline", action="store_true",
                     help="Don't draw the ClickHouse always-in-sync 0s baseline.")
+    ap.add_argument("--mv-kind", default=None,
+                    help="Override the MV-kind label shown in the legend (e.g. 'interactive MV').")
+    ap.add_argument("--smooth-mode", choices=["median", "mean"], default="median",
+                    help="Smoothing statistic for --smooth: 'median' (default) or 'mean' "
+                         "(moving average — smoother through the refresh sawtooth).")
     ap.add_argument("--volume-from", metavar="FILE",
                     help="Runner JSONL (e.g. dashboard_snowflake.jsonl) with "
                          "iteration_started_at + raw_rows. If set, the x-axis becomes base-"
@@ -351,13 +366,13 @@ def main():
         if args.smooth and args.smooth > 1 and len(ym) >= 3:
             if not args.no_raw:
                 ax.plot(xs, ym, lw=0.7, color=color, alpha=0.22, zorder=2)
-            plot_y = rolling_median(ym, args.smooth)
+            plot_y = (rolling_mean if args.smooth_mode == "mean" else rolling_median)(ym, args.smooth)
         else:
             plot_y = ym
         (line,) = ax.plot(xs, plot_y, lw=2.2 if args.smooth else 1.6, color=color, zorder=3)
         handles.append(line)
         ymax_data = max(ymax_data, max(plot_y))
-        peak = max(ys) / 60.0
+        peak = max(plot_y)   # from the plotted (smoothed) series so the legend peak matches the line
 
         tgt = targets.get(v)
         if tgt is not None:
@@ -374,8 +389,9 @@ def main():
                 status = f"peak {peak:.1f} min — within {tgt:g}-min target"
             labels.append(f"{v} · {status}")
         else:
-            kind = MV_KIND.get(v, "MV")
-            labels.append(f"{v} · {kind} (peak {peak:.0f} min behind)")
+            kind = args.mv_kind or MV_KIND.get(v, "MV")
+            peak_txt = f"{peak:.1f} min" if peak < 10 else f"{peak:.0f} min"
+            labels.append(f"{v} · {kind} (peak {peak_txt} behind)")
 
     # Headroom so the highest target line (e.g. 10-min raw) and its annotation stay on-canvas.
     ytop = max(ymax_data, max(targets.values(), default=0.0)) * 1.15 or 1.0
