@@ -6,12 +6,17 @@
 #
 #   SF_SCHEMA=STOCKHOUSE_T1 SF_RAW_TABLE=QUOTES_IT SF_MV_TABLE=QUOTES_DAILY_IT \
 #     bash ops/collect_storage.sh [out_json]
+#   T2 (interactive MV — raw=QUOTES_IT, rollup=QUOTES_DAILY_IMV):
+#   SF_SCHEMA=STOCKHOUSE_T2_RUN8 SF_RAW_TABLE=QUOTES_IT SF_MV_TABLE=QUOTES_DAILY_IMV \
+#     bash ops/collect_storage.sh [out_json]
 #   default out_json: out_<tn>/storage.json   (tn = lowercased schema suffix)
 # Then: cp out_t1/storage.json quotes/snowflake/results/t1/
 #
 # NOTE: interactive tables should appear in TABLE_STORAGE_METRICS; if a value comes back null,
 # verify the table name / that the metrics view has caught up (it can lag minutes), or use the
-# manual SQL in runbook §5a.
+# manual SQL in runbook §5a. An interactive *materialized view* (e.g. QUOTES_DAILY_IMV, T2) often
+# does NOT surface in TABLE_STORAGE_METRICS at all — this script falls back to SHOW MATERIALIZED
+# VIEWS / SHOW TABLES (metadata-only bytes+rows) automatically when the metrics view returns null.
 # =============================================================================
 export PATH="$HOME/.local/bin:$PATH"
 cd /home/ubuntu/bench && source .venv/bin/activate
@@ -38,6 +43,22 @@ con=sc.connect(account=os.environ['SF_ACCOUNT'],user=os.environ['SF_USER'],priva
 cur=con.cursor()
 for q in ("use role ACCOUNTADMIN", f"use warehouse {WH}", "use database BENCH2COST", f"use schema {SCHEMA}"):
     cur.execute(q)
+def show_fallback(tbl):
+    # metadata-only bytes+rows for objects missing from TABLE_STORAGE_METRICS (e.g. an
+    # interactive MV). Try SHOW MATERIALIZED VIEWS then SHOW TABLES; read bytes/rows by col name.
+    for stmt in (f"SHOW MATERIALIZED VIEWS LIKE '{tbl}' IN SCHEMA BENCH2COST.{SCHEMA}",
+                 f"SHOW TABLES LIKE '{tbl}' IN SCHEMA BENCH2COST.{SCHEMA}"):
+        try:
+            cur.execute(stmt); row=cur.fetchone()
+            if not row: continue
+            cols={d[0].lower():i for i,d in enumerate(cur.description)}
+            b=num(row[cols['bytes']]) if 'bytes' in cols else None
+            r=num(row[cols['rows']])  if 'rows'  in cols else None
+            if b is not None or r is not None:
+                print(f"  fell back to SHOW for {tbl}: bytes={b} rows={r}", file=sys.stderr)
+                return b,r
+        except Exception as e: print(f"  WARN show {tbl}: {str(e)[:120]}", file=sys.stderr)
+    return None,None
 def sf(tbl):
     b=r=None
     try:
@@ -50,6 +71,10 @@ def sf(tbl):
                         where table_schema='{SCHEMA}' and table_name='{tbl}'""")
         row=cur.fetchone(); r=num(row[0]) if row else None
     except Exception as e: print(f"  WARN rows {tbl}: {str(e)[:120]}", file=sys.stderr)
+    if b is None or r is None:   # e.g. interactive MV not in TABLE_STORAGE_METRICS
+        fb,fr=show_fallback(tbl)
+        if b is None: b=fb
+        if r is None: r=fr
     return b,r
 raw_b,raw_r=sf(RAW); mv_b,mv_r=sf(MV)
 print(f"Snowflake: {RAW}={raw_b}B/{raw_r} rows  {MV}={mv_b}B/{mv_r} rows", file=sys.stderr)
