@@ -149,13 +149,24 @@ WHERE start_time >= DATEADD(hour, -<HOURS>, CURRENT_TIMESTAMP())
   AND table_name IN ('<RAW>','<ROLLUP>')
 GROUP BY 1;
 
--- MV maintenance credits: see block 4 (MATERIALIZED_VIEW_REFRESH_HISTORY).
+-- MV maintenance (interactive-MV refresh) credits for THIS schema. Exact query used for T2 RUN8.
+-- Per-hour detail rows are in results/t2/mv_refresh.csv; this returns the total.
+-- (T2 RUN8 total: 9.05 credits over 38 hourly rows, ~$27 @ $3/cr.) Block 4 has the fuller history.
+SELECT SUM(credits_used) AS mv_refresh_credits
+FROM SNOWFLAKE.ACCOUNT_USAGE.MATERIALIZED_VIEW_REFRESH_HISTORY
+WHERE schema_name = '<SCHEMA>';        -- T2 RUN8: 'STOCKHOUSE_T2_RUN8'
 
--- Snowpipe Streaming ingest cost (T2 — serverless, no ingest warehouse):
-SELECT COALESCE(SUM(credits_used),0) AS streaming_credits
-FROM SNOWFLAKE.ACCOUNT_USAGE.METERING_HISTORY
-WHERE service_type = 'SNOWPIPE_STREAMING'
-  AND start_time >= DATEADD(hour, -<HOURS>, CURRENT_TIMESTAMP());
+-- Snowpipe Streaming ingest cost (T2 — serverless, no ingest warehouse). Attribute the streaming
+-- credits to THIS schema's pipe by joining METERING_HISTORY -> PIPES on pipe id + name. Exact query
+-- used for T2 RUN8. Per-hour detail rows are in results/t2/snowpipe_streaming.csv; this returns the total.
+-- (T2 RUN8 total: 17.72 credits over 36 hourly rows, ~$53 @ $3/cr.)
+SELECT SUM(m.credits_used) AS streaming_credits
+FROM SNOWFLAKE.ACCOUNT_USAGE.METERING_HISTORY m
+JOIN SNOWFLAKE.ACCOUNT_USAGE.PIPES p
+  ON m.entity_id = p.pipe_id
+ AND m.name      = p.pipe_name
+ AND m.service_type = 'SNOWPIPE_STREAMING'
+ AND p.schema_name  = '<SCHEMA>';       -- T2 RUN8: 'STOCKHOUSE_T2_RUN8'
 
 
 -- =============================================================================
