@@ -86,6 +86,32 @@
     --cloud aws --region us-east-1
 
 
+------------------------------------------------------------------------------------------------------------------------
+-- T2
+------------------------------------------------------------------------------------------------------------------------
+
+
+./summarize_queries.sh ../results/t2/dashboard_mv_std_20260720T121508Z.jsonl \
+    pricings/gen2_warehouse.json \
+    out/t2/dashboard.json \
+    --cloud aws --region us-east-1 --iterations 163
+
+./summarize_queries.sh ../results/t2/drilldown_20260720T121508Z.jsonl \
+    pricings/interactive_warehouse.json \
+    out/t2/drilldown.json  \
+    --cloud aws --region us-east-1 --iterations 39
+
+./summarize_mv_refresh_v2.sh ../results/t2/mv_refresh.csv \
+    pricings/gen2_warehouse.json  \
+    out/t2/mv_refresh.json  \
+    --cloud aws --region us-east-1
+
+
+./summarize_snowpipe_streaming.sh ../results/t2/snowpipe_streaming.csv \
+    pricings/gen2_warehouse.json \
+    out/t2/snowpipe_streaming.json \
+    --cloud aws --region us-east-1
+
 
 
 
