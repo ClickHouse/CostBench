@@ -1,0 +1,31 @@
+{
+  "source_file": "snowpipe_streaming.csv",
+  "system": "Snowflake",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "total_periods": 36,
+  "total_credits": 17.71588,
+  "total_bytes": 5140997303603,
+  "total_gib": 4787.93,
+  "total_tib": 4.6757,
+  "costs": [
+    {
+      "tier": "standard",
+      "credit_price_per_credit": 2.00,
+      "total_credits": 17.71588,
+      "total_cost_usd": 35.43175
+    },
+    {
+      "tier": "enterprise",
+      "credit_price_per_credit": 3.00,
+      "total_credits": 17.71588,
+      "total_cost_usd": 53.14763
+    },
+    {
+      "tier": "business_critical",
+      "credit_price_per_credit": 4.00,
+      "total_credits": 17.71588,
+      "total_cost_usd": 70.86351
+    }
+  ]
+}

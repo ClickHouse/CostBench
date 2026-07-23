@@ -1,0 +1,28 @@
+{
+  "source_file": "mv_refresh.csv",
+  "system": "Snowflake",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "total_periods": 38,
+  "total_credits": 9.05194,
+  "costs": [
+    {
+      "tier": "standard",
+      "credit_price_per_credit": 2.00,
+      "total_credits": 9.05194,
+      "total_cost_usd": 18.10389
+    },
+    {
+      "tier": "enterprise",
+      "credit_price_per_credit": 3.00,
+      "total_credits": 9.05194,
+      "total_cost_usd": 27.15583
+    },
+    {
+      "tier": "business_critical",
+      "credit_price_per_credit": 4.00,
+      "total_credits": 9.05194,
+      "total_cost_usd": 36.20778
+    }
+  ]
+}

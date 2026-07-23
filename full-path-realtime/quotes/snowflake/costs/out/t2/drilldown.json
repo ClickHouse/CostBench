@@ -1,0 +1,35 @@
+{
+  "source_file": "drilldown_20260720T121508Z.jsonl",
+  "system": "Snowflake IT (AWS)",
+  "version": null,
+  "machine": "Interactive Small",
+  "cluster_size": 1.2,
+  "cloud": "aws",
+  "region": "us-east-1",
+  "iterations_included": 39,
+  "queries_per_iteration": 2,
+  "total_runtime_seconds": 68.033,
+  "costs": [
+    {
+      "tier": "standard",
+      "warehouse_size": "Interactive Small",
+      "credits_per_hour": 1.2,
+      "credit_price_per_hour": 2.00,
+      "total_compute_cost_usd": 0.04536
+    },
+    {
+      "tier": "enterprise",
+      "warehouse_size": "Interactive Small",
+      "credits_per_hour": 1.2,
+      "credit_price_per_hour": 3.00,
+      "total_compute_cost_usd": 0.06803
+    },
+    {
+      "tier": "business_critical",
+      "warehouse_size": "Interactive Small",
+      "credits_per_hour": 1.2,
+      "credit_price_per_hour": 4.00,
+      "total_compute_cost_usd": 0.09071
+    }
+  ]
+}
