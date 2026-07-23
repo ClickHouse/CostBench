@@ -169,6 +169,14 @@ TIER_PANELS = {
         "T1 — Rollup (CH MV vs SF interactive aggregate)",
         ["ClickHouse\n(MV)", "Snowflake\n(IT aggregate)"],
     ),
+    ("T2", "raw"): (
+        "T2 — Raw table (streaming)",
+        ["ClickHouse", "Snowflake\n(IT)"],
+    ),
+    ("T2", "mv"): (
+        "T2 — Rollup (CH MV vs SF interactive MV)",
+        ["ClickHouse\n(MV)", "Snowflake\n(IMV)"],
+    ),
 }
 
 

@@ -9,9 +9,10 @@
 #   t2_drilldown_vs_ch_linear         drilldown (2-query) vs ClickHouse
 #   t2_mv_lag_linear                  interactive-MV freshness lag vs ClickHouse (moving average)
 #   t2_dashboard_fallback_linear      per-query: interactive execution vs 5s-timeout fallback vs CH
+#   storage_ch_sf                     on-disk footprint: CH vs Snowflake IT (raw + interactive MV)
 #
 # Inputs (collect first): snowflake/results/t2/{dashboard_imv_iv,dashboard_raw_iv,dashboard_mv_std,
-#   drilldown,mv_latency}_*.jsonl  +  clickhouse-cloud/results/{mv/dashboard,raw/drilldown}_*.jsonl
+#   drilldown,mv_latency}_*.jsonl + storage.json  +  clickhouse-cloud/results/{mv/dashboard,raw/drilldown}_*.jsonl
 # Run from quotes/_viz:   bash make_t2_charts.sh
 # =============================================================================
 set -euo pipefail
@@ -96,4 +97,16 @@ uv run render_dashboard_fallback.py --interactive "$TEST/dash_mv_iv_snowflake.js
   --out "$OUT/t2_dashboard_fallback_linear.png" \
   --title "Dashboard MV: interactive execution vs 5s-timeout fallback vs ClickHouse (T2 RUN8, linear)"
 
-echo "done: 5 charts in $OUT"
+# Storage — T2 is pure-streaming interactive tables (no standard-table split, unlike T1).
+# ClickHouse bytes/rows are reused from the T1 run (same ~113B-row co-scaled dataset); see the
+# note in snowflake/results/t2/storage.json.
+if [ -f "$SF/storage.json" ]; then
+  echo "rendering T2 ClickHouse vs Snowflake storage -> $OUT/storage_ch_sf.png"
+  uv run render_storage.py "$SF/storage.json" --tier T2 --vendors clickhouse snowflake \
+    --out "$OUT/storage_ch_sf.png" \
+    --title "Storage — T2 streaming interactive tables (ClickHouse vs Snowflake)"
+else
+  echo "  - absent (storage chart skipped): $SF/storage.json"
+fi
+
+echo "done: charts in $OUT"

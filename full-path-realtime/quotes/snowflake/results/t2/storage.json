@@ -1,11 +1,11 @@
 {
   "raw": [
-    {"system": "ClickHouse (AWS)", "bytes": null,         "rows": null},
+    {"system": "ClickHouse (AWS)", "bytes": 388514215808, "rows": 113219565734},
     {"system": "Snowflake IT",     "bytes": 698506074112, "rows": 113207178843}
   ],
   "mv": [
-    {"system": "ClickHouse (AWS)", "bytes": null,     "rows": null},
+    {"system": "ClickHouse (AWS)", "bytes": 60894528, "rows": 1884551},
     {"system": "Snowflake IT",     "bytes": 67509760, "rows": 2219283}
   ],
-  "note": "active on-disk size, compressed; T2 (STOCKHOUSE_T2_RUN8 streaming, interactive raw QUOTES_IT + interactive MV QUOTES_DAILY_IMV). Snowflake bytes/rows from SHOW (metadata-only) since an interactive MV does not surface in TABLE_STORAGE_METRICS: QUOTES_IT from SHOW TABLES, QUOTES_DAILY_IMV from SHOW MATERIALIZED VIEWS (behind_by 0s, refreshed 2026-07-21T16:11:07-07:00); MV rows are logical (sym,day) groups. ClickHouse bytes/rows are PLACEHOLDERS (null) — fill from CH system.parts before charting."
+  "note": "active on-disk size, compressed; T2 (STOCKHOUSE_T2_RUN8 streaming, interactive raw QUOTES_IT + interactive MV QUOTES_DAILY_IMV). Snowflake bytes/rows from SHOW (metadata-only) since an interactive MV does not surface in TABLE_STORAGE_METRICS: QUOTES_IT from SHOW TABLES, QUOTES_DAILY_IMV from SHOW MATERIALIZED VIEWS (behind_by 0s, refreshed 2026-07-21T16:11:07-07:00); MV rows are logical (sym,day) groups. ClickHouse bytes/rows are reused from the T1 run (same ~113B-row co-scaled dataset): raw from system.parts sum(bytes_on_disk)/sum(rows) on QUOTES, MV on QUOTES_DAILY."
 }
