@@ -25,7 +25,7 @@ This chart validates that the writer service sustained the target ingest rate th
 
 Rows/sec stayed close to **1 million rows per second**. The important point is that the service continuously kept up with the configured real-time ingest rate instead of falling behind.
 
-![Inserted Rows/sec](Screenshot%202026-06-12%20at%2011.01.56.png)
+![Inserted Rows/sec](inserted-rows-per-second.png)
 
 ## 2. Inserted bytes/sec
 
@@ -33,7 +33,7 @@ Rows/sec alone can be misleading: many tiny rows are not the same as wider analy
 
 The workload sustained roughly **70–80 MB/sec** of inserted data.
 
-![Inserted Bytes/sec](Screenshot%202026-06-12%20at%2011.02.06.png)
+![Inserted Bytes/sec](inserted-bytes-per-second.png)
 
 ## 3. Merged rows/sec
 
@@ -41,7 +41,7 @@ ClickHouse keeps tables query-ready through continuous background merges. These 
 
 The merged rows/sec chart shows that background merges were active throughout the run, often processing several million rows per second. That is expected: the write service is not just accepting new rows, but continuously reshaping them into the sorted, query-ready layout used by the drill-down workload.
 
-![Merged Rows/sec](Screenshot%202026-06-12%20at%2011.02.38.png)
+![Merged Rows/sec](merged-rows-per-second.png)
 
 ## 4. Max parts per partition
 
@@ -49,7 +49,7 @@ Part count is an important signal for whether background merges are keeping up. 
 
 In this run, the maximum part count remained under control, staying below roughly **100 parts**. That shows that the writer service was able to ingest, sort, pre-aggregate, and merge continuously without accumulating an unhealthy backlog.
 
-![Max Parts For Partition](Screenshot%202026-06-12%20at%2011.02.53.png)
+![Max Parts For Partition](max-parts-per-partition.png)
 
 ## 5. CPU usage
 
@@ -57,7 +57,7 @@ This chart shows CPU usage on the writer service during the run.
 
 CPU was well utilized but did not saturate. The service had enough work to do — ingest, sorting, materialized-view updates, and merges — but still had headroom instead of running pinned at the limit.
 
-![CPU Usage](Screenshot%202026-06-12%20at%2011.01.30.png)
+![CPU Usage](cpu-usage.png)
 
 ## 6. Memory usage
 
@@ -65,7 +65,7 @@ This chart shows tracked memory usage on the writer service.
 
 Memory stayed stable during the run, with normal variation but no sustained upward trend. That indicates the workload was bounded: the service was not accumulating unmerged data or refresh state in memory, and the write path remained stable over time.
 
-![Memory Usage](Screenshot%202026-06-12%20at%2011.01.46.png)
+![Memory Usage](memory-usage.png)
 
 ## Summary
 

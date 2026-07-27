@@ -36,7 +36,7 @@ This chart validates that the writer service sustained the target ingest rate th
 
 Rows/sec stayed close to **1 million rows per second**. The important point is that the service continuously kept up with the configured real-time ingest rate instead of falling behind — now with the server, not the client, doing the batching.
 
-![Inserted Rows/sec](Screenshot 2026-07-21 at 10.42.27.png)
+![Inserted Rows/sec](inserted-rows-per-second.png)
 
 ## 2. Inserted bytes/sec
 
@@ -44,7 +44,7 @@ Rows/sec alone can be misleading: many tiny rows are not the same as wider analy
 
 The workload sustained roughly **60–80 MB/sec** of inserted data.
 
-![Inserted Bytes/sec](Screenshot 2026-07-21 at 10.42.47.png)
+![Inserted Bytes/sec](inserted-bytes-per-second.png)
 
 ## 3. Merged rows/sec
 
@@ -52,7 +52,7 @@ ClickHouse keeps tables query-ready through continuous background merges. These 
 
 The merged rows/sec chart shows that background merges were active throughout the run, typically processing several million rows per second. Because async inserts flush optimally sized parts instead of one part per small client batch, initial part creation — and with it merge pressure — stays low.
 
-![Merged Rows/sec](Screenshot 2026-07-21 at 10.43.02.png)
+![Merged Rows/sec](merged-rows-per-second.png)
 
 ## 4. Max parts per partition
 
@@ -60,7 +60,7 @@ Part count is an important signal for whether background merges are keeping up. 
 
 In this run, the maximum part count remained under control throughout, staying at roughly **100 parts or fewer**. Server-side buffering plus continuous merges kept the part count bounded, even with 8 concurrent clients sending small 3,000-row batches at an aggregate 1 million rows per second.
 
-![Max Parts For Partition](Screenshot 2026-07-21 at 10.43.22.png)
+![Max Parts For Partition](max-parts-per-partition.png)
 
 ## 5. CPU usage
 
@@ -68,7 +68,7 @@ This chart shows CPU usage on the writer service during the run.
 
 CPU was well utilized but did not saturate. The service had enough work to do — buffering and flushing async inserts, sorting, materialized-view updates, and merges — but still had headroom instead of running pinned at the limit.
 
-![CPU Usage](Screenshot 2026-07-21 at 10.41.42.png)
+![CPU Usage](cpu-usage.png)
 
 ## 6. Memory usage
 
@@ -76,7 +76,7 @@ This chart shows tracked memory usage on the writer service.
 
 Memory stayed stable during the run, with normal variation but no sustained upward trend. That indicates the workload was bounded: async insert buffers were flushed continuously, and the service was not accumulating unmerged data or refresh state in memory.
 
-![Memory Usage](Screenshot 2026-07-21 at 10.42.10.png)
+![Memory Usage](memory-usage.png)
 
 ## Summary
 

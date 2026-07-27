@@ -25,7 +25,7 @@ This chart shows how much CPU the read service used while serving the continuous
 
 Although the service had **16 CPU cores** provisioned, CPU usage stayed far below that limit, usually well under a single core. That is the key point: ClickHouse served the workload with substantial headroom, even while the raw table kept growing and queries continued to run throughout the benchmark.
 
-![CPU Usage](Screenshot 2026-07-21 at 10.46.36.png)
+![CPU Usage](cpu-usage.png)
 
 ## 2. Queries/second
 
@@ -33,7 +33,7 @@ This chart shows the continuous query activity on the read service.
 
 The workload runs steadily throughout the benchmark. The dashboard and drill-down queries are sent on a fixed schedule while ingest continues in the background. The important point is that query execution remains regular and stable; the read service is not backing up or falling behind.
 
-![Queries/second](Screenshot 2026-07-21 at 10.46.17.png)
+![Queries/second](queries-per-second.png)
 
 ## 3. Selected bytes/second
 
@@ -41,7 +41,7 @@ This chart shows the amount of data selected by the read workload over time.
 
 As the benchmark progresses, the raw table grows larger, and the drill-down queries touch more data. The periodic spikes reflect those scheduled reads. Even with increasing selected bytes, CPU usage remains low, showing that ClickHouse can process the read workload efficiently without needing much of the provisioned read capacity.
 
-![Selected Bytes/second](Screenshot 2026-07-21 at 10.46.53.png)
+![Selected Bytes/second](selected-bytes-per-second.png)
 
 ## 4. Selected rows/second
 
@@ -49,7 +49,7 @@ This chart shows the number of rows selected by the read workload.
 
 The same pattern appears here: scheduled query bursts become larger as the dataset grows, especially for raw-data drill-downs. ClickHouse still keeps query execution efficient because the raw `MergeTree` table is sorted for the drill-down filters and the dashboard workload reads from pre-aggregated data.
 
-![Selected Rows/second](Screenshot 2026-07-21 at 10.47.42.png)
+![Selected Rows/second](selected-rows-per-second.png)
 
 ## 5. Memory usage
 
@@ -57,7 +57,7 @@ This chart shows tracked memory usage on the read service.
 
 Memory rises as the workload warms up and then stabilizes around the available working set. The important signal is that memory usage does not grow without bound as the table grows. The read service reaches a steady operating range and continues serving queries from there.
 
-![Memory Usage](Screenshot 2026-07-21 at 10.47.11.png)
+![Memory Usage](memory-usage.png)
 
 ## 6. In-memory caches
 
@@ -65,7 +65,7 @@ This chart shows the in-memory cache footprint on the read service.
 
 The cache warms up during the first part of the run and then stays broadly stable. That is expected for a long-running analytical service: frequently accessed data and metadata remain hot, helping repeated dashboard and drill-down queries stay fast.
 
-![In-Memory Caches](Screenshot 2026-07-21 at 10.47.24.png)
+![In-Memory Caches](in-memory-caches.png)
 
 ## Summary
 
