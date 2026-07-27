@@ -17,7 +17,7 @@ An application inserts mixed event data into `events_in`, a table using the
 The table stores none of the source rows. Instead, every inserted block triggers
 three [materialized views](https://clickhouse.com/docs/materialized-view/incremental-materialized-view), each receiving the same block independently.
 
-![Fan out the incoming block](assets/Blog-Snowflake-response-p2-02-animation-01.gif)
+![Fan out the incoming block](assets/animation-01.gif)
 
 This makes the `Null` table a lightweight ingestion entry point that fans one
 incoming stream out to multiple processing paths.
@@ -33,7 +33,7 @@ In this example, the first view:
 - projects only the `detail` column;
 - inserts the resulting block into `paid_orders`.
 
-![Filter and project in each materialized view](assets/Blog-Snowflake-response-p2-02-animation-02.gif)
+![Filter and project in each materialized view](assets/animation-02.gif)
 
 The other views independently route sign-ups and application errors to their
 respective target tables.
@@ -56,7 +56,7 @@ respective target tables.
 The target table can continue transforming the materialized view's output before
 anything is stored.
 
-![Enrich and transform during target-table insert](assets/Blog-Snowflake-response-p2-02-animation-03.gif)
+![Enrich and transform during target-table insert](assets/animation-03.gif)
 
 The `paid_orders` schema demonstrates several native transformation mechanisms:
 
