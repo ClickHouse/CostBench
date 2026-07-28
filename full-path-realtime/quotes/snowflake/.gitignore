@@ -17,7 +17,6 @@ _credentials_aws.txt
 # --- Runner output / logs (regenerated each run) ---
 out/
 ingest.log
-*.log
 
 # --- Local / generated ---
 __pycache__/
