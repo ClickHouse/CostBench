@@ -291,16 +291,16 @@ def build(name, vs, out_dir, dpi, benchmark_tier=None):
         d = _existing(IT_DASH)
         return None if not d else \
             ["render_latency.py", *d, "--out", str(out / "it_dashboard_smooth.png"),
-             "--smooth", "7", "--no-raw", "--yscale", "linear", *dpi_args,
-             "--title", "Dashboard latency vs volume: ClickHouse vs Snowflake IT — 7-pt median (linear)",
+             "--smooth", "7", "--no-raw", "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Dashboard latency vs volume: ClickHouse vs Snowflake IT — 7-pt median (linear axes)",
              "--query-labels", DASH_LABELS]
 
     if name == "it_drilldown_smooth":
         r = _existing(IT_DRILL)
         return None if not r else \
             ["render_latency.py", *r, "--out", str(out / "it_drilldown_smooth.png"),
-             "--smooth", "5", "--no-raw", "--yscale", "linear", *dpi_args,
-             "--title", "Drilldown latency vs volume: ClickHouse vs Snowflake IT — 5-pt median (linear)",
+             "--smooth", "5", "--no-raw", "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Drilldown latency vs volume: ClickHouse vs Snowflake IT — 5-pt median (linear axes)",
              "--query-labels", DRILL_LABELS]
 
     if name == "it_lag":

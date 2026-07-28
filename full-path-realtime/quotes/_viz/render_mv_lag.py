@@ -52,6 +52,13 @@ VENDOR_COLOR = {
     "Snowflake IT (raw)":       "#FF8AD8",
 }
 
+# Interactive warehouses / interactive MVs are drawn in light purple, standard ones in the
+# Snowflake blue. The vendor here comes from the FILENAME, which cannot say which variant a
+# freshness series belongs to — so the caller declares it via --mv-kind (the T2 driver passes
+# 'interactive MV'). Explicit beats guessing from a path.
+INTERACTIVE_COLOR = "#A259FF"
+_INTERACTIVE_RE = re.compile(r"\binteractive\b|\biv\b|\bit\b", re.I)
+
 # Map the NAME column of an INTERACTIVE_TABLE_REFRESH_HISTORY dump to a series label.
 IT_LABELS = {
     "QUOTES_DAILY_IT": "Snowflake IT (aggregate)",  # (sym,day) rollup, 1-min target lag
@@ -361,6 +368,8 @@ def main():
     for v in sorted(series, key=lambda x: (order.index(x) if x in order else 99)):
         xs, ys = series[v]
         color = VENDOR_COLOR.get(v, "#FFFFFF")
+        if v == "Snowflake" and args.mv_kind and _INTERACTIVE_RE.search(args.mv_kind):
+            color = INTERACTIVE_COLOR
         # y in minutes for readability
         ym = [y / 60.0 for y in ys]
         if args.smooth and args.smooth > 1 and len(ym) >= 3:

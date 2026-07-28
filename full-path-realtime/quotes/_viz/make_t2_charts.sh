@@ -9,6 +9,8 @@
 #   t2_drilldown_vs_ch_linear         drilldown (2-query) vs ClickHouse
 #   t2_mv_lag_linear                  interactive-MV freshness lag vs ClickHouse (moving average)
 #   t2_dashboard_fallback_linear      per-query: interactive execution vs 5s-timeout fallback vs CH
+#   t2_dash_mvstd_breakdown_linear    compile-vs-execute stacked area, seconds
+#   t2_dash_mvstd_breakdown_share_linear   same, as a share of total latency
 #   storage_ch_sf                     on-disk footprint: CH vs Snowflake IT (raw + interactive MV)
 #
 # Inputs (collect first): snowflake/results/t2/{dashboard_imv_iv,dashboard_raw_iv,dashboard_mv_std,
@@ -23,6 +25,10 @@ TEST=_test; OUT=_out/t2
 mkdir -p "$TEST" "$OUT"
 DASH="Single-symbol summary;Watchlist summary;Top movers;Daily activity"
 DRILL="Hourly OHLCV bars;Risk & liquidity (B7)"
+# Cap every volume axis at 100B raw rows. Past that the stream had finished, so the last
+# ~24 iterations all sit at 113.2B and pile up on one x with the interactive MV consolidated
+# to 8 partitions — an unrepresentative flat tail that distorts the right edge of each chart.
+MAXROWS=100e9
 
 command -v uv >/dev/null 2>&1 || { echo "ERROR: 'uv' not on PATH (needed by the renderers)." >&2; exit 1; }
 newest(){ ls -t $1 2>/dev/null | head -1 || true; }
@@ -72,30 +78,43 @@ PY
 
 echo "rendering -> $OUT"
 uv run render_latency.py "$TEST/dashboard_clickhouse.jsonl" "$TEST/dash_mv_std_snowflake.jsonl" \
-  --smooth 7 --no-raw --xscale linear --yscale linear --query-labels "$DASH" \
+  --smooth 7 --no-raw --xscale linear --yscale linear --max-rows "$MAXROWS" --query-labels "$DASH" \
   --out "$OUT/t2_dash_mvstd_vs_ch_linear.png" \
   --title "Dashboard (vs MV) STANDARD wh vs ClickHouse — latency vs volume (linear axes)"
 
 uv run render_latency.py "$TEST/dashboard_clickhouse.jsonl" "$TEST/dash_mv_std_plus5_snowflake.jsonl" \
-  --smooth 7 --no-raw --xscale linear --yscale linear --query-labels "$DASH" \
+  --smooth 7 --no-raw --xscale linear --yscale linear --max-rows "$MAXROWS" --query-labels "$DASH" \
   --out "$OUT/t2_dash_mvstd_plus5_vs_ch_linear.png" \
   --title "Dashboard MV via fallback (+5s) vs ClickHouse — latency vs volume (linear axes)"
 
 uv run render_latency.py "$TEST/drilldown_clickhouse.jsonl" "$TEST/drill_iv_snowflake.jsonl" \
-  --smooth 5 --no-raw --xscale linear --yscale linear --query-labels "$DRILL" \
+  --smooth 5 --no-raw --xscale linear --yscale linear --max-rows "$MAXROWS" --query-labels "$DRILL" \
   --out "$OUT/t2_drilldown_vs_ch_linear.png" \
   --title "Drilldown (vs raw) vs ClickHouse — latency vs volume (linear axes)"
 
 uv run render_mv_lag.py "$TEST/mv_latency_snowflake.jsonl" --volume-from "$TEST/dash_mv_iv_snowflake.jsonl" \
-  --smooth 61 --smooth-mode mean --no-raw --xscale linear --mv-kind "interactive MV" \
+  --smooth 61 --smooth-mode mean --no-raw --xscale linear --xmax "$MAXROWS" --mv-kind "interactive MV" \
   --out "$OUT/t2_mv_lag_linear.png" \
   --title "Interactive-MV freshness lag vs data volume: Snowflake vs ClickHouse (T2 RUN8)"
 
 uv run render_dashboard_fallback.py --interactive "$TEST/dash_mv_iv_snowflake.jsonl" \
   --standard "$TEST/dash_mv_std_snowflake.jsonl" --clickhouse "$TEST/dashboard_clickhouse.jsonl" \
-  --timeout 5 --xscale linear --yscale linear --query-labels "$DASH" \
+  --timeout 5 --xscale linear --yscale linear --max-rows "$MAXROWS" --drop-outliers \
+  --query-labels "$DASH" \
   --out "$OUT/t2_dashboard_fallback_linear.png" \
   --title "Dashboard MV: interactive execution vs 5s-timeout fallback vs ClickHouse (T2 RUN8, linear)"
+
+# Latency broken into compilation vs execution (stacked area). Only meaningful on the
+# backfilled result files, which carry compilation_time/execution_time alongside result.
+uv run render_time_breakdown.py "$TEST/dash_mv_std_snowflake.jsonl" \
+  --smooth 7 --max-rows "$MAXROWS" --query-labels "$DASH" \
+  --out "$OUT/t2_dash_mvstd_breakdown_linear.png" \
+  --title "Dashboard on the interactive MV (standard wh): where the latency goes"
+
+uv run render_time_breakdown.py "$TEST/dash_mv_std_snowflake.jsonl" \
+  --smooth 7 --share --max-rows "$MAXROWS" --query-labels "$DASH" \
+  --out "$OUT/t2_dash_mvstd_breakdown_share_linear.png" \
+  --title "Dashboard on the interactive MV (standard wh): share of latency by phase"
 
 # Storage — T2 is pure-streaming interactive tables (no standard-table split, unlike T1).
 # ClickHouse bytes/rows are reused from the T1 run (same ~113B-row co-scaled dataset); see the
