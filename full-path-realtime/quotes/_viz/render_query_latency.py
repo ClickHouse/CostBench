@@ -20,6 +20,7 @@ Style matches render_latency.py / ../_viz2.
 """
 import sys
 import json
+import re
 import glob
 import argparse
 import statistics as st
@@ -61,6 +62,25 @@ def vendor_of(system: str) -> str:
     return system or "unknown"
 
 
+# Interactive vs standard warehouse is recorded ONLY in `machine` ('Interactive Small',
+# 'MV iv', 'raw iv', 'IT Small (stream)'), never in `system` — which is always
+# 'Snowflake (AWS)'. So the interactive purple has to be selected off machine.
+# 'MV std' and 'MV std +5s fallback' are STANDARD-warehouse and must not match: the +5s
+# series is the standard warehouse's latency plus the interactive cap as a penalty.
+_INTERACTIVE_RE = re.compile(r"\binteractive\b|\biv\b|\bit\b", re.I)
+
+
+def is_interactive(rec) -> bool:
+    return bool(_INTERACTIVE_RE.search(str(rec.get("machine") or "")))
+
+
+def vendor_of_record(rec) -> str:
+    """vendor_of() refined by warehouse type, so an interactive-warehouse Snowflake series
+    gets the 'Snowflake IT' palette entry (light purple) instead of the standard blue."""
+    v = vendor_of(rec.get("system", ""))
+    return "Snowflake IT" if v == "Snowflake" and is_interactive(rec) else v
+
+
 def tier_of(rec):
     machine = str(rec.get("machine") or "").strip()
     cs = rec.get("cluster_size")
@@ -97,7 +117,7 @@ def workload_stats(glob_pat, agg):
         rows = [json.loads(l) for l in open(path) if l.strip()]
         if not rows:
             continue
-        v = vendor_of(rows[0].get("system", ""))
+        v = vendor_of_record(rows[0])
         # "timeout" (interactive 5s cap) -> 5.0s (lower bound) so it counts in the stat
         pooled = [(5.0 if x[0] == "timeout" else x[0]) for r in rows for x in r.get("result", [])
                   if x and x[0] is not None]

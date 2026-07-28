@@ -8,7 +8,7 @@ Dashboard end-to-end latency: interactive-warehouse timeout + standard-warehouse
 
 Combines the dashboard-vs-MV run on the INTERACTIVE warehouse with the same run on the STANDARD
 warehouse, matched by iteration number. For each (iteration, query):
-  - interactive query EXECUTED  -> plot its latency,           PINK dot  (ran on interactive wh)
+  - interactive query EXECUTED  -> plot its latency,         PURPLE dot  (ran on interactive wh)
   - interactive query TIMED OUT -> take the SAME iteration from the standard file, add the 5s
                                    interactive timeout,        BLUE dot  (fell back to standard)
 So the y value is the real user-experienced latency, and the colour says which path it took.
@@ -42,7 +42,10 @@ matplotlib.rcParams["axes.titleweight"] = "bold"
 
 BACKGROUND_COLOR = "#2B2B2B"
 GRID_COLOR = "#4A4A4A"
-C_INTERACTIVE = "#FFA6D2"   # light pink — query ran on the interactive warehouse
+C_INTERACTIVE = "#A259FF"   # light purple — query ran on the INTERACTIVE warehouse.
+                            # Was #FFA6D2 pink, which sat at OKLab dE 4.7 from the blue
+                            # fallback series under protanopia (floor is 8) — the two
+                            # series were indistinguishable for protan viewers.
 C_FALLBACK    = "#29B5E8"   # blue — timed out on interactive, ran on the standard wh (+5s)
 C_CLICKHOUSE  = "#FDFF88"   # yellow — ClickHouse comparison line
 C_LINE        = "#8A8F98"   # faint connector
@@ -95,9 +98,21 @@ def main():
     ap.add_argument("--timeout", type=float, default=5.0, help="interactive statement timeout added on fallback")
     ap.add_argument("--query-labels", default=None, help="';'-separated subplot titles, in query order")
     ap.add_argument("--min-rows", type=float, default=1.0)
+    ap.add_argument("--max-rows", type=float, default=float("inf"), metavar="N",
+                    help="Drop points above this row count, e.g. 100e9.")
     ap.add_argument("--xscale", choices=["log", "linear"], default="log")
     ap.add_argument("--yscale", choices=["log", "linear"], default="log")
     ap.add_argument("--no-connect", action="store_true", help="don't draw the faint connector line")
+    ap.add_argument("--drop-outliers", action="store_true",
+                    help="Exclude points above the Tukey upper fence (Q3 + 1.5*IQR), computed "
+                         "per subplot. The count, the threshold and the true maximum are "
+                         "annotated on the subplot — the excursions are removed from the plot, "
+                         "not from the record.")
+    ap.add_argument("--ymax-percentile", type=float, default=None, metavar="P",
+                    help="clip the y-axis to this percentile per subplot (e.g. 99). Points above "
+                         "it are NOT dropped: they are pinned to the top edge as carets and the "
+                         "count plus the true maximum are annotated. Use on linear axes, where a "
+                         "single compile-time outlier (up to 874s here) flattens everything else.")
     ap.add_argument("-o", "--out")
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--title", default=None)
@@ -118,7 +133,7 @@ def main():
     unresolved = 0
     for q in range(nq):
         for it, raw, res in iv:
-            if raw < args.min_rows:
+            if raw < args.min_rows or raw > args.max_rows:
                 continue
             v = cell(res, q)
             if v is None:
@@ -142,21 +157,74 @@ def main():
         ax = axes[q // cols][q % cols]
         ax.set_facecolor(BACKGROUND_COLOR)
         pts = sorted(per_q[q])
+        n_dropped, fence, dropped_max = 0, None, None
+        if pts and args.drop_outliers and len(pts) >= 8:
+            ys_all = sorted(p[1] for p in pts)
+            n = len(ys_all)
+            q1, q3 = ys_all[n // 4], ys_all[3 * n // 4]
+            fence = q3 + 1.5 * (q3 - q1)
+            outliers = [p for p in pts if p[1] > fence]
+            if outliers:
+                n_dropped = len(outliers)
+                dropped_max = max(p[1] for p in outliers)
+                pts = [p for p in pts if p[1] <= fence]
+        clip_at, n_over, true_max = None, 0, None
+        if pts and args.ymax_percentile is not None:
+            ordered = sorted(p[1] for p in pts)
+            k = min(len(ordered) - 1, int(round(args.ymax_percentile / 100.0 * (len(ordered) - 1))))
+            clip_at = ordered[k]
+            true_max = ordered[-1]
+            n_over = sum(1 for p in pts if p[1] > clip_at)
         if pts:
             xs = [p[0] for p in pts]
             ys = [p[1] for p in pts]
             cs = [C_INTERACTIVE if p[2] == "iv" else C_FALLBACK for p in pts]
             if not args.no_connect:
                 ax.plot(xs, ys, lw=0.8, color=C_LINE, alpha=0.5, zorder=2)
-            ax.scatter(xs, ys, c=cs, s=14, edgecolor="black", linewidth=0.3, zorder=3)
+            if clip_at is None:
+                ax.scatter(xs, ys, c=cs, s=14, edgecolor="black", linewidth=0.3, zorder=3)
+            else:
+                inside = [(x, y, c) for x, y, c in zip(xs, ys, cs) if y <= clip_at]
+                above = [(x, c) for x, y, c in zip(xs, ys, cs) if y > clip_at]
+                if inside:
+                    ax.scatter([p[0] for p in inside], [p[1] for p in inside],
+                               c=[p[2] for p in inside], s=14, edgecolor="black",
+                               linewidth=0.3, zorder=3)
+                # Pinned carets, so a clipped point is still visibly present at its x.
+                if above:
+                    ax.scatter([p[0] for p in above], [clip_at] * len(above),
+                               c=[p[1] for p in above], s=44, marker="^",
+                               edgecolor="white", linewidth=0.6, zorder=5, clip_on=False)
         # ClickHouse comparison line
         chp = sorted((raw, cell(res, q)) for _, raw, res in ch
-                     if raw >= args.min_rows and isinstance(cell(res, q), (int, float)))
+                     if args.min_rows <= raw <= args.max_rows
+                     and isinstance(cell(res, q), (int, float)))
         if chp:
             ax.plot([p[0] for p in chp], [p[1] for p in chp], lw=2.0,
                     color=C_CLICKHOUSE, zorder=4)
         ax.set_xscale(args.xscale)
         ax.set_yscale(args.yscale)
+        if n_dropped:
+            # Never a silent cap: state how many points were removed and how far out they went.
+            ax.text(0.015, 0.97,
+                    f"{n_dropped} outliers excluded (> {human_secs(round(fence, 1))}, "
+                    f"max {human_secs(round(dropped_max, 1))})",
+                    transform=ax.transAxes, ha="left", va="top", fontsize=8.5,
+                    color="white", zorder=6,
+                    bbox=dict(boxstyle="round,pad=0.3", facecolor=BACKGROUND_COLOR,
+                              edgecolor=GRID_COLOR, alpha=0.9))
+        if clip_at is not None:
+            ax.set_ylim(0 if args.yscale == "linear" else None, clip_at * 1.04)
+            if n_over:
+                # Never a silent cap: say how many points are off-scale and how far.
+                # Just below the caret row, not on it and not at the bottom: the carets own the
+                # top edge in this mode and the ClickHouse baseline owns y=0.
+                ax.text(0.015, 0.90,
+                        f"▲ {n_over} above {human_secs(clip_at)} (max {human_secs(true_max)})",
+                        transform=ax.transAxes, ha="left", va="top", fontsize=8.5,
+                        color="white", zorder=6,
+                        bbox=dict(boxstyle="round,pad=0.3", facecolor=BACKGROUND_COLOR,
+                                  edgecolor=GRID_COLOR, alpha=0.9))
         ax.set_title(labels[q], color="white", fontsize=12, pad=8)
         ax.xaxis.set_major_formatter(FuncFormatter(human_rows))
         ax.yaxis.set_major_formatter(FuncFormatter(human_secs))

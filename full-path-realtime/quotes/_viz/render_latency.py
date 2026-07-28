@@ -24,6 +24,7 @@ Style matches ../_viz2 (dark theme, Inter, vendor color map).
 """
 import sys
 import json
+import re
 import math
 import argparse
 
@@ -66,6 +67,25 @@ def vendor_of(system: str) -> str:
     return system or "unknown"
 
 
+# Interactive vs standard warehouse is recorded ONLY in `machine` ('Interactive Small',
+# 'MV iv', 'raw iv', 'IT Small (stream)'), never in `system` — which is always
+# 'Snowflake (AWS)'. So the interactive purple has to be selected off machine.
+# 'MV std' and 'MV std +5s fallback' are STANDARD-warehouse and must not match: the +5s
+# series is the standard warehouse's latency plus the interactive cap as a penalty.
+_INTERACTIVE_RE = re.compile(r"\binteractive\b|\biv\b|\bit\b", re.I)
+
+
+def is_interactive(rec) -> bool:
+    return bool(_INTERACTIVE_RE.search(str(rec.get("machine") or "")))
+
+
+def vendor_of_record(rec) -> str:
+    """vendor_of() refined by warehouse type, so an interactive-warehouse Snowflake series
+    gets the 'Snowflake IT' palette entry (light purple) instead of the standard blue."""
+    v = vendor_of(rec.get("system", ""))
+    return "Snowflake IT" if v == "Snowflake" and is_interactive(rec) else v
+
+
 def tier_of(rec: dict) -> str:
     """Human warehouse/cluster tier for the legend. An integer cluster_size (e.g.
     ClickHouse replica count) is appended as '×N'; string tiers (Snowflake '2.7',
@@ -86,7 +106,7 @@ def load_series(path):
             if not line:
                 continue
             rec = json.loads(line)
-            v = vendor_of(rec.get("system", ""))
+            v = vendor_of_record(rec)
             entry = by_vendor.setdefault(v, {"tier": tier_of(rec), "points": []})
             if not entry["tier"]:
                 entry["tier"] = tier_of(rec)
@@ -160,6 +180,9 @@ def main():
                     help="';'-separated subplot titles, in queries-file order.")
     ap.add_argument("--min-rows", type=float, default=1.0,
                     help="Drop points below this row count (log x can't show 0).")
+    ap.add_argument("--max-rows", type=float, default=float("inf"), metavar="N",
+                    help="Drop points above this row count, e.g. 100e9. Applied before the "
+                         "shared-window calculation, so the cap also bounds that window.")
     ap.add_argument("--smooth", type=int, default=0, metavar="W",
                     help="Rolling-median window (odd, e.g. 7). Draws raw faint + a bold "
                          "trend line. 0 = raw lines only.")
@@ -199,7 +222,8 @@ def main():
     if not args.full_range and len(series) > 1:
         extents = []
         for e in series.values():
-            rr = [raw for raw, _ in e["points"] if raw >= args.min_rows]
+            rr = [raw for raw, _ in e["points"]
+                  if args.min_rows <= raw <= args.max_rows]
             if rr:
                 extents.append((min(rr), max(rr)))
         if len(extents) == len(series):
@@ -227,7 +251,7 @@ def main():
             color = VENDOR_COLOR.get(v, "#FFFFFF")
             pts = []
             for raw, res in series[v]["points"]:
-                if raw < args.min_rows or qi >= len(res):
+                if raw < args.min_rows or raw > args.max_rows or qi >= len(res):
                     continue
                 lat = res[qi]
                 if isinstance(lat, list):  # spec stores each try as [val]; flatten

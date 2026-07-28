@@ -1,13 +1,15 @@
 {
-  "note": "Current/active compressed on-disk size per system. Excludes Snowflake time-travel (1.06 TiB) + fail-safe (787 GiB) and Databricks time-travel — i.e. the active footprint only, the apples-to-apples comparison. Snowflake MV bytes cover 14.88M physical fragments over 1.72M logical (sym,day) groups.",
   "raw": [
-    {"system": "ClickHouse", "tier": "64GiB ×1",   "rows": 113219565734, "bytes": 388514215808},
-    {"system": "Snowflake",  "tier": "Gen2 Small",  "rows": 105546024533, "bytes": 626411195904},
-    {"system": "Databricks", "tier": "X-Small",      "rows": 102602170057, "bytes": 704753961457}
+    {"system": "ClickHouse (AWS)", "bytes": 388514215808, "rows": 113219565734},
+     {"system": "Snowflake", "bytes": 3975336993792,"rows": 226439131468, "details": {"standard": {"bytes": 752651995648, "rows": 113219565734}, "interactive": {"bytes": 3222684998144, "rows": 113219565734}}}
   ],
   "mv": [
-    {"system": "ClickHouse", "tier": "64GiB ×1",   "rows": 1884551, "bytes": 60894528},
-    {"system": "Snowflake",  "tier": "Gen2 Small",  "rows": 1719669, "bytes": 478583808},
-    {"system": "Databricks", "tier": "X-Small",      "rows": 1667846, "bytes": 74044112}
-  ]
+    {"system": "ClickHouse (AWS)", "bytes": 60894528,  "rows": 1884551},
+    {
+      "system": "Snowflake",
+      "bytes": 104871424,
+      "rows": 1858616
+    }
+  ],
+    "note": "Storage size represents active compressed on-disk data. ClickHouse metrics are derived from system.parts (bytes_on_disk, rows); Snowflake storage comes from INFORMATION_SCHEMA.TABLE_STORAGE_METRICS and row counts from INFORMATION_SCHEMA.TABLES. The raw tables section on Snowflake is the sum of the raw standard and interactive tables."
 }
