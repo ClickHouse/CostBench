@@ -169,47 +169,49 @@ def build(name, vs, out_dir, dpi, benchmark_tier=None):
     if name == "dashboard":
         d = _dash(vs)
         return None if not d else \
-            ["render_latency.py", *d, "--out", str(out / "dashboard.png"), *dpi_args,
-             "--title", "Dashboard query latency vs data volume (vs MV, ~1M EPS)",
+            ["render_latency.py", *d, "--out", str(out / "dashboard.png"),
+             "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Dashboard query latency vs data volume (vs MV, ~1M EPS) — linear axes",
              "--query-labels", DASH_LABELS]
 
     if name == "dashboard_smooth":
         d = _dash(vs)
         return None if not d else \
             ["render_latency.py", *d, "--out", str(out / "dashboard_smooth.png"),
-             "--smooth", "7", "--no-raw", *dpi_args,
-             "--title", "Dashboard query latency vs volume (vs MV) — 7-pt median",
+             "--smooth", "7", "--no-raw", "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Dashboard query latency vs volume (vs MV) — 7-pt median, linear axes",
              "--query-labels", DASH_LABELS]
 
     if name == "dashboard_smooth_linear":
         d = _dash(vs)
         return None if not d else \
             ["render_latency.py", *d, "--out", str(out / "dashboard_smooth_linear.png"),
-             "--smooth", "7", "--no-raw", "--yscale", "linear", *dpi_args,
-             "--title", "Dashboard query latency vs volume (vs MV) — 7-pt median, linear y",
+             "--smooth", "7", "--no-raw", "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Dashboard query latency vs volume (vs MV) — 7-pt median, linear axes",
              "--query-labels", DASH_LABELS]
 
     if name == "drilldown":
         r = _drill(vs)
         return None if not r else \
-            ["render_latency.py", *r, "--out", str(out / "drilldown.png"), *dpi_args,
-             "--title", "Drilldown query latency vs data volume (vs raw table, ~1M EPS)",
+            ["render_latency.py", *r, "--out", str(out / "drilldown.png"),
+             "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Drilldown query latency vs data volume (vs raw table, ~1M EPS) — linear axes",
              "--query-labels", DRILL_LABELS]
 
     if name == "drilldown_smooth":
         r = _drill(vs)
         return None if not r else \
             ["render_latency.py", *r, "--out", str(out / "drilldown_smooth.png"),
-             "--smooth", "5", "--no-raw", *dpi_args,
-             "--title", "Drilldown query latency vs volume (vs raw) — 5-pt median",
+             "--smooth", "5", "--no-raw", "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Drilldown query latency vs volume (vs raw) — 5-pt median, linear axes",
              "--query-labels", DRILL_LABELS]
 
     if name == "drilldown_smooth_linear":
         r = _drill(vs)
         return None if not r else \
             ["render_latency.py", *r, "--out", str(out / "drilldown_smooth_linear.png"),
-             "--smooth", "5", "--no-raw", "--yscale", "linear", *dpi_args,
-             "--title", "Drilldown query latency vs volume (vs raw) — 5-pt median, linear y",
+             "--smooth", "5", "--no-raw", "--xscale", "linear", "--yscale", "linear", *dpi_args,
+             "--title", "Drilldown query latency vs volume (vs raw) — 5-pt median, linear axes",
              "--query-labels", DRILL_LABELS]
 
     if name == "mv_lag":

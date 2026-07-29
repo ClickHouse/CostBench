@@ -38,6 +38,8 @@ command -v uv >/dev/null 2>&1 || {
 [ -d "$CH" ] || { echo "ERROR: ClickHouse baseline dir not found: $CH" >&2; fail=1; }
 [ "$fail" -eq 0 ] || exit 1
 mkdir -p "$TEST" "$OUT"
+# Keep in sync with DASH_LABELS in generate.py (subplot titles, in queries-file order).
+DASH_LABELS="Single-symbol summary;Watchlist summary;Top movers;Daily activity"
 
 newest() { ls -t $1 2>/dev/null | head -1; }   # newest file matching a glob (unquoted on purpose)
 staged=0
@@ -94,6 +96,22 @@ case "$TN" in
   t1|t2|t1v*|t2v*) TIER_ARG=(--benchmark-tier T1) ;;
 esac
 uv run generate.py --vendors $VENDORS --charts $CHARTS --out-dir "$OUT" "${TIER_ARG[@]}"
+
+# Compile-vs-execute breakdown (stacked area). Needs a BACKFILLED dashboard input — one that
+# carries compilation_time/execution_time beside result (see snowflake/t2/backfill_timings.py).
+BD_SRC="$TEST/dashboard_snowflake.jsonl"
+[ "$TN" != t0 ] && BD_SRC="$TEST/dashboard_snowflake_it.jsonl"
+if [ -f "$BD_SRC" ] && grep -q '"compilation_time"' "$BD_SRC"; then
+  echo "rendering compile-vs-execute breakdown -> $OUT/${TN}_dash_breakdown*.png"
+  uv run render_time_breakdown.py "$BD_SRC" --smooth 7 --query-labels "$DASH_LABELS" \
+    --out "$OUT/${TN}_dash_breakdown_linear.png" \
+    --title "$(echo "$TN" | tr 'a-z' 'A-Z') dashboard: where the latency goes"
+  uv run render_time_breakdown.py "$BD_SRC" --smooth 7 --share --query-labels "$DASH_LABELS" \
+    --out "$OUT/${TN}_dash_breakdown_share_linear.png" \
+    --title "$(echo "$TN" | tr 'a-z' 'A-Z') dashboard: share of latency by phase"
+else
+  echo "  - breakdown skipped: $BD_SRC is absent or not backfilled (no compilation_time)"
+fi
 
 # Combined T0 vs T1 storage comparison (when both result dirs exist).
 SF_T0="$HERE/../snowflake/results/t0/storage.json"
