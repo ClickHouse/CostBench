@@ -15,7 +15,7 @@ This rewrites each arm's JSONL from an ACCOUNT_USAGE.QUERY_HISTORY extract:
     "execution_time"    -> EXECUTION_TIME, seconds, same shape (null where the query was
                            killed during compilation and never executed)
 
-Input CSVs come from t2/extract_query_history.sql blocks 1-4. Usage:
+Input CSVs come from analysis/extract_query_history.sql (one block per arm). Usage:
 
     python3 t2/backfill_timings.py ~/Downloads/*.csv            # dry run, validates only
     python3 t2/backfill_timings.py ~/Downloads/*.csv --write     # emit *.backfilled.jsonl
@@ -100,9 +100,17 @@ ARMS = [
         "dir": "t0", "jsonl": "drilldown_20260617T155914Z.jsonl",
         "rows": 80, "iterations": 40, "timeouts": 0,
     },
-    # T0 dashboard (t0/dashboard_20260609T154304Z.jsonl, 652 rows / 163 iters) is absent from
-    # the London account — it ran 2026-06-09 on the Paris account. Add it here once its
-    # hashes are known; until then the script cannot identify that extract and will refuse it.
+    # T0 dashboard lives on the PARIS account, in schema STOCKHOUSE on a standard Gen2 Small
+    # warehouse — a different schema AND warehouse from the T0 drilldown arm above, which is
+    # on London. The two T0 arms are not interchangeable.
+    {
+        "name": "t0_dashboard",
+        "warehouse": "BENCH2COST_SMALL_GEN2",
+        "hashes": ["5a1b576018ce7df649dc5e0ad6bd0d76", "c7ae3cc7962c11bc97381e6df56b0e3a",
+                   "ba1f0eb3db5d08288aa50d5b8b311afa", "4023099af69dc938d721a9191a465449"],
+        "dir": "t0", "jsonl": "dashboard_20260609T154304Z.jsonl",
+        "rows": 652, "iterations": 163, "timeouts": 0,
+    },
 ]
 
 
@@ -153,7 +161,7 @@ def identify(rows, path):
 
     if "Q" not in rows[0]:
         raise Fail(f"{path.name}: no QUERY_HASH/WAREHOUSE_NAME and no Q column — "
-                   f"cannot identify the arm; re-export with extract_query_history.sql")
+                   f"cannot identify the arm; re-export with analysis/extract_query_history.sql")
     sig = (len(rows), len({int(r["Q"]) for r in rows}),
            sum(1 for r in rows if r["ERROR_CODE"].strip() in TIMEOUT_CODES))
     hits = [a for a in ARMS if (a["rows"], len(a["hashes"]), a["timeouts"]) == sig]
@@ -338,12 +346,15 @@ def process(path, write):
               f"({st.median(new_v) / st.median(old_v):.1f}x)   [over the {len(new_v)} "
               f"non-timeout positions]")
     if trip:
-        c = [t[1] for t in trip if t[1] is not None]
-        e = [t[2] for t in trip if t[2] is not None]
+        # Median of each per-row SHARE, not a ratio of independent medians:
+        # median(elapsed) != median(compile) + median(exec), so the latter reads as though
+        # time were missing when it is not. These three sum to ~100% by construction.
         r = [t[0] for t in trip]
-        print(f"  same rows : elapsed {st.median(r):7.3f}s = compile {st.median(c):7.3f}s "
-              f"({100 * st.median(c) / st.median(r):.0f}%) + exec {st.median(e):7.3f}s "
-              f"({100 * st.median(e) / st.median(r):.0f}%)")
+        cs = st.median([(t[1] or 0) / t[0] for t in trip if t[0] > 0])
+        es = st.median([(t[2] or 0) / t[0] for t in trip if t[0] > 0])
+        os_ = st.median([(t[0] - (t[1] or 0) - (t[2] or 0)) / t[0] for t in trip if t[0] > 0])
+        print(f"  per row   : median elapsed {st.median(r):7.3f}s  ->  compile {100 * cs:4.1f}%  "
+              f"exec {100 * es:4.1f}%  other {100 * os_:4.1f}%")
     n_to = sum(1 for rec in new for v in rec["result"] if v[0] == "timeout")
     if n_to:
         tc = [c[0] for rec in new for v, c in zip(rec["result"], rec["compilation_time"])
@@ -363,7 +374,7 @@ def process(path, write):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("csv", nargs="+", type=Path, help="extract CSVs from extract_query_history.sql")
+    ap.add_argument("csv", nargs="+", type=Path, help="extract CSVs from analysis/extract_query_history.sql")
     ap.add_argument("--write", action="store_true",
                     help="emit <name>.backfilled.jsonl beside the original (originals untouched)")
     args = ap.parse_args()
