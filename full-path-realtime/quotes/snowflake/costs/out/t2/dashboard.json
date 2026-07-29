@@ -8,28 +8,28 @@
   "region": "us-east-1",
   "iterations_included": 163,
   "queries_per_iteration": 4,
-  "total_runtime_seconds": 1458.406,
+  "total_runtime_seconds": 14809.515,
   "costs": [
     {
       "tier": "standard",
       "warehouse_size": "Gen2 Small",
       "credits_per_hour": 2.7,
       "credit_price_per_hour": 2.00,
-      "total_compute_cost_usd": 2.18761
+      "total_compute_cost_usd": 22.21427
     },
     {
       "tier": "enterprise",
       "warehouse_size": "Gen2 Small",
       "credits_per_hour": 2.7,
       "credit_price_per_hour": 3.00,
-      "total_compute_cost_usd": 3.28141
+      "total_compute_cost_usd": 33.32141
     },
     {
       "tier": "business_critical",
       "warehouse_size": "Gen2 Small",
       "credits_per_hour": 2.7,
       "credit_price_per_hour": 4.00,
-      "total_compute_cost_usd": 4.37522
+      "total_compute_cost_usd": 44.42854
     }
   ]
 }
