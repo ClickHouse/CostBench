@@ -16,7 +16,7 @@
 # the it_refresh tracker (interactive tables), T2 runs the MV-lag poller (ops/mv_latency.sh) against
 # the interactive MV QUOTES_DAILY_IMV — its live freshness signal is `behind_by` from SHOW
 # MATERIALIZED VIEWS (metadata-only, ~free). Post-hoc credits/refresh history are still under
-# MATERIALIZED_VIEW_REFRESH_HISTORY (metrics_reference.sql §4).
+# MATERIALIZED_VIEW_REFRESH_HISTORY (analysis/metrics_reference.sql §4).
 #
 #   bash ops/start_runners_t2.sh [comment] [machine] [cluster_size]
 #   e.g.  bash ops/start_runners_t2.sh "T2 streaming 1M EPS" "IT (stream)" 1

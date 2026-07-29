@@ -171,7 +171,7 @@ bash ops/stop_experiment.sh
 bash ops/mv_billing.sh 30
 #    -> ingest wh + the two IT REFRESH warehouses (Medium + X-Small) + interactive reader wh credits
 #    (warehouse credits = WAREHOUSE_METERING_HISTORY; if your warehouse names differ from the
-#     script defaults, use the query in metrics_reference.sql)
+#     script defaults, use the query in analysis/metrics_reference.sql)
 ```
 
 - **Interactive-table refresh lag** is tracked by the `it_refresh` runner (per-IT refresh duration +

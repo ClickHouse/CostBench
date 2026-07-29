@@ -131,7 +131,82 @@ SELECT SYSTEM$CLUSTERING_INFORMATION('<ROLLUP>', '(sym, day)');    -- rollup, cl
 
 
 -- =============================================================================
--- 7. CREDITS / COST  (ops/mv_billing.sh; T2 streaming: t2/README.md)
+-- 6b. MICRO-PARTITION COUNT
+-- Two sources, and the difference matters:
+--
+--   (a) QUERY_HISTORY.PARTITIONS_TOTAL — micro-partitions in the tables a query scanned,
+--       vs PARTITIONS_SCANNED = those actually read after pruning. HISTORIZED, so it can be
+--       recovered for a run that has already finished. This is where the T2 RUN8
+--       compile-vs-partition-count table came from (t2/RUN9_PLAN.md section 1) and how the
+--       drilldown's 0.6% pruning (276 of 47,619) was measured.
+--
+--   (b) SYSTEM$CLUSTERING_INFORMATION -> total_partition_count — the table's count RIGHT NOW.
+--       Point-in-time only, never historized, so it must be sampled DURING a run.
+--       Also returns average_depth + the depth histogram (block 6).
+-- =============================================================================
+-- (a) per-query, after the fact: how many partitions existed and how many were read
+SELECT DATE_TRUNC('hour', start_time)      AS hr,
+       COUNT(*)                            AS queries,
+       MEDIAN(partitions_total)            AS med_partitions_total,
+       MEDIAN(partitions_scanned)          AS med_partitions_scanned,
+       ROUND(100 * MEDIAN(partitions_scanned) / NULLIF(MEDIAN(partitions_total), 0), 2) AS pct_scanned,
+       MEDIAN(compilation_time)            AS med_compile_ms,
+       MEDIAN(execution_time)              AS med_exec_ms
+FROM SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY
+WHERE warehouse_name = '<WAREHOUSE>'
+  AND schema_name    = '<SCHEMA>'
+  AND execution_status = 'SUCCESS'      -- a killed query never finished planning; partitions = 0
+  AND start_time >= DATEADD(hour, -<HOURS>, CURRENT_TIMESTAMP())
+GROUP BY 1 ORDER BY 1;
+
+-- (b) the table's count right now (sample DURING a run; not historized). Works on an
+--     interactive table and an interactive MV as well as a normal table. constant_partitions =
+--     partitions where the cluster key has a single value, i.e. already perfectly clustered.
+SELECT PARSE_JSON(SYSTEM$CLUSTERING_INFORMATION('BENCH2COST.<SCHEMA>.<RAW>'))
+         :total_partition_count::int           AS micro_partitions,
+       PARSE_JSON(SYSTEM$CLUSTERING_INFORMATION('BENCH2COST.<SCHEMA>.<RAW>'))
+         :total_constant_partition_count::int  AS constant_partitions;
+
+-- =============================================================================
+-- 6c. REMOTE READ PERCENTAGE  (interactive tables: is the local cache warm?)
+-- The metric Snowflake's interactive-table docs specify: "the best way to monitor whether the
+-- cache is warm is to review the remote read percentage in Snowsight Query Profile ... In ideal
+-- execution scenarios, low-latency queries should have a remote read percentage of 0%."
+--
+-- This is the Query Profile's "Remote disk I/O" — a share of execution TIME. It is NOT
+-- QUERY_HISTORY.PERCENTAGE_SCANNED_FROM_CACHE, which is a share of BYTES. On the T2 RUN8
+-- drilldown the two disagree badly, so do not substitute one for the other.
+--
+-- The sub-values in execution_time_breakdown are ALREADY fractions of total query time, so the
+-- query-level figure is a PLAIN SUM over operators. Do NOT weight by overall_percentage — that
+-- double-discounts and under-reports (verified against the UI: plain sum gives 56.5%, the
+-- weighted version gave 34.9% for query 01c5dcb8-0003-a84a-0003-a22e01126496, and the UI says
+-- 56.5%). All five components below sum to ~100%.
+--
+-- Limits: completed WAREHOUSE queries only, last 14 DAYS. A query killed at a statement timeout
+-- has no operator tree at all, so it returns nothing — such queries are UNKNOWN, not 0%.
+-- The query_id argument cannot be correlated from an outer table, so a set of queries needs a
+-- scripting loop, not a join.
+-- =============================================================================
+SELECT ROUND(100 * SUM(execution_time_breakdown:remote_disk_io::float), 1)   AS remote_read_pct,
+       ROUND(100 * SUM(execution_time_breakdown:processing::float), 1)       AS processing_pct,
+       ROUND(100 * SUM(execution_time_breakdown:local_disk_io::float), 1)    AS local_disk_io_pct,
+       ROUND(100 * SUM(execution_time_breakdown:synchronization::float), 1)  AS sync_pct,
+       ROUND(100 * SUM(execution_time_breakdown:initialization::float), 1)   AS init_pct
+FROM TABLE(GET_QUERY_OPERATOR_STATS('<query_id>'));
+
+-- per operator — which one does the remote reading (expect the TableScan)
+SELECT operator_id, operator_type,
+       execution_time_breakdown:overall_percentage::float          AS pct_of_query,
+       execution_time_breakdown:remote_disk_io::float              AS remote_io_frac,
+       operator_statistics:io:bytes_scanned::number                AS bytes_scanned,
+       operator_statistics:io:percentage_scanned_from_cache::float AS frac_from_cache
+FROM TABLE(GET_QUERY_OPERATOR_STATS('<query_id>'))
+ORDER BY pct_of_query DESC;
+
+
+-- =============================================================================
+-- 7. CREDITS / COST  (ops/mv_billing.sh; T2 streaming: docs/t2_streaming.md)
 -- All from SNOWFLAKE.ACCOUNT_USAGE (lags up to ~3h). credits_used are the durable metric;
 -- $ = credits * your per-credit rate (~$3/credit Enterprise on-demand).
 -- =============================================================================
