@@ -96,10 +96,12 @@
     out/t2/dashboard.json \
     --cloud aws --region us-east-1 --iterations 163
 
-./summarize_queries.sh ../results/t2/drilldown_20260720T121508Z.jsonl \
+
+
+./summarize_queries.sh ../results/t2/drilldown_20260803T211635Z.jsonl \
     pricings/interactive_warehouse.json \
     out/t2/drilldown.json  \
-    --cloud aws --region us-east-1 --iterations 39
+    --cloud aws --region us-east-1 --iterations 38
 
 ./summarize_mv_refresh_v2.sh ../results/t2/mv_refresh.csv \
     pricings/gen2_warehouse.json  \
