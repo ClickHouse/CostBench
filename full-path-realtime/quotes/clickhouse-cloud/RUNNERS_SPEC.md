@@ -13,9 +13,29 @@ Each system implements these two runners against its own query set (queries alre
 
 ## Cadence and lifecycle
 
-- **Dashboard runner**: defaults to 600 seconds between iterations.
-- **Drilldown runner**: defaults to 3600 seconds between iterations.
+- **Dashboard runner**: defaults to a fixed-rate 600-second cadence measured between scheduled iteration starts.
+- **Drilldown runner**: defaults to a fixed-rate 3600-second cadence measured between scheduled iteration starts.
 - Both **run indefinitely until Ctrl-C**. They're started shortly after the ingest begins and killed shortly after it ends. No "run N iterations" mode.
+
+The cadence is **fixed-rate**, not fixed-delay: iteration N is scheduled relative to the
+previous iteration's scheduled start, independent of query duration. If an iteration
+overruns the interval, the next iteration starts immediately because a single runner does
+not overlap iterations; the overrun is logged. Sleeping for a full interval after each
+iteration finishes is prohibited because query runtime would accumulate as schedule drift.
+With fixed-delay scheduling, every iteration's runtime is added to the nominal interval,
+so the Nth iteration starts progressively later while ingestion continues in the background.
+Over dozens or hundreds of iterations, equivalent iteration numbers in two systems can
+therefore observe vastly different row counts—especially when their query runtimes differ.
+That makes iteration-to-iteration latency and cost comparisons invalid and can also produce
+different total query counts within the same active-ingest window.
+
+For example, over a 35-hour ingest window, a dashboard runner with a nominal 10-minute
+interval should execute approximately 210 iterations. If each iteration takes two minutes
+and the runner then sleeps for another 10 minutes, its effective cadence becomes 12 minutes
+and it executes only about 175 iterations. A second system with negligible query runtime
+still executes approximately 210. Moreover, iteration 175 occurs around 29 hours in the
+drift-free system but around 34.8 hours in the drifting system—almost six hours, or roughly
+19 billion ingested rows at 0.9 million rows per second, later.
 
 ## Per-iteration algorithm
 
@@ -30,7 +50,7 @@ Both runners do the same thing on each iteration:
    - On error, log `null` and continue with the next query.
 5. Record an ISO-8601 UTC end timestamp.
 6. Append one JSON object as a single line to the output file (JSONL format).
-7. Sleep until the next iteration.
+7. Sleep until the next fixed-rate scheduled start.
 
 ## Output: JSONL file
 

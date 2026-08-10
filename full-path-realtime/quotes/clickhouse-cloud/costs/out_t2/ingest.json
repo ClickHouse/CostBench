@@ -5,7 +5,7 @@
   "nodes": 2,
   "mem_gib_per_node": 8,
   "total_mem_gib": 16,
-  "duration_hours": 28,
+  "duration_hours": 35,
   "rows_ingested": 100000000000,
   "rows_per_sec": 1000000,
   "costs": [
@@ -15,7 +15,7 @@
       "mem_gib_per_node": 8,
       "total_mem_gib": 16,
       "compute_price_per_8gib_hour": 0.2181100,
-      "total_compute_cost_usd": 12.21416
+      "total_compute_cost_usd": 15.2677
     },
     {
       "tier": "Scale",
@@ -23,7 +23,7 @@
       "mem_gib_per_node": 8,
       "total_mem_gib": 16,
       "compute_price_per_8gib_hour": 0.29846,
-      "total_compute_cost_usd": 16.71376
+      "total_compute_cost_usd": 20.8922
     },
     {
       "tier": "Enterprise",
@@ -31,7 +31,7 @@
       "mem_gib_per_node": 8,
       "total_mem_gib": 16,
       "compute_price_per_8gib_hour": 0.3903,
-      "total_compute_cost_usd": 21.8568
+      "total_compute_cost_usd": 27.321
     }
   ]
 }
