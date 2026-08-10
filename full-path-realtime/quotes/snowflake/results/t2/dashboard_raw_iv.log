@@ -1,0 +1,3212 @@
+Parsed 4 queries from t2/queries_dashboard_raw.sql
+Writing JSONL to out_t2_run12/dashboard_raw_iv_20260807T150525Z.jsonl
+Query warehouse SNOWPIPES_IT_READ_SMALL, tracking warehouse BENCH, database BENCH2COST, schema STOCKHOUSE_T2_RUN12.
+Interval 600s. Ctrl-C to stop.
+[15:05:25] iter 1 starting...
+  raw_rows=15702506  mv_rows=6747
+  q1/4: 0.481s  (compile 0.328s, exec 0.153s)
+  q2/4: 0.202s  (compile 0.126s, exec 0.076s)
+  q3/4: 0.251s  (compile 0.087s, exec 0.164s)
+  q4/4: 0.221s  (compile 0.08s, exec 0.141s)
+  done. next iteration in 592s (fixed 600s cadence).
+[15:15:25] iter 2 starting...
+  raw_rows=569638102  mv_rows=9822
+  q1/4: 0.484s  (compile 0.375s, exec 0.109s)
+  q2/4: 0.461s  (compile 0.271s, exec 0.19s)
+  q3/4: 1.948s  (compile 0.855s, exec 1.093s)
+  q4/4: 1.349s  (compile 0.691s, exec 0.658s)
+  done. next iteration in 531s (fixed 600s cadence).
+[15:25:25] iter 3 starting...
+  raw_rows=1123519922  mv_rows=19630
+  q1/4: 0.477s  (compile 0.296s, exec 0.181s)
+  q2/4: 0.418s  (compile 0.256s, exec 0.162s)
+  q3/4: 4.316s  (compile 3.67s, exec 0.646s)
+  q4/4: 2.834s  (compile 1.743s, exec 1.091s)
+  done. next iteration in 545s (fixed 600s cadence).
+[15:35:25] iter 4 starting...
+  raw_rows=1677368437  mv_rows=33413
+  q1/4: 0.55s  (compile 0.445s, exec 0.105s)
+  q2/4: 0.655s  (compile 0.395s, exec 0.26s)
+  q3/4: 7.154s  (compile 4.361s, exec 2.696s)
+  q4/4: 3.087s  (compile 1.291s, exec 1.796s)
+  done. next iteration in 519s (fixed 600s cadence).
+[15:45:25] iter 5 starting...
+  raw_rows=2231864924  mv_rows=34519
+  q1/4: 0.63s  (compile 0.506s, exec 0.124s)
+  q2/4: 0.452s  (compile 0.286s, exec 0.166s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.087s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.125s, exec 0.0s)
+  done. next iteration in 511s (fixed 600s cadence).
+[15:55:25] iter 6 starting...
+  raw_rows=2786508767  mv_rows=44538
+  q1/4: 0.418s  (compile 0.292s, exec 0.126s)
+  q2/4: 0.541s  (compile 0.365s, exec 0.176s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.063s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.062s, exec 0.0s)
+  done. next iteration in 524s (fixed 600s cadence).
+[16:05:25] iter 7 starting...
+  raw_rows=3340625480  mv_rows=54594
+  q1/4: 0.485s  (compile 0.302s, exec 0.183s)
+  q2/4: 0.527s  (compile 0.319s, exec 0.208s)
+  q3/4: 7.396s  (compile 4.386s, exec 2.924s)
+  q4/4: 4.832s  (compile 2.659s, exec 2.173s)
+  done. next iteration in 525s (fixed 600s cadence).
+[16:15:25] iter 8 starting...
+  raw_rows=3892516155  mv_rows=64460
+  q1/4: 0.398s  (compile 0.24s, exec 0.158s)
+  q2/4: 0.439s  (compile 0.213s, exec 0.226s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.103s, exec 0.0s)
+  q4/4: 8.872s  (compile 3.206s, exec 5.666s)
+  done. next iteration in 488s (fixed 600s cadence).
+[16:25:25] iter 9 starting...
+  raw_rows=4446018780  mv_rows=74136
+  q1/4: 0.409s  (compile 0.271s, exec 0.138s)
+  q2/4: 0.462s  (compile 0.247s, exec 0.215s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.053s, exec 0.0s)
+  q4/4: 7.657s  (compile 4.266s, exec 3.391s)
+  done. next iteration in 506s (fixed 600s cadence).
+[16:35:25] iter 10 starting...
+  raw_rows=4999555895  mv_rows=75245
+  q1/4: 0.516s  (compile 0.342s, exec 0.174s)
+  q2/4: 0.493s  (compile 0.198s, exec 0.295s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.154s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.08s, exec 0.0s)
+  done. next iteration in 470s (fixed 600s cadence).
+[16:45:25] iter 11 starting...
+  raw_rows=5550633001  mv_rows=89891
+  q1/4: 0.635s  (compile 0.371s, exec 0.264s)
+  q2/4: 0.71s  (compile 0.386s, exec 0.324s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.081s, exec 0.0s)
+  done. next iteration in 515s (fixed 600s cadence).
+[16:55:25] iter 12 starting...
+  raw_rows=6101365193  mv_rows=99949
+  q1/4: 0.624s  (compile 0.476s, exec 0.148s)
+  q2/4: 0.65s  (compile 0.319s, exec 0.331s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.087s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.083s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[17:05:25] iter 13 starting...
+  raw_rows=6651319452  mv_rows=109920
+  q1/4: 0.321s  (compile 0.194s, exec 0.127s)
+  q2/4: 0.651s  (compile 0.327s, exec 0.324s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.078s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.083s, exec 0.0s)
+  done. next iteration in 519s (fixed 600s cadence).
+[17:15:25] iter 14 starting...
+  raw_rows=7201752883  mv_rows=119478
+  q1/4: 0.606s  (compile 0.448s, exec 0.158s)
+  q2/4: 0.496s  (compile 0.174s, exec 0.322s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.089s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.061s, exec 0.0s)
+  done. next iteration in 495s (fixed 600s cadence).
+[17:25:25] iter 15 starting...
+  raw_rows=7751853236  mv_rows=120356
+  q1/4: 0.682s  (compile 0.513s, exec 0.169s)
+  q2/4: 0.621s  (compile 0.292s, exec 0.329s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.072s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.06s, exec 0.0s)
+  done. next iteration in 523s (fixed 600s cadence).
+[17:35:25] iter 16 starting...
+  raw_rows=8302643006  mv_rows=130318
+  q1/4: 0.353s  (compile 0.189s, exec 0.164s)
+  q2/4: 0.704s  (compile 0.337s, exec 0.367s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.088s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.046s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[17:45:25] iter 17 starting...
+  raw_rows=8849566659  mv_rows=144480
+  q1/4: 0.389s  (compile 0.234s, exec 0.155s)
+  q2/4: 0.612s  (compile 0.223s, exec 0.389s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.045s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.078s, exec 0.0s)
+  done. next iteration in 483s (fixed 600s cadence).
+[17:55:25] iter 18 starting...
+  raw_rows=9392366235  mv_rows=154222
+  q1/4: 0.476s  (compile 0.293s, exec 0.183s)
+  q2/4: 0.584s  (compile 0.12s, exec 0.464s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.389s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.084s, exec 0.0s)
+  done. next iteration in 493s (fixed 600s cadence).
+[18:05:25] iter 19 starting...
+  raw_rows=9934907263  mv_rows=154857
+  q1/4: 0.407s  (compile 0.233s, exec 0.174s)
+  q2/4: 0.719s  (compile 0.215s, exec 0.504s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.053s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.051s, exec 0.0s)
+  done. next iteration in 509s (fixed 600s cadence).
+[18:15:25] iter 20 starting...
+  raw_rows=10475197163  mv_rows=164919
+  q1/4: 0.572s  (compile 0.382s, exec 0.19s)
+  q2/4: 0.685s  (compile 0.27s, exec 0.415s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.073s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.046s, exec 0.0s)
+  done. next iteration in 448s (fixed 600s cadence).
+[18:25:25] iter 21 starting...
+  raw_rows=11018736576  mv_rows=174795
+  q1/4: 0.688s  (compile 0.365s, exec 0.323s)
+  q2/4: 0.789s  (compile 0.308s, exec 0.481s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.051s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.065s, exec 0.0s)
+  done. next iteration in 505s (fixed 600s cadence).
+[18:35:25] iter 22 starting...
+  raw_rows=11559165332  mv_rows=182019
+  q1/4: 0.639s  (compile 0.439s, exec 0.2s)
+  q2/4: 0.858s  (compile 0.336s, exec 0.522s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.043s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.053s, exec 0.0s)
+  done. next iteration in 487s (fixed 600s cadence).
+[18:45:25] iter 23 starting...
+  raw_rows=12101268818  mv_rows=185295
+  q1/4: 0.751s  (compile 0.559s, exec 0.192s)
+  q2/4: 0.738s  (compile 0.281s, exec 0.457s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.048s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.047s, exec 0.0s)
+  done. next iteration in 511s (fixed 600s cadence).
+[18:55:25] iter 24 starting...
+  raw_rows=12643254749  mv_rows=200409
+  q1/4: 0.651s  (compile 0.448s, exec 0.203s)
+  q2/4: 0.693s  (compile 0.233s, exec 0.46s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.084s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 7.6s, exec 0.0s)
+  done. next iteration in 513s (fixed 600s cadence).
+[19:05:25] iter 25 starting...
+  raw_rows=13185847524  mv_rows=210286
+  q1/4: 0.699s  (compile 0.448s, exec 0.251s)
+  q2/4: 0.752s  (compile 0.215s, exec 0.537s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.086s, exec 0.0s)
+  q4/4: 4.278s  (compile 0.918s, exec 3.36s)
+  done. next iteration in 523s (fixed 600s cadence).
+[19:15:25] iter 26 starting...
+  raw_rows=13728738794  mv_rows=219617
+  q1/4: 0.701s  (compile 0.516s, exec 0.185s)
+  q2/4: 0.743s  (compile 0.236s, exec 0.507s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 6.377s, exec 0.0s)
+  done. next iteration in 505s (fixed 600s cadence).
+[19:25:25] iter 27 starting...
+  raw_rows=14271218566  mv_rows=221006
+  q1/4: 0.621s  (compile 0.425s, exec 0.196s)
+  q2/4: 1.039s  (compile 0.519s, exec 0.52s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.085s, exec 0.0s)
+  q4/4: 3.653s  (compile 1.154s, exec 2.499s)
+  done. next iteration in 517s (fixed 600s cadence).
+[19:35:25] iter 28 starting...
+  raw_rows=14812851892  mv_rows=231048
+  q1/4: 0.497s  (compile 0.324s, exec 0.173s)
+  q2/4: 1.101s  (compile 0.607s, exec 0.494s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.076s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.066s, exec 0.0s)
+  done. next iteration in 478s (fixed 600s cadence).
+[19:45:25] iter 29 starting...
+  raw_rows=15356072277  mv_rows=240983
+  q1/4: 0.613s  (compile 0.431s, exec 0.182s)
+  q2/4: 0.822s  (compile 0.284s, exec 0.538s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.868s, exec 0.0s)
+  q4/4: 8.555s  (compile 6.01s, exec 2.474s)
+  done. next iteration in 487s (fixed 600s cadence).
+[19:55:25] iter 30 starting...
+  raw_rows=15898008372  mv_rows=255989
+  q1/4: 0.474s  (compile 0.304s, exec 0.17s)
+  q2/4: 0.916s  (compile 0.341s, exec 0.575s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.087s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.232s, exec 0.0s)
+  done. next iteration in 492s (fixed 600s cadence).
+[20:05:25] iter 31 starting...
+  raw_rows=16440999004  mv_rows=258782
+  q1/4: 0.505s  (compile 0.255s, exec 0.25s)
+  q2/4: 1.029s  (compile 0.261s, exec 0.768s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.093s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.07s, exec 0.0s)
+  done. next iteration in 452s (fixed 600s cadence).
+[20:15:25] iter 32 starting...
+  raw_rows=16983370046  mv_rows=266616
+  q1/4: 0.543s  (compile 0.367s, exec 0.176s)
+  q2/4: 0.835s  (compile 0.266s, exec 0.569s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.056s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.063s, exec 0.0s)
+  done. next iteration in 364s (fixed 600s cadence).
+[20:25:25] iter 33 starting...
+  raw_rows=17525943137  mv_rows=276598
+  q1/4: 0.607s  (compile 0.438s, exec 0.169s)
+  q2/4: 0.898s  (compile 0.282s, exec 0.616s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.048s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.547s, exec 0.0s)
+  done. next iteration in 434s (fixed 600s cadence).
+[20:35:25] iter 34 starting...
+  raw_rows=18068038202  mv_rows=286302
+  q1/4: 0.709s  (compile 0.527s, exec 0.182s)
+  q2/4: 0.999s  (compile 0.34s, exec 0.659s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.068s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.031s, exec 0.0s)
+  done. next iteration in 377s (fixed 600s cadence).
+[20:45:25] iter 35 starting...
+  raw_rows=18610176947  mv_rows=286938
+  q1/4: 0.505s  (compile 0.329s, exec 0.176s)
+  q2/4: 0.854s  (compile 0.201s, exec 0.653s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 6.749s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.591s, exec 0.0s)
+  done. next iteration in 390s (fixed 600s cadence).
+[20:55:25] iter 36 starting...
+  raw_rows=19152786290  mv_rows=296824
+  q1/4: 0.53s  (compile 0.343s, exec 0.187s)
+  q2/4: 0.988s  (compile 0.301s, exec 0.687s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.06s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.04s, exec 0.0s)
+  done. next iteration in 412s (fixed 600s cadence).
+[21:05:25] iter 37 starting...
+  raw_rows=19695618212  mv_rows=311778
+  q1/4: 0.303s  (compile 0.141s, exec 0.162s)
+  q2/4: 0.848s  (compile 0.188s, exec 0.66s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.072s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.064s, exec 0.0s)
+  done. next iteration in 439s (fixed 600s cadence).
+[21:15:25] iter 38 starting...
+  raw_rows=20237786950  mv_rows=321223
+  q1/4: 0.613s  (compile 0.424s, exec 0.189s)
+  q2/4: 1.065s  (compile 0.393s, exec 0.672s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.053s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.58s, exec 0.0s)
+  done. next iteration in 509s (fixed 600s cadence).
+[21:25:25] iter 39 starting...
+  raw_rows=20780086249  mv_rows=322158
+  q1/4: 0.427s  (compile 0.238s, exec 0.189s)
+  q2/4: 1.098s  (compile 0.424s, exec 0.674s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.069s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.081s, exec 0.0s)
+  done. next iteration in 503s (fixed 600s cadence).
+[21:35:25] iter 40 starting...
+  raw_rows=21321786643  mv_rows=332183
+  q1/4: 0.406s  (compile 0.199s, exec 0.207s)
+  q2/4: 1.081s  (compile 0.404s, exec 0.677s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.169s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.077s, exec 0.0s)
+  done. next iteration in 496s (fixed 600s cadence).
+[21:45:25] iter 41 starting...
+  raw_rows=21863766597  mv_rows=352947
+  q1/4: 0.694s  (compile 0.52s, exec 0.174s)
+  q2/4: 0.973s  (compile 0.257s, exec 0.716s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.08s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.056s, exec 0.0s)
+  done. next iteration in 479s (fixed 600s cadence).
+[21:55:25] iter 42 starting...
+  raw_rows=22405802202  mv_rows=357567
+  q1/4: 0.478s  (compile 0.247s, exec 0.231s)
+  q2/4: 1.124s  (compile 0.363s, exec 0.761s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.047s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.043s, exec 0.0s)
+  done. next iteration in 486s (fixed 600s cadence).
+[22:05:25] iter 43 starting...
+  raw_rows=22947942674  mv_rows=367560
+  q1/4: 0.857s  (compile 0.642s, exec 0.215s)
+  q2/4: 1.289s  (compile 0.286s, exec 1.003s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.097s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.06s, exec 0.0s)
+  done. next iteration in 470s (fixed 600s cadence).
+[22:15:25] iter 44 starting...
+  raw_rows=23489696601  mv_rows=377521
+  q1/4: 0.699s  (compile 0.476s, exec 0.223s)
+  q2/4: 1.201s  (compile 0.354s, exec 0.847s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.288s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.933s, exec 0.0s)
+  done. next iteration in 463s (fixed 600s cadence).
+[22:25:25] iter 45 starting...
+  raw_rows=24031872017  mv_rows=387637
+  q1/4: 0.814s  (compile 0.428s, exec 0.386s)
+  q2/4: 1.374s  (compile 0.515s, exec 0.859s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.061s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.06s, exec 0.0s)
+  done. next iteration in 456s (fixed 600s cadence).
+[22:35:25] iter 46 starting...
+  raw_rows=24573236595  mv_rows=394852
+  q1/4: 0.685s  (compile 0.453s, exec 0.232s)
+  q2/4: 1.214s  (compile 0.35s, exec 0.864s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.057s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.859s, exec 0.0s)
+  done. next iteration in 489s (fixed 600s cadence).
+[22:45:25] iter 47 starting...
+  raw_rows=25114707285  mv_rows=398449
+  q1/4: 0.446s  (compile 0.26s, exec 0.186s)
+  q2/4: 1.406s  (compile 0.553s, exec 0.853s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.044s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.055s, exec 0.0s)
+  done. next iteration in 454s (fixed 600s cadence).
+[22:55:25] iter 48 starting...
+  raw_rows=25656242372  mv_rows=413853
+  q1/4: 0.693s  (compile 0.451s, exec 0.242s)
+  q2/4: 1.37s  (compile 0.432s, exec 0.938s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.043s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.049s, exec 0.0s)
+  done. next iteration in 520s (fixed 600s cadence).
+[23:05:25] iter 49 starting...
+  raw_rows=26198572926  mv_rows=424042
+  q1/4: 0.673s  (compile 0.343s, exec 0.33s)
+  q2/4: 1.282s  (compile 0.348s, exec 0.934s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.041s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.058s, exec 0.0s)
+  done. next iteration in 501s (fixed 600s cadence).
+[23:15:25] iter 50 starting...
+  raw_rows=26739914335  mv_rows=434089
+  q1/4: 0.475s  (compile 0.262s, exec 0.213s)
+  q2/4: 0.976s  (compile 0.077s, exec 0.899s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.209s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.045s, exec 0.0s)
+  done. next iteration in 481s (fixed 600s cadence).
+[23:25:25] iter 51 starting...
+  raw_rows=27282531997  mv_rows=434838
+  q1/4: 0.596s  (compile 0.332s, exec 0.264s)
+  q2/4: 1.501s  (compile 0.446s, exec 1.055s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.064s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.04s, exec 0.0s)
+  done. next iteration in 465s (fixed 600s cadence).
+[23:35:25] iter 52 starting...
+  raw_rows=27823933791  mv_rows=445106
+  q1/4: 0.721s  (compile 0.533s, exec 0.188s)
+  q2/4: 1.474s  (compile 0.459s, exec 1.015s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.065s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.039s, exec 0.0s)
+  done. next iteration in 498s (fixed 600s cadence).
+[23:45:25] iter 53 starting...
+  raw_rows=28366707605  mv_rows=455247
+  q1/4: 0.533s  (compile 0.334s, exec 0.199s)
+  q2/4: 1.28s  (compile 0.218s, exec 1.062s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.04s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.039s, exec 0.0s)
+  done. next iteration in 500s (fixed 600s cadence).
+[23:55:25] iter 54 starting...
+  raw_rows=28909392384  mv_rows=469958
+  q1/4: 0.55s  (compile 0.346s, exec 0.204s)
+  q2/4: 1.393s  (compile 0.347s, exec 1.046s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.036s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.034s, exec 0.0s)
+  done. next iteration in 482s (fixed 600s cadence).
+[00:05:25] iter 55 starting...
+  raw_rows=29449870797  mv_rows=471201
+  q1/4: 0.867s  (compile 0.511s, exec 0.356s)
+  q2/4: 1.713s  (compile 0.344s, exec 1.369s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.036s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.045s, exec 0.0s)
+  done. next iteration in 500s (fixed 600s cadence).
+[00:15:25] iter 56 starting...
+  raw_rows=29990398363  mv_rows=481406
+  q1/4: 0.488s  (compile 0.294s, exec 0.194s)
+  q2/4: 1.424s  (compile 0.36s, exec 1.064s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.119s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.053s, exec 0.0s)
+  done. next iteration in 507s (fixed 600s cadence).
+[00:25:25] iter 57 starting...
+  raw_rows=30532028806  mv_rows=491218
+  q1/4: 0.733s  (compile 0.485s, exec 0.248s)
+  q2/4: 1.524s  (compile 0.408s, exec 1.116s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.048s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.047s, exec 0.0s)
+  done. next iteration in 479s (fixed 600s cadence).
+[00:35:25] iter 58 starting...
+  raw_rows=31074374383  mv_rows=491953
+  q1/4: 0.41s  (compile 0.204s, exec 0.206s)
+  q2/4: 1.498s  (compile 0.358s, exec 1.14s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.088s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.068s, exec 0.0s)
+  done. next iteration in 481s (fixed 600s cadence).
+[00:45:25] iter 59 starting...
+  raw_rows=31617618636  mv_rows=502267
+  q1/4: 0.61s  (compile 0.398s, exec 0.212s)
+  q2/4: 1.48s  (compile 0.305s, exec 1.175s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.048s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.043s, exec 0.0s)
+  done. next iteration in 471s (fixed 600s cadence).
+[00:55:25] iter 60 starting...
+  raw_rows=32157991708  mv_rows=512423
+  q1/4: 0.613s  (compile 0.399s, exec 0.214s)
+  q2/4: 1.638s  (compile 0.481s, exec 1.157s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.415s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.07s, exec 0.0s)
+  done. next iteration in 488s (fixed 600s cadence).
+[01:05:25] iter 61 starting...
+  raw_rows=32701297601  mv_rows=527634
+  q1/4: 0.603s  (compile 0.383s, exec 0.22s)
+  q2/4: 1.701s  (compile 0.566s, exec 1.135s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.498s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.918s, exec 0.0s)
+  done. next iteration in 249s (fixed 600s cadence).
+[01:15:25] iter 62 starting...
+  raw_rows=33243921056  mv_rows=537804
+  q1/4: 0.673s  (compile 0.333s, exec 0.34s)
+  q2/4: 1.437s  (compile 0.264s, exec 1.173s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.896s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.065s, exec 0.0s)
+  done. next iteration in 206s (fixed 600s cadence).
+[01:25:25] iter 63 starting...
+  raw_rows=33784747928  mv_rows=548313
+  q1/4: 0.819s  (compile 0.598s, exec 0.221s)
+  q2/4: 1.797s  (compile 0.449s, exec 1.348s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 6.056s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.212s, exec 0.0s)
+  done. next iteration in 361s (fixed 600s cadence).
+[01:35:25] iter 64 starting...
+  raw_rows=34326872543  mv_rows=558998
+  q1/4: 0.82s  (compile 0.498s, exec 0.322s)
+  q2/4: 1.477s  (compile 0.289s, exec 1.188s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.124s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.061s, exec 0.0s)
+  done. next iteration in 361s (fixed 600s cadence).
+[01:45:25] iter 65 starting...
+  raw_rows=34869702905  mv_rows=574402
+  q1/4: 0.448s  (compile 0.196s, exec 0.252s)
+  q2/4: 1.636s  (compile 0.48s, exec 1.156s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.078s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.083s, exec 0.0s)
+  done. next iteration in 371s (fixed 600s cadence).
+[01:55:25] iter 66 starting...
+  raw_rows=35411868840  mv_rows=584801
+  q1/4: 0.788s  (compile 0.534s, exec 0.254s)
+  q2/4: 1.749s  (compile 0.508s, exec 1.241s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.048s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.365s, exec 0.0s)
+  done. next iteration in 406s (fixed 600s cadence).
+[02:05:25] iter 67 starting...
+  raw_rows=35953750553  mv_rows=595266
+  q1/4: 0.544s  (compile 0.318s, exec 0.226s)
+  q2/4: 1.485s  (compile 0.3s, exec 1.185s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.081s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.069s, exec 0.0s)
+  done. next iteration in 418s (fixed 600s cadence).
+[02:15:25] iter 68 starting...
+  raw_rows=36496260114  mv_rows=605429
+  q1/4: 0.746s  (compile 0.446s, exec 0.3s)
+  q2/4: 1.54s  (compile 0.304s, exec 1.236s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.404s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.068s, exec 0.0s)
+  done. next iteration in 444s (fixed 600s cadence).
+[02:25:25] iter 69 starting...
+  raw_rows=37038932168  mv_rows=625672
+  q1/4: 0.67s  (compile 0.407s, exec 0.263s)
+  q2/4: 1.604s  (compile 0.338s, exec 1.266s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.042s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.044s, exec 0.0s)
+  done. next iteration in 508s (fixed 600s cadence).
+[02:35:25] iter 70 starting...
+  raw_rows=37580542150  mv_rows=635365
+  q1/4: 0.649s  (compile 0.385s, exec 0.264s)
+  q2/4: 1.597s  (compile 0.326s, exec 1.271s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.053s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.094s, exec 0.0s)
+  done. next iteration in 454s (fixed 600s cadence).
+[02:45:25] iter 71 starting...
+  raw_rows=38122178091  mv_rows=636648
+  q1/4: 0.647s  (compile 0.381s, exec 0.266s)
+  q2/4: 1.763s  (compile 0.416s, exec 1.347s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.063s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.044s, exec 0.0s)
+  done. next iteration in 471s (fixed 600s cadence).
+[02:55:25] iter 72 starting...
+  raw_rows=38664514984  mv_rows=646961
+  q1/4: 0.82s  (compile 0.55s, exec 0.27s)
+  q2/4: 1.657s  (compile 0.313s, exec 1.344s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.058s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.063s, exec 0.0s)
+  done. next iteration in 469s (fixed 600s cadence).
+[03:05:25] iter 73 starting...
+  raw_rows=39206734864  mv_rows=657168
+  q1/4: 0.893s  (compile 0.405s, exec 0.488s)
+  q2/4: 1.95s  (compile 0.587s, exec 1.363s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.04s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.037s, exec 0.0s)
+  done. next iteration in 489s (fixed 600s cadence).
+[03:15:25] iter 74 starting...
+  raw_rows=39749216204  mv_rows=667371
+  q1/4: 0.88s  (compile 0.62s, exec 0.26s)
+  q2/4: 1.607s  (compile 0.134s, exec 1.473s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.04s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.033s, exec 0.0s)
+  WARN: iteration exceeded the 600s cadence by 210.7s; next fires immediately (a single connection can't overlap runs).
+[03:28:56] iter 75 starting...
+  raw_rows=40481694016  mv_rows=678012
+  q1/4: 0.655s  (compile 0.399s, exec 0.256s)
+  q2/4: 1.531s  (compile 0.104s, exec 1.427s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.033s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.04s, exec 0.0s)
+  done. next iteration in 536s (fixed 600s cadence).
+[03:38:56] iter 76 starting...
+  raw_rows=41023700690  mv_rows=693816
+  q1/4: 0.574s  (compile 0.307s, exec 0.267s)
+  q2/4: 1.667s  (compile 0.252s, exec 1.415s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.037s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.036s, exec 0.0s)
+  done. next iteration in 481s (fixed 600s cadence).
+[03:48:56] iter 77 starting...
+  raw_rows=41565434756  mv_rows=704171
+  q1/4: 0.995s  (compile 0.617s, exec 0.378s)
+  q2/4: 1.839s  (compile 0.35s, exec 1.489s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.055s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.048s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[03:58:56] iter 78 starting...
+  raw_rows=42107099106  mv_rows=714059
+  q1/4: 0.545s  (compile 0.3s, exec 0.245s)
+  q2/4: 1.955s  (compile 0.491s, exec 1.464s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.033s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.07s, exec 0.0s)
+  done. next iteration in 485s (fixed 600s cadence).
+[04:08:56] iter 79 starting...
+  raw_rows=42649487112  mv_rows=715773
+  q1/4: 0.873s  (compile 0.609s, exec 0.264s)
+  q2/4: 1.857s  (compile 0.41s, exec 1.447s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.042s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.036s, exec 0.0s)
+  done. next iteration in 463s (fixed 600s cadence).
+[04:18:56] iter 80 starting...
+  raw_rows=43191395678  mv_rows=725269
+  q1/4: 0.573s  (compile 0.302s, exec 0.271s)
+  q2/4: 1.774s  (compile 0.315s, exec 1.459s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 8.07s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.061s, exec 0.0s)
+  done. next iteration in 458s (fixed 600s cadence).
+[04:28:56] iter 81 starting...
+  raw_rows=43734544190  mv_rows=740737
+  q1/4: 0.87s  (compile 0.607s, exec 0.263s)
+  q2/4: 1.896s  (compile 0.356s, exec 1.54s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.047s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.04s, exec 0.0s)
+  done. next iteration in 467s (fixed 600s cadence).
+[04:38:56] iter 82 starting...
+  raw_rows=44274700806  mv_rows=750908
+  q1/4: 0.591s  (compile 0.3s, exec 0.291s)
+  q2/4: 1.739s  (compile 0.236s, exec 1.503s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 7.262s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 6.304s, exec 0.0s)
+  done. next iteration in 460s (fixed 600s cadence).
+[04:48:56] iter 83 starting...
+  raw_rows=44816712496  mv_rows=758209
+  q1/4: 0.676s  (compile 0.374s, exec 0.302s)
+  q2/4: 1.788s  (compile 0.301s, exec 1.487s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.035s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.062s, exec 0.0s)
+  done. next iteration in 473s (fixed 600s cadence).
+[04:58:56] iter 84 starting...
+  raw_rows=45360110783  mv_rows=761890
+  q1/4: 0.583s  (compile 0.252s, exec 0.331s)
+  q2/4: 2.174s  (compile 0.527s, exec 1.647s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.095s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.044s, exec 0.0s)
+  done. next iteration in 425s (fixed 600s cadence).
+[05:08:56] iter 85 starting...
+  raw_rows=45902465696  mv_rows=772242
+  q1/4: 0.629s  (compile 0.361s, exec 0.268s)
+  q2/4: 2.023s  (compile 0.422s, exec 1.601s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.04s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.04s, exec 0.0s)
+  done. next iteration in 466s (fixed 600s cadence).
+[05:18:56] iter 86 starting...
+  raw_rows=46444304105  mv_rows=787866
+  q1/4: 0.705s  (compile 0.411s, exec 0.294s)
+  q2/4: 1.781s  (compile 0.223s, exec 1.558s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.076s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.059s, exec 0.0s)
+  done. next iteration in 446s (fixed 600s cadence).
+[05:28:56] iter 87 starting...
+  raw_rows=46986365797  mv_rows=797267
+  q1/4: 0.694s  (compile 0.407s, exec 0.287s)
+  q2/4: 1.869s  (compile 0.231s, exec 1.638s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.036s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.044s, exec 0.0s)
+  done. next iteration in 454s (fixed 600s cadence).
+[05:38:56] iter 88 starting...
+  raw_rows=47527334537  mv_rows=798766
+  q1/4: 0.612s  (compile 0.309s, exec 0.303s)
+  q2/4: 1.981s  (compile 0.396s, exec 1.585s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.051s, exec 0.0s)
+  done. next iteration in 436s (fixed 600s cadence).
+[05:48:56] iter 89 starting...
+  raw_rows=48068771395  mv_rows=809154
+  q1/4: 0.522s  (compile 0.247s, exec 0.275s)
+  q2/4: 1.962s  (compile 0.396s, exec 1.566s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.068s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.057s, exec 0.0s)
+  done. next iteration in 447s (fixed 600s cadence).
+[05:58:56] iter 90 starting...
+  raw_rows=48610510660  mv_rows=819232
+  q1/4: 0.775s  (compile 0.478s, exec 0.297s)
+  q2/4: 1.873s  (compile 0.304s, exec 1.569s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.55s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.553s, exec 0.0s)
+  done. next iteration in 384s (fixed 600s cadence).
+[06:08:56] iter 91 starting...
+  raw_rows=49154221411  mv_rows=828636
+  q1/4: 0.469s  (compile 0.201s, exec 0.268s)
+  q2/4: 2.084s  (compile 0.458s, exec 1.626s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.033s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.124s, exec 0.0s)
+  done. next iteration in 307s (fixed 600s cadence).
+[06:18:56] iter 92 starting...
+  raw_rows=49695728042  mv_rows=830030
+  q1/4: 0.527s  (compile 0.239s, exec 0.288s)
+  q2/4: 1.935s  (compile 0.342s, exec 1.593s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.065s, exec 0.0s)
+  q4/4: 10.438s  (compile 3.556s, exec 6.805s)
+  done. next iteration in 532s (fixed 600s cadence).
+[06:28:56] iter 93 starting...
+  raw_rows=50239208636  mv_rows=840449
+  q1/4: 0.526s  (compile 0.229s, exec 0.297s)
+  q2/4: 1.968s  (compile 0.331s, exec 1.637s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.043s, exec 0.0s)
+  q4/4: 3.116s  (compile 1.259s, exec 1.857s)
+  done. next iteration in 515s (fixed 600s cadence).
+[06:38:56] iter 94 starting...
+  raw_rows=50781157360  mv_rows=855585
+  q1/4: 0.536s  (compile 0.179s, exec 0.357s)
+  q2/4: 1.878s  (compile 0.283s, exec 1.595s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.097s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.134s, exec 0.0s)
+  done. next iteration in 507s (fixed 600s cadence).
+[06:48:56] iter 95 starting...
+  raw_rows=51325141927  mv_rows=858745
+  q1/4: 0.659s  (compile 0.325s, exec 0.334s)
+  q2/4: 2.147s  (compile 0.474s, exec 1.673s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.136s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.374s, exec 0.0s)
+  done. next iteration in 501s (fixed 600s cadence).
+[06:58:56] iter 96 starting...
+  raw_rows=51868336839  mv_rows=866513
+  q1/4: 0.628s  (compile 0.334s, exec 0.294s)
+  q2/4: 2.39s  (compile 0.578s, exec 1.812s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.087s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.088s, exec 0.0s)
+  done. next iteration in 492s (fixed 600s cadence).
+[07:08:56] iter 97 starting...
+  raw_rows=52410124407  mv_rows=876711
+  q1/4: 0.935s  (compile 0.631s, exec 0.304s)
+  q2/4: 2.28s  (compile 0.533s, exec 1.747s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.072s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.074s, exec 0.0s)
+  done. next iteration in 516s (fixed 600s cadence).
+[07:18:56] iter 98 starting...
+  raw_rows=52952567750  mv_rows=886517
+  q1/4: 0.649s  (compile 0.291s, exec 0.358s)
+  q2/4: 2.139s  (compile 0.378s, exec 1.761s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.087s, exec 0.0s)
+  q4/4: 3.725s  (compile 2.576s, exec 1.149s)
+  done. next iteration in 527s (fixed 600s cadence).
+[07:28:56] iter 99 starting...
+  raw_rows=53495406751  mv_rows=887545
+  q1/4: 0.617s  (compile 0.293s, exec 0.324s)
+  q2/4: 2.321s  (compile 0.609s, exec 1.712s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.089s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.082s, exec 0.0s)
+  done. next iteration in 498s (fixed 600s cadence).
+[07:38:56] iter 100 starting...
+  raw_rows=54037881356  mv_rows=903123
+  q1/4: 0.65s  (compile 0.315s, exec 0.335s)
+  q2/4: 2.189s  (compile 0.428s, exec 1.761s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.064s, exec 0.0s)
+  q4/4: 3.464s  (compile 2.333s, exec 1.131s)
+  done. next iteration in 531s (fixed 600s cadence).
+[07:48:56] iter 101 starting...
+  raw_rows=54580328139  mv_rows=913381
+  q1/4: 0.573s  (compile 0.249s, exec 0.324s)
+  q2/4: 2.02s  (compile 0.21s, exec 1.81s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.096s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.087s, exec 0.0s)
+  done. next iteration in 528s (fixed 600s cadence).
+[07:58:56] iter 102 starting...
+  raw_rows=55121987902  mv_rows=923511
+  q1/4: 1.06s  (compile 0.71s, exec 0.35s)
+  q2/4: 2.051s  (compile 0.348s, exec 1.703s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.076s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.069s, exec 0.0s)
+  done. next iteration in 482s (fixed 600s cadence).
+[08:08:56] iter 103 starting...
+  raw_rows=55664918666  mv_rows=932744
+  q1/4: 2.113s  (compile 1.718s, exec 0.395s)
+  q2/4: 3.176s  (compile 1.357s, exec 1.819s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.068s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.079s, exec 0.0s)
+  done. next iteration in 446s (fixed 600s cadence).
+[08:18:56] iter 104 starting...
+  raw_rows=56207755495  mv_rows=934447
+  q1/4: 0.769s  (compile 0.428s, exec 0.341s)
+  q2/4: 2.318s  (compile 0.417s, exec 1.901s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.098s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.142s, exec 0.0s)
+  done. next iteration in 520s (fixed 600s cadence).
+[08:28:56] iter 105 starting...
+  raw_rows=56750461424  mv_rows=944864
+  q1/4: 0.542s  (compile 0.253s, exec 0.289s)
+  q2/4: 2.352s  (compile 0.456s, exec 1.896s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.098s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.039s, exec 0.0s)
+  done. next iteration in 514s (fixed 600s cadence).
+[08:38:56] iter 106 starting...
+  raw_rows=57294076677  mv_rows=960174
+  q1/4: 0.977s  (compile 0.672s, exec 0.305s)
+  q2/4: 2.433s  (compile 0.48s, exec 1.953s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.12s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.072s, exec 0.0s)
+  done. next iteration in 479s (fixed 600s cadence).
+[08:48:56] iter 107 starting...
+  raw_rows=57836948880  mv_rows=970040
+  q1/4: 0.564s  (compile 0.258s, exec 0.306s)
+  q2/4: 2.497s  (compile 0.542s, exec 1.955s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.06s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.052s, exec 0.0s)
+  done. next iteration in 484s (fixed 600s cadence).
+[08:58:56] iter 108 starting...
+  raw_rows=58378647955  mv_rows=971222
+  q1/4: 0.637s  (compile 0.304s, exec 0.333s)
+  q2/4: 2.416s  (compile 0.422s, exec 1.994s)
+  q3/4: 4.865s  (compile 3.347s, exec 1.518s)
+  q4/4: 9.466s  (compile 2.641s, exec 6.731s)
+  done. next iteration in 502s (fixed 600s cadence).
+[09:08:56] iter 109 starting...
+  raw_rows=58920754975  mv_rows=981535
+  q1/4: 0.573s  (compile 0.287s, exec 0.286s)
+  q2/4: 2.471s  (compile 0.443s, exec 2.028s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.136s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.064s, exec 0.0s)
+  done. next iteration in 509s (fixed 600s cadence).
+[09:18:56] iter 110 starting...
+  raw_rows=59463548347  mv_rows=991944
+  q1/4: 1.002s  (compile 0.514s, exec 0.488s)
+  q2/4: 2.742s  (compile 0.515s, exec 2.227s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.093s, exec 0.0s)
+  q4/4: 10.078s  (compile 4.893s, exec 5.08s)
+  done. next iteration in 522s (fixed 600s cadence).
+[09:28:56] iter 111 starting...
+  raw_rows=60006081312  mv_rows=1007422
+  q1/4: 0.622s  (compile 0.336s, exec 0.286s)
+  q2/4: 2.63s  (compile 0.58s, exec 2.05s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.065s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.901s, exec 0.0s)
+  done. next iteration in 489s (fixed 600s cadence).
+[09:38:56] iter 112 starting...
+  raw_rows=60548648097  mv_rows=1017300
+  q1/4: 0.774s  (compile 0.46s, exec 0.314s)
+  q2/4: 2.569s  (compile 0.575s, exec 1.994s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.057s, exec 0.0s)
+  q4/4: 4.646s  (compile 1.383s, exec 3.263s)
+  done. next iteration in 525s (fixed 600s cadence).
+[09:48:56] iter 113 starting...
+  raw_rows=61090705988  mv_rows=1018391
+  q1/4: 0.576s  (compile 0.248s, exec 0.328s)
+  q2/4: 2.382s  (compile 0.3s, exec 2.082s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.084s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.082s, exec 0.0s)
+  done. next iteration in 513s (fixed 600s cadence).
+[09:58:56] iter 114 starting...
+  raw_rows=61633128880  mv_rows=1028852
+  q1/4: 0.426s  (compile 0.135s, exec 0.291s)
+  q2/4: 2.57s  (compile 0.454s, exec 2.116s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.183s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.084s, exec 0.0s)
+  done. next iteration in 488s (fixed 600s cadence).
+[10:08:56] iter 115 starting...
+  raw_rows=62175139894  mv_rows=1039205
+  q1/4: 0.75s  (compile 0.401s, exec 0.349s)
+  q2/4: 2.468s  (compile 0.36s, exec 2.108s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.102s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.066s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[10:18:56] iter 116 starting...
+  raw_rows=62717217376  mv_rows=1049504
+  q1/4: 0.744s  (compile 0.448s, exec 0.296s)
+  q2/4: 2.58s  (compile 0.461s, exec 2.119s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 7.369s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.194s, exec 0.0s)
+  done. next iteration in 299s (fixed 600s cadence).
+[10:28:56] iter 117 starting...
+  raw_rows=63258974786  mv_rows=1064670
+  q1/4: 0.538s  (compile 0.18s, exec 0.358s)
+  q2/4: 2.516s  (compile 0.351s, exec 2.165s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.091s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.051s, exec 0.0s)
+  done. next iteration in 371s (fixed 600s cadence).
+[10:38:56] iter 118 starting...
+  raw_rows=63801509319  mv_rows=1066779
+  q1/4: 0.607s  (compile 0.251s, exec 0.356s)
+  q2/4: 2.708s  (compile 0.394s, exec 2.314s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.066s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.119s, exec 0.0s)
+  done. next iteration in 373s (fixed 600s cadence).
+[10:48:56] iter 119 starting...
+  raw_rows=64344242705  mv_rows=1075932
+  q1/4: 0.776s  (compile 0.435s, exec 0.341s)
+  q2/4: 2.547s  (compile 0.355s, exec 2.192s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.671s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.729s, exec 0.0s)
+  done. next iteration in 401s (fixed 600s cadence).
+[10:58:56] iter 120 starting...
+  raw_rows=64887252083  mv_rows=1086060
+  q1/4: 0.692s  (compile 0.362s, exec 0.33s)
+  q2/4: 2.727s  (compile 0.462s, exec 2.265s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.07s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.075s, exec 0.0s)
+  done. next iteration in 420s (fixed 600s cadence).
+[11:08:56] iter 121 starting...
+  raw_rows=65429280331  mv_rows=1095474
+  q1/4: 1.055s  (compile 0.75s, exec 0.305s)
+  q2/4: 2.995s  (compile 0.703s, exec 2.292s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.068s, exec 0.0s)
+  done. next iteration in 531s (fixed 600s cadence).
+[11:18:56] iter 122 starting...
+  raw_rows=65970468500  mv_rows=1096992
+  q1/4: 0.741s  (compile 0.398s, exec 0.343s)
+  q2/4: 3.01s  (compile 0.394s, exec 2.616s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.184s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.086s, exec 0.0s)
+  done. next iteration in 516s (fixed 600s cadence).
+[11:28:56] iter 123 starting...
+  raw_rows=66511962307  mv_rows=1107185
+  q1/4: 1.003s  (compile 0.668s, exec 0.335s)
+  q2/4: 2.835s  (compile 0.652s, exec 2.183s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.081s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.038s, exec 0.0s)
+  done. next iteration in 521s (fixed 600s cadence).
+[11:38:56] iter 124 starting...
+  raw_rows=67052128331  mv_rows=1122256
+  q1/4: 0.673s  (compile 0.325s, exec 0.348s)
+  q2/4: 3.111s  (compile 0.7s, exec 2.411s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.073s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.04s, exec 0.0s)
+  done. next iteration in 522s (fixed 600s cadence).
+[11:48:56] iter 125 starting...
+  raw_rows=67591215050  mv_rows=1123309
+  q1/4: 0.73s  (compile 0.424s, exec 0.306s)
+  q2/4: 2.502s  (compile 0.243s, exec 2.259s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.122s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.164s, exec 0.0s)
+  done. next iteration in 524s (fixed 600s cadence).
+[11:58:56] iter 126 starting...
+  raw_rows=68131069119  mv_rows=1133591
+  q1/4: 0.579s  (compile 0.226s, exec 0.353s)
+  q2/4: 2.975s  (compile 0.61s, exec 2.365s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.075s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.035s, exec 0.0s)
+  done. next iteration in 520s (fixed 600s cadence).
+[12:08:56] iter 127 starting...
+  raw_rows=68670240951  mv_rows=1143382
+  q1/4: 0.675s  (compile 0.309s, exec 0.366s)
+  q2/4: 2.642s  (compile 0.377s, exec 2.265s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.084s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.056s, exec 0.0s)
+  done. next iteration in 530s (fixed 600s cadence).
+[12:18:56] iter 128 starting...
+  raw_rows=69210677381  mv_rows=1144298
+  q1/4: 0.741s  (compile 0.352s, exec 0.389s)
+  q2/4: 3.001s  (compile 0.588s, exec 2.413s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.065s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.051s, exec 0.0s)
+  done. next iteration in 519s (fixed 600s cadence).
+[12:28:56] iter 129 starting...
+  raw_rows=69751372587  mv_rows=1154710
+  q1/4: 0.825s  (compile 0.455s, exec 0.37s)
+  q2/4: 2.816s  (compile 0.454s, exec 2.362s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.094s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.086s, exec 0.0s)
+  done. next iteration in 514s (fixed 600s cadence).
+[12:38:56] iter 130 starting...
+  raw_rows=70291784335  mv_rows=1164756
+  q1/4: 0.823s  (compile 0.425s, exec 0.398s)
+  q2/4: 3.058s  (compile 0.757s, exec 2.301s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.067s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.054s, exec 0.0s)
+  done. next iteration in 506s (fixed 600s cadence).
+[12:48:56] iter 131 starting...
+  raw_rows=70831346847  mv_rows=1165452
+  q1/4: 0.834s  (compile 0.445s, exec 0.389s)
+  q2/4: 2.649s  (compile 0.292s, exec 2.357s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.144s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.075s, exec 0.0s)
+  done. next iteration in 520s (fixed 600s cadence).
+[12:58:56] iter 132 starting...
+  raw_rows=71372846966  mv_rows=1179504
+  q1/4: 0.706s  (compile 0.318s, exec 0.388s)
+  q2/4: 2.609s  (compile 0.276s, exec 2.333s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.061s, exec 0.0s)
+  done. next iteration in 512s (fixed 600s cadence).
+[13:08:56] iter 133 starting...
+  raw_rows=71914514951  mv_rows=1189817
+  q1/4: 0.774s  (compile 0.42s, exec 0.354s)
+  q2/4: 2.684s  (compile 0.313s, exec 2.371s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.061s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.049s, exec 0.0s)
+  done. next iteration in 505s (fixed 600s cadence).
+[13:18:56] iter 134 starting...
+  raw_rows=72456779202  mv_rows=1197828
+  q1/4: 0.692s  (compile 0.321s, exec 0.371s)
+  q2/4: 2.949s  (compile 0.493s, exec 2.456s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.076s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.084s, exec 0.0s)
+  done. next iteration in 508s (fixed 600s cadence).
+[13:28:56] iter 135 starting...
+  raw_rows=72997665735  mv_rows=1200739
+  q1/4: 1.218s  (compile 0.819s, exec 0.399s)
+  q2/4: 2.91s  (compile 0.511s, exec 2.399s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.068s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.074s, exec 0.0s)
+  done. next iteration in 515s (fixed 600s cadence).
+[13:38:56] iter 136 starting...
+  raw_rows=73538358230  mv_rows=1210932
+  q1/4: 0.811s  (compile 0.462s, exec 0.349s)
+  q2/4: 2.902s  (compile 0.512s, exec 2.39s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.044s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.131s, exec 0.0s)
+  done. next iteration in 491s (fixed 600s cadence).
+[13:48:56] iter 137 starting...
+  raw_rows=74079254639  mv_rows=1219589
+  q1/4: 0.614s  (compile 0.245s, exec 0.369s)
+  q2/4: 2.994s  (compile 0.562s, exec 2.432s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.995s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.07s, exec 0.0s)
+  done. next iteration in 514s (fixed 600s cadence).
+[13:58:56] iter 138 starting...
+  raw_rows=74621342818  mv_rows=1221866
+  q1/4: 0.728s  (compile 0.39s, exec 0.338s)
+  q2/4: 2.838s  (compile 0.402s, exec 2.436s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.157s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.114s, exec 0.0s)
+  done. next iteration in 483s (fixed 600s cadence).
+[14:08:56] iter 139 starting...
+  raw_rows=75162888417  mv_rows=1235799
+  q1/4: 1.033s  (compile 0.687s, exec 0.346s)
+  q2/4: 2.965s  (compile 0.557s, exec 2.408s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.067s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.034s, exec 0.0s)
+  done. next iteration in 514s (fixed 600s cadence).
+[14:18:56] iter 140 starting...
+  raw_rows=75705063243  mv_rows=1245441
+  q1/4: 0.866s  (compile 0.502s, exec 0.364s)
+  q2/4: 2.959s  (compile 0.422s, exec 2.537s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.061s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.06s, exec 0.0s)
+  done. next iteration in 508s (fixed 600s cadence).
+[14:28:56] iter 141 starting...
+  raw_rows=76247326589  mv_rows=1246642
+  q1/4: 0.908s  (compile 0.503s, exec 0.405s)
+  q2/4: 2.965s  (compile 0.472s, exec 2.493s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.072s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.054s, exec 0.0s)
+  done. next iteration in 509s (fixed 600s cadence).
+[14:38:56] iter 142 starting...
+  raw_rows=76789790347  mv_rows=1256929
+  q1/4: 0.687s  (compile 0.301s, exec 0.386s)
+  q2/4: 2.858s  (compile 0.414s, exec 2.444s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.066s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.05s, exec 0.0s)
+  done. next iteration in 487s (fixed 600s cadence).
+[14:48:56] iter 143 starting...
+  raw_rows=77331302933  mv_rows=1267327
+  q1/4: 0.89s  (compile 0.517s, exec 0.373s)
+  q2/4: 2.814s  (compile 0.339s, exec 2.475s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.08s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.05s, exec 0.0s)
+  done. next iteration in 502s (fixed 600s cadence).
+[14:58:56] iter 144 starting...
+  raw_rows=77872589327  mv_rows=1267849
+  q1/4: 0.753s  (compile 0.37s, exec 0.383s)
+  q2/4: 3.258s  (compile 0.549s, exec 2.709s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.043s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.125s, exec 0.0s)
+  done. next iteration in 479s (fixed 600s cadence).
+[15:08:56] iter 145 starting...
+  raw_rows=78412732306  mv_rows=1278419
+  q1/4: 0.619s  (compile 0.225s, exec 0.394s)
+  q2/4: 2.958s  (compile 0.469s, exec 2.489s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.047s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.072s, exec 0.0s)
+  done. next iteration in 357s (fixed 600s cadence).
+[15:18:56] iter 146 starting...
+  raw_rows=78953874170  mv_rows=1288666
+  q1/4: 0.615s  (compile 0.226s, exec 0.389s)
+  q2/4: 3.14s  (compile 0.586s, exec 2.554s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.074s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.673s, exec 0.0s)
+  done. next iteration in 435s (fixed 600s cadence).
+[15:28:56] iter 147 starting...
+  raw_rows=79494546246  mv_rows=1292964
+  q1/4: 0.599s  (compile 0.197s, exec 0.402s)
+  q2/4: 2.952s  (compile 0.396s, exec 2.556s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.235s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.053s, exec 0.0s)
+  done. next iteration in 437s (fixed 600s cadence).
+[15:38:56] iter 148 starting...
+  raw_rows=80036927299  mv_rows=1303628
+  q1/4: 0.646s  (compile 0.233s, exec 0.413s)
+  q2/4: 3.048s  (compile 0.449s, exec 2.599s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.246s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.057s, exec 0.0s)
+  done. next iteration in 422s (fixed 600s cadence).
+[15:48:56] iter 149 starting...
+  raw_rows=80579283857  mv_rows=1314365
+  q1/4: 0.749s  (compile 0.35s, exec 0.399s)
+  q2/4: 3.168s  (compile 0.487s, exec 2.681s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.053s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.057s, exec 0.0s)
+  done. next iteration in 446s (fixed 600s cadence).
+[15:58:56] iter 150 starting...
+  raw_rows=81120667856  mv_rows=1322408
+  q1/4: 0.803s  (compile 0.408s, exec 0.395s)
+  q2/4: 3.288s  (compile 0.64s, exec 2.648s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.11s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.039s, exec 0.0s)
+  done. next iteration in 407s (fixed 600s cadence).
+[16:08:56] iter 151 starting...
+  raw_rows=81663119915  mv_rows=1325371
+  q1/4: 1.16s  (compile 0.784s, exec 0.376s)
+  q2/4: 2.747s  (compile 0.22s, exec 2.527s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.164s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.034s, exec 0.0s)
+  WARN: iteration exceeded the 600s cadence by 101.7s; next fires immediately (a single connection can't overlap runs).
+[16:20:38] iter 152 starting...
+  raw_rows=82297137810  mv_rows=1340026
+  q1/4: 0.779s  (compile 0.395s, exec 0.384s)
+  q2/4: 2.65s  (compile 0.143s, exec 2.507s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.066s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.043s, exec 0.0s)
+  done. next iteration in 540s (fixed 600s cadence).
+[16:30:38] iter 153 starting...
+  raw_rows=82839014876  mv_rows=1350736
+  q1/4: 0.904s  (compile 0.488s, exec 0.416s)
+  q2/4: 3.155s  (compile 0.454s, exec 2.701s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.097s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.065s, exec 0.0s)
+  done. next iteration in 507s (fixed 600s cadence).
+[16:40:38] iter 154 starting...
+  raw_rows=83381135667  mv_rows=1351103
+  q1/4: 0.913s  (compile 0.51s, exec 0.403s)
+  q2/4: 2.967s  (compile 0.383s, exec 2.584s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.059s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.052s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[16:50:38] iter 155 starting...
+  raw_rows=83922077043  mv_rows=1361999
+  q1/4: 0.999s  (compile 0.568s, exec 0.431s)
+  q2/4: 3.276s  (compile 0.583s, exec 2.693s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.076s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.068s, exec 0.0s)
+  done. next iteration in 516s (fixed 600s cadence).
+[17:00:38] iter 156 starting...
+  raw_rows=84464496668  mv_rows=1372862
+  q1/4: 1.01s  (compile 0.592s, exec 0.418s)
+  q2/4: 3.331s  (compile 0.724s, exec 2.607s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.224s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.048s, exec 0.0s)
+  done. next iteration in 484s (fixed 600s cadence).
+[17:10:38] iter 157 starting...
+  raw_rows=85006255346  mv_rows=1382215
+  q1/4: 1.205s  (compile 0.793s, exec 0.412s)
+  q2/4: 3.526s  (compile 0.71s, exec 2.816s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.075s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.042s, exec 0.0s)
+  done. next iteration in 510s (fixed 600s cadence).
+[17:20:38] iter 158 starting...
+  raw_rows=85547830491  mv_rows=1384194
+  q1/4: 1.114s  (compile 0.726s, exec 0.388s)
+  q2/4: 3.186s  (compile 0.602s, exec 2.584s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.056s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.155s, exec 0.0s)
+  done. next iteration in 508s (fixed 600s cadence).
+[17:30:38] iter 159 starting...
+  raw_rows=86090355108  mv_rows=1399189
+  q1/4: 0.873s  (compile 0.441s, exec 0.432s)
+  q2/4: 2.935s  (compile 0.314s, exec 2.621s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.083s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.06s, exec 0.0s)
+  done. next iteration in 502s (fixed 600s cadence).
+[17:40:38] iter 160 starting...
+  raw_rows=86631910950  mv_rows=1410181
+  q1/4: 0.906s  (compile 0.48s, exec 0.426s)
+  q2/4: 3.101s  (compile 0.463s, exec 2.638s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.829s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.061s, exec 0.0s)
+  done. next iteration in 517s (fixed 600s cadence).
+[17:50:38] iter 161 starting...
+  raw_rows=87173831329  mv_rows=1421169
+  q1/4: 0.888s  (compile 0.46s, exec 0.428s)
+  q2/4: 3.093s  (compile 0.408s, exec 2.685s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.1s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.093s, exec 0.0s)
+  done. next iteration in 485s (fixed 600s cadence).
+[18:00:38] iter 162 starting...
+  raw_rows=87715905587  mv_rows=1421633
+  q1/4: 1.048s  (compile 0.628s, exec 0.42s)
+  q2/4: 3.332s  (compile 0.667s, exec 2.665s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.066s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.055s, exec 0.0s)
+  done. next iteration in 464s (fixed 600s cadence).
+[18:10:38] iter 163 starting...
+  raw_rows=88258248773  mv_rows=1432835
+  q1/4: 1.07s  (compile 0.65s, exec 0.42s)
+  q2/4: 3.359s  (compile 0.682s, exec 2.677s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.09s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.075s, exec 0.0s)
+  done. next iteration in 508s (fixed 600s cadence).
+[18:20:38] iter 164 starting...
+  raw_rows=88800706249  mv_rows=1443727
+  q1/4: 0.88s  (compile 0.456s, exec 0.424s)
+  q2/4: 3.085s  (compile 0.386s, exec 2.699s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.039s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.059s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[18:30:38] iter 165 starting...
+  raw_rows=89343301999  mv_rows=1453793
+  q1/4: 1.226s  (compile 0.828s, exec 0.398s)
+  q2/4: 3.376s  (compile 0.677s, exec 2.699s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.055s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.064s, exec 0.0s)
+  done. next iteration in 499s (fixed 600s cadence).
+[18:40:38] iter 166 starting...
+  raw_rows=89885805563  mv_rows=1459187
+  q1/4: 0.937s  (compile 0.531s, exec 0.406s)
+  q2/4: 3.545s  (compile 0.491s, exec 3.054s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.047s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.046s, exec 0.0s)
+  done. next iteration in 478s (fixed 600s cadence).
+[18:50:38] iter 167 starting...
+  raw_rows=90427252104  mv_rows=1470357
+  q1/4: 1.04s  (compile 0.606s, exec 0.434s)
+  q2/4: 3.49s  (compile 0.567s, exec 2.923s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.089s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.079s, exec 0.0s)
+  done. next iteration in 482s (fixed 600s cadence).
+[19:00:38] iter 168 starting...
+  raw_rows=90970326561  mv_rows=1481362
+  q1/4: 1.086s  (compile 0.659s, exec 0.427s)
+  q2/4: 3.607s  (compile 0.741s, exec 2.866s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.048s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.061s, exec 0.0s)
+  done. next iteration in 457s (fixed 600s cadence).
+[19:10:38] iter 169 starting...
+  raw_rows=91511488551  mv_rows=1492021
+  q1/4: 1.12s  (compile 0.663s, exec 0.457s)
+  q2/4: 3.507s  (compile 0.633s, exec 2.874s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.099s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.094s, exec 0.0s)
+  done. next iteration in 482s (fixed 600s cadence).
+[19:20:38] iter 170 starting...
+  raw_rows=92053063203  mv_rows=1493042
+  q1/4: 1.218s  (compile 0.793s, exec 0.425s)
+  q2/4: 4.319s  (compile 1.573s, exec 2.746s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.087s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.043s, exec 0.0s)
+  done. next iteration in 509s (fixed 600s cadence).
+[19:30:38] iter 171 starting...
+  raw_rows=92594568199  mv_rows=1504255
+  q1/4: 1.213s  (compile 0.773s, exec 0.44s)
+  q2/4: 3.6s  (compile 0.891s, exec 2.709s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.084s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.052s, exec 0.0s)
+  done. next iteration in 502s (fixed 600s cadence).
+[19:40:38] iter 172 starting...
+  raw_rows=93136180440  mv_rows=1515569
+  q1/4: 1.039s  (compile 0.63s, exec 0.409s)
+  q2/4: 3.544s  (compile 0.827s, exec 2.717s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.06s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.041s, exec 0.0s)
+  done. next iteration in 498s (fixed 600s cadence).
+[19:50:38] iter 173 starting...
+  raw_rows=93677872439  mv_rows=1523565
+  q1/4: 0.943s  (compile 0.501s, exec 0.442s)
+  q2/4: 3.157s  (compile 0.409s, exec 2.748s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.052s, exec 0.0s)
+  done. next iteration in 508s (fixed 600s cadence).
+[20:00:38] iter 174 starting...
+  raw_rows=94220585145  mv_rows=1531632
+  q1/4: 1.177s  (compile 0.763s, exec 0.414s)
+  q2/4: 3.241s  (compile 0.463s, exec 2.778s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.049s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.063s, exec 0.0s)
+  done. next iteration in 460s (fixed 600s cadence).
+[20:10:38] iter 175 starting...
+  raw_rows=94761986691  mv_rows=1542713
+  q1/4: 0.733s  (compile 0.348s, exec 0.385s)
+  q2/4: 3.703s  (compile 0.853s, exec 2.85s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.05s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.042s, exec 0.0s)
+  done. next iteration in 444s (fixed 600s cadence).
+[20:20:38] iter 176 starting...
+  raw_rows=95305183174  mv_rows=1554295
+  q1/4: 1.179s  (compile 0.797s, exec 0.382s)
+  q2/4: 3.33s  (compile 0.555s, exec 2.775s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.102s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.105s, exec 0.0s)
+  done. next iteration in 389s (fixed 600s cadence).
+[20:30:38] iter 177 starting...
+  raw_rows=95847279010  mv_rows=1554528
+  q1/4: 0.627s  (compile 0.192s, exec 0.435s)
+  q2/4: 3.493s  (compile 0.704s, exec 2.789s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.07s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.046s, exec 0.0s)
+  done. next iteration in 401s (fixed 600s cadence).
+[20:40:38] iter 178 starting...
+  raw_rows=96389868550  mv_rows=1565999
+  q1/4: 0.931s  (compile 0.506s, exec 0.425s)
+  q2/4: 3.045s  (compile 0.202s, exec 2.843s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.08s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.051s, exec 0.0s)
+  done. next iteration in 442s (fixed 600s cadence).
+[20:50:38] iter 179 starting...
+  raw_rows=96932113635  mv_rows=1581802
+  q1/4: 0.854s  (compile 0.462s, exec 0.392s)
+  q2/4: 3.686s  (compile 0.586s, exec 3.1s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.063s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.265s, exec 0.0s)
+  done. next iteration in 459s (fixed 600s cadence).
+[21:00:38] iter 180 starting...
+  raw_rows=97478328477  mv_rows=1592783
+  q1/4: 0.902s  (compile 0.509s, exec 0.393s)
+  q2/4: 3.544s  (compile 0.606s, exec 2.938s)
+  q3/4: 4.44s  (compile 3.346s, exec 1.094s)
+  q4/4: 3.309s  (compile 1.606s, exec 1.703s)
+  done. next iteration in 495s (fixed 600s cadence).
+[21:10:38] iter 181 starting...
+  raw_rows=98017193156  mv_rows=1598192
+  q1/4: 0.908s  (compile 0.498s, exec 0.41s)
+  q2/4: 3.162s  (compile 0.307s, exec 2.855s)
+  q3/4: 3.681s  (compile 2.383s, exec 1.298s)
+  q4/4: 2.832s  (compile 0.926s, exec 1.906s)
+  done. next iteration in 546s (fixed 600s cadence).
+[21:20:38] iter 182 starting...
+  raw_rows=98559432063  mv_rows=1604988
+  q1/4: 0.916s  (compile 0.481s, exec 0.435s)
+  q2/4: 3.337s  (compile 0.432s, exec 2.905s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.057s, exec 0.0s)
+  q4/4: 4.065s  (compile 3.327s, exec 0.738s)
+  done. next iteration in 534s (fixed 600s cadence).
+[21:30:38] iter 183 starting...
+  raw_rows=99100670944  mv_rows=1616486
+  q1/4: 1.098s  (compile 0.673s, exec 0.425s)
+  q2/4: 3.703s  (compile 0.654s, exec 3.049s)
+  q3/4: 2.89s  (compile 2.149s, exec 0.741s)
+  q4/4: 2.751s  (compile 1.563s, exec 1.188s)
+  done. next iteration in 539s (fixed 600s cadence).
+[21:40:38] iter 184 starting...
+  raw_rows=99642682608  mv_rows=1628138
+  q1/4: 1.106s  (compile 0.716s, exec 0.39s)
+  q2/4: 3.421s  (compile 0.477s, exec 2.944s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.077s, exec 0.0s)
+  q4/4: 14.132s  (compile 1.727s, exec 12.405s)
+  done. next iteration in 531s (fixed 600s cadence).
+[21:50:38] iter 185 starting...
+  raw_rows=100184993682  mv_rows=1628372
+  q1/4: 1.163s  (compile 0.7s, exec 0.463s)
+  q2/4: 3.831s  (compile 0.697s, exec 3.134s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.08s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.05s, exec 0.0s)
+  done. next iteration in 536s (fixed 600s cadence).
+[22:00:38] iter 186 starting...
+  raw_rows=100727276218  mv_rows=1640078
+  q1/4: 1.196s  (compile 0.755s, exec 0.441s)
+  q2/4: 3.513s  (compile 0.465s, exec 3.048s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.043s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.064s, exec 0.0s)
+  done. next iteration in 509s (fixed 600s cadence).
+[22:10:38] iter 187 starting...
+  raw_rows=101268093356  mv_rows=1651576
+  q1/4: 1.316s  (compile 0.889s, exec 0.427s)
+  q2/4: 3.507s  (compile 0.517s, exec 2.99s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.223s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.2s, exec 0.0s)
+  done. next iteration in 539s (fixed 600s cadence).
+[22:20:38] iter 188 starting...
+  raw_rows=101811208627  mv_rows=1667293
+  q1/4: 1.057s  (compile 0.634s, exec 0.423s)
+  q2/4: 3.912s  (compile 0.74s, exec 3.172s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.102s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.072s, exec 0.0s)
+  done. next iteration in 527s (fixed 600s cadence).
+[22:30:38] iter 189 starting...
+  raw_rows=102354398437  mv_rows=1667782
+  q1/4: 0.946s  (compile 0.507s, exec 0.439s)
+  q2/4: 3.36s  (compile 0.365s, exec 2.995s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.092s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.077s, exec 0.0s)
+  done. next iteration in 529s (fixed 600s cadence).
+[22:40:38] iter 190 starting...
+  raw_rows=102897147346  mv_rows=1679494
+  q1/4: 1.108s  (compile 0.688s, exec 0.42s)
+  q2/4: 3.575s  (compile 0.69s, exec 2.885s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.06s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.078s, exec 0.0s)
+  done. next iteration in 524s (fixed 600s cadence).
+[22:50:38] iter 191 starting...
+  raw_rows=103439947070  mv_rows=1691269
+  q1/4: 1.266s  (compile 0.83s, exec 0.436s)
+  q2/4: 3.58s  (compile 0.647s, exec 2.933s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.063s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.091s, exec 0.0s)
+  done. next iteration in 534s (fixed 600s cadence).
+[23:00:38] iter 192 starting...
+  raw_rows=103983086622  mv_rows=1702522
+  q1/4: 1.09s  (compile 0.64s, exec 0.45s)
+  q2/4: 3.58s  (compile 0.616s, exec 2.964s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.058s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.083s, exec 0.0s)
+  done. next iteration in 511s (fixed 600s cadence).
+[23:10:38] iter 193 starting...
+  raw_rows=104525677596  mv_rows=1707825
+  q1/4: 0.862s  (compile 0.434s, exec 0.428s)
+  q2/4: 3.349s  (compile 0.423s, exec 2.926s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.077s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.099s, exec 0.0s)
+  done. next iteration in 536s (fixed 600s cadence).
+[23:20:38] iter 194 starting...
+  raw_rows=105069033917  mv_rows=1719568
+  q1/4: 1.214s  (compile 0.793s, exec 0.421s)
+  q2/4: 3.648s  (compile 0.625s, exec 3.023s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.083s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.119s, exec 0.0s)
+  done. next iteration in 531s (fixed 600s cadence).
+[23:30:38] iter 195 starting...
+  raw_rows=105612600986  mv_rows=1731147
+  q1/4: 1.141s  (compile 0.705s, exec 0.436s)
+  q2/4: 3.896s  (compile 0.703s, exec 3.193s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.052s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.079s, exec 0.0s)
+  done. next iteration in 526s (fixed 600s cadence).
+[23:40:38] iter 196 starting...
+  raw_rows=106155460316  mv_rows=1742047
+  q1/4: 1.137s  (compile 0.68s, exec 0.457s)
+  q2/4: 3.751s  (compile 0.601s, exec 3.15s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.051s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.059s, exec 0.0s)
+  done. next iteration in 542s (fixed 600s cadence).
+[23:50:38] iter 197 starting...
+  raw_rows=106698444057  mv_rows=1745023
+  q1/4: 1.2s  (compile 0.748s, exec 0.452s)
+  q2/4: 3.8s  (compile 0.592s, exec 3.208s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.067s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.079s, exec 0.0s)
+  done. next iteration in 532s (fixed 600s cadence).
+[00:00:38] iter 198 starting...
+  raw_rows=107241678029  mv_rows=1754909
+  q1/4: 0.753s  (compile 0.281s, exec 0.472s)
+  q2/4: 3.599s  (compile 0.514s, exec 3.085s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.077s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.066s, exec 0.0s)
+  done. next iteration in 502s (fixed 600s cadence).
+[00:10:38] iter 199 starting...
+  raw_rows=107782479843  mv_rows=1771063
+  q1/4: 0.985s  (compile 0.539s, exec 0.446s)
+  q2/4: 3.537s  (compile 0.415s, exec 3.122s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.078s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.076s, exec 0.0s)
+  done. next iteration in 542s (fixed 600s cadence).
+[00:20:38] iter 200 starting...
+  raw_rows=108324851948  mv_rows=1782179
+  q1/4: 1.247s  (compile 0.802s, exec 0.445s)
+  q2/4: 3.744s  (compile 0.659s, exec 3.085s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.113s, exec 0.0s)
+  done. next iteration in 528s (fixed 600s cadence).
+[00:30:38] iter 201 starting...
+  raw_rows=108865388623  mv_rows=1792970
+  q1/4: 1.103s  (compile 0.614s, exec 0.489s)
+  q2/4: 3.807s  (compile 0.544s, exec 3.263s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.075s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.086s, exec 0.0s)
+  done. next iteration in 515s (fixed 600s cadence).
+[00:40:38] iter 202 starting...
+  raw_rows=109409027582  mv_rows=1794681
+  q1/4: 1.282s  (compile 0.82s, exec 0.462s)
+  q2/4: 3.882s  (compile 0.708s, exec 3.174s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.07s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.059s, exec 0.0s)
+  done. next iteration in 527s (fixed 600s cadence).
+[00:50:38] iter 203 starting...
+  raw_rows=109950776221  mv_rows=1806470
+  q1/4: 0.991s  (compile 0.53s, exec 0.461s)
+  q2/4: 3.932s  (compile 0.62s, exec 3.312s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.082s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.053s, exec 0.0s)
+  done. next iteration in 452s (fixed 600s cadence).
+[01:00:38] iter 204 starting...
+  raw_rows=110494752332  mv_rows=1822831
+  q1/4: 0.874s  (compile 0.429s, exec 0.445s)
+  q2/4: 3.954s  (compile 0.799s, exec 3.155s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.066s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.078s, exec 0.0s)
+  done. next iteration in 444s (fixed 600s cadence).
+[01:10:38] iter 205 starting...
+  raw_rows=111035128464  mv_rows=1834594
+  q1/4: 1.089s  (compile 0.615s, exec 0.474s)
+  q2/4: 3.594s  (compile 0.418s, exec 3.176s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.046s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.058s, exec 0.0s)
+  done. next iteration in 537s (fixed 600s cadence).
+[01:20:38] iter 206 starting...
+  raw_rows=111578218523  mv_rows=1845511
+  q1/4: 1.199s  (compile 0.742s, exec 0.457s)
+  q2/4: 4.143s  (compile 0.823s, exec 3.32s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.103s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.057s, exec 0.0s)
+  done. next iteration in 526s (fixed 600s cadence).
+[01:30:38] iter 207 starting...
+  raw_rows=112120806448  mv_rows=1848297
+  q1/4: 0.963s  (compile 0.476s, exec 0.487s)
+  q2/4: 3.697s  (compile 0.478s, exec 3.219s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.161s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.059s, exec 0.0s)
+  done. next iteration in 500s (fixed 600s cadence).
+[01:40:38] iter 208 starting...
+  raw_rows=112663779478  mv_rows=1858455
+  q1/4: 1.135s  (compile 0.623s, exec 0.512s)
+  q2/4: 4.237s  (compile 0.687s, exec 3.55s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.074s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.081s, exec 0.0s)
+  done. next iteration in 506s (fixed 600s cadence).
+[01:50:38] iter 209 starting...
+  raw_rows=113052220731  mv_rows=1858559
+  q1/4: 1.177s  (compile 0.689s, exec 0.488s)
+  q2/4: 3.709s  (compile 0.594s, exec 3.115s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.047s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.125s, exec 0.0s)
+  done. next iteration in 515s (fixed 600s cadence).
+[02:00:38] iter 210 starting...
+  raw_rows=113141439200  mv_rows=1858612
+  q1/4: 0.635s  (compile 0.197s, exec 0.438s)
+  q2/4: 3.236s  (compile 0.179s, exec 3.057s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.119s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.071s, exec 0.0s)
+  done. next iteration in 504s (fixed 600s cadence).
+[02:10:38] iter 211 starting...
+  raw_rows=113209857014  mv_rows=1858613
+  q1/4: 0.875s  (compile 0.43s, exec 0.445s)
+  q2/4: 3.341s  (compile 0.123s, exec 3.218s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.071s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.075s, exec 0.0s)
+  done. next iteration in 551s (fixed 600s cadence).
+[02:20:38] iter 212 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.758s  (compile 0.319s, exec 0.439s)
+  q2/4: 3.103s  (compile 0.063s, exec 3.04s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.095s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.08s, exec 0.0s)
+  done. next iteration in 571s (fixed 600s cadence).
+[02:30:38] iter 213 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.545s  (compile 0.099s, exec 0.446s)
+  q2/4: 3.086s  (compile 0.058s, exec 3.028s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.064s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.111s, exec 0.0s)
+  done. next iteration in 572s (fixed 600s cadence).
+[02:40:38] iter 214 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.493s  (compile 0.058s, exec 0.435s)
+  q2/4: 3.107s  (compile 0.039s, exec 3.068s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.081s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.044s, exec 0.0s)
+  done. next iteration in 570s (fixed 600s cadence).
+[02:50:38] iter 215 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.51s  (compile 0.059s, exec 0.451s)
+  q2/4: 3.086s  (compile 0.033s, exec 3.053s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.077s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.069s, exec 0.0s)
+  done. next iteration in 573s (fixed 600s cadence).
+[03:00:38] iter 216 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.603s  (compile 0.173s, exec 0.43s)
+  q2/4: 3.335s  (compile 0.291s, exec 3.044s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.091s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.064s, exec 0.0s)
+  done. next iteration in 565s (fixed 600s cadence).
+[03:10:38] iter 217 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.606s  (compile 0.135s, exec 0.471s)
+  q2/4: 3.142s  (compile 0.108s, exec 3.034s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.119s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.09s, exec 0.0s)
+  done. next iteration in 572s (fixed 600s cadence).
+[03:20:38] iter 218 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.507s  (compile 0.069s, exec 0.438s)
+  q2/4: 3.12s  (compile 0.04s, exec 3.08s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.045s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.088s, exec 0.0s)
+  done. next iteration in 573s (fixed 600s cadence).
+[03:30:38] iter 219 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.486s  (compile 0.049s, exec 0.437s)
+  q2/4: 3.093s  (compile 0.035s, exec 3.058s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.056s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.037s, exec 0.0s)
+  done. next iteration in 570s (fixed 600s cadence).
+[03:40:38] iter 220 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.468s  (compile 0.045s, exec 0.423s)
+  q2/4: 3.083s  (compile 0.033s, exec 3.05s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.176s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.073s, exec 0.0s)
+  done. next iteration in 573s (fixed 600s cadence).
+[03:50:38] iter 221 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.505s  (compile 0.076s, exec 0.429s)
+  q2/4: 3.088s  (compile 0.039s, exec 3.049s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.132s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.046s, exec 0.0s)
+  done. next iteration in 573s (fixed 600s cadence).
+[04:00:38] iter 222 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.523s  (compile 0.1s, exec 0.423s)
+  q2/4: 3.089s  (compile 0.035s, exec 3.054s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.139s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.118s, exec 0.0s)
+  done. next iteration in 571s (fixed 600s cadence).
+[04:10:38] iter 223 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.519s  (compile 0.078s, exec 0.441s)
+  q2/4: 3.075s  (compile 0.037s, exec 3.038s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.113s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.135s, exec 0.0s)
+  done. next iteration in 571s (fixed 600s cadence).
+[04:20:38] iter 224 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.07s, exec 0.448s)
+  q2/4: 3.076s  (compile 0.037s, exec 3.039s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.026s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.023s, exec 0.0s)
+  done. next iteration in 573s (fixed 600s cadence).
+[04:30:38] iter 225 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.526s  (compile 0.065s, exec 0.461s)
+  q2/4: 3.089s  (compile 0.038s, exec 3.051s)
+  q3/4: 7.022s  (compile 6.038s, exec 0.903s)
+  q4/4: 6.966s  (compile 5.829s, exec 1.137s)
+  done. next iteration in 569s (fixed 600s cadence).
+[04:40:38] iter 226 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.568s  (compile 0.123s, exec 0.445s)
+  q2/4: 3.107s  (compile 0.038s, exec 3.069s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.04s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.018s, exec 0.0s)
+  done. next iteration in 572s (fixed 600s cadence).
+[04:50:38] iter 227 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.486s  (compile 0.07s, exec 0.416s)
+  q2/4: 3.137s  (compile 0.054s, exec 3.083s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.024s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.059s, exec 0.0s)
+  done. next iteration in 574s (fixed 600s cadence).
+[05:00:38] iter 228 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.516s  (compile 0.077s, exec 0.439s)
+  q2/4: 3.205s  (compile 0.04s, exec 3.165s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.043s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.163s, exec 0.0s)
+  done. next iteration in 560s (fixed 600s cadence).
+[05:10:38] iter 229 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.564s  (compile 0.084s, exec 0.48s)
+  q2/4: 3.1s  (compile 0.041s, exec 3.059s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.047s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.181s, exec 0.0s)
+  done. next iteration in 569s (fixed 600s cadence).
+[05:20:38] iter 230 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.619s  (compile 0.155s, exec 0.464s)
+  q2/4: 3.095s  (compile 0.039s, exec 3.056s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.035s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.064s, exec 0.0s)
+  done. next iteration in 570s (fixed 600s cadence).
+[05:30:38] iter 231 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.071s, exec 0.447s)
+  q2/4: 3.131s  (compile 0.038s, exec 3.093s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.078s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.015s, exec 0.0s)
+  done. next iteration in 568s (fixed 600s cadence).
+[05:40:38] iter 232 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.503s  (compile 0.077s, exec 0.426s)
+  q2/4: 3.088s  (compile 0.039s, exec 3.049s)
+  q3/4: 7.361s  (compile 6.258s, exec 0.988s)
+  q4/4: 6.95s  (compile 5.738s, exec 1.212s)
+  done. next iteration in 568s (fixed 600s cadence).
+[05:50:38] iter 233 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.511s  (compile 0.078s, exec 0.433s)
+  q2/4: 3.089s  (compile 0.037s, exec 3.052s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.022s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.029s, exec 0.0s)
+  done. next iteration in 568s (fixed 600s cadence).
+[06:00:38] iter 234 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.644s  (compile 0.166s, exec 0.478s)
+  q2/4: 3.089s  (compile 0.041s, exec 3.048s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.06s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.031s, exec 0.0s)
+  done. next iteration in 557s (fixed 600s cadence).
+[06:10:38] iter 235 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.506s  (compile 0.065s, exec 0.441s)
+  q2/4: 3.102s  (compile 0.039s, exec 3.063s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.021s, exec 0.0s)
+  q4/4: 7.562s  (compile 6.235s, exec 1.238s)
+  done. next iteration in 567s (fixed 600s cadence).
+[06:20:38] iter 236 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.524s  (compile 0.075s, exec 0.449s)
+  q2/4: 3.11s  (compile 0.04s, exec 3.07s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.035s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.029s, exec 0.0s)
+  done. next iteration in 570s (fixed 600s cadence).
+[06:30:38] iter 237 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.52s  (compile 0.076s, exec 0.444s)
+  q2/4: 3.087s  (compile 0.04s, exec 3.047s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.036s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.023s, exec 0.0s)
+  done. next iteration in 569s (fixed 600s cadence).
+[06:40:38] iter 238 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.545s  (compile 0.068s, exec 0.477s)
+  q2/4: 3.094s  (compile 0.05s, exec 3.044s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.035s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.015s, exec 0.0s)
+  done. next iteration in 569s (fixed 600s cadence).
+[06:50:38] iter 239 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.572s  (compile 0.139s, exec 0.433s)
+  q2/4: 3.091s  (compile 0.041s, exec 3.05s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.036s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.043s, exec 0.0s)
+  done. next iteration in 572s (fixed 600s cadence).
+[07:00:38] iter 240 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.668s  (compile 0.209s, exec 0.459s)
+  q2/4: 3.2s  (compile 0.093s, exec 3.107s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.052s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.026s, exec 0.0s)
+  done. next iteration in 566s (fixed 600s cadence).
+[07:10:38] iter 241 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.507s  (compile 0.076s, exec 0.431s)
+  q2/4: 3.148s  (compile 0.09s, exec 3.058s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.045s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.331s, exec 0.0s)
+  done. next iteration in 569s (fixed 600s cadence).
+[07:20:38] iter 242 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.526s  (compile 0.083s, exec 0.443s)
+  q2/4: 3.08s  (compile 0.039s, exec 3.041s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.112s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.053s, exec 0.0s)
+  done. next iteration in 570s (fixed 600s cadence).
+[07:30:38] iter 243 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.656s  (compile 0.19s, exec 0.466s)
+  q2/4: 3.106s  (compile 0.04s, exec 3.066s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.264s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.101s, exec 0.0s)
+  done. next iteration in 568s (fixed 600s cadence).
+[07:40:38] iter 244 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.523s  (compile 0.076s, exec 0.447s)
+  q2/4: 3.056s  (compile 0.039s, exec 3.017s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.044s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.083s, exec 0.0s)
+  done. next iteration in 571s (fixed 600s cadence).
+[07:50:38] iter 245 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.542s  (compile 0.098s, exec 0.444s)
+  q2/4: 3.107s  (compile 0.051s, exec 3.056s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.049s, exec 0.0s)
+  q4/4: 7.557s  (compile 6.27s, exec 1.22s)
+  done. next iteration in 570s (fixed 600s cadence).
+[08:00:38] iter 246 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.541s  (compile 0.105s, exec 0.436s)
+  q2/4: 3.063s  (compile 0.038s, exec 3.025s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.068s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.031s, exec 0.0s)
+  done. next iteration in 555s (fixed 600s cadence).
+[08:10:38] iter 247 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.461s  (compile 0.056s, exec 0.405s)
+  q2/4: 3.126s  (compile 0.039s, exec 3.087s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.046s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.224s, exec 0.0s)
+  done. next iteration in 573s (fixed 600s cadence).
+[08:20:38] iter 248 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.565s  (compile 0.121s, exec 0.444s)
+  q2/4: 3.113s  (compile 0.049s, exec 3.064s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.092s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.056s, exec 0.0s)
+  done. next iteration in 569s (fixed 600s cadence).
+[08:30:38] iter 249 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.568s  (compile 0.102s, exec 0.466s)
+  q2/4: 3.103s  (compile 0.05s, exec 3.053s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.027s, exec 0.0s)
+  q4/4: 7.781s  (compile 6.338s, exec 1.359s)
+  done. next iteration in 569s (fixed 600s cadence).
+[08:40:38] iter 250 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.489s  (compile 0.048s, exec 0.441s)
+  q2/4: 3.106s  (compile 0.044s, exec 3.062s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.029s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.056s, exec 0.0s)
+  done. next iteration in 572s (fixed 600s cadence).
+[08:50:38] iter 251 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.509s  (compile 0.057s, exec 0.452s)
+  q2/4: 3.102s  (compile 0.047s, exec 3.055s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q3/4: timeouts  (compile 5.053s, exec 0.0s)
+  QUERY TIMEOUT (interactive limit): 000630 (57014): Statement reached its statement or warehouse timeout of 5 second(s) and was canceled.
+  q4/4: timeouts  (compile 5.035s, exec 0.0s)
+  done. next iteration in 571s (fixed 600s cadence).
+[09:00:38] iter 252 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.068s, exec 0.45s)
+  q2/4: 3.15s  (compile 0.036s, exec 3.114s)
+  q3/4: 0.132s  (compile 0.102s, exec 0.03s)
+  q4/4: 0.258s  (compile 0.163s, exec 0.095s)
+  done. next iteration in 585s (fixed 600s cadence).
+[09:10:38] iter 253 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.469s  (compile 0.06s, exec 0.409s)
+  q2/4: 3.13s  (compile 0.035s, exec 3.095s)
+  q3/4: 0.123s  (compile 0.093s, exec 0.03s)
+  q4/4: 0.177s  (compile 0.086s, exec 0.091s)
+  done. next iteration in 591s (fixed 600s cadence).
+[09:20:38] iter 254 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.514s  (compile 0.068s, exec 0.446s)
+  q2/4: 3.107s  (compile 0.035s, exec 3.072s)
+  q3/4: 0.121s  (compile 0.093s, exec 0.028s)
+  q4/4: 0.175s  (compile 0.085s, exec 0.09s)
+  done. next iteration in 592s (fixed 600s cadence).
+[09:30:38] iter 255 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.532s  (compile 0.071s, exec 0.461s)
+  q2/4: 3.088s  (compile 0.035s, exec 3.053s)
+  q3/4: 0.134s  (compile 0.105s, exec 0.029s)
+  q4/4: 0.181s  (compile 0.089s, exec 0.092s)
+  done. next iteration in 592s (fixed 600s cadence).
+[09:40:38] iter 256 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.522s  (compile 0.082s, exec 0.44s)
+  q2/4: 3.07s  (compile 0.034s, exec 3.036s)
+  q3/4: 0.145s  (compile 0.112s, exec 0.033s)
+  q4/4: 0.183s  (compile 0.09s, exec 0.093s)
+  done. next iteration in 593s (fixed 600s cadence).
+[09:50:38] iter 257 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.55s  (compile 0.072s, exec 0.478s)
+  q2/4: 3.088s  (compile 0.034s, exec 3.054s)
+  q3/4: 0.153s  (compile 0.124s, exec 0.029s)
+  q4/4: 0.223s  (compile 0.127s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[10:00:38] iter 258 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.489s  (compile 0.074s, exec 0.415s)
+  q2/4: 3.127s  (compile 0.042s, exec 3.085s)
+  q3/4: 0.132s  (compile 0.101s, exec 0.031s)
+  q4/4: 0.175s  (compile 0.081s, exec 0.094s)
+  done. next iteration in 589s (fixed 600s cadence).
+[10:10:38] iter 259 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.513s  (compile 0.068s, exec 0.445s)
+  q2/4: 3.091s  (compile 0.034s, exec 3.057s)
+  q3/4: 0.13s  (compile 0.099s, exec 0.031s)
+  q4/4: 0.182s  (compile 0.086s, exec 0.096s)
+  done. next iteration in 590s (fixed 600s cadence).
+[10:20:38] iter 260 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.53s  (compile 0.065s, exec 0.465s)
+  q2/4: 3.128s  (compile 0.035s, exec 3.093s)
+  q3/4: 0.127s  (compile 0.096s, exec 0.031s)
+  q4/4: 0.196s  (compile 0.089s, exec 0.107s)
+  done. next iteration in 591s (fixed 600s cadence).
+[10:30:38] iter 261 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.527s  (compile 0.074s, exec 0.453s)
+  q2/4: 3.108s  (compile 0.04s, exec 3.068s)
+  q3/4: 0.119s  (compile 0.09s, exec 0.029s)
+  q4/4: 0.174s  (compile 0.082s, exec 0.092s)
+  done. next iteration in 583s (fixed 600s cadence).
+[10:40:38] iter 262 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.505s  (compile 0.06s, exec 0.445s)
+  q2/4: 3.14s  (compile 0.056s, exec 3.084s)
+  q3/4: 0.118s  (compile 0.088s, exec 0.03s)
+  q4/4: 0.178s  (compile 0.086s, exec 0.092s)
+  done. next iteration in 590s (fixed 600s cadence).
+[10:50:38] iter 263 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.506s  (compile 0.06s, exec 0.446s)
+  q2/4: 3.083s  (compile 0.035s, exec 3.048s)
+  q3/4: 0.126s  (compile 0.096s, exec 0.03s)
+  q4/4: 0.186s  (compile 0.093s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[11:00:38] iter 264 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.508s  (compile 0.071s, exec 0.437s)
+  q2/4: 3.105s  (compile 0.039s, exec 3.066s)
+  q3/4: 0.126s  (compile 0.097s, exec 0.029s)
+  q4/4: 0.179s  (compile 0.086s, exec 0.093s)
+  done. next iteration in 584s (fixed 600s cadence).
+[11:10:38] iter 265 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.511s  (compile 0.079s, exec 0.432s)
+  q2/4: 3.181s  (compile 0.108s, exec 3.073s)
+  q3/4: 0.118s  (compile 0.09s, exec 0.028s)
+  q4/4: 0.184s  (compile 0.091s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[11:20:38] iter 266 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.563s  (compile 0.094s, exec 0.469s)
+  q2/4: 3.16s  (compile 0.08s, exec 3.08s)
+  q3/4: 0.125s  (compile 0.096s, exec 0.029s)
+  q4/4: 0.185s  (compile 0.088s, exec 0.097s)
+  done. next iteration in 591s (fixed 600s cadence).
+[11:30:38] iter 267 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.082s, exec 0.436s)
+  q2/4: 3.136s  (compile 0.043s, exec 3.093s)
+  q3/4: 0.135s  (compile 0.105s, exec 0.03s)
+  q4/4: 0.185s  (compile 0.091s, exec 0.094s)
+  done. next iteration in 591s (fixed 600s cadence).
+[11:40:38] iter 268 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.527s  (compile 0.07s, exec 0.457s)
+  q2/4: 3.126s  (compile 0.037s, exec 3.089s)
+  q3/4: 0.12s  (compile 0.088s, exec 0.032s)
+  q4/4: 0.179s  (compile 0.082s, exec 0.097s)
+  done. next iteration in 590s (fixed 600s cadence).
+[11:50:38] iter 269 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.517s  (compile 0.056s, exec 0.461s)
+  q2/4: 3.086s  (compile 0.036s, exec 3.05s)
+  q3/4: 0.134s  (compile 0.105s, exec 0.029s)
+  q4/4: 0.191s  (compile 0.092s, exec 0.099s)
+  done. next iteration in 591s (fixed 600s cadence).
+[12:00:38] iter 270 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.501s  (compile 0.055s, exec 0.446s)
+  q2/4: 3.11s  (compile 0.036s, exec 3.074s)
+  q3/4: 0.115s  (compile 0.085s, exec 0.03s)
+  q4/4: 0.18s  (compile 0.088s, exec 0.092s)
+  done. next iteration in 588s (fixed 600s cadence).
+[12:10:38] iter 271 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.482s  (compile 0.054s, exec 0.428s)
+  q2/4: 3.075s  (compile 0.034s, exec 3.041s)
+  q3/4: 0.129s  (compile 0.099s, exec 0.03s)
+  q4/4: 0.178s  (compile 0.083s, exec 0.095s)
+  done. next iteration in 592s (fixed 600s cadence).
+[12:20:38] iter 272 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.513s  (compile 0.07s, exec 0.443s)
+  q2/4: 3.122s  (compile 0.033s, exec 3.089s)
+  q3/4: 0.12s  (compile 0.09s, exec 0.03s)
+  q4/4: 0.18s  (compile 0.082s, exec 0.098s)
+  done. next iteration in 592s (fixed 600s cadence).
+[12:30:38] iter 273 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.088s, exec 0.43s)
+  q2/4: 3.077s  (compile 0.038s, exec 3.039s)
+  q3/4: 0.124s  (compile 0.094s, exec 0.03s)
+  q4/4: 0.187s  (compile 0.094s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[12:40:38] iter 274 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.501s  (compile 0.075s, exec 0.426s)
+  q2/4: 3.065s  (compile 0.037s, exec 3.028s)
+  q3/4: 0.123s  (compile 0.091s, exec 0.032s)
+  q4/4: 0.179s  (compile 0.083s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[12:50:38] iter 275 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.533s  (compile 0.071s, exec 0.462s)
+  q2/4: 3.07s  (compile 0.039s, exec 3.031s)
+  q3/4: 0.119s  (compile 0.088s, exec 0.031s)
+  q4/4: 0.183s  (compile 0.088s, exec 0.095s)
+  done. next iteration in 593s (fixed 600s cadence).
+[13:00:38] iter 276 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.516s  (compile 0.067s, exec 0.449s)
+  q2/4: 3.145s  (compile 0.033s, exec 3.112s)
+  q3/4: 0.124s  (compile 0.093s, exec 0.031s)
+  q4/4: 0.177s  (compile 0.083s, exec 0.094s)
+  done. next iteration in 591s (fixed 600s cadence).
+[13:10:38] iter 277 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.501s  (compile 0.069s, exec 0.432s)
+  q2/4: 3.094s  (compile 0.035s, exec 3.059s)
+  q3/4: 0.131s  (compile 0.101s, exec 0.03s)
+  q4/4: 0.179s  (compile 0.085s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[13:20:38] iter 278 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.499s  (compile 0.058s, exec 0.441s)
+  q2/4: 3.054s  (compile 0.037s, exec 3.017s)
+  q3/4: 0.119s  (compile 0.09s, exec 0.029s)
+  q4/4: 0.179s  (compile 0.085s, exec 0.094s)
+  done. next iteration in 593s (fixed 600s cadence).
+[13:30:38] iter 279 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.517s  (compile 0.062s, exec 0.455s)
+  q2/4: 3.106s  (compile 0.036s, exec 3.07s)
+  q3/4: 0.12s  (compile 0.092s, exec 0.028s)
+  q4/4: 0.185s  (compile 0.087s, exec 0.098s)
+  done. next iteration in 593s (fixed 600s cadence).
+[13:40:38] iter 280 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.51s  (compile 0.065s, exec 0.445s)
+  q2/4: 3.082s  (compile 0.038s, exec 3.044s)
+  q3/4: 0.126s  (compile 0.094s, exec 0.032s)
+  q4/4: 0.181s  (compile 0.088s, exec 0.093s)
+  done. next iteration in 593s (fixed 600s cadence).
+[13:50:38] iter 281 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.484s  (compile 0.055s, exec 0.429s)
+  q2/4: 3.12s  (compile 0.035s, exec 3.085s)
+  q3/4: 0.132s  (compile 0.093s, exec 0.039s)
+  q4/4: 0.189s  (compile 0.092s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[14:00:38] iter 282 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.5s  (compile 0.057s, exec 0.443s)
+  q2/4: 3.085s  (compile 0.033s, exec 3.052s)
+  q3/4: 0.128s  (compile 0.099s, exec 0.029s)
+  q4/4: 0.188s  (compile 0.095s, exec 0.093s)
+  done. next iteration in 588s (fixed 600s cadence).
+[14:10:38] iter 283 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.534s  (compile 0.085s, exec 0.449s)
+  q2/4: 3.144s  (compile 0.036s, exec 3.108s)
+  q3/4: 0.135s  (compile 0.106s, exec 0.029s)
+  q4/4: 0.19s  (compile 0.092s, exec 0.098s)
+  done. next iteration in 592s (fixed 600s cadence).
+[14:20:38] iter 284 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.474s  (compile 0.059s, exec 0.415s)
+  q2/4: 3.075s  (compile 0.037s, exec 3.038s)
+  q3/4: 0.187s  (compile 0.153s, exec 0.034s)
+  q4/4: 0.185s  (compile 0.087s, exec 0.098s)
+  done. next iteration in 592s (fixed 600s cadence).
+[14:30:38] iter 285 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.47s  (compile 0.064s, exec 0.406s)
+  q2/4: 3.084s  (compile 0.034s, exec 3.05s)
+  q3/4: 0.147s  (compile 0.119s, exec 0.028s)
+  q4/4: 0.184s  (compile 0.09s, exec 0.094s)
+  done. next iteration in 591s (fixed 600s cadence).
+[14:40:38] iter 286 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.491s  (compile 0.059s, exec 0.432s)
+  q2/4: 3.099s  (compile 0.041s, exec 3.058s)
+  q3/4: 0.117s  (compile 0.091s, exec 0.026s)
+  q4/4: 0.182s  (compile 0.091s, exec 0.091s)
+  done. next iteration in 593s (fixed 600s cadence).
+[14:50:38] iter 287 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.477s  (compile 0.056s, exec 0.421s)
+  q2/4: 3.091s  (compile 0.037s, exec 3.054s)
+  q3/4: 0.135s  (compile 0.103s, exec 0.032s)
+  q4/4: 0.191s  (compile 0.091s, exec 0.1s)
+  done. next iteration in 592s (fixed 600s cadence).
+[15:00:38] iter 288 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.521s  (compile 0.058s, exec 0.463s)
+  q2/4: 3.114s  (compile 0.035s, exec 3.079s)
+  q3/4: 0.126s  (compile 0.093s, exec 0.033s)
+  q4/4: 0.179s  (compile 0.086s, exec 0.093s)
+  done. next iteration in 581s (fixed 600s cadence).
+[15:10:38] iter 289 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.598s  (compile 0.139s, exec 0.459s)
+  q2/4: 3.186s  (compile 0.094s, exec 3.092s)
+  q3/4: 0.118s  (compile 0.088s, exec 0.03s)
+  q4/4: 0.183s  (compile 0.081s, exec 0.102s)
+  done. next iteration in 593s (fixed 600s cadence).
+[15:20:38] iter 290 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.533s  (compile 0.086s, exec 0.447s)
+  q2/4: 3.137s  (compile 0.081s, exec 3.056s)
+  q3/4: 0.117s  (compile 0.088s, exec 0.029s)
+  q4/4: 0.178s  (compile 0.086s, exec 0.092s)
+  done. next iteration in 593s (fixed 600s cadence).
+[15:30:38] iter 291 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.485s  (compile 0.055s, exec 0.43s)
+  q2/4: 3.126s  (compile 0.034s, exec 3.092s)
+  q3/4: 0.127s  (compile 0.093s, exec 0.034s)
+  q4/4: 0.185s  (compile 0.085s, exec 0.1s)
+  done. next iteration in 592s (fixed 600s cadence).
+[15:40:38] iter 292 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.48s  (compile 0.06s, exec 0.42s)
+  q2/4: 3.089s  (compile 0.04s, exec 3.049s)
+  q3/4: 0.12s  (compile 0.09s, exec 0.03s)
+  q4/4: 0.177s  (compile 0.084s, exec 0.093s)
+  done. next iteration in 593s (fixed 600s cadence).
+[15:50:38] iter 293 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.5s  (compile 0.073s, exec 0.427s)
+  q2/4: 3.127s  (compile 0.106s, exec 3.021s)
+  q3/4: 0.13s  (compile 0.102s, exec 0.028s)
+  q4/4: 0.181s  (compile 0.086s, exec 0.095s)
+  done. next iteration in 591s (fixed 600s cadence).
+[16:00:38] iter 294 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.496s  (compile 0.056s, exec 0.44s)
+  q2/4: 3.15s  (compile 0.036s, exec 3.114s)
+  q3/4: 0.133s  (compile 0.1s, exec 0.033s)
+  q4/4: 0.186s  (compile 0.089s, exec 0.097s)
+  done. next iteration in 591s (fixed 600s cadence).
+[16:10:38] iter 295 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.51s  (compile 0.063s, exec 0.447s)
+  q2/4: 3.107s  (compile 0.039s, exec 3.068s)
+  q3/4: 0.158s  (compile 0.128s, exec 0.03s)
+  q4/4: 0.176s  (compile 0.086s, exec 0.09s)
+  done. next iteration in 593s (fixed 600s cadence).
+[16:20:38] iter 296 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.524s  (compile 0.065s, exec 0.459s)
+  q2/4: 3.103s  (compile 0.036s, exec 3.067s)
+  q3/4: 0.127s  (compile 0.096s, exec 0.031s)
+  q4/4: 0.181s  (compile 0.086s, exec 0.095s)
+  done. next iteration in 592s (fixed 600s cadence).
+[16:30:38] iter 297 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.53s  (compile 0.054s, exec 0.476s)
+  q2/4: 3.083s  (compile 0.036s, exec 3.047s)
+  q3/4: 0.262s  (compile 0.228s, exec 0.034s)
+  q4/4: 0.183s  (compile 0.091s, exec 0.092s)
+  done. next iteration in 591s (fixed 600s cadence).
+[16:40:38] iter 298 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.482s  (compile 0.056s, exec 0.426s)
+  q2/4: 3.116s  (compile 0.038s, exec 3.078s)
+  q3/4: 0.121s  (compile 0.091s, exec 0.03s)
+  q4/4: 0.178s  (compile 0.088s, exec 0.09s)
+  done. next iteration in 592s (fixed 600s cadence).
+[16:50:38] iter 299 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.491s  (compile 0.066s, exec 0.425s)
+  q2/4: 3.1s  (compile 0.038s, exec 3.062s)
+  q3/4: 0.116s  (compile 0.086s, exec 0.03s)
+  q4/4: 0.18s  (compile 0.081s, exec 0.099s)
+  done. next iteration in 592s (fixed 600s cadence).
+[17:00:38] iter 300 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.494s  (compile 0.057s, exec 0.437s)
+  q2/4: 3.087s  (compile 0.04s, exec 3.047s)
+  q3/4: 0.115s  (compile 0.086s, exec 0.029s)
+  q4/4: 0.189s  (compile 0.094s, exec 0.095s)
+  done. next iteration in 592s (fixed 600s cadence).
+[17:10:38] iter 301 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.486s  (compile 0.054s, exec 0.432s)
+  q2/4: 3.1s  (compile 0.038s, exec 3.062s)
+  q3/4: 0.144s  (compile 0.115s, exec 0.029s)
+  q4/4: 0.249s  (compile 0.16s, exec 0.089s)
+  done. next iteration in 591s (fixed 600s cadence).
+[17:20:38] iter 302 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.49s  (compile 0.055s, exec 0.435s)
+  q2/4: 3.078s  (compile 0.037s, exec 3.041s)
+  q3/4: 0.124s  (compile 0.092s, exec 0.032s)
+  q4/4: 0.182s  (compile 0.091s, exec 0.091s)
+  done. next iteration in 593s (fixed 600s cadence).
+[17:30:38] iter 303 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.487s  (compile 0.054s, exec 0.433s)
+  q2/4: 3.122s  (compile 0.035s, exec 3.087s)
+  q3/4: 0.13s  (compile 0.098s, exec 0.032s)
+  q4/4: 0.181s  (compile 0.085s, exec 0.096s)
+  done. next iteration in 590s (fixed 600s cadence).
+[17:40:38] iter 304 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.489s  (compile 0.054s, exec 0.435s)
+  q2/4: 3.045s  (compile 0.036s, exec 3.009s)
+  q3/4: 0.125s  (compile 0.097s, exec 0.028s)
+  q4/4: 0.18s  (compile 0.083s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[17:50:38] iter 305 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.485s  (compile 0.064s, exec 0.421s)
+  q2/4: 3.096s  (compile 0.037s, exec 3.059s)
+  q3/4: 0.139s  (compile 0.109s, exec 0.03s)
+  q4/4: 0.205s  (compile 0.094s, exec 0.111s)
+  done. next iteration in 592s (fixed 600s cadence).
+[18:00:38] iter 306 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.523s  (compile 0.079s, exec 0.444s)
+  q2/4: 3.114s  (compile 0.041s, exec 3.073s)
+  q3/4: 0.121s  (compile 0.094s, exec 0.027s)
+  q4/4: 0.18s  (compile 0.082s, exec 0.098s)
+  done. next iteration in 591s (fixed 600s cadence).
+[18:10:38] iter 307 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.477s  (compile 0.058s, exec 0.419s)
+  q2/4: 3.087s  (compile 0.037s, exec 3.05s)
+  q3/4: 0.127s  (compile 0.098s, exec 0.029s)
+  q4/4: 0.18s  (compile 0.087s, exec 0.093s)
+  done. next iteration in 593s (fixed 600s cadence).
+[18:20:38] iter 308 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.476s  (compile 0.062s, exec 0.414s)
+  q2/4: 3.092s  (compile 0.041s, exec 3.051s)
+  q3/4: 0.123s  (compile 0.094s, exec 0.029s)
+  q4/4: 0.182s  (compile 0.082s, exec 0.1s)
+  done. next iteration in 593s (fixed 600s cadence).
+[18:30:38] iter 309 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.485s  (compile 0.057s, exec 0.428s)
+  q2/4: 3.072s  (compile 0.039s, exec 3.033s)
+  q3/4: 0.13s  (compile 0.101s, exec 0.029s)
+  q4/4: 0.183s  (compile 0.087s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[18:40:38] iter 310 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.506s  (compile 0.064s, exec 0.442s)
+  q2/4: 3.067s  (compile 0.034s, exec 3.033s)
+  q3/4: 0.12s  (compile 0.093s, exec 0.027s)
+  q4/4: 0.197s  (compile 0.1s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[18:50:38] iter 311 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.501s  (compile 0.061s, exec 0.44s)
+  q2/4: 3.101s  (compile 0.036s, exec 3.065s)
+  q3/4: 0.118s  (compile 0.09s, exec 0.028s)
+  q4/4: 0.177s  (compile 0.083s, exec 0.094s)
+  done. next iteration in 593s (fixed 600s cadence).
+[19:00:38] iter 312 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.519s  (compile 0.073s, exec 0.446s)
+  q2/4: 3.103s  (compile 0.037s, exec 3.066s)
+  q3/4: 0.123s  (compile 0.093s, exec 0.03s)
+  q4/4: 0.185s  (compile 0.085s, exec 0.1s)
+  done. next iteration in 590s (fixed 600s cadence).
+[19:10:38] iter 313 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.567s  (compile 0.096s, exec 0.471s)
+  q2/4: 3.163s  (compile 0.109s, exec 3.054s)
+  q3/4: 0.131s  (compile 0.092s, exec 0.039s)
+  q4/4: 0.186s  (compile 0.084s, exec 0.102s)
+  done. next iteration in 590s (fixed 600s cadence).
+[19:20:38] iter 314 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.578s  (compile 0.097s, exec 0.481s)
+  q2/4: 3.187s  (compile 0.081s, exec 3.106s)
+  q3/4: 0.121s  (compile 0.091s, exec 0.03s)
+  q4/4: 0.198s  (compile 0.105s, exec 0.093s)
+  done. next iteration in 591s (fixed 600s cadence).
+[19:30:38] iter 315 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.498s  (compile 0.063s, exec 0.435s)
+  q2/4: 3.145s  (compile 0.035s, exec 3.11s)
+  q3/4: 0.123s  (compile 0.092s, exec 0.031s)
+  q4/4: 0.18s  (compile 0.088s, exec 0.092s)
+  done. next iteration in 588s (fixed 600s cadence).
+[19:40:38] iter 316 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.483s  (compile 0.05s, exec 0.433s)
+  q2/4: 3.095s  (compile 0.034s, exec 3.061s)
+  q3/4: 0.119s  (compile 0.088s, exec 0.031s)
+  q4/4: 0.184s  (compile 0.091s, exec 0.093s)
+  done. next iteration in 591s (fixed 600s cadence).
+[19:50:38] iter 317 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.538s  (compile 0.074s, exec 0.464s)
+  q2/4: 3.081s  (compile 0.033s, exec 3.048s)
+  q3/4: 0.118s  (compile 0.089s, exec 0.029s)
+  q4/4: 0.188s  (compile 0.095s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[20:00:38] iter 318 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.506s  (compile 0.064s, exec 0.442s)
+  q2/4: 3.121s  (compile 0.056s, exec 3.065s)
+  q3/4: 0.125s  (compile 0.092s, exec 0.033s)
+  q4/4: 0.191s  (compile 0.094s, exec 0.097s)
+  done. next iteration in 582s (fixed 600s cadence).
+[20:10:38] iter 319 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.535s  (compile 0.071s, exec 0.464s)
+  q2/4: 3.075s  (compile 0.034s, exec 3.041s)
+  q3/4: 0.118s  (compile 0.089s, exec 0.029s)
+  q4/4: 0.182s  (compile 0.086s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[20:20:38] iter 320 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.487s  (compile 0.053s, exec 0.434s)
+  q2/4: 3.074s  (compile 0.038s, exec 3.036s)
+  q3/4: 0.119s  (compile 0.09s, exec 0.029s)
+  q4/4: 0.188s  (compile 0.087s, exec 0.101s)
+  done. next iteration in 593s (fixed 600s cadence).
+[20:30:38] iter 321 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.507s  (compile 0.063s, exec 0.444s)
+  q2/4: 3.093s  (compile 0.038s, exec 3.055s)
+  q3/4: 0.12s  (compile 0.091s, exec 0.029s)
+  q4/4: 0.18s  (compile 0.085s, exec 0.095s)
+  done. next iteration in 593s (fixed 600s cadence).
+[20:40:38] iter 322 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.505s  (compile 0.065s, exec 0.44s)
+  q2/4: 3.085s  (compile 0.035s, exec 3.05s)
+  q3/4: 0.125s  (compile 0.096s, exec 0.029s)
+  q4/4: 0.175s  (compile 0.085s, exec 0.09s)
+  done. next iteration in 593s (fixed 600s cadence).
+[20:50:38] iter 323 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.485s  (compile 0.054s, exec 0.431s)
+  q2/4: 3.083s  (compile 0.044s, exec 3.039s)
+  q3/4: 0.127s  (compile 0.091s, exec 0.036s)
+  q4/4: 0.179s  (compile 0.082s, exec 0.097s)
+  done. next iteration in 593s (fixed 600s cadence).
+[21:00:38] iter 324 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.516s  (compile 0.076s, exec 0.44s)
+  q2/4: 3.072s  (compile 0.043s, exec 3.029s)
+  q3/4: 0.118s  (compile 0.086s, exec 0.032s)
+  q4/4: 0.18s  (compile 0.08s, exec 0.1s)
+  done. next iteration in 592s (fixed 600s cadence).
+[21:10:38] iter 325 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.508s  (compile 0.061s, exec 0.447s)
+  q2/4: 3.094s  (compile 0.047s, exec 3.047s)
+  q3/4: 0.145s  (compile 0.114s, exec 0.031s)
+  q4/4: 0.179s  (compile 0.085s, exec 0.094s)
+  done. next iteration in 593s (fixed 600s cadence).
+[21:20:38] iter 326 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.497s  (compile 0.058s, exec 0.439s)
+  q2/4: 3.098s  (compile 0.043s, exec 3.055s)
+  q3/4: 0.119s  (compile 0.091s, exec 0.028s)
+  q4/4: 0.179s  (compile 0.083s, exec 0.096s)
+  done. next iteration in 593s (fixed 600s cadence).
+[21:30:38] iter 327 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.513s  (compile 0.061s, exec 0.452s)
+  q2/4: 3.107s  (compile 0.034s, exec 3.073s)
+  q3/4: 0.12s  (compile 0.089s, exec 0.031s)
+  q4/4: 0.187s  (compile 0.093s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[21:40:38] iter 328 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.483s  (compile 0.057s, exec 0.426s)
+  q2/4: 3.125s  (compile 0.036s, exec 3.089s)
+  q3/4: 0.12s  (compile 0.093s, exec 0.027s)
+  q4/4: 0.172s  (compile 0.081s, exec 0.091s)
+  done. next iteration in 592s (fixed 600s cadence).
+[21:50:38] iter 329 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.472s  (compile 0.055s, exec 0.417s)
+  q2/4: 3.062s  (compile 0.045s, exec 3.017s)
+  q3/4: 0.184s  (compile 0.157s, exec 0.027s)
+  q4/4: 0.18s  (compile 0.085s, exec 0.095s)
+  done. next iteration in 592s (fixed 600s cadence).
+[22:00:38] iter 330 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.556s  (compile 0.134s, exec 0.422s)
+  q2/4: 3.191s  (compile 0.043s, exec 3.148s)
+  q3/4: 0.138s  (compile 0.104s, exec 0.034s)
+  q4/4: 0.202s  (compile 0.101s, exec 0.101s)
+  done. next iteration in 590s (fixed 600s cadence).
+[22:10:38] iter 331 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.583s  (compile 0.102s, exec 0.481s)
+  q2/4: 3.099s  (compile 0.033s, exec 3.066s)
+  q3/4: 0.13s  (compile 0.1s, exec 0.03s)
+  q4/4: 0.186s  (compile 0.088s, exec 0.098s)
+  done. next iteration in 592s (fixed 600s cadence).
+[22:20:38] iter 332 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.512s  (compile 0.059s, exec 0.453s)
+  q2/4: 3.124s  (compile 0.034s, exec 3.09s)
+  q3/4: 0.133s  (compile 0.104s, exec 0.029s)
+  q4/4: 0.177s  (compile 0.084s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[22:30:38] iter 333 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.489s  (compile 0.059s, exec 0.43s)
+  q2/4: 3.063s  (compile 0.035s, exec 3.028s)
+  q3/4: 0.12s  (compile 0.09s, exec 0.03s)
+  q4/4: 0.179s  (compile 0.086s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[22:40:38] iter 334 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.497s  (compile 0.054s, exec 0.443s)
+  q2/4: 3.194s  (compile 0.114s, exec 3.08s)
+  q3/4: 0.126s  (compile 0.095s, exec 0.031s)
+  q4/4: 0.183s  (compile 0.086s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[22:50:38] iter 335 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.508s  (compile 0.051s, exec 0.457s)
+  q2/4: 3.066s  (compile 0.035s, exec 3.031s)
+  q3/4: 0.15s  (compile 0.12s, exec 0.03s)
+  q4/4: 0.185s  (compile 0.085s, exec 0.1s)
+  done. next iteration in 592s (fixed 600s cadence).
+[23:00:38] iter 336 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.515s  (compile 0.072s, exec 0.443s)
+  q2/4: 3.086s  (compile 0.044s, exec 3.042s)
+  q3/4: 0.117s  (compile 0.09s, exec 0.027s)
+  q4/4: 0.18s  (compile 0.087s, exec 0.093s)
+  done. next iteration in 585s (fixed 600s cadence).
+[23:10:38] iter 337 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.507s  (compile 0.077s, exec 0.43s)
+  q2/4: 3.148s  (compile 0.083s, exec 3.065s)
+  q3/4: 0.125s  (compile 0.094s, exec 0.031s)
+  q4/4: 0.177s  (compile 0.083s, exec 0.094s)
+  done. next iteration in 593s (fixed 600s cadence).
+[23:20:38] iter 338 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.071s, exec 0.447s)
+  q2/4: 3.252s  (compile 0.158s, exec 3.094s)
+  q3/4: 0.113s  (compile 0.081s, exec 0.032s)
+  q4/4: 0.172s  (compile 0.078s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[23:30:38] iter 339 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.489s  (compile 0.055s, exec 0.434s)
+  q2/4: 3.097s  (compile 0.037s, exec 3.06s)
+  q3/4: 0.124s  (compile 0.095s, exec 0.029s)
+  q4/4: 0.179s  (compile 0.084s, exec 0.095s)
+  done. next iteration in 592s (fixed 600s cadence).
+[23:40:38] iter 340 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.474s  (compile 0.052s, exec 0.422s)
+  q2/4: 3.073s  (compile 0.036s, exec 3.037s)
+  q3/4: 0.122s  (compile 0.091s, exec 0.031s)
+  q4/4: 0.181s  (compile 0.086s, exec 0.095s)
+  done. next iteration in 593s (fixed 600s cadence).
+[23:50:38] iter 341 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.467s  (compile 0.053s, exec 0.414s)
+  q2/4: 3.06s  (compile 0.037s, exec 3.023s)
+  q3/4: 0.123s  (compile 0.091s, exec 0.032s)
+  q4/4: 0.19s  (compile 0.088s, exec 0.102s)
+  done. next iteration in 592s (fixed 600s cadence).
+[00:00:38] iter 342 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.584s  (compile 0.139s, exec 0.445s)
+  q2/4: 3.12s  (compile 0.043s, exec 3.077s)
+  q3/4: 0.124s  (compile 0.092s, exec 0.032s)
+  q4/4: 0.201s  (compile 0.083s, exec 0.118s)
+  done. next iteration in 582s (fixed 600s cadence).
+[00:10:38] iter 343 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.5s  (compile 0.058s, exec 0.442s)
+  q2/4: 3.053s  (compile 0.033s, exec 3.02s)
+  q3/4: 0.121s  (compile 0.092s, exec 0.029s)
+  q4/4: 0.178s  (compile 0.085s, exec 0.093s)
+  done. next iteration in 586s (fixed 600s cadence).
+[00:20:38] iter 344 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.514s  (compile 0.068s, exec 0.446s)
+  q2/4: 3.192s  (compile 0.035s, exec 3.157s)
+  q3/4: 0.118s  (compile 0.088s, exec 0.03s)
+  q4/4: 0.178s  (compile 0.084s, exec 0.094s)
+  done. next iteration in 574s (fixed 600s cadence).
+[00:30:38] iter 345 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.502s  (compile 0.058s, exec 0.444s)
+  q2/4: 3.053s  (compile 0.033s, exec 3.02s)
+  q3/4: 0.128s  (compile 0.102s, exec 0.026s)
+  q4/4: 0.178s  (compile 0.085s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[00:40:38] iter 346 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.496s  (compile 0.056s, exec 0.44s)
+  q2/4: 3.093s  (compile 0.039s, exec 3.054s)
+  q3/4: 0.193s  (compile 0.161s, exec 0.032s)
+  q4/4: 0.183s  (compile 0.086s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[00:50:38] iter 347 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.498s  (compile 0.053s, exec 0.445s)
+  q2/4: 3.092s  (compile 0.035s, exec 3.057s)
+  q3/4: 0.114s  (compile 0.084s, exec 0.03s)
+  q4/4: 0.179s  (compile 0.09s, exec 0.089s)
+  done. next iteration in 593s (fixed 600s cadence).
+[01:00:38] iter 348 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.496s  (compile 0.052s, exec 0.444s)
+  q2/4: 3.107s  (compile 0.034s, exec 3.073s)
+  q3/4: 0.126s  (compile 0.095s, exec 0.031s)
+  q4/4: 0.18s  (compile 0.086s, exec 0.094s)
+  done. next iteration in 591s (fixed 600s cadence).
+[01:10:38] iter 349 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.481s  (compile 0.058s, exec 0.423s)
+  q2/4: 3.111s  (compile 0.035s, exec 3.076s)
+  q3/4: 0.127s  (compile 0.095s, exec 0.032s)
+  q4/4: 0.183s  (compile 0.085s, exec 0.098s)
+  done. next iteration in 585s (fixed 600s cadence).
+[01:20:38] iter 350 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.519s  (compile 0.06s, exec 0.459s)
+  q2/4: 3.073s  (compile 0.035s, exec 3.038s)
+  q3/4: 0.192s  (compile 0.159s, exec 0.033s)
+  q4/4: 0.198s  (compile 0.102s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[01:30:38] iter 351 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.51s  (compile 0.068s, exec 0.442s)
+  q2/4: 3.098s  (compile 0.039s, exec 3.059s)
+  q3/4: 0.133s  (compile 0.105s, exec 0.028s)
+  q4/4: 0.197s  (compile 0.093s, exec 0.104s)
+  done. next iteration in 592s (fixed 600s cadence).
+[01:40:38] iter 352 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.504s  (compile 0.065s, exec 0.439s)
+  q2/4: 3.085s  (compile 0.035s, exec 3.05s)
+  q3/4: 0.119s  (compile 0.09s, exec 0.029s)
+  q4/4: 0.179s  (compile 0.085s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[01:50:38] iter 353 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.533s  (compile 0.063s, exec 0.47s)
+  q2/4: 3.095s  (compile 0.034s, exec 3.061s)
+  q3/4: 0.123s  (compile 0.095s, exec 0.028s)
+  q4/4: 0.17s  (compile 0.081s, exec 0.089s)
+  done. next iteration in 592s (fixed 600s cadence).
+[02:00:38] iter 354 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.52s  (compile 0.073s, exec 0.447s)
+  q2/4: 3.105s  (compile 0.035s, exec 3.07s)
+  q3/4: 0.207s  (compile 0.177s, exec 0.03s)
+  q4/4: 0.187s  (compile 0.093s, exec 0.094s)
+  done. next iteration in 591s (fixed 600s cadence).
+[02:10:38] iter 355 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.506s  (compile 0.06s, exec 0.446s)
+  q2/4: 3.111s  (compile 0.038s, exec 3.073s)
+  q3/4: 0.133s  (compile 0.104s, exec 0.029s)
+  q4/4: 0.181s  (compile 0.085s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[02:20:38] iter 356 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.505s  (compile 0.07s, exec 0.435s)
+  q2/4: 3.098s  (compile 0.049s, exec 3.049s)
+  q3/4: 0.125s  (compile 0.096s, exec 0.029s)
+  q4/4: 0.184s  (compile 0.089s, exec 0.095s)
+  done. next iteration in 592s (fixed 600s cadence).
+[02:30:38] iter 357 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.498s  (compile 0.053s, exec 0.445s)
+  q2/4: 3.084s  (compile 0.034s, exec 3.05s)
+  q3/4: 0.119s  (compile 0.09s, exec 0.029s)
+  q4/4: 0.179s  (compile 0.087s, exec 0.092s)
+  done. next iteration in 592s (fixed 600s cadence).
+[02:40:38] iter 358 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.486s  (compile 0.067s, exec 0.419s)
+  q2/4: 3.081s  (compile 0.038s, exec 3.043s)
+  q3/4: 0.13s  (compile 0.1s, exec 0.03s)
+  q4/4: 0.246s  (compile 0.152s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[02:50:38] iter 359 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.498s  (compile 0.078s, exec 0.42s)
+  q2/4: 3.081s  (compile 0.037s, exec 3.044s)
+  q3/4: 0.122s  (compile 0.092s, exec 0.03s)
+  q4/4: 0.181s  (compile 0.089s, exec 0.092s)
+  done. next iteration in 592s (fixed 600s cadence).
+[03:00:38] iter 360 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.502s  (compile 0.073s, exec 0.429s)
+  q2/4: 3.103s  (compile 0.036s, exec 3.067s)
+  q3/4: 0.237s  (compile 0.208s, exec 0.029s)
+  q4/4: 0.184s  (compile 0.091s, exec 0.093s)
+  done. next iteration in 588s (fixed 600s cadence).
+[03:10:38] iter 361 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.556s  (compile 0.089s, exec 0.467s)
+  q2/4: 3.2s  (compile 0.12s, exec 3.08s)
+  q3/4: 0.126s  (compile 0.097s, exec 0.029s)
+  q4/4: 0.184s  (compile 0.092s, exec 0.092s)
+  done. next iteration in 588s (fixed 600s cadence).
+[03:20:38] iter 362 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.561s  (compile 0.109s, exec 0.452s)
+  q2/4: 3.121s  (compile 0.08s, exec 3.041s)
+  q3/4: 0.126s  (compile 0.094s, exec 0.032s)
+  q4/4: 0.261s  (compile 0.159s, exec 0.102s)
+  done. next iteration in 592s (fixed 600s cadence).
+[03:30:38] iter 363 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.554s  (compile 0.069s, exec 0.485s)
+  q2/4: 3.539s  (compile 0.036s, exec 3.503s)
+  q3/4: 0.136s  (compile 0.104s, exec 0.032s)
+  q4/4: 0.199s  (compile 0.09s, exec 0.109s)
+  done. next iteration in 592s (fixed 600s cadence).
+[03:40:38] iter 364 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.52s  (compile 0.059s, exec 0.461s)
+  q2/4: 3.111s  (compile 0.033s, exec 3.078s)
+  q3/4: 0.129s  (compile 0.098s, exec 0.031s)
+  q4/4: 0.189s  (compile 0.091s, exec 0.098s)
+  done. next iteration in 592s (fixed 600s cadence).
+[03:50:38] iter 365 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.516s  (compile 0.071s, exec 0.445s)
+  q2/4: 3.089s  (compile 0.037s, exec 3.052s)
+  q3/4: 0.122s  (compile 0.09s, exec 0.032s)
+  q4/4: 0.198s  (compile 0.103s, exec 0.095s)
+  done. next iteration in 593s (fixed 600s cadence).
+[04:00:38] iter 366 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.506s  (compile 0.084s, exec 0.422s)
+  q2/4: 3.133s  (compile 0.041s, exec 3.092s)
+  q3/4: 0.14s  (compile 0.11s, exec 0.03s)
+  q4/4: 0.268s  (compile 0.17s, exec 0.098s)
+  done. next iteration in 589s (fixed 600s cadence).
+[04:10:38] iter 367 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.531s  (compile 0.096s, exec 0.435s)
+  q2/4: 3.133s  (compile 0.036s, exec 3.097s)
+  q3/4: 0.158s  (compile 0.128s, exec 0.03s)
+  q4/4: 0.194s  (compile 0.094s, exec 0.1s)
+  done. next iteration in 593s (fixed 600s cadence).
+[04:20:38] iter 368 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.51s  (compile 0.071s, exec 0.439s)
+  q2/4: 3.117s  (compile 0.035s, exec 3.082s)
+  q3/4: 0.206s  (compile 0.175s, exec 0.031s)
+  q4/4: 0.177s  (compile 0.085s, exec 0.092s)
+  done. next iteration in 592s (fixed 600s cadence).
+[04:30:38] iter 369 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.544s  (compile 0.084s, exec 0.46s)
+  q2/4: 3.112s  (compile 0.037s, exec 3.075s)
+  q3/4: 0.155s  (compile 0.123s, exec 0.032s)
+  q4/4: 0.185s  (compile 0.09s, exec 0.095s)
+  done. next iteration in 576s (fixed 600s cadence).
+[04:40:38] iter 370 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.554s  (compile 0.109s, exec 0.445s)
+  q2/4: 3.06s  (compile 0.035s, exec 3.025s)
+  q3/4: 0.172s  (compile 0.142s, exec 0.03s)
+  q4/4: 0.194s  (compile 0.101s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[04:50:38] iter 371 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.553s  (compile 0.076s, exec 0.477s)
+  q2/4: 3.115s  (compile 0.035s, exec 3.08s)
+  q3/4: 0.14s  (compile 0.109s, exec 0.031s)
+  q4/4: 0.181s  (compile 0.087s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[05:00:38] iter 372 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.553s  (compile 0.089s, exec 0.464s)
+  q2/4: 3.11s  (compile 0.034s, exec 3.076s)
+  q3/4: 0.154s  (compile 0.114s, exec 0.04s)
+  q4/4: 0.196s  (compile 0.103s, exec 0.093s)
+  done. next iteration in 588s (fixed 600s cadence).
+[05:10:38] iter 373 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.572s  (compile 0.119s, exec 0.453s)
+  q2/4: 3.069s  (compile 0.036s, exec 3.033s)
+  q3/4: 0.198s  (compile 0.166s, exec 0.032s)
+  q4/4: 0.188s  (compile 0.097s, exec 0.091s)
+  done. next iteration in 590s (fixed 600s cadence).
+[05:20:38] iter 374 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.545s  (compile 0.079s, exec 0.466s)
+  q2/4: 3.12s  (compile 0.034s, exec 3.086s)
+  q3/4: 0.144s  (compile 0.111s, exec 0.033s)
+  q4/4: 0.198s  (compile 0.096s, exec 0.102s)
+  done. next iteration in 592s (fixed 600s cadence).
+[05:30:38] iter 375 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.531s  (compile 0.105s, exec 0.426s)
+  q2/4: 3.089s  (compile 0.038s, exec 3.051s)
+  q3/4: 0.139s  (compile 0.109s, exec 0.03s)
+  q4/4: 0.178s  (compile 0.085s, exec 0.093s)
+  done. next iteration in 592s (fixed 600s cadence).
+[05:40:38] iter 376 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.567s  (compile 0.117s, exec 0.45s)
+  q2/4: 3.11s  (compile 0.043s, exec 3.067s)
+  q3/4: 0.195s  (compile 0.161s, exec 0.034s)
+  q4/4: 0.186s  (compile 0.09s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[05:50:38] iter 377 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.518s  (compile 0.082s, exec 0.436s)
+  q2/4: 3.096s  (compile 0.054s, exec 3.042s)
+  q3/4: 0.153s  (compile 0.124s, exec 0.029s)
+  q4/4: 0.185s  (compile 0.085s, exec 0.1s)
+  done. next iteration in 592s (fixed 600s cadence).
+[06:00:38] iter 378 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.539s  (compile 0.077s, exec 0.462s)
+  q2/4: 3.052s  (compile 0.034s, exec 3.018s)
+  q3/4: 0.125s  (compile 0.095s, exec 0.03s)
+  q4/4: 0.203s  (compile 0.102s, exec 0.101s)
+  done. next iteration in 580s (fixed 600s cadence).
+[06:10:38] iter 379 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.549s  (compile 0.074s, exec 0.475s)
+  q2/4: 3.276s  (compile 0.223s, exec 3.053s)
+  q3/4: 0.133s  (compile 0.104s, exec 0.029s)
+  q4/4: 0.184s  (compile 0.088s, exec 0.096s)
+  done. next iteration in 592s (fixed 600s cadence).
+[06:20:38] iter 380 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.502s  (compile 0.06s, exec 0.442s)
+  q2/4: 3.104s  (compile 0.035s, exec 3.069s)
+  q3/4: 0.144s  (compile 0.116s, exec 0.028s)
+  q4/4: 0.18s  (compile 0.083s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[06:30:38] iter 381 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.497s  (compile 0.061s, exec 0.436s)
+  q2/4: 3.114s  (compile 0.035s, exec 3.079s)
+  q3/4: 0.144s  (compile 0.113s, exec 0.031s)
+  q4/4: 0.18s  (compile 0.089s, exec 0.091s)
+  done. next iteration in 592s (fixed 600s cadence).
+[06:40:38] iter 382 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.534s  (compile 0.091s, exec 0.443s)
+  q2/4: 3.078s  (compile 0.035s, exec 3.043s)
+  q3/4: 0.142s  (compile 0.11s, exec 0.032s)
+  q4/4: 0.181s  (compile 0.084s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[06:50:38] iter 383 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.557s  (compile 0.098s, exec 0.459s)
+  q2/4: 3.116s  (compile 0.037s, exec 3.079s)
+  q3/4: 0.144s  (compile 0.112s, exec 0.032s)
+  q4/4: 0.189s  (compile 0.091s, exec 0.098s)
+  done. next iteration in 592s (fixed 600s cadence).
+[07:00:38] iter 384 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.555s  (compile 0.095s, exec 0.46s)
+  q2/4: 3.123s  (compile 0.037s, exec 3.086s)
+  q3/4: 0.136s  (compile 0.106s, exec 0.03s)
+  q4/4: 0.185s  (compile 0.09s, exec 0.095s)
+  done. next iteration in 589s (fixed 600s cadence).
+[07:10:38] iter 385 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.593s  (compile 0.13s, exec 0.463s)
+  q2/4: 3.235s  (compile 0.127s, exec 3.108s)
+  q3/4: 0.126s  (compile 0.098s, exec 0.028s)
+  q4/4: 0.182s  (compile 0.087s, exec 0.095s)
+  done. next iteration in 591s (fixed 600s cadence).
+[07:20:38] iter 386 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.581s  (compile 0.127s, exec 0.454s)
+  q2/4: 3.154s  (compile 0.095s, exec 3.059s)
+  q3/4: 0.119s  (compile 0.088s, exec 0.031s)
+  q4/4: 0.181s  (compile 0.084s, exec 0.097s)
+  done. next iteration in 592s (fixed 600s cadence).
+[07:30:38] iter 387 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.619s  (compile 0.132s, exec 0.487s)
+  q2/4: 3.194s  (compile 0.091s, exec 3.103s)
+  q3/4: 0.115s  (compile 0.088s, exec 0.027s)
+  q4/4: 0.187s  (compile 0.084s, exec 0.103s)
+  done. next iteration in 589s (fixed 600s cadence).
+[07:40:38] iter 388 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.578s  (compile 0.133s, exec 0.445s)
+  q2/4: 3.125s  (compile 0.037s, exec 3.088s)
+  q3/4: 0.152s  (compile 0.121s, exec 0.031s)
+  q4/4: 0.182s  (compile 0.088s, exec 0.094s)
+  done. next iteration in 592s (fixed 600s cadence).
+[07:50:38] iter 389 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.583s  (compile 0.112s, exec 0.471s)
+  q2/4: 3.103s  (compile 0.035s, exec 3.068s)
+  q3/4: 0.177s  (compile 0.145s, exec 0.032s)
+  q4/4: 0.193s  (compile 0.098s, exec 0.095s)
+  done. next iteration in 591s (fixed 600s cadence).
+[08:00:38] iter 390 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.527s  (compile 0.086s, exec 0.441s)
+  q2/4: 3.104s  (compile 0.051s, exec 3.053s)
+  q3/4: 0.141s  (compile 0.109s, exec 0.032s)
+  q4/4: 0.195s  (compile 0.101s, exec 0.094s)
+  done. next iteration in 565s (fixed 600s cadence).
+[08:10:38] iter 391 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.528s  (compile 0.075s, exec 0.453s)
+  q2/4: 3.105s  (compile 0.035s, exec 3.07s)
+  q3/4: 0.134s  (compile 0.103s, exec 0.031s)
+  q4/4: 0.194s  (compile 0.087s, exec 0.107s)
+  done. next iteration in 592s (fixed 600s cadence).
+[08:20:38] iter 392 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/4: 0.57s  (compile 0.113s, exec 0.457s)
+  q2/4: 3.182s  (compile 0.088s, exec 3.094s)
+  q3/4: 0.116s  (compile 0.087s, exec 0.029s)
+  q4/4: 0.193s  (compile 0.092s, exec 0.101s)
+  done. next iteration in 591s (fixed 600s cadence).
