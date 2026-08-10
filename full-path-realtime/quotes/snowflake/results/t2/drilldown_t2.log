@@ -1,0 +1,334 @@
+Parsed 2 queries from t2/queries_raw_it.sql
+Writing JSONL to out_t2_run12/drilldown_20260807T150525Z.jsonl
+Query warehouse SNOWPIPES_IT_READ_SMALL, tracking warehouse BENCH, database BENCH2COST, schema STOCKHOUSE_T2_RUN12.
+Interval 3600s. Ctrl-C to stop.
+[15:05:25] iter 1 starting...
+  raw_rows=15702506  mv_rows=6747
+  q1/2: 0.432s  (compile 0.269s, exec 0.163s)
+  q2/2: 0.349s  (compile 0.225s, exec 0.124s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[16:05:26] iter 2 starting...
+  raw_rows=3340972669  mv_rows=54594
+  q1/2: 0.628s  (compile 0.352s, exec 0.276s)
+  q2/2: 0.647s  (compile 0.367s, exec 0.28s)
+  done. next iteration in 3563s (fixed 3600s cadence).
+[17:05:26] iter 3 starting...
+  raw_rows=6651637268  mv_rows=109921
+  q1/2: 0.686s  (compile 0.418s, exec 0.268s)
+  q2/2: 0.72s  (compile 0.407s, exec 0.313s)
+  done. next iteration in 3547s (fixed 3600s cadence).
+[18:05:26] iter 4 starting...
+  raw_rows=9934915546  mv_rows=154857
+  q1/2: 0.376s  (compile 0.103s, exec 0.273s)
+  q2/2: 0.874s  (compile 0.37s, exec 0.504s)
+  done. next iteration in 3535s (fixed 3600s cadence).
+[19:05:26] iter 5 starting...
+  raw_rows=13186060537  mv_rows=210286
+  q1/2: 0.877s  (compile 0.485s, exec 0.392s)
+  q2/2: 1.19s  (compile 0.625s, exec 0.565s)
+  done. next iteration in 3548s (fixed 3600s cadence).
+[20:05:26] iter 6 starting...
+  raw_rows=16441998332  mv_rows=258868
+  q1/2: 0.638s  (compile 0.211s, exec 0.427s)
+  q2/2: 1.516s  (compile 0.671s, exec 0.845s)
+  done. next iteration in 3504s (fixed 3600s cadence).
+[21:05:26] iter 7 starting...
+  raw_rows=19695867643  mv_rows=311779
+  q1/2: 0.691s  (compile 0.323s, exec 0.368s)
+  q2/2: 0.763s  (compile 0.353s, exec 0.41s)
+  done. next iteration in 3482s (fixed 3600s cadence).
+[22:05:26] iter 8 starting...
+  raw_rows=22948202917  mv_rows=367560
+  q1/2: 0.53s  (compile 0.157s, exec 0.373s)
+  q2/2: 0.948s  (compile 0.382s, exec 0.566s)
+  done. next iteration in 3508s (fixed 3600s cadence).
+[23:05:26] iter 9 starting...
+  raw_rows=26198713894  mv_rows=424042
+  q1/2: 0.842s  (compile 0.32s, exec 0.522s)
+  q2/2: 0.886s  (compile 0.468s, exec 0.418s)
+  done. next iteration in 3524s (fixed 3600s cadence).
+[00:05:26] iter 10 starting...
+  raw_rows=29450125630  mv_rows=471201
+  q1/2: 0.844s  (compile 0.372s, exec 0.472s)
+  q2/2: 1.386s  (compile 0.445s, exec 0.941s)
+  done. next iteration in 3535s (fixed 3600s cadence).
+[01:05:26] iter 11 starting...
+  raw_rows=32701676778  mv_rows=527637
+  q1/2: 0.598s  (compile 0.133s, exec 0.465s)
+  q2/2: 0.901s  (compile 0.379s, exec 0.522s)
+  done. next iteration in 3375s (fixed 3600s cadence).
+[02:05:26] iter 12 starting...
+  raw_rows=35953862110  mv_rows=595266
+  q1/2: 1.196s  (compile 0.653s, exec 0.543s)
+  q2/2: 1.099s  (compile 0.47s, exec 0.629s)
+  done. next iteration in 3535s (fixed 3600s cadence).
+[03:05:26] iter 13 starting...
+  raw_rows=39207097710  mv_rows=657170
+  q1/2: 0.944s  (compile 0.251s, exec 0.693s)
+  q2/2: 1.002s  (compile 0.364s, exec 0.638s)
+  done. next iteration in 3524s (fixed 3600s cadence).
+[04:05:26] iter 14 starting...
+  raw_rows=42459654036  mv_rows=714831
+  q1/2: 1.129s  (compile 0.501s, exec 0.628s)
+  q2/2: 1.278s  (compile 0.6s, exec 0.678s)
+  done. next iteration in 3546s (fixed 3600s cadence).
+[05:05:26] iter 15 starting...
+  raw_rows=45712248884  mv_rows=771907
+  q1/2: 1.0s  (compile 0.375s, exec 0.625s)
+  q2/2: 1.329s  (compile 0.515s, exec 0.814s)
+  done. next iteration in 3529s (fixed 3600s cadence).
+[06:05:26] iter 16 starting...
+  raw_rows=48963090555  mv_rows=819623
+  q1/2: 1.34s  (compile 0.74s, exec 0.6s)
+  q2/2: 1.581s  (compile 0.74s, exec 0.841s)
+  done. next iteration in 3193s (fixed 3600s cadence).
+[07:05:26] iter 17 starting...
+  raw_rows=52220012147  mv_rows=876186
+  q1/2: 1.262s  (compile 0.651s, exec 0.611s)
+  q2/2: 1.369s  (compile 0.676s, exec 0.693s)
+  done. next iteration in 3502s (fixed 3600s cadence).
+[08:05:26] iter 18 starting...
+  raw_rows=55474745254  mv_rows=924065
+  q1/2: 1.2s  (compile 0.422s, exec 0.778s)
+  q2/2: 1.447s  (compile 0.674s, exec 0.773s)
+  done. next iteration in 3551s (fixed 3600s cadence).
+[09:05:26] iter 19 starting...
+  raw_rows=58730677952  mv_rows=981320
+  q1/2: 1.304s  (compile 0.71s, exec 0.594s)
+  q2/2: 1.541s  (compile 0.75s, exec 0.791s)
+  done. next iteration in 3553s (fixed 3600s cadence).
+[10:05:26] iter 20 starting...
+  raw_rows=61985141644  mv_rows=1038889
+  q1/2: 1.431s  (compile 0.741s, exec 0.69s)
+  q2/2: 1.466s  (compile 0.635s, exec 0.831s)
+  done. next iteration in 3441s (fixed 3600s cadence).
+[11:05:26] iter 21 starting...
+  raw_rows=65238888681  mv_rows=1086544
+  q1/2: 1.404s  (compile 0.739s, exec 0.665s)
+  q2/2: 1.53s  (compile 0.661s, exec 0.869s)
+  done. next iteration in 3493s (fixed 3600s cadence).
+[12:05:26] iter 22 starting...
+  raw_rows=68481251762  mv_rows=1133859
+  q1/2: 1.616s  (compile 0.828s, exec 0.788s)
+  q2/2: 1.665s  (compile 0.672s, exec 0.993s)
+  done. next iteration in 3562s (fixed 3600s cadence).
+[13:05:26] iter 23 starting...
+  raw_rows=71724545511  mv_rows=1188552
+  q1/2: 1.527s  (compile 0.731s, exec 0.796s)
+  q2/2: 1.527s  (compile 0.626s, exec 0.901s)
+  done. next iteration in 3550s (fixed 3600s cadence).
+[14:05:26] iter 24 starting...
+  raw_rows=74973422260  mv_rows=1235360
+  q1/2: 1.51s  (compile 0.679s, exec 0.831s)
+  q2/2: 1.51s  (compile 0.564s, exec 0.946s)
+  done. next iteration in 3556s (fixed 3600s cadence).
+[15:05:26] iter 25 starting...
+  raw_rows=78224120032  mv_rows=1278149
+  q1/2: 1.694s  (compile 0.848s, exec 0.846s)
+  q2/2: 1.812s  (compile 0.765s, exec 1.047s)
+  done. next iteration in 3478s (fixed 3600s cadence).
+[16:05:26] iter 26 starting...
+  raw_rows=81472585730  mv_rows=1325121
+  q1/2: 1.174s  (compile 0.263s, exec 0.911s)
+  q2/2: 1.676s  (compile 0.661s, exec 1.015s)
+  done. next iteration in 2818s (fixed 3600s cadence).
+[17:05:26] iter 27 starting...
+  raw_rows=84724549319  mv_rows=1373072
+  q1/2: 1.663s  (compile 0.777s, exec 0.886s)
+  q2/2: 1.843s  (compile 0.791s, exec 1.052s)
+  done. next iteration in 3542s (fixed 3600s cadence).
+[18:05:26] iter 28 starting...
+  raw_rows=87975977991  mv_rows=1432467
+  q1/2: 1.829s  (compile 0.937s, exec 0.892s)
+  q2/2: 1.7s  (compile 0.665s, exec 1.035s)
+  done. next iteration in 3536s (fixed 3600s cadence).
+[19:05:26] iter 29 starting...
+  raw_rows=91229677442  mv_rows=1481663
+  q1/2: 1.598s  (compile 0.633s, exec 0.965s)
+  q2/2: 1.727s  (compile 0.648s, exec 1.079s)
+  done. next iteration in 3533s (fixed 3600s cadence).
+[20:05:26] iter 30 starting...
+  raw_rows=94479734371  mv_rows=1541303
+  q1/2: 1.782s  (compile 0.784s, exec 0.998s)
+  q2/2: 1.912s  (compile 0.8s, exec 1.112s)
+  done. next iteration in 3490s (fixed 3600s cadence).
+[21:05:26] iter 31 starting...
+  raw_rows=97735750079  mv_rows=1593386
+  q1/2: 1.495s  (compile 0.53s, exec 0.965s)
+  q2/2: 1.807s  (compile 0.663s, exec 1.144s)
+  done. next iteration in 3575s (fixed 3600s cadence).
+[22:05:26] iter 32 starting...
+  raw_rows=100986729440  mv_rows=1650385
+  q1/2: 1.907s  (compile 0.706s, exec 1.201s)
+  q2/2: 1.909s  (compile 0.705s, exec 1.204s)
+  done. next iteration in 3566s (fixed 3600s cadence).
+[23:05:26] iter 33 starting...
+  raw_rows=104243578770  mv_rows=1707733
+  q1/2: 1.958s  (compile 0.893s, exec 1.065s)
+  q2/2: 1.957s  (compile 0.773s, exec 1.184s)
+  done. next iteration in 3566s (fixed 3600s cadence).
+[00:05:26] iter 34 starting...
+  raw_rows=107500917681  mv_rows=1770719
+  q1/2: 1.652s  (compile 0.532s, exec 1.12s)
+  q2/2: 1.839s  (compile 0.678s, exec 1.161s)
+  done. next iteration in 3559s (fixed 3600s cadence).
+[01:05:26] iter 35 starting...
+  raw_rows=110753087250  mv_rows=1825588
+  q1/2: 1.558s  (compile 0.396s, exec 1.162s)
+  q2/2: 1.88s  (compile 0.59s, exec 1.29s)
+  done. next iteration in 3319s (fixed 3600s cadence).
+[02:05:26] iter 36 starting...
+  raw_rows=113174274518  mv_rows=1858613
+  q1/2: 1.739s  (compile 0.521s, exec 1.218s)
+  q2/2: 1.784s  (compile 0.532s, exec 1.252s)
+  done. next iteration in 3574s (fixed 3600s cadence).
+[03:05:26] iter 37 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.298s  (compile 0.139s, exec 1.159s)
+  q2/2: 1.442s  (compile 0.152s, exec 1.29s)
+  done. next iteration in 3580s (fixed 3600s cadence).
+[04:05:26] iter 38 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.3s  (compile 0.139s, exec 1.161s)
+  q2/2: 1.409s  (compile 0.147s, exec 1.262s)
+  done. next iteration in 3575s (fixed 3600s cadence).
+[05:05:26] iter 39 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.213s  (compile 0.104s, exec 1.109s)
+  q2/2: 1.392s  (compile 0.148s, exec 1.244s)
+  done. next iteration in 3583s (fixed 3600s cadence).
+[06:05:26] iter 40 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.186s  (compile 0.091s, exec 1.095s)
+  q2/2: 1.441s  (compile 0.157s, exec 1.284s)
+  done. next iteration in 3566s (fixed 3600s cadence).
+[07:05:26] iter 41 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.219s  (compile 0.105s, exec 1.114s)
+  q2/2: 1.441s  (compile 0.153s, exec 1.288s)
+  done. next iteration in 3578s (fixed 3600s cadence).
+[08:05:26] iter 42 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.324s  (compile 0.139s, exec 1.185s)
+  q2/2: 1.438s  (compile 0.142s, exec 1.296s)
+  done. next iteration in 3584s (fixed 3600s cadence).
+[09:05:26] iter 43 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.184s  (compile 0.065s, exec 1.119s)
+  q2/2: 1.573s  (compile 0.18s, exec 1.393s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[10:05:26] iter 44 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.275s  (compile 0.089s, exec 1.186s)
+  q2/2: 1.453s  (compile 0.16s, exec 1.293s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[11:05:26] iter 45 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.309s  (compile 0.19s, exec 1.119s)
+  q2/2: 1.41s  (compile 0.151s, exec 1.259s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[12:05:26] iter 46 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.306s  (compile 0.118s, exec 1.188s)
+  q2/2: 1.428s  (compile 0.15s, exec 1.278s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[13:05:26] iter 47 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.264s  (compile 0.077s, exec 1.187s)
+  q2/2: 1.411s  (compile 0.163s, exec 1.248s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[14:05:26] iter 48 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.25s  (compile 0.084s, exec 1.166s)
+  q2/2: 1.404s  (compile 0.169s, exec 1.235s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[15:05:26] iter 49 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.332s  (compile 0.203s, exec 1.129s)
+  q2/2: 1.382s  (compile 0.15s, exec 1.232s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[16:05:26] iter 50 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.376s  (compile 0.14s, exec 1.236s)
+  q2/2: 1.451s  (compile 0.148s, exec 1.303s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[17:05:26] iter 51 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.242s  (compile 0.08s, exec 1.162s)
+  q2/2: 1.451s  (compile 0.166s, exec 1.285s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[18:05:26] iter 52 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.21s  (compile 0.092s, exec 1.118s)
+  q2/2: 1.391s  (compile 0.156s, exec 1.235s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[19:05:26] iter 53 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.423s  (compile 0.255s, exec 1.168s)
+  q2/2: 1.445s  (compile 0.149s, exec 1.296s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[20:05:26] iter 54 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.325s  (compile 0.166s, exec 1.159s)
+  q2/2: 1.363s  (compile 0.143s, exec 1.22s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[21:05:26] iter 55 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.144s  (compile 0.065s, exec 1.079s)
+  q2/2: 1.403s  (compile 0.152s, exec 1.251s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[22:05:26] iter 56 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.256s  (compile 0.079s, exec 1.177s)
+  q2/2: 1.561s  (compile 0.165s, exec 1.396s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[23:05:26] iter 57 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.342s  (compile 0.183s, exec 1.159s)
+  q2/2: 1.444s  (compile 0.148s, exec 1.296s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[00:05:26] iter 58 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.315s  (compile 0.139s, exec 1.176s)
+  q2/2: 1.438s  (compile 0.144s, exec 1.294s)
+  done. next iteration in 3591s (fixed 3600s cadence).
+[01:05:26] iter 59 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.229s  (compile 0.063s, exec 1.166s)
+  q2/2: 1.428s  (compile 0.153s, exec 1.275s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[02:05:26] iter 60 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.203s  (compile 0.102s, exec 1.101s)
+  q2/2: 1.44s  (compile 0.153s, exec 1.287s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[03:05:26] iter 61 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.32s  (compile 0.206s, exec 1.114s)
+  q2/2: 1.409s  (compile 0.15s, exec 1.259s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[04:05:26] iter 62 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.304s  (compile 0.15s, exec 1.154s)
+  q2/2: 1.47s  (compile 0.159s, exec 1.311s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[05:05:26] iter 63 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.32s  (compile 0.12s, exec 1.2s)
+  q2/2: 1.406s  (compile 0.168s, exec 1.238s)
+  done. next iteration in 3595s (fixed 3600s cadence).
+[06:05:26] iter 64 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.213s  (compile 0.079s, exec 1.134s)
+  q2/2: 1.366s  (compile 0.146s, exec 1.22s)
+  done. next iteration in 3593s (fixed 3600s cadence).
+[07:05:26] iter 65 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.268s  (compile 0.116s, exec 1.152s)
+  q2/2: 1.405s  (compile 0.181s, exec 1.224s)
+  done. next iteration in 3594s (fixed 3600s cadence).
+[08:05:26] iter 66 starting...
+  raw_rows=113217706094  mv_rows=1858616
+  q1/2: 1.257s  (compile 0.15s, exec 1.107s)
+  q2/2: 1.427s  (compile 0.146s, exec 1.281s)
+  done. next iteration in 3594s (fixed 3600s cadence).
