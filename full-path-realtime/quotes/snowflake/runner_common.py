@@ -8,8 +8,15 @@ the same metadata, so one analysis pipeline ingests output from all systems.
 
 Each iteration: ISO-8601 UTC start -> COUNT(*) raw (QUOTES) -> COUNT(*) mv
 (QUOTES_DAILY) -> run each query once capturing SERVER-SIDE timings from
-QUERY_HISTORY (ms -> seconds) -> ISO end -> append one JSONL line -> sleep
---interval. Runs until Ctrl-C / SIGTERM.
+QUERY_HISTORY (ms -> seconds) -> ISO end -> append one JSONL line. Runs until
+Ctrl-C / SIGTERM.
+
+Scheduling is FIXED-RATE: iteration N fires at (loop start + N*--interval), i.e. every
+--interval seconds from the previous iteration's SCHEDULED start, independent of how long the
+queries take. (Earlier this was fixed-delay — sleep --interval AFTER finishing — which drifted:
+a run taking T seconds made the gap --interval+T. A dashboard that "refreshes every 10 min"
+must re-fire 10 min after the previous start, not 10 min after it finishes.) If a run overruns
+--interval the next fires immediately (one connection can't overlap runs) and the drift is logged.
 
 Three timings are recorded per query, each in the same [[v], [v], ...] shape:
   "result"           TOTAL_ELAPSED_TIME  — the reported latency (compile + queue + execute)
@@ -262,15 +269,32 @@ def run(runner_name, default_queries, default_interval, comment_flavor, argv=Non
 
     stop = _Stop()
     iteration = 0
+    period = args.interval
+    # FIXED-RATE scheduling: each iteration fires `period` seconds after the previous iteration's
+    # SCHEDULED start — NOT after it finishes. The premise is a dashboard that refreshes every
+    # `period`s regardless of how long a refresh takes; fixed-delay (sleep after finish) would push
+    # the cadence out by each run's duration and silently drift (e.g. a 5-min run -> 15-min gap).
+    # If a run overruns `period`, the next fires immediately (a single connection can't overlap runs)
+    # and the drift is logged rather than accumulated.
+    next_fire = time.monotonic()
     while not stop.requested:
+        delay = next_fire - time.monotonic()
+        if delay > 0:
+            stop.sleep(delay)
+        if stop.requested:
+            break
+
         iteration += 1
         ts_start = _now_iso()
         print(f"[{datetime.now(timezone.utc).strftime('%H:%M:%S')}] iter {iteration} starting...",
               file=sys.stderr, flush=True)
 
+        con = None
+        connected = False
         try:
             con = connect(database)
             cur = con.cursor()
+            connected = True
         except Exception as exc:
             print(f"  CONNECTION ERROR: {exc}", file=sys.stderr, flush=True)
             write_record(output_path, {
@@ -282,36 +306,47 @@ def run(runner_name, default_queries, default_interval, comment_flavor, argv=Non
                 "compilation_time": [[None] for _ in range(total)],
                 "execution_time": [[None] for _ in range(total)],
             })
-            stop.sleep(args.interval)
-            continue
+            if con is not None:
+                try: con.close()
+                except Exception: pass
 
-        try:
-            raw_rows = scalar_query(cur, f"SELECT COUNT(*) FROM {database}.{SCHEMA}.{RAW_TABLE}")
-            mv_rows = scalar_query(cur, f"SELECT COUNT(*) FROM {database}.{SCHEMA}.{MV_TABLE}")
-            print(f"  raw_rows={raw_rows}  mv_rows={mv_rows}", file=sys.stderr, flush=True)
-            result, compile_times, exec_times = [], [], []
-            for i, q in enumerate(queries):
-                d, c, e = time_query(cur, database, q)
-                result.append([d]); compile_times.append([c]); exec_times.append([e])
-                fmt = lambda v: "null" if v is None else v
-                print(f"  q{i + 1}/{total}: {fmt(d)}s  (compile {fmt(c)}s, exec {fmt(e)}s)",
-                      file=sys.stderr, flush=True)
-            write_record(output_path, {
-                "iteration": iteration, "iteration_started_at": ts_start,
-                "iteration_finished_at": _now_iso(), "raw_rows": raw_rows, "mv_rows": mv_rows,
-                "system": args.system, "machine": args.machine,
-                "cluster_size": args.cluster_size, "comment": comment, "tags": TAGS,
-                "result": result,
-                "compilation_time": compile_times,
-                "execution_time": exec_times,
-            })
-        finally:
-            try: cur.close()
-            except Exception: pass
-            try: con.close()
-            except Exception: pass
+        if connected:
+            try:
+                raw_rows = scalar_query(cur, f"SELECT COUNT(*) FROM {database}.{SCHEMA}.{RAW_TABLE}")
+                mv_rows = scalar_query(cur, f"SELECT COUNT(*) FROM {database}.{SCHEMA}.{MV_TABLE}")
+                print(f"  raw_rows={raw_rows}  mv_rows={mv_rows}", file=sys.stderr, flush=True)
+                result, compile_times, exec_times = [], [], []
+                for i, q in enumerate(queries):
+                    d, c, e = time_query(cur, database, q)
+                    result.append([d]); compile_times.append([c]); exec_times.append([e])
+                    fmt = lambda v: "null" if v is None else v
+                    print(f"  q{i + 1}/{total}: {fmt(d)}s  (compile {fmt(c)}s, exec {fmt(e)}s)",
+                          file=sys.stderr, flush=True)
+                write_record(output_path, {
+                    "iteration": iteration, "iteration_started_at": ts_start,
+                    "iteration_finished_at": _now_iso(), "raw_rows": raw_rows, "mv_rows": mv_rows,
+                    "system": args.system, "machine": args.machine,
+                    "cluster_size": args.cluster_size, "comment": comment, "tags": TAGS,
+                    "result": result,
+                    "compilation_time": compile_times,
+                    "execution_time": exec_times,
+                })
+            finally:
+                try: cur.close()
+                except Exception: pass
+                try: con.close()
+                except Exception: pass
 
-        print(f"  done. sleeping {args.interval}s...", file=sys.stderr, flush=True)
-        stop.sleep(args.interval)
+        # Next fire = this iteration's SCHEDULED time + period (fixed rate), NOT now (fixed delay).
+        next_fire += period
+        now = time.monotonic()
+        if next_fire <= now:
+            behind = now - next_fire
+            print(f"  WARN: iteration exceeded the {period}s cadence by {behind:.1f}s; next fires "
+                  f"immediately (a single connection can't overlap runs).", file=sys.stderr, flush=True)
+            next_fire = now
+        else:
+            print(f"  done. next iteration in {next_fire - now:.0f}s (fixed {period}s cadence).",
+                  file=sys.stderr, flush=True)
 
     print(f"\nStopped after {iteration} iterations.", file=sys.stderr)
