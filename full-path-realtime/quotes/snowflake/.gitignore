@@ -22,3 +22,7 @@ ingest.log
 __pycache__/
 *.py[cod]
 .DS_Store
+
+run8
+run12
+run14
