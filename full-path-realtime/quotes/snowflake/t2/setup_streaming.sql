@@ -1,6 +1,9 @@
 -- =============================================================================
 -- T2 — Snowpipe Streaming (high-performance) -> interactive table; interactive MV for the rollup.
--- Fresh schema BENCH2COST.STOCKHOUSE_T2, separate from STOCKHOUSE / _T0 / _T1.
+-- Fresh schema BENCH2COST.STOCKHOUSE_T2_RUN14, separate from STOCKHOUSE / _T0 / _T1.
+-- RUN14 = clean re-run of RUN13 (RUN8 layout, Small interactive + standard fallback, fixed-rate
+--         runner, pipe CLUSTER_AT_INGEST_TIME=TRUE). Same producer as RUN13. Difference: RUN14 starts
+--         from an EMPTY interactive warehouse — only RUN14's tables attached to SNOWPIPES_IT_READ_SMALL.
 --
 -- Architecture:
 --   client (t2/stream_quotes.py) --Snowpipe Streaming SDK--> QUOTES_IT_PIPE --> QUOTES_IT
@@ -19,8 +22,8 @@
 
 USE ROLE ACCOUNTADMIN;
 USE DATABASE BENCH2COST;
-CREATE SCHEMA IF NOT EXISTS STOCKHOUSE_T2;
-USE SCHEMA STOCKHOUSE_T2;
+CREATE SCHEMA IF NOT EXISTS STOCKHOUSE_T2_RUN14;
+USE SCHEMA STOCKHOUSE_T2_RUN14;
 
 -- ---- raw streaming-target interactive table -----------------------------------
 -- Explicit columns (a streaming target is a base IT, not AS SELECT). CLUSTER BY (sym, t).
@@ -61,7 +64,8 @@ FROM (
            $1:q::NUMBER(20,0),
            $1:z::NUMBER(3,0)
     FROM TABLE(DATA_SOURCE(TYPE => 'STREAMING'))
-);
+)
+CLUSTER_AT_INGEST_TIME = TRUE;   -- precluster rows at ingest (target has CLUSTER BY (sym,t))
 
 -- ---- aggregate rollup as an INTERACTIVE MATERIALIZED VIEW on QUOTES_IT ---------
 -- Serverless-maintained. IMPORTANT: NO `CLUSTER BY` — an interactive MV doesn't accept one, and
@@ -88,6 +92,6 @@ GROUP BY sym, TO_DATE(TO_TIMESTAMP_NTZ(t, 3));
 -- without them the ALTER errors). Adjust to your account's interactive read wh.
 ALTER WAREHOUSE SNOWPIPES_IT_READ_SMALL ADD TABLES (QUOTES_IT, QUOTES_DAILY_IMV);
 
-SHOW INTERACTIVE TABLES IN SCHEMA BENCH2COST.STOCKHOUSE_T2;
-SHOW MATERIALIZED VIEWS IN SCHEMA BENCH2COST.STOCKHOUSE_T2;
-SHOW PIPES IN SCHEMA BENCH2COST.STOCKHOUSE_T2;
+SHOW INTERACTIVE TABLES IN SCHEMA BENCH2COST.STOCKHOUSE_T2_RUN14;
+SHOW MATERIALIZED VIEWS IN SCHEMA BENCH2COST.STOCKHOUSE_T2_RUN14;
+SHOW PIPES IN SCHEMA BENCH2COST.STOCKHOUSE_T2_RUN14;
