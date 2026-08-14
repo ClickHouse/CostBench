@@ -1,0 +1,6 @@
+[
+ {"Id":"eps","Label":"total_EPS",
+  "Expression":"SUM(SEARCH('{AWS/Kafka,\"Broker ID\",\"Cluster Name\"} \"Cluster Name\"=\"cb-quotes-rt-msk\" MetricName=\"MessagesInPerSec\"','Average',60))"},
+ {"Id":"bin","Label":"total_BytesInPerSec",
+  "Expression":"SUM(SEARCH('{AWS/Kafka,\"Broker ID\",\"Cluster Name\",\"Topic\"} \"Cluster Name\"=\"cb-quotes-rt-msk\" Topic=\"quotes\" MetricName=\"BytesInPerSec\"','Average',60))"}
+]

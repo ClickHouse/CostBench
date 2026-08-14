@@ -1,0 +1,4 @@
+table_id,table_name,diststyle,sortkey1,sortkey_num,size_mb,tbl_rows,unsorted,stats_off,skew_rows,vacuum_sort_benefit
+0,quotes_daily,EVEN,grvar_1,2,2988,1903571,99.99,0.00,,0.00
+0,quotes_streamed,EVEN,sym,2,3701428,113219565734,99.97,0.00,,0.00
+0,quotes_typed,EVEN,sym,2,5334174,113219565734,99.97,0.00,,0.00
