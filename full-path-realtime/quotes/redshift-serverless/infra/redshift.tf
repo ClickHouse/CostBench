@@ -9,13 +9,20 @@ resource "aws_redshiftserverless_namespace" "this" {
 }
 
 resource "aws_redshiftserverless_workgroup" "this" {
-  namespace_name      = aws_redshiftserverless_namespace.this.namespace_name
-  workgroup_name      = "${var.name_prefix}-wg"
-  base_capacity       = var.redshift_base_rpu
-  max_capacity        = var.redshift_max_rpu
-  publicly_accessible = true
-  subnet_ids          = local.redshift_subnets
-  security_group_ids  = [aws_security_group.redshift.id]
+  namespace_name = aws_redshiftserverless_namespace.this.namespace_name
+  workgroup_name = "${var.name_prefix}-wg"
+  base_capacity  = var.redshift_base_rpu
+  max_capacity   = var.redshift_max_rpu
+
+  // 2026-08-14: was `true`. Set to false so there is NO internet-facing endpoint. The data is
+  // unaffected — public access is a workgroup/network property, while the MVs and their 113B rows
+  // live in the namespace. The reader workgroup has always run private and queries the same data
+  // fine, so this is proven. Consequence: the writer is reachable only from inside the VPC (the
+  // producer box) or via the AWS-hosted Query Editor v2 — not from a laptop over the internet.
+  publicly_accessible = false
+
+  subnet_ids         = local.redshift_subnets
+  security_group_ids = [aws_security_group.redshift.id]
 
   # REQUIRED so Redshift routes through the VPC to reach the in-VPC broker/MSK private endpoints.
   # (Enabled out-of-band via CLI on 2026-08-06; declared here so `apply` doesn't revert it to false.)

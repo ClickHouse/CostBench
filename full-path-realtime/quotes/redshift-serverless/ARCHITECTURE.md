@@ -108,6 +108,51 @@ Redshift's real-time cost structure different from the push-SDK vendors'.
   `ACTIVE`). Fix: `retention.ms`/`retention.bytes` cap (Redshift consumes live, so retention isn't
   needed) + larger EBS. This is an MSK-operational cost/config point, not a Redshift limitation.
 
+## Sort-key maintenance did not keep up (measured, 2026-08-14)
+
+Drilldown latency grew ~linearly with volume, with periodic collapses. The scan-level evidence
+(`results/t2/scan_evidence_reader.csv`, `table_state_writer.csv`, `auto_optimization_writer.csv`,
+`vacuum_history_writer.csv`) shows why:
+
+| signal | value |
+|---|---|
+| `SVV_TABLE_INFO.unsorted`, both large MVs | **99.97%** at end of run |
+| block pruning achieved | ~88–92% of blocks skipped — **partial, not absent** |
+| drilldown read amplification | **97–146× rows scanned per row returned** (9–19B scanned to keep ~55–89M) |
+| VacuumSort attempts / internal-error terminations | **58 / 44** |
+| net rows sorted by the 3 completed vacuums on each large MV | **0** |
+| `charged_extra_compute_for_automatic_optimization_seconds` | **0** |
+| `extraComputeForAutomaticOptimization` on the workgroup | **null (disabled — the serverless default)** |
+
+Three distinct causes, worth separating:
+
+1. **Structural, and inherent to this workload.** Every streaming batch spans the whole symbol range,
+   so each batch overlaps the entire leading-key range and lands in the *global* unsorted region —
+   the expensive-merge pattern AWS's vacuum guidance describes. A timestamp-leading sort key would
+   merge cheaply but would not serve symbol-only, all-history drilldowns. `SORTKEY (sym, t)` remains
+   the right choice for the queries; it is simply expensive to maintain under this ingest pattern.
+2. **Resourcing, and fixable.** Extra compute for autonomics is **disabled by default** on serverless
+   workgroups, and AWS documents that autonomics are then *"temporarily suspended during periods of
+   high system load"*. Our writer was saturated (streaming auto-refresh + near-continuous
+   `quotes_typed` refresh + 60s `quotes_daily` refresh + 1M rows/s), i.e. exactly that condition.
+   Enable before any rerun (billable, counts toward serverless usage; not exposed by the terraform
+   AWS provider as of 5.100, so set it post-apply):
+   ```
+   aws redshift-serverless update-workgroup --workgroup-name cb-quotes-rt-wg \
+       --extra-compute-for-automatic-optimization --region eu-west-2
+   ```
+3. **Service-side, and unexplained.** 44 tasks terminating with Redshift-reported *internal errors* is
+   not postponement. Report these as service-reported failures with **root cause unknown absent an
+   AWS Support investigation** — not as misconfiguration.
+
+Note on reading the evidence: `is_rrscan = 't'` was true for nearly every query, but that flag only
+means Redshift **attempted** a range-restricted scan. It does not prove blocks were skipped — compare
+scanned rows against rows returned instead.
+
+Also measured: the typed projection is **larger on disk than the SUPER original** (5.33 TB vs
+3.70 TB for identical rows, +44%), because twelve materialised typed columns cost more than the
+compressed `SUPER` payload plus `sym`/`t`.
+
 ## For the reviewer — please sanity-check
 
 1. **Is streaming-ingestion-from-a-stream the canonical / only GA real-time path for Redshift?** Are we
@@ -130,3 +175,8 @@ Redshift's real-time cost structure different from the push-SDK vendors'.
 5. **Anything in the cost model we're under-counting** (client cross-AZ transfer, RMS, concurrency
    scaling)? We treat inter-broker replication as free (per the MSK FAQ) and count only *client*
    cross-AZ — is that the right read of MSK billing?
+6. **Sort-key maintenance (see the section above).** Should the rerun enable extra autonomics compute,
+   and is there anything else that would let automatic sort keep pace with 1M-row/s ingest — or is a
+   periodic explicit `VACUUM SORT` window the honest answer for a table growing this fast? Also worth
+   a second opinion: are the 44 internal-error vacuum terminations worth raising with AWS Support
+   before publication?

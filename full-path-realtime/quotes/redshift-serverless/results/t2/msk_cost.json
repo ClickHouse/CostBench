@@ -1,0 +1,54 @@
+{
+  "_README": [
+    "MSK cost attributable to THIS RUN (31.4h window), not the cluster's lifetime.",
+    "Broker-hours and EBS are deterministic from the cluster spec x uptime.",
+    "Cross-AZ is an ESTIMATE with stated assumptions -- it is the only uncertain line.",
+    "KEY: inter-broker (replication) cross-AZ traffic is FREE on MSK provisioned (AWS MSK FAQ:",
+    "  'you will not be charged for data transfer within the cluster in a Region, including data",
+    "  transfer between brokers'). Only CLIENT traffic crossing an AZ is billed. The AWS MSK Sizing",
+    "  sheet's large 'Cross-AZ Data Transfer' line counts the free replication traffic and overstates cost.",
+    "Prices are us-east-1 reference; eu-west-2 runs 10-25% higher. Cost Explorer is authoritative."
+  ],
+  "window_hours": 31.44,
+  "measured": {
+    "rows": 113219565734,
+    "compressed_bytes_in_per_second": 28500000.0,
+    "compressed_gb_produced": 3225,
+    "bytes_per_row_compressed": 28.5
+  },
+  "cluster": {
+    "brokers": 3,
+    "instance": "kafka.m7g.xlarge",
+    "ebs_gb_per_broker": 500,
+    "partitions": 24,
+    "replication_factor": 3
+  },
+  "cost_usd": {
+    "broker_hours": {
+      "value": 38.48,
+      "basis": "3 x $0.408/hr x 31.44h",
+      "certainty": "deterministic"
+    },
+    "ebs_storage": {
+      "value": 6.46,
+      "basis": "1500 GB x $0.1/GB-mo prorated",
+      "certainty": "deterministic"
+    },
+    "inter_broker_replication": {
+      "value": 0.0,
+      "basis": "FREE on MSK provisioned",
+      "certainty": "documented"
+    },
+    "client_cross_az": {
+      "value": 43.0,
+      "basis": "~4,300 GB (2/3 of 3,225 GB produce + same for consume) x $0.01/GB",
+      "certainty": "ESTIMATE - assumes 2/3 of client traffic crosses an AZ; rack-aware consumption could cut the consume half"
+    },
+    "total_estimate": 87.94
+  },
+  "context": {
+    "redshift_writer_usd": 1514.11,
+    "redshift_reader_usd": 68.37,
+    "msk_share_of_redshift_total_pct": 5.3
+  }
+}
