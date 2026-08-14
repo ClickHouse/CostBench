@@ -1,0 +1,132 @@
+# Redshift Serverless real-time architecture — for review
+
+**Purpose:** benchmark a real-time analytics pipeline (ingest market-quote data at **~1M events/sec**
+with a rollup attached, then serve dashboard + drilldown queries) on **Amazon Redshift Serverless**,
+to compare **cost and latency** against Snowflake and ClickHouse doing the *same* workload. This doc
+is for an AWS-savvy reviewer to sanity-check the architecture and, critically, whether the **MSK cost
+we attribute to Redshift is fair and right-sized** — it's a cost line the other two vendors don't have.
+
+## Architecture
+
+```
+ producer EC2                Amazon MSK (provisioned)        Redshift Serverless — WRITER workgroup
+ ┌──────────────────┐  :9092 ┌──────────────────────┐ :9094 ┌──────────────────────────────────────┐
+ │ produce_quotes.py│ ─────▶ │ topic `quotes`       │ ────▶ │ EXTERNAL SCHEMA kafka (TLS,AUTH none)│
+ │ 16 procs, ~1M EPS│  plain │ 6 partitions, RF=3   │  TLS  │        ▼                             │
+ └──────────────────┘        │ 3× kafka.m7g.xlarge  │       │ quotes_streamed  streaming MV, SUPER │
+                             │ retention capped     │       │                  AUTO REFRESH YES    │
+                             └──────────────────────┘       │       ╱          ╲                   │
+                                                            │      ▼            ▼                  │
+                                                            │ quotes_typed   quotes_daily          │
+                                                            │ typed cols     (sym,day) rollup      │
+                                                            │ SORTKEY(sym,t) SORTKEY(sym,day)      │
+                                                            │ manual refresh manual refresh        │
+                                                            └───────────────┬──────────────────────┘
+                                                                            │ live datashare
+                                                                            ▼
+                                                            ┌──────────────────────────────────────┐
+                                                            │ READER workgroup (own namespace/RPUs)│
+                                                            │ drilldown_super | drilldown_typed |  │
+                                                            │ dashboard                            │
+                                                            └──────────────────────────────────────┘
+```
+
+- **Ingest:** a producer streams the dataset into an MSK topic at ~1M EPS (plaintext `:9092`, fast).
+- **Redshift streaming ingestion (GA):** an `EXTERNAL SCHEMA … FROM KAFKA` + a **streaming
+  materialized view** (`quotes_streamed`, `AUTO REFRESH YES`) pulls from the topic over MSK's **TLS
+  `:9094`**, landing each record as a `SUPER` payload. Kept minimal on purpose — AWS's guidance is
+  that shredding N typed columns at ingest re-parses each record N times and raises ingest latency.
+- **Fork, not cascade:** `quotes_typed` (typed columns) and `quotes_daily` (`(sym,day)` rollup) are
+  **both defined directly on `quotes_streamed`** and refreshed independently with `RESTRICT`.
+  Chaining them would stack the two refresh lags and make dashboard freshness depend on the typed
+  branch. Neither child can `AUTO REFRESH` (Redshift disallows it on an MV defined on another MV),
+  so a controller drives them: typed continuously, daily fixed-rate.
+- **Read (compute-isolated):** all three query suites run on a **separate reader workgroup** over a
+  live datashare, so read latency and read cost are attributable and don't perturb ingest.
+  The reader **must not be publicly accessible** — a publicly-accessible consumer cannot read
+  datashare objects — so the runners execute from the in-VPC producer box.
+- **The SUPER-vs-typed comparison is a deliberate result:** the same drilldown logic runs against
+  the live `SUPER` payload *and* the typed projection, so the cost of semi-structured access is
+  measured rather than assumed.
+- **Sizing:** writer base **128 RPU / max 256 RPU** (measured: keeps up with 1M EPS at the 128
+  floor, offset lag 0, ~6–9 s freshness); reader **32 RPU, max = base** during characterization;
+  MSK 3× `kafka.m7g.xlarge` (Graviton; 3 AZ, RF=3), EBS 500 GB/broker.
+
+## Why MSK (and not a push API, and not a local broker)
+
+1. **Redshift has no low-latency *push* ingest.** Its GA real-time path is **streaming ingestion**:
+   Redshift *pulls* from a stream (**Kinesis Data Streams or MSK**) into a materialized view. `COPY` is
+   batch-from-S3; `INSERT` is row-at-a-time and far too slow. So a **stream service is mandatory** —
+   there is no Redshift equivalent of a client SDK that writes rows straight into a table.
+2. **MSK over Kinesis Data Streams at ~1M EPS.** KDS is quota'd at **1 MB/s and 1,000 records/s per
+   shard**, so ~1M small-record EPS needs ~1,000 shards (or KPL record aggregation). **MSK scales by
+   partition**, and AWS's near-real-time best-practice guidance for Redshift streaming ingestion is
+   written around MSK. (KDS On-Demand is a possible alternative — see "For the reviewer".)
+3. **MSK over a self-managed single-broker Kafka on the box.** We tried the lean/cheap option first
+   and it **does not work with Redshift**: Redshift streaming ingestion requires **TLS with a
+   CA-trusted server certificate**. It rejected our broker's plaintext listener (`Broker transport
+   failure`) and then a self-signed TLS listener (`SSL handshake failed` — Redshift verifies the cert
+   and offers no skip-verify). **MSK presents Amazon-issued, publicly-trusted broker certs**, so
+   `AUTHENTICATION none` (one-way TLS) works out of the box. mTLS via ACM Private CA also works but
+   costs ~$400/mo and is fiddly.
+
+## Why this differs from Snowflake and ClickHouse (and why that matters for cost)
+
+The other two vendors ingest via a **push** model — the client writes rows *directly* into the
+warehouse's own ingest endpoint. **No broker sits in the data path, so there is no separate queue cost.**
+
+| | Real-time ingest model | Broker / queue in the path? | Extra cost line |
+|---|---|---|---|
+| **Snowflake** | Snowpipe Streaming **push SDK** — client pushes rows to a serverless ingest endpoint | No | none (Snowpipe Streaming credits only) |
+| **ClickHouse** | Direct client **INSERT** (native/HTTP, async) into a synchronous incremental MV | No | none (just CH compute) |
+| **Redshift** | **Pull** — streaming ingestion from a stream into a materialized view | **Yes — MSK (or KDS) is required** | **MSK broker-hours + storage** |
+
+So Redshift structurally needs an extra component (the stream) that Snowflake and ClickHouse do not.
+This is **not us handicapping Redshift** — it's Redshift's own recommended real-time architecture. To
+keep the comparison apples-to-apples on the *outcome* (rows queryable at ~1M EPS with seconds-level
+freshness), each vendor uses **its** native real-time path; Redshift's happens to include a broker,
+and that broker is a genuine cost of running Redshift in real time.
+
+## Cost accounting (what we publish)
+
+Total Redshift real-time cost = **Redshift Serverless RPU-seconds** (streaming-MV refresh + rollup
+refresh + read queries, from `SYS_SERVERLESS_USAGE`) **+ MSK broker-hours + MSK/RMS storage**. We
+**report the MSK line separately** so readers see the breakdown and can judge it — we don't fold it in
+silently. **Inter-broker cross-AZ replication is free on MSK provisioned** (per the AWS MSK FAQ:
+"you will not be charged for data transfer within the cluster in a Region, including data transfer
+between brokers"), so the MSK line is essentially **broker-hours + EBS storage + a small client
+cross-AZ charge** (~$0.01/GB for producer/consumer traffic that crosses an AZ — on the order of ~$25
+for a full run at our throughput). At 3× `kafka.m7g.xlarge` (Graviton) that's ~**$1.22/hr of brokers**
++ storage; over a multi-hour run it's a material fraction of the total and the main thing that makes
+Redshift's real-time cost structure different from the push-SDK vendors'.
+
+## Operational notes that shaped the design (both hit during bring-up)
+
+- **TLS is mandatory** (see above) → drove the move to MSK.
+- **Topic retention must be bounded.** With MSK default (7-day, unbounded) retention, at 1M EPS ×
+  ~138 B/row × RF3 the 100 GB brokers filled at ~720M rows and wedged (cluster still reported
+  `ACTIVE`). Fix: `retention.ms`/`retention.bytes` cap (Redshift consumes live, so retention isn't
+  needed) + larger EBS. This is an MSK-operational cost/config point, not a Redshift limitation.
+
+## For the reviewer — please sanity-check
+
+1. **Is streaming-ingestion-from-a-stream the canonical / only GA real-time path for Redshift?** Are we
+   missing a lower-cost or lower-friction option (Firehose→Redshift, auto-copy from S3, Zero-ETL, any
+   push mechanism) that would avoid or shrink the MSK cost?
+2. **Source choice for ~1M EPS: MSK provisioned vs MSK Serverless vs Kinesis Data Streams.** We chose
+   **MSK provisioned on Graviton `m7g.xlarge`** (better price/perf than m5; MSK Serverless is both very
+   expensive and IAM-auth only; KDS has 1 MB/s · 1,000-rec/s-per-shard quotas / On-Demand pricing). The
+   AWS MSK Sizing sheet suggests 9× m7g.xlarge at 100 MB/s *uncompressed*; our payload is compact JSON
+   with **lz4**, and we **measured** (CloudWatch `BytesInPerSec`) **~28.5 MB/s compressed at ~999K EPS**
+   (~138 B/row uncompressed → lz4 ≈ 4.8:1). Feeding 28.5 MB/s back into the sheet → ~3 brokers, so
+   **3× m7g.xlarge (RF=3, 3 AZ) is confirmed right-sized** (~40% of the 72 MB/s aggregate ingest
+   entitlement). Fair, or should we size differently?
+3. **Auth realism:** we use MSK **unauthenticated TLS** (`AUTHENTICATION none`). Representative, or
+   should a published benchmark use IAM auth? (Cost-neutral; realism only.)
+4. **Redshift Serverless sizing:** base 128 / max 256 RPU for ingest + reads. **Measured 2026-08-12:**
+   at the **128 RPU floor** the streaming MV **fully keeps up with 1M EPS — offset lag 0 across all 6
+   partitions, ~6–9 s freshness**, consuming ~989K rows/s vs the ~1.00M/s producer (never touched the
+   256 max). Reasonable, or is keep-up achievable at a lower (cheaper) floor for a fairer cost?
+5. **Anything in the cost model we're under-counting** (client cross-AZ transfer, RMS, concurrency
+   scaling)? We treat inter-broker replication as free (per the MSK FAQ) and count only *client*
+   cross-AZ — is that the right read of MSK billing?

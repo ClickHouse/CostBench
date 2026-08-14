@@ -1,0 +1,13 @@
+# Copy to terraform.tfvars and fill in. Do NOT commit terraform.tfvars.
+# Password is best passed as an env var:  export TF_VAR_redshift_admin_password='...'
+
+region      = "eu-west-2"          # reuse the existing quotes box (eu-west-2 default VPC vpc-09739962…)
+owner       = "your-name"
+name_prefix = "cb-quotes-rt"
+
+redshift_base_rpu   = 8            # min; raise (e.g. 32/64) as broker throughput climbs to 1M EPS
+redshift_admin_user = "cbadmin"
+# redshift_admin_password -> export TF_VAR_redshift_admin_password='...'
+
+my_ip_cidr = ""                    # e.g. "203.0.113.5/32" — tightens Redshift SQL + broker SSH
+kafka_port = 9092

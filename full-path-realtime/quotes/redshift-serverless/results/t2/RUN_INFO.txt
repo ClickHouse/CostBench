@@ -1,0 +1,8 @@
+run          : 20260812T165356Z
+writer       : cb-quotes-rt-wg.244449518788.eu-west-2.redshift-serverless.amazonaws.com (128 RPU base=max)
+reader       : cb-quotes-rt-reader-wg.244449518788.eu-west-2.redshift-serverless.amazonaws.com (32 RPU base=max)
+MSK topic    : quotes, 24 partitions, RF3, retention 30min/8GiB per partition
+streaming MV : quotes_streamed, SUPER payload + typed sym/t, DISTSTYLE EVEN SORTKEY (sym,t)
+children     : quotes_typed (continuous, 2s gap), quotes_daily (60s)
+reads        : dashboard 600s; drilldown typed+super back-to-back 3600s
+producer     : 16 procs, target 1000000 rows/s

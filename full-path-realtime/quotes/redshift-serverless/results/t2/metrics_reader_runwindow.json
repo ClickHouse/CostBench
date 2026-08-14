@@ -1,0 +1,30 @@
+{
+  "rpu_usage": {
+    "window": {
+      "since": "2026-08-12 16:53:56",
+      "until": "2026-08-14 00:20:03"
+    },
+    "compute_seconds": 579524.0,
+    "charged_seconds": 826176.0,
+    "max_compute_capacity_rpu": 32,
+    "rpu_hours_charged": 229.493,
+    "price_per_rpu_hour": 0.375,
+    "compute_cost_usd": 86.06
+  },
+  "read_queries": {
+    "matched_query_like": "quotes_daily",
+    "count": 1198,
+    "max_elapsed_s": 0.0,
+    "median_elapsed_s": 0.451,
+    "median_compile_s": 0.003,
+    "median_execution_s": 0.363
+  },
+  "storage": {
+    "schema": "public",
+    "total_gb": 0.0,
+    "price_per_gb_month": 0.024,
+    "storage_cost_usd_per_month": 0.0,
+    "by_table_mb": {}
+  },
+  "mv_refreshes": {}
+}

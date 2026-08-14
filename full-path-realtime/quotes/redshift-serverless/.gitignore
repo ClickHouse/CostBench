@@ -1,0 +1,28 @@
+# NOTE: every pattern must be on its OWN line. A '#' only starts a comment at the START of a line —
+# an inline "pattern   # comment" is treated as part of the pattern and silently matches nothing.
+# (That mistake once staged the 680 MB AWS provider binary.)
+
+# ---- NEVER COMMIT: terraform state stores the Redshift admin password IN PLAINTEXT ----
+# (aws_redshiftserverless_namespace.admin_user_password is unencrypted in state)
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.terraform.lock.hcl.bak
+
+# ---- local secrets ----
+# RS_USER / RS_PASSWORD used by the runners on the box
+.env
+
+# ---- build / scratch ----
+__pycache__/
+*.pyc
+
+# on-box working output; the curated copy lives in results/
+out_redshift/
+run_t2/
+
+# raw CLI dumps from bring-up
+result.txt
+
+# results/ IS tracked on purpose — the benchmark's published measurements live there.

@@ -1,0 +1,288 @@
+2 queries from sql/queries_drilldown_typed.sql -> run_t2/20260812T165356Z/drilldown_typed_20260812T165356Z.jsonl
+  role=drilldown_typed target=quotes_typed counts-mode=rollup
+2 queries from sql/queries_drilldown_super.sql -> run_t2/20260812T165356Z/drilldown_super_20260812T165356Z.jsonl
+  role=drilldown_super target=quotes_streamed counts-mode=rollup
+roles run BACK-TO-BACK per iteration, in this order: drilldown_typed -> drilldown_super
+Redshift cb-quotes-rt-reader-wg.244449518788.eu-west-2.redshift-serverless.amazonaws.com:5439/quotes user cbadmin. Interval 3600s (fixed-rate). Ctrl-C to stop.
+[16:53:56] iter 1 starting...
+  raw_rows=0  mv_rows=0  (rollup)
+  drilldown_typed q1/2: 0.102396s  (compile 0.000213s, exec 0.007917s)
+  drilldown_typed q2/2: 0.607758s  (compile 0.000199s, exec 0.006822s)
+  drilldown_super q1/2: 0.170624s  (compile 0.000216s, exec 0.008481s)
+  drilldown_super q2/2: 0.101608s  (compile 0.000207s, exec 0.006248s)
+  done. next iteration in 3587s (fixed 3600s cadence).
+[17:53:57] iter 2 starting...
+  raw_rows=3539132196  mv_rows=54706  (rollup)
+  drilldown_typed q1/2: 15.920081s  (compile 0.004211s, exec 15.308678s)
+  drilldown_typed q2/2: 1.746814s  (compile 0.002738s, exec 1.645988s)
+  drilldown_super q1/2: 15.611969s  (compile 0.368683s, exec 14.046705s)
+  drilldown_super q2/2: 3.507338s  (compile 0.183439s, exec 1.971286s)
+  done. next iteration in 3548s (fixed 3600s cadence).
+[18:53:57] iter 3 starting...
+  raw_rows=7142932703  mv_rows=118527  (rollup)
+  drilldown_typed q1/2: 31.239792s  (compile 0.016369s, exec 30.330868s)
+  drilldown_typed q2/2: 5.951837s  (compile 0.176233s, exec 4.143158s)
+  drilldown_super q1/2: 29.389882s  (compile 0.025387s, exec 27.779337s)
+  drilldown_super q2/2: 118.541744s  (compile 0.211354s, exec 116.879358s)
+  done. next iteration in 3400s (fixed 3600s cadence).
+[19:53:57] iter 4 starting...
+  raw_rows=10739646237  mv_rows=165117  (rollup)
+  drilldown_typed q1/2: 46.703796s  (compile 0.009521s, exec 45.702251s)
+  drilldown_typed q2/2: 15.575967s  (compile 0.015784s, exec 13.759933s)
+  drilldown_super q1/2: 213.845328s  (compile 0.19528s, exec 212.204168s)
+  drilldown_super q2/2: 13.8427s  (compile 0.001644s, exec 11.951004s)
+  done. next iteration in 3294s (fixed 3600s cadence).
+[20:53:57] iter 5 starting...
+  raw_rows=14346887362  mv_rows=221060  (rollup)
+  drilldown_typed q1/2: 63.46344s  (compile 0.007452s, exec 62.557106s)
+  drilldown_typed q2/2: 155.388243s  (compile 0.181464s, exec 153.727731s)
+  drilldown_super q1/2: 64.131728s  (compile 0.004744s, exec 61.320317s)
+  drilldown_super q2/2: 27.784737s  (compile 0.00231s, exec 26.242833s)
+  done. next iteration in 3274s (fixed 3600s cadence).
+[21:53:57] iter 6 starting...
+  raw_rows=17944900380  mv_rows=276939  (rollup)
+  drilldown_typed q1/2: 77.17451s  (compile 0.011976s, exec 75.971693s)
+  drilldown_typed q2/2: 196.627533s  (compile 0.234387s, exec 194.825699s)
+  drilldown_super q1/2: 71.840974s  (compile 0.003959s, exec 68.813391s)
+  drilldown_super q2/2: 32.334565s  (compile 0.001541s, exec 30.741403s)
+  done. next iteration in 3204s (fixed 3600s cadence).
+[22:53:57] iter 7 starting...
+  raw_rows=21541024360  mv_rows=332307  (rollup)
+  drilldown_typed q1/2: 92.652014s  (compile 0.008677s, exec 91.226272s)
+  drilldown_typed q2/2: 241.124583s  (compile 0.007444s, exec 238.303543s)
+  drilldown_super q1/2: 87.85855s  (compile 0.00428s, exec 85.791041s)
+  drilldown_super q2/2: 40.388706s  (compile 0.002011s, exec 39.007847s)
+  done. next iteration in 3124s (fixed 3600s cadence).
+[23:53:57] iter 8 starting...
+  raw_rows=25158046681  mv_rows=398463  (rollup)
+  drilldown_typed q1/2: 108.211803s  (compile 0.60053s, exec 106.966642s)
+  drilldown_typed q2/2: 276.683712s  (compile 0.002446s, exec 275.196565s)
+  drilldown_super q1/2: 105.930057s  (compile 0.004113s, exec 103.779076s)
+  drilldown_super q2/2: 48.927087s  (compile 0.002188s, exec 47.333049s)
+  done. next iteration in 3045s (fixed 3600s cadence).
+[00:53:57] iter 9 starting...
+  raw_rows=28758932048  mv_rows=455605  (rollup)
+  drilldown_typed q1/2: 129.005022s  (compile 0.020006s, exec 127.655657s)
+  drilldown_typed q2/2: 317.677939s  (compile 0.005407s, exec 315.556249s)
+  drilldown_super q1/2: 120.504405s  (compile 0.004389s, exec 117.805143s)
+  drilldown_super q2/2: 55.083924s  (compile 0.001882s, exec 53.399626s)
+  done. next iteration in 2960s (fixed 3600s cadence).
+[01:53:57] iter 10 starting...
+  raw_rows=32358986128  mv_rows=512618  (rollup)
+  drilldown_typed q1/2: 144.999259s  (compile 0.011007s, exec 142.143335s)
+  drilldown_typed q2/2: 338.236294s  (compile 0.261584s, exec 336.685413s)
+  drilldown_super q1/2: 136.53611s  (compile 0.003861s, exec 134.255896s)
+  drilldown_super q2/2: 81.998594s  (compile 0.001814s, exec 80.594477s)
+  done. next iteration in 2880s (fixed 3600s cadence).
+[02:53:57] iter 11 starting...
+  raw_rows=35960573077  mv_rows=595204  (rollup)
+  drilldown_typed q1/2: 159.313652s  (compile 0.163322s, exec 157.578629s)
+  drilldown_typed q2/2: 324.540367s  (compile 0.002631s, exec 322.846936s)
+  drilldown_super q1/2: 149.744311s  (compile 0.004109s, exec 146.989418s)
+  drilldown_super q2/2: 87.142236s  (compile 0.002522s, exec 85.978865s)
+  done. next iteration in 2864s (fixed 3600s cadence).
+[03:53:57] iter 12 starting...
+  raw_rows=39507372773  mv_rows=657399  (rollup)
+  drilldown_typed q1/2: 34.857398s  (compile 0.158824s, exec 33.077878s)
+  drilldown_typed q2/2: 5.986836s  (compile 0.237654s, exec 5.190631s)
+  drilldown_super q1/2: 446.004491s  (compile 0.009436s, exec 442.781055s)
+  drilldown_super q2/2: 92.671605s  (compile 0.001711s, exec 89.261854s)
+  done. next iteration in 3005s (fixed 3600s cadence).
+[04:53:57] iter 13 starting...
+  raw_rows=43113715625  mv_rows=725149  (rollup)
+  drilldown_typed q1/2: 51.198841s  (compile 0.008642s, exec 49.313379s)
+  drilldown_typed q2/2: 9.29629s  (compile 0.00342s, exec 7.840621s)
+  drilldown_super q1/2: 56.021824s  (compile 0.151733s, exec 53.832793s)
+  drilldown_super q2/2: 11.970578s  (compile 0.001812s, exec 9.810661s)
+  done. next iteration in 3456s (fixed 3600s cadence).
+[05:53:57] iter 14 starting...
+  raw_rows=46769882264  mv_rows=788286  (rollup)
+  drilldown_typed q1/2: 67.427364s  (compile 0.021009s, exec 65.251255s)
+  drilldown_typed q2/2: 373.736032s  (compile 0.003555s, exec 372.171238s)
+  drilldown_super q1/2: 45.065908s  (compile 0.004153s, exec 40.649087s)
+  drilldown_super q2/2: 7.822572s  (compile 0.001812s, exec 6.388518s)
+  done. next iteration in 3088s (fixed 3600s cadence).
+[06:53:57] iter 15 starting...
+  raw_rows=50311961071  mv_rows=845469  (rollup)
+  drilldown_typed q1/2: 81.900148s  (compile 0.011799s, exec 80.026601s)
+  drilldown_typed q2/2: 383.183353s  (compile 0.002602s, exec 381.632255s)
+  drilldown_super q1/2: 61.11634s  (compile 0.004252s, exec 54.884038s)
+  drilldown_super q2/2: 23.057097s  (compile 0.00213s, exec 21.8399s)
+  done. next iteration in 3034s (fixed 3600s cadence).
+[07:53:57] iter 16 starting...
+  raw_rows=53928907694  mv_rows=902944  (rollup)
+  drilldown_typed q1/2: 96.422819s  (compile 0.010675s, exec 94.476545s)
+  drilldown_typed q2/2: 372.57452s  (compile 0.169139s, exec 370.72789s)
+  drilldown_super q1/2: 70.692557s  (compile 0.004522s, exec 66.614923s)
+  drilldown_super q2/2: 31.326022s  (compile 0.001852s, exec 29.956405s)
+  done. next iteration in 3012s (fixed 3600s cadence).
+[08:53:57] iter 17 starting...
+  raw_rows=57534735475  mv_rows=960446  (rollup)
+  drilldown_typed q1/2: 110.071634s  (compile 0.015434s, exec 107.903459s)
+  drilldown_typed q2/2: 359.024648s  (compile 0.157978s, exec 357.312523s)
+  drilldown_super q1/2: 84.077744s  (compile 0.003772s, exec 79.638884s)
+  drilldown_super q2/2: 37.670715s  (compile 0.002385s, exec 35.424377s)
+  done. next iteration in 2993s (fixed 3600s cadence).
+[09:53:57] iter 18 starting...
+  raw_rows=61127219937  mv_rows=1018366  (rollup)
+  drilldown_typed q1/2: 130.18071s  (compile 0.009139s, exec 127.990979s)
+  drilldown_typed q2/2: 342.45943s  (compile 0.132929s, exec 340.306176s)
+  drilldown_super q1/2: 102.551223s  (compile 0.004126s, exec 99.236311s)
+  drilldown_super q2/2: 51.347266s  (compile 0.001787s, exec 48.552707s)
+  done. next iteration in 2955s (fixed 3600s cadence).
+[10:53:57] iter 19 starting...
+  raw_rows=64726881755  mv_rows=1076172  (rollup)
+  drilldown_typed q1/2: 156.440168s  (compile 0.24323s, exec 154.002239s)
+  drilldown_typed q2/2: 339.519636s  (compile 0.003338s, exec 337.432004s)
+  drilldown_super q1/2: 120.270434s  (compile 0.004062s, exec 115.508158s)
+  drilldown_super q2/2: 80.775735s  (compile 0.001853s, exec 77.688606s)
+  done. next iteration in 2885s (fixed 3600s cadence).
+[11:53:57] iter 20 starting...
+  raw_rows=68330088073  mv_rows=1133705  (rollup)
+  drilldown_typed q1/2: 170.877919s  (compile 0.250651s, exec 168.206257s)
+  drilldown_typed q2/2: 326.595559s  (compile 0.226364s, exec 324.193252s)
+  drilldown_super q1/2: 136.699789s  (compile 0.004014s, exec 132.140437s)
+  drilldown_super q2/2: 96.14147s  (compile 0.001835s, exec 94.359327s)
+  done. next iteration in 2853s (fixed 3600s cadence).
+[12:53:57] iter 21 starting...
+  raw_rows=71946007841  mv_rows=1189423  (rollup)
+  drilldown_typed q1/2: 192.42891s  (compile 0.007824s, exec 189.471689s)
+  drilldown_typed q2/2: 309.670279s  (compile 0.002551s, exec 307.570736s)
+  drilldown_super q1/2: 150.259941s  (compile 0.004216s, exec 145.558236s)
+  drilldown_super q2/2: 83.008091s  (compile 0.002532s, exec 81.083541s)
+  done. next iteration in 2849s (fixed 3600s cadence).
+[13:53:57] iter 22 starting...
+  raw_rows=75540057221  mv_rows=1236011  (rollup)
+  drilldown_typed q1/2: 210.127509s  (compile 0.012927s, exec 207.425618s)
+  drilldown_typed q2/2: 310.6047s  (compile 0.002517s, exec 308.395175s)
+  drilldown_super q1/2: 178.054849s  (compile 0.0046s, exec 173.201667s)
+  drilldown_super q2/2: 92.35688s  (compile 0.001809s, exec 90.287512s)
+  done. next iteration in 2792s (fixed 3600s cadence).
+[14:53:57] iter 23 starting...
+  raw_rows=79146527318  mv_rows=1292334  (rollup)
+  drilldown_typed q1/2: 215.844457s  (compile 0.025461s, exec 213.164624s)
+  drilldown_typed q2/2: 303.055248s  (compile 0.158843s, exec 300.018064s)
+  drilldown_super q1/2: 199.828932s  (compile 0.004484s, exec 196.219063s)
+  drilldown_super q2/2: 128.659521s  (compile 0.001678s, exec 124.503272s)
+  done. next iteration in 2735s (fixed 3600s cadence).
+[15:53:57] iter 24 starting...
+  raw_rows=82760697798  mv_rows=1340185  (rollup)
+  drilldown_typed q1/2: 234.741752s  (compile 0.013385s, exec 231.985267s)
+  drilldown_typed q2/2: 269.26161s  (compile 0.007406s, exec 265.952153s)
+  drilldown_super q1/2: 52.144207s  (compile 0.004205s, exec 47.324662s)
+  drilldown_super q2/2: 11.695733s  (compile 0.0019s, exec 9.758536s)
+  done. next iteration in 3013s (fixed 3600s cadence).
+[16:53:57] iter 25 starting...
+  raw_rows=86376876842  mv_rows=1399268  (rollup)
+  drilldown_typed q1/2: 64.849824s  (compile 0.008319s, exec 62.041574s)
+  drilldown_typed q2/2: 158.734885s  (compile 0.005655s, exec 156.115357s)
+  drilldown_super q1/2: 63.592342s  (compile 0.172177s, exec 58.652811s)
+  drilldown_super q2/2: 32.651546s  (compile 0.001919s, exec 29.459049s)
+  done. next iteration in 3260s (fixed 3600s cadence).
+[17:53:57] iter 26 starting...
+  raw_rows=89920330616  mv_rows=1459148  (rollup)
+  drilldown_typed q1/2: 79.47847s  (compile 0.013439s, exec 76.492565s)
+  drilldown_typed q2/2: 270.424794s  (compile 0.002947s, exec 268.167671s)
+  drilldown_super q1/2: 82.4392s  (compile 0.004192s, exec 78.316296s)
+  drilldown_super q2/2: 37.732231s  (compile 0.002108s, exec 35.699529s)
+  done. next iteration in 3113s (fixed 3600s cadence).
+[18:53:57] iter 27 starting...
+  raw_rows=93578343844  mv_rows=1520175  (rollup)
+  drilldown_typed q1/2: 93.599052s  (compile 0.009059s, exec 89.673982s)
+  drilldown_typed q2/2: 274.01232s  (compile 0.22302s, exec 271.851385s)
+  drilldown_super q1/2: 95.675033s  (compile 0.004825s, exec 89.674501s)
+  drilldown_super q2/2: 49.470311s  (compile 0.002123s, exec 45.772889s)
+  done. next iteration in 3070s (fixed 3600s cadence).
+[19:53:57] iter 28 starting...
+  raw_rows=97179016064  mv_rows=1581835  (rollup)
+  drilldown_typed q1/2: 111.850088s  (compile 0.014296s, exec 107.841796s)
+  drilldown_typed q2/2: 250.06518s  (compile 0.003793s, exec 247.742117s)
+  drilldown_super q1/2: 110.796395s  (compile 0.004855s, exec 104.996786s)
+  drilldown_super q2/2: 54.73654s  (compile 0.001809s, exec 51.09623s)
+  done. next iteration in 3053s (fixed 3600s cadence).
+[20:53:57] iter 29 starting...
+  raw_rows=100778006840  mv_rows=1644461  (rollup)
+  drilldown_typed q1/2: 130.982062s  (compile 0.012633s, exec 127.907124s)
+  drilldown_typed q2/2: 214.09859s  (compile 0.002662s, exec 211.980512s)
+  drilldown_super q1/2: 131.733205s  (compile 0.004264s, exec 126.794974s)
+  drilldown_super q2/2: 63.719801s  (compile 0.001886s, exec 60.420964s)
+  done. next iteration in 3039s (fixed 3600s cadence).
+[21:53:57] iter 30 starting...
+  raw_rows=104313973826  mv_rows=1707845  (rollup)
+  drilldown_typed q1/2: 154.204472s  (compile 0.006787s, exec 149.282617s)
+  drilldown_typed q2/2: 220.115298s  (compile 0.002989s, exec 217.259236s)
+  drilldown_super q1/2: 153.780429s  (compile 0.004041s, exec 149.139988s)
+  drilldown_super q2/2: 71.800999s  (compile 0.001724s, exec 69.832622s)
+  done. next iteration in 2983s (fixed 3600s cadence).
+[22:53:57] iter 31 starting...
+  raw_rows=107973829697  mv_rows=1771089  (rollup)
+  drilldown_typed q1/2: 172.471605s  (compile 0.012479s, exec 169.168146s)
+  drilldown_typed q2/2: 290.449533s  (compile 0.0024s, exec 286.221763s)
+  drilldown_super q1/2: 167.496925s  (compile 0.004428s, exec 163.432875s)
+  drilldown_super q2/2: 112.514717s  (compile 0.001866s, exec 109.274184s)
+  done. next iteration in 2840s (fixed 3600s cadence).
+[23:53:57] iter 32 starting...
+  raw_rows=111582844191  mv_rows=1834766  (rollup)
+  drilldown_typed q1/2: 176.77334s  (compile 0.006939s, exec 173.653382s)
+  drilldown_typed q2/2: 279.474753s  (compile 0.179117s, exec 275.560543s)
+  drilldown_super q1/2: 68.991651s  (compile 0.00368s, exec 64.898188s)
+  drilldown_super q2/2: 19.20964s  (compile 0.001618s, exec 16.43012s)
+  done. next iteration in 3038s (fixed 3600s cadence).
+[00:53:57] iter 33 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 84.664199s  (compile 0.137132s, exec 80.868301s)
+  drilldown_typed q2/2: 98.70712s  (compile 0.002324s, exec 98.603497s)
+  drilldown_super q1/2: 69.171988s  (compile 0.010429s, exec 66.495153s)
+  drilldown_super q2/2: 28.648377s  (compile 0.002053s, exec 28.547555s)
+  done. next iteration in 3300s (fixed 3600s cadence).
+[01:53:57] iter 34 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 82.789304s  (compile 0.148605s, exec 79.024613s)
+  drilldown_typed q2/2: 25.603235s  (compile 0.002283s, exec 25.498322s)
+  drilldown_super q1/2: 71.938616s  (compile 0.004234s, exec 69.300768s)
+  drilldown_super q2/2: 27.263302s  (compile 0.002018s, exec 27.159538s)
+  done. next iteration in 3371s (fixed 3600s cadence).
+[02:53:57] iter 35 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 84.134093s  (compile 0.007318s, exec 80.479001s)
+  drilldown_typed q2/2: 114.868733s  (compile 0.00244s, exec 114.758526s)
+  drilldown_super q1/2: 69.379421s  (compile 0.004802s, exec 66.6413s)
+  drilldown_super q2/2: 23.136855s  (compile 0.002168s, exec 23.026063s)
+  done. next iteration in 3287s (fixed 3600s cadence).
+[03:53:57] iter 36 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 81.249596s  (compile 0.022512s, exec 76.457338s)
+  drilldown_typed q2/2: 38.030984s  (compile 0.002985s, exec 37.912032s)
+  drilldown_super q1/2: 69.054471s  (compile 0.003782s, exec 65.607341s)
+  drilldown_super q2/2: 32.941788s  (compile 0.001869s, exec 32.833753s)
+  done. next iteration in 3358s (fixed 3600s cadence).
+[04:53:57] iter 37 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 76.968633s  (compile 0.006922s, exec 73.345437s)
+  drilldown_typed q2/2: 30.523334s  (compile 0.002542s, exec 30.411473s)
+  drilldown_super q1/2: 70.866012s  (compile 0.004841s, exec 68.294925s)
+  drilldown_super q2/2: 32.192645s  (compile 0.001753s, exec 32.083995s)
+  done. next iteration in 3370s (fixed 3600s cadence).
+[05:53:57] iter 38 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 75.157196s  (compile 0.011824s, exec 71.432209s)
+  drilldown_typed q2/2: 38.144858s  (compile 0.002694s, exec 38.042625s)
+  drilldown_super q1/2: 65.305822s  (compile 0.004541s, exec 62.791177s)
+  drilldown_super q2/2: 36.463624s  (compile 0.002018s, exec 36.362433s)
+  done. next iteration in 3366s (fixed 3600s cadence).
+[06:53:57] iter 39 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 73.668632s  (compile 0.022701s, exec 70.043426s)
+  drilldown_typed q2/2: 38.682049s  (compile 0.002937s, exec 38.573793s)
+  drilldown_super q1/2: 62.960269s  (compile 0.00419s, exec 60.43395s)
+  drilldown_super q2/2: 38.741726s  (compile 0.001998s, exec 38.639675s)
+  done. next iteration in 3367s (fixed 3600s cadence).
+[07:53:57] iter 40 starting...
+  raw_rows=113219565734  mv_rows=1858616  (rollup)
+  drilldown_typed q1/2: 75.375789s  (compile 0.023531s, exec 71.53928s)
+  drilldown_typed q2/2: 41.849631s  (compile 0.002222s, exec 41.738761s)
+  drilldown_super q1/2: 64.574341s  (compile 0.004014s, exec 61.967818s)
+  drilldown_super q2/2: 42.287862s  (compile 0.001756s, exec 42.179236s)
+  done. next iteration in 3357s (fixed 3600s cadence).
+
+Stopped after 40 iterations.
