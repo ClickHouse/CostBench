@@ -55,22 +55,24 @@ Provider credentials must remain in ignored local files or environment variables
    bash full-path-realtime/utils/_commands.txt
    ```
 
-2. Rebuild ClickHouse matched query-cost summaries:
+2. Rebuild provider-native cost summaries. The ClickHouse, Snowflake, and BigQuery
+   `_commands.txt` files are command notebooks: follow the accepted T2 section rather than treating
+   the complete historical notebook as a one-shot shell script. Redshift's T2 cost pipeline is
+   directly executable.
 
    ```bash
-   bash full-path-realtime/quotes/clickhouse-cloud/costs/_commands.txt
-   ```
-
-3. Rebuild provider-native costs and pairwise charts:
-
-   ```bash
-   bash full-path-realtime/quotes/snowflake/costs/_commands.txt
-   bash full-path-realtime/quotes/snowflake/visualizations/_commands.txt
-
-   bash full-path-realtime/quotes/bigquery/costs/_commands.txt
-   bash full-path-realtime/quotes/bigquery/visualizations/_commands.txt
+   less full-path-realtime/quotes/clickhouse-cloud/costs/_commands.txt
+   less full-path-realtime/quotes/snowflake/costs/_commands.txt
+   less full-path-realtime/quotes/bigquery/costs/_commands.txt
 
    bash full-path-realtime/quotes/redshift-serverless/costs/_commands.txt
+   ```
+
+3. Rebuild every maintained pairwise chart suite:
+
+   ```bash
+   bash full-path-realtime/quotes/snowflake/visualizations/_commands.txt
+   bash full-path-realtime/quotes/bigquery/visualizations/_commands.txt
    bash full-path-realtime/quotes/redshift-serverless/visualizations/_commands.txt
    ```
 
