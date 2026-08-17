@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "scope": "Snowflake T2 accepted Run 14 evidence metadata",
+  "allowed_changed_fields": [
+    "machine",
+    "cluster_size"
+  ],
+  "unchanged_fields": "All fields other than machine and cluster_size, including result, compilation_time, execution_time, row progress, and timestamps.",
+  "files": [
+    {
+      "path": "dashboard_imv_iv_20260811T111856Z.jsonl",
+      "records": 209,
+      "before_sha256": "0889578d3ec63687b876674162be8cdc1328ae5ad03ef0df23847531e7aa604f",
+      "after_sha256": "80f10f8d95fef57a644a3ff5be59f886333715ff324ade98404602449b3ec019",
+      "corrections": {
+        "machine": {
+          "before": "MV iv",
+          "after": "Interactive Small"
+        },
+        "cluster_size": {
+          "before": "1",
+          "after": "1.2"
+        }
+      }
+    },
+    {
+      "path": "dashboard_mv_std_20260811T111856Z.jsonl",
+      "records": 209,
+      "before_sha256": "9ee22879d7530d9b52ecceb6a31dc934009245c00d1bbdb59f3a9cfaba4b2fee",
+      "after_sha256": "f47407c278a3600f667dc867d9e4fc861ef8ae944ba8203a0fcc76e7aacf3788",
+      "corrections": {
+        "machine": {
+          "before": "MV std",
+          "after": "Gen2 Small"
+        },
+        "cluster_size": {
+          "before": "1",
+          "after": "2.7"
+        }
+      }
+    },
+    {
+      "path": "dashboard_raw_iv_20260811T111856Z.jsonl",
+      "records": 209,
+      "before_sha256": "a50cda2a364d13a770b1524bcb94dcced954397382820d38f071561d9bf128f4",
+      "after_sha256": "efeedc3f591abc93b51aeaf8bd300e0e17237124967d00c0d3f3a248e3318cf9",
+      "corrections": {
+        "machine": {
+          "before": "raw iv",
+          "after": "Interactive Small"
+        },
+        "cluster_size": {
+          "before": "1",
+          "after": "1.2"
+        }
+      }
+    },
+    {
+      "path": "drilldown_20260811T111857Z.jsonl",
+      "records": 35,
+      "before_sha256": "47015a2050a7616923c9664b5508de6dce00741601a92b6193cb60ca25468760",
+      "after_sha256": "a4ed169ecd67550a74ac945fbb745cbd8bc4cfbaaf14c848133d0d5b86094ad5",
+      "corrections": {
+        "machine": {
+          "before": "IT Small (stream)",
+          "after": "Interactive Small"
+        },
+        "cluster_size": {
+          "before": "1",
+          "after": "1.2"
+        }
+      }
+    }
+  ]
+}
