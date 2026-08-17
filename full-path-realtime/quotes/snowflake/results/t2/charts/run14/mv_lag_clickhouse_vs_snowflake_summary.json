@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "chart": "clickhouse_vs_snowflake_mv_lag",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11,
+      5
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "selection": {
+    "final_rows": 113217341828,
+    "active_endpoint_timestamp": "2026-08-12T22:58:57+01:00",
+    "active_endpoint_source_line": 209,
+    "dashboard_records": 208,
+    "records_read": 2084,
+    "initial_invalid_excluded": 4,
+    "post_ingestion_excluded": 8,
+    "active_source_samples": 2072,
+    "plotted_samples": 2072,
+    "alignment": "linear interpolation of dashboard raw_rows at each freshness poll timestamp"
+  },
+  "series": {
+    "clickhouse": {
+      "lag_seconds": 0,
+      "source": "benchmark-semantic baseline"
+    },
+    "snowflake": {
+      "source": "behind_by",
+      "average_plotted_lag_minutes": 1.372489316756079,
+      "maximum_plotted_lag_minutes": 2.0327868852459017
+    }
+  },
+  "rendering": {
+    "aggregation": "centered rolling mean of measured one-minute freshness polls",
+    "window_observations": 61,
+    "display_only_smoothing": {
+      "method": "centered rolling mean",
+      "window_observations": 11
+    },
+    "curve_interpolation": {
+      "method": "pchip",
+      "shape_preserving": true,
+      "source_unique_points": 2067,
+      "rendered_points": 2000
+    },
+    "legend_statistics_source": "61-sample trend before display-only smoothing and interpolation",
+    "raw_line_visible": false
+  },
+  "sources": {
+    "freshness": {
+      "path": "quotes/snowflake/results/t2/mv_latency_20260811T111856Z.jsonl",
+      "sha256": "fcae05867d51b2c9b1508325b47fd58d871f67d702085eb0421f02fdb6831c34"
+    },
+    "dashboard": {
+      "path": "quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl",
+      "sha256": "80f10f8d95fef57a644a3ff5be59f886333715ff324ade98404602449b3ec019"
+    }
+  },
+  "outputs": {
+    "png": "quotes/snowflake/results/t2/charts/run14/mv_lag_clickhouse_vs_snowflake.png",
+    "svg": "quotes/snowflake/results/t2/charts/run14/mv_lag_clickhouse_vs_snowflake.svg",
+    "csv": "quotes/snowflake/results/t2/charts/run14/mv_lag_clickhouse_vs_snowflake_data.csv",
+    "curve_csv": "quotes/snowflake/results/t2/charts/run14/mv_lag_clickhouse_vs_snowflake_curve_data.csv"
+  }
+}

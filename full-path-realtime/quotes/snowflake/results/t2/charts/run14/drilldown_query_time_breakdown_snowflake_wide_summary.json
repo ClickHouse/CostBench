@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "chart": "snowflake_query_compilation_execution_breakdown",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "presentation": {
+    "compilation_legend_label": "Compilation",
+    "execution_legend_label": "Execution"
+  },
+  "selection": {
+    "max_rows_inclusive": 100000000000,
+    "x_axis": "each observation at its recorded raw_rows",
+    "outlier_policy": "none",
+    "outliers_preserved_in_csv_and_summary": true,
+    "outlier_annotation_enabled": false,
+    "outlier_annotations_rendered": 0,
+    "smoothing": {
+      "method": "centered rolling median of cumulative phase boundaries",
+      "window_observations": 5,
+      "edges": "shrinking window"
+    }
+  },
+  "timing_contract": {
+    "stack": "provider-reported compilation_time plus execution_time",
+    "outlier_metric": "runner result (end-to-end query latency)",
+    "residual": "result - compilation_time - execution_time; retained in CSV and summary, not plotted",
+    "interpretation": "the stack is provider phase telemetry; the end-to-end result remains the latency contract and normalized cost is not allocated from these phases"
+  },
+  "colors": {
+    "compilation": "#FFAA1D",
+    "execution": "#29B5E8"
+  },
+  "sources": {
+    "input": {
+      "path": "quotes/snowflake/results/t2/drilldown_20260811T111857Z.jsonl",
+      "sha256": "a4ed169ecd67550a74ac945fbb745cbd8bc4cfbaaf14c848133d0d5b86094ad5"
+    },
+    "queries": {
+      "path": "quotes/snowflake/t2/queries_raw_it.sql",
+      "sha256": "55b3a6848e4f6d9812be295f5a351338942a76e695caf05ade68cd5296d6b05d"
+    }
+  },
+  "input_metadata": {
+    "records_read": 35,
+    "records_selected": 30,
+    "zero_row_records_excluded": 1,
+    "records_above_cap_excluded": 4,
+    "systems": [
+      "Snowflake IT (AWS)"
+    ],
+    "machines": [
+      "Interactive Small"
+    ]
+  },
+  "queries": {
+    "1": {
+      "query_name": "Hourly OHLCV bars",
+      "observed": {
+        "observations": 30,
+        "end_to_end_latency": {
+          "observations": 30,
+          "average_sec": 0.8950333333333333,
+          "median_sec": 0.8745,
+          "p95_sec": 1.389,
+          "minimum_sec": 0.229,
+          "maximum_sec": 1.817
+        },
+        "compilation": {
+          "observations": 30,
+          "average_sec": 0.2235,
+          "median_sec": 0.225,
+          "p95_sec": 0.534,
+          "minimum_sec": 0.065,
+          "maximum_sec": 0.545
+        },
+        "execution": {
+          "observations": 30,
+          "average_sec": 0.6715333333333333,
+          "median_sec": 0.643,
+          "p95_sec": 1.224,
+          "minimum_sec": 0.14,
+          "maximum_sec": 1.272
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 30,
+          "average_sec": 9.25185853854297e-18,
+          "median_sec": 0.0,
+          "p95_sec": 2.220446049250313e-16,
+          "minimum_sec": -2.220446049250313e-16,
+          "maximum_sec": 2.220446049250313e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 31,
+          "iteration": 31,
+          "observed_at": "2026-08-12T17:18:57Z",
+          "raw_rows": 98161784620,
+          "query_number": 1,
+          "query_name": "Hourly OHLCV bars",
+          "latency_sec": 1.817,
+          "compilation_sec": 0.545,
+          "execution_sec": 1.272,
+          "residual_sec": -2.220446049250313e-16
+        }
+      },
+      "included_before_smoothing": {
+        "observations": 30,
+        "end_to_end_latency": {
+          "observations": 30,
+          "average_sec": 0.8950333333333333,
+          "median_sec": 0.8745,
+          "p95_sec": 1.389,
+          "minimum_sec": 0.229,
+          "maximum_sec": 1.817
+        },
+        "compilation": {
+          "observations": 30,
+          "average_sec": 0.2235,
+          "median_sec": 0.225,
+          "p95_sec": 0.534,
+          "minimum_sec": 0.065,
+          "maximum_sec": 0.545
+        },
+        "execution": {
+          "observations": 30,
+          "average_sec": 0.6715333333333333,
+          "median_sec": 0.643,
+          "p95_sec": 1.224,
+          "minimum_sec": 0.14,
+          "maximum_sec": 1.272
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 30,
+          "average_sec": 9.25185853854297e-18,
+          "median_sec": 0.0,
+          "p95_sec": 2.220446049250313e-16,
+          "minimum_sec": -2.220446049250313e-16,
+          "maximum_sec": 2.220446049250313e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 31,
+          "iteration": 31,
+          "observed_at": "2026-08-12T17:18:57Z",
+          "raw_rows": 98161784620,
+          "query_number": 1,
+          "query_name": "Hourly OHLCV bars",
+          "latency_sec": 1.817,
+          "compilation_sec": 0.545,
+          "execution_sec": 1.272,
+          "residual_sec": -2.220446049250313e-16
+        }
+      },
+      "displayed": {
+        "observations": 30,
+        "compilation": {
+          "observations": 30,
+          "average_sec": 0.20968333333333333,
+          "median_sec": 0.20525,
+          "p95_sec": 0.39,
+          "minimum_sec": 0.081,
+          "maximum_sec": 0.39
+        },
+        "execution": {
+          "observations": 30,
+          "average_sec": 0.6972333333333333,
+          "median_sec": 0.657,
+          "p95_sec": 1.2239999999999998,
+          "minimum_sec": 0.219,
+          "maximum_sec": 1.2239999999999998
+        },
+        "phase_total": {
+          "observations": 30,
+          "average_sec": 0.9069166666666667,
+          "median_sec": 0.898,
+          "p95_sec": 1.367,
+          "minimum_sec": 0.308,
+          "maximum_sec": 1.3739999999999999
+        }
+      },
+      "outlier_filter": {
+        "method": "Tukey upper fence on end-to-end result (Q3 + 1.5*IQR)",
+        "applied": false,
+        "reason": "--drop-outliers not requested",
+        "excluded_observations": 0
+      }
+    },
+    "2": {
+      "query_name": "Risk & liquidity (B7)",
+      "observed": {
+        "observations": 30,
+        "end_to_end_latency": {
+          "observations": 30,
+          "average_sec": 1.0948,
+          "median_sec": 1.0505,
+          "p95_sec": 2.245,
+          "minimum_sec": 0.315,
+          "maximum_sec": 2.556
+        },
+        "compilation": {
+          "observations": 30,
+          "average_sec": 0.2179,
+          "median_sec": 0.191,
+          "p95_sec": 0.385,
+          "minimum_sec": 0.142,
+          "maximum_sec": 0.4
+        },
+        "execution": {
+          "observations": 30,
+          "average_sec": 0.8768999999999999,
+          "median_sec": 0.83,
+          "p95_sec": 2.075,
+          "minimum_sec": 0.124,
+          "maximum_sec": 2.339
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 30,
+          "average_sec": 1.2027416100105863e-17,
+          "median_sec": 0.0,
+          "p95_sec": 2.220446049250313e-16,
+          "minimum_sec": -2.220446049250313e-16,
+          "maximum_sec": 2.220446049250313e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 30,
+          "iteration": 30,
+          "observed_at": "2026-08-12T16:18:57Z",
+          "raw_rows": 94877773840,
+          "query_number": 2,
+          "query_name": "Risk & liquidity (B7)",
+          "latency_sec": 2.556,
+          "compilation_sec": 0.217,
+          "execution_sec": 2.339,
+          "residual_sec": 0.0
+        }
+      },
+      "included_before_smoothing": {
+        "observations": 30,
+        "end_to_end_latency": {
+          "observations": 30,
+          "average_sec": 1.0948,
+          "median_sec": 1.0505,
+          "p95_sec": 2.245,
+          "minimum_sec": 0.315,
+          "maximum_sec": 2.556
+        },
+        "compilation": {
+          "observations": 30,
+          "average_sec": 0.2179,
+          "median_sec": 0.191,
+          "p95_sec": 0.385,
+          "minimum_sec": 0.142,
+          "maximum_sec": 0.4
+        },
+        "execution": {
+          "observations": 30,
+          "average_sec": 0.8768999999999999,
+          "median_sec": 0.83,
+          "p95_sec": 2.075,
+          "minimum_sec": 0.124,
+          "maximum_sec": 2.339
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 30,
+          "average_sec": 1.2027416100105863e-17,
+          "median_sec": 0.0,
+          "p95_sec": 2.220446049250313e-16,
+          "minimum_sec": -2.220446049250313e-16,
+          "maximum_sec": 2.220446049250313e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 30,
+          "iteration": 30,
+          "observed_at": "2026-08-12T16:18:57Z",
+          "raw_rows": 94877773840,
+          "query_number": 2,
+          "query_name": "Risk & liquidity (B7)",
+          "latency_sec": 2.556,
+          "compilation_sec": 0.217,
+          "execution_sec": 2.339,
+          "residual_sec": 0.0
+        }
+      },
+      "displayed": {
+        "observations": 30,
+        "compilation": {
+          "observations": 30,
+          "average_sec": 0.19701666666666667,
+          "median_sec": 0.191,
+          "p95_sec": 0.254,
+          "minimum_sec": 0.146,
+          "maximum_sec": 0.291
+        },
+        "execution": {
+          "observations": 30,
+          "average_sec": 0.79885,
+          "median_sec": 0.8384999999999999,
+          "p95_sec": 1.811,
+          "minimum_sec": 0.17599999999999996,
+          "maximum_sec": 1.8179999999999998
+        },
+        "phase_total": {
+          "observations": 30,
+          "average_sec": 0.9958666666666667,
+          "median_sec": 1.045,
+          "p95_sec": 1.9809999999999999,
+          "minimum_sec": 0.33899999999999997,
+          "maximum_sec": 1.9809999999999999
+        }
+      },
+      "outlier_filter": {
+        "method": "Tukey upper fence on end-to-end result (Q3 + 1.5*IQR)",
+        "applied": false,
+        "reason": "--drop-outliers not requested",
+        "excluded_observations": 0
+      }
+    }
+  },
+  "outputs": {
+    "png": "quotes/snowflake/results/t2/charts/run14/drilldown_query_time_breakdown_snowflake_wide.png",
+    "svg": "quotes/snowflake/results/t2/charts/run14/drilldown_query_time_breakdown_snowflake_wide.svg",
+    "csv": "quotes/snowflake/results/t2/charts/run14/drilldown_query_time_breakdown_snowflake_wide_data.csv"
+  }
+}

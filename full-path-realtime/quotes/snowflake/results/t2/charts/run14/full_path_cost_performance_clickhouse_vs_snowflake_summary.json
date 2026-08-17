@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "chart": "full_path_cost_performance",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11.5,
+      5.7
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "formula": "(fresh_data_path_cost_usd + queries_cost_usd) * queries_runtime_sec",
+  "lower_is_better": true,
+  "tier": "enterprise",
+  "presentation": {
+    "query_cost_display": "total",
+    "cost_attribution_visible_on_chart": false,
+    "score_scale": "log10 relative to ClickHouse",
+    "baseline_bar_width": 0
+  },
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "fresh_cost": 28.68705,
+      "query_cost": 0.05362,
+      "runtime_sec": 61.827,
+      "total_cost": 28.740669999999998,
+      "score": 1776.94940409,
+      "relative_to_clickhouse": 1.0
+    },
+    {
+      "label": "Snowflake",
+      "fresh_cost": 79.42007000000001,
+      "query_cost": 15.99207,
+      "runtime_sec": 7674.9839999999995,
+      "total_cost": 95.41214000000001,
+      "score": 732286.64790576,
+      "relative_to_clickhouse": 412.1032631656578
+    }
+  ],
+  "snowflake_normalized_query_cost_contract": {
+    "dashboard": {
+      "metric": "normalized query cost",
+      "attribution_method": "elapsed_threshold_effective_warehouse",
+      "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+      "compilation_treatment": "included in elapsed time; not priced separately",
+      "standing_capacity_treatment": "excluded",
+      "primary_warehouse": "Interactive Small",
+      "primary_pricing_file": "interactive_warehouse.json",
+      "fallback_is_proxy": true,
+      "fallback_condition": "elapsed_seconds > 5",
+      "fallback_threshold_seconds": 5.0,
+      "fallback_warehouse": "Gen2 Small",
+      "fallback_pricing_file": "gen2_warehouse.json",
+      "fallback_credits_per_hour": 2.7,
+      "fallback_runtime_treatment": "full elapsed time is priced at the fallback warehouse rate",
+      "primary_attempt_cost_treatment": "no additional primary-warehouse charge for fallback-priced jobs"
+    },
+    "drilldown": {
+      "metric": "normalized query cost",
+      "attribution_method": "elapsed_threshold_effective_warehouse",
+      "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+      "compilation_treatment": "included in elapsed time; not priced separately",
+      "standing_capacity_treatment": "excluded",
+      "primary_warehouse": "Interactive Small",
+      "primary_pricing_file": "interactive_warehouse.json",
+      "fallback_is_proxy": true,
+      "fallback_condition": "elapsed_seconds > 5",
+      "fallback_threshold_seconds": 5.0,
+      "fallback_warehouse": "Gen2 Small",
+      "fallback_pricing_file": "gen2_warehouse.json",
+      "fallback_credits_per_hour": 2.7,
+      "fallback_runtime_treatment": "full elapsed time is priced at the fallback warehouse rate",
+      "primary_attempt_cost_treatment": "no additional primary-warehouse charge for fallback-priced jobs"
+    },
+    "dashboard_attribution": {
+      "query_jobs": 836,
+      "primary_priced_query_jobs": 359,
+      "primary_priced_runtime_sec": 946.509,
+      "fallback_priced_query_jobs": 477,
+      "fallback_priced_runtime_sec": 6653.66,
+      "fallback_priced_job_share": 0.570574
+    },
+    "drilldown_attribution": {
+      "query_jobs": 70,
+      "primary_priced_query_jobs": 70,
+      "primary_priced_runtime_sec": 74.815,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_sec": 0.0,
+      "fallback_priced_job_share": 0.0
+    }
+  },
+  "snowflake_fresh_path_contract": "Snowpipe Streaming + serverless MV refresh; no ingest warehouse",
+  "sources": {
+    "clickhouse_ingest": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+      "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+    },
+    "clickhouse_dashboard": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/snowflake_run14/dashboard.json",
+      "sha256": "70f776e0e586727c3fa9ac1f46ba5b8da9d7cf86b43dc4fdc70379f3eee90e6a"
+    },
+    "clickhouse_drilldown": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/snowflake_run14/drilldown.json",
+      "sha256": "e621311b628c159be03997b3673278e0793415145531fdde8c2edd251a989364"
+    },
+    "snowflake_snowpipe": {
+      "path": "quotes/snowflake/costs/out/t2/run14/snowpipe_streaming.json",
+      "sha256": "dfd9d8e474f7259dd2567c6117d81de19350848747be66ab44eefd85fbf7dccf"
+    },
+    "snowflake_mv_refresh": {
+      "path": "quotes/snowflake/costs/out/t2/run14/mv_refresh.json",
+      "sha256": "3ad60c6e657ece3ad5d585490e72d2a016e317ada1d35421e03ff50127121ea0"
+    },
+    "snowflake_dashboard": {
+      "path": "quotes/snowflake/costs/out/t2/run14/dashboard.json",
+      "sha256": "7c247ea4f9d9284e226326df2069dd7e79f1fa0afc944ce2924bc7c9f72f977a"
+    },
+    "snowflake_drilldown": {
+      "path": "quotes/snowflake/costs/out/t2/run14/drilldown.json",
+      "sha256": "906f776a8df18bfa58c08529721922e8071b25d82cbabdabc468ce92f8d3b6a9"
+    },
+    "snowflake_dashboard_pricing": {
+      "path": "quotes/snowflake/costs/pricings/interactive_warehouse.json",
+      "sha256": "1aea4f6075dfc76baba706ac508e087c465f6cba77683cee3e9b9836b88002ca"
+    },
+    "snowflake_drilldown_pricing": {
+      "path": "quotes/snowflake/costs/pricings/interactive_warehouse.json",
+      "sha256": "1aea4f6075dfc76baba706ac508e087c465f6cba77683cee3e9b9836b88002ca"
+    },
+    "snowflake_fallback_pricing": {
+      "path": "quotes/snowflake/costs/pricings/gen2_warehouse.json",
+      "sha256": "b45efc34aec1456525e6b2ab17327a40eaf5b245ec6a1a01fa1416fa35e05c7f"
+    }
+  },
+  "outputs": {
+    "png": "quotes/snowflake/results/t2/charts/run14/full_path_cost_performance_clickhouse_vs_snowflake.png",
+    "svg": "quotes/snowflake/results/t2/charts/run14/full_path_cost_performance_clickhouse_vs_snowflake.svg"
+  }
+}

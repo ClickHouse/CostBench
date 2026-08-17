@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "chart": "clickhouse_vs_snowflake_drilldown_query_latency",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11,
+      4.8
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "presentation": {
+    "clickhouse_legend_label": "ClickHouse Cloud",
+    "snowflake_legend_label": "Snowflake",
+    "outlier_legend_disclosure": "suffix",
+    "query_cost_display": "total",
+    "cost_attribution_visible_on_chart": false
+  },
+  "selection": {
+    "max_rows_inclusive": 100000000000,
+    "alignment": "each system at its own observed raw rows; no iteration matching or interpolation",
+    "smoothing": {
+      "method": "centered rolling median",
+      "window_observations": 5,
+      "edges": "shrinking window"
+    },
+    "outlier_policy": "none",
+    "outliers_preserved_in_csv_and_summary": true,
+    "outlier_annotation_enabled": false,
+    "outlier_annotations_rendered": 0,
+    "matched_runtime_cost_summary_strip": true
+  },
+  "sources": {
+    "clickhouse": {
+      "path": "quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+      "sha256": "fa4033841b2d0596c227b0baacfc666086d41bdcceb9173da9e3c9e699f1f378"
+    },
+    "snowflake": {
+      "path": "quotes/snowflake/results/t2/drilldown_20260811T111857Z.jsonl",
+      "sha256": "a4ed169ecd67550a74ac945fbb745cbd8bc4cfbaaf14c848133d0d5b86094ad5"
+    },
+    "clickhouse_queries": {
+      "path": "quotes/clickhouse-cloud/queries_raw.sql",
+      "sha256": "44f8199cc3b18ff091324789918535a3d1c5f8f5ba99939bf02df7433d5ad29b"
+    },
+    "snowflake_queries": {
+      "path": "quotes/snowflake/t2/queries_raw_it.sql",
+      "sha256": "55b3a6848e4f6d9812be295f5a351338942a76e695caf05ade68cd5296d6b05d"
+    },
+    "clickhouse_cost_summary": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/snowflake_run14/drilldown.json",
+      "sha256": "e621311b628c159be03997b3673278e0793415145531fdde8c2edd251a989364"
+    },
+    "snowflake_cost_summary": {
+      "path": "quotes/snowflake/costs/out/t2/run14/drilldown.json",
+      "sha256": "906f776a8df18bfa58c08529721922e8071b25d82cbabdabc468ce92f8d3b6a9"
+    },
+    "snowflake_pricing": {
+      "path": "quotes/snowflake/costs/pricings/interactive_warehouse.json",
+      "sha256": "1aea4f6075dfc76baba706ac508e087c465f6cba77683cee3e9b9836b88002ca"
+    },
+    "snowflake_fallback_pricing": {
+      "path": "quotes/snowflake/costs/pricings/gen2_warehouse.json",
+      "sha256": "b45efc34aec1456525e6b2ab17327a40eaf5b245ec6a1a01fa1416fa35e05c7f"
+    }
+  },
+  "input_metadata": {
+    "clickhouse": {
+      "records_read": 48,
+      "records_selected": 32,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 15,
+      "systems": [
+        "ClickHouse Cloud (AWS)"
+      ],
+      "machines": [
+        "64GiB"
+      ]
+    },
+    "snowflake": {
+      "records_read": 35,
+      "records_selected": 30,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 4,
+      "systems": [
+        "Snowflake IT (AWS)"
+      ],
+      "machines": [
+        "Interactive Small"
+      ]
+    }
+  },
+  "series": {
+    "ClickHouse Cloud": {
+      "1": {
+        "observed": {
+          "observations": 32,
+          "average_latency_sec": 0.82946875,
+          "median_latency_sec": 0.83,
+          "p95_latency_sec": 1.133,
+          "maximum": {
+            "system": "ClickHouse Cloud",
+            "source_line": 29,
+            "iteration": 29,
+            "observed_at": "2026-08-09T10:56:02Z",
+            "raw_rows": 87063780214,
+            "query_number": 1,
+            "query_name": "Hourly OHLCV bars",
+            "latency_sec": 1.18,
+            "compilation_sec": null,
+            "execution_sec": null,
+            "runtime_source": "clickhouse-client --time"
+          }
+        },
+        "plotted": {
+          "observations": 32,
+          "average_latency_sec": 0.81434375,
+          "median_latency_sec": 0.819,
+          "p95_latency_sec": 1.012,
+          "maximum": {
+            "system": "ClickHouse Cloud",
+            "source_line": 29,
+            "iteration": 29,
+            "observed_at": "2026-08-09T10:56:02Z",
+            "raw_rows": 87063780214,
+            "query_number": 1,
+            "query_name": "Hourly OHLCV bars",
+            "latency_sec": 1.012,
+            "compilation_sec": null,
+            "execution_sec": null,
+            "runtime_source": "clickhouse-client --time"
+          }
+        },
+        "outlier_filter": {
+          "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+          "applied": false,
+          "reason": "--drop-outliers not requested",
+          "excluded_observations": 0
+        }
+      },
+      "2": {
+        "observed": {
+          "observations": 32,
+          "average_latency_sec": 0.5890625,
+          "median_latency_sec": 0.5965,
+          "p95_latency_sec": 0.835,
+          "maximum": {
+            "system": "ClickHouse Cloud",
+            "source_line": 33,
+            "iteration": 33,
+            "observed_at": "2026-08-09T14:56:02Z",
+            "raw_rows": 99569689379,
+            "query_number": 2,
+            "query_name": "Risk & liquidity (B7)",
+            "latency_sec": 0.843,
+            "compilation_sec": null,
+            "execution_sec": null,
+            "runtime_source": "clickhouse-client --time"
+          }
+        },
+        "plotted": {
+          "observations": 32,
+          "average_latency_sec": 0.59021875,
+          "median_latency_sec": 0.58,
+          "p95_latency_sec": 0.811,
+          "maximum": {
+            "system": "ClickHouse Cloud",
+            "source_line": 33,
+            "iteration": 33,
+            "observed_at": "2026-08-09T14:56:02Z",
+            "raw_rows": 99569689379,
+            "query_number": 2,
+            "query_name": "Risk & liquidity (B7)",
+            "latency_sec": 0.835,
+            "compilation_sec": null,
+            "execution_sec": null,
+            "runtime_source": "clickhouse-client --time"
+          }
+        },
+        "outlier_filter": {
+          "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+          "applied": false,
+          "reason": "--drop-outliers not requested",
+          "excluded_observations": 0
+        }
+      }
+    },
+    "Snowflake": {
+      "1": {
+        "observed": {
+          "observations": 30,
+          "average_latency_sec": 0.8950333333333333,
+          "median_latency_sec": 0.8745,
+          "p95_latency_sec": 1.389,
+          "maximum": {
+            "system": "Snowflake",
+            "source_line": 31,
+            "iteration": 31,
+            "observed_at": "2026-08-12T17:18:57Z",
+            "raw_rows": 98161784620,
+            "query_number": 1,
+            "query_name": "Hourly OHLCV bars",
+            "latency_sec": 1.817,
+            "compilation_sec": 0.545,
+            "execution_sec": 1.272,
+            "runtime_source": "runner result (end-to-end); compilation/execution retained"
+          }
+        },
+        "plotted": {
+          "observations": 30,
+          "average_latency_sec": 0.9069166666666667,
+          "median_latency_sec": 0.8979999999999999,
+          "p95_latency_sec": 1.367,
+          "maximum": {
+            "system": "Snowflake",
+            "source_line": 29,
+            "iteration": 29,
+            "observed_at": "2026-08-12T15:18:57Z",
+            "raw_rows": 91608517197,
+            "query_number": 1,
+            "query_name": "Hourly OHLCV bars",
+            "latency_sec": 1.374,
+            "compilation_sec": 0.11,
+            "execution_sec": 0.95,
+            "runtime_source": "runner result (end-to-end); compilation/execution retained"
+          }
+        },
+        "outlier_filter": {
+          "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+          "applied": false,
+          "reason": "--drop-outliers not requested",
+          "excluded_observations": 0
+        }
+      },
+      "2": {
+        "observed": {
+          "observations": 30,
+          "average_latency_sec": 1.0948,
+          "median_latency_sec": 1.0505,
+          "p95_latency_sec": 2.245,
+          "maximum": {
+            "system": "Snowflake",
+            "source_line": 30,
+            "iteration": 30,
+            "observed_at": "2026-08-12T16:18:57Z",
+            "raw_rows": 94877773840,
+            "query_number": 2,
+            "query_name": "Risk & liquidity (B7)",
+            "latency_sec": 2.556,
+            "compilation_sec": 0.217,
+            "execution_sec": 2.339,
+            "runtime_source": "runner result (end-to-end); compilation/execution retained"
+          }
+        },
+        "plotted": {
+          "observations": 30,
+          "average_latency_sec": 0.9958666666666667,
+          "median_latency_sec": 1.045,
+          "p95_latency_sec": 1.981,
+          "maximum": {
+            "system": "Snowflake",
+            "source_line": 28,
+            "iteration": 28,
+            "observed_at": "2026-08-12T14:18:57Z",
+            "raw_rows": 88330971978,
+            "query_number": 2,
+            "query_name": "Risk & liquidity (B7)",
+            "latency_sec": 1.981,
+            "compilation_sec": 0.148,
+            "execution_sec": 1.833,
+            "runtime_source": "runner result (end-to-end); compilation/execution retained"
+          }
+        },
+        "outlier_filter": {
+          "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+          "applied": false,
+          "reason": "--drop-outliers not requested",
+          "excluded_observations": 0
+        }
+      }
+    }
+  },
+  "snowflake_timing_contract": "result is plotted as end-to-end latency; compilation_time and execution_time are retained as supporting telemetry",
+  "matched_active_ingestion_totals": {
+    "scope": "matched active-ingestion query executions for this workload only",
+    "pricing_tier": "enterprise",
+    "clickhouse": {
+      "iterations": 35,
+      "queries_per_iteration": 2,
+      "query_jobs": 70,
+      "runtime_sec": 50.466,
+      "cost_usd": 0.04377
+    },
+    "snowflake": {
+      "iterations": 35,
+      "queries_per_iteration": 2,
+      "query_jobs": 70,
+      "runtime_sec": 74.815,
+      "cost_usd": 0.07482,
+      "primary_priced_query_jobs": 70,
+      "primary_priced_runtime_sec": 74.815,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_sec": 0.0,
+      "fallback_priced_job_share": 0.0,
+      "query_cost_model": {
+        "metric": "normalized query cost",
+        "attribution_method": "elapsed_threshold_effective_warehouse",
+        "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+        "compilation_treatment": "included in elapsed time; not priced separately",
+        "standing_capacity_treatment": "excluded",
+        "primary_warehouse": "Interactive Small",
+        "primary_pricing_file": "interactive_warehouse.json",
+        "fallback_is_proxy": true,
+        "fallback_condition": "elapsed_seconds > 5",
+        "fallback_threshold_seconds": 5.0,
+        "fallback_warehouse": "Gen2 Small",
+        "fallback_pricing_file": "gen2_warehouse.json",
+        "fallback_credits_per_hour": 2.7,
+        "fallback_runtime_treatment": "full elapsed time is priced at the fallback warehouse rate",
+        "primary_attempt_cost_treatment": "no additional primary-warehouse charge for fallback-priced jobs"
+      }
+    },
+    "runtime_ratio": 1.4824832560535806,
+    "cost_ratio": 1.7093899931459902
+  },
+  "outputs": {
+    "png": "quotes/snowflake/results/t2/charts/run14/drilldown_query_latency_clickhouse_vs_snowflake.png",
+    "svg": "quotes/snowflake/results/t2/charts/run14/drilldown_query_latency_clickhouse_vs_snowflake.svg",
+    "csv": "quotes/snowflake/results/t2/charts/run14/drilldown_query_latency_clickhouse_vs_snowflake_data.csv"
+  }
+}
