@@ -1,0 +1,116 @@
+{
+  "collected_at": "2026-08-12T06:15:57.671Z",
+  "collector_query_jobs": [
+    {
+      "billed_slot_sec": 7.355,
+      "cache_hit": false,
+      "client_wall_sec": null,
+      "created_at": "2026-08-12T06:15:49.347Z",
+      "ended_at": "2026-08-12T06:15:52.034Z",
+      "error": null,
+      "job_id": "fpra_evidence_d0e9fb12-c7da-443f-a80c-e8cabc24833b",
+      "location": "US",
+      "materialized_view_statistics": null,
+      "referenced_tables": [
+        {
+          "datasetId": "region-us",
+          "projectId": "pmm-project-377716",
+          "tableId": "INFORMATION_SCHEMA.JOBS_BY_PROJECT"
+        }
+      ],
+      "reservation_usage": null,
+      "runtime_sec": 1.8,
+      "runtime_source": "statistics.finalExecutionDurationMs",
+      "started_at": "2026-08-12T06:15:49.546Z",
+      "state": "DONE",
+      "statement_type": "SELECT",
+      "total_bytes_billed": 20971520,
+      "total_bytes_processed": 5339447,
+      "total_slot_ms": 7355
+    },
+    {
+      "billed_slot_sec": 2.341,
+      "cache_hit": false,
+      "client_wall_sec": null,
+      "created_at": "2026-08-12T06:15:54.027Z",
+      "ended_at": "2026-08-12T06:15:54.949Z",
+      "error": null,
+      "job_id": "fpra_evidence_a7a4f89d-3ccd-4b38-92b6-1c2cb73f0725",
+      "location": "US",
+      "materialized_view_statistics": null,
+      "referenced_tables": [
+        {
+          "datasetId": "region-us",
+          "projectId": "pmm-project-377716",
+          "tableId": "INFORMATION_SCHEMA.WRITE_API_TIMELINE_BY_PROJECT"
+        }
+      ],
+      "reservation_usage": null,
+      "runtime_sec": 0.295,
+      "runtime_source": "statistics.finalExecutionDurationMs",
+      "started_at": "2026-08-12T06:15:54.223Z",
+      "state": "DONE",
+      "statement_type": "SELECT",
+      "total_bytes_billed": 44040192,
+      "total_bytes_processed": 43591404,
+      "total_slot_ms": 2341
+    },
+    {
+      "billed_slot_sec": 6.435,
+      "cache_hit": false,
+      "client_wall_sec": null,
+      "created_at": "2026-08-12T06:15:55.663Z",
+      "ended_at": "2026-08-12T06:15:56.698Z",
+      "error": null,
+      "job_id": "fpra_evidence_caa27278-7511-4404-9f23-bdf394423027",
+      "location": "US",
+      "materialized_view_statistics": null,
+      "referenced_tables": [
+        {
+          "datasetId": "region-us",
+          "projectId": "pmm-project-377716",
+          "tableId": "INFORMATION_SCHEMA.TABLE_STORAGE_BY_PROJECT"
+        }
+      ],
+      "reservation_usage": null,
+      "runtime_sec": 0.269,
+      "runtime_source": "statistics.finalExecutionDurationMs",
+      "started_at": "2026-08-12T06:15:55.849Z",
+      "state": "DONE",
+      "statement_type": "SELECT",
+      "total_bytes_billed": 33554432,
+      "total_bytes_processed": 33224181,
+      "total_slot_ms": 6435
+    }
+  ],
+  "dataset": "quotes_full_t2_20260810_152224",
+  "errors": [],
+  "location": "US",
+  "project": "pmm-project-377716",
+  "since": "2026-08-10T15:23:00.000Z",
+  "table_snapshots": {
+    "quotes": {
+      "modified_at": "2026-08-11T22:53:04.035Z",
+      "mview_enable_refresh": null,
+      "mview_last_refresh_time": null,
+      "mview_refresh_interval_ms": null,
+      "mview_refresh_watermark": null,
+      "num_bytes": 9678148579520,
+      "num_rows": 113219565734,
+      "table_id": "pmm-project-377716.quotes_full_t2_20260810_152224.quotes",
+      "table_type": "TABLE"
+    },
+    "quotes_daily": {
+      "modified_at": "2026-08-11T23:02:23.540Z",
+      "mview_enable_refresh": true,
+      "mview_last_refresh_time": "2026-08-11T23:02:21.652Z",
+      "mview_refresh_interval_ms": 60000,
+      "mview_refresh_watermark": null,
+      "num_bytes": 144548698,
+      "num_rows": 1858616,
+      "table_id": "pmm-project-377716.quotes_full_t2_20260810_152224.quotes_daily",
+      "table_type": "MATERIALIZED_VIEW"
+    }
+  },
+  "until": "2026-08-12T06:15:47.000Z"
+}

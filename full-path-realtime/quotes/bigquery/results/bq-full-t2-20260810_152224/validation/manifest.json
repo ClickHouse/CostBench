@@ -1,0 +1,284 @@
+{
+  "captured_at": "2026-08-12T06:15:58.440Z",
+  "dataset": "quotes_full_t2_20260810_152224",
+  "location": "US",
+  "project": "pmm-project-377716",
+  "queries": [
+    {
+      "canonical_rows_sha256": "18a0c6a1e0fd250518e4d12571102e6b563e3105bce356ed36c2345af126ba23",
+      "output_file": "dashboard_q1.jsonl",
+      "query_job": {
+        "billed_slot_sec": 0.118,
+        "cache_hit": false,
+        "client_wall_sec": 1.597444771323353,
+        "created_at": "2026-08-12T06:15:58.779Z",
+        "ended_at": "2026-08-12T06:15:59.574Z",
+        "error": null,
+        "job_id": "fpra_validate_dash_q1_2bd2cd7b-8f85-442d-9661-50bd936112d6",
+        "location": "US",
+        "materialized_view_statistics": {
+          "materializedView": [
+            {
+              "chosen": true,
+              "tableReference": {
+                "datasetId": "quotes_full_t2_20260810_152224",
+                "projectId": "pmm-project-377716",
+                "tableId": "quotes_daily"
+              }
+            }
+          ]
+        },
+        "referenced_tables": [
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes"
+          },
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes_daily"
+          }
+        ],
+        "reservation_usage": null,
+        "runtime_sec": 0.079,
+        "runtime_source": "statistics.finalExecutionDurationMs",
+        "started_at": "2026-08-12T06:15:59.155Z",
+        "state": "DONE",
+        "statement_type": "SELECT",
+        "total_bytes_billed": 31457280,
+        "total_bytes_processed": 31024877,
+        "total_slot_ms": 118
+      },
+      "query_number": 1,
+      "row_count": 1,
+      "sql_sha256": "b1f26653c0718d61a38dbcd32322fdd6d7cd9b032e17aa4bdc5735da2697e77f",
+      "suite": "dashboard"
+    },
+    {
+      "canonical_rows_sha256": "436a1123b0ad8d38cfa44db5fa47823e8ded6a46df3132ddebfe0071f6f80679",
+      "output_file": "dashboard_q2.jsonl",
+      "query_job": {
+        "billed_slot_sec": 0.298,
+        "cache_hit": false,
+        "client_wall_sec": 1.533502268139273,
+        "created_at": "2026-08-12T06:16:00.242Z",
+        "ended_at": "2026-08-12T06:16:01.078Z",
+        "error": null,
+        "job_id": "fpra_validate_dash_q2_8c3cca86-4e9d-4183-ad8b-53eac550d500",
+        "location": "US",
+        "materialized_view_statistics": {
+          "materializedView": [
+            {
+              "chosen": true,
+              "tableReference": {
+                "datasetId": "quotes_full_t2_20260810_152224",
+                "projectId": "pmm-project-377716",
+                "tableId": "quotes_daily"
+              }
+            }
+          ]
+        },
+        "referenced_tables": [
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes_daily"
+          },
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes"
+          }
+        ],
+        "reservation_usage": null,
+        "runtime_sec": 0.106,
+        "runtime_source": "statistics.finalExecutionDurationMs",
+        "started_at": "2026-08-12T06:16:00.661Z",
+        "state": "DONE",
+        "statement_type": "SELECT",
+        "total_bytes_billed": 85983232,
+        "total_bytes_processed": 85072986,
+        "total_slot_ms": 298
+      },
+      "query_number": 2,
+      "row_count": 8,
+      "sql_sha256": "ff886e6f72edd35afa34fed19cfbf8ffe6f77997f498dfea93a48801bbd0b80f",
+      "suite": "dashboard"
+    },
+    {
+      "canonical_rows_sha256": "7dba0a7a758da9a17a92ada84386dc390a1c37082d825cf3d689fd9874e7c351",
+      "output_file": "dashboard_q3.jsonl",
+      "query_job": {
+        "billed_slot_sec": 0.155,
+        "cache_hit": false,
+        "client_wall_sec": 1.9225677903741598,
+        "created_at": "2026-08-12T06:16:02.267Z",
+        "ended_at": "2026-08-12T06:16:02.945Z",
+        "error": null,
+        "job_id": "fpra_validate_dash_q3_a2a6d64e-c80b-4505-9570-1e7d66048bf2",
+        "location": "US",
+        "materialized_view_statistics": {
+          "materializedView": [
+            {
+              "chosen": true,
+              "tableReference": {
+                "datasetId": "quotes_full_t2_20260810_152224",
+                "projectId": "pmm-project-377716",
+                "tableId": "quotes_daily"
+              }
+            }
+          ]
+        },
+        "referenced_tables": [
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes"
+          },
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes_daily"
+          }
+        ],
+        "reservation_usage": null,
+        "runtime_sec": 0.052,
+        "runtime_source": "statistics.finalExecutionDurationMs",
+        "started_at": "2026-08-12T06:16:02.550Z",
+        "state": "DONE",
+        "statement_type": "SELECT",
+        "total_bytes_billed": 40894464,
+        "total_bytes_processed": 40466202,
+        "total_slot_ms": 155
+      },
+      "query_number": 3,
+      "row_count": 20,
+      "sql_sha256": "e6427771a84a2f807f47b39b19187a5c93573103a1298cf1d95c53a846b32e18",
+      "suite": "dashboard"
+    },
+    {
+      "canonical_rows_sha256": "a0480c31e1c30c8ee93cb518754284472ebd88ad09f33797a7681a2ea726c7e6",
+      "output_file": "dashboard_q4.jsonl",
+      "query_job": {
+        "billed_slot_sec": 0.376,
+        "cache_hit": false,
+        "client_wall_sec": 1.21226551476866,
+        "created_at": "2026-08-12T06:16:03.581Z",
+        "ended_at": "2026-08-12T06:16:04.229Z",
+        "error": null,
+        "job_id": "fpra_validate_dash_q4_8403f026-424c-4b3f-9529-2481109925f5",
+        "location": "US",
+        "materialized_view_statistics": {
+          "materializedView": [
+            {
+              "chosen": true,
+              "tableReference": {
+                "datasetId": "quotes_full_t2_20260810_152224",
+                "projectId": "pmm-project-377716",
+                "tableId": "quotes_daily"
+              }
+            }
+          ]
+        },
+        "referenced_tables": [
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes_daily"
+          },
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes"
+          }
+        ],
+        "reservation_usage": null,
+        "runtime_sec": 0.088,
+        "runtime_source": "statistics.finalExecutionDurationMs",
+        "started_at": "2026-08-12T06:16:03.740Z",
+        "state": "DONE",
+        "statement_type": "SELECT",
+        "total_bytes_billed": 74448896,
+        "total_bytes_processed": 74344640,
+        "total_slot_ms": 376
+      },
+      "query_number": 4,
+      "row_count": 193,
+      "sql_sha256": "06460c55b5b8662e32fc9e5d629e6d36422367d0a4f6bbc9fbf2ee0a994416a5",
+      "suite": "dashboard"
+    },
+    {
+      "canonical_rows_sha256": "0c0481d50892fcb1e45a1f4ddb3160c1754c93f4acfae9aa96c0559e8789c8a7",
+      "output_file": "drilldown_q1.jsonl",
+      "query_job": {
+        "billed_slot_sec": 81.546,
+        "cache_hit": false,
+        "client_wall_sec": 3.4967064070515335,
+        "created_at": "2026-08-12T06:16:04.790Z",
+        "ended_at": "2026-08-12T06:16:07.497Z",
+        "error": null,
+        "job_id": "fpra_validate_dril_q1_35efba66-81a4-4a01-b532-68a6ef8310d3",
+        "location": "US",
+        "materialized_view_statistics": null,
+        "referenced_tables": [
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes"
+          }
+        ],
+        "reservation_usage": null,
+        "runtime_sec": 2.304,
+        "runtime_source": "statistics.finalExecutionDurationMs",
+        "started_at": "2026-08-12T06:16:04.881Z",
+        "state": "DONE",
+        "statement_type": "SELECT",
+        "total_bytes_billed": 4087349248,
+        "total_bytes_processed": 4087114004,
+        "total_slot_ms": 81546
+      },
+      "query_number": 1,
+      "row_count": 1124,
+      "sql_sha256": "3321add0a0132a8ca264f1afdcc4e67a446304ad3bfea742cbe949914512f5fa",
+      "suite": "drilldown"
+    },
+    {
+      "canonical_rows_sha256": "520eadfcdbb023838a924da54b8d317424bfbfdb7c16640a20e9710d1f1597fd",
+      "output_file": "drilldown_q2.jsonl",
+      "query_job": {
+        "billed_slot_sec": 103.264,
+        "cache_hit": false,
+        "client_wall_sec": 4.378060923889279,
+        "created_at": "2026-08-12T06:16:08.307Z",
+        "ended_at": "2026-08-12T06:16:11.973Z",
+        "error": null,
+        "job_id": "fpra_validate_dril_q2_73a07e52-ead2-4dd8-8457-573c7ce28e7c",
+        "location": "US",
+        "materialized_view_statistics": null,
+        "referenced_tables": [
+          {
+            "datasetId": "quotes_full_t2_20260810_152224",
+            "projectId": "pmm-project-377716",
+            "tableId": "quotes"
+          }
+        ],
+        "reservation_usage": null,
+        "runtime_sec": 2.967,
+        "runtime_source": "statistics.finalExecutionDurationMs",
+        "started_at": "2026-08-12T06:16:08.640Z",
+        "state": "DONE",
+        "statement_type": "SELECT",
+        "total_bytes_billed": 4087349248,
+        "total_bytes_processed": 4087114004,
+        "total_slot_ms": 103264
+      },
+      "query_number": 2,
+      "row_count": 1,
+      "sql_sha256": "bef0913bd96c2b2f9ba4206bc002755cfa5136a79df463ead5b1e8dec330b284",
+      "suite": "drilldown"
+    }
+  ],
+  "run_id": "bq-full-t2-20260810_152224",
+  "schema_version": 1
+}
