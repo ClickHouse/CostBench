@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "chart": "drilldown_query_latency_pairwise",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      12,
+      4.2
+    ],
+    "data_and_math_unchanged": true
+  },
+  "selection": {
+    "max_rows_inclusive": 100000000000,
+    "smoothing": null,
+    "outliers_excluded": 0
+  },
+  "sources": {
+    "left": {
+      "path": "quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+      "sha256": "fa4033841b2d0596c227b0baacfc666086d41bdcceb9173da9e3c9e699f1f378",
+      "load": {
+        "read": 48,
+        "selected": 32,
+        "zero_excluded": 1,
+        "above_cap_excluded": 15
+      }
+    },
+    "right": {
+      "path": "quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl",
+      "sha256": "7f7661a8ade070164556d2a6ad5c18839321831258b97e9deb6ed45a2195f02d",
+      "load": {
+        "read": 40,
+        "selected": 27,
+        "zero_excluded": 1,
+        "above_cap_excluded": 12
+      }
+    },
+    "left_cost": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/redshift_run_20260812/drilldown_typed.json",
+      "sha256": "91eb9bc7dec194394cb4a1ccdb3ec3fb54570c9ca8144cc66c40efb77cbe935f"
+    },
+    "right_cost": {
+      "path": "quotes/redshift-serverless/costs/out/t2/drilldown_typed.json",
+      "sha256": "6db77bbaefcebd4f5c3e5f5dcb4092617abe1b19ee371c6247d9f0b3fe4df06f"
+    }
+  },
+  "reports": {
+    "left_q1": {
+      "observations": 32,
+      "median_sec": 0.83,
+      "maximum_sec": 1.18
+    },
+    "right_q1": {
+      "observations": 27,
+      "median_sec": 96.422819,
+      "maximum_sec": 234.741752
+    },
+    "left_q2": {
+      "observations": 32,
+      "median_sec": 0.5965,
+      "maximum_sec": 0.843
+    },
+    "right_q2": {
+      "observations": 27,
+      "median_sec": 276.683712,
+      "maximum_sec": 383.183353
+    }
+  },
+  "matched_totals_ratios": {
+    "runtime_ratio": 236.3641900657414,
+    "cost_ratio": 1088.1107740856594
+  },
+  "outputs": {
+    "png": "quotes/redshift-serverless/results/t2/charts/drilldown_query_latency_clickhouse_vs_redshift_typed.png",
+    "svg": "quotes/redshift-serverless/results/t2/charts/drilldown_query_latency_clickhouse_vs_redshift_typed.svg",
+    "csv": "quotes/redshift-serverless/results/t2/charts/drilldown_query_latency_clickhouse_vs_redshift_typed_data.csv"
+  }
+}
