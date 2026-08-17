@@ -1,0 +1,4 @@
+google-cloud-bigquery>=3.38.0,<4
+google-cloud-bigquery-storage>=2.35.0,<3
+google-api-core>=2.25.0,<3
+pyarrow>=18.0.0,<23
