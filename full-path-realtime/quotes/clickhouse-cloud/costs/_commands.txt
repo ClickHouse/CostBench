@@ -30,15 +30,23 @@ mkdir -p out_t2
 # iterations. Do not slice them again with --iterations.
 T2_MATCHED_SNOWFLAKE_ROOT="../results_t2/matched/snowflake_run14"
 T2_MATCHED_BIGQUERY_ROOT="../results_t2/matched/bigquery"
+T2_MATCHED_REDSHIFT_ROOT="../results_t2/matched/redshift_run_20260812"
 T2_COST_SNOWFLAKE_ROOT="out_t2/matched/snowflake_run14"
 T2_COST_BIGQUERY_ROOT="out_t2/matched/bigquery"
+T2_COST_REDSHIFT_ROOT="out_t2/matched/redshift_run_20260812"
 
 CH_MATCHED_SNOWFLAKE_DASHBOARD="$T2_MATCHED_SNOWFLAKE_ROOT/dashboard_active_matched_to_snowflake.jsonl"
 CH_MATCHED_SNOWFLAKE_DRILLDOWN="$T2_MATCHED_SNOWFLAKE_ROOT/drilldown_active_matched_to_snowflake.jsonl"
 CH_MATCHED_BIGQUERY_DASHBOARD="$T2_MATCHED_BIGQUERY_ROOT/dashboard_active_matched_to_bigquery.jsonl"
 CH_MATCHED_BIGQUERY_DRILLDOWN="$T2_MATCHED_BIGQUERY_ROOT/drilldown_active_matched_to_bigquery.jsonl"
+CH_MATCHED_REDSHIFT_DASHBOARD="$T2_MATCHED_REDSHIFT_ROOT/dashboard_active_matched_to_redshift.jsonl"
+CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER="$T2_MATCHED_REDSHIFT_ROOT/drilldown_super_active_matched_to_redshift.jsonl"
+CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED="$T2_MATCHED_REDSHIFT_ROOT/drilldown_typed_active_matched_to_redshift.jsonl"
 
-mkdir -p "$T2_COST_SNOWFLAKE_ROOT" "$T2_COST_BIGQUERY_ROOT"
+mkdir -p \
+    "$T2_COST_SNOWFLAKE_ROOT" \
+    "$T2_COST_BIGQUERY_ROOT" \
+    "$T2_COST_REDSHIFT_ROOT"
 
 ./summarize_queries.sh \
     "$CH_MATCHED_SNOWFLAKE_DASHBOARD" \
@@ -55,6 +63,18 @@ mkdir -p "$T2_COST_SNOWFLAKE_ROOT" "$T2_COST_BIGQUERY_ROOT"
 ./summarize_queries.sh \
     "$CH_MATCHED_BIGQUERY_DRILLDOWN" \
     "$T2_COST_BIGQUERY_ROOT/drilldown.json"
+
+./summarize_queries.sh \
+    "$CH_MATCHED_REDSHIFT_DASHBOARD" \
+    "$T2_COST_REDSHIFT_ROOT/dashboard.json"
+
+./summarize_queries.sh \
+    "$CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER" \
+    "$T2_COST_REDSHIFT_ROOT/drilldown_super.json"
+
+./summarize_queries.sh \
+    "$CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED" \
+    "$T2_COST_REDSHIFT_ROOT/drilldown_typed.json"
 
 ./summarize_ingest_compute.sh out_t2/ingest.json \
     --nodes 2 --mem-gib 8 --hours 36.75 \

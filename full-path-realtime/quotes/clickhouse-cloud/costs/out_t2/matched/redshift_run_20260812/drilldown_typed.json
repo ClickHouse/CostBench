@@ -1,0 +1,25 @@
+{
+  "source_file": "drilldown_typed_active_matched_to_redshift.jsonl",
+  "system": "ClickHouse Cloud (AWS)",
+  "version": "26.4.1.2029",
+  "machine": "64GiB",
+  "mem_gib": 64,
+  "cluster_size": 1,
+  "iterations_included": 33,
+  "queries_per_iteration": 2,
+  "total_runtime_seconds": 47.915,
+  "costs": [
+    {
+      "tier": "Basic",
+      "total_compute_cost_usd": 0.02322
+    },
+    {
+      "tier": "Scale",
+      "total_compute_cost_usd": 0.03178
+    },
+    {
+      "tier": "Enterprise",
+      "total_compute_cost_usd": 0.04156
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "active_window_definition": "start through first observation at final_rows, inclusive; later repeated-final-row observations excluded",
+  "candidate": {
+    "active_endpoint_iteration": 38,
+    "active_endpoint_raw_rows": 113217743918,
+    "active_endpoint_source_line": 38,
+    "active_endpoint_started_at": "2026-08-09T19:56:02Z",
+    "active_observations_including_endpoint": 38,
+    "final_rows": 113217743918,
+    "observations_selected": 33,
+    "total_observations": 48,
+    "zero_row_observation_included": true
+  },
+  "candidate_file": "quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+  "count_mode": "explicit_prefix",
+  "matched_observations": 33,
+  "matching_algorithm": "monotonic_no_replacement_minimum_total_absolute_progress_gap",
+  "maximum_absolute_progress_gap": 0.014468354679625178,
+  "mean_absolute_progress_gap": 0.006090282124574024,
+  "median_absolute_progress_gap": 0.006079376239816137,
+  "output_file": "quotes/clickhouse-cloud/results_t2/matched/redshift_run_20260812/drilldown_super_active_matched_to_redshift.jsonl",
+  "pairs": [
+    {
+      "absolute_progress_gap": 0.0,
+      "candidate_active_index": 0,
+      "candidate_iteration": 1,
+      "candidate_progress": 0.0,
+      "candidate_raw_rows": 0,
+      "reference_iteration": 1,
+      "reference_progress": 0.0,
+      "reference_raw_rows": 0
+    },
+    {
+      "absolute_progress_gap": 0.0017970118563969406,
+      "candidate_active_index": 1,
+      "candidate_iteration": 2,
+      "candidate_progress": 0.033056027672752376,
+      "candidate_raw_rows": 3742528876,
+      "reference_iteration": 2,
+      "reference_progress": 0.031259015816355436,
+      "reference_raw_rows": 3539132196
+    },
+    {
+      "absolute_progress_gap": 5.583472792630717e-05,
+      "candidate_active_index": 2,
+      "candidate_iteration": 3,
+      "candidate_progress": 0.06314504246947275,
+      "candidate_raw_rows": 7149139248,
+      "reference_iteration": 3,
+      "reference_progress": 0.06308920774154644,
+      "reference_raw_rows": 7142932703
+    },
+    {
+      "absolute_progress_gap": 0.002545302541659661,
+      "candidate_active_index": 3,
+      "candidate_iteration": 4,
+      "candidate_progress": 0.09231150217557367,
+      "candidate_raw_rows": 10451300014,
+      "reference_iteration": 4,
+      "reference_progress": 0.09485680471723333,
+      "reference_raw_rows": 10739646237
+    },
+    {
+      "absolute_progress_gap": 0.005766853671915803,
+      "candidate_active_index": 4,
+      "candidate_iteration": 5,
+      "candidate_progress": 0.12095053186996858,
+      "candidate_raw_rows": 13693746344,
+      "reference_iteration": 5,
+      "reference_progress": 0.1267173855418844,
+      "reference_raw_rows": 14346887362
+    },
+    {
+      "absolute_progress_gap": 0.006509571716487111,
+      "candidate_active_index": 5,
+      "candidate_iteration": 6,
+      "candidate_progress": 0.15198688835791432,
+      "candidate_raw_rows": 17207612605,
+      "reference_iteration": 6,
+      "reference_progress": 0.15849646007440144,
+      "reference_raw_rows": 17944900380
+    },
+    {
+      "absolute_progress_gap": 0.008300528299378551,
+      "candidate_active_index": 6,
+      "candidate_iteration": 7,
+      "candidate_progress": 0.1819583215765241,
+      "candidate_raw_rows": 20600910656,
+      "reference_iteration": 7,
+      "reference_progress": 0.19025884987590266,
+      "reference_raw_rows": 21541024360
+    },
+    {
+      "absolute_progress_gap": 0.011570561764830817,
+      "candidate_active_index": 7,
+      "candidate_iteration": 8,
+      "candidate_progress": 0.21063526032873514,
+      "candidate_raw_rows": 23847648964,
+      "reference_iteration": 8,
+      "reference_progress": 0.22220582209356596,
+      "reference_raw_rows": 25158046681
+    },
+    {
+      "absolute_progress_gap": 0.014468354679625178,
+      "candidate_active_index": 8,
+      "candidate_iteration": 9,
+      "candidate_progress": 0.23954191166927366,
+      "candidate_raw_rows": 27120394813,
+      "reference_iteration": 9,
+      "reference_progress": 0.25401026634889884,
+      "reference_raw_rows": 28758932048
+    },
+    {
+      "absolute_progress_gap": 0.012289712842576461,
+      "candidate_active_index": 10,
+      "candidate_iteration": 11,
+      "candidate_progress": 0.2980970811911246,
+      "candidate_raw_rows": 33749879001,
+      "reference_iteration": 10,
+      "reference_progress": 0.28580736834854814,
+      "reference_raw_rows": 32358986128
+    },
+    {
+      "absolute_progress_gap": 0.007893882563306032,
+      "candidate_active_index": 11,
+      "candidate_iteration": 12,
+      "candidate_progress": 0.3255118918169927,
+      "candidate_raw_rows": 36853722010,
+      "reference_iteration": 11,
+      "reference_progress": 0.31761800925368666,
+      "reference_raw_rows": 35960573077
+    },
+    {
+      "absolute_progress_gap": 0.0038303853099045937,
+      "candidate_active_index": 12,
+      "candidate_iteration": 13,
+      "candidate_progress": 0.35277513277360095,
+      "candidate_raw_rows": 39940404643,
+      "reference_iteration": 12,
+      "reference_progress": 0.34894474746369636,
+      "reference_raw_rows": 39507372773
+    },
+    {
+      "absolute_progress_gap": 0.0006520847144562691,
+      "candidate_active_index": 13,
+      "candidate_iteration": 14,
+      "candidate_progress": 0.3801453096713525,
+      "candidate_raw_rows": 43039194322,
+      "reference_iteration": 13,
+      "reference_progress": 0.3807973943858088,
+      "reference_raw_rows": 43113715625
+    },
+    {
+      "absolute_progress_gap": 0.005811929535659899,
+      "candidate_active_index": 14,
+      "candidate_iteration": 15,
+      "candidate_progress": 0.40727817517187775,
+      "candidate_raw_rows": 46111116140,
+      "reference_iteration": 14,
+      "reference_progress": 0.41309010470753765,
+      "reference_raw_rows": 46769882264
+    },
+    {
+      "absolute_progress_gap": 0.010027451872481885,
+      "candidate_active_index": 15,
+      "candidate_iteration": 16,
+      "candidate_progress": 0.43434769428559283,
+      "candidate_raw_rows": 49175866023,
+      "reference_iteration": 15,
+      "reference_progress": 0.4443751461580747,
+      "reference_raw_rows": 50311961071
+    },
+    {
+      "absolute_progress_gap": 0.013114317522852414,
+      "candidate_active_index": 16,
+      "candidate_iteration": 17,
+      "candidate_progress": 0.4632071322581996,
+      "candidate_raw_rows": 52443266481,
+      "reference_iteration": 16,
+      "reference_progress": 0.476321449781052,
+      "reference_raw_rows": 53928907694
+    },
+    {
+      "absolute_progress_gap": 0.008645445003047203,
+      "candidate_active_index": 18,
+      "candidate_iteration": 19,
+      "candidate_progress": 0.5168149923953513,
+      "candidate_raw_rows": 58512627462,
+      "reference_iteration": 17,
+      "reference_progress": 0.5081695473923041,
+      "reference_raw_rows": 57534735475
+    },
+    {
+      "absolute_progress_gap": 0.002173689596366102,
+      "candidate_active_index": 19,
+      "candidate_iteration": 20,
+      "candidate_progress": 0.5420734811272164,
+      "candidate_raw_rows": 61372336571,
+      "reference_iteration": 18,
+      "reference_progress": 0.5398997915308503,
+      "reference_raw_rows": 61127219937
+    },
+    {
+      "absolute_progress_gap": 0.0037567308890393836,
+      "candidate_active_index": 20,
+      "candidate_iteration": 21,
+      "candidate_progress": 0.5679366980282774,
+      "candidate_raw_rows": 64300511639,
+      "reference_iteration": 19,
+      "reference_progress": 0.5716934289173168,
+      "reference_raw_rows": 64726881755
+    },
+    {
+      "absolute_progress_gap": 0.009117271832583818,
+      "candidate_active_index": 21,
+      "candidate_iteration": 22,
+      "candidate_progress": 0.5944011008975845,
+      "candidate_raw_rows": 67296751626,
+      "reference_iteration": 20,
+      "reference_progress": 0.6035183727301683,
+      "reference_raw_rows": 68330088073
+    },
+    {
+      "absolute_progress_gap": 0.00944990094456033,
+      "candidate_active_index": 23,
+      "candidate_iteration": 24,
+      "candidate_progress": 0.6449055077080696,
+      "candidate_raw_rows": 73014746623,
+      "reference_iteration": 21,
+      "reference_progress": 0.6354556067635093,
+      "reference_raw_rows": 71946007841
+    },
+    {
+      "absolute_progress_gap": 0.003790858474887915,
+      "candidate_active_index": 24,
+      "candidate_iteration": 25,
+      "candidate_progress": 0.6709905313518809,
+      "candidate_raw_rows": 75968034150,
+      "reference_iteration": 22,
+      "reference_progress": 0.667199672876993,
+      "reference_raw_rows": 75540057221
+    },
+    {
+      "absolute_progress_gap": 0.0035378070644257464,
+      "candidate_active_index": 25,
+      "candidate_iteration": 26,
+      "candidate_progress": 0.6955156366128642,
+      "candidate_raw_rows": 78744711237,
+      "reference_iteration": 23,
+      "reference_progress": 0.6990534436772899,
+      "reference_raw_rows": 79146527318
+    },
+    {
+      "absolute_progress_gap": 0.010531810740093128,
+      "candidate_active_index": 27,
+      "candidate_iteration": 28,
+      "candidate_progress": 0.7415070380470006,
+      "candidate_raw_rows": 83951753947,
+      "reference_iteration": 24,
+      "reference_progress": 0.7309752273069074,
+      "reference_raw_rows": 82760697798
+    },
+    {
+      "absolute_progress_gap": 0.006079376239816137,
+      "candidate_active_index": 28,
+      "candidate_iteration": 29,
+      "candidate_progress": 0.7689941276082795,
+      "candidate_raw_rows": 87063780214,
+      "reference_iteration": 25,
+      "reference_progress": 0.7629147513684633,
+      "reference_raw_rows": 86376876842
+    },
+    {
+      "absolute_progress_gap": 0.0034830342344567278,
+      "candidate_active_index": 29,
+      "candidate_iteration": 30,
+      "candidate_progress": 0.7976949713060083,
+      "candidate_raw_rows": 90313224986,
+      "reference_iteration": 26,
+      "reference_progress": 0.7942119370715516,
+      "reference_raw_rows": 89920330616
+    },
+    {
+      "absolute_progress_gap": 0.0024788528033123924,
+      "candidate_active_index": 30,
+      "candidate_iteration": 31,
+      "candidate_progress": 0.8240421043946208,
+      "candidate_raw_rows": 93296187953,
+      "reference_iteration": 27,
+      "reference_progress": 0.8265209571979332,
+      "reference_raw_rows": 93578343844
+    },
+    {
+      "absolute_progress_gap": 0.007168628232585239,
+      "candidate_active_index": 31,
+      "candidate_iteration": 32,
+      "candidate_progress": 0.8511548906220451,
+      "candidate_raw_rows": 96365836441,
+      "reference_iteration": 28,
+      "reference_progress": 0.8583235188546303,
+      "reference_raw_rows": 97179016064
+    },
+    {
+      "absolute_progress_gap": 0.010658186608934694,
+      "candidate_active_index": 32,
+      "candidate_iteration": 33,
+      "candidate_progress": 0.8794530427237196,
+      "candidate_raw_rows": 99569689379,
+      "reference_iteration": 29,
+      "reference_progress": 0.8901112293326543,
+      "reference_raw_rows": 100778006840
+    },
+    {
+      "absolute_progress_gap": 0.009228265455279328,
+      "candidate_active_index": 34,
+      "candidate_iteration": 35,
+      "candidate_progress": 0.9305705542172504,
+      "candidate_raw_rows": 105357098705,
+      "reference_iteration": 30,
+      "reference_progress": 0.9213422887619711,
+      "reference_raw_rows": 104313973826
+    },
+    {
+      "absolute_progress_gap": 0.00011137821181150809,
+      "candidate_active_index": 35,
+      "candidate_iteration": 36,
+      "candidate_progress": 0.9537789620521839,
+      "candidate_raw_rows": 107984702280,
+      "reference_iteration": 31,
+      "reference_progress": 0.9536675838403724,
+      "reference_raw_rows": 107973829697
+    },
+    {
+      "absolute_progress_gap": 0.006134290160285216,
+      "candidate_active_index": 36,
+      "candidate_iteration": 37,
+      "candidate_progress": 0.9794095376013815,
+      "candidate_raw_rows": 110886538219,
+      "reference_iteration": 32,
+      "reference_progress": 0.9855438277616667,
+      "reference_raw_rows": 111582844191
+    },
+    {
+      "absolute_progress_gap": 0.0,
+      "candidate_active_index": 37,
+      "candidate_iteration": 38,
+      "candidate_progress": 1.0,
+      "candidate_raw_rows": 113217743918,
+      "reference_iteration": 33,
+      "reference_progress": 1.0,
+      "reference_raw_rows": 113219565734
+    }
+  ],
+  "reference": {
+    "active_endpoint_iteration": 33,
+    "active_endpoint_raw_rows": 113219565734,
+    "active_endpoint_source_line": 33,
+    "active_endpoint_started_at": "2026-08-14T00:57:17Z",
+    "active_observations_including_endpoint": 33,
+    "final_rows": 113219565734,
+    "observations_used": 33,
+    "total_observations": 40,
+    "zero_row_observation_included": true
+  },
+  "reference_file": "quotes/redshift-serverless/results/t2/drilldown_super_20260812T165356Z.jsonl",
+  "requested_count": 33,
+  "schema_version": 2
+}
