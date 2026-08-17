@@ -23,6 +23,17 @@ __pycache__/
 *.py[cod]
 .DS_Store
 
-run8
-run12
-run14
+run8/
+run12/
+run14/
+
+# Accepted Run 14 evidence is intentionally versioned. Keep other local cost
+# output and ad hoc chart runs ignored while allowing the canonical artifacts.
+!costs/out/
+costs/out/*
+!costs/out/t2/
+costs/out/t2/*
+!costs/out/t2/run14/
+!costs/out/t2/run14/**
+!results/t2/charts/run14/
+!results/t2/charts/run14/**

@@ -1,0 +1,171 @@
+{
+  "schema_version": 2,
+  "source_file": "dashboard_raw_iv_20260811T111856Z.jsonl",
+  "system": "Snowflake IT (AWS)",
+  "version": null,
+  "machine": "Interactive Small",
+  "cluster_size": 1.2,
+  "cloud": "aws",
+  "region": "us-east-1",
+  "iterations_included": 209,
+  "queries_per_iteration": 4,
+  "total_runtime_seconds": 3945.522,
+  "query_cost_model": {
+    "metric": "normalized query cost",
+    "attribution_method": "elapsed_threshold_effective_warehouse",
+    "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+    "compilation_treatment": "included in elapsed time; not priced separately",
+    "standing_capacity_treatment": "excluded",
+    "primary_warehouse": "Interactive Small",
+    "primary_pricing_file": "interactive_warehouse.json",
+    "fallback_is_proxy": true,
+    "fallback_condition": "elapsed_seconds > 5",
+    "fallback_threshold_seconds": 5.0,
+    "fallback_warehouse": "Gen2 Small",
+    "fallback_pricing_file": "gen2_warehouse.json",
+    "fallback_credits_per_hour": 2.7,
+    "fallback_runtime_treatment": "full elapsed time is priced at the fallback warehouse rate",
+    "primary_attempt_cost_treatment": "no additional primary-warehouse charge for fallback-priced jobs"
+  },
+  "runtime_attribution": {
+    "query_jobs": 836,
+    "primary_priced_query_jobs": 616,
+    "primary_priced_runtime_seconds": 1137.99,
+    "fallback_priced_query_jobs": 220,
+    "fallback_priced_runtime_seconds": 2807.532,
+    "fallback_priced_job_share": 0.263158
+  },
+  "per_query_attribution": [
+    {
+      "query_number": 1,
+      "query_jobs": 209,
+      "total_runtime_seconds": 126.335,
+      "primary_priced_query_jobs": 209,
+      "primary_priced_runtime_seconds": 126.335,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_seconds": 0.0
+    },
+    {
+      "query_number": 2,
+      "query_jobs": 209,
+      "total_runtime_seconds": 403.493,
+      "primary_priced_query_jobs": 209,
+      "primary_priced_runtime_seconds": 403.493,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_seconds": 0.0
+    },
+    {
+      "query_number": 3,
+      "query_jobs": 209,
+      "total_runtime_seconds": 1610.281,
+      "primary_priced_query_jobs": 106,
+      "primary_priced_runtime_seconds": 321.041,
+      "fallback_priced_query_jobs": 103,
+      "fallback_priced_runtime_seconds": 1289.24
+    },
+    {
+      "query_number": 4,
+      "query_jobs": 209,
+      "total_runtime_seconds": 1805.413,
+      "primary_priced_query_jobs": 92,
+      "primary_priced_runtime_seconds": 287.121,
+      "fallback_priced_query_jobs": 117,
+      "fallback_priced_runtime_seconds": 1518.292
+    }
+  ],
+  "costs": [
+    {
+      "tier": "standard",
+      "warehouse_size": "Interactive Small + Gen2 Small fallback",
+      "credits_per_hour": null,
+      "credit_price_per_hour": 2.0,
+      "total_compute_cost_usd": 4.96996,
+      "components": [
+        {
+          "role": "primary",
+          "pricing_rule": "elapsed_seconds <= 5",
+          "pricing_file": "interactive_warehouse.json",
+          "warehouse_size": "Interactive Small",
+          "query_jobs": 616,
+          "runtime_seconds": 1137.99,
+          "credits_per_hour": 1.2,
+          "credit_price_per_hour": 2.0,
+          "total_compute_cost_usd": 0.75866
+        },
+        {
+          "role": "fallback",
+          "pricing_rule": "elapsed_seconds > 5; price full elapsed time",
+          "pricing_file": "gen2_warehouse.json",
+          "warehouse_size": "Gen2 Small",
+          "query_jobs": 220,
+          "runtime_seconds": 2807.532,
+          "credits_per_hour": 2.7,
+          "credit_price_per_hour": 2.0,
+          "total_compute_cost_usd": 4.2113
+        }
+      ]
+    },
+    {
+      "tier": "enterprise",
+      "warehouse_size": "Interactive Small + Gen2 Small fallback",
+      "credits_per_hour": null,
+      "credit_price_per_hour": 3.0,
+      "total_compute_cost_usd": 7.45494,
+      "components": [
+        {
+          "role": "primary",
+          "pricing_rule": "elapsed_seconds <= 5",
+          "pricing_file": "interactive_warehouse.json",
+          "warehouse_size": "Interactive Small",
+          "query_jobs": 616,
+          "runtime_seconds": 1137.99,
+          "credits_per_hour": 1.2,
+          "credit_price_per_hour": 3.0,
+          "total_compute_cost_usd": 1.13799
+        },
+        {
+          "role": "fallback",
+          "pricing_rule": "elapsed_seconds > 5; price full elapsed time",
+          "pricing_file": "gen2_warehouse.json",
+          "warehouse_size": "Gen2 Small",
+          "query_jobs": 220,
+          "runtime_seconds": 2807.532,
+          "credits_per_hour": 2.7,
+          "credit_price_per_hour": 3.0,
+          "total_compute_cost_usd": 6.31695
+        }
+      ]
+    },
+    {
+      "tier": "business_critical",
+      "warehouse_size": "Interactive Small + Gen2 Small fallback",
+      "credits_per_hour": null,
+      "credit_price_per_hour": 4.0,
+      "total_compute_cost_usd": 9.93992,
+      "components": [
+        {
+          "role": "primary",
+          "pricing_rule": "elapsed_seconds <= 5",
+          "pricing_file": "interactive_warehouse.json",
+          "warehouse_size": "Interactive Small",
+          "query_jobs": 616,
+          "runtime_seconds": 1137.99,
+          "credits_per_hour": 1.2,
+          "credit_price_per_hour": 4.0,
+          "total_compute_cost_usd": 1.51732
+        },
+        {
+          "role": "fallback",
+          "pricing_rule": "elapsed_seconds > 5; price full elapsed time",
+          "pricing_file": "gen2_warehouse.json",
+          "warehouse_size": "Gen2 Small",
+          "query_jobs": 220,
+          "runtime_seconds": 2807.532,
+          "credits_per_hour": 2.7,
+          "credit_price_per_hour": 4.0,
+          "total_compute_cost_usd": 8.4226
+        }
+      ]
+    }
+  ]
+}
