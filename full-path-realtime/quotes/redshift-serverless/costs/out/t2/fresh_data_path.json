@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "system": "Redshift Serverless",
+  "scope": "complete-ingest fresh-data path",
+  "rows_ingested": 113219565734,
+  "window": {
+    "start": "2026-08-12T16:53:56Z",
+    "end": "2026-08-14T00:21:03Z",
+    "duration_seconds": 113227.0,
+    "duration_hours": 31.451944444444443,
+    "basis": "producer start through producer DONE line (113,219,565,734 rows in 113,227 seconds)"
+  },
+  "shared_path_contract": {
+    "shared_between_read_variants": true,
+    "read_variants": [
+      "dashboard + SUPER drill-down",
+      "dashboard + typed drill-down"
+    ],
+    "attribution": "The writer and MSK path is charged once, reused unchanged by both counterfactual read-path comparisons, and never split or doubled."
+  },
+  "components": {
+    "writer_workgroup": {
+      "base_rpu": 128,
+      "capacity_time_rpu_seconds": 14493056.0,
+      "rpu_hour_rate_usd": 0.467,
+      "cost_usd": 1880.0714311111112,
+      "model": "declared base capacity multiplied by full producer uptime"
+    },
+    "msk": {
+      "brokers": 3,
+      "broker_instance": "kafka.m7g.xlarge",
+      "partitions": 24,
+      "storage_gb_per_broker": 500,
+      "total_storage_gb": 1500,
+      "broker_hour_rate_usd": 0.47175,
+      "storage_gb_month_rate_usd": 0.116,
+      "broker_cost_usd": 44.512364375,
+      "storage_cost_usd": 7.4967648401826485,
+      "inter_broker_transfer_cost_usd": 0.0,
+      "client_cross_az_cost_usd": 0.0,
+      "client_cross_az_included": false,
+      "total_cost_usd": 52.00912921518265
+    }
+  },
+  "total_cost_usd": 1932.0805603262938,
+  "excluded": {
+    "redshift_managed_storage": "Final storage snapshot is not time-integrated and is excluded from the main fresh-data-path comparison.",
+    "client_cross_az_transfer": "Excluded by benchmark-owner policy, consistently with other systems.",
+    "reader_queries": "Reported separately from committed hourly allocation evidence."
+  },
+  "pricing": {
+    "path": "quotes/redshift-serverless/costs/pricing_eu-west-2.json",
+    "sha256": "34382fd66b283b6d0dcecd09243ee6db3ac8b27996e31e98c0d96f177e599d19",
+    "region": "eu-west-2",
+    "effective_date": "2026-08-14",
+    "sources": [
+      "https://aws.amazon.com/redshift/pricing/",
+      "https://aws.amazon.com/msk/pricing/",
+      "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRedshift/current/eu-west-2/index.json",
+      "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonMSK/current/eu-west-2/index.json"
+    ]
+  }
+}

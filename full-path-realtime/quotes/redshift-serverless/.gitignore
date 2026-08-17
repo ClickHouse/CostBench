@@ -25,4 +25,9 @@ run_t2/
 # raw CLI dumps from bring-up
 result.txt
 
+# Reproducible accepted T2 cost summaries are published benchmark evidence.
+!costs/out/
+!costs/out/t2/
+!costs/out/t2/*.json
+
 # results/ IS tracked on purpose — the benchmark's published measurements live there.
