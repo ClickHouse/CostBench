@@ -1,0 +1,66 @@
+ClickHouse Cloud T2-style run with acknowledged default async inserts
+=====================================================================
+
+This is a separate example for ingest_parquet_rows_async_default.py.
+It does not change or replace the original T2 command sequence.
+
+The 8 workers / 3,000-row batches are the original T2 starting point. Because
+wait_for_async_insert=1 introduces flush backpressure, run a short tuning test
+before the real full run and adjust --parallel if required. --target-eps caps
+the acknowledged rate at 1M rows/s without catch-up bursts.
+
+
+# Terminal 1: start acknowledged async ingest
+tmux new -s benchmark_ingest_async_default_t2
+FQDN=... PASSWORD=...
+
+python3 ingest_parquet_rows_async_default.py \
+    --dir ~/data/stockhouse \
+    --pattern '*.parquet' \
+    --database quotes_async_default_t2 \
+    --table quotes \
+    --create-sql create.sql \
+    --parallel 20 \
+    --batch-size 131000 \
+    --format CSV \
+    --target-eps 1000000 \
+    --metrics-interval 10 \
+    --memory-trim-interval 60 \
+    --quiet-worker-logs \
+    --output-dir results_async_default_t2/ingest \
+    --progress-file results_async_default_t2/ingest/ingest_progress.json \
+    --run-id ch-async-default-t2
+
+
+
+
+# Terminal 2: dashboard runner (every 10 min)
+tmux new -s benchmark_dashboard_async_default_t2
+FQDN=... PASSWORD=...
+
+./run_dashboard.sh \
+    --database quotes_async_default_t2 \
+    --output-dir results_async_default_t2/mv \
+    "ClickHouse Cloud (AWS)" "64GiB" 1 "" 0
+
+
+
+
+# Terminal 3: drilldown runner (every hour)
+tmux new -s benchmark_drilldown_async_default_t2
+FQDN=... PASSWORD=...
+
+./run_drilldown.sh \
+    --database quotes_async_default_t2 \
+    --output-dir results_async_default_t2/raw \
+    "ClickHouse Cloud (AWS)" "64GiB" 1 "" 0
+
+
+The ingester intentionally sends only these async-related client settings:
+
+    async_insert=1
+    async_insert_deduplicate=1
+
+It does not set wait_for_async_insert or any buffer flush threshold. At startup
+it reads the effective settings and exits unless the server/profile default is
+wait_for_async_insert=1.
