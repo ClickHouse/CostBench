@@ -5,7 +5,7 @@ Serverless** streaming materialized view. Producer writes to MSK over **plaintex
 consumes over MSK's **Amazon-trusted TLS :9094** (`AUTHENTICATION none`). Everything is in the box's
 default VPC. Use a **dedicated benchmark account**, not prod.
 
-## Status — where we are (updated 2026-08-12)
+## Status — completed T2 run (updated 2026-08-14)
 
 **Goal: achieve and *sustain* 1M EPS end-to-end** (producer → MSK → Redshift streaming MV) and serve
 the read workload from isolated compute.
@@ -15,13 +15,14 @@ the read workload from isolated compute.
   compressed**; `quotes_streamed` consumes ~989K rows/s with **offset lag 0** and ~6–9 s freshness
   at the **128 RPU** base. Peak validated to ~2.6B rows.
 - ✅ **MSK**: `cb-quotes-rt-msk` ACTIVE, **3× `kafka.m7g.xlarge`** (in-place `update-broker-type`
-  from m5.xlarge on 2026-08-12), 3 AZ, RF=3, 500 GB/broker. Topic `quotes`: 6 partitions,
-  **`retention.ms=1800000` + `retention.bytes=32 GB/partition`** (the disk-full fix).
+  from m5.xlarge on 2026-08-12), 3 AZ, RF=3, 500 GB/broker. Topic `quotes`: 24 partitions,
+  **`retention.ms=1800000` + `retention.bytes=8 GiB/partition`** (the disk-full fix).
 - ✅ **Three-object fork deployed** — `quotes_streamed` (AUTO REFRESH) → `quotes_typed` +
   `quotes_daily`, both refreshed manually with `RESTRICT`. **Both verified incremental**; zero
   `Manual` refreshes of the streaming MV; `SYS_STREAM_SCAN_ERRORS` = 0.
-- ✅ **Read suites validated** on 571.9M quiesced rows: SUPER vs typed drilldown return **identical
-  results**, typed **1.7–2.3× faster**. Dashboard queries ~0.04–0.12 s on the rollup.
+- ✅ **Full run completed:** 113,219,565,734 rows in 113,227 seconds (999,933 rows/s). SUPER and typed
+  drill-down return identical results; across the complete active window typed accumulated runtime
+  was 2.11× slower overall (Q1 ~equal, Q2 4.42× slower).
 - ✅ **Compute isolation PROVEN (2026-08-12)** — reader workgroup `cb-quotes-rt-reader-wg` (namespace
   `cb-quotes-rt-reader-ns`, **32 RPU, `max = base`**, `publicly_accessible = false`) reads all three
   objects through the live datashare `quotes_share`, with counts matching the writer exactly
@@ -30,7 +31,7 @@ the read workload from isolated compute.
   **Gotcha:** the reader MUST NOT be publicly accessible — with `publicly_accessible = true` every
   query on a shared object fails with *"Publicly accessible consumer cannot access object in the
   database"*. Hence the runners execute from the in-VPC producer box.
-- ⚠️ **Producer currently stopped** (quiesced for the equivalence check). Restart it for the run.
+- ✅ **Cost and charts generated:** see `costs/out/t2/`, `results/t2/charts/`, and the global manifest.
 
 **Historical: pivot to MSK (2026-08-06).** The original design streamed from a **self-managed
 single-broker Kafka** on the box. Redshift streaming ingestion requires **TLS with a CA-trusted
@@ -43,9 +44,8 @@ trusts. (Full detail: memory `redshift-streaming-requires-trusted-tls`.)
   (box in `subnet-036503b17dc39260f`, eu-west-2b — one of the workgroup subnets); redshift SG
   `sg-06cc5712e19c8f7df` egress all; broker port allowed from the redshift SG + VPC CIDR. Only the
   cert failed → MSK.
-- ✅ **Redshift Serverless live** — workgroup `cb-quotes-rt-wg`, **AVAILABLE**, EVR on. **base 128 RPU
-  / max 256 RPU** (raised from 8 on 2026-08-10, via console; declared in `infra/{variables,redshift}.tf`
-  as `redshift_base_rpu=128` + `redshift_max_rpu=256` / `max_capacity` so `apply` won't revert). Endpoint
+- ✅ **Redshift Serverless measured configuration** — writer **base=max 128 RPU**, reader **base=max
+  32 RPU**. Endpoint
   `cb-quotes-rt-wg.244449518788.eu-west-2.redshift-serverless.amazonaws.com:5439`, db `quotes`,
   account `244449518788`, region `eu-west-2`.
 - ✅ **Phase A proven — producer → Kafka ~1.45M EPS** (dry-run Jul 23, 16 producers, 247.9M rows/170s;
@@ -93,8 +93,10 @@ Everything is built, validated and the reader path is proven. Remaining steps, i
    `SYS_STREAM_SCAN_ERRORS` must stay empty. If refresh load threatens keep-up, raise
    `--typed-delay` (or `--serialize-refresh`) before changing the architecture — and record the
    cadence change in the run metadata.
-5. **After the run:** `get_metrics.py` **once per workgroup** (writer + reader) for the two RPU
-   lines, storage, and the per-MV refresh summary; add MSK broker-hours.
+5. **After the run:** preserve the allocation CSV and enrich the runner JSONL, then run in order:
+   `utils/_commands.txt` → the Redshift additions in ClickHouse `costs/_commands.txt` →
+   Redshift `costs/_commands.txt` → Redshift and global visualization `_commands.txt` files.
+   `get_metrics.py` is an optional audit, not a dependency for published query cost.
 
 ### Tooling (built 2026-08-10) + methodology vs the prior query-side-only benchmark
 Scripts at `redshift-serverless/` (deployed to the box `/home/ubuntu/redshift/`, venv w/ `redshift_connector`):
@@ -108,18 +110,17 @@ Scripts at `redshift-serverless/` (deployed to the box `/home/ubuntu/redshift/`,
   single-flight refresh loops for `quotes_typed` (continuous, `--typed-delay`) and `quotes_daily`
   (fixed-rate, `--daily-interval`), each journalled to `refresh_*.jsonl` with the server's
   Incremental-vs-Full verdict. Uses `RESTRICT`, never `CASCADE`. **Must run DURING the run.**
-- `get_metrics.py` — **RPU cost** (`SYS_SERVERLESS_USAGE`) + read-query timings (`SYS_QUERY_HISTORY`,
-  historized → pull after the run) + **storage** (`SVV_TABLE_INFO`, snapshot before dropping the schema)
-  + **MSK cost** (computed from cluster spec × `--msk-hours`; not in any SQL view). None need live
-  sampling — only `monitor_lag.py`'s freshness poll does. Verify region prices (`--price`,
-  `--storage-price`, `--msk-*`).
+- `costs/` — consumes the committed hourly allocation and the declared producer window. It prices
+  London Redshift/MSK rates, writes separate query summaries, one shared fresh path, and SUPER/typed
+  full-path alternatives. It does not query live `SYS_SERVERLESS_USAGE`.
+- `get_metrics.py` — optional post-run workgroup usage, storage, refresh, and MSK audit.
 - `sql/queries_dashboard.sql`, `sql/queries_drilldown_super.sql`, `sql/queries_drilldown_typed.sql` —
   the two drilldown suites are logically identical and differ only in what they read
   (`quotes_streamed` SUPER navigation vs `quotes_typed` columns), which is what makes the
   semi-structured-vs-typed comparison meaningful. Validated live 2026-08-12.
 
 Checked against `query-side-only/redshift-serverless` (ClickBench-style; `create.sql`/`queries.sql`/`run.sh`/`get_metrics.sh`):
-- ✅ result cache off, ✅ server-side timings, ✅ **cost via `SYS_SERVERLESS_USAGE`** (was the main gap — now `get_metrics.py`).
+- ✅ result cache off, ✅ server-side timings, ✅ committed hourly compute allocation for query cost.
 - Δ they run each query **3×** (cold+warm, take best); our streaming runner runs each **once per iteration** as
   data grows (time-series design, matches the Snowflake runner) — intentional, not a gap.
 - ✅ **storage cost** (`SVV_TABLE_INFO`) and **MSK cluster cost** (spec × uptime) now in `get_metrics.py`.

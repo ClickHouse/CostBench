@@ -41,12 +41,12 @@ EC2 producer  --1M EPS-->  MSK topic `quotes`
    writing to MSK over **plaintext `:9092`** at ~1M EPS (measured 1.00M/s sustained).
 
 2. **Amazon MSK** — provisioned cluster `cb-quotes-rt-msk` (**3× `kafka.m7g.xlarge`**, 3 AZs). Topic
-   `quotes`, 6 partitions, **RF=3**, **bounded retention** (`retention.ms=1800000` +
-   `retention.bytes=32 GB/partition`) — Redshift consumes live, and an unbounded topic once filled
+   `quotes`, 24 partitions, **RF=3**, **bounded retention** (`retention.ms=1800000` +
+   `retention.bytes=8 GiB/partition`) — Redshift consumes live, and an unbounded topic once filled
    the broker disks. Measured ingress: **~28.5 MB/s compressed** at ~999K EPS (lz4 ≈ 4.8:1).
 
 3. **Redshift streaming ingestion (pull)** — DB `quotes`, **writer** workgroup `cb-quotes-rt-wg`
-   (Serverless, base 128 / max 256 RPU, enhanced VPC routing):
+   (Serverless, base 128 / max 128 RPU for the measured run, enhanced VPC routing):
    - `CREATE EXTERNAL SCHEMA kafka FROM KAFKA URI '<MSK TLS :9094>' AUTHENTICATION none` — Redshift
      connects to MSK over **TLS** (Amazon-trusted cert).
    - **`quotes_streamed`** — streaming MV, `AUTO REFRESH YES`, lands each record as a `SUPER`
@@ -84,10 +84,11 @@ EC2 producer  --1M EPS-->  MSK topic `quotes`
 ## Freshness & cost pointers
 - **Freshness**: `SYS_STREAM_SCAN_STATES` is point-in-time — `monitor_lag.py` samples it live into
   `lag_*.jsonl`. Rollup freshness = streaming auto-refresh lag + the child's own cadence.
-- **Cost**: `get_metrics.py`, run **once per workgroup**:
-  `writer RPU-seconds + reader RPU-seconds + Redshift Managed Storage + MSK broker-hours + MSK
-  storage + client cross-AZ`. Per-MV refresh counts/durations/incremental-vs-full are reported, but
-  not per-MV dollars — Serverless bills per workgroup per minute while ingest and refreshes overlap.
+- **Cost**: `costs/_commands.txt` consumes committed evidence. The writer is 128 RPU × the full
+  113,227-second producer uptime; MSK is broker-hours + prorated storage. That one fresh path is
+  shared by both read alternatives. Query cost uses the committed hourly reader allocation embedded
+  in `billed_times`; no live or minute-level `SYS_SERVERLESS_USAGE` pull is required. Client cross-AZ
+  and RMS are excluded from the main comparison.
 
 DDL: `sql/setup_streaming.sql`. Datashare: `sql/setup_datashare.sql`. Rationale + reviewer
 questions: `ARCHITECTURE.md`.
