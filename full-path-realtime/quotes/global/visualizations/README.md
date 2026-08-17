@@ -15,13 +15,15 @@ It does not replace provider-specific renderers or matched cost artifacts.
   ingest-time incremental-MV design. BigQuery's default direct-query delta
   reconciliation is query-answer behavior and is not this persisted-lag metric.
 - Complete-ingest fresh-data-path costs are read unchanged from the accepted
-  pairwise fresh-path summaries. The renderer verifies that both summaries use
-  the same ClickHouse total and source hash, and keeps BigQuery Capacity and
-  On-demand MV-refresh pricing as alternatives rather than adding them.
+  Snowflake, BigQuery, and Redshift pairwise summaries. The renderer verifies
+  their ClickHouse source identity, keeps BigQuery Capacity and On-demand as
+  alternatives, and charges Redshift's shared writer-plus-MSK path once in each
+  SUPER or Typed counterfactual.
 - Full-path cost-performance values are read unchanged from the accepted
-  ClickHouse-vs-Snowflake and ClickHouse-vs-BigQuery summary JSON files. Each
-  provider is normalized to ClickHouse within its own pairwise matched window;
-  this chart does not introduce a cross-provider iteration match.
+  Snowflake, BigQuery, and Redshift summaries. Each provider or read-layout
+  alternative is normalized to ClickHouse within its own pairwise matched
+  window; this chart does not introduce a cross-provider iteration match. Its
+  score bars use a disclosed log-relative scale with no artificial width floor.
 - The absolute cost-versus-runtime map reads `total_cost` and `runtime_sec` from
   those same summaries. It intentionally accepts their different pairwise
   query windows, and uses inverted logarithmic axes so faster is right and
@@ -29,6 +31,11 @@ It does not replace provider-specific renderers or matched cost artifacts.
 
 Run the commands in `_commands.txt`. Charts, SVGs, source CSVs, and provenance
 summaries are written to `quotes/global/results/charts/`.
+
+`manifest.json` declares the exact accepted label set for every global chart.
+Each renderer validates that set case-insensitively before drawing, so a
+missing provider, pricing alternative, or Redshift layout fails closed.
+Generated summaries use repository-relative paths and source hashes.
 
 The command file defines `CHART_BACKGROUND_COLOR` once (default `#161614`) and
 always produces both standard and true slide-wide variants. Wide variants use

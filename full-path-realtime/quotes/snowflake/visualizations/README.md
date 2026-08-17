@@ -1,8 +1,7 @@
 # Snowflake T2 comparison visualizations
 
-These generators are the Snowflake counterparts to the current BigQuery T2
-visualizations. They deliberately do not reuse the deprecated Snowflake chart
-generators or overwrite their outputs.
+These are the maintained Snowflake Run 14 renderers. The earlier shared
+Snowflake visualization pipeline and its generated outputs have been removed.
 
 The commands in `_commands.txt` write publication artifacts to
 `results/t2/charts/run14`. Every chart is rendered as PNG and SVG with a JSON
@@ -14,12 +13,12 @@ as CSV.
 - Latency charts use the original fixed-rate runner JSONL files and plot each
   system at its own observed base-table row count through 100B rows. They do not
   match records by iteration.
-- The aggregate-query chart applies the deprecated renderer's Snowflake-only,
+- The aggregate-query chart applies the accepted Snowflake-only,
   per-query Tukey upper-fence rule (`Q3 + 1.5 * IQR`). Excluded observations
   remain explicitly marked in the chart CSV and are listed in the provenance
   summary. Its displayed line is the centered seven-observation rolling median,
-  matching the deprecated renderer's trend treatment. The drill-down chart does
-  not exclude outliers; it uses the deprecated renderer's centered
+  matching the accepted trend treatment. The drill-down chart does
+  not exclude outliers; it uses the accepted centered
   five-observation rolling median for display. Raw measured latencies remain
   unchanged in the evidence CSV.
 - Both outlier-filtering renderers support the optional `--annotate-outliers`
@@ -84,3 +83,8 @@ as CSV.
   serverless MV refresh**. No ingest warehouse is used or priced.
 - Enterprise pricing is used for both systems. Gen2 and Interactive warehouse
   pricing files are used only to validate dashboard and drill-down query cost.
+- Full-path score bars use a disclosed logarithmic relative scale. The 1×
+  ClickHouse result is a point at the scale origin; no artificial minimum bar
+  width is used.
+- Summary JSON stores paths relative to `full-path-realtime`, while retaining
+  SHA-256 hashes for every source.

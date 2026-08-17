@@ -105,10 +105,10 @@ uv run visualizations/plot_ingest_fresh_path_cost.py \
 The renderer recomputes and validates both BigQuery costs against the supplied
 pricing files and writes PNG, SVG, and JSON provenance outputs.
 
-The former standalone accumulated-runtime/query-cost chart is deprecated. The
-same evidence now appears directly below the aggregate and drill-down latency
-plots, where viewers can connect the shape of the latency series to the matched
-total runtime and cost without changing slides.
+The standalone accumulated-runtime/query-cost chart remains a supporting
+artifact in the canonical six-chart BigQuery suite. The same evidence also
+appears directly below the aggregate and drill-down latency plots, where
+viewers can connect the latency shape to the matched total runtime and cost.
 
 ## Full-path cost-performance
 
@@ -135,6 +135,7 @@ uv run visualizations/plot_full_path_cost_performance.py \
 ```
 
 The renderer validates the input costs against the pricing files and writes
-PNG, SVG, and JSON provenance outputs. The chart itself deliberately has no
-overall title, formula subtitle, or footer so it can sit beneath article-level
-copy.
+PNG, SVG, and JSON provenance outputs. It uses a disclosed logarithmic
+relative-score scale with no artificial minimum bar width. Summary paths are
+stored relative to `full-path-realtime` and every source retains its SHA-256
+hash.
