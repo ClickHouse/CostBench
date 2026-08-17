@@ -1,0 +1,263 @@
+# BigQuery benchmark cost summaries
+#
+# Run this sequence after ingestion has finished and after the final measured
+# dashboard and drill-down queries have completed.
+
+------------------------------------------------------------------------------------------------------------------------
+Step 0: load the completed run and define the bounded evidence window
+------------------------------------------------------------------------------------------------------------------------
+
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+printf 'run=%s\ndataset=%s\nresults=%s\n' \
+  "$BQ_RUN_ID" "$BQ_DATASET" "$BQ_RESULTS"
+
+# Confirm the BigQuery dataset location. This returns US for this benchmark.
+export DETECTED_BQ_LOCATION="$(
+  bq show \
+    --format=json \
+    "$GOOGLE_CLOUD_PROJECT:$BQ_DATASET" \
+    | jq -r '.location'
+)"
+
+test "$DETECTED_BQ_LOCATION" = "$BQ_LOCATION"
+
+# Confirm the AWS region of the EC2 source host.
+TOKEN="$(
+  curl -fsS -X PUT \
+    http://169.254.169.254/latest/api/token \
+    -H 'X-aws-ec2-metadata-token-ttl-seconds: 60'
+)"
+
+export DETECTED_SOURCE_HOST_REGION="$(
+  curl -fsS \
+    -H "X-aws-ec2-metadata-token: $TOKEN" \
+    http://169.254.169.254/latest/meta-data/placement/region
+)"
+
+test "$DETECTED_SOURCE_HOST_REGION" = "$SOURCE_HOST_REGION"
+
+# Pricing keys use the lowercase BigQuery location identifier shown by the
+# pricing selector. For this benchmark, the dataset location US maps to us.
+# This is deliberately separate from the AWS source-host region us-east-2.
+export BQ_PRICING_REGION="$(
+  printf '%s' "$DETECTED_BQ_LOCATION" \
+    | tr '[:upper:]' '[:lower:]'
+)"
+
+jq -e \
+  --arg region "$BQ_PRICING_REGION" \
+  '.regions[$region].pricing_compute != null' \
+  costs/pricings/serverless.json \
+  >/dev/null
+
+printf 'source_host_region=%s\nbigquery_location=%s\npricing_region=%s\n' \
+  "$DETECTED_SOURCE_HOST_REGION" \
+  "$DETECTED_BQ_LOCATION" \
+  "$BQ_PRICING_REGION"
+
+export BQ_EVIDENCE_SINCE="$(
+  date -u \
+    -d "$(jq -r '.started_at' "$BQ_RESULTS/ingest/ingest_progress.json") - 1 minute" \
+    +%Y-%m-%dT%H:%M:00Z
+)"
+
+# Set this immediately after the final measured query has completed.
+export BQ_EVIDENCE_UNTIL="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+export BQ_EVIDENCE_DIR="$BQ_RESULTS/evidence"
+export BQ_COST_DIR="$BQ_RESULTS/costs"
+
+printf 'since=%s\nuntil=%s\nevidence=%s\ncosts=%s\n' \
+  "$BQ_EVIDENCE_SINCE" \
+  "$BQ_EVIDENCE_UNTIL" \
+  "$BQ_EVIDENCE_DIR" \
+  "$BQ_COST_DIR"
+
+mkdir -p "$BQ_EVIDENCE_DIR" "$BQ_COST_DIR"
+
+------------------------------------------------------------------------------------------------------------------------
+Step 1: collect the bounded provider evidence
+------------------------------------------------------------------------------------------------------------------------
+
+python3 collect_evidence.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --since "$BQ_EVIDENCE_SINCE" \
+  --until "$BQ_EVIDENCE_UNTIL" \
+  --run-id "$BQ_RUN_ID" \
+  --output-dir "$BQ_EVIDENCE_DIR"
+
+jq '{since, until, project, dataset, errors}' \
+  "$BQ_EVIDENCE_DIR/evidence_summary.json"
+
+wc -l \
+  "$BQ_EVIDENCE_DIR/write_api_timeline.jsonl" \
+  "$BQ_EVIDENCE_DIR/mv_refresh_jobs.jsonl" \
+  "$BQ_EVIDENCE_DIR/query_and_mv_jobs.jsonl" \
+  "$BQ_EVIDENCE_DIR/table_storage.jsonl"
+
+# This must succeed and print true.
+jq -e '.errors == []' "$BQ_EVIDENCE_DIR/evidence_summary.json"
+
+# Keep BQ_EVIDENCE_UNTIL fixed. If an MV refresh job that started before that
+# timestamp is still running, rerun Step 1 later with the same since/until.
+
+------------------------------------------------------------------------------------------------------------------------
+Step 2: calculate Storage Write API ingest cost
+------------------------------------------------------------------------------------------------------------------------
+
+./costs/summarize_storage_write_api.sh \
+  "$BQ_EVIDENCE_DIR/write_api_timeline.jsonl" \
+  costs/pricings/storage_write_api.json \
+  "$BQ_COST_DIR/ingest.json"
+
+------------------------------------------------------------------------------------------------------------------------
+Step 3: calculate MV automatic-refresh cost under both compute pricing models
+------------------------------------------------------------------------------------------------------------------------
+
+./costs/summarize_mv_refresh.sh \
+  "$BQ_EVIDENCE_DIR/mv_refresh_jobs.jsonl" \
+  costs/pricings/serverless.json \
+  "$BQ_COST_DIR/mv_refresh.json" \
+  --region "$BQ_PRICING_REGION"
+
+------------------------------------------------------------------------------------------------------------------------
+Step 4: calculate dashboard-query cost under both compute pricing models
+------------------------------------------------------------------------------------------------------------------------
+
+# Set this to the exact number of dashboard iterations to include.
+export BQ_DASHBOARD_ITERATIONS=130
+
+./costs/summarize_queries.sh \
+  "$BQ_RESULTS/mv" \
+  costs/pricings/serverless.json \
+  "$BQ_COST_DIR/dashboard.json" \
+  --runner dashboard \
+  --run-id "$BQ_RUN_ID" \
+  --region "$BQ_PRICING_REGION" \
+  --iterations "$BQ_DASHBOARD_ITERATIONS"
+
+------------------------------------------------------------------------------------------------------------------------
+Step 5: calculate drill-down-query cost under both compute pricing models
+------------------------------------------------------------------------------------------------------------------------
+
+# Set this to the exact number of drill-down iterations to include.
+export BQ_DRILLDOWN_ITERATIONS=20
+
+./costs/summarize_queries.sh \
+  "$BQ_RESULTS/raw" \
+  costs/pricings/serverless.json \
+  "$BQ_COST_DIR/drilldown.json" \
+  --runner drilldown \
+  --run-id "$BQ_RUN_ID" \
+  --region "$BQ_PRICING_REGION" \
+  --iterations "$BQ_DRILLDOWN_ITERATIONS"
+
+------------------------------------------------------------------------------------------------------------------------
+Step 6: calculate raw-table and materialized-view active storage cost
+------------------------------------------------------------------------------------------------------------------------
+
+./costs/summarize_storage.sh \
+  "$BQ_EVIDENCE_DIR/table_storage.jsonl" \
+  costs/pricings/serverless.json \
+  "$BQ_COST_DIR/storage.json" \
+  --region "$BQ_PRICING_REGION" \
+  --raw-table quotes \
+  --mv-table quotes_daily
+
+------------------------------------------------------------------------------------------------------------------------
+Step 7: validate and inspect the five separate cost summaries
+------------------------------------------------------------------------------------------------------------------------
+
+# Provider-observed successful Write API rows must match client-acknowledged rows.
+CLIENT_ACK_ROWS="$(jq -r '.acknowledged_rows' "$BQ_RESULTS/ingest/ingest_summary.json")"
+PROVIDER_OK_ROWS="$(jq -r '.successful_rows' "$BQ_COST_DIR/ingest.json")"
+
+printf 'client_ack_rows=%s\nprovider_ok_rows=%s\n' \
+  "$CLIENT_ACK_ROWS" "$PROVIDER_OK_ROWS"
+
+test "$CLIENT_ACK_ROWS" = "$PROVIDER_OK_ROWS"
+
+# All MV-refresh metrics must be present.
+jq -e '
+  .failed_jobs == 0 and
+  .missing_billed_bytes == 0 and
+  .missing_slot_ms == 0
+' "$BQ_COST_DIR/mv_refresh.json"
+
+# Both raw and MV storage must be present, all bytes must be active, and both
+# logical and physical active-storage scenarios must have been calculated.
+jq -e '
+  .active_only == true and
+  (.objects | length) == 2 and
+  (.objects | all(
+    .long_term_logical_bytes == 0 and
+    .long_term_physical_bytes == 0
+  )) and
+  .pricing_scenarios.logical.monthly_cost_usd != null and
+  .pricing_scenarios.physical.monthly_cost_usd != null
+' "$BQ_COST_DIR/storage.json"
+
+# The dashboard summary must contain exactly the requested iteration count,
+# with no failed jobs, cache hits, or missing billing metrics.
+jq -e \
+  --arg dashboard_iterations "$BQ_DASHBOARD_ITERATIONS" \
+  '
+  .iterations_included == ($dashboard_iterations | tonumber) and
+  .failed_jobs == 0 and
+  .cache_hits == 0 and
+  .missing_billed_bytes == 0 and
+  .missing_slot_seconds == 0
+  ' \
+  "$BQ_COST_DIR/dashboard.json"
+
+# The drill-down summary has the same checks against its requested count.
+jq -e \
+  --arg drilldown_iterations "$BQ_DRILLDOWN_ITERATIONS" \
+  '
+  .iterations_included == ($drilldown_iterations | tonumber) and
+  .failed_jobs == 0 and
+  .cache_hits == 0 and
+  .missing_billed_bytes == 0 and
+  .missing_slot_seconds == 0
+  ' \
+  "$BQ_COST_DIR/drilldown.json"
+
+jq '{
+  successful_rows,
+  total_input_gib,
+  pricing
+}' "$BQ_COST_DIR/ingest.json"
+
+jq '{
+  refresh_jobs,
+  total_billed_gib,
+  total_billed_slot_sec,
+  costs
+}' "$BQ_COST_DIR/mv_refresh.json"
+
+jq '{
+  component,
+  iterations_included,
+  query_jobs,
+  total_billed_gib,
+  total_billed_slot_sec,
+  costs
+}' "$BQ_COST_DIR/dashboard.json"
+
+jq '{
+  component,
+  iterations_included,
+  query_jobs,
+  total_billed_gib,
+  total_billed_slot_sec,
+  costs
+}' "$BQ_COST_DIR/drilldown.json"
+
+jq '{
+  objects,
+  pricing_scenarios
+}' "$BQ_COST_DIR/storage.json"

@@ -1,0 +1,122 @@
+{
+  "service": "bigquery",
+  "provider": "gcp",
+  "currency": "USD",
+  "version": "2026-08-11",
+  "memory_size": "serverless",
+  "cluster_size": "serverless",
+  "sources": [
+    "https://cloud.google.com/bigquery/pricing#capacity_compute_analysis_pricing",
+    "https://cloud.google.com/bigquery/pricing#storage-pricing",
+    "https://docs.cloud.google.com/bigquery/docs/information-schema-table-storage"
+  ],
+  "regions": {
+    "us": {
+      "pricing_compute": {
+        "capacity": {
+          "default": {
+            "hourly": {
+              "tiers": [
+                {
+                  "name": "Standard",
+                  "price_usd": 0.04,
+                  "price_unit": "slot_hour",
+                  "price_unit_seconds": 3600,
+                  "notes": "Pay-as-you-go capacity price used with billed_slot_sec."
+                },
+                {
+                  "name": "Enterprise",
+                  "price_usd": 0.06,
+                  "price_unit": "slot_hour",
+                  "price_unit_seconds": 3600,
+                  "notes": "Enterprise edition pay-as-you-go capacity price used with billed_slot_sec."
+                },
+                {
+                  "name": "Enterprise Plus",
+                  "price_usd": 0.10,
+                  "price_unit": "slot_hour",
+                  "price_unit_seconds": 3600,
+                  "notes": "Enterprise Plus edition pay-as-you-go capacity price used with billed_slot_sec."
+                }
+              ]
+            }
+          }
+        },
+        "on_demand": {
+          "monthly": {
+            "price_usd": 6.25,
+            "price_unit": "tebibyte_scanned",
+            "price_unit_bytes": 1099511627776,
+            "notes": "Price per TiB billed by the completed query job."
+          }
+        }
+      },
+      "pricing_storage": {
+        "logical": {
+          "hourly": {
+            "active": {
+              "price_usd": 0.000027397,
+              "price_unit": "gibibyte_hour",
+              "price_unit_bytes": 1073741824,
+              "price_unit_seconds": 3600,
+              "notes": "US multi-region active logical storage; no free tier applied."
+            },
+            "long_term": {
+              "price_usd": 0.000013699,
+              "price_unit": "gibibyte_hour",
+              "price_unit_bytes": 1073741824,
+              "price_unit_seconds": 3600,
+              "notes": "US multi-region long-term logical storage; not used by this active-only benchmark summary."
+            }
+          },
+          "monthly": {
+            "active": {
+              "price_usd": 0.02,
+              "price_unit": "gibibyte_month",
+              "price_unit_bytes": 1073741824,
+              "notes": "US multi-region active logical storage; no free tier applied."
+            },
+            "long_term": {
+              "price_usd": 0.01,
+              "price_unit": "gibibyte_month",
+              "price_unit_bytes": 1073741824,
+              "notes": "US multi-region long-term logical storage; not used by this active-only benchmark summary."
+            }
+          }
+        },
+        "physical": {
+          "hourly": {
+            "active": {
+              "price_usd": 0.000054795,
+              "price_unit": "gibibyte_hour",
+              "price_unit_bytes": 1073741824,
+              "price_unit_seconds": 3600,
+              "notes": "US multi-region active physical storage; no free tier applied."
+            },
+            "long_term": {
+              "price_usd": 0.000027397,
+              "price_unit": "gibibyte_hour",
+              "price_unit_bytes": 1073741824,
+              "price_unit_seconds": 3600,
+              "notes": "US multi-region long-term physical storage; not used by this active-only benchmark summary."
+            }
+          },
+          "monthly": {
+            "active": {
+              "price_usd": 0.04,
+              "price_unit": "gibibyte_month",
+              "price_unit_bytes": 1073741824,
+              "notes": "US multi-region active physical storage; no free tier applied."
+            },
+            "long_term": {
+              "price_usd": 0.02,
+              "price_unit": "gibibyte_month",
+              "price_unit_bytes": 1073741824,
+              "notes": "US multi-region long-term physical storage; not used by this active-only benchmark summary."
+            }
+          }
+        }
+      }
+    }
+  }
+}
