@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "chart": "global_full_path_cost_performance",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "presentation": {
+    "query_cost_display": "total",
+    "cost_attribution_visible_on_chart": false
+  },
+  "contract": {
+    "formula": "Accepted pairwise score = (fresh-data-path cost + query cost) \u00d7 accumulated query runtime",
+    "normalization": "Each non-ClickHouse row reuses relative_to_clickhouse from its own accepted pairwise summary",
+    "warning": "Snowflake, BigQuery, and Redshift use their own pairwise matched active-ingestion windows. The global chart does not claim a cross-provider iteration join.",
+    "clickhouse_display": "Single 1\u00d7 baseline; pairwise ClickHouse absolute scores remain separately preserved",
+    "snowflake_normalized_query_cost": {
+      "dashboard": {
+        "metric": "normalized query cost",
+        "attribution_method": "elapsed_threshold_effective_warehouse",
+        "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+        "compilation_treatment": "included in elapsed time; not priced separately",
+        "standing_capacity_treatment": "excluded",
+        "primary_warehouse": "Interactive Small",
+        "primary_pricing_file": "interactive_warehouse.json",
+        "fallback_is_proxy": true,
+        "fallback_condition": "elapsed_seconds > 5",
+        "fallback_threshold_seconds": 5.0,
+        "fallback_warehouse": "Gen2 Small",
+        "fallback_pricing_file": "gen2_warehouse.json",
+        "fallback_credits_per_hour": 2.7,
+        "fallback_runtime_treatment": "full elapsed time is priced at the fallback warehouse rate",
+        "primary_attempt_cost_treatment": "no additional primary-warehouse charge for fallback-priced jobs"
+      },
+      "drilldown": {
+        "metric": "normalized query cost",
+        "attribution_method": "elapsed_threshold_effective_warehouse",
+        "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+        "compilation_treatment": "included in elapsed time; not priced separately",
+        "standing_capacity_treatment": "excluded",
+        "primary_warehouse": "Interactive Small",
+        "primary_pricing_file": "interactive_warehouse.json",
+        "fallback_is_proxy": true,
+        "fallback_condition": "elapsed_seconds > 5",
+        "fallback_threshold_seconds": 5.0,
+        "fallback_warehouse": "Gen2 Small",
+        "fallback_pricing_file": "gen2_warehouse.json",
+        "fallback_credits_per_hour": 2.7,
+        "fallback_runtime_treatment": "full elapsed time is priced at the fallback warehouse rate",
+        "primary_attempt_cost_treatment": "no additional primary-warehouse charge for fallback-priced jobs"
+      },
+      "dashboard_attribution": {
+        "query_jobs": 836,
+        "primary_priced_query_jobs": 359,
+        "primary_priced_runtime_sec": 946.509,
+        "fallback_priced_query_jobs": 477,
+        "fallback_priced_runtime_sec": 6653.66,
+        "fallback_priced_job_share": 0.570574
+      },
+      "drilldown_attribution": {
+        "query_jobs": 70,
+        "primary_priced_query_jobs": 70,
+        "primary_priced_runtime_sec": 74.815,
+        "fallback_priced_query_jobs": 0,
+        "fallback_priced_runtime_sec": 0.0,
+        "fallback_priced_job_share": 0.0
+      }
+    },
+    "required_labels": [
+      "ClickHouse",
+      "Snowflake",
+      "BigQuery \u00b7 Capacity",
+      "BigQuery \u00b7 On-demand",
+      "Redshift \u00b7 SUPER",
+      "Redshift \u00b7 Typed"
+    ],
+    "score_scale": "log10 relative to ClickHouse",
+    "baseline_bar_width": 0
+  },
+  "manifest": {
+    "path": "quotes/global/visualizations/manifest.json",
+    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+  },
+  "sources": {
+    "snowflake_pairwise_summary": {
+      "path": "quotes/snowflake/results/t2/charts/run14/full_path_cost_performance_clickhouse_vs_snowflake_summary.json",
+      "sha256": "fd471681af332647f9759a5d467f4745fdd49c5557e8136a423c323a877a8129"
+    },
+    "bigquery_pairwise_summary": {
+      "path": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/full_path_cost_performance_clickhouse_vs_bigquery_summary.json",
+      "sha256": "a37c2b60a97aa0c29475e4a5d17e48b3639111e35db6bbedfa175541c74c0ec6"
+    },
+    "redshift_super_summary": {
+      "path": "quotes/redshift-serverless/costs/out/t2/full_path_super.json",
+      "sha256": "8186d1bf6f01f0634c0e643db3c0029bb627df1709ff9680587c822f7fb0372f"
+    },
+    "redshift_typed_summary": {
+      "path": "quotes/redshift-serverless/costs/out/t2/full_path_typed.json",
+      "sha256": "45c7ae0e0a8742f4e52cf574fbc99487bef0aaa40478ed6b7f496b5ee224ca4a"
+    }
+  },
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "relative": 1.0,
+      "color": "#FDFF62",
+      "source_pair": "pairwise baselines",
+      "accepted_values": {
+        "snowflake_pair": {
+          "label": "ClickHouse",
+          "fresh_cost": 28.68705,
+          "query_cost": 0.05362,
+          "runtime_sec": 61.827,
+          "total_cost": 28.740669999999998,
+          "score": 1776.94940409,
+          "relative_to_clickhouse": 1.0
+        },
+        "bigquery_pair": {
+          "label": "ClickHouse",
+          "fresh_cost": 28.68705,
+          "query_cost": 0.05055,
+          "runtime_sec": 58.286,
+          "total_cost": 28.7376,
+          "score": 1674.9997536,
+          "relative_to_clickhouse": 1.0
+        }
+      }
+    },
+    {
+      "label": "BigQuery \u00b7 Capacity",
+      "relative": 438.17226989390656,
+      "color": "#4285F4",
+      "source_pair": "ClickHouse vs BigQuery matched window",
+      "accepted_values": {
+        "label": "BigQuery \u00b7 Capacity",
+        "fresh_cost": 243.08790452,
+        "query_cost": 4.74822495,
+        "runtime_sec": 2961.386000000003,
+        "total_cost": 247.83612947,
+        "score": 733938.4441066462,
+        "relative_to_clickhouse": 438.17226989390656
+      }
+    },
+    {
+      "label": "BigQuery \u00b7 On-demand",
+      "relative": 511.6460383064147,
+      "color": "#4285F4",
+      "source_pair": "ClickHouse vs BigQuery matched window",
+      "accepted_values": {
+        "label": "BigQuery \u00b7 On-demand",
+        "fresh_cost": 264.58903867,
+        "query_cost": 24.80484247,
+        "runtime_sec": 2961.386000000003,
+        "total_cost": 289.39388113999996,
+        "score": 857006.9880936608,
+        "relative_to_clickhouse": 511.6460383064147
+      }
+    },
+    {
+      "label": "Snowflake",
+      "relative": 412.1032631656578,
+      "color": "#29B5E8",
+      "source_pair": "ClickHouse vs Snowflake matched window",
+      "accepted_values": {
+        "label": "Snowflake",
+        "fresh_cost": 79.42007000000001,
+        "query_cost": 15.99207,
+        "runtime_sec": 7674.9839999999995,
+        "total_cost": 95.41214000000001,
+        "score": 732286.64790576,
+        "relative_to_clickhouse": 412.1032631656578
+      }
+    },
+    {
+      "label": "Redshift \u00b7 SUPER",
+      "relative": 7139.739408749949,
+      "color": "#FF9900",
+      "source_pair": "ClickHouse vs Redshift SUPER matched window",
+      "accepted_values": {
+        "label": "Redshift \u00b7 SUPER",
+        "runtime_sec": 6093.541947,
+        "fresh_data_path_cost": 1932.0805603262938,
+        "query_cost": 24.967476034,
+        "total_cost": 1957.0480363602937,
+        "score": 11925354.30185543,
+        "relative_to_clickhouse": 7139.739408749949
+      }
+    },
+    {
+      "label": "Redshift \u00b7 Typed",
+      "relative": 14284.24474471564,
+      "color": "#E76F00",
+      "source_pair": "ClickHouse vs Redshift typed matched window",
+      "accepted_values": {
+        "label": "Redshift \u00b7 Typed",
+        "runtime_sec": 12048.262083,
+        "fresh_data_path_cost": 1932.0805603262938,
+        "query_cost": 48.177576974000004,
+        "total_cost": 1980.2581373002938,
+        "score": 23858669.03018734,
+        "relative_to_clickhouse": 14284.24474471564
+      }
+    }
+  ],
+  "outputs": {
+    "png": "quotes/global/results/charts/full_path_cost_performance_all_systems_wide.png",
+    "svg": "quotes/global/results/charts/full_path_cost_performance_all_systems_wide.svg",
+    "csv": "quotes/global/results/charts/full_path_cost_performance_all_systems_wide_data.csv"
+  }
+}

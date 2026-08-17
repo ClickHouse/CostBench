@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "chart": "global_complete_ingest_fresh_data_path_cost",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "contract": {
+    "scope": "Complete ingestion; storage and read-query costs excluded",
+    "source_operation": "Accepted pairwise fresh-path summary values are reused without query-window normalization",
+    "pricing_alternatives": "BigQuery Capacity and On-demand MV refresh costs are counterfactual totals for the same work and are never added together",
+    "redshift_shared_path": "One writer+MSK path is reused by both Redshift read alternatives; it is never split or doubled; client cross-AZ and RMS are excluded",
+    "clickhouse_reconciliation": "Both pairwise summaries contain the same ClickHouse total and complete-ingest source hash",
+    "required_labels": [
+      "ClickHouse",
+      "Snowflake",
+      "BigQuery \u00b7 Capacity",
+      "BigQuery \u00b7 On-demand",
+      "Redshift Serverless"
+    ]
+  },
+  "presentation": {
+    "total_label_placement": "directly after each bar; BigQuery alternatives share one compact endpoint label",
+    "maximum_bar_width_axis_fraction": 0.78
+  },
+  "systems": {
+    "clickhouse": {
+      "bundled_write_service_cost_usd": 28.68705,
+      "total_cost_usd": 28.68705
+    },
+    "snowflake": {
+      "snowpipe_streaming_cost_usd": 53.15348,
+      "serverless_mv_refresh_cost_usd": 26.26659,
+      "ingest_warehouse_used": false,
+      "total_cost_usd": 79.42007000000001
+    },
+    "bigquery": {
+      "storage_write_api_cost_usd": 241.06846172,
+      "capacity_mv_refresh_cost_usd": 2.0194428,
+      "on_demand_mv_refresh_cost_usd": 23.52057695,
+      "automatic_reclustering_separate_cost_usd": 0.0,
+      "capacity_total_cost_usd": 243.08790452,
+      "on_demand_total_cost_usd": 264.58903867
+    },
+    "redshift": {
+      "writer_workgroup_cost_usd": 1880.0714311111112,
+      "msk_cost_usd": 52.00912921518265,
+      "client_cross_az_included": false,
+      "managed_storage_included": false,
+      "total_cost_usd": 1932.0805603262938
+    }
+  },
+  "manifest": {
+    "path": "quotes/global/visualizations/manifest.json",
+    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+  },
+  "sources": {
+    "snowflake_pairwise_summary": {
+      "path": "quotes/snowflake/results/t2/charts/run14/ingest_fresh_path_cost_clickhouse_vs_snowflake_summary.json",
+      "sha256": "39d6f0964623fdcb0067be734fb85a97a26099e0a5d9646e75183fd50f7892cb",
+      "embedded_sources": {
+        "clickhouse": {
+          "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+          "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+        },
+        "snowpipe": {
+          "path": "quotes/snowflake/costs/out/t2/run14/snowpipe_streaming.json",
+          "sha256": "dfd9d8e474f7259dd2567c6117d81de19350848747be66ab44eefd85fbf7dccf"
+        },
+        "mv_refresh": {
+          "path": "quotes/snowflake/costs/out/t2/run14/mv_refresh.json",
+          "sha256": "3ad60c6e657ece3ad5d585490e72d2a016e317ada1d35421e03ff50127121ea0"
+        }
+      }
+    },
+    "bigquery_pairwise_summary": {
+      "path": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/ingest_fresh_path_cost_clickhouse_vs_bigquery_summary.json",
+      "sha256": "e6ebeb4b6edebd0bff9e52446da189cbda8ac1600398bc92ba7df92f08201bc5",
+      "embedded_sources": {
+        "clickhouse_cost": {
+          "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+          "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+        },
+        "bigquery_ingest_cost": {
+          "path": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/ingest.json",
+          "sha256": "f1b088b66e2fad8533cf761c866e02b20fc99660f89127c7325b5c240307fc7f"
+        },
+        "bigquery_mv_refresh_cost": {
+          "path": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/mv_refresh.json",
+          "sha256": "26361f233e10f2a3dd75b4e095ed47c0e5bf5b732cd52e72db2862234e684964"
+        },
+        "bigquery_serverless_pricing": {
+          "path": "quotes/bigquery/costs/pricings/serverless.json",
+          "sha256": "a19ffd21d5196192c89d64a89a05ed968ad792a300f66080f21cc39644f0c0b7"
+        },
+        "bigquery_write_api_pricing": {
+          "path": "quotes/bigquery/costs/pricings/storage_write_api.json",
+          "sha256": "6537f0d626dff8c0b141b64ca6f39ad0597ba8f507f3f63df2e097e1c1e4212f"
+        }
+      }
+    },
+    "redshift_pairwise_summary": {
+      "path": "quotes/redshift-serverless/results/t2/charts/fresh_data_path_cost_clickhouse_vs_redshift_summary.json",
+      "sha256": "7ef215643f9cd3cd22a8d6de9fc145a96df29f153b4e9bc283068652da5a9f38",
+      "embedded_sources": {
+        "clickhouse": {
+          "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+          "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+        },
+        "redshift": {
+          "path": "quotes/redshift-serverless/costs/out/t2/fresh_data_path.json",
+          "sha256": "c77ae92ca2e9fa3f4491383fbba3e02589afbc0d4ea1da2f9590f0297b263cfa"
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "pricing_model": "bundled write service",
+      "fresh_path_cost_usd": 28.68705,
+      "ingestion_cost_usd": "",
+      "mv_maintenance_cost_usd": "",
+      "layout_maintenance_cost_usd": "",
+      "bundled_write_service_cost_usd": 28.68705,
+      "source_pair": "ClickHouse vs Snowflake and ClickHouse vs BigQuery"
+    },
+    {
+      "label": "Snowflake",
+      "pricing_model": "serverless components",
+      "fresh_path_cost_usd": 79.42007000000001,
+      "ingestion_cost_usd": 53.15348,
+      "mv_maintenance_cost_usd": 26.26659,
+      "layout_maintenance_cost_usd": "",
+      "bundled_write_service_cost_usd": "",
+      "source_pair": "ClickHouse vs Snowflake"
+    },
+    {
+      "label": "BigQuery \u00b7 Capacity",
+      "pricing_model": "Capacity",
+      "fresh_path_cost_usd": 243.08790452,
+      "ingestion_cost_usd": 241.06846172,
+      "mv_maintenance_cost_usd": 2.0194428,
+      "layout_maintenance_cost_usd": 0.0,
+      "bundled_write_service_cost_usd": "",
+      "source_pair": "ClickHouse vs BigQuery"
+    },
+    {
+      "label": "BigQuery \u00b7 On-demand",
+      "pricing_model": "On-demand",
+      "fresh_path_cost_usd": 264.58903867,
+      "ingestion_cost_usd": 241.06846172,
+      "mv_maintenance_cost_usd": 23.52057695,
+      "layout_maintenance_cost_usd": 0.0,
+      "bundled_write_service_cost_usd": "",
+      "source_pair": "ClickHouse vs BigQuery"
+    },
+    {
+      "label": "Redshift Serverless",
+      "pricing_model": "writer uptime + MSK uptime",
+      "fresh_path_cost_usd": 1932.0805603262938,
+      "ingestion_cost_usd": 52.00912921518265,
+      "mv_maintenance_cost_usd": 1880.0714311111112,
+      "layout_maintenance_cost_usd": "",
+      "bundled_write_service_cost_usd": "",
+      "source_pair": "ClickHouse vs Redshift; shared by SUPER and typed read alternatives"
+    }
+  ],
+  "outputs": {
+    "png": "quotes/global/results/charts/ingest_fresh_path_cost_all_systems_wide.png",
+    "svg": "quotes/global/results/charts/ingest_fresh_path_cost_all_systems_wide.svg",
+    "csv": "quotes/global/results/charts/ingest_fresh_path_cost_all_systems_wide_data.csv"
+  }
+}

@@ -1,0 +1,6 @@
+label,pricing_model,fresh_path_cost_usd,ingestion_cost_usd,mv_maintenance_cost_usd,layout_maintenance_cost_usd,bundled_write_service_cost_usd,source_pair
+ClickHouse,bundled write service,28.68705,,,,28.68705,ClickHouse vs Snowflake and ClickHouse vs BigQuery
+Snowflake,serverless components,79.42007000000001,53.15348,26.26659,,,ClickHouse vs Snowflake
+BigQuery · Capacity,Capacity,243.08790452,241.06846172,2.0194428,0.0,,ClickHouse vs BigQuery
+BigQuery · On-demand,On-demand,264.58903867,241.06846172,23.52057695,0.0,,ClickHouse vs BigQuery
+Redshift Serverless,writer uptime + MSK uptime,1932.0805603262938,52.00912921518265,1880.0714311111112,,,ClickHouse vs Redshift; shared by SUPER and typed read alternatives
