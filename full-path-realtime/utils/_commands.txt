@@ -1,0 +1,157 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+FULL_PATH_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+cd "$FULL_PATH_ROOT"
+
+MATCHER="utils/match_progress.py"
+
+# Source JSONL files.
+CH_DASHBOARD="quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl"
+CH_DRILLDOWN="quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl"
+SNOWFLAKE_DASHBOARD="quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl"
+SNOWFLAKE_DRILLDOWN="quotes/snowflake/results/t2/drilldown_20260811T111857Z.jsonl"
+BIGQUERY_DASHBOARD="quotes/bigquery/results/bq-full-t2-20260810_152224/mv/dashboard_20260810T152439Z.jsonl"
+BIGQUERY_DRILLDOWN="quotes/bigquery/results/bq-full-t2-20260810_152224/raw/drilldown_20260810T152440Z.jsonl"
+REDSHIFT_DASHBOARD="quotes/redshift-serverless/results/t2/dashboard_20260812T165356Z.jsonl"
+REDSHIFT_DRILLDOWN_SUPER="quotes/redshift-serverless/results/t2/drilldown_super_20260812T165356Z.jsonl"
+REDSHIFT_DRILLDOWN_TYPED="quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl"
+
+# Benchmark-owner-declared Snowflake Run14 comparison windows. Snowflake is
+# the reference system, so its last accepted observation defines the shared
+# raw-row horizon for both Snowflake and ClickHouse.
+SNOWFLAKE_DASHBOARD_HORIZON=113217341828
+SNOWFLAKE_DASHBOARD_COUNT=209
+SNOWFLAKE_DRILLDOWN_HORIZON=111279128414
+SNOWFLAKE_DRILLDOWN_COUNT=35
+
+# Redshift is the leading/reference system for these comparisons. Its first
+# completed-dataset observations define N. The completed Redshift and
+# ClickHouse runs differ by 1,821,816 rows (0.0016%), so each is normalized by
+# its own declared completed row count rather than pretending both endpoints
+# are byte-for-byte identical.
+REDSHIFT_FINAL_ROWS=113219565734
+CLICKHOUSE_FINAL_ROWS=113217743918
+REDSHIFT_DASHBOARD_COUNT=190
+REDSHIFT_DRILLDOWN_COUNT=33
+
+# Generated matched ClickHouse JSONL files.
+CH_MATCHED_SNOWFLAKE_DASHBOARD="quotes/clickhouse-cloud/results_t2/matched/snowflake_run14/dashboard_active_matched_to_snowflake.jsonl"
+CH_MATCHED_SNOWFLAKE_DRILLDOWN="quotes/clickhouse-cloud/results_t2/matched/snowflake_run14/drilldown_active_matched_to_snowflake.jsonl"
+CH_MATCHED_BIGQUERY_DASHBOARD="quotes/clickhouse-cloud/results_t2/matched/bigquery/dashboard_active_matched_to_bigquery.jsonl"
+CH_MATCHED_BIGQUERY_DRILLDOWN="quotes/clickhouse-cloud/results_t2/matched/bigquery/drilldown_active_matched_to_bigquery.jsonl"
+CH_MATCHED_REDSHIFT_DASHBOARD="quotes/clickhouse-cloud/results_t2/matched/redshift_run_20260812/dashboard_active_matched_to_redshift.jsonl"
+CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER="quotes/clickhouse-cloud/results_t2/matched/redshift_run_20260812/drilldown_super_active_matched_to_redshift.jsonl"
+CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED="quotes/clickhouse-cloud/results_t2/matched/redshift_run_20260812/drilldown_typed_active_matched_to_redshift.jsonl"
+
+# Snowflake uses the explicit owner-declared horizons and counts above.
+# BigQuery continues to use its automatically derived complete active window.
+
+printf '\nSnowflake dashboard -> matched ClickHouse dashboard\n'
+python3 "$MATCHER" \
+  --reference "$SNOWFLAKE_DASHBOARD" \
+  --candidate "$CH_DASHBOARD" \
+  --reference-final-rows "$SNOWFLAKE_DASHBOARD_HORIZON" \
+  --candidate-final-rows "$SNOWFLAKE_DASHBOARD_HORIZON" \
+  --count "$SNOWFLAKE_DASHBOARD_COUNT" \
+  --output "$CH_MATCHED_SNOWFLAKE_DASHBOARD"
+
+printf '\nSnowflake drill-down -> matched ClickHouse drill-down\n'
+python3 "$MATCHER" \
+  --reference "$SNOWFLAKE_DRILLDOWN" \
+  --candidate "$CH_DRILLDOWN" \
+  --reference-final-rows "$SNOWFLAKE_DRILLDOWN_HORIZON" \
+  --candidate-final-rows "$SNOWFLAKE_DRILLDOWN_HORIZON" \
+  --count "$SNOWFLAKE_DRILLDOWN_COUNT" \
+  --output "$CH_MATCHED_SNOWFLAKE_DRILLDOWN"
+
+printf '\nBigQuery dashboard -> matched ClickHouse dashboard\n'
+python3 "$MATCHER" \
+  --reference "$BIGQUERY_DASHBOARD" \
+  --candidate "$CH_DASHBOARD" \
+  --output "$CH_MATCHED_BIGQUERY_DASHBOARD"
+
+printf '\nBigQuery drill-down -> matched ClickHouse drill-down\n'
+python3 "$MATCHER" \
+  --reference "$BIGQUERY_DRILLDOWN" \
+  --candidate "$CH_DRILLDOWN" \
+  --output "$CH_MATCHED_BIGQUERY_DRILLDOWN"
+
+printf '\nRedshift dashboard -> matched ClickHouse dashboard\n'
+python3 "$MATCHER" \
+  --reference "$REDSHIFT_DASHBOARD" \
+  --candidate "$CH_DASHBOARD" \
+  --reference-final-rows "$REDSHIFT_FINAL_ROWS" \
+  --candidate-final-rows "$CLICKHOUSE_FINAL_ROWS" \
+  --count "$REDSHIFT_DASHBOARD_COUNT" \
+  --output "$CH_MATCHED_REDSHIFT_DASHBOARD"
+
+printf '\nRedshift SUPER drill-down -> matched ClickHouse drill-down\n'
+python3 "$MATCHER" \
+  --reference "$REDSHIFT_DRILLDOWN_SUPER" \
+  --candidate "$CH_DRILLDOWN" \
+  --reference-final-rows "$REDSHIFT_FINAL_ROWS" \
+  --candidate-final-rows "$CLICKHOUSE_FINAL_ROWS" \
+  --count "$REDSHIFT_DRILLDOWN_COUNT" \
+  --output "$CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER"
+
+printf '\nRedshift typed drill-down -> matched ClickHouse drill-down\n'
+python3 "$MATCHER" \
+  --reference "$REDSHIFT_DRILLDOWN_TYPED" \
+  --candidate "$CH_DRILLDOWN" \
+  --reference-final-rows "$REDSHIFT_FINAL_ROWS" \
+  --candidate-final-rows "$CLICKHOUSE_FINAL_ROWS" \
+  --count "$REDSHIFT_DRILLDOWN_COUNT" \
+  --output "$CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED"
+
+create_iteration_marker() {
+  local output=$1
+  local iterations
+  local marker
+  iterations=$(jq -er '.matched_observations' "${output}.match.json")
+  marker="${output%.jsonl}_iterations_${iterations}.txt"
+  : > "$marker"
+  printf 'Iteration marker: %s\n' "$marker"
+}
+
+create_iteration_marker "$CH_MATCHED_SNOWFLAKE_DASHBOARD"
+create_iteration_marker "$CH_MATCHED_SNOWFLAKE_DRILLDOWN"
+create_iteration_marker "$CH_MATCHED_BIGQUERY_DASHBOARD"
+create_iteration_marker "$CH_MATCHED_BIGQUERY_DRILLDOWN"
+create_iteration_marker "$CH_MATCHED_REDSHIFT_DASHBOARD"
+create_iteration_marker "$CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER"
+create_iteration_marker "$CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED"
+
+test "$(jq -er '.matched_observations' "${CH_MATCHED_SNOWFLAKE_DASHBOARD}.match.json")" \
+  -eq "$SNOWFLAKE_DASHBOARD_COUNT"
+test "$(jq -er '.matched_observations' "${CH_MATCHED_SNOWFLAKE_DRILLDOWN}.match.json")" \
+  -eq "$SNOWFLAKE_DRILLDOWN_COUNT"
+test "$(jq -er '.matched_observations' "${CH_MATCHED_REDSHIFT_DASHBOARD}.match.json")" \
+  -eq "$REDSHIFT_DASHBOARD_COUNT"
+test "$(jq -er '.matched_observations' "${CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER}.match.json")" \
+  -eq "$REDSHIFT_DRILLDOWN_COUNT"
+test "$(jq -er '.matched_observations' "${CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED}.match.json")" \
+  -eq "$REDSHIFT_DRILLDOWN_COUNT"
+
+printf '\nDerived active-ingestion counts and match quality\n'
+for report in \
+  "${CH_MATCHED_SNOWFLAKE_DASHBOARD}.match.json" \
+  "${CH_MATCHED_SNOWFLAKE_DRILLDOWN}.match.json" \
+  "${CH_MATCHED_BIGQUERY_DASHBOARD}.match.json" \
+  "${CH_MATCHED_BIGQUERY_DRILLDOWN}.match.json" \
+  "${CH_MATCHED_REDSHIFT_DASHBOARD}.match.json" \
+  "${CH_MATCHED_REDSHIFT_DRILLDOWN_SUPER}.match.json" \
+  "${CH_MATCHED_REDSHIFT_DRILLDOWN_TYPED}.match.json"
+do
+  jq '{
+    output_file,
+    matched_observations,
+    reference_active_observations: .reference.active_observations_including_endpoint,
+    reference_endpoint_iteration: .reference.active_endpoint_iteration,
+    candidate_active_observations: .candidate.active_observations_including_endpoint,
+    candidate_endpoint_iteration: .candidate.active_endpoint_iteration,
+    mean_absolute_progress_gap,
+    maximum_absolute_progress_gap
+  }' "$report"
+done
