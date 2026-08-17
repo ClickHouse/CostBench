@@ -18,13 +18,25 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-
 from _common import (
-    GRID, configure_figure, human_rows, iter_jsonl, load_manifest, pchip_curve,
-    resolve_layout, resolve_source, save_figure, sha256, time_rolling_mean,
-    timestamp, unique_mean_series, validate_required_labels, write_csv, write_json,
+    GRID,
+    configure_figure,
+    human_rows,
+    iter_jsonl,
+    load_manifest,
+    pchip_curve,
+    resolve_layout,
+    resolve_source,
+    save_figure,
+    sha256,
+    time_rolling_mean,
+    timestamp,
+    unique_mean_series,
+    validate_required_labels,
+    write_csv,
+    write_json,
 )
+from matplotlib.ticker import FuncFormatter
 
 
 @dataclass(frozen=True)

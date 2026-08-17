@@ -15,14 +15,24 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-
 from _common import (
-    GRID, configure_figure, human_rows, human_seconds, iter_jsonl,
-    load_manifest, resolve_layout, resolve_source, rolling_median, save_figure,
-    scalar_trial, sha256, validate_required_labels, write_csv, write_json,
+    GRID,
+    configure_figure,
+    human_rows,
+    human_seconds,
+    iter_jsonl,
+    load_manifest,
+    resolve_layout,
+    resolve_source,
+    rolling_median,
+    save_figure,
+    scalar_trial,
+    sha256,
+    validate_required_labels,
+    write_csv,
+    write_json,
 )
-
+from matplotlib.ticker import FuncFormatter
 
 WORKLOADS = {
     "aggregate": {

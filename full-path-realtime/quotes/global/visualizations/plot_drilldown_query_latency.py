@@ -5,7 +5,9 @@
 # ///
 """Convenience wrapper for the global drill-down chart."""
 from __future__ import annotations
+
 import sys
+
 from plot_query_latency import main
 
 if __name__ == "__main__":

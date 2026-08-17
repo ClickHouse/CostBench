@@ -14,8 +14,6 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, Rectangle
-
 from _common import (
     MUTED,
     WHITE,
@@ -29,7 +27,7 @@ from _common import (
     write_csv,
     write_json,
 )
-
+from matplotlib.patches import FancyBboxPatch, Rectangle
 
 SNOWFLAKE_MV = "#147CA3"
 BIGQUERY_MV = "#1557A6"
