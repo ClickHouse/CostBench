@@ -22,10 +22,8 @@ from typing import Any
 import matplotlib
 import matplotlib.font_manager as font_manager
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
-
 from _layout import configure_figure, resolve_layout, save_figure, write_json
-
+from matplotlib.patches import FancyBboxPatch
 
 WHITE = "#F7F7F7"
 MUTED = "#A0A0A0"

@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import plot_aggregate_query_latency as renderer
 
-
 renderer.QUERY_NAMES = (
     "Hourly OHLCV bars",
     "Risk & liquidity (B7)",

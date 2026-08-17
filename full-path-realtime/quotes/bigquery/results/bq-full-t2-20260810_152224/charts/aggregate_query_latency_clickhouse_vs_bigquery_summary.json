@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "chart": "clickhouse_vs_bigquery_aggregate_query_latency",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11,
+      7.4
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "selection": {
+    "definition": "records with 0 < raw_rows <= max_rows",
+    "max_rows_inclusive": 100000000000,
+    "alignment": "each system plotted at its own observed raw-row counts; no iteration join or interpolation",
+    "smoothing": null
+  },
+  "sources": {
+    "clickhouse_jsonl": "quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl",
+    "clickhouse_jsonl_sha256": "0fbfd6c089fc9e5ef4af88199db2bc08acc6f538a56d2be50a55a06d5765e960",
+    "clickhouse_queries_sql": "quotes/clickhouse-cloud/queries_mv.sql",
+    "clickhouse_queries_sql_sha256": "e31042b3aec1882f293f57ec103eda7953d947fdb47607ee11a6fb6f31a4d108",
+    "bigquery_jsonl": "quotes/bigquery/results/bq-full-t2-20260810_152224/mv/dashboard_20260810T152439Z.jsonl",
+    "bigquery_jsonl_sha256": "be7de25a7095ad6ef0dd620ac6806781e5f8db7ad6f6d28a7ae3bfe44cf3496a",
+    "bigquery_queries_sql": "quotes/bigquery/queries_mv.sql",
+    "bigquery_queries_sql_sha256": "ce26408bf456f692112180608c6502761ed4d0517e43b92d37817886abf59c3b",
+    "clickhouse_cost_summary": "quotes/clickhouse-cloud/costs/out_t2/matched/bigquery/dashboard.json",
+    "clickhouse_cost_summary_sha256": "24c5c15fda0eeae264c3a724a121cd715dccbfea35c369ea73dc7038d4127495",
+    "bigquery_cost_summary": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/dashboard.json",
+    "bigquery_cost_summary_sha256": "b32193b4970b310ef1b5234d1932edb6784056199c6b444465be287b2e5cd1ff"
+  },
+  "input_metadata": {
+    "clickhouse": {
+      "records_read": 286,
+      "records_selected": 192,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 93,
+      "systems": [
+        "ClickHouse Cloud (AWS)"
+      ],
+      "versions": [
+        "26.4.1.2029"
+      ],
+      "machines": [
+        "64GiB"
+      ],
+      "cluster_sizes": [
+        "1"
+      ],
+      "run_ids": []
+    },
+    "bigquery": {
+      "records_read": 233,
+      "records_selected": 167,
+      "zero_row_records_excluded": 0,
+      "records_above_cap_excluded": 66,
+      "systems": [
+        "BigQuery (GCP)"
+      ],
+      "versions": [
+        "managed"
+      ],
+      "machines": [
+        "serverless"
+      ],
+      "cluster_sizes": [
+        "serverless"
+      ],
+      "run_ids": [
+        "bq-full-t2-20260810_152224"
+      ]
+    }
+  },
+  "query_order": [
+    {
+      "query_number": 1,
+      "query_name": "Single-symbol summary"
+    },
+    {
+      "query_number": 2,
+      "query_name": "Watchlist summary"
+    },
+    {
+      "query_number": 3,
+      "query_name": "Top movers"
+    },
+    {
+      "query_number": 4,
+      "query_name": "Daily activity"
+    }
+  ],
+  "series": {
+    "clickhouse": {
+      "1": {
+        "observations": 192,
+        "first_raw_rows": 724786266,
+        "last_raw_rows": 99566521565,
+        "average_latency_sec": 0.011640625,
+        "median_latency_sec": 0.01,
+        "p95_latency_sec": 0.015,
+        "maximum": {
+          "latency_sec": 0.111,
+          "source_line": 52,
+          "iteration": 52,
+          "observed_at": "2026-08-08T15:25:59Z",
+          "raw_rows": 28773516979
+        }
+      },
+      "2": {
+        "observations": 192,
+        "first_raw_rows": 724786266,
+        "last_raw_rows": 99566521565,
+        "average_latency_sec": 0.014619791666666666,
+        "median_latency_sec": 0.013,
+        "p95_latency_sec": 0.019,
+        "maximum": {
+          "latency_sec": 0.104,
+          "source_line": 36,
+          "iteration": 36,
+          "observed_at": "2026-08-08T12:45:59Z",
+          "raw_rows": 20030972521
+        }
+      },
+      "3": {
+        "observations": 192,
+        "first_raw_rows": 724786266,
+        "last_raw_rows": 99566521565,
+        "average_latency_sec": 0.014546875,
+        "median_latency_sec": 0.014,
+        "p95_latency_sec": 0.019,
+        "maximum": {
+          "latency_sec": 0.045,
+          "source_line": 4,
+          "iteration": 4,
+          "observed_at": "2026-08-08T07:25:59Z",
+          "raw_rows": 1975682003
+        }
+      },
+      "4": {
+        "observations": 192,
+        "first_raw_rows": 724786266,
+        "last_raw_rows": 99566521565,
+        "average_latency_sec": 0.012791666666666666,
+        "median_latency_sec": 0.012,
+        "p95_latency_sec": 0.017,
+        "maximum": {
+          "latency_sec": 0.043,
+          "source_line": 52,
+          "iteration": 52,
+          "observed_at": "2026-08-08T15:25:59Z",
+          "raw_rows": 28773516979
+        }
+      }
+    },
+    "bigquery": {
+      "1": {
+        "observations": 167,
+        "first_raw_rows": 5232720,
+        "last_raw_rows": 99551267495,
+        "average_latency_sec": 3.578245508982036,
+        "median_latency_sec": 3.482,
+        "p95_latency_sec": 4.635,
+        "maximum": {
+          "latency_sec": 6.185,
+          "source_line": 20,
+          "iteration": 20,
+          "observed_at": "2026-08-10T18:34:39.579Z",
+          "raw_rows": 11406693852
+        }
+      },
+      "2": {
+        "observations": 167,
+        "first_raw_rows": 5232720,
+        "last_raw_rows": 99551267495,
+        "average_latency_sec": 3.400329341317365,
+        "median_latency_sec": 3.319,
+        "p95_latency_sec": 4.361,
+        "maximum": {
+          "latency_sec": 5.254,
+          "source_line": 143,
+          "iteration": 143,
+          "observed_at": "2026-08-11T15:04:39.579Z",
+          "raw_rows": 85153080450
+        }
+      },
+      "3": {
+        "observations": 167,
+        "first_raw_rows": 5232720,
+        "last_raw_rows": 99551267495,
+        "average_latency_sec": 3.408898203592814,
+        "median_latency_sec": 3.252,
+        "p95_latency_sec": 4.6,
+        "maximum": {
+          "latency_sec": 5.788,
+          "source_line": 142,
+          "iteration": 142,
+          "observed_at": "2026-08-11T14:54:39.579Z",
+          "raw_rows": 84558774276
+        }
+      },
+      "4": {
+        "observations": 167,
+        "first_raw_rows": 5232720,
+        "last_raw_rows": 99551267495,
+        "average_latency_sec": 4.136,
+        "median_latency_sec": 3.998,
+        "p95_latency_sec": 5.409,
+        "maximum": {
+          "latency_sec": 6.932,
+          "source_line": 157,
+          "iteration": 157,
+          "observed_at": "2026-08-11T17:24:39.579Z",
+          "raw_rows": 93548598329
+        }
+      }
+    }
+  },
+  "rendering": {
+    "x_axis": "raw_rows (linear)",
+    "y_axis": "result[query][0] seconds (linear)",
+    "png": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/aggregate_query_latency_clickhouse_vs_bigquery.png",
+    "svg": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/aggregate_query_latency_clickhouse_vs_bigquery.svg",
+    "plotted_data_csv": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/aggregate_query_latency_clickhouse_vs_bigquery_data.csv"
+  },
+  "matched_active_ingestion_totals": {
+    "tier": "Enterprise",
+    "clickhouse": {
+      "iterations": 190,
+      "queries_per_iteration": 4,
+      "query_executions": 760,
+      "runtime_sec": 10.324,
+      "cost_usd": 0.00895
+    },
+    "bigquery": {
+      "iterations": 190,
+      "queries_per_iteration": 4,
+      "query_executions": 760,
+      "runtime_sec": 2751.868000000003,
+      "capacity_cost_usd": 4.29558297,
+      "on_demand_cost_usd": 20.94800472
+    },
+    "ratios": {
+      "runtime_ratio": 266.5505617977531,
+      "capacity_cost_ratio": 479.9534044692738,
+      "on_demand_cost_ratio": 2340.559186592179
+    }
+  }
+}

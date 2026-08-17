@@ -26,8 +26,6 @@ from typing import Any
 import matplotlib
 import matplotlib.font_manager as font_manager
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-
 from _layout import (
     BIGQUERY_COLOR,
     CLICKHOUSE_COLOR,
@@ -42,7 +40,7 @@ from _layout import (
     validate_matched_query_totals,
     write_json,
 )
-
+from matplotlib.ticker import FuncFormatter
 
 QUERY_NAMES = (
     "Single-symbol summary",

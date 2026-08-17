@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "chart": "clickhouse_vs_bigquery_drilldown_query_latency",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "selection": {
+    "definition": "records with 0 < raw_rows <= max_rows",
+    "max_rows_inclusive": 100000000000,
+    "alignment": "each system plotted at its own observed raw-row counts; no iteration join or interpolation",
+    "smoothing": null
+  },
+  "sources": {
+    "clickhouse_jsonl": "quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+    "clickhouse_jsonl_sha256": "fa4033841b2d0596c227b0baacfc666086d41bdcceb9173da9e3c9e699f1f378",
+    "clickhouse_queries_sql": "quotes/clickhouse-cloud/queries_raw.sql",
+    "clickhouse_queries_sql_sha256": "44f8199cc3b18ff091324789918535a3d1c5f8f5ba99939bf02df7433d5ad29b",
+    "bigquery_jsonl": "quotes/bigquery/results/bq-full-t2-20260810_152224/raw/drilldown_20260810T152440Z.jsonl",
+    "bigquery_jsonl_sha256": "67e2a99c08ad6643c5fa6942f41ca6173110082d19aeab0e9f61412c1af5780e",
+    "bigquery_queries_sql": "quotes/bigquery/queries_raw.sql",
+    "bigquery_queries_sql_sha256": "8ccfd7f58ad8a57c4f86bf1623bfb46729a3c9137c8d9ac9c4dc0fc97bbc067b",
+    "clickhouse_cost_summary": "quotes/clickhouse-cloud/costs/out_t2/matched/bigquery/drilldown.json",
+    "clickhouse_cost_summary_sha256": "86f1139a3f13a83c80ce42d71096ccc624c941572fa9ea7d8e902db8653961a9",
+    "bigquery_cost_summary": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/drilldown.json",
+    "bigquery_cost_summary_sha256": "f2bb8faf9f4096d8f2590162d07e5cd206cc224b234b381e25371414f872df49"
+  },
+  "input_metadata": {
+    "clickhouse": {
+      "records_read": 48,
+      "records_selected": 32,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 15,
+      "systems": [
+        "ClickHouse Cloud (AWS)"
+      ],
+      "versions": [
+        "26.4.1.2029"
+      ],
+      "machines": [
+        "64GiB"
+      ],
+      "cluster_sizes": [
+        "1"
+      ],
+      "run_ids": []
+    },
+    "bigquery": {
+      "records_read": 39,
+      "records_selected": 28,
+      "zero_row_records_excluded": 0,
+      "records_above_cap_excluded": 11,
+      "systems": [
+        "BigQuery (GCP)"
+      ],
+      "versions": [
+        "managed"
+      ],
+      "machines": [
+        "serverless"
+      ],
+      "cluster_sizes": [
+        "serverless"
+      ],
+      "run_ids": [
+        "bq-full-t2-20260810_152224"
+      ]
+    }
+  },
+  "query_order": [
+    {
+      "query_number": 1,
+      "query_name": "Hourly OHLCV bars"
+    },
+    {
+      "query_number": 2,
+      "query_name": "Risk & liquidity (B7)"
+    }
+  ],
+  "series": {
+    "clickhouse": {
+      "1": {
+        "observations": 32,
+        "first_raw_rows": 3742528876,
+        "last_raw_rows": 99569689379,
+        "average_latency_sec": 0.82946875,
+        "median_latency_sec": 0.83,
+        "p95_latency_sec": 1.133,
+        "maximum": {
+          "latency_sec": 1.18,
+          "source_line": 29,
+          "iteration": 29,
+          "observed_at": "2026-08-09T10:56:02Z",
+          "raw_rows": 87063780214
+        }
+      },
+      "2": {
+        "observations": 32,
+        "first_raw_rows": 3742528876,
+        "last_raw_rows": 99569689379,
+        "average_latency_sec": 0.5890625,
+        "median_latency_sec": 0.5965,
+        "p95_latency_sec": 0.835,
+        "maximum": {
+          "latency_sec": 0.843,
+          "source_line": 33,
+          "iteration": 33,
+          "observed_at": "2026-08-09T14:56:02Z",
+          "raw_rows": 99569689379
+        }
+      }
+    },
+    "bigquery": {
+      "1": {
+        "observations": 28,
+        "first_raw_rows": 5232720,
+        "last_raw_rows": 97155331056,
+        "average_latency_sec": 3.2423928571428573,
+        "median_latency_sec": 3.232,
+        "p95_latency_sec": 4.253,
+        "maximum": {
+          "latency_sec": 4.257,
+          "source_line": 3,
+          "iteration": 3,
+          "observed_at": "2026-08-10T17:24:41.101Z",
+          "raw_rows": 7208681892
+        }
+      },
+      "2": {
+        "observations": 28,
+        "first_raw_rows": 5232720,
+        "last_raw_rows": 97155331056,
+        "average_latency_sec": 3.1975000000000002,
+        "median_latency_sec": 3.2305,
+        "p95_latency_sec": 4.11,
+        "maximum": {
+          "latency_sec": 4.775,
+          "source_line": 28,
+          "iteration": 28,
+          "observed_at": "2026-08-11T18:24:41.101Z",
+          "raw_rows": 97155331056
+        }
+      }
+    }
+  },
+  "rendering": {
+    "x_axis": "raw_rows (linear)",
+    "y_axis": "result[query][0] seconds (linear)",
+    "png": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/drilldown_query_latency_clickhouse_vs_bigquery_wide.png",
+    "svg": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/drilldown_query_latency_clickhouse_vs_bigquery_wide.svg",
+    "plotted_data_csv": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/drilldown_query_latency_clickhouse_vs_bigquery_wide_data.csv"
+  },
+  "matched_active_ingestion_totals": {
+    "tier": "Enterprise",
+    "clickhouse": {
+      "iterations": 33,
+      "queries_per_iteration": 2,
+      "query_executions": 66,
+      "runtime_sec": 47.962,
+      "cost_usd": 0.0416
+    },
+    "bigquery": {
+      "iterations": 33,
+      "queries_per_iteration": 2,
+      "query_executions": 66,
+      "runtime_sec": 209.51800000000006,
+      "capacity_cost_usd": 0.45264198,
+      "on_demand_cost_usd": 3.85683775
+    },
+    "ratios": {
+      "runtime_ratio": 4.368416663191694,
+      "capacity_cost_ratio": 10.880816826923077,
+      "on_demand_cost_ratio": 92.71244591346154
+    }
+  }
+}
