@@ -1,0 +1,2128 @@
+{
+  "active_window_definition": "start through first observation at final_rows, inclusive; later repeated-final-row observations excluded",
+  "candidate": {
+    "active_endpoint_iteration": 222,
+    "active_endpoint_raw_rows": 113217743918,
+    "active_endpoint_source_line": 222,
+    "active_endpoint_started_at": "2026-08-09T19:45:59Z",
+    "active_observations_including_endpoint": 222,
+    "final_rows": 113217341828,
+    "observations_selected": 209,
+    "total_observations": 286,
+    "zero_row_observation_included": true
+  },
+  "candidate_file": "quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl",
+  "count_mode": "explicit_prefix",
+  "matched_observations": 209,
+  "matching_algorithm": "monotonic_no_replacement_minimum_total_absolute_progress_gap",
+  "maximum_absolute_progress_gap": 0.0086489550645662,
+  "mean_absolute_progress_gap": 0.002885278333764833,
+  "median_absolute_progress_gap": 0.0016665953020400526,
+  "output_file": "quotes/clickhouse-cloud/results_t2/matched/snowflake_run14/dashboard_active_matched_to_snowflake.jsonl",
+  "pairs": [
+    {
+      "absolute_progress_gap": 0.0,
+      "candidate_active_index": 0,
+      "candidate_iteration": 1,
+      "candidate_progress": 0.0,
+      "candidate_raw_rows": 0,
+      "reference_iteration": 1,
+      "reference_progress": 0.0,
+      "reference_raw_rows": 0
+    },
+    {
+      "absolute_progress_gap": 0.0016939938608642388,
+      "candidate_active_index": 1,
+      "candidate_iteration": 2,
+      "candidate_progress": 0.006401724809094146,
+      "candidate_raw_rows": 724786266,
+      "reference_iteration": 2,
+      "reference_progress": 0.004707730948229907,
+      "reference_raw_rows": 532996784
+    },
+    {
+      "absolute_progress_gap": 0.0023145276047736463,
+      "candidate_active_index": 2,
+      "candidate_iteration": 3,
+      "candidate_progress": 0.012106536029456726,
+      "candidate_raw_rows": 1370669828,
+      "reference_iteration": 3,
+      "reference_progress": 0.00979200842468308,
+      "reference_raw_rows": 1108625165
+    },
+    {
+      "absolute_progress_gap": 0.0027978884761420825,
+      "candidate_active_index": 3,
+      "candidate_iteration": 4,
+      "candidate_progress": 0.01745034789812907,
+      "candidate_raw_rows": 1975682003,
+      "reference_iteration": 4,
+      "reference_progress": 0.014652459421986987,
+      "reference_raw_rows": 1658912507
+    },
+    {
+      "absolute_progress_gap": 0.0031526754049945836,
+      "candidate_active_index": 4,
+      "candidate_iteration": 5,
+      "candidate_progress": 0.022735782702887997,
+      "candidate_raw_rows": 2574084882,
+      "reference_iteration": 5,
+      "reference_progress": 0.019583107297893414,
+      "reference_raw_rows": 2217147353
+    },
+    {
+      "absolute_progress_gap": 0.00318519600599574,
+      "candidate_active_index": 5,
+      "candidate_iteration": 6,
+      "candidate_progress": 0.0277953060740535,
+      "candidate_raw_rows": 3146910669,
+      "reference_iteration": 6,
+      "reference_progress": 0.024610110068057762,
+      "reference_raw_rows": 2786291244
+    },
+    {
+      "absolute_progress_gap": 0.003489993764385309,
+      "candidate_active_index": 6,
+      "candidate_iteration": 7,
+      "candidate_progress": 0.03302379221798099,
+      "candidate_raw_rows": 3738865972,
+      "reference_iteration": 7,
+      "reference_progress": 0.029533798453595682,
+      "reference_raw_rows": 3343738155
+    },
+    {
+      "absolute_progress_gap": 0.0034832487906236026,
+      "candidate_active_index": 7,
+      "candidate_iteration": 8,
+      "candidate_progress": 0.03792489451415563,
+      "candidate_raw_rows": 4293755746,
+      "reference_iteration": 8,
+      "reference_progress": 0.034441645723532026,
+      "reference_raw_rows": 3899391577
+    },
+    {
+      "absolute_progress_gap": 0.003913163379803276,
+      "candidate_active_index": 8,
+      "candidate_iteration": 9,
+      "candidate_progress": 0.04320047327582095,
+      "candidate_raw_rows": 4891042750,
+      "reference_iteration": 9,
+      "reference_progress": 0.039287309896017676,
+      "reference_raw_rows": 4448004794
+    },
+    {
+      "absolute_progress_gap": 0.004127292113163143,
+      "candidate_active_index": 9,
+      "candidate_iteration": 10,
+      "candidate_progress": 0.04831004880249996,
+      "candidate_raw_rows": 5469535309,
+      "reference_iteration": 10,
+      "reference_progress": 0.04418275668933681,
+      "reference_raw_rows": 5002254267
+    },
+    {
+      "absolute_progress_gap": 0.004034734163728862,
+      "candidate_active_index": 10,
+      "candidate_iteration": 11,
+      "candidate_progress": 0.05308843963260692,
+      "candidate_raw_rows": 6010532017,
+      "reference_iteration": 11,
+      "reference_progress": 0.04905370546887806,
+      "reference_raw_rows": 5553730140
+    },
+    {
+      "absolute_progress_gap": 0.0038173264715628125,
+      "candidate_active_index": 11,
+      "candidate_iteration": 12,
+      "candidate_progress": 0.05775944966924436,
+      "candidate_raw_rows": 6539371357,
+      "reference_iteration": 12,
+      "reference_progress": 0.053942123197681546,
+      "reference_raw_rows": 6107183801
+    },
+    {
+      "absolute_progress_gap": 0.004268305165953709,
+      "candidate_active_index": 12,
+      "candidate_iteration": 13,
+      "candidate_progress": 0.06311870161071628,
+      "candidate_raw_rows": 7146131616,
+      "reference_iteration": 13,
+      "reference_progress": 0.05885039644476257,
+      "reference_raw_rows": 6662885451
+    },
+    {
+      "absolute_progress_gap": 0.004478599318912813,
+      "candidate_active_index": 13,
+      "candidate_iteration": 14,
+      "candidate_progress": 0.06825334394212837,
+      "candidate_raw_rows": 7727462172,
+      "reference_iteration": 14,
+      "reference_progress": 0.06377474462321556,
+      "reference_raw_rows": 7220407062
+    },
+    {
+      "absolute_progress_gap": 0.0047055549829932986,
+      "candidate_active_index": 14,
+      "candidate_iteration": 15,
+      "candidate_progress": 0.07335628370976313,
+      "candidate_raw_rows": 8305203448,
+      "reference_iteration": 15,
+      "reference_progress": 0.06865072872676983,
+      "reference_raw_rows": 7772453021
+    },
+    {
+      "absolute_progress_gap": 0.004235246308188917,
+      "candidate_active_index": 15,
+      "candidate_iteration": 16,
+      "candidate_progress": 0.07778988652091709,
+      "candidate_raw_rows": 8807164173,
+      "reference_iteration": 16,
+      "reference_progress": 0.07355464021272817,
+      "reference_raw_rows": 8327660844
+    },
+    {
+      "absolute_progress_gap": 0.004640730214265282,
+      "candidate_active_index": 16,
+      "candidate_iteration": 17,
+      "candidate_progress": 0.08298376707406899,
+      "candidate_raw_rows": 9395201523,
+      "reference_iteration": 17,
+      "reference_progress": 0.0783430368598037,
+      "reference_raw_rows": 8869790384
+    },
+    {
+      "absolute_progress_gap": 0.004378760179276658,
+      "candidate_active_index": 17,
+      "candidate_iteration": 18,
+      "candidate_progress": 0.08754770819525338,
+      "candidate_raw_rows": 9911918805,
+      "reference_iteration": 18,
+      "reference_progress": 0.08316894801597673,
+      "reference_raw_rows": 9416167217
+    },
+    {
+      "absolute_progress_gap": 0.004258431846354868,
+      "candidate_active_index": 18,
+      "candidate_iteration": 19,
+      "candidate_progress": 0.09229113774702533,
+      "candidate_raw_rows": 10448957290,
+      "reference_iteration": 19,
+      "reference_progress": 0.08803270590067046,
+      "reference_raw_rows": 9966828956
+    },
+    {
+      "absolute_progress_gap": 0.004273517159014792,
+      "candidate_active_index": 19,
+      "candidate_iteration": 20,
+      "candidate_progress": 0.09715304905065096,
+      "candidate_raw_rows": 10999409964,
+      "reference_iteration": 20,
+      "reference_progress": 0.09287953189163617,
+      "reference_raw_rows": 10515573711
+    },
+    {
+      "absolute_progress_gap": 0.0038359863337878858,
+      "candidate_active_index": 20,
+      "candidate_iteration": 21,
+      "candidate_progress": 0.10153708303330755,
+      "candidate_raw_rows": 11495758638,
+      "reference_iteration": 21,
+      "reference_progress": 0.09770109669951967,
+      "reference_raw_rows": 11061458462
+    },
+    {
+      "absolute_progress_gap": 0.004066096779584957,
+      "candidate_active_index": 21,
+      "candidate_iteration": 22,
+      "candidate_progress": 0.10650696504886326,
+      "candidate_raw_rows": 12058435469,
+      "reference_iteration": 22,
+      "reference_progress": 0.1024408682692783,
+      "reference_raw_rows": 11598082800
+    },
+    {
+      "absolute_progress_gap": 0.0037022988106962945,
+      "candidate_active_index": 22,
+      "candidate_iteration": 23,
+      "candidate_progress": 0.11106537089612335,
+      "candidate_raw_rows": 12574526062,
+      "reference_iteration": 23,
+      "reference_progress": 0.10736307208542706,
+      "reference_raw_rows": 12155361632
+    },
+    {
+      "absolute_progress_gap": 0.003790549716773728,
+      "candidate_active_index": 23,
+      "candidate_iteration": 24,
+      "candidate_progress": 0.1159777172118046,
+      "candidate_raw_rows": 13130688854,
+      "reference_iteration": 24,
+      "reference_progress": 0.11218716749503087,
+      "reference_raw_rows": 12701532891
+    },
+    {
+      "absolute_progress_gap": 0.003984216249179259,
+      "candidate_active_index": 24,
+      "candidate_iteration": 25,
+      "candidate_progress": 0.1209258328004136,
+      "candidate_raw_rows": 13690901348,
+      "reference_iteration": 25,
+      "reference_progress": 0.11694161655123433,
+      "reference_raw_rows": 13239818975
+    },
+    {
+      "absolute_progress_gap": 0.004389607342619048,
+      "candidate_active_index": 25,
+      "candidate_iteration": 26,
+      "candidate_progress": 0.12613619712689797,
+      "candidate_raw_rows": 14280804947,
+      "reference_iteration": 26,
+      "reference_progress": 0.12174658978427892,
+      "reference_raw_rows": 13783825272
+    },
+    {
+      "absolute_progress_gap": 0.0049146484630006315,
+      "candidate_active_index": 26,
+      "candidate_iteration": 27,
+      "candidate_progress": 0.13140086037880086,
+      "candidate_raw_rows": 14876856126,
+      "reference_iteration": 27,
+      "reference_progress": 0.12648621191580023,
+      "reference_raw_rows": 14320432691
+    },
+    {
+      "absolute_progress_gap": 0.005339910275569487,
+      "candidate_active_index": 27,
+      "candidate_iteration": 28,
+      "candidate_progress": 0.1366421134449742,
+      "candidate_raw_rows": 15470256866,
+      "reference_iteration": 28,
+      "reference_progress": 0.13130220316940472,
+      "reference_raw_rows": 14865686419
+    },
+    {
+      "absolute_progress_gap": 0.005761752364677686,
+      "candidate_active_index": 28,
+      "candidate_iteration": 29,
+      "candidate_progress": 0.14184027901305551,
+      "candidate_raw_rows": 16058779354,
+      "reference_iteration": 29,
+      "reference_progress": 0.13607852664837783,
+      "reference_raw_rows": 15406449067
+    },
+    {
+      "absolute_progress_gap": 0.00574871377910266,
+      "candidate_active_index": 29,
+      "candidate_iteration": 30,
+      "candidate_progress": 0.14665603418091935,
+      "candidate_raw_rows": 16604006353,
+      "reference_iteration": 30,
+      "reference_progress": 0.1409073204018167,
+      "reference_raw_rows": 15953152260
+    },
+    {
+      "absolute_progress_gap": 0.006251170912272452,
+      "candidate_active_index": 30,
+      "candidate_iteration": 31,
+      "candidate_progress": 0.15196038606114942,
+      "candidate_raw_rows": 17204550973,
+      "reference_iteration": 31,
+      "reference_progress": 0.14570921514887697,
+      "reference_raw_rows": 16496810019
+    },
+    {
+      "absolute_progress_gap": 0.006370932565223086,
+      "candidate_active_index": 31,
+      "candidate_iteration": 32,
+      "candidate_progress": 0.15685289838352412,
+      "candidate_raw_rows": 17758468213,
+      "reference_iteration": 32,
+      "reference_progress": 0.15048196581830103,
+      "reference_raw_rows": 17037168163
+    },
+    {
+      "absolute_progress_gap": 0.006822334375006289,
+      "candidate_active_index": 32,
+      "candidate_iteration": 33,
+      "candidate_progress": 0.16216599090351858,
+      "candidate_raw_rows": 18360002425,
+      "reference_iteration": 33,
+      "reference_progress": 0.15534365652851229,
+      "reference_raw_rows": 17587595862
+    },
+    {
+      "absolute_progress_gap": 0.007150872480560011,
+      "candidate_active_index": 33,
+      "candidate_iteration": 34,
+      "candidate_progress": 0.1672049962695579,
+      "candidate_raw_rows": 18930505218,
+      "reference_iteration": 34,
+      "reference_progress": 0.1600541237889979,
+      "reference_raw_rows": 18120902444
+    },
+    {
+      "absolute_progress_gap": 0.007367636790724469,
+      "candidate_active_index": 34,
+      "candidate_iteration": 35,
+      "candidate_progress": 0.17222214162758043,
+      "candidate_raw_rows": 19498533079,
+      "reference_iteration": 35,
+      "reference_progress": 0.16485450483685596,
+      "reference_raw_rows": 18664388826
+    },
+    {
+      "absolute_progress_gap": 0.007196596058913096,
+      "candidate_active_index": 35,
+      "candidate_iteration": 36,
+      "candidate_progress": 0.17692494981405846,
+      "candidate_raw_rows": 20030972521,
+      "reference_iteration": 36,
+      "reference_progress": 0.16972835375514536,
+      "reference_raw_rows": 19216193045
+    },
+    {
+      "absolute_progress_gap": 0.007534803760858355,
+      "candidate_active_index": 36,
+      "candidate_iteration": 37,
+      "candidate_progress": 0.18194168890923063,
+      "candidate_raw_rows": 20598954386,
+      "reference_iteration": 37,
+      "reference_progress": 0.17440688514837227,
+      "reference_raw_rows": 19745883933
+    },
+    {
+      "absolute_progress_gap": 0.007704608127306084,
+      "candidate_active_index": 37,
+      "candidate_iteration": 38,
+      "candidate_progress": 0.18705283171347625,
+      "candidate_raw_rows": 21177624388,
+      "reference_iteration": 38,
+      "reference_progress": 0.17934822358617017,
+      "reference_raw_rows": 20305329136
+    },
+    {
+      "absolute_progress_gap": 0.007470278345563769,
+      "candidate_active_index": 38,
+      "candidate_iteration": 39,
+      "candidate_progress": 0.19158239164413673,
+      "candidate_raw_rows": 21690449123,
+      "reference_iteration": 39,
+      "reference_progress": 0.18411211329857297,
+      "reference_raw_rows": 20844684066
+    },
+    {
+      "absolute_progress_gap": 0.007369777098879454,
+      "candidate_active_index": 39,
+      "candidate_iteration": 40,
+      "candidate_progress": 0.19631104460803805,
+      "candidate_raw_rows": 22225814642,
+      "reference_iteration": 40,
+      "reference_progress": 0.1889412675091586,
+      "reference_raw_rows": 21391428069
+    },
+    {
+      "absolute_progress_gap": 0.007344258852704871,
+      "candidate_active_index": 40,
+      "candidate_iteration": 41,
+      "candidate_progress": 0.20111620974631245,
+      "candidate_raw_rows": 22769842666,
+      "reference_iteration": 41,
+      "reference_progress": 0.19377195089360758,
+      "reference_raw_rows": 21938345201
+    },
+    {
+      "absolute_progress_gap": 0.007139288928262932,
+      "candidate_active_index": 41,
+      "candidate_iteration": 42,
+      "candidate_progress": 0.2056989248641804,
+      "candidate_raw_rows": 23288685490,
+      "reference_iteration": 42,
+      "reference_progress": 0.19855963593591747,
+      "reference_raw_rows": 22480394175
+    },
+    {
+      "absolute_progress_gap": 0.007217880209919397,
+      "candidate_active_index": 42,
+      "candidate_iteration": 43,
+      "candidate_progress": 0.21060577053844096,
+      "candidate_raw_rows": 23844225514,
+      "reference_iteration": 43,
+      "reference_progress": 0.20338789032852156,
+      "reference_raw_rows": 23027036303
+    },
+    {
+      "absolute_progress_gap": 0.007037333884860331,
+      "candidate_active_index": 43,
+      "candidate_iteration": 44,
+      "candidate_progress": 0.21516520949598353,
+      "candidate_raw_rows": 24360433073,
+      "reference_iteration": 44,
+      "reference_progress": 0.2081278756111232,
+      "reference_raw_rows": 23563684837
+    },
+    {
+      "absolute_progress_gap": 0.007322386187616464,
+      "candidate_active_index": 44,
+      "candidate_iteration": 45,
+      "candidate_progress": 0.22026054860822306,
+      "candidate_raw_rows": 24937313823,
+      "reference_iteration": 45,
+      "reference_progress": 0.2129381624206066,
+      "reference_raw_rows": 24108292723
+    },
+    {
+      "absolute_progress_gap": 0.007426319019901789,
+      "candidate_active_index": 45,
+      "candidate_iteration": 46,
+      "candidate_progress": 0.2251636958296385,
+      "candidate_raw_rows": 25492435118,
+      "reference_iteration": 46,
+      "reference_progress": 0.2177373768097367,
+      "reference_raw_rows": 24651647019
+    },
+    {
+      "absolute_progress_gap": 0.007481800855975496,
+      "candidate_active_index": 46,
+      "candidate_iteration": 47,
+      "candidate_progress": 0.23006509866281083,
+      "candidate_raw_rows": 26047358918,
+      "reference_iteration": 47,
+      "reference_progress": 0.22258329780683533,
+      "reference_raw_rows": 25200289313
+    },
+    {
+      "absolute_progress_gap": 0.0073793273760944245,
+      "candidate_active_index": 47,
+      "candidate_iteration": 48,
+      "candidate_progress": 0.23479901430988753,
+      "candidate_raw_rows": 26583320264,
+      "reference_iteration": 48,
+      "reference_progress": 0.2274196869337931,
+      "reference_raw_rows": 25747852434
+    },
+    {
+      "absolute_progress_gap": 0.007369808516327875,
+      "candidate_active_index": 48,
+      "candidate_iteration": 49,
+      "candidate_progress": 0.23951690227983718,
+      "candidate_raw_rows": 27117466999,
+      "reference_iteration": 49,
+      "reference_progress": 0.2321470937635093,
+      "reference_raw_rows": 26283076869
+    },
+    {
+      "absolute_progress_gap": 0.0076065893713379296,
+      "candidate_active_index": 49,
+      "candidate_iteration": 50,
+      "candidate_progress": 0.24449766674484902,
+      "candidate_raw_rows": 27681375912,
+      "reference_iteration": 50,
+      "reference_progress": 0.2368910773735111,
+      "reference_raw_rows": 26820178083
+    },
+    {
+      "absolute_progress_gap": 0.007628760029644105,
+      "candidate_active_index": 50,
+      "candidate_iteration": 51,
+      "candidate_progress": 0.24942402809545672,
+      "candidate_raw_rows": 28239125449,
+      "reference_iteration": 51,
+      "reference_progress": 0.2417952680658126,
+      "reference_raw_rows": 27375417517
+    },
+    {
+      "absolute_progress_gap": 0.007547617857856015,
+      "candidate_active_index": 51,
+      "candidate_iteration": 52,
+      "candidate_progress": 0.25414407823417,
+      "candidate_raw_rows": 28773516979,
+      "reference_iteration": 52,
+      "reference_progress": 0.246596460376314,
+      "reference_raw_rows": 27918995748
+    },
+    {
+      "absolute_progress_gap": 0.007866281336590675,
+      "candidate_active_index": 52,
+      "candidate_iteration": 53,
+      "candidate_progress": 0.2592017020730154,
+      "candidate_raw_rows": 29346127706,
+      "reference_iteration": 53,
+      "reference_progress": 0.25133542073642473,
+      "reference_raw_rows": 28455528243
+    },
+    {
+      "absolute_progress_gap": 0.007918990408395776,
+      "candidate_active_index": 53,
+      "candidate_iteration": 54,
+      "candidate_progress": 0.26400670310215507,
+      "candidate_raw_rows": 29890137150,
+      "reference_iteration": 54,
+      "reference_progress": 0.2560877126937593,
+      "reference_raw_rows": 28993570106
+    },
+    {
+      "absolute_progress_gap": 0.00812566671453574,
+      "candidate_active_index": 54,
+      "candidate_iteration": 55,
+      "candidate_progress": 0.2690901133881371,
+      "candidate_raw_rows": 30465667350,
+      "reference_iteration": 55,
+      "reference_progress": 0.26096444667360136,
+      "reference_raw_rows": 29545700964
+    },
+    {
+      "absolute_progress_gap": 0.008251743539601064,
+      "candidate_active_index": 55,
+      "candidate_iteration": 56,
+      "candidate_progress": 0.2739706479253236,
+      "candidate_raw_rows": 31018228497,
+      "reference_iteration": 56,
+      "reference_progress": 0.26571890438572254,
+      "reference_raw_rows": 30083988028
+    },
+    {
+      "absolute_progress_gap": 0.00845729420546415,
+      "candidate_active_index": 56,
+      "candidate_iteration": 57,
+      "candidate_progress": 0.27900397367559365,
+      "candidate_raw_rows": 31588088259,
+      "reference_iteration": 57,
+      "reference_progress": 0.2705466794701295,
+      "reference_raw_rows": 30630575890
+    },
+    {
+      "absolute_progress_gap": 0.0086489550645662,
+      "candidate_active_index": 57,
+      "candidate_iteration": 58,
+      "candidate_progress": 0.2839184842533574,
+      "candidate_raw_rows": 32144496083,
+      "reference_iteration": 58,
+      "reference_progress": 0.2752695291887912,
+      "reference_raw_rows": 31165284381
+    },
+    {
+      "absolute_progress_gap": 0.008226357516986527,
+      "candidate_active_index": 58,
+      "candidate_iteration": 59,
+      "candidate_progress": 0.2884006347155271,
+      "candidate_raw_rows": 32651953244,
+      "reference_iteration": 59,
+      "reference_progress": 0.2801742771985406,
+      "reference_raw_rows": 31720586913
+    },
+    {
+      "absolute_progress_gap": 0.008192766099465176,
+      "candidate_active_index": 59,
+      "candidate_iteration": 60,
+      "candidate_progress": 0.29309993958711017,
+      "candidate_raw_rows": 33183996050,
+      "reference_iteration": 60,
+      "reference_progress": 0.284907173487645,
+      "reference_raw_rows": 32256432850
+    },
+    {
+      "absolute_progress_gap": 0.008337136491280539,
+      "candidate_active_index": 60,
+      "candidate_iteration": 61,
+      "candidate_progress": 0.298085747802406,
+      "candidate_raw_rows": 33748476003,
+      "reference_iteration": 61,
+      "reference_progress": 0.28974861131112545,
+      "reference_raw_rows": 32804567571
+    },
+    {
+      "absolute_progress_gap": 0.007857416926034866,
+      "candidate_active_index": 61,
+      "candidate_iteration": 62,
+      "candidate_progress": 0.30250899595427305,
+      "candidate_raw_rows": 34249264401,
+      "reference_iteration": 62,
+      "reference_progress": 0.2946515790282382,
+      "reference_raw_rows": 33359668543
+    },
+    {
+      "absolute_progress_gap": 0.007694114876176716,
+      "candidate_active_index": 62,
+      "candidate_iteration": 63,
+      "candidate_progress": 0.3070608492541228,
+      "candidate_raw_rows": 34764613132,
+      "reference_iteration": 63,
+      "reference_progress": 0.2993667343779461,
+      "reference_raw_rows": 33893505898
+    },
+    {
+      "absolute_progress_gap": 0.007572620573467359,
+      "candidate_active_index": 63,
+      "candidate_iteration": 64,
+      "candidate_progress": 0.3117912665678735,
+      "candidate_raw_rows": 35300178406,
+      "reference_iteration": 64,
+      "reference_progress": 0.3042186459944061,
+      "reference_raw_rows": 34442826434
+    },
+    {
+      "absolute_progress_gap": 0.007188459699366712,
+      "candidate_active_index": 64,
+      "candidate_iteration": 65,
+      "candidate_progress": 0.3162417771598417,
+      "candidate_raw_rows": 35804053385,
+      "reference_iteration": 65,
+      "reference_progress": 0.309053317460475,
+      "reference_raw_rows": 34990195086
+    },
+    {
+      "absolute_progress_gap": 0.007147843094827577,
+      "candidate_active_index": 65,
+      "candidate_iteration": 66,
+      "candidate_progress": 0.32108881129913186,
+      "candidate_raw_rows": 36352821706,
+      "reference_iteration": 66,
+      "reference_progress": 0.3139409682043043,
+      "reference_raw_rows": 35543561911
+    },
+    {
+      "absolute_progress_gap": 0.0067517315073630235,
+      "candidate_active_index": 66,
+      "candidate_iteration": 67,
+      "candidate_progress": 0.3254886932956265,
+      "candidate_raw_rows": 36850964650,
+      "reference_iteration": 67,
+      "reference_progress": 0.3187369617882635,
+      "reference_raw_rows": 36086551556
+    },
+    {
+      "absolute_progress_gap": 0.006206962896793677,
+      "candidate_active_index": 67,
+      "candidate_iteration": 68,
+      "candidate_progress": 0.32973641845181867,
+      "candidate_raw_rows": 37331880801,
+      "reference_iteration": 68,
+      "reference_progress": 0.323529455555025,
+      "reference_raw_rows": 36629144961
+    },
+    {
+      "absolute_progress_gap": 0.005959930723555662,
+      "candidate_active_index": 68,
+      "candidate_iteration": 69,
+      "candidate_progress": 0.33432605048707187,
+      "candidate_raw_rows": 37851506740,
+      "reference_iteration": 69,
+      "reference_progress": 0.3283661197635162,
+      "reference_raw_rows": 37176739226
+    },
+    {
+      "absolute_progress_gap": 0.005474656329077565,
+      "candidate_active_index": 69,
+      "candidate_iteration": 70,
+      "candidate_progress": 0.3385867768670715,
+      "candidate_raw_rows": 38333894855,
+      "reference_iteration": 70,
+      "reference_progress": 0.33311212053799394,
+      "reference_raw_rows": 37714068818
+    },
+    {
+      "absolute_progress_gap": 0.0056998569086737505,
+      "candidate_active_index": 70,
+      "candidate_iteration": 71,
+      "candidate_progress": 0.343622102717294,
+      "candidate_raw_rows": 38903981063,
+      "reference_iteration": 71,
+      "reference_progress": 0.33792224580862024,
+      "reference_raw_rows": 38258658415
+    },
+    {
+      "absolute_progress_gap": 0.005195070609355534,
+      "candidate_active_index": 71,
+      "candidate_iteration": 72,
+      "candidate_progress": 0.3480352934258258,
+      "candidate_raw_rows": 39403630784,
+      "reference_iteration": 72,
+      "reference_progress": 0.34284022281647025,
+      "reference_raw_rows": 38815458699
+    },
+    {
+      "absolute_progress_gap": 0.005166304698167257,
+      "candidate_active_index": 72,
+      "candidate_iteration": 73,
+      "candidate_progress": 0.3527615927220319,
+      "candidate_raw_rows": 39938729827,
+      "reference_iteration": 73,
+      "reference_progress": 0.34759528802386463,
+      "reference_raw_rows": 39353814542
+    },
+    {
+      "absolute_progress_gap": 0.004811645090798955,
+      "candidate_active_index": 73,
+      "candidate_iteration": 74,
+      "candidate_progress": 0.3573244364583281,
+      "candidate_raw_rows": 40455322866,
+      "reference_iteration": 74,
+      "reference_progress": 0.35251279136752917,
+      "reference_raw_rows": 39910561199
+    },
+    {
+      "absolute_progress_gap": 0.0047049025652735055,
+      "candidate_active_index": 74,
+      "candidate_iteration": 75,
+      "candidate_progress": 0.3619893504235612,
+      "candidate_raw_rows": 40983472025,
+      "reference_iteration": 75,
+      "reference_progress": 0.35728444785828767,
+      "reference_raw_rows": 40450795463
+    },
+    {
+      "absolute_progress_gap": 0.004069687634072783,
+      "candidate_active_index": 75,
+      "candidate_iteration": 76,
+      "candidate_progress": 0.36621593708664474,
+      "candidate_raw_rows": 41461994932,
+      "reference_iteration": 76,
+      "reference_progress": 0.36214624945257196,
+      "reference_raw_rows": 41001235716
+    },
+    {
+      "absolute_progress_gap": 0.003935705350483709,
+      "candidate_active_index": 76,
+      "candidate_iteration": 77,
+      "candidate_progress": 0.37085267774425107,
+      "candidate_raw_rows": 41986954384,
+      "reference_iteration": 77,
+      "reference_progress": 0.36691697239376736,
+      "reference_raw_rows": 41541364286
+    },
+    {
+      "absolute_progress_gap": 0.003686563332621684,
+      "candidate_active_index": 77,
+      "candidate_iteration": 78,
+      "candidate_progress": 0.3754257392968405,
+      "candidate_raw_rows": 42504704257,
+      "reference_iteration": 78,
+      "reference_progress": 0.3717391759642188,
+      "reference_raw_rows": 42087321356
+    },
+    {
+      "absolute_progress_gap": 0.0035189595919435934,
+      "candidate_active_index": 78,
+      "candidate_iteration": 79,
+      "candidate_progress": 0.38013040383320806,
+      "candidate_raw_rows": 43037353870,
+      "reference_iteration": 79,
+      "reference_progress": 0.37661144424126447,
+      "reference_raw_rows": 42638946619
+    },
+    {
+      "absolute_progress_gap": 0.0033442334176614907,
+      "candidate_active_index": 79,
+      "candidate_iteration": 80,
+      "candidate_progress": 0.3848189695637693,
+      "candidate_raw_rows": 43568180819,
+      "reference_iteration": 80,
+      "reference_progress": 0.38147473614610783,
+      "reference_raw_rows": 43189555601
+    },
+    {
+      "absolute_progress_gap": 0.0029903611985021006,
+      "candidate_active_index": 80,
+      "candidate_iteration": 81,
+      "candidate_progress": 0.3893034016110375,
+      "candidate_raw_rows": 44075896295,
+      "reference_iteration": 81,
+      "reference_progress": 0.3863130404125354,
+      "reference_raw_rows": 43737335549
+    },
+    {
+      "absolute_progress_gap": 0.002648791953229146,
+      "candidate_active_index": 81,
+      "candidate_iteration": 82,
+      "candidate_progress": 0.3938025252680286,
+      "candidate_raw_rows": 44585275116,
+      "reference_iteration": 82,
+      "reference_progress": 0.39115373331479947,
+      "reference_raw_rows": 44285385932
+    },
+    {
+      "absolute_progress_gap": 0.0026522867005320805,
+      "candidate_active_index": 82,
+      "candidate_iteration": 83,
+      "candidate_progress": 0.3985202340339829,
+      "candidate_raw_rows": 45119401562,
+      "reference_iteration": 83,
+      "reference_progress": 0.3958679473334508,
+      "reference_raw_rows": 44819116712
+    },
+    {
+      "absolute_progress_gap": 0.0021015048062288932,
+      "candidate_active_index": 83,
+      "candidate_iteration": 84,
+      "candidate_progress": 0.4028434847665747,
+      "candidate_raw_rows": 45608868518,
+      "reference_iteration": 84,
+      "reference_progress": 0.40074197996034583,
+      "reference_raw_rows": 45370941730
+    },
+    {
+      "absolute_progress_gap": 0.0017050999421385216,
+      "candidate_active_index": 84,
+      "candidate_iteration": 85,
+      "candidate_progress": 0.40725437094299344,
+      "candidate_raw_rows": 46108257326,
+      "reference_iteration": 85,
+      "reference_progress": 0.4055492710008549,
+      "reference_raw_rows": 45915210443
+    },
+    {
+      "absolute_progress_gap": 0.0012177979872505795,
+      "candidate_active_index": 85,
+      "candidate_iteration": 86,
+      "candidate_progress": 0.4116608281424383,
+      "candidate_raw_rows": 46607144697,
+      "reference_iteration": 86,
+      "reference_progress": 0.41044303015518774,
+      "reference_raw_rows": 46469268846
+    },
+    {
+      "absolute_progress_gap": 0.0009945581850090424,
+      "candidate_active_index": 86,
+      "candidate_iteration": 87,
+      "candidate_progress": 0.4162544330142971,
+      "candidate_raw_rows": 47127220430,
+      "reference_iteration": 87,
+      "reference_progress": 0.41525987482928806,
+      "reference_raw_rows": 47014619196
+    },
+    {
+      "absolute_progress_gap": 0.0006394716907414111,
+      "candidate_active_index": 87,
+      "candidate_iteration": 88,
+      "candidate_progress": 0.42069779849062366,
+      "candidate_raw_rows": 47630286458,
+      "reference_iteration": 88,
+      "reference_progress": 0.42005832679988225,
+      "reference_raw_rows": 47557887173
+    },
+    {
+      "absolute_progress_gap": 0.00038714869376271777,
+      "candidate_active_index": 88,
+      "candidate_iteration": 89,
+      "candidate_progress": 0.42531266516708877,
+      "candidate_raw_rows": 48152769396,
+      "reference_iteration": 89,
+      "reference_progress": 0.42492551647332605,
+      "reference_raw_rows": 48108937450
+    },
+    {
+      "absolute_progress_gap": 2.9279790061120803e-05,
+      "candidate_active_index": 89,
+      "candidate_iteration": 90,
+      "candidate_progress": 0.4297136725477158,
+      "candidate_raw_rows": 48651039753,
+      "reference_iteration": 90,
+      "reference_progress": 0.42974295233777693,
+      "reference_raw_rows": 48654354733
+    },
+    {
+      "absolute_progress_gap": 0.0002224419209405082,
+      "candidate_active_index": 90,
+      "candidate_iteration": 91,
+      "candidate_progress": 0.4343292969702878,
+      "candidate_raw_rows": 49173608481,
+      "reference_iteration": 91,
+      "reference_progress": 0.43455173889122833,
+      "reference_raw_rows": 49198792764
+    },
+    {
+      "absolute_progress_gap": 0.0005438562680048498,
+      "candidate_active_index": 91,
+      "candidate_iteration": 92,
+      "candidate_progress": 0.4389026008090814,
+      "candidate_raw_rows": 49691385785,
+      "reference_iteration": 92,
+      "reference_progress": 0.43944645707708624,
+      "reference_raw_rows": 49752959746
+    },
+    {
+      "absolute_progress_gap": 0.0005055627616391001,
+      "candidate_active_index": 92,
+      "candidate_iteration": 93,
+      "candidate_progress": 0.443733435389449,
+      "candidate_raw_rows": 50238320035,
+      "reference_iteration": 93,
+      "reference_progress": 0.4442389981510881,
+      "reference_raw_rows": 50295558507
+    },
+    {
+      "absolute_progress_gap": 0.00044687520642255896,
+      "candidate_active_index": 93,
+      "candidate_iteration": 94,
+      "candidate_progress": 0.44859585072363284,
+      "candidate_raw_rows": 50788829774,
+      "reference_iteration": 94,
+      "reference_progress": 0.4490427259300554,
+      "reference_raw_rows": 50839423797
+    },
+    {
+      "absolute_progress_gap": 0.0005628796699432836,
+      "candidate_active_index": 94,
+      "candidate_iteration": 95,
+      "candidate_progress": 0.45333266023833363,
+      "candidate_raw_rows": 51325118756,
+      "reference_iteration": 95,
+      "reference_progress": 0.4538955399082769,
+      "reference_raw_rows": 51388846496
+    },
+    {
+      "absolute_progress_gap": 0.0003033319847075555,
+      "candidate_active_index": 95,
+      "candidate_iteration": 96,
+      "candidate_progress": 0.45829349612205594,
+      "candidate_raw_rows": 51886771408,
+      "reference_iteration": 96,
+      "reference_progress": 0.4585968281067635,
+      "reference_raw_rows": 51921113849
+    },
+    {
+      "absolute_progress_gap": 0.0003147863960111241,
+      "candidate_active_index": 96,
+      "candidate_iteration": 97,
+      "candidate_progress": 0.4631915674956311,
+      "candidate_raw_rows": 52441318029,
+      "reference_iteration": 97,
+      "reference_progress": 0.46350635389164224,
+      "reference_raw_rows": 52476957308
+    },
+    {
+      "absolute_progress_gap": 0.0008260563133700716,
+      "candidate_active_index": 97,
+      "candidate_iteration": 98,
+      "candidate_progress": 0.46742252443443405,
+      "candidate_raw_rows": 52920335727,
+      "reference_iteration": 98,
+      "reference_progress": 0.4682485807478041,
+      "reference_raw_rows": 53013859627
+    },
+    {
+      "absolute_progress_gap": 0.0012807258999268933,
+      "candidate_active_index": 98,
+      "candidate_iteration": 99,
+      "candidate_progress": 0.47173516694234396,
+      "candidate_raw_rows": 53408601648,
+      "reference_iteration": 99,
+      "reference_progress": 0.47301589284227086,
+      "reference_raw_rows": 53553602030
+    },
+    {
+      "absolute_progress_gap": 0.0016486228610062548,
+      "candidate_active_index": 99,
+      "candidate_iteration": 100,
+      "candidate_progress": 0.47616456761456477,
+      "candidate_raw_rows": 53910086618,
+      "reference_iteration": 100,
+      "reference_progress": 0.477813190475571,
+      "reference_raw_rows": 54096739316
+    },
+    {
+      "absolute_progress_gap": 0.0018924593753976149,
+      "candidate_active_index": 100,
+      "candidate_iteration": 101,
+      "candidate_progress": 0.4807099191896071,
+      "candidate_raw_rows": 54424699241,
+      "reference_iteration": 101,
+      "reference_progress": 0.4826023785650047,
+      "reference_raw_rows": 54638958461
+    },
+    {
+      "absolute_progress_gap": 0.002048673624155284,
+      "candidate_active_index": 102,
+      "candidate_iteration": 103,
+      "candidate_progress": 0.4894712482226358,
+      "candidate_raw_rows": 55416633625,
+      "reference_iteration": 102,
+      "reference_progress": 0.48742257459848054,
+      "reference_raw_rows": 55184688243
+    },
+    {
+      "absolute_progress_gap": 0.001906952950087748,
+      "candidate_active_index": 103,
+      "candidate_iteration": 104,
+      "candidate_progress": 0.49413666823225283,
+      "candidate_raw_rows": 55944840077,
+      "reference_iteration": 103,
+      "reference_progress": 0.4922297152821651,
+      "reference_raw_rows": 55728939933
+    },
+    {
+      "absolute_progress_gap": 0.0015604176546415438,
+      "candidate_active_index": 104,
+      "candidate_iteration": 105,
+      "candidate_progress": 0.49860031245707265,
+      "candidate_raw_rows": 56450202011,
+      "reference_iteration": 104,
+      "reference_progress": 0.4970398948024311,
+      "reference_raw_rows": 56273535672
+    },
+    {
+      "absolute_progress_gap": 0.001468650228978241,
+      "candidate_active_index": 105,
+      "candidate_iteration": 106,
+      "candidate_progress": 0.5032502725736049,
+      "candidate_raw_rows": 56976658135,
+      "reference_iteration": 105,
+      "reference_progress": 0.5017816223446266,
+      "reference_raw_rows": 56810381460
+    },
+    {
+      "absolute_progress_gap": 0.0012385876027105613,
+      "candidate_active_index": 106,
+      "candidate_iteration": 107,
+      "candidate_progress": 0.5078956108010206,
+      "candidate_raw_rows": 57502590981,
+      "reference_iteration": 106,
+      "reference_progress": 0.5066570231983101,
+      "reference_raw_rows": 57362361385
+    },
+    {
+      "absolute_progress_gap": 0.0009185843645578284,
+      "candidate_active_index": 107,
+      "candidate_iteration": 108,
+      "candidate_progress": 0.5124435158011419,
+      "candidate_raw_rows": 58017492696,
+      "reference_iteration": 107,
+      "reference_progress": 0.5115249314365841,
+      "reference_raw_rows": 57913493016
+    },
+    {
+      "absolute_progress_gap": 0.0005519649639446067,
+      "candidate_active_index": 108,
+      "candidate_iteration": 109,
+      "candidate_progress": 0.5167887628106272,
+      "candidate_raw_rows": 58509450012,
+      "reference_iteration": 108,
+      "reference_progress": 0.5162367978466826,
+      "reference_raw_rows": 58446958006
+    },
+    {
+      "absolute_progress_gap": 0.00012581437410563723,
+      "candidate_active_index": 109,
+      "candidate_iteration": 110,
+      "candidate_progress": 0.5212168223455492,
+      "candidate_raw_rows": 59010783142,
+      "reference_iteration": 109,
+      "reference_progress": 0.5210910079714436,
+      "reference_raw_rows": 58996538773
+    },
+    {
+      "absolute_progress_gap": 0.0003524454059398163,
+      "candidate_active_index": 110,
+      "candidate_iteration": 111,
+      "candidate_progress": 0.525568689286115,
+      "candidate_raw_rows": 59503489949,
+      "reference_iteration": 110,
+      "reference_progress": 0.5259211346920548,
+      "reference_raw_rows": 59543392881
+    },
+    {
+      "absolute_progress_gap": 0.0010820939974560684,
+      "candidate_active_index": 111,
+      "candidate_iteration": 112,
+      "candidate_progress": 0.529715522663578,
+      "candidate_raw_rows": 59972983401,
+      "reference_iteration": 111,
+      "reference_progress": 0.5307976166610341,
+      "reference_raw_rows": 60095495207
+    },
+    {
+      "absolute_progress_gap": 0.001746375465168315,
+      "candidate_active_index": 112,
+      "candidate_iteration": 113,
+      "candidate_progress": 0.5338602441384286,
+      "candidate_raw_rows": 60442237749,
+      "reference_iteration": 112,
+      "reference_progress": 0.5356066196035969,
+      "reference_raw_rows": 60639957737
+    },
+    {
+      "absolute_progress_gap": 0.0016144020434403217,
+      "candidate_active_index": 114,
+      "candidate_iteration": 115,
+      "candidate_progress": 0.542056001970384,
+      "candidate_raw_rows": 61370139665,
+      "reference_iteration": 113,
+      "reference_progress": 0.5404415999269436,
+      "reference_raw_rows": 61187361357
+    },
+    {
+      "absolute_progress_gap": 0.0012450240283343739,
+      "candidate_active_index": 115,
+      "candidate_iteration": 116,
+      "candidate_progress": 0.5464895833802229,
+      "candidate_raw_rows": 61872097967,
+      "reference_iteration": 114,
+      "reference_progress": 0.5452445593518885,
+      "reference_raw_rows": 61731139656
+    },
+    {
+      "absolute_progress_gap": 0.0007327171673577881,
+      "candidate_active_index": 116,
+      "candidate_iteration": 117,
+      "candidate_progress": 0.5508213049970848,
+      "candidate_raw_rows": 62362523974,
+      "reference_iteration": 115,
+      "reference_progress": 0.550088587829727,
+      "reference_raw_rows": 62279567684
+    },
+    {
+      "absolute_progress_gap": 0.0002401280630780489,
+      "candidate_active_index": 117,
+      "candidate_iteration": 118,
+      "candidate_progress": 0.5551514161097868,
+      "candidate_raw_rows": 62852767644,
+      "reference_iteration": 116,
+      "reference_progress": 0.5549112880467088,
+      "reference_raw_rows": 62825580983
+    },
+    {
+      "absolute_progress_gap": 0.0005975538191206331,
+      "candidate_active_index": 118,
+      "candidate_iteration": 119,
+      "candidate_progress": 0.5591305520330132,
+      "candidate_raw_rows": 63303274836,
+      "reference_iteration": 117,
+      "reference_progress": 0.5597281058521338,
+      "reference_raw_rows": 63370928291
+    },
+    {
+      "absolute_progress_gap": 0.0008930814958860722,
+      "candidate_active_index": 119,
+      "candidate_iteration": 120,
+      "candidate_progress": 0.5636389782754828,
+      "candidate_raw_rows": 63813706871,
+      "reference_iteration": 118,
+      "reference_progress": 0.5645320597713689,
+      "reference_raw_rows": 63914819184
+    },
+    {
+      "absolute_progress_gap": 0.0013967738461855284,
+      "candidate_active_index": 120,
+      "candidate_iteration": 121,
+      "candidate_progress": 0.5679149113099773,
+      "candidate_raw_rows": 64297816643,
+      "reference_iteration": 119,
+      "reference_progress": 0.5693116851561628,
+      "reference_raw_rows": 64455955665
+    },
+    {
+      "absolute_progress_gap": 0.0015290705134465288,
+      "candidate_active_index": 121,
+      "candidate_iteration": 122,
+      "candidate_progress": 0.5726199263845165,
+      "candidate_raw_rows": 64830505943,
+      "reference_iteration": 120,
+      "reference_progress": 0.5741489968979631,
+      "reference_raw_rows": 65003623242
+    },
+    {
+      "absolute_progress_gap": 0.002050864648922346,
+      "candidate_active_index": 122,
+      "candidate_iteration": 123,
+      "candidate_progress": 0.5769876472214113,
+      "candidate_raw_rows": 65325007686,
+      "reference_iteration": 121,
+      "reference_progress": 0.5790385118703336,
+      "reference_raw_rows": 65557201130
+    },
+    {
+      "absolute_progress_gap": 0.0018104632796572817,
+      "candidate_active_index": 124,
+      "candidate_iteration": 125,
+      "candidate_progress": 0.5856350266263027,
+      "candidate_raw_rows": 66304040996,
+      "reference_iteration": 122,
+      "reference_progress": 0.5838245633466455,
+      "reference_raw_rows": 66099065156
+    },
+    {
+      "absolute_progress_gap": 0.0015131107676088495,
+      "candidate_active_index": 125,
+      "candidate_iteration": 126,
+      "candidate_progress": 0.5901371797131891,
+      "candidate_raw_rows": 66813762801,
+      "reference_iteration": 123,
+      "reference_progress": 0.5886240689455803,
+      "reference_raw_rows": 66642452422
+    },
+    {
+      "absolute_progress_gap": 0.0009843505791656826,
+      "candidate_active_index": 126,
+      "candidate_iteration": 127,
+      "candidate_progress": 0.5943777331942042,
+      "candidate_raw_rows": 67293866994,
+      "reference_iteration": 124,
+      "reference_progress": 0.5933933826150385,
+      "reference_raw_rows": 67182421438
+    },
+    {
+      "absolute_progress_gap": 0.0001818475214802051,
+      "candidate_active_index": 127,
+      "candidate_iteration": 128,
+      "candidate_progress": 0.5983933495799932,
+      "candidate_raw_rows": 67748504407,
+      "reference_iteration": 125,
+      "reference_progress": 0.598211502058513,
+      "reference_raw_rows": 67727916114
+    },
+    {
+      "absolute_progress_gap": 0.0005870531309679627,
+      "candidate_active_index": 128,
+      "candidate_iteration": 129,
+      "candidate_progress": 0.6023901049771253,
+      "candidate_raw_rows": 68201006429,
+      "reference_iteration": 126,
+      "reference_progress": 0.6029771581080933,
+      "reference_raw_rows": 68267471024
+    },
+    {
+      "absolute_progress_gap": 0.0010433991744785986,
+      "candidate_active_index": 129,
+      "candidate_iteration": 130,
+      "candidate_progress": 0.6066567924403752,
+      "candidate_raw_rows": 68684069442,
+      "reference_iteration": 127,
+      "reference_progress": 0.6077001916148538,
+      "reference_raw_rows": 68802200323
+    },
+    {
+      "absolute_progress_gap": 0.0014529438983817977,
+      "candidate_active_index": 130,
+      "candidate_iteration": 131,
+      "candidate_progress": 0.6110533093340168,
+      "candidate_raw_rows": 69181831398,
+      "reference_iteration": 128,
+      "reference_progress": 0.6125062532323986,
+      "reference_raw_rows": 69346329844
+    },
+    {
+      "absolute_progress_gap": 0.001949799239548966,
+      "candidate_active_index": 131,
+      "candidate_iteration": 132,
+      "candidate_progress": 0.6154219060261331,
+      "candidate_raw_rows": 69676432303,
+      "reference_iteration": 129,
+      "reference_progress": 0.6173717052656821,
+      "reference_raw_rows": 69897183390
+    },
+    {
+      "absolute_progress_gap": 0.0020365469306838913,
+      "candidate_active_index": 133,
+      "candidate_iteration": 134,
+      "candidate_progress": 0.6241031455529643,
+      "candidate_raw_rows": 70659299166,
+      "reference_iteration": 130,
+      "reference_progress": 0.6220665986222804,
+      "reference_raw_rows": 70428726736
+    },
+    {
+      "absolute_progress_gap": 0.001566734390120894,
+      "candidate_active_index": 134,
+      "candidate_iteration": 135,
+      "candidate_progress": 0.6284968169814608,
+      "candidate_raw_rows": 71156738966,
+      "reference_iteration": 131,
+      "reference_progress": 0.6269300825913399,
+      "reference_raw_rows": 70979357463
+    },
+    {
+      "absolute_progress_gap": 0.0009249825539898726,
+      "candidate_active_index": 135,
+      "candidate_iteration": 136,
+      "candidate_progress": 0.6326302014651819,
+      "candidate_raw_rows": 71624709770,
+      "reference_iteration": 132,
+      "reference_progress": 0.631705218911192,
+      "reference_raw_rows": 71519985704
+    },
+    {
+      "absolute_progress_gap": 0.0002922698277996183,
+      "candidate_active_index": 136,
+      "candidate_iteration": 137,
+      "candidate_progress": 0.6367560352416862,
+      "candidate_raw_rows": 72091825703,
+      "reference_iteration": 133,
+      "reference_progress": 0.6364637654138866,
+      "reference_raw_rows": 72058735690
+    },
+    {
+      "absolute_progress_gap": 0.00043255658726204516,
+      "candidate_active_index": 137,
+      "candidate_iteration": 138,
+      "candidate_progress": 0.6407841509052109,
+      "candidate_raw_rows": 72547878251,
+      "reference_iteration": 134,
+      "reference_progress": 0.641216707492473,
+      "reference_raw_rows": 72596851158
+    },
+    {
+      "absolute_progress_gap": 0.000999825196143278,
+      "candidate_active_index": 138,
+      "candidate_iteration": 139,
+      "candidate_progress": 0.6448942561637051,
+      "candidate_raw_rows": 73013213443,
+      "reference_iteration": 135,
+      "reference_progress": 0.6458940813598484,
+      "reference_raw_rows": 73126410994
+    },
+    {
+      "absolute_progress_gap": 0.0016565685165522703,
+      "candidate_active_index": 139,
+      "candidate_iteration": 140,
+      "candidate_progress": 0.6489857154271078,
+      "candidate_raw_rows": 73476437585,
+      "reference_iteration": 136,
+      "reference_progress": 0.6506422839436601,
+      "reference_raw_rows": 73663989869
+    },
+    {
+      "absolute_progress_gap": 0.0019732756518819894,
+      "candidate_active_index": 140,
+      "candidate_iteration": 141,
+      "candidate_progress": 0.6534981699658846,
+      "candidate_raw_rows": 73987325693,
+      "reference_iteration": 137,
+      "reference_progress": 0.6554714456177666,
+      "reference_raw_rows": 74210734717
+    },
+    {
+      "absolute_progress_gap": 0.0021302860154269743,
+      "candidate_active_index": 142,
+      "candidate_iteration": 143,
+      "candidate_progress": 0.6624016658590438,
+      "candidate_raw_rows": 74995355831,
+      "reference_iteration": 138,
+      "reference_progress": 0.6602713798436168,
+      "reference_raw_rows": 74754170511
+    },
+    {
+      "absolute_progress_gap": 0.0015410487490958857,
+      "candidate_active_index": 143,
+      "candidate_iteration": 144,
+      "candidate_progress": 0.66656697361478,
+      "candidate_raw_rows": 75466940903,
+      "reference_iteration": 139,
+      "reference_progress": 0.6650259248656841,
+      "reference_raw_rows": 75292467460
+    },
+    {
+      "absolute_progress_gap": 0.0011112012079486089,
+      "candidate_active_index": 144,
+      "candidate_iteration": 145,
+      "candidate_progress": 0.6709648388795946,
+      "candidate_raw_rows": 75964855518,
+      "reference_iteration": 140,
+      "reference_progress": 0.669853637671646,
+      "reference_raw_rows": 75839048271
+    },
+    {
+      "absolute_progress_gap": 0.00045558864187389414,
+      "candidate_active_index": 145,
+      "candidate_iteration": 146,
+      "candidate_progress": 0.6750809284156655,
+      "candidate_raw_rows": 76430868234,
+      "reference_iteration": 141,
+      "reference_progress": 0.6746253397737916,
+      "reference_raw_rows": 76379287699
+    },
+    {
+      "absolute_progress_gap": 0.0003197574630837696,
+      "candidate_active_index": 146,
+      "candidate_iteration": 147,
+      "candidate_progress": 0.6790921726267328,
+      "candidate_raw_rows": 76885010641,
+      "reference_iteration": 142,
+      "reference_progress": 0.6794119300898166,
+      "reference_raw_rows": 76921212731
+    },
+    {
+      "absolute_progress_gap": 0.0010892580236282479,
+      "candidate_active_index": 147,
+      "candidate_iteration": 148,
+      "candidate_progress": 0.6832076318353394,
+      "candidate_raw_rows": 77350951993,
+      "reference_iteration": 143,
+      "reference_progress": 0.6842968898589676,
+      "reference_raw_rows": 77474274891
+    },
+    {
+      "absolute_progress_gap": 0.0014999089208257432,
+      "candidate_active_index": 148,
+      "candidate_iteration": 149,
+      "candidate_progress": 0.687619251609621,
+      "candidate_raw_rows": 77850423857,
+      "reference_iteration": 144,
+      "reference_progress": 0.6891191605304468,
+      "reference_raw_rows": 78020239558
+    },
+    {
+      "absolute_progress_gap": 0.0016574606855289664,
+      "candidate_active_index": 150,
+      "candidate_iteration": 151,
+      "candidate_progress": 0.6955091015352363,
+      "candidate_raw_rows": 78743691693,
+      "reference_iteration": 145,
+      "reference_progress": 0.6938516408497073,
+      "reference_raw_rows": 78556038400
+    },
+    {
+      "absolute_progress_gap": 9.42264482433064e-05,
+      "candidate_active_index": 151,
+      "candidate_iteration": 152,
+      "candidate_progress": 0.6987116321471175,
+      "candidate_raw_rows": 79106273696,
+      "reference_iteration": 146,
+      "reference_progress": 0.6986174056988742,
+      "reference_raw_rows": 79095605628
+    },
+    {
+      "absolute_progress_gap": 0.0007390191789443668,
+      "candidate_active_index": 152,
+      "candidate_iteration": 153,
+      "candidate_progress": 0.7027046761340255,
+      "candidate_raw_rows": 79558355522,
+      "reference_iteration": 147,
+      "reference_progress": 0.7034436953129699,
+      "reference_raw_rows": 79642025309
+    },
+    {
+      "absolute_progress_gap": 0.0012316589821712576,
+      "candidate_active_index": 153,
+      "candidate_iteration": 154,
+      "candidate_progress": 0.7069111332395412,
+      "candidate_raw_rows": 80034599414,
+      "reference_iteration": 148,
+      "reference_progress": 0.7081427922217125,
+      "reference_raw_rows": 80174044570
+    },
+    {
+      "absolute_progress_gap": 0.0019086594289441372,
+      "candidate_active_index": 154,
+      "candidate_iteration": 155,
+      "candidate_progress": 0.7110536424384634,
+      "candidate_raw_rows": 80503603294,
+      "reference_iteration": 149,
+      "reference_progress": 0.7129623018674075,
+      "reference_raw_rows": 80719696641
+    },
+    {
+      "absolute_progress_gap": 0.0008662387618055822,
+      "candidate_active_index": 156,
+      "candidate_iteration": 157,
+      "candidate_progress": 0.7186263835588345,
+      "candidate_raw_rows": 81360968914,
+      "reference_iteration": 150,
+      "reference_progress": 0.7177601447970289,
+      "reference_raw_rows": 81262895664
+    },
+    {
+      "absolute_progress_gap": 0.0001756027802720661,
+      "candidate_active_index": 157,
+      "candidate_iteration": 158,
+      "candidate_progress": 0.722388399175197,
+      "candidate_raw_rows": 81786894322,
+      "reference_iteration": 151,
+      "reference_progress": 0.7225640019554691,
+      "reference_raw_rows": 81806775602
+    },
+    {
+      "absolute_progress_gap": 0.0014122239174534368,
+      "candidate_active_index": 158,
+      "candidate_iteration": 159,
+      "candidate_progress": 0.7259833434781496,
+      "candidate_raw_rows": 82193904360,
+      "reference_iteration": 152,
+      "reference_progress": 0.7273955673956031,
+      "reference_raw_rows": 82353792598
+    },
+    {
+      "absolute_progress_gap": 0.0013271725212227192,
+      "candidate_active_index": 160,
+      "candidate_iteration": 161,
+      "candidate_progress": 0.7334473995790588,
+      "candidate_raw_rows": 83038964951,
+      "reference_iteration": 153,
+      "reference_progress": 0.7321202270578361,
+      "reference_raw_rows": 82888706006
+    },
+    {
+      "absolute_progress_gap": 0.0004168737512995069,
+      "candidate_active_index": 161,
+      "candidate_iteration": 162,
+      "candidate_progress": 0.7374408940269931,
+      "candidate_raw_rows": 83491097777,
+      "reference_iteration": 154,
+      "reference_progress": 0.7370240202756936,
+      "reference_raw_rows": 83443900439
+    },
+    {
+      "absolute_progress_gap": 0.0003301836573481598,
+      "candidate_active_index": 162,
+      "candidate_iteration": 163,
+      "candidate_progress": 0.7414882902880372,
+      "candidate_raw_rows": 83949333223,
+      "reference_iteration": 155,
+      "reference_progress": 0.7418184739453854,
+      "reference_raw_rows": 83986715739
+    },
+    {
+      "absolute_progress_gap": 0.000653169724761371,
+      "candidate_active_index": 163,
+      "candidate_iteration": 164,
+      "candidate_progress": 0.7459478265732737,
+      "candidate_raw_rows": 84454230067,
+      "reference_iteration": 156,
+      "reference_progress": 0.7466009962980351,
+      "reference_raw_rows": 84528180207
+    },
+    {
+      "absolute_progress_gap": 0.0010975892738127602,
+      "candidate_active_index": 164,
+      "candidate_iteration": 165,
+      "candidate_progress": 0.7502590737825708,
+      "candidate_raw_rows": 84942338016,
+      "reference_iteration": 157,
+      "reference_progress": 0.7513566630563836,
+      "reference_raw_rows": 85066604156
+    },
+    {
+      "absolute_progress_gap": 0.0011810314112756792,
+      "candidate_active_index": 165,
+      "candidate_iteration": 166,
+      "candidate_progress": 0.75506383267566,
+      "candidate_raw_rows": 85486320046,
+      "reference_iteration": 158,
+      "reference_progress": 0.7562448640869357,
+      "reference_raw_rows": 85620033283
+    },
+    {
+      "absolute_progress_gap": 0.0011123286147393108,
+      "candidate_active_index": 166,
+      "candidate_iteration": 167,
+      "candidate_progress": 0.759839955072364,
+      "candidate_raw_rows": 86027059928,
+      "reference_iteration": 159,
+      "reference_progress": 0.7609522836871033,
+      "reference_raw_rows": 86152994817
+    },
+    {
+      "absolute_progress_gap": 0.0014870477462345377,
+      "candidate_active_index": 167,
+      "candidate_iteration": 168,
+      "candidate_progress": 0.7643385384852635,
+      "candidate_raw_rows": 86536377584,
+      "reference_iteration": 160,
+      "reference_progress": 0.765825586231498,
+      "reference_raw_rows": 86704737177
+    },
+    {
+      "absolute_progress_gap": 0.0016143679585559623,
+      "candidate_active_index": 168,
+      "candidate_iteration": 169,
+      "candidate_progress": 0.7689641188031232,
+      "candidate_raw_rows": 87060073492,
+      "reference_iteration": 161,
+      "reference_progress": 0.7705784867616792,
+      "reference_raw_rows": 87242847941
+    },
+    {
+      "absolute_progress_gap": 0.0013498978913688564,
+      "candidate_active_index": 169,
+      "candidate_iteration": 170,
+      "candidate_progress": 0.7740300342162525,
+      "candidate_raw_rows": 87633622969,
+      "reference_iteration": 162,
+      "reference_progress": 0.7753799321076214,
+      "reference_raw_rows": 87786454820
+    },
+    {
+      "absolute_progress_gap": 0.0013029213777523418,
+      "candidate_active_index": 170,
+      "candidate_iteration": 171,
+      "candidate_progress": 0.7788864961780191,
+      "candidate_raw_rows": 88183458683,
+      "reference_iteration": 163,
+      "reference_progress": 0.7801894175557714,
+      "reference_raw_rows": 88330971978
+    },
+    {
+      "absolute_progress_gap": 0.0013363276822896397,
+      "candidate_active_index": 171,
+      "candidate_iteration": 172,
+      "candidate_progress": 0.7836490333237786,
+      "candidate_raw_rows": 88722660479,
+      "reference_iteration": 164,
+      "reference_progress": 0.7849853610060682,
+      "reference_raw_rows": 88873955947
+    },
+    {
+      "absolute_progress_gap": 0.0014771513118023716,
+      "candidate_active_index": 172,
+      "candidate_iteration": 173,
+      "candidate_progress": 0.7883297693350964,
+      "candidate_raw_rows": 89252600968,
+      "reference_iteration": 165,
+      "reference_progress": 0.7898069206468987,
+      "reference_raw_rows": 89419840113
+    },
+    {
+      "absolute_progress_gap": 0.0016665953020400526,
+      "candidate_active_index": 173,
+      "candidate_iteration": 174,
+      "candidate_progress": 0.79291127803001,
+      "candidate_raw_rows": 89771307204,
+      "reference_iteration": 166,
+      "reference_progress": 0.7945778733320501,
+      "reference_raw_rows": 89959994694
+    },
+    {
+      "absolute_progress_gap": 0.0017197617949360477,
+      "candidate_active_index": 174,
+      "candidate_iteration": 175,
+      "candidate_progress": 0.7976725166997797,
+      "candidate_raw_rows": 90310361990,
+      "reference_iteration": 167,
+      "reference_progress": 0.7993922784947157,
+      "reference_raw_rows": 90505068849
+    },
+    {
+      "absolute_progress_gap": 0.0022709848849005176,
+      "candidate_active_index": 176,
+      "candidate_iteration": 177,
+      "candidate_progress": 0.8065789181902149,
+      "candidate_raw_rows": 91318721092,
+      "reference_iteration": 168,
+      "reference_progress": 0.8043079333053144,
+      "reference_raw_rows": 91061606220
+    },
+    {
+      "absolute_progress_gap": 0.002059111645229872,
+      "candidate_active_index": 177,
+      "candidate_iteration": 178,
+      "candidate_progress": 0.8111976739705301,
+      "candidate_raw_rows": 91841644344,
+      "reference_iteration": 169,
+      "reference_progress": 0.8091385623253002,
+      "reference_raw_rows": 91608517197
+    },
+    {
+      "absolute_progress_gap": 0.0015641387718591249,
+      "candidate_active_index": 178,
+      "candidate_iteration": 179,
+      "candidate_progress": 0.8155162498715859,
+      "candidate_raw_rows": 92330582028,
+      "reference_iteration": 170,
+      "reference_progress": 0.8139521110997268,
+      "reference_raw_rows": 92153494394
+    },
+    {
+      "absolute_progress_gap": 0.0009724329084431771,
+      "candidate_active_index": 179,
+      "candidate_iteration": 180,
+      "candidate_progress": 0.8197341970366544,
+      "candidate_raw_rows": 92808126794,
+      "reference_iteration": 171,
+      "reference_progress": 0.8187617641282112,
+      "reference_raw_rows": 92698030525
+    },
+    {
+      "absolute_progress_gap": 0.0004423244459852427,
+      "candidate_active_index": 180,
+      "candidate_iteration": 181,
+      "candidate_progress": 0.8240140985532978,
+      "candidate_raw_rows": 93292685867,
+      "reference_iteration": 172,
+      "reference_progress": 0.8235717741073125,
+      "reference_raw_rows": 93242607069
+    },
+    {
+      "absolute_progress_gap": 9.547334202930635e-05,
+      "candidate_active_index": 181,
+      "candidate_iteration": 182,
+      "candidate_progress": 0.8284792322672477,
+      "candidate_raw_rows": 93798216437,
+      "reference_iteration": 173,
+      "reference_progress": 0.8283837589252184,
+      "reference_raw_rows": 93787407199
+    },
+    {
+      "absolute_progress_gap": 4.632134896764839e-05,
+      "candidate_active_index": 182,
+      "candidate_iteration": 183,
+      "candidate_progress": 0.8331305022449516,
+      "candidate_raw_rows": 94324820860,
+      "reference_iteration": 174,
+      "reference_progress": 0.8331768235939192,
+      "reference_raw_rows": 94330065240
+    },
+    {
+      "absolute_progress_gap": 7.113094928723473e-05,
+      "candidate_active_index": 183,
+      "candidate_iteration": 184,
+      "candidate_progress": 0.8379433667249162,
+      "candidate_raw_rows": 94869720583,
+      "reference_iteration": 175,
+      "reference_progress": 0.8380144976742034,
+      "reference_raw_rows": 94877773840
+    },
+    {
+      "absolute_progress_gap": 0.00045413697380491946,
+      "candidate_active_index": 184,
+      "candidate_iteration": 185,
+      "candidate_progress": 0.8423452681646897,
+      "candidate_raw_rows": 95368092163,
+      "reference_iteration": 176,
+      "reference_progress": 0.8427994051384946,
+      "reference_raw_rows": 95419508344
+    },
+    {
+      "absolute_progress_gap": 0.001044032072220591,
+      "candidate_active_index": 185,
+      "candidate_iteration": 186,
+      "candidate_progress": 0.8466416909489217,
+      "candidate_raw_rows": 95854521730,
+      "reference_iteration": 177,
+      "reference_progress": 0.8476857230211423,
+      "reference_raw_rows": 95972724266
+    },
+    {
+      "absolute_progress_gap": 0.0013290424821013058,
+      "candidate_active_index": 186,
+      "candidate_iteration": 187,
+      "candidate_progress": 0.851137062230233,
+      "candidate_raw_rows": 96363475717,
+      "reference_iteration": 178,
+      "reference_progress": 0.8524661047123343,
+      "reference_raw_rows": 96513946374
+    },
+    {
+      "absolute_progress_gap": 0.0017176829437971497,
+      "candidate_active_index": 187,
+      "candidate_iteration": 188,
+      "candidate_progress": 0.8556131410872149,
+      "candidate_raw_rows": 96870245467,
+      "reference_iteration": 179,
+      "reference_progress": 0.857330824031012,
+      "reference_raw_rows": 97064716964
+    },
+    {
+      "absolute_progress_gap": 0.0015435353557892162,
+      "candidate_active_index": 188,
+      "candidate_iteration": 189,
+      "candidate_progress": 0.8606507953881477,
+      "candidate_raw_rows": 97440595296,
+      "reference_iteration": 180,
+      "reference_progress": 0.8621943307439369,
+      "reference_raw_rows": 97615350266
+    },
+    {
+      "absolute_progress_gap": 0.0015146576331082073,
+      "candidate_active_index": 189,
+      "candidate_iteration": 190,
+      "candidate_progress": 0.8655060923252115,
+      "candidate_raw_rows": 97990299109,
+      "reference_iteration": 181,
+      "reference_progress": 0.8670207499583197,
+      "reference_raw_rows": 98161784620
+    },
+    {
+      "absolute_progress_gap": 0.0014943208899659277,
+      "candidate_active_index": 190,
+      "candidate_iteration": 191,
+      "candidate_progress": 0.8702835990239798,
+      "candidate_raw_rows": 98531195718,
+      "reference_iteration": 182,
+      "reference_progress": 0.8717779199139457,
+      "reference_raw_rows": 98700378757
+    },
+    {
+      "absolute_progress_gap": 0.0015792911678816912,
+      "candidate_active_index": 191,
+      "candidate_iteration": 192,
+      "candidate_progress": 0.8751340868744566,
+      "candidate_raw_rows": 99080355059,
+      "reference_iteration": 183,
+      "reference_progress": 0.8767133780423383,
+      "reference_raw_rows": 99259158207
+    },
+    {
+      "absolute_progress_gap": 0.0020789133731612397,
+      "candidate_active_index": 192,
+      "candidate_iteration": 193,
+      "candidate_progress": 0.879428186154217,
+      "candidate_raw_rows": 99566521565,
+      "reference_iteration": 184,
+      "reference_progress": 0.8815070995273783,
+      "reference_raw_rows": 99801890611
+    },
+    {
+      "absolute_progress_gap": 0.0018705921511719126,
+      "candidate_active_index": 193,
+      "candidate_iteration": 194,
+      "candidate_progress": 0.8844201986752195,
+      "candidate_raw_rows": 100131703953,
+      "reference_iteration": 185,
+      "reference_progress": 0.8862907908263914,
+      "reference_raw_rows": 100343487424
+    },
+    {
+      "absolute_progress_gap": 0.002160019525732415,
+      "candidate_active_index": 195,
+      "candidate_iteration": 196,
+      "candidate_progress": 0.8933064298811105,
+      "candidate_raw_rows": 101137779429,
+      "reference_iteration": 186,
+      "reference_progress": 0.8911464103553781,
+      "reference_raw_rows": 100893227760
+    },
+    {
+      "absolute_progress_gap": 0.0013645311884702416,
+      "candidate_active_index": 196,
+      "candidate_iteration": 197,
+      "candidate_progress": 0.8972980498900537,
+      "candidate_raw_rows": 101589700036,
+      "reference_iteration": 187,
+      "reference_progress": 0.8959335187015834,
+      "reference_raw_rows": 101435211442
+    },
+    {
+      "absolute_progress_gap": 0.001136077812137759,
+      "candidate_active_index": 197,
+      "candidate_iteration": 198,
+      "candidate_progress": 0.9019574851716329,
+      "candidate_raw_rows": 102117228913,
+      "reference_iteration": 188,
+      "reference_progress": 0.9008214073594951,
+      "reference_raw_rows": 101988605203
+    },
+    {
+      "absolute_progress_gap": 0.0003345862602704974,
+      "candidate_active_index": 198,
+      "candidate_iteration": 199,
+      "candidate_progress": 0.9059937894216853,
+      "candidate_raw_rows": 102574208551,
+      "reference_iteration": 189,
+      "reference_progress": 0.9056592031614148,
+      "reference_raw_rows": 102536327584
+    },
+    {
+      "absolute_progress_gap": 0.0003835600474172418,
+      "candidate_active_index": 199,
+      "candidate_iteration": 200,
+      "candidate_progress": 0.9101329368299679,
+      "candidate_raw_rows": 103042831818,
+      "reference_iteration": 190,
+      "reference_progress": 0.9105164968773851,
+      "reference_raw_rows": 103086257467
+    },
+    {
+      "absolute_progress_gap": 0.0010618671844693228,
+      "candidate_active_index": 200,
+      "candidate_iteration": 201,
+      "candidate_progress": 0.9142620224757888,
+      "candidate_raw_rows": 103510315919,
+      "reference_iteration": 191,
+      "reference_progress": 0.9153238896602581,
+      "reference_raw_rows": 103630537699
+    },
+    {
+      "absolute_progress_gap": 0.0018781621928823933,
+      "candidate_active_index": 201,
+      "candidate_iteration": 202,
+      "candidate_progress": 0.9182139364562436,
+      "candidate_raw_rows": 103957741115,
+      "reference_iteration": 192,
+      "reference_progress": 0.920092098649126,
+      "reference_raw_rows": 104170381646
+    },
+    {
+      "absolute_progress_gap": 0.0014373002083657438,
+      "candidate_active_index": 203,
+      "candidate_iteration": 204,
+      "candidate_progress": 0.9263266220763969,
+      "candidate_raw_rows": 104876237816,
+      "reference_iteration": 193,
+      "reference_progress": 0.9248893218680312,
+      "reference_raw_rows": 104713510507
+    },
+    {
+      "absolute_progress_gap": 0.000850770265798384,
+      "candidate_active_index": 204,
+      "candidate_iteration": 205,
+      "candidate_progress": 0.9305565272416987,
+      "candidate_raw_rows": 105355136435,
+      "reference_iteration": 194,
+      "reference_progress": 0.9297057569759003,
+      "reference_raw_rows": 105258814487
+    },
+    {
+      "absolute_progress_gap": 0.00016985193866514425,
+      "candidate_active_index": 205,
+      "candidate_iteration": 206,
+      "candidate_progress": 0.9344315210890768,
+      "candidate_raw_rows": 105793852938,
+      "reference_iteration": 195,
+      "reference_progress": 0.9346013730277419,
+      "reference_raw_rows": 105813083123
+    },
+    {
+      "absolute_progress_gap": 0.0006623493167143835,
+      "candidate_active_index": 206,
+      "candidate_iteration": 207,
+      "candidate_progress": 0.9387568651405558,
+      "candidate_raw_rows": 106283556894,
+      "reference_iteration": 196,
+      "reference_progress": 0.9394192144572702,
+      "reference_raw_rows": 106358546323
+    },
+    {
+      "absolute_progress_gap": 0.001572548746732405,
+      "candidate_active_index": 207,
+      "candidate_iteration": 208,
+      "candidate_progress": 0.9426367264666354,
+      "candidate_raw_rows": 106722824480,
+      "reference_iteration": 197,
+      "reference_progress": 0.9442092752133678,
+      "reference_raw_rows": 106900864269
+    },
+    {
+      "absolute_progress_gap": 0.000807172925317623,
+      "candidate_active_index": 209,
+      "candidate_iteration": 210,
+      "candidate_progress": 0.9499017023326964,
+      "candidate_raw_rows": 107545345736,
+      "reference_iteration": 198,
+      "reference_progress": 0.9490945294073788,
+      "reference_raw_rows": 107453959763
+    },
+    {
+      "absolute_progress_gap": 0.00015676081696880395,
+      "candidate_active_index": 210,
+      "candidate_iteration": 211,
+      "candidate_progress": 0.9537693213646398,
+      "candidate_raw_rows": 107983227282,
+      "reference_iteration": 199,
+      "reference_progress": 0.9539260821816086,
+      "reference_raw_rows": 108000975325
+    },
+    {
+      "absolute_progress_gap": 0.0008620204946011567,
+      "candidate_active_index": 211,
+      "candidate_iteration": 212,
+      "candidate_progress": 0.9579046589767105,
+      "candidate_raw_rows": 108451419214,
+      "reference_iteration": 200,
+      "reference_progress": 0.9587666794713117,
+      "reference_raw_rows": 108549014883
+    },
+    {
+      "absolute_progress_gap": 0.001045081584584051,
+      "candidate_active_index": 212,
+      "candidate_iteration": 213,
+      "candidate_progress": 0.9625378112087856,
+      "candidate_raw_rows": 108975972394,
+      "reference_iteration": 201,
+      "reference_progress": 0.9635828927933696,
+      "reference_raw_rows": 109094293753
+    },
+    {
+      "absolute_progress_gap": 0.0014796239895341623,
+      "candidate_active_index": 213,
+      "candidate_iteration": 214,
+      "candidate_progress": 0.9668688603579957,
+      "candidate_raw_rows": 109466322266,
+      "reference_iteration": 202,
+      "reference_progress": 0.9683484843475298,
+      "reference_raw_rows": 109633841361
+    },
+    {
+      "absolute_progress_gap": 0.0018187660624714441,
+      "candidate_active_index": 215,
+      "candidate_iteration": 216,
+      "candidate_progress": 0.9749769863233146,
+      "candidate_raw_rows": 110384302735,
+      "reference_iteration": 203,
+      "reference_progress": 0.9731582202608432,
+      "reference_raw_rows": 110178386876
+    },
+    {
+      "absolute_progress_gap": 0.0012852909514610156,
+      "candidate_active_index": 216,
+      "candidate_iteration": 217,
+      "candidate_progress": 0.9793810075796827,
+      "candidate_raw_rows": 110882914315,
+      "reference_iteration": 204,
+      "reference_progress": 0.9780957166282217,
+      "reference_raw_rows": 110737397090
+    },
+    {
+      "absolute_progress_gap": 0.0010025299054665648,
+      "candidate_active_index": 217,
+      "candidate_iteration": 218,
+      "candidate_progress": 0.9838831259104095,
+      "candidate_raw_rows": 111392632185,
+      "reference_iteration": 205,
+      "reference_progress": 0.9828805960049429,
+      "reference_raw_rows": 111279128414
+    },
+    {
+      "absolute_progress_gap": 0.0008727087423595625,
+      "candidate_active_index": 218,
+      "candidate_iteration": 219,
+      "candidate_progress": 0.9886101073989261,
+      "candidate_raw_rows": 111927808464,
+      "reference_iteration": 206,
+      "reference_progress": 0.9877373986565665,
+      "reference_raw_rows": 111829002700
+    },
+    {
+      "absolute_progress_gap": 0.0007408764297560655,
+      "candidate_active_index": 219,
+      "candidate_iteration": 220,
+      "candidate_progress": 0.9932672592935627,
+      "candidate_raw_rows": 112455078822,
+      "reference_iteration": 207,
+      "reference_progress": 0.9925263828638067,
+      "reference_raw_rows": 112371198762
+    },
+    {
+      "absolute_progress_gap": 0.0003294738720917012,
+      "candidate_active_index": 220,
+      "candidate_iteration": 221,
+      "candidate_progress": 0.9977166796461913,
+      "candidate_raw_rows": 112958830367,
+      "reference_iteration": 208,
+      "reference_progress": 0.9973872057740996,
+      "reference_raw_rows": 112921528211
+    },
+    {
+      "absolute_progress_gap": 3.5514877270159673e-06,
+      "candidate_active_index": 221,
+      "candidate_iteration": 222,
+      "candidate_progress": 1.000003551487727,
+      "candidate_raw_rows": 113217743918,
+      "reference_iteration": 209,
+      "reference_progress": 1.0,
+      "reference_raw_rows": 113217341828
+    }
+  ],
+  "reference": {
+    "active_endpoint_iteration": 209,
+    "active_endpoint_raw_rows": 113217341828,
+    "active_endpoint_source_line": 209,
+    "active_endpoint_started_at": "2026-08-12T21:58:57Z",
+    "active_observations_including_endpoint": 209,
+    "final_rows": 113217341828,
+    "observations_used": 209,
+    "total_observations": 209,
+    "zero_row_observation_included": true
+  },
+  "reference_file": "quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl",
+  "requested_count": 209,
+  "schema_version": 2
+}
