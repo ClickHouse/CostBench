@@ -29,12 +29,16 @@ mkdir -p out_t2
 # The matched JSONL files already contain exactly the selected active-ingestion
 # iterations. Do not slice them again with --iterations.
 T2_MATCHED_SNOWFLAKE_ROOT="../results_t2/matched/snowflake_run14"
+T2_MATCHED_BIGQUERY_ROOT="../results_t2/matched/bigquery"
 T2_COST_SNOWFLAKE_ROOT="out_t2/matched/snowflake_run14"
+T2_COST_BIGQUERY_ROOT="out_t2/matched/bigquery"
 
 CH_MATCHED_SNOWFLAKE_DASHBOARD="$T2_MATCHED_SNOWFLAKE_ROOT/dashboard_active_matched_to_snowflake.jsonl"
 CH_MATCHED_SNOWFLAKE_DRILLDOWN="$T2_MATCHED_SNOWFLAKE_ROOT/drilldown_active_matched_to_snowflake.jsonl"
+CH_MATCHED_BIGQUERY_DASHBOARD="$T2_MATCHED_BIGQUERY_ROOT/dashboard_active_matched_to_bigquery.jsonl"
+CH_MATCHED_BIGQUERY_DRILLDOWN="$T2_MATCHED_BIGQUERY_ROOT/drilldown_active_matched_to_bigquery.jsonl"
 
-mkdir -p "$T2_COST_SNOWFLAKE_ROOT"
+mkdir -p "$T2_COST_SNOWFLAKE_ROOT" "$T2_COST_BIGQUERY_ROOT"
 
 ./summarize_queries.sh \
     "$CH_MATCHED_SNOWFLAKE_DASHBOARD" \
@@ -43,6 +47,14 @@ mkdir -p "$T2_COST_SNOWFLAKE_ROOT"
 ./summarize_queries.sh \
     "$CH_MATCHED_SNOWFLAKE_DRILLDOWN" \
     "$T2_COST_SNOWFLAKE_ROOT/drilldown.json"
+
+./summarize_queries.sh \
+    "$CH_MATCHED_BIGQUERY_DASHBOARD" \
+    "$T2_COST_BIGQUERY_ROOT/dashboard.json"
+
+./summarize_queries.sh \
+    "$CH_MATCHED_BIGQUERY_DRILLDOWN" \
+    "$T2_COST_BIGQUERY_ROOT/drilldown.json"
 
 ./summarize_ingest_compute.sh out_t2/ingest.json \
     --nodes 2 --mem-gib 8 --hours 36.75 \
