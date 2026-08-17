@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+FULL_PATH_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+cd "$FULL_PATH_ROOT"
+
+export CHART_BACKGROUND_COLOR="${CHART_BACKGROUND_COLOR:-#161614}"
+
+VIZ="$PWD/quotes/redshift-serverless/visualizations"
+OUT="$PWD/quotes/redshift-serverless/results/t2/charts"
+RS="$PWD/quotes/redshift-serverless/results/t2"
+RS_COST="$PWD/quotes/redshift-serverless/costs/out/t2"
+CH="$PWD/quotes/clickhouse-cloud"
+CH_COST="$CH/costs/out_t2/matched/redshift_run_20260812"
+mkdir -p "$OUT"
+
+run_narrow_and_wide() {
+  if [ "${WIDE_ONLY:-0}" != "1" ]; then
+    "$@"
+  fi
+  "$@" --wide
+}
+
+# 1. Dashboard queries against the maintained daily MV.
+run_narrow_and_wide uv run "$VIZ/plot_query_latency.py" \
+  --workload aggregate \
+  --left "$CH/results_t2/mv/dashboard_20260808T065559Z.jsonl" \
+  --right "$RS/dashboard_20260812T165356Z.jsonl" \
+  --left-cost "$CH_COST/dashboard.json" \
+  --right-cost "$RS_COST/dashboard.json" \
+  --output-dir "$OUT" \
+  --basename aggregate_query_latency_clickhouse_vs_redshift
+
+# 2. Separate 1:1 drill-down charts for the SUPER and typed raw layouts.
+run_narrow_and_wide uv run "$VIZ/plot_query_latency.py" \
+  --workload drilldown \
+  --left "$CH/results_t2/raw/drilldown_20260808T065602Z.jsonl" \
+  --right "$RS/drilldown_super_20260812T165356Z.jsonl" \
+  --right-label "Redshift · SUPER" \
+  --left-cost "$CH_COST/drilldown_super.json" \
+  --right-cost "$RS_COST/drilldown_super.json" \
+  --output-dir "$OUT" \
+  --basename drilldown_query_latency_clickhouse_vs_redshift_super
+
+run_narrow_and_wide uv run "$VIZ/plot_query_latency.py" \
+  --workload drilldown \
+  --left "$CH/results_t2/raw/drilldown_20260808T065602Z.jsonl" \
+  --right "$RS/drilldown_typed_20260812T165356Z.jsonl" \
+  --right-label "Redshift · Typed" \
+  --right-color "#E76F00" \
+  --left-cost "$CH_COST/drilldown_typed.json" \
+  --right-cost "$RS_COST/drilldown_typed.json" \
+  --output-dir "$OUT" \
+  --basename drilldown_query_latency_clickhouse_vs_redshift_typed
+
+# 3. Redshift-internal representation comparison. This is diagnostic and does
+# not duplicate the writer/MSK path.
+run_narrow_and_wide uv run "$VIZ/plot_query_latency.py" \
+  --workload drilldown \
+  --left "$RS/drilldown_super_20260812T165356Z.jsonl" \
+  --right "$RS/drilldown_typed_20260812T165356Z.jsonl" \
+  --left-label "Redshift · SUPER" \
+  --right-label "Redshift · Typed" \
+  --left-color "#FF9900" \
+  --right-color "#E76F00" \
+  --left-cost "$RS_COST/drilldown_super.json" \
+  --right-cost "$RS_COST/drilldown_typed.json" \
+  --left-tier Standard \
+  --right-tier Standard \
+  --output-dir "$OUT" \
+  --basename drilldown_query_latency_redshift_super_vs_typed
+
+# 4. Freshness and the shared complete-ingest path.
+run_narrow_and_wide uv run "$VIZ/plot_freshness.py" \
+  --lag "$RS/lag_20260812T165356Z.jsonl" \
+  --refresh "$RS/refresh_20260812T165356Z.jsonl" \
+  --output-dir "$OUT"
+
+run_narrow_and_wide uv run "$VIZ/plot_fresh_path_cost.py" \
+  --clickhouse "$CH/costs/out_t2/ingest.json" \
+  --redshift "$RS_COST/fresh_data_path.json" \
+  --output-dir "$OUT"
+
+# 5. Full-path score alternatives. The same Redshift fresh path is used in
+# both summaries; only the matched read workload changes.
+run_narrow_and_wide uv run "$VIZ/plot_full_path_cost_performance.py" \
+  --summary "$RS_COST/full_path_super.json" \
+  --output-dir "$OUT" \
+  --basename full_path_cost_performance_clickhouse_vs_redshift_super
+
+run_narrow_and_wide uv run "$VIZ/plot_full_path_cost_performance.py" \
+  --summary "$RS_COST/full_path_typed.json" \
+  --output-dir "$OUT" \
+  --basename full_path_cost_performance_clickhouse_vs_redshift_typed

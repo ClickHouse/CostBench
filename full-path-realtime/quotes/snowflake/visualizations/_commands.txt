@@ -1,0 +1,168 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SNOWFLAKE_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+cd "$SNOWFLAKE_ROOT"
+
+# Shared slide background for every chart. Override before running if needed.
+export CHART_BACKGROUND_COLOR="${CHART_BACKGROUND_COLOR:-#161614}"
+
+export SF_CHART_DIR="$PWD/results/t2/charts/run14"
+mkdir -p "$SF_CHART_DIR"
+
+# Every renderer produces its established default layout plus a Keynote-native
+# 5156x2900 wide layout with a transparent 560px header-safe area and subtle
+# chart stage. Wide outputs are automatically suffixed with `_wide`.
+run_narrow_and_wide() {
+  if [ "${WIDE_ONLY:-0}" != "1" ]; then
+    "$@"
+  fi
+  "$@" --wide
+}
+
+# 1. Persisted MV lag during active ingestion.
+run_narrow_and_wide uv run visualizations/plot_mv_lag.py \
+  --freshness results/t2/mv_latency_20260811T111856Z.jsonl \
+  --dashboard results/t2/dashboard_imv_iv_20260811T111856Z.jsonl \
+  --output-dir "$SF_CHART_DIR" \
+  --display-smooth-window 11 \
+  --curve-interpolation pchip \
+  --curve-points 2000
+
+# 2. Interactive aggregate-query latency. Each system is plotted at its own
+# observed raw-row counts; these latency charts do not use matched files.
+run_narrow_and_wide uv run visualizations/plot_aggregate_query_latency.py \
+  --clickhouse ../clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl \
+  --snowflake results/t2/dashboard_imv_iv_20260811T111856Z.jsonl \
+  --output-dir "$SF_CHART_DIR" \
+  --max-rows 100000000000 \
+  --drop-outliers \
+  --annotate-outliers \
+  --smooth-window 7 \
+  --summary-strip \
+  --clickhouse-cost-summary ../clickhouse-cloud/costs/out_t2/matched/snowflake_run14/dashboard.json \
+  --snowflake-cost-summary costs/out/t2/run14/dashboard.json \
+  --snowflake-pricing costs/pricings/interactive_warehouse.json \
+  --snowflake-fallback-pricing costs/pricings/gen2_warehouse.json \
+  --query-cost-display total
+
+# 3. One-to-one dashboard latency comparison: ClickHouse's maintained
+# materialized-view target versus Snowflake computing the same four dashboard
+# questions directly from its raw Interactive Table. This intentionally
+# compares different physical data paths and does not add a cost summary strip.
+run_narrow_and_wide uv run visualizations/plot_aggregate_query_latency.py \
+  --clickhouse ../clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl \
+  --snowflake results/t2/dashboard_raw_iv_20260811T111856Z.jsonl \
+  --clickhouse-queries ../clickhouse-cloud/queries_mv.sql \
+  --snowflake-queries t2/queries_dashboard_raw.sql \
+  --clickhouse-legend-label "ClickHouse Cloud · Materialized View" \
+  --snowflake-legend-label "Snowflake · Raw Interactive Table" \
+  --output-dir "$SF_CHART_DIR" \
+  --basename dashboard_raw_latency_clickhouse_vs_snowflake \
+  --max-rows 100000000000 \
+  --drop-outliers \
+  --annotate-outliers \
+  --smooth-window 7 \
+  --query-cost-display total
+
+# 4. Snowflake-only phase breakdown for the raw-table side of chart 3. There is
+# no ClickHouse series: orange is provider-reported compilation and blue is
+# provider-reported execution. The stack uses the same raw input, 100B cap,
+# Tukey rule, and centered seven-observation display median as chart 3.
+run_narrow_and_wide uv run visualizations/plot_query_time_breakdown.py \
+  --input results/t2/dashboard_raw_iv_20260811T111856Z.jsonl \
+  --queries t2/queries_dashboard_raw.sql \
+  --output-dir "$SF_CHART_DIR" \
+  --max-rows 100000000000 \
+  --drop-outliers \
+  --annotate-outliers \
+  --smooth-window 7 \
+  --compilation-legend-label "Compilation" \
+  --execution-legend-label "Execution" \
+  --basename dashboard_raw_query_time_breakdown_snowflake
+
+# 5. Snowflake-only dashboard experiment: separate the data-path effect from
+# the query-compute effect across the Interactive MV + Interactive/fallback,
+# Interactive MV + Gen2 Small, and raw Interactive Table + Interactive/fallback.
+# Every condition uses its own observed raw-row timeline. Tukey filtering is
+# symmetric per condition/query and all raw measurements remain in provenance.
+run_narrow_and_wide uv run visualizations/plot_dashboard_path_latency.py \
+  --imv-interactive results/t2/dashboard_imv_iv_20260811T111856Z.jsonl \
+  --imv-gen2 results/t2/dashboard_mv_std_20260811T111856Z.jsonl \
+  --raw-interactive results/t2/dashboard_raw_iv_20260811T111856Z.jsonl \
+  --mv-queries t2/queries_mv_imv.sql \
+  --raw-queries t2/queries_dashboard_raw.sql \
+  --output-dir "$SF_CHART_DIR" \
+  --max-rows 100000000000 \
+  --drop-outliers \
+  --annotate-outliers \
+  --smooth-window 7 \
+  --query-cost-display total
+
+# 6. Snowflake dashboard query-time breakdown. Whole observations are filtered
+# by the same end-to-end-latency Tukey rule as chart 2; orange is compilation
+# outside the warehouse and Snowflake blue is provider-reported execution. Raw and
+# excluded measurements remain in the CSV/summary.
+run_narrow_and_wide uv run visualizations/plot_query_time_breakdown.py \
+  --input results/t2/dashboard_imv_iv_20260811T111856Z.jsonl \
+  --queries t2/queries_mv_imv.sql \
+  --output-dir "$SF_CHART_DIR" \
+  --max-rows 100000000000 \
+  --drop-outliers \
+  --annotate-outliers \
+  --smooth-window 7
+
+# 7. Raw-table drill-down latency.
+run_narrow_and_wide uv run visualizations/plot_drilldown_query_latency.py \
+  --clickhouse ../clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl \
+  --snowflake results/t2/drilldown_20260811T111857Z.jsonl \
+  --clickhouse-queries ../clickhouse-cloud/queries_raw.sql \
+  --snowflake-queries t2/queries_raw_it.sql \
+  --output-dir "$SF_CHART_DIR" \
+  --max-rows 100000000000 \
+  --smooth-window 5 \
+  --summary-strip \
+  --clickhouse-cost-summary ../clickhouse-cloud/costs/out_t2/matched/snowflake_run14/drilldown.json \
+  --snowflake-cost-summary costs/out/t2/run14/drilldown.json \
+  --snowflake-pricing costs/pricings/interactive_warehouse.json \
+  --snowflake-fallback-pricing costs/pricings/gen2_warehouse.json \
+  --query-cost-display total
+
+# 8. Snowflake drill-down query-time breakdown. Orange is compilation outside
+# the warehouse; Snowflake blue is provider-reported execution. It uses the same
+# centered five-observation median as the drill-down latency chart and does not
+# exclude outliers.
+run_narrow_and_wide uv run visualizations/plot_query_time_breakdown.py \
+  --input results/t2/drilldown_20260811T111857Z.jsonl \
+  --queries t2/queries_raw_it.sql \
+  --query-label "Hourly OHLCV bars" \
+  --query-label "Risk & liquidity (B7)" \
+  --output-dir "$SF_CHART_DIR" \
+  --max-rows 100000000000 \
+  --smooth-window 5 \
+  --basename drilldown_query_time_breakdown_snowflake
+
+# 9. Complete-ingest fresh-data-path cost. Snowflake uses Snowpipe Streaming
+# plus serverless MV refresh. There is no ingest warehouse.
+run_narrow_and_wide uv run visualizations/plot_ingest_fresh_path_cost.py \
+  --clickhouse-ingest-cost ../clickhouse-cloud/costs/out_t2/ingest.json \
+  --snowflake-snowpipe-cost costs/out/t2/run14/snowpipe_streaming.json \
+  --snowflake-mv-refresh-cost costs/out/t2/run14/mv_refresh.json \
+  --output-dir "$SF_CHART_DIR"
+
+# 10. Full-path cost-performance using the same complete-ingest fresh-data path
+# and the same matched active-ingestion query summaries.
+run_narrow_and_wide uv run visualizations/plot_full_path_cost_performance.py \
+  --clickhouse-ingest-cost ../clickhouse-cloud/costs/out_t2/ingest.json \
+  --clickhouse-dashboard-cost ../clickhouse-cloud/costs/out_t2/matched/snowflake_run14/dashboard.json \
+  --clickhouse-drilldown-cost ../clickhouse-cloud/costs/out_t2/matched/snowflake_run14/drilldown.json \
+  --snowflake-snowpipe-cost costs/out/t2/run14/snowpipe_streaming.json \
+  --snowflake-mv-refresh-cost costs/out/t2/run14/mv_refresh.json \
+  --snowflake-dashboard-cost costs/out/t2/run14/dashboard.json \
+  --snowflake-drilldown-cost costs/out/t2/run14/drilldown.json \
+  --snowflake-dashboard-pricing costs/pricings/interactive_warehouse.json \
+  --snowflake-drilldown-pricing costs/pricings/interactive_warehouse.json \
+  --snowflake-fallback-pricing costs/pricings/gen2_warehouse.json \
+  --query-cost-display total \
+  --output-dir "$SF_CHART_DIR"
