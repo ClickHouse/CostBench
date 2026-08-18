@@ -1,0 +1,138 @@
+{
+  "schema_version": 2,
+  "source_file": "dashboard_mv_std_20260811T111856Z.jsonl",
+  "system": "Snowflake (AWS)",
+  "version": null,
+  "machine": "Gen2 Small",
+  "cluster_size": 2.7,
+  "cloud": "aws",
+  "region": "us-east-1",
+  "iterations_included": 209,
+  "queries_per_iteration": 4,
+  "total_runtime_seconds": 6890.801,
+  "query_cost_model": {
+    "metric": "normalized query cost",
+    "attribution_method": "single_recorded_warehouse_rate",
+    "elapsed_time_source": "result (end-to-end query elapsed seconds)",
+    "compilation_treatment": "included in elapsed time; not priced separately",
+    "standing_capacity_treatment": "excluded",
+    "primary_warehouse": "Gen2 Small",
+    "primary_pricing_file": "gen2_warehouse.json",
+    "fallback_is_proxy": false,
+    "fallback_condition": null,
+    "fallback_threshold_seconds": null,
+    "fallback_warehouse": null,
+    "fallback_pricing_file": null,
+    "fallback_credits_per_hour": null,
+    "fallback_runtime_treatment": null,
+    "primary_attempt_cost_treatment": null
+  },
+  "runtime_attribution": {
+    "query_jobs": 836,
+    "primary_priced_query_jobs": 836,
+    "primary_priced_runtime_seconds": 6890.801,
+    "fallback_priced_query_jobs": 0,
+    "fallback_priced_runtime_seconds": 0.0,
+    "fallback_priced_job_share": 0.0
+  },
+  "per_query_attribution": [
+    {
+      "query_number": 1,
+      "query_jobs": 209,
+      "total_runtime_seconds": 1533.366,
+      "primary_priced_query_jobs": 209,
+      "primary_priced_runtime_seconds": 1533.366,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_seconds": 0.0
+    },
+    {
+      "query_number": 2,
+      "query_jobs": 209,
+      "total_runtime_seconds": 1820.478,
+      "primary_priced_query_jobs": 209,
+      "primary_priced_runtime_seconds": 1820.478,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_seconds": 0.0
+    },
+    {
+      "query_number": 3,
+      "query_jobs": 209,
+      "total_runtime_seconds": 1582.085,
+      "primary_priced_query_jobs": 209,
+      "primary_priced_runtime_seconds": 1582.085,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_seconds": 0.0
+    },
+    {
+      "query_number": 4,
+      "query_jobs": 209,
+      "total_runtime_seconds": 1954.872,
+      "primary_priced_query_jobs": 209,
+      "primary_priced_runtime_seconds": 1954.872,
+      "fallback_priced_query_jobs": 0,
+      "fallback_priced_runtime_seconds": 0.0
+    }
+  ],
+  "costs": [
+    {
+      "tier": "standard",
+      "warehouse_size": "Gen2 Small",
+      "credits_per_hour": 2.7,
+      "credit_price_per_hour": 2.0,
+      "total_compute_cost_usd": 10.3362,
+      "components": [
+        {
+          "role": "primary",
+          "pricing_rule": "all query jobs",
+          "pricing_file": "gen2_warehouse.json",
+          "warehouse_size": "Gen2 Small",
+          "query_jobs": 836,
+          "runtime_seconds": 6890.801,
+          "credits_per_hour": 2.7,
+          "credit_price_per_hour": 2.0,
+          "total_compute_cost_usd": 10.3362
+        }
+      ]
+    },
+    {
+      "tier": "enterprise",
+      "warehouse_size": "Gen2 Small",
+      "credits_per_hour": 2.7,
+      "credit_price_per_hour": 3.0,
+      "total_compute_cost_usd": 15.5043,
+      "components": [
+        {
+          "role": "primary",
+          "pricing_rule": "all query jobs",
+          "pricing_file": "gen2_warehouse.json",
+          "warehouse_size": "Gen2 Small",
+          "query_jobs": 836,
+          "runtime_seconds": 6890.801,
+          "credits_per_hour": 2.7,
+          "credit_price_per_hour": 3.0,
+          "total_compute_cost_usd": 15.5043
+        }
+      ]
+    },
+    {
+      "tier": "business_critical",
+      "warehouse_size": "Gen2 Small",
+      "credits_per_hour": 2.7,
+      "credit_price_per_hour": 4.0,
+      "total_compute_cost_usd": 20.6724,
+      "components": [
+        {
+          "role": "primary",
+          "pricing_rule": "all query jobs",
+          "pricing_file": "gen2_warehouse.json",
+          "warehouse_size": "Gen2 Small",
+          "query_jobs": 836,
+          "runtime_seconds": 6890.801,
+          "credits_per_hour": 2.7,
+          "credit_price_per_hour": 4.0,
+          "total_compute_cost_usd": 20.6724
+        }
+      ]
+    }
+  ]
+}

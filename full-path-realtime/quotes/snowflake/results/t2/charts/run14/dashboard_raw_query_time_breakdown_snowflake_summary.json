@@ -1,0 +1,630 @@
+{
+  "schema_version": 1,
+  "chart": "snowflake_query_compilation_execution_breakdown",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11,
+      7.4
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "presentation": {
+    "compilation_legend_label": "Compilation",
+    "execution_legend_label": "Execution"
+  },
+  "selection": {
+    "max_rows_inclusive": 100000000000,
+    "x_axis": "each observation at its recorded raw_rows",
+    "outlier_policy": "per query: exclude whole observation when end-to-end result > Q3 + 1.5*IQR",
+    "outliers_preserved_in_csv_and_summary": true,
+    "outlier_annotation_enabled": true,
+    "outlier_annotations_rendered": 1,
+    "smoothing": {
+      "method": "centered rolling median of cumulative phase boundaries",
+      "window_observations": 7,
+      "edges": "shrinking window"
+    }
+  },
+  "timing_contract": {
+    "stack": "provider-reported compilation_time plus execution_time",
+    "outlier_metric": "runner result (end-to-end query latency)",
+    "residual": "result - compilation_time - execution_time; retained in CSV and summary, not plotted",
+    "interpretation": "the stack is provider phase telemetry; the end-to-end result remains the latency contract and normalized cost is not allocated from these phases"
+  },
+  "colors": {
+    "compilation": "#FFAA1D",
+    "execution": "#29B5E8"
+  },
+  "sources": {
+    "input": {
+      "path": "quotes/snowflake/results/t2/dashboard_raw_iv_20260811T111856Z.jsonl",
+      "sha256": "efeedc3f591abc93b51aeaf8bd300e0e17237124967d00c0d3f3a248e3318cf9"
+    },
+    "queries": {
+      "path": "quotes/snowflake/t2/queries_dashboard_raw.sql",
+      "sha256": "90528114f7102092543fea65f1b3d8887b08e9b80dddbd1a3d564fa15de27940"
+    }
+  },
+  "input_metadata": {
+    "records_read": 209,
+    "records_selected": 183,
+    "zero_row_records_excluded": 1,
+    "records_above_cap_excluded": 25,
+    "systems": [
+      "Snowflake IT (AWS)"
+    ],
+    "machines": [
+      "Interactive Small"
+    ]
+  },
+  "queries": {
+    "1": {
+      "query_name": "Single-symbol summary",
+      "observed": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 0.5644535519125683,
+          "median_sec": 0.553,
+          "p95_sec": 0.868,
+          "minimum_sec": 0.226,
+          "maximum_sec": 1.475
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 0.2878743169398907,
+          "median_sec": 0.281,
+          "p95_sec": 0.465,
+          "minimum_sec": 0.047,
+          "maximum_sec": 0.589
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 0.27657923497267756,
+          "median_sec": 0.274,
+          "p95_sec": 0.442,
+          "minimum_sec": 0.042,
+          "maximum_sec": 0.886
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": 5.308443423754164e-19,
+          "median_sec": 0.0,
+          "p95_sec": 5.551115123125783e-17,
+          "minimum_sec": -1.1102230246251565e-16,
+          "maximum_sec": 1.1102230246251565e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 181,
+          "iteration": 181,
+          "observed_at": "2026-08-12T17:18:57Z",
+          "raw_rows": 98161784620,
+          "query_number": 1,
+          "query_name": "Single-symbol summary",
+          "latency_sec": 1.475,
+          "compilation_sec": 0.589,
+          "execution_sec": 0.886,
+          "residual_sec": 1.1102230246251565e-16
+        }
+      },
+      "included_before_smoothing": {
+        "observations": 181,
+        "end_to_end_latency": {
+          "observations": 181,
+          "average_sec": 0.556232044198895,
+          "median_sec": 0.55,
+          "p95_sec": 0.86,
+          "minimum_sec": 0.226,
+          "maximum_sec": 1.122
+        },
+        "compilation": {
+          "observations": 181,
+          "average_sec": 0.28542541436464086,
+          "median_sec": 0.277,
+          "p95_sec": 0.459,
+          "minimum_sec": 0.047,
+          "maximum_sec": 0.566
+        },
+        "execution": {
+          "observations": 181,
+          "average_sec": 0.27080662983425413,
+          "median_sec": 0.273,
+          "p95_sec": 0.433,
+          "minimum_sec": 0.042,
+          "maximum_sec": 0.605
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 181,
+          "average_sec": -7.667286081665445e-20,
+          "median_sec": 0.0,
+          "p95_sec": 5.551115123125783e-17,
+          "minimum_sec": -1.1102230246251565e-16,
+          "maximum_sec": 1.1102230246251565e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 175,
+          "iteration": 175,
+          "observed_at": "2026-08-12T16:18:57Z",
+          "raw_rows": 94877773840,
+          "query_number": 1,
+          "query_name": "Single-symbol summary",
+          "latency_sec": 1.122,
+          "compilation_sec": 0.555,
+          "execution_sec": 0.567,
+          "residual_sec": 1.1102230246251565e-16
+        }
+      },
+      "displayed": {
+        "observations": 181,
+        "compilation": {
+          "observations": 181,
+          "average_sec": 0.29248618784530384,
+          "median_sec": 0.275,
+          "p95_sec": 0.422,
+          "minimum_sec": 0.11,
+          "maximum_sec": 0.445
+        },
+        "execution": {
+          "observations": 181,
+          "average_sec": 0.2653038674033149,
+          "median_sec": 0.27599999999999997,
+          "p95_sec": 0.416,
+          "minimum_sec": 0.07700000000000001,
+          "maximum_sec": 0.442
+        },
+        "phase_total": {
+          "observations": 181,
+          "average_sec": 0.5577900552486188,
+          "median_sec": 0.567,
+          "p95_sec": 0.7709999999999999,
+          "minimum_sec": 0.265,
+          "maximum_sec": 0.86
+        }
+      },
+      "outlier_filter": {
+        "method": "Tukey upper fence on end-to-end result (Q3 + 1.5*IQR)",
+        "applied": true,
+        "q1_latency_sec": 0.422,
+        "q3_latency_sec": 0.703,
+        "upper_fence_sec": 1.1244999999999998,
+        "excluded_observations": 2,
+        "excluded_max_latency_sec": 1.475,
+        "excluded_points": [
+          {
+            "source_line": 157,
+            "iteration": 157,
+            "observed_at": "2026-08-12T13:18:57Z",
+            "raw_rows": 85066604156,
+            "query_number": 1,
+            "query_name": "Single-symbol summary",
+            "latency_sec": 1.142,
+            "compilation_sec": 0.43,
+            "execution_sec": 0.712,
+            "residual_sec": 0.0
+          },
+          {
+            "source_line": 181,
+            "iteration": 181,
+            "observed_at": "2026-08-12T17:18:57Z",
+            "raw_rows": 98161784620,
+            "query_number": 1,
+            "query_name": "Single-symbol summary",
+            "latency_sec": 1.475,
+            "compilation_sec": 0.589,
+            "execution_sec": 0.886,
+            "residual_sec": 1.1102230246251565e-16
+          }
+        ]
+      }
+    },
+    "2": {
+      "query_name": "Watchlist summary",
+      "observed": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 1.7678196721311477,
+          "median_sec": 1.825,
+          "p95_sec": 2.895,
+          "minimum_sec": 0.134,
+          "maximum_sec": 3.68
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 0.16548633879781421,
+          "median_sec": 0.146,
+          "p95_sec": 0.346,
+          "minimum_sec": 0.033,
+          "maximum_sec": 0.493
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 1.6023333333333332,
+          "median_sec": 1.607,
+          "p95_sec": 2.697,
+          "minimum_sec": 0.077,
+          "maximum_sec": 3.594
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": -1.9489570855783144e-17,
+          "median_sec": 0.0,
+          "p95_sec": 2.220446049250313e-16,
+          "minimum_sec": -4.440892098500626e-16,
+          "maximum_sec": 4.440892098500626e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 175,
+          "iteration": 175,
+          "observed_at": "2026-08-12T16:18:57Z",
+          "raw_rows": 94877773840,
+          "query_number": 2,
+          "query_name": "Watchlist summary",
+          "latency_sec": 3.68,
+          "compilation_sec": 0.086,
+          "execution_sec": 3.594,
+          "residual_sec": 4.440892098500626e-16
+        }
+      },
+      "included_before_smoothing": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 1.7678196721311477,
+          "median_sec": 1.825,
+          "p95_sec": 2.895,
+          "minimum_sec": 0.134,
+          "maximum_sec": 3.68
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 0.16548633879781421,
+          "median_sec": 0.146,
+          "p95_sec": 0.346,
+          "minimum_sec": 0.033,
+          "maximum_sec": 0.493
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 1.6023333333333332,
+          "median_sec": 1.607,
+          "p95_sec": 2.697,
+          "minimum_sec": 0.077,
+          "maximum_sec": 3.594
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": -1.9489570855783144e-17,
+          "median_sec": 0.0,
+          "p95_sec": 2.220446049250313e-16,
+          "minimum_sec": -4.440892098500626e-16,
+          "maximum_sec": 4.440892098500626e-16
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 175,
+          "iteration": 175,
+          "observed_at": "2026-08-12T16:18:57Z",
+          "raw_rows": 94877773840,
+          "query_number": 2,
+          "query_name": "Watchlist summary",
+          "latency_sec": 3.68,
+          "compilation_sec": 0.086,
+          "execution_sec": 3.594,
+          "residual_sec": 4.440892098500626e-16
+        }
+      },
+      "displayed": {
+        "observations": 183,
+        "compilation": {
+          "observations": 183,
+          "average_sec": 0.15469398907103826,
+          "median_sec": 0.135,
+          "p95_sec": 0.241,
+          "minimum_sec": 0.04,
+          "maximum_sec": 0.267
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 1.5752950819672131,
+          "median_sec": 1.6019999999999999,
+          "p95_sec": 2.6540000000000004,
+          "minimum_sec": 0.14200000000000004,
+          "maximum_sec": 2.763
+        },
+        "phase_total": {
+          "observations": 183,
+          "average_sec": 1.7299890710382515,
+          "median_sec": 1.7730000000000001,
+          "p95_sec": 2.7680000000000002,
+          "minimum_sec": 0.258,
+          "maximum_sec": 2.8115
+        }
+      },
+      "outlier_filter": {
+        "method": "Tukey upper fence on end-to-end result (Q3 + 1.5*IQR)",
+        "applied": true,
+        "q1_latency_sec": 1.016,
+        "q3_latency_sec": 2.538,
+        "upper_fence_sec": 4.821,
+        "excluded_observations": 0,
+        "excluded_max_latency_sec": null,
+        "excluded_points": []
+      }
+    },
+    "3": {
+      "query_name": "Top movers",
+      "observed": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 8.153994535519127,
+          "median_sec": 7.908,
+          "p95_sec": 16.344,
+          "minimum_sec": 0.862,
+          "maximum_sec": 19.242
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 5.863098360655737,
+          "median_sec": 3.79,
+          "p95_sec": 12.894,
+          "minimum_sec": 0.196,
+          "maximum_sec": 15.922
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 2.285125683060109,
+          "median_sec": 1.806,
+          "p95_sec": 5.576,
+          "minimum_sec": 0.289,
+          "maximum_sec": 7.586
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": 0.005770491803278687,
+          "median_sec": 0.0,
+          "p95_sec": 0.07000000000000006,
+          "minimum_sec": -1.7763568394002505e-15,
+          "maximum_sec": 0.1490000000000009
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 161,
+          "iteration": 161,
+          "observed_at": "2026-08-12T13:58:57Z",
+          "raw_rows": 87242847941,
+          "query_number": 3,
+          "query_name": "Top movers",
+          "latency_sec": 19.242,
+          "compilation_sec": 15.922,
+          "execution_sec": 3.219,
+          "residual_sec": 0.10100000000000042
+        }
+      },
+      "included_before_smoothing": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 8.153994535519127,
+          "median_sec": 7.908,
+          "p95_sec": 16.344,
+          "minimum_sec": 0.862,
+          "maximum_sec": 19.242
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 5.863098360655737,
+          "median_sec": 3.79,
+          "p95_sec": 12.894,
+          "minimum_sec": 0.196,
+          "maximum_sec": 15.922
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 2.285125683060109,
+          "median_sec": 1.806,
+          "p95_sec": 5.576,
+          "minimum_sec": 0.289,
+          "maximum_sec": 7.586
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": 0.005770491803278687,
+          "median_sec": 0.0,
+          "p95_sec": 0.07000000000000006,
+          "minimum_sec": -1.7763568394002505e-15,
+          "maximum_sec": 0.1490000000000009
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 161,
+          "iteration": 161,
+          "observed_at": "2026-08-12T13:58:57Z",
+          "raw_rows": 87242847941,
+          "query_number": 3,
+          "query_name": "Top movers",
+          "latency_sec": 19.242,
+          "compilation_sec": 15.922,
+          "execution_sec": 3.219,
+          "residual_sec": 0.10100000000000042
+        }
+      },
+      "displayed": {
+        "observations": 183,
+        "compilation": {
+          "observations": 183,
+          "average_sec": 5.465945355191257,
+          "median_sec": 3.772,
+          "p95_sec": 12.211,
+          "minimum_sec": 0.518,
+          "maximum_sec": 13.008
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 2.2755710382513663,
+          "median_sec": 2.031,
+          "p95_sec": 4.685000000000001,
+          "minimum_sec": 0.4870000000000001,
+          "maximum_sec": 5.456999999999999
+        },
+        "phase_total": {
+          "observations": 183,
+          "average_sec": 7.741516393442623,
+          "median_sec": 6.751,
+          "p95_sec": 14.73,
+          "minimum_sec": 1.197,
+          "maximum_sec": 16.344
+        }
+      },
+      "outlier_filter": {
+        "method": "Tukey upper fence on end-to-end result (Q3 + 1.5*IQR)",
+        "applied": true,
+        "q1_latency_sec": 3.376,
+        "q3_latency_sec": 13.121,
+        "upper_fence_sec": 27.738500000000002,
+        "excluded_observations": 0,
+        "excluded_max_latency_sec": null,
+        "excluded_points": []
+      }
+    },
+    "4": {
+      "query_name": "Daily activity",
+      "observed": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 8.799693989071038,
+          "median_sec": 8.789,
+          "p95_sec": 17.096,
+          "minimum_sec": 0.7,
+          "maximum_sec": 20.673
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 5.049131147540984,
+          "median_sec": 3.121,
+          "p95_sec": 12.423,
+          "minimum_sec": 0.233,
+          "maximum_sec": 13.873
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 3.7505628415300545,
+          "median_sec": 2.819,
+          "p95_sec": 10.003,
+          "minimum_sec": 0.228,
+          "maximum_sec": 15.407
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": 6.718972676351698e-17,
+          "median_sec": 0.0,
+          "p95_sec": 1.1102230246251565e-15,
+          "minimum_sec": -2.6645352591003757e-15,
+          "maximum_sec": 1.7763568394002505e-15
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 70,
+          "iteration": 70,
+          "observed_at": "2026-08-11T22:48:57Z",
+          "raw_rows": 37714068818,
+          "query_number": 4,
+          "query_name": "Daily activity",
+          "latency_sec": 20.673,
+          "compilation_sec": 13.842,
+          "execution_sec": 6.831,
+          "residual_sec": -2.6645352591003757e-15
+        }
+      },
+      "included_before_smoothing": {
+        "observations": 183,
+        "end_to_end_latency": {
+          "observations": 183,
+          "average_sec": 8.799693989071038,
+          "median_sec": 8.789,
+          "p95_sec": 17.096,
+          "minimum_sec": 0.7,
+          "maximum_sec": 20.673
+        },
+        "compilation": {
+          "observations": 183,
+          "average_sec": 5.049131147540984,
+          "median_sec": 3.121,
+          "p95_sec": 12.423,
+          "minimum_sec": 0.233,
+          "maximum_sec": 13.873
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 3.7505628415300545,
+          "median_sec": 2.819,
+          "p95_sec": 10.003,
+          "minimum_sec": 0.228,
+          "maximum_sec": 15.407
+        },
+        "residual_end_to_end_minus_phases": {
+          "observations": 183,
+          "average_sec": 6.718972676351698e-17,
+          "median_sec": 0.0,
+          "p95_sec": 1.1102230246251565e-15,
+          "minimum_sec": -2.6645352591003757e-15,
+          "maximum_sec": 1.7763568394002505e-15
+        },
+        "maximum_end_to_end_point": {
+          "source_line": 70,
+          "iteration": 70,
+          "observed_at": "2026-08-11T22:48:57Z",
+          "raw_rows": 37714068818,
+          "query_number": 4,
+          "query_name": "Daily activity",
+          "latency_sec": 20.673,
+          "compilation_sec": 13.842,
+          "execution_sec": 6.831,
+          "residual_sec": -2.6645352591003757e-15
+        }
+      },
+      "displayed": {
+        "observations": 183,
+        "compilation": {
+          "observations": 183,
+          "average_sec": 5.025016393442622,
+          "median_sec": 3.121,
+          "p95_sec": 12.144,
+          "minimum_sec": 0.469,
+          "maximum_sec": 12.98
+        },
+        "execution": {
+          "observations": 183,
+          "average_sec": 3.22055737704918,
+          "median_sec": 2.983,
+          "p95_sec": 6.806,
+          "minimum_sec": 0.405,
+          "maximum_sec": 11.362
+        },
+        "phase_total": {
+          "observations": 183,
+          "average_sec": 8.245573770491804,
+          "median_sec": 7.883000000000001,
+          "p95_sec": 15.370999999999999,
+          "minimum_sec": 1.267,
+          "maximum_sec": 17.891
+        }
+      },
+      "outlier_filter": {
+        "method": "Tukey upper fence on end-to-end result (Q3 + 1.5*IQR)",
+        "applied": true,
+        "q1_latency_sec": 3.756,
+        "q3_latency_sec": 13.584,
+        "upper_fence_sec": 28.326,
+        "excluded_observations": 0,
+        "excluded_max_latency_sec": null,
+        "excluded_points": []
+      }
+    }
+  },
+  "outputs": {
+    "png": "quotes/snowflake/results/t2/charts/run14/dashboard_raw_query_time_breakdown_snowflake.png",
+    "svg": "quotes/snowflake/results/t2/charts/run14/dashboard_raw_query_time_breakdown_snowflake.svg",
+    "csv": "quotes/snowflake/results/t2/charts/run14/dashboard_raw_query_time_breakdown_snowflake_data.csv"
+  }
+}

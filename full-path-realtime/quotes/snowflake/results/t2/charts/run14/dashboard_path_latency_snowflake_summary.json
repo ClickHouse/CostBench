@@ -1,0 +1,1336 @@
+{
+  "schema_version": 1,
+  "chart": "snowflake_dashboard_data_path_and_warehouse_latency",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      12.4,
+      7.8
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "presentation": {
+    "query_cost_display": "total",
+    "cost_attribution_visible_on_chart": false
+  },
+  "comparison_contract": {
+    "questions": "the same four dashboard questions",
+    "data_paths": {
+      "imv": "read the maintained Interactive Materialized View",
+      "raw": "compute equivalent results directly from the raw Interactive Table"
+    },
+    "latency_metric": "runner result: end-to-end latency including compilation and execution",
+    "interactive_fallback_disclosure": "For cost attribution, Interactive query jobs with elapsed time >5s are treated as fallback-priced at Gen2 Small; this latency chart does not classify or recolor individual points.",
+    "alignment": "each condition at its own observed raw_rows; no iteration join or interpolation",
+    "row_cap_inclusive": 100000000000
+  },
+  "selection": {
+    "zero_row_baseline": "excluded",
+    "smoothing": {
+      "method": "centered rolling median",
+      "window_observations": 7,
+      "edges": "shrinking window"
+    },
+    "outlier_policy": "per condition and query: exclude latency > Q3 + 1.5*IQR",
+    "outliers_preserved_in_csv_and_summary": true,
+    "outlier_annotation_enabled": true,
+    "outlier_annotations_rendered": 4
+  },
+  "sources": {
+    "imv_interactive": {
+      "path": "quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl",
+      "sha256": "80f10f8d95fef57a644a3ff5be59f886333715ff324ade98404602449b3ec019"
+    },
+    "imv_gen2": {
+      "path": "quotes/snowflake/results/t2/dashboard_mv_std_20260811T111856Z.jsonl",
+      "sha256": "f47407c278a3600f667dc867d9e4fc861ef8ae944ba8203a0fcc76e7aacf3788"
+    },
+    "raw_interactive": {
+      "path": "quotes/snowflake/results/t2/dashboard_raw_iv_20260811T111856Z.jsonl",
+      "sha256": "efeedc3f591abc93b51aeaf8bd300e0e17237124967d00c0d3f3a248e3318cf9"
+    },
+    "mv_queries": {
+      "path": "quotes/snowflake/t2/queries_mv_imv.sql",
+      "sha256": "0c33f0d045f7aa6c2a1f4dba962d415987079883162903ddc8b8e1589dae9390"
+    },
+    "raw_queries": {
+      "path": "quotes/snowflake/t2/queries_dashboard_raw.sql",
+      "sha256": "90528114f7102092543fea65f1b3d8887b08e9b80dddbd1a3d564fa15de27940"
+    }
+  },
+  "input_metadata": {
+    "imv_interactive": {
+      "records_read": 209,
+      "records_selected": 183,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 25,
+      "systems": [
+        "Snowflake IT (AWS)"
+      ],
+      "machines": [
+        "Interactive Small"
+      ],
+      "cluster_sizes": [
+        "1.2"
+      ],
+      "minimum_selected_raw_rows": 532996784,
+      "maximum_selected_raw_rows": 99801890611
+    },
+    "imv_gen2": {
+      "records_read": 209,
+      "records_selected": 183,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 25,
+      "systems": [
+        "Snowflake (AWS)"
+      ],
+      "machines": [
+        "Gen2 Small"
+      ],
+      "cluster_sizes": [
+        "2.7"
+      ],
+      "minimum_selected_raw_rows": 532996784,
+      "maximum_selected_raw_rows": 99801890611
+    },
+    "raw_interactive": {
+      "records_read": 209,
+      "records_selected": 183,
+      "zero_row_records_excluded": 1,
+      "records_above_cap_excluded": 25,
+      "systems": [
+        "Snowflake IT (AWS)"
+      ],
+      "machines": [
+        "Interactive Small"
+      ],
+      "cluster_sizes": [
+        "1.2"
+      ],
+      "minimum_selected_raw_rows": 532996784,
+      "maximum_selected_raw_rows": 99801890611
+    }
+  },
+  "conditions": {
+    "imv_interactive": {
+      "label": "Interactive MV",
+      "attribution_label": "Interactive MV \u00b7 Interactive + Gen2 fallback",
+      "data_path": "Interactive Materialized View",
+      "warehouse": "Interactive Small",
+      "color": "#29B5E8",
+      "linestyle": "-",
+      "queries": {
+        "1": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 15.90020218579235,
+            "median_latency_sec": 16.046,
+            "p95_latency_sec": 22.141,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 85,
+              "iteration": 85,
+              "observed_at": "2026-08-12T01:18:57Z",
+              "raw_rows": 45915210443,
+              "mv_rows": 772204,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 24.167,
+              "compilation_sec": 23.025,
+              "execution_sec": 0.792
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 15.90020218579235,
+            "median_latency_sec": 16.046,
+            "p95_latency_sec": 22.141,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 85,
+              "iteration": 85,
+              "observed_at": "2026-08-12T01:18:57Z",
+              "raw_rows": 45915210443,
+              "mv_rows": 772204,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 24.167,
+              "compilation_sec": 23.025,
+              "execution_sec": 0.792
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 16.121754098360654,
+            "median_latency_sec": 15.701,
+            "p95_latency_sec": 21.557,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 74,
+              "iteration": 74,
+              "observed_at": "2026-08-11T23:28:57Z",
+              "raw_rows": 39910561199,
+              "mv_rows": 667594,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 21.956,
+              "compilation_sec": 19.618,
+              "execution_sec": 0.62
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 12.425,
+            "q3_latency_sec": 19.811,
+            "upper_fence_sec": 30.89,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        },
+        "2": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 5.934661202185792,
+            "median_latency_sec": 3.853,
+            "p95_latency_sec": 13.698,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 86,
+              "iteration": 86,
+              "observed_at": "2026-08-12T01:28:57Z",
+              "raw_rows": 46469268846,
+              "mv_rows": 787826,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 15.772,
+              "compilation_sec": 15.234,
+              "execution_sec": 0.538
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 5.934661202185792,
+            "median_latency_sec": 3.853,
+            "p95_latency_sec": 13.698,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 86,
+              "iteration": 86,
+              "observed_at": "2026-08-12T01:28:57Z",
+              "raw_rows": 46469268846,
+              "mv_rows": 787826,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 15.772,
+              "compilation_sec": 15.234,
+              "execution_sec": 0.538
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 5.8145956284153,
+            "median_latency_sec": 3.792,
+            "p95_latency_sec": 13.617,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 74,
+              "iteration": 74,
+              "observed_at": "2026-08-11T23:28:57Z",
+              "raw_rows": 39910561199,
+              "mv_rows": 667594,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 13.771,
+              "compilation_sec": 14.207,
+              "execution_sec": 0.447
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 1.868,
+            "q3_latency_sec": 11.58,
+            "upper_fence_sec": 26.148,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        },
+        "3": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 7.289180327868853,
+            "median_latency_sec": 4.765,
+            "p95_latency_sec": 15.126,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 70,
+              "iteration": 70,
+              "observed_at": "2026-08-11T22:48:57Z",
+              "raw_rows": 37714068818,
+              "mv_rows": 636036,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 17.65,
+              "compilation_sec": 13.871,
+              "execution_sec": 3.779
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 7.289180327868853,
+            "median_latency_sec": 4.765,
+            "p95_latency_sec": 15.126,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 70,
+              "iteration": 70,
+              "observed_at": "2026-08-11T22:48:57Z",
+              "raw_rows": 37714068818,
+              "mv_rows": 636036,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 17.65,
+              "compilation_sec": 13.871,
+              "execution_sec": 3.779
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 6.945295081967213,
+            "median_latency_sec": 4.547,
+            "p95_latency_sec": 14.741,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 79,
+              "iteration": 79,
+              "observed_at": "2026-08-12T00:18:57Z",
+              "raw_rows": 42638946619,
+              "mv_rows": 714939,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 15.305,
+              "compilation_sec": 12.291,
+              "execution_sec": 1.473
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 2.749,
+            "q3_latency_sec": 12.648,
+            "upper_fence_sec": 27.496499999999997,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        },
+        "4": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 8.467333333333332,
+            "median_latency_sec": 8.407,
+            "p95_latency_sec": 16.596,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 86,
+              "iteration": 86,
+              "observed_at": "2026-08-12T01:28:57Z",
+              "raw_rows": 46469268846,
+              "mv_rows": 787826,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 18.076,
+              "compilation_sec": 13.398,
+              "execution_sec": 4.678
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 8.467333333333332,
+            "median_latency_sec": 8.407,
+            "p95_latency_sec": 16.596,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 86,
+              "iteration": 86,
+              "observed_at": "2026-08-12T01:28:57Z",
+              "raw_rows": 46469268846,
+              "mv_rows": 787826,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 18.076,
+              "compilation_sec": 13.398,
+              "execution_sec": 4.678
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 8.260103825136612,
+            "median_latency_sec": 7.547,
+            "p95_latency_sec": 15.983,
+            "maximum": {
+              "condition": "imv_interactive",
+              "source_line": 72,
+              "iteration": 72,
+              "observed_at": "2026-08-11T23:08:57Z",
+              "raw_rows": 38815458699,
+              "mv_rows": 647027,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 16.694,
+              "compilation_sec": 13.316,
+              "execution_sec": 1.236
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 3.435,
+            "q3_latency_sec": 13.754,
+            "upper_fence_sec": 29.232499999999998,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        }
+      }
+    },
+    "imv_gen2": {
+      "label": "Interactive MV \u00b7 Gen2 Small",
+      "attribution_label": "Interactive MV \u00b7 Gen2 Small",
+      "data_path": "Interactive Materialized View",
+      "warehouse": "Gen2 Small",
+      "color": "#FF9D4D",
+      "linestyle": "--",
+      "queries": {
+        "1": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 7.876306010928962,
+            "median_latency_sec": 6.538,
+            "p95_latency_sec": 16.422,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 108,
+              "iteration": 108,
+              "observed_at": "2026-08-12T05:08:57Z",
+              "raw_rows": 58446958006,
+              "mv_rows": 971239,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 65.067,
+              "compilation_sec": 64.472,
+              "execution_sec": 0.467
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 179,
+            "average_latency_sec": 7.282251396648044,
+            "median_latency_sec": 6.361,
+            "p95_latency_sec": 16.193,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 59,
+              "iteration": 59,
+              "observed_at": "2026-08-11T20:58:57Z",
+              "raw_rows": 31720586913,
+              "mv_rows": 502317,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 18.122,
+              "compilation_sec": 17.168,
+              "execution_sec": 0.689
+            }
+          },
+          "display_trend": {
+            "observations": 179,
+            "average_latency_sec": 7.202167597765364,
+            "median_latency_sec": 6.189,
+            "p95_latency_sec": 15.66,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 83,
+              "iteration": 83,
+              "observed_at": "2026-08-12T00:58:57Z",
+              "raw_rows": 44819116712,
+              "mv_rows": 751509,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 16.276,
+              "compilation_sec": 15.545,
+              "execution_sec": 0.664
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 3.685,
+            "q3_latency_sec": 10.114,
+            "upper_fence_sec": 19.7575,
+            "excluded_observations": 4,
+            "excluded_max_latency_sec": 65.067,
+            "excluded_points": [
+              {
+                "condition": "imv_gen2",
+                "source_line": 22,
+                "iteration": 22,
+                "observed_at": "2026-08-11T14:48:57Z",
+                "raw_rows": 11598082800,
+                "mv_rows": 183964,
+                "query_number": 1,
+                "query_name": "Single-symbol summary",
+                "latency_sec": 23.714,
+                "compilation_sec": 23.169,
+                "execution_sec": 0.435
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 85,
+                "iteration": 85,
+                "observed_at": "2026-08-12T01:18:57Z",
+                "raw_rows": 45915210443,
+                "mv_rows": 772204,
+                "query_number": 1,
+                "query_name": "Single-symbol summary",
+                "latency_sec": 23.808,
+                "compilation_sec": 22.586,
+                "execution_sec": 0.607
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 108,
+                "iteration": 108,
+                "observed_at": "2026-08-12T05:08:57Z",
+                "raw_rows": 58446958006,
+                "mv_rows": 971239,
+                "query_number": 1,
+                "query_name": "Single-symbol summary",
+                "latency_sec": 65.067,
+                "compilation_sec": 64.472,
+                "execution_sec": 0.467
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 144,
+                "iteration": 144,
+                "observed_at": "2026-08-12T11:08:57Z",
+                "raw_rows": 78020239558,
+                "mv_rows": 1267894,
+                "query_number": 1,
+                "query_name": "Single-symbol summary",
+                "latency_sec": 25.252,
+                "compilation_sec": 24.504,
+                "execution_sec": 0.614
+              }
+            ]
+          }
+        },
+        "2": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 9.512131147540984,
+            "median_latency_sec": 5.942,
+            "p95_latency_sec": 16.356,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 114,
+              "iteration": 114,
+              "observed_at": "2026-08-12T06:08:57Z",
+              "raw_rows": 61731139656,
+              "mv_rows": 1028891,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 264.785,
+              "compilation_sec": 263.866,
+              "execution_sec": 0.81
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 177,
+            "average_latency_sec": 6.570774011299435,
+            "median_latency_sec": 5.774,
+            "p95_latency_sec": 13.698,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 70,
+              "iteration": 70,
+              "observed_at": "2026-08-11T22:48:57Z",
+              "raw_rows": 37714068818,
+              "mv_rows": 636036,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 20.017,
+              "compilation_sec": 19.399,
+              "execution_sec": 0.618
+            }
+          },
+          "display_trend": {
+            "observations": 177,
+            "average_latency_sec": 6.170502824858757,
+            "median_latency_sec": 5.354,
+            "p95_latency_sec": 12.84,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 83,
+              "iteration": 83,
+              "observed_at": "2026-08-12T00:58:57Z",
+              "raw_rows": 44819116712,
+              "mv_rows": 751509,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 14.235,
+              "compilation_sec": 11.298,
+              "execution_sec": 0.8
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 3.166,
+            "q3_latency_sec": 10.045,
+            "upper_fence_sec": 20.363500000000002,
+            "excluded_observations": 6,
+            "excluded_max_latency_sec": 264.785,
+            "excluded_points": [
+              {
+                "condition": "imv_gen2",
+                "source_line": 52,
+                "iteration": 52,
+                "observed_at": "2026-08-11T19:48:57Z",
+                "raw_rows": 27918995748,
+                "mv_rows": 445164,
+                "query_number": 2,
+                "query_name": "Watchlist summary",
+                "latency_sec": 25.488,
+                "compilation_sec": 24.857,
+                "execution_sec": 0.631
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 78,
+                "iteration": 78,
+                "observed_at": "2026-08-12T00:08:57Z",
+                "raw_rows": 42087321356,
+                "mv_rows": 713298,
+                "query_number": 2,
+                "query_name": "Watchlist summary",
+                "latency_sec": 22.48,
+                "compilation_sec": 21.817,
+                "execution_sec": 0.663
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 84,
+                "iteration": 84,
+                "observed_at": "2026-08-12T01:08:57Z",
+                "raw_rows": 45370941730,
+                "mv_rows": 761877,
+                "query_number": 2,
+                "query_name": "Watchlist summary",
+                "latency_sec": 24.157,
+                "compilation_sec": 23.53,
+                "execution_sec": 0.627
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 105,
+                "iteration": 105,
+                "observed_at": "2026-08-12T04:38:57Z",
+                "raw_rows": 56810381460,
+                "mv_rows": 944879,
+                "query_number": 2,
+                "query_name": "Watchlist summary",
+                "latency_sec": 170.952,
+                "compilation_sec": 170.223,
+                "execution_sec": 0.637
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 114,
+                "iteration": 114,
+                "observed_at": "2026-08-12T06:08:57Z",
+                "raw_rows": 61731139656,
+                "mv_rows": 1028891,
+                "query_number": 2,
+                "query_name": "Watchlist summary",
+                "latency_sec": 264.785,
+                "compilation_sec": 263.866,
+                "execution_sec": 0.81
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 161,
+                "iteration": 161,
+                "observed_at": "2026-08-12T13:58:57Z",
+                "raw_rows": 87242847941,
+                "mv_rows": 1420053,
+                "query_number": 2,
+                "query_name": "Watchlist summary",
+                "latency_sec": 69.831,
+                "compilation_sec": 68.987,
+                "execution_sec": 0.671
+              }
+            ]
+          }
+        },
+        "3": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 7.948661202185792,
+            "median_latency_sec": 6.176,
+            "p95_latency_sec": 16.64,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 53,
+              "iteration": 53,
+              "observed_at": "2026-08-11T19:58:57Z",
+              "raw_rows": 28455528243,
+              "mv_rows": 455348,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 92.635,
+              "compilation_sec": 89.019,
+              "execution_sec": 3.514
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 173,
+            "average_latency_sec": 6.593583815028902,
+            "median_latency_sec": 6.066,
+            "p95_latency_sec": 14.596,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 82,
+              "iteration": 82,
+              "observed_at": "2026-08-12T00:48:57Z",
+              "raw_rows": 44285385932,
+              "mv_rows": 750762,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 16.453,
+              "compilation_sec": 13.469,
+              "execution_sec": 2.984
+            }
+          },
+          "display_trend": {
+            "observations": 173,
+            "average_latency_sec": 6.6158208092485555,
+            "median_latency_sec": 5.744,
+            "p95_latency_sec": 13.905,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 69,
+              "iteration": 69,
+              "observed_at": "2026-08-11T22:38:57Z",
+              "raw_rows": 37176739226,
+              "mv_rows": 625922,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 14.596,
+              "compilation_sec": 13.058,
+              "execution_sec": 1.538
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 4.078,
+            "q3_latency_sec": 9.042,
+            "upper_fence_sec": 16.488,
+            "excluded_observations": 10,
+            "excluded_max_latency_sec": 92.635,
+            "excluded_points": [
+              {
+                "condition": "imv_gen2",
+                "source_line": 50,
+                "iteration": 50,
+                "observed_at": "2026-08-11T19:28:57Z",
+                "raw_rows": 26820178083,
+                "mv_rows": 434321,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 24.559,
+                "compilation_sec": 23.876,
+                "execution_sec": 0.683
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 51,
+                "iteration": 51,
+                "observed_at": "2026-08-11T19:38:57Z",
+                "raw_rows": 27375417517,
+                "mv_rows": 442724,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 31.547,
+                "compilation_sec": 29.723,
+                "execution_sec": 1.824
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 53,
+                "iteration": 53,
+                "observed_at": "2026-08-11T19:58:57Z",
+                "raw_rows": 28455528243,
+                "mv_rows": 455348,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 92.635,
+                "compilation_sec": 89.019,
+                "execution_sec": 3.514
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 74,
+                "iteration": 74,
+                "observed_at": "2026-08-11T23:28:57Z",
+                "raw_rows": 39910561199,
+                "mv_rows": 667594,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 17.147,
+                "compilation_sec": 14.431,
+                "execution_sec": 2.716
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 78,
+                "iteration": 78,
+                "observed_at": "2026-08-12T00:08:57Z",
+                "raw_rows": 42087321356,
+                "mv_rows": 713298,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 24.652,
+                "compilation_sec": 21.239,
+                "execution_sec": 3.413
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 80,
+                "iteration": 80,
+                "observed_at": "2026-08-12T00:28:57Z",
+                "raw_rows": 43189555601,
+                "mv_rows": 725251,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 27.646,
+                "compilation_sec": 24.56,
+                "execution_sec": 3.086
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 83,
+                "iteration": 83,
+                "observed_at": "2026-08-12T00:58:57Z",
+                "raw_rows": 44819116712,
+                "mv_rows": 751509,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 32.901,
+                "compilation_sec": 31.645,
+                "execution_sec": 1.256
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 84,
+                "iteration": 84,
+                "observed_at": "2026-08-12T01:08:57Z",
+                "raw_rows": 45370941730,
+                "mv_rows": 761877,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 28.132,
+                "compilation_sec": 27.301,
+                "execution_sec": 0.831
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 85,
+                "iteration": 85,
+                "observed_at": "2026-08-12T01:18:57Z",
+                "raw_rows": 45915210443,
+                "mv_rows": 772204,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 18.056,
+                "compilation_sec": 16.296,
+                "execution_sec": 1.76
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 87,
+                "iteration": 87,
+                "observed_at": "2026-08-12T01:38:57Z",
+                "raw_rows": 47014619196,
+                "mv_rows": 796688,
+                "query_number": 3,
+                "query_name": "Top movers",
+                "latency_sec": 16.64,
+                "compilation_sec": 15.153,
+                "execution_sec": 1.487
+              }
+            ]
+          }
+        },
+        "4": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 9.733415300546447,
+            "median_latency_sec": 8.212,
+            "p95_latency_sec": 20.404,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 53,
+              "iteration": 53,
+              "observed_at": "2026-08-11T19:58:57Z",
+              "raw_rows": 28455528243,
+              "mv_rows": 455348,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 60.928,
+              "compilation_sec": 54.858,
+              "execution_sec": 6.07
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 178,
+            "average_latency_sec": 8.92106179775281,
+            "median_latency_sec": 8.135,
+            "p95_latency_sec": 18.549,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 179,
+              "iteration": 179,
+              "observed_at": "2026-08-12T16:58:57Z",
+              "raw_rows": 97064716964,
+              "mv_rows": 1581815,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 21.869,
+              "compilation_sec": 19.581,
+              "execution_sec": 2.288
+            }
+          },
+          "display_trend": {
+            "observations": 178,
+            "average_latency_sec": 8.789575842696628,
+            "median_latency_sec": 8.2595,
+            "p95_latency_sec": 16.527,
+            "maximum": {
+              "condition": "imv_gen2",
+              "source_line": 84,
+              "iteration": 84,
+              "observed_at": "2026-08-12T01:08:57Z",
+              "raw_rows": 45370941730,
+              "mv_rows": 761877,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 17.479,
+              "compilation_sec": 18.063,
+              "execution_sec": 2.341
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 5.297,
+            "q3_latency_sec": 12.116,
+            "upper_fence_sec": 22.3445,
+            "excluded_observations": 5,
+            "excluded_max_latency_sec": 60.928,
+            "excluded_points": [
+              {
+                "condition": "imv_gen2",
+                "source_line": 50,
+                "iteration": 50,
+                "observed_at": "2026-08-11T19:28:57Z",
+                "raw_rows": 26820178083,
+                "mv_rows": 434321,
+                "query_number": 4,
+                "query_name": "Daily activity",
+                "latency_sec": 28.649,
+                "compilation_sec": 26.786,
+                "execution_sec": 1.863
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 53,
+                "iteration": 53,
+                "observed_at": "2026-08-11T19:58:57Z",
+                "raw_rows": 28455528243,
+                "mv_rows": 455348,
+                "query_number": 4,
+                "query_name": "Daily activity",
+                "latency_sec": 60.928,
+                "compilation_sec": 54.858,
+                "execution_sec": 6.07
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 83,
+                "iteration": 83,
+                "observed_at": "2026-08-12T00:58:57Z",
+                "raw_rows": 44819116712,
+                "mv_rows": 751509,
+                "query_number": 4,
+                "query_name": "Daily activity",
+                "latency_sec": 29.971,
+                "compilation_sec": 26.285,
+                "execution_sec": 3.686
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 159,
+                "iteration": 159,
+                "observed_at": "2026-08-12T13:38:57Z",
+                "raw_rows": 86152994817,
+                "mv_rows": 1399200,
+                "query_number": 4,
+                "query_name": "Daily activity",
+                "latency_sec": 41.823,
+                "compilation_sec": 36.477,
+                "execution_sec": 5.346
+              },
+              {
+                "condition": "imv_gen2",
+                "source_line": 167,
+                "iteration": 167,
+                "observed_at": "2026-08-12T14:58:57Z",
+                "raw_rows": 90505068849,
+                "mv_rows": 1470414,
+                "query_number": 4,
+                "query_name": "Daily activity",
+                "latency_sec": 31.895,
+                "compilation_sec": 29.191,
+                "execution_sec": 2.704
+              }
+            ]
+          }
+        }
+      }
+    },
+    "raw_interactive": {
+      "label": "Raw Interactive Table",
+      "attribution_label": "Raw Interactive Table \u00b7 Interactive + Gen2 fallback",
+      "data_path": "Raw Interactive Table",
+      "warehouse": "Interactive Small",
+      "color": "#C792EA",
+      "linestyle": "-.",
+      "queries": {
+        "1": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 0.5644535519125683,
+            "median_latency_sec": 0.553,
+            "p95_latency_sec": 0.868,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 181,
+              "iteration": 181,
+              "observed_at": "2026-08-12T17:18:57Z",
+              "raw_rows": 98161784620,
+              "mv_rows": 1598237,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 1.475,
+              "compilation_sec": 0.589,
+              "execution_sec": 0.886
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 181,
+            "average_latency_sec": 0.556232044198895,
+            "median_latency_sec": 0.55,
+            "p95_latency_sec": 0.86,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 175,
+              "iteration": 175,
+              "observed_at": "2026-08-12T16:18:57Z",
+              "raw_rows": 94877773840,
+              "mv_rows": 1543061,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 1.122,
+              "compilation_sec": 0.555,
+              "execution_sec": 0.567
+            }
+          },
+          "display_trend": {
+            "observations": 181,
+            "average_latency_sec": 0.5577900552486188,
+            "median_latency_sec": 0.567,
+            "p95_latency_sec": 0.771,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 183,
+              "iteration": 183,
+              "observed_at": "2026-08-12T17:38:57Z",
+              "raw_rows": 99259158207,
+              "mv_rows": 1616677,
+              "query_number": 1,
+              "query_name": "Single-symbol summary",
+              "latency_sec": 0.86,
+              "compilation_sec": 0.365,
+              "execution_sec": 0.4
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 0.422,
+            "q3_latency_sec": 0.703,
+            "upper_fence_sec": 1.1244999999999998,
+            "excluded_observations": 2,
+            "excluded_max_latency_sec": 1.475,
+            "excluded_points": [
+              {
+                "condition": "raw_interactive",
+                "source_line": 157,
+                "iteration": 157,
+                "observed_at": "2026-08-12T13:18:57Z",
+                "raw_rows": 85066604156,
+                "mv_rows": 1381176,
+                "query_number": 1,
+                "query_name": "Single-symbol summary",
+                "latency_sec": 1.142,
+                "compilation_sec": 0.43,
+                "execution_sec": 0.712
+              },
+              {
+                "condition": "raw_interactive",
+                "source_line": 181,
+                "iteration": 181,
+                "observed_at": "2026-08-12T17:18:57Z",
+                "raw_rows": 98161784620,
+                "mv_rows": 1598237,
+                "query_number": 1,
+                "query_name": "Single-symbol summary",
+                "latency_sec": 1.475,
+                "compilation_sec": 0.589,
+                "execution_sec": 0.886
+              }
+            ]
+          }
+        },
+        "2": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 1.7678196721311477,
+            "median_latency_sec": 1.825,
+            "p95_latency_sec": 2.895,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 175,
+              "iteration": 175,
+              "observed_at": "2026-08-12T16:18:57Z",
+              "raw_rows": 94877773840,
+              "mv_rows": 1543061,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 3.68,
+              "compilation_sec": 0.086,
+              "execution_sec": 3.594
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 1.7678196721311477,
+            "median_latency_sec": 1.825,
+            "p95_latency_sec": 2.895,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 175,
+              "iteration": 175,
+              "observed_at": "2026-08-12T16:18:57Z",
+              "raw_rows": 94877773840,
+              "mv_rows": 1543061,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 3.68,
+              "compilation_sec": 0.086,
+              "execution_sec": 3.594
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 1.7299890710382515,
+            "median_latency_sec": 1.773,
+            "p95_latency_sec": 2.768,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 184,
+              "iteration": 184,
+              "observed_at": "2026-08-12T17:48:57Z",
+              "raw_rows": 99801890611,
+              "mv_rows": 1628198,
+              "query_number": 2,
+              "query_name": "Watchlist summary",
+              "latency_sec": 2.8114999999999997,
+              "compilation_sec": 0.253,
+              "execution_sec": 2.716
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 1.016,
+            "q3_latency_sec": 2.538,
+            "upper_fence_sec": 4.821,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        },
+        "3": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 8.153994535519127,
+            "median_latency_sec": 7.908,
+            "p95_latency_sec": 16.344,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 161,
+              "iteration": 161,
+              "observed_at": "2026-08-12T13:58:57Z",
+              "raw_rows": 87242847941,
+              "mv_rows": 1420053,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 19.242,
+              "compilation_sec": 15.922,
+              "execution_sec": 3.219
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 8.153994535519127,
+            "median_latency_sec": 7.908,
+            "p95_latency_sec": 16.344,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 161,
+              "iteration": 161,
+              "observed_at": "2026-08-12T13:58:57Z",
+              "raw_rows": 87242847941,
+              "mv_rows": 1420053,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 19.242,
+              "compilation_sec": 15.922,
+              "execution_sec": 3.219
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 7.742215846994535,
+            "median_latency_sec": 6.751,
+            "p95_latency_sec": 14.73,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 73,
+              "iteration": 73,
+              "observed_at": "2026-08-11T23:18:57Z",
+              "raw_rows": 39353814542,
+              "mv_rows": 657293,
+              "query_number": 3,
+              "query_name": "Top movers",
+              "latency_sec": 16.344,
+              "compilation_sec": 12.896,
+              "execution_sec": 1.834
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 3.376,
+            "q3_latency_sec": 13.121,
+            "upper_fence_sec": 27.738500000000002,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        },
+        "4": {
+          "observed": {
+            "observations": 183,
+            "average_latency_sec": 8.799693989071038,
+            "median_latency_sec": 8.789,
+            "p95_latency_sec": 17.096,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 70,
+              "iteration": 70,
+              "observed_at": "2026-08-11T22:48:57Z",
+              "raw_rows": 37714068818,
+              "mv_rows": 636036,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 20.673,
+              "compilation_sec": 13.842,
+              "execution_sec": 6.831
+            }
+          },
+          "accepted_after_filter": {
+            "observations": 183,
+            "average_latency_sec": 8.799693989071038,
+            "median_latency_sec": 8.789,
+            "p95_latency_sec": 17.096,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 70,
+              "iteration": 70,
+              "observed_at": "2026-08-11T22:48:57Z",
+              "raw_rows": 37714068818,
+              "mv_rows": 636036,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 20.673,
+              "compilation_sec": 13.842,
+              "execution_sec": 6.831
+            }
+          },
+          "display_trend": {
+            "observations": 183,
+            "average_latency_sec": 8.245573770491804,
+            "median_latency_sec": 7.883,
+            "p95_latency_sec": 15.371,
+            "maximum": {
+              "condition": "raw_interactive",
+              "source_line": 73,
+              "iteration": 73,
+              "observed_at": "2026-08-11T23:18:57Z",
+              "raw_rows": 39353814542,
+              "mv_rows": 657293,
+              "query_number": 4,
+              "query_name": "Daily activity",
+              "latency_sec": 17.891,
+              "compilation_sec": 12.206,
+              "execution_sec": 3.165
+            }
+          },
+          "outlier_filter": {
+            "method": "Tukey upper fence (Q3 + 1.5*IQR)",
+            "applied": true,
+            "q1_latency_sec": 3.756,
+            "q3_latency_sec": 13.584,
+            "upper_fence_sec": 28.326,
+            "excluded_observations": 0,
+            "excluded_max_latency_sec": null,
+            "excluded_points": []
+          }
+        }
+      }
+    }
+  },
+  "outputs": {
+    "png": "quotes/snowflake/results/t2/charts/run14/dashboard_path_latency_snowflake.png",
+    "svg": "quotes/snowflake/results/t2/charts/run14/dashboard_path_latency_snowflake.svg",
+    "csv": "quotes/snowflake/results/t2/charts/run14/dashboard_path_latency_snowflake_data.csv"
+  }
+}

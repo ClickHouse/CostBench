@@ -1,0 +1,25 @@
+{
+  "source_file": "dashboard_active_matched_to_snowflake.jsonl",
+  "system": "ClickHouse Cloud (AWS)",
+  "version": "26.4.1.2029",
+  "machine": "64GiB",
+  "mem_gib": 64,
+  "cluster_size": 1,
+  "iterations_included": 209,
+  "queries_per_iteration": 4,
+  "total_runtime_seconds": 11.361,
+  "costs": [
+    {
+      "tier": "Basic",
+      "total_compute_cost_usd": 0.00551
+    },
+    {
+      "tier": "Scale",
+      "total_compute_cost_usd": 0.00754
+    },
+    {
+      "tier": "Enterprise",
+      "total_compute_cost_usd": 0.00985
+    }
+  ]
+}
