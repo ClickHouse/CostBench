@@ -13,12 +13,20 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter, LogLocator
-
 from _common import (
-    GRID, MUTED, configure_figure, load_manifest, resolve_layout, resolve_source,
-    save_figure, sha256, validate_required_labels, write_csv, write_json,
+    GRID,
+    MUTED,
+    configure_figure,
+    load_manifest,
+    resolve_layout,
+    resolve_source,
+    save_figure,
+    sha256,
+    validate_required_labels,
+    write_csv,
+    write_json,
 )
+from matplotlib.ticker import FuncFormatter, LogLocator
 
 
 def parse_args() -> argparse.Namespace:

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "chart": "global_persisted_mv_refresh_lag",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "contract": {
+    "metric": "Persisted MV refresh lag, not query-answer freshness",
+    "clickhouse": "0 by ingest-time incremental MV design",
+    "bigquery_query_semantics": "Default direct MV queries can reconcile unrefreshed base-table changes at query time; that behavior is not represented by this persisted-refresh-lag line",
+    "redshift": "Freshness of the persisted quotes_daily pre-aggregate MV; child_freshness_s already spans the Kafka event watermark through the MV",
+    "trend": "centered time rolling mean, 61 minutes",
+    "display_smoothing": "centered time rolling mean, 11 minutes",
+    "interpolation": "PCHIP; display only; legend avg/max use the pre-display trend",
+    "required_labels": [
+      "ClickHouse Cloud",
+      "Snowflake",
+      "BigQuery",
+      "Redshift Serverless"
+    ]
+  },
+  "manifest": {
+    "path": "quotes/global/visualizations/manifest.json",
+    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+  },
+  "sources": {
+    "snowflake_freshness": {
+      "path": "quotes/snowflake/results/t2/mv_latency_20260811T111856Z.jsonl",
+      "sha256": "fcae05867d51b2c9b1508325b47fd58d871f67d702085eb0421f02fdb6831c34"
+    },
+    "snowflake_dashboard": {
+      "path": "quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl",
+      "sha256": "80f10f8d95fef57a644a3ff5be59f886333715ff324ade98404602449b3ec019"
+    },
+    "bigquery_freshness": {
+      "path": "quotes/bigquery/results/bq-full-t2-20260810_152224/freshness/mv_freshness_20260810T152442Z.jsonl",
+      "sha256": "567256c07d7e1e4deadcd1df3dcbf189dce9580a8fe1c1a8d96b2346cce6ef5d"
+    },
+    "bigquery_ingest_summary": {
+      "path": "quotes/bigquery/results/bq-full-t2-20260810_152224/ingest/ingest_summary.json",
+      "sha256": "6c0f35ef7ccd71d23c1980cc9321e751f3850207a273f1c72260ea529e7b50ea"
+    },
+    "redshift_lag": {
+      "path": "quotes/redshift-serverless/results/t2/lag_20260812T165356Z.jsonl",
+      "sha256": "7e104aedf8531b0ce77ab57d5e30d33479d545f267393ffd996ee085ca8bc71f"
+    },
+    "redshift_refresh": {
+      "path": "quotes/redshift-serverless/results/t2/refresh_20260812T165356Z.jsonl",
+      "sha256": "ce8e38d8d4549904f6a24e28e5688fa548d20b7401cd26d792c4455648e25ce7"
+    }
+  },
+  "load": {
+    "snowflake": {
+      "final_rows": 113217341828,
+      "active_endpoint": "2026-08-12T22:58:57+01:00",
+      "active_endpoint_source_line": 209,
+      "records_read": 2084,
+      "initial_invalid_excluded": 4,
+      "post_ingestion_excluded": 8,
+      "records_selected": 2072
+    },
+    "bigquery": {
+      "final_rows": 113219565734,
+      "active_endpoint_source_line": 1889,
+      "records_read": 2330,
+      "initial_invalid_excluded": 0,
+      "post_ingestion_excluded": 441,
+      "records_selected": 1889
+    },
+    "redshift": {
+      "final_rows": 113219565734,
+      "active_endpoint_source_line": 1889,
+      "active_endpoint": "2026-08-14T00:21:56Z",
+      "records_read": 2348,
+      "initial_invalid_excluded": 1,
+      "initial_nonmonotonic_lag_sample_excluded": true,
+      "post_ingestion_excluded": 463,
+      "records_selected": 1884
+    }
+  },
+  "statistics": {
+    "snowflake": {
+      "average_trend_minutes": 1.3724893167560812,
+      "maximum_trend_minutes": 2.032786885245894,
+      "raw_maximum_minutes": 4.416666666666667
+    },
+    "bigquery": {
+      "average_trend_minutes": 2.7520193760208493,
+      "maximum_trend_minutes": 3.2440460378787876,
+      "raw_maximum_minutes": 8.022923350000001
+    },
+    "redshift": {
+      "average_trend_minutes": 0.7301659952069638,
+      "maximum_trend_minutes": 0.8477777777777799,
+      "raw_maximum_minutes": 1.3166666666666667
+    }
+  },
+  "outputs": {
+    "png": "quotes/global/results/charts/mv_lag_all_systems_wide.png",
+    "svg": "quotes/global/results/charts/mv_lag_all_systems_wide.svg",
+    "data_csv": "quotes/global/results/charts/mv_lag_all_systems_wide_data.csv",
+    "curve_csv": "quotes/global/results/charts/mv_lag_all_systems_wide_curve.csv"
+  }
+}

@@ -18,7 +18,6 @@ import matplotlib
 import matplotlib.font_manager as font_manager
 import matplotlib.patches as patches
 
-
 BACKGROUND = os.environ.get("CHART_BACKGROUND_COLOR", "#2B2B2B")
 GRID = "#4A4A4A"
 MUTED = "#A0A0A0"

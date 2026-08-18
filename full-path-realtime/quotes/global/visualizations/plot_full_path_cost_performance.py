@@ -14,13 +14,20 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
-
 from _common import (
-    MUTED, WHITE, configure_figure, load_manifest, resolve_layout,
-    resolve_source, save_figure, sha256, validate_required_labels, write_csv,
+    MUTED,
+    WHITE,
+    configure_figure,
+    load_manifest,
+    resolve_layout,
+    resolve_source,
+    save_figure,
+    sha256,
+    validate_required_labels,
+    write_csv,
     write_json,
 )
+from matplotlib.patches import FancyBboxPatch
 
 
 def parse_args() -> argparse.Namespace:

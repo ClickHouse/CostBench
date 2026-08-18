@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "chart": "global_drilldown_query_latency",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "contract": {
+    "row_cap": 100000000000,
+    "x_axis": "Each provider's own observed raw-row count; no iteration joins",
+    "display_smoothing": "centered rolling median, 5 observations, provider-local",
+    "outliers": "Snowflake aggregate only: accepted Tukey upper-fence policy from its pairwise chart; no Redshift points are excluded",
+    "required_labels": [
+      "ClickHouse Cloud",
+      "Snowflake",
+      "BigQuery",
+      "Redshift \u00b7 SUPER",
+      "Redshift \u00b7 Typed"
+    ]
+  },
+  "manifest": {
+    "path": "quotes/global/visualizations/manifest.json",
+    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+  },
+  "sources": {
+    "clickhouse": {
+      "runner_jsonl": "quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+      "runner_sha256": "fa4033841b2d0596c227b0baacfc666086d41bdcceb9173da9e3c9e699f1f378",
+      "queries": "quotes/clickhouse-cloud/queries_raw.sql",
+      "queries_sha256": "44f8199cc3b18ff091324789918535a3d1c5f8f5ba99939bf02df7433d5ad29b",
+      "load": {
+        "records_read": 48,
+        "records_selected": 32,
+        "zero_row_records_excluded": 1,
+        "records_above_cap_excluded": 15,
+        "systems": [
+          "ClickHouse Cloud (AWS)"
+        ],
+        "machines": [
+          "64GiB"
+        ]
+      }
+    },
+    "snowflake": {
+      "runner_jsonl": "quotes/snowflake/results/t2/drilldown_20260811T111857Z.jsonl",
+      "runner_sha256": "a4ed169ecd67550a74ac945fbb745cbd8bc4cfbaaf14c848133d0d5b86094ad5",
+      "queries": "quotes/snowflake/t2/queries_raw_it.sql",
+      "queries_sha256": "55b3a6848e4f6d9812be295f5a351338942a76e695caf05ade68cd5296d6b05d",
+      "load": {
+        "records_read": 35,
+        "records_selected": 30,
+        "zero_row_records_excluded": 1,
+        "records_above_cap_excluded": 4,
+        "systems": [
+          "Snowflake IT (AWS)"
+        ],
+        "machines": [
+          "Interactive Small"
+        ]
+      }
+    },
+    "bigquery": {
+      "runner_jsonl": "quotes/bigquery/results/bq-full-t2-20260810_152224/raw/drilldown_20260810T152440Z.jsonl",
+      "runner_sha256": "67e2a99c08ad6643c5fa6942f41ca6173110082d19aeab0e9f61412c1af5780e",
+      "queries": "quotes/bigquery/queries_raw.sql",
+      "queries_sha256": "8ccfd7f58ad8a57c4f86bf1623bfb46729a3c9137c8d9ac9c4dc0fc97bbc067b",
+      "load": {
+        "records_read": 39,
+        "records_selected": 28,
+        "zero_row_records_excluded": 0,
+        "records_above_cap_excluded": 11,
+        "systems": [
+          "BigQuery (GCP)"
+        ],
+        "machines": [
+          "serverless"
+        ]
+      }
+    },
+    "redshift_super": {
+      "runner_jsonl": "quotes/redshift-serverless/results/t2/drilldown_super_20260812T165356Z.jsonl",
+      "runner_sha256": "687b53c3897a70a9e321e1df76e3263e94f030fd5c170f8f1df6a9c07d17fa4d",
+      "queries": "quotes/redshift-serverless/sql/queries_drilldown_super.sql",
+      "queries_sha256": "87d5bc4d1de962c7e7d9b4f7230cfbd98af6488060754f3e02a130eb86501d42",
+      "load": {
+        "records_read": 40,
+        "records_selected": 27,
+        "zero_row_records_excluded": 1,
+        "records_above_cap_excluded": 12,
+        "systems": [
+          "redshift"
+        ],
+        "machines": [
+          "Redshift Serverless w128r32"
+        ]
+      }
+    },
+    "redshift_typed": {
+      "runner_jsonl": "quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl",
+      "runner_sha256": "7f7661a8ade070164556d2a6ad5c18839321831258b97e9deb6ed45a2195f02d",
+      "queries": "quotes/redshift-serverless/sql/queries_drilldown_typed.sql",
+      "queries_sha256": "e5c74af2c32ceb5e0aa9d6bbce8e5c6ca4904d3108d470df8ff2e42b20ac9f98",
+      "load": {
+        "records_read": 40,
+        "records_selected": 27,
+        "zero_row_records_excluded": 1,
+        "records_above_cap_excluded": 12,
+        "systems": [
+          "redshift"
+        ],
+        "machines": [
+          "Redshift Serverless w128r32"
+        ]
+      }
+    }
+  },
+  "reports": {
+    "clickhouse_q1": {
+      "raw_stats": {
+        "observations": 32,
+        "average_sec": 0.82946875,
+        "median_sec": 0.83,
+        "p95_sec": 1.133,
+        "maximum_sec": 1.18
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 32,
+        "average_sec": 0.82946875,
+        "median_sec": 0.83,
+        "p95_sec": 1.133,
+        "maximum_sec": 1.18
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "snowflake_q1": {
+      "raw_stats": {
+        "observations": 30,
+        "average_sec": 0.8950333333333333,
+        "median_sec": 0.8745,
+        "p95_sec": 1.389,
+        "maximum_sec": 1.817
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 30,
+        "average_sec": 0.8950333333333333,
+        "median_sec": 0.8745,
+        "p95_sec": 1.389,
+        "maximum_sec": 1.817
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "bigquery_q1": {
+      "raw_stats": {
+        "observations": 28,
+        "average_sec": 3.2423928571428573,
+        "median_sec": 3.232,
+        "p95_sec": 4.253,
+        "maximum_sec": 4.257
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 28,
+        "average_sec": 3.2423928571428573,
+        "median_sec": 3.232,
+        "p95_sec": 4.253,
+        "maximum_sec": 4.257
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "redshift_super_q1": {
+      "raw_stats": {
+        "observations": 27,
+        "average_sec": 112.98831566666667,
+        "median_sec": 95.675033,
+        "p95_sec": 213.845328,
+        "maximum_sec": 446.004491
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 27,
+        "average_sec": 112.98831566666667,
+        "median_sec": 95.675033,
+        "p95_sec": 213.845328,
+        "maximum_sec": 446.004491
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "redshift_typed_q1": {
+      "raw_stats": {
+        "observations": 27,
+        "average_sec": 110.03631229629629,
+        "median_sec": 96.422819,
+        "p95_sec": 215.844457,
+        "maximum_sec": 234.741752
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 27,
+        "average_sec": 110.03631229629629,
+        "median_sec": 96.422819,
+        "p95_sec": 215.844457,
+        "maximum_sec": 234.741752
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "clickhouse_q2": {
+      "raw_stats": {
+        "observations": 32,
+        "average_sec": 0.5890625,
+        "median_sec": 0.5965,
+        "p95_sec": 0.835,
+        "maximum_sec": 0.843
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 32,
+        "average_sec": 0.5890625,
+        "median_sec": 0.5965,
+        "p95_sec": 0.835,
+        "maximum_sec": 0.843
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "snowflake_q2": {
+      "raw_stats": {
+        "observations": 30,
+        "average_sec": 1.0948,
+        "median_sec": 1.0505,
+        "p95_sec": 2.245,
+        "maximum_sec": 2.556
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 30,
+        "average_sec": 1.0948,
+        "median_sec": 1.0505,
+        "p95_sec": 2.245,
+        "maximum_sec": 2.556
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "bigquery_q2": {
+      "raw_stats": {
+        "observations": 28,
+        "average_sec": 3.1975000000000002,
+        "median_sec": 3.2305,
+        "p95_sec": 4.11,
+        "maximum_sec": 4.775
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 28,
+        "average_sec": 3.1975000000000002,
+        "median_sec": 3.2305,
+        "p95_sec": 4.11,
+        "maximum_sec": 4.775
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "redshift_super_q2": {
+      "raw_stats": {
+        "observations": 27,
+        "average_sec": 53.060946074074074,
+        "median_sec": 48.927087,
+        "p95_sec": 118.541744,
+        "maximum_sec": 128.659521
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 27,
+        "average_sec": 53.060946074074074,
+        "median_sec": 48.927087,
+        "p95_sec": 118.541744,
+        "maximum_sec": 128.659521
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "redshift_typed_q2": {
+      "raw_stats": {
+        "observations": 27,
+        "average_sec": 241.91698551851854,
+        "median_sec": 276.683712,
+        "p95_sec": 373.736032,
+        "maximum_sec": 383.183353
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 27,
+        "average_sec": 241.91698551851854,
+        "median_sec": 276.683712,
+        "p95_sec": 373.736032,
+        "maximum_sec": 383.183353
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    }
+  },
+  "outputs": {
+    "png": "quotes/global/results/charts/drilldown_query_latency_all_systems_wide.png",
+    "svg": "quotes/global/results/charts/drilldown_query_latency_all_systems_wide.svg",
+    "csv": "quotes/global/results/charts/drilldown_query_latency_all_systems_wide_data.csv"
+  }
+}

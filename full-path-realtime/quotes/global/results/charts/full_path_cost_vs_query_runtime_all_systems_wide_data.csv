@@ -1,0 +1,7 @@
+label,runtime_sec,full_path_cost_usd,source_pair
+ClickHouse,61.827,28.740669999999998,ClickHouse vs Snowflake matched window
+Snowflake,7674.9839999999995,95.41214000000001,ClickHouse vs Snowflake matched window
+BigQuery · Capacity,2961.386000000003,247.83612947,ClickHouse vs BigQuery matched window
+BigQuery · On-demand,2961.386000000003,289.39388113999996,ClickHouse vs BigQuery matched window
+Redshift · SUPER,6093.541947,1957.0480363602937,ClickHouse vs Redshift SUPER matched window
+Redshift · Typed,12048.262083,1980.2581373002938,ClickHouse vs Redshift typed matched window
