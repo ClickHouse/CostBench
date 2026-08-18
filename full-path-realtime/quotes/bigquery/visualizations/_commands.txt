@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Shared slide background for every chart. Override before running if needed.
+export CHART_BACKGROUND_COLOR="${CHART_BACKGROUND_COLOR:-#161614}"
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+BIGQUERY_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+cd "$BIGQUERY_ROOT"
+
+mkdir -p results/bq-full-t2-20260810_152224/charts
+
+# Every renderer produces its established default layout plus a Keynote-native
+# 5156x2900 wide layout with a transparent 560px header-safe area and subtle
+# chart stage. Wide outputs are automatically suffixed with `_wide`.
+run_narrow_and_wide() {
+  if [ "${WIDE_ONLY:-0}" != "1" ]; then
+    "$@"
+  fi
+  "$@" --wide
+}
+
+printf '\nMV lag: ClickHouse versus BigQuery\n'
+run_narrow_and_wide uv run visualizations/plot_mv_lag.py \
+  --freshness results/bq-full-t2-20260810_152224/freshness/mv_freshness_20260810T152442Z.jsonl \
+  --ingest-summary results/bq-full-t2-20260810_152224/ingest/ingest_summary.json \
+  --output-dir results/bq-full-t2-20260810_152224/charts
+
+printf '\nAggregate-query latency: ClickHouse versus BigQuery\n'
+run_narrow_and_wide uv run visualizations/plot_aggregate_query_latency.py \
+  --clickhouse ../clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl \
+  --bigquery results/bq-full-t2-20260810_152224/mv/dashboard_20260810T152439Z.jsonl \
+  --summary-strip \
+  --clickhouse-cost-summary ../clickhouse-cloud/costs/out_t2/matched/bigquery/dashboard.json \
+  --bigquery-cost-summary costs/out/bq-full-t2-20260810_152224/dashboard.json \
+  --tier Enterprise \
+  --output-dir results/bq-full-t2-20260810_152224/charts
+
+printf '\nDrill-down-query latency: ClickHouse versus BigQuery\n'
+run_narrow_and_wide uv run visualizations/plot_drilldown_query_latency.py \
+  --clickhouse ../clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl \
+  --bigquery results/bq-full-t2-20260810_152224/raw/drilldown_20260810T152440Z.jsonl \
+  --summary-strip \
+  --clickhouse-cost-summary ../clickhouse-cloud/costs/out_t2/matched/bigquery/drilldown.json \
+  --bigquery-cost-summary costs/out/bq-full-t2-20260810_152224/drilldown.json \
+  --tier Enterprise \
+  --output-dir results/bq-full-t2-20260810_152224/charts
+
+printf '\nAccumulated query runtime and cost: ClickHouse versus BigQuery\n'
+run_narrow_and_wide uv run visualizations/plot_query_runtime_cost.py \
+  --clickhouse-dashboard-cost ../clickhouse-cloud/costs/out_t2/matched/bigquery/dashboard.json \
+  --clickhouse-drilldown-cost ../clickhouse-cloud/costs/out_t2/matched/bigquery/drilldown.json \
+  --bigquery-dashboard-cost costs/out/bq-full-t2-20260810_152224/dashboard.json \
+  --bigquery-drilldown-cost costs/out/bq-full-t2-20260810_152224/drilldown.json \
+  --bigquery-serverless-pricing costs/pricings/serverless.json \
+  --tier Enterprise \
+  --region us \
+  --output-dir results/bq-full-t2-20260810_152224/charts
+
+printf '\nComplete-ingest and fresh-path cost: ClickHouse versus BigQuery\n'
+run_narrow_and_wide uv run visualizations/plot_ingest_fresh_path_cost.py \
+  --clickhouse-cost ../clickhouse-cloud/costs/out_t2/ingest.json \
+  --bigquery-ingest-cost costs/out/bq-full-t2-20260810_152224/ingest.json \
+  --bigquery-mv-refresh-cost costs/out/bq-full-t2-20260810_152224/mv_refresh.json \
+  --bigquery-serverless-pricing costs/pricings/serverless.json \
+  --bigquery-write-api-pricing costs/pricings/storage_write_api.json \
+  --tier Enterprise \
+  --region us \
+  --output-dir results/bq-full-t2-20260810_152224/charts
+
+printf '\nFull-path cost-performance: ClickHouse versus BigQuery\n'
+run_narrow_and_wide uv run visualizations/plot_full_path_cost_performance.py \
+  --clickhouse-ingest-cost ../clickhouse-cloud/costs/out_t2/ingest.json \
+  --clickhouse-dashboard-cost ../clickhouse-cloud/costs/out_t2/matched/bigquery/dashboard.json \
+  --clickhouse-drilldown-cost ../clickhouse-cloud/costs/out_t2/matched/bigquery/drilldown.json \
+  --bigquery-ingest-cost costs/out/bq-full-t2-20260810_152224/ingest.json \
+  --bigquery-mv-refresh-cost costs/out/bq-full-t2-20260810_152224/mv_refresh.json \
+  --bigquery-dashboard-cost costs/out/bq-full-t2-20260810_152224/dashboard.json \
+  --bigquery-drilldown-cost costs/out/bq-full-t2-20260810_152224/drilldown.json \
+  --bigquery-serverless-pricing costs/pricings/serverless.json \
+  --bigquery-write-api-pricing costs/pricings/storage_write_api.json \
+  --tier Enterprise \
+  --region us \
+  --output-dir results/bq-full-t2-20260810_152224/charts

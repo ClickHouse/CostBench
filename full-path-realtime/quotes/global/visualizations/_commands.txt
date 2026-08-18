@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+FULL_PATH_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+cd "$FULL_PATH_ROOT"
+
+# Shared slide background for every chart. Override before running if needed.
+export CHART_BACKGROUND_COLOR="${CHART_BACKGROUND_COLOR:-#161614}"
+
+export GLOBAL_VIZ_DIR="$PWD/quotes/global/visualizations"
+export GLOBAL_CHART_DIR="$PWD/quotes/global/results/charts"
+mkdir -p "$GLOBAL_CHART_DIR"
+
+# Every renderer produces its established default layout plus a Keynote-native
+# 5156x2900 wide layout with a transparent 560px header-safe area and subtle
+# chart stage. Wide outputs are automatically suffixed with `_wide`.
+run_narrow_and_wide() {
+  if [ "${WIDE_ONLY:-0}" != "1" ]; then
+    "$@"
+  fi
+  "$@" --wide
+}
+
+# 1. Aggregate query latency: each provider at its own observed raw-row count.
+run_narrow_and_wide uv run "$GLOBAL_VIZ_DIR/plot_aggregate_query_latency.py" \
+  --manifest "$GLOBAL_VIZ_DIR/manifest.json" \
+  --output-dir "$GLOBAL_CHART_DIR"
+
+# 2. Drill-down query latency: each provider at its own observed raw-row count.
+run_narrow_and_wide uv run "$GLOBAL_VIZ_DIR/plot_drilldown_query_latency.py" \
+  --manifest "$GLOBAL_VIZ_DIR/manifest.json" \
+  --output-dir "$GLOBAL_CHART_DIR"
+
+# 3. Persisted MV refresh lag. BigQuery default direct-query reconciliation is
+# intentionally distinct from, and not represented by, this persisted lag metric.
+run_narrow_and_wide uv run "$GLOBAL_VIZ_DIR/plot_mv_lag.py" \
+  --manifest "$GLOBAL_VIZ_DIR/manifest.json" \
+  --output-dir "$GLOBAL_CHART_DIR" \
+  --trend-window-minutes 61 \
+  --display-window-minutes 11 \
+  --curve-points 2200
+
+# 4. Complete-ingest fresh-data-path cost. Accepted pairwise summaries are
+# reused unchanged; BigQuery Capacity and On-demand are alternative totals.
+run_narrow_and_wide uv run "$GLOBAL_VIZ_DIR/plot_ingest_fresh_path_cost.py" \
+  --manifest "$GLOBAL_VIZ_DIR/manifest.json" \
+  --output-dir "$GLOBAL_CHART_DIR"
+
+# 5. Global full-path score: accepted pairwise-normalized values only.
+run_narrow_and_wide uv run "$GLOBAL_VIZ_DIR/plot_full_path_cost_performance.py" \
+  --manifest "$GLOBAL_VIZ_DIR/manifest.json" \
+  --output-dir "$GLOBAL_CHART_DIR" \
+  --query-cost-display total
+
+# 6. Absolute full-path cost versus accumulated query runtime. Both axes are
+# logarithmic and inverted: faster is right, lower cost is up.
+run_narrow_and_wide uv run "$GLOBAL_VIZ_DIR/plot_full_path_cost_vs_query_runtime.py" \
+  --manifest "$GLOBAL_VIZ_DIR/manifest.json" \
+  --output-dir "$GLOBAL_CHART_DIR" \
+  --query-cost-display total

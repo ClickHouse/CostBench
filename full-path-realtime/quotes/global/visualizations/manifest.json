@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "row_cap": 100000000000,
+  "required_labels": {
+    "aggregate_query_latency": [
+      "ClickHouse Cloud",
+      "Snowflake",
+      "BigQuery",
+      "Redshift Serverless"
+    ],
+    "drilldown_query_latency": [
+      "ClickHouse Cloud",
+      "Snowflake",
+      "BigQuery",
+      "Redshift · SUPER",
+      "Redshift · Typed"
+    ],
+    "mv_lag": [
+      "ClickHouse Cloud",
+      "Snowflake",
+      "BigQuery",
+      "Redshift Serverless"
+    ],
+    "fresh_path_cost": [
+      "ClickHouse",
+      "Snowflake",
+      "BigQuery · Capacity",
+      "BigQuery · On-demand",
+      "Redshift Serverless"
+    ],
+    "full_path_cost_performance": [
+      "ClickHouse",
+      "Snowflake",
+      "BigQuery · Capacity",
+      "BigQuery · On-demand",
+      "Redshift · SUPER",
+      "Redshift · Typed"
+    ],
+    "full_path_cost_vs_query_runtime": [
+      "ClickHouse",
+      "Snowflake",
+      "BigQuery · Capacity",
+      "BigQuery · On-demand",
+      "Redshift · SUPER",
+      "Redshift · Typed"
+    ]
+  },
+  "providers": {
+    "clickhouse": {
+      "label": "ClickHouse Cloud",
+      "color": "#FDFF62",
+      "aggregate": "quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl",
+      "aggregate_queries": "quotes/clickhouse-cloud/queries_mv.sql",
+      "drilldown": "quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+      "drilldown_queries": "quotes/clickhouse-cloud/queries_raw.sql"
+    },
+    "snowflake": {
+      "label": "Snowflake",
+      "color": "#29B5E8",
+      "aggregate": "quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl",
+      "aggregate_queries": "quotes/snowflake/t2/queries_mv_imv.sql",
+      "aggregate_outlier_policy": "tukey_upper",
+      "drilldown": "quotes/snowflake/results/t2/drilldown_20260811T111857Z.jsonl",
+      "drilldown_queries": "quotes/snowflake/t2/queries_raw_it.sql",
+      "freshness": "quotes/snowflake/results/t2/mv_latency_20260811T111856Z.jsonl",
+      "freshness_dashboard": "quotes/snowflake/results/t2/dashboard_imv_iv_20260811T111856Z.jsonl"
+    },
+    "bigquery": {
+      "label": "BigQuery",
+      "color": "#4285F4",
+      "aggregate": "quotes/bigquery/results/bq-full-t2-20260810_152224/mv/dashboard_20260810T152439Z.jsonl",
+      "aggregate_queries": "quotes/bigquery/queries_mv.sql",
+      "drilldown": "quotes/bigquery/results/bq-full-t2-20260810_152224/raw/drilldown_20260810T152440Z.jsonl",
+      "drilldown_queries": "quotes/bigquery/queries_raw.sql",
+      "freshness": "quotes/bigquery/results/bq-full-t2-20260810_152224/freshness/mv_freshness_20260810T152442Z.jsonl",
+      "ingest_summary": "quotes/bigquery/results/bq-full-t2-20260810_152224/ingest/ingest_summary.json"
+    },
+    "redshift": {
+      "label": "Redshift Serverless",
+      "color": "#FF9900",
+      "aggregate": "quotes/redshift-serverless/results/t2/dashboard_20260812T165356Z.jsonl",
+      "aggregate_queries": "quotes/redshift-serverless/sql/queries_dashboard.sql",
+      "freshness_lag": "quotes/redshift-serverless/results/t2/lag_20260812T165356Z.jsonl",
+      "freshness_refresh": "quotes/redshift-serverless/results/t2/refresh_20260812T165356Z.jsonl",
+      "freshness_final_rows": 113219565734
+    },
+    "redshift_super": {
+      "label": "Redshift · SUPER",
+      "color": "#FF9900",
+      "drilldown": "quotes/redshift-serverless/results/t2/drilldown_super_20260812T165356Z.jsonl",
+      "drilldown_queries": "quotes/redshift-serverless/sql/queries_drilldown_super.sql"
+    },
+    "redshift_typed": {
+      "label": "Redshift · Typed",
+      "color": "#E76F00",
+      "drilldown": "quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl",
+      "drilldown_queries": "quotes/redshift-serverless/sql/queries_drilldown_typed.sql"
+    }
+  },
+  "fresh_path_cost": {
+    "snowflake_pairwise_summary": "quotes/snowflake/results/t2/charts/run14/ingest_fresh_path_cost_clickhouse_vs_snowflake_summary.json",
+    "bigquery_pairwise_summary": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/ingest_fresh_path_cost_clickhouse_vs_bigquery_summary.json",
+    "redshift_pairwise_summary": "quotes/redshift-serverless/results/t2/charts/fresh_data_path_cost_clickhouse_vs_redshift_summary.json"
+  },
+  "cost_performance": {
+    "snowflake_pairwise_summary": "quotes/snowflake/results/t2/charts/run14/full_path_cost_performance_clickhouse_vs_snowflake_summary.json",
+    "bigquery_pairwise_summary": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/full_path_cost_performance_clickhouse_vs_bigquery_summary.json",
+    "redshift_super_summary": "quotes/redshift-serverless/costs/out/t2/full_path_super.json",
+    "redshift_typed_summary": "quotes/redshift-serverless/costs/out/t2/full_path_typed.json"
+  }
+}
