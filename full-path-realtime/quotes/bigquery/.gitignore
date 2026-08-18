@@ -1,0 +1,23 @@
+_credentials.txt
+*service-account*.json
+*.key.json
+.venv/
+__pycache__/
+*.pyc
+results*/
+throughput_*.tsv
+
+# The accepted T2 run and its normalized cost outputs are reproducible evidence
+# and are intentionally versioned. Other local runs remain ignored.
+!results/
+results/*
+!results/bq-full-t2-20260810_152224/
+!results/bq-full-t2-20260810_152224/**
+!costs/out/
+costs/out/*
+!costs/out/bq-full-t2-20260810_152224/
+!costs/out/bq-full-t2-20260810_152224/**
+
+# Keep Finder metadata ignored even inside the accepted-run exception.
+.DS_Store
+**/.DS_Store

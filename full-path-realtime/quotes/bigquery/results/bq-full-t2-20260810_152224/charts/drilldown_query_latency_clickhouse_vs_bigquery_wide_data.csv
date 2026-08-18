@@ -1,0 +1,121 @@
+system,source_line,iteration,observed_at,raw_rows,query_number,query_name,latency_sec,runtime_source
+BigQuery,1,1,2026-08-10T15:24:41.101Z,5232720,1,Hourly OHLCV bars,0.960000000,statistics.finalExecutionDurationMs
+BigQuery,2,2,2026-08-10T16:24:41.101Z,3604604487,1,Hourly OHLCV bars,3.778000000,statistics.finalExecutionDurationMs
+BigQuery,3,3,2026-08-10T17:24:41.101Z,7208681892,1,Hourly OHLCV bars,4.257000000,statistics.finalExecutionDurationMs
+BigQuery,4,4,2026-08-10T18:24:41.101Z,10810687044,1,Hourly OHLCV bars,3.637000000,statistics.finalExecutionDurationMs
+BigQuery,5,5,2026-08-10T19:24:41.101Z,14404336229,1,Hourly OHLCV bars,4.253000000,statistics.finalExecutionDurationMs
+BigQuery,6,6,2026-08-10T20:24:41.101Z,18008545549,1,Hourly OHLCV bars,3.366000000,statistics.finalExecutionDurationMs
+BigQuery,7,7,2026-08-10T21:24:41.101Z,21601183337,1,Hourly OHLCV bars,3.099000000,statistics.finalExecutionDurationMs
+BigQuery,8,8,2026-08-10T22:24:41.101Z,25206685539,1,Hourly OHLCV bars,3.400000000,statistics.finalExecutionDurationMs
+BigQuery,9,9,2026-08-10T23:24:41.101Z,28801641121,1,Hourly OHLCV bars,2.661000000,statistics.finalExecutionDurationMs
+BigQuery,10,10,2026-08-11T00:24:41.101Z,32408058443,1,Hourly OHLCV bars,3.127000000,statistics.finalExecutionDurationMs
+BigQuery,11,11,2026-08-11T01:24:41.101Z,36003582107,1,Hourly OHLCV bars,2.691000000,statistics.finalExecutionDurationMs
+BigQuery,12,12,2026-08-11T02:24:41.101Z,39606099320,1,Hourly OHLCV bars,3.275000000,statistics.finalExecutionDurationMs
+BigQuery,13,13,2026-08-11T03:24:41.101Z,43199914240,1,Hourly OHLCV bars,3.244000000,statistics.finalExecutionDurationMs
+BigQuery,14,14,2026-08-11T04:24:41.101Z,46805853812,1,Hourly OHLCV bars,3.805000000,statistics.finalExecutionDurationMs
+BigQuery,15,15,2026-08-11T05:24:41.101Z,50401430353,1,Hourly OHLCV bars,3.069000000,statistics.finalExecutionDurationMs
+BigQuery,16,16,2026-08-11T06:24:41.101Z,53996988224,1,Hourly OHLCV bars,2.889000000,statistics.finalExecutionDurationMs
+BigQuery,17,17,2026-08-11T07:24:41.101Z,57603715749,1,Hourly OHLCV bars,2.789000000,statistics.finalExecutionDurationMs
+BigQuery,18,18,2026-08-11T08:24:41.101Z,61199564057,1,Hourly OHLCV bars,3.205000000,statistics.finalExecutionDurationMs
+BigQuery,19,19,2026-08-11T09:24:41.101Z,64793072681,1,Hourly OHLCV bars,3.220000000,statistics.finalExecutionDurationMs
+BigQuery,20,20,2026-08-11T10:24:41.101Z,68395308517,1,Hourly OHLCV bars,2.924000000,statistics.finalExecutionDurationMs
+BigQuery,21,21,2026-08-11T11:24:41.101Z,71987342393,1,Hourly OHLCV bars,3.171000000,statistics.finalExecutionDurationMs
+BigQuery,22,22,2026-08-11T12:24:41.101Z,75577981475,1,Hourly OHLCV bars,2.737000000,statistics.finalExecutionDurationMs
+BigQuery,23,23,2026-08-11T13:24:41.101Z,79170037334,1,Hourly OHLCV bars,3.257000000,statistics.finalExecutionDurationMs
+BigQuery,24,24,2026-08-11T14:24:41.101Z,82761715116,1,Hourly OHLCV bars,3.547000000,statistics.finalExecutionDurationMs
+BigQuery,25,25,2026-08-11T15:24:41.101Z,86354594018,1,Hourly OHLCV bars,3.796000000,statistics.finalExecutionDurationMs
+BigQuery,26,26,2026-08-11T16:24:41.101Z,89952672588,1,Hourly OHLCV bars,2.914000000,statistics.finalExecutionDurationMs
+BigQuery,27,27,2026-08-11T17:24:41.101Z,93548598329,1,Hourly OHLCV bars,3.604000000,statistics.finalExecutionDurationMs
+BigQuery,28,28,2026-08-11T18:24:41.101Z,97155331056,1,Hourly OHLCV bars,4.112000000,statistics.finalExecutionDurationMs
+ClickHouse Cloud,2,2,2026-08-08T07:56:02Z,3742528876,1,Hourly OHLCV bars,0.865000000,clickhouse-client --time
+ClickHouse Cloud,3,3,2026-08-08T08:56:02Z,7149139248,1,Hourly OHLCV bars,0.557000000,clickhouse-client --time
+ClickHouse Cloud,4,4,2026-08-08T09:56:02Z,10451300014,1,Hourly OHLCV bars,0.589000000,clickhouse-client --time
+ClickHouse Cloud,5,5,2026-08-08T10:56:02Z,13693746344,1,Hourly OHLCV bars,0.935000000,clickhouse-client --time
+ClickHouse Cloud,6,6,2026-08-08T11:56:02Z,17207612605,1,Hourly OHLCV bars,0.508000000,clickhouse-client --time
+ClickHouse Cloud,7,7,2026-08-08T12:56:02Z,20600910656,1,Hourly OHLCV bars,0.898000000,clickhouse-client --time
+ClickHouse Cloud,8,8,2026-08-08T13:56:02Z,23847648964,1,Hourly OHLCV bars,0.831000000,clickhouse-client --time
+ClickHouse Cloud,9,9,2026-08-08T14:56:02Z,27120394813,1,Hourly OHLCV bars,0.723000000,clickhouse-client --time
+ClickHouse Cloud,10,10,2026-08-08T15:56:02Z,30468775164,1,Hourly OHLCV bars,0.782000000,clickhouse-client --time
+ClickHouse Cloud,11,11,2026-08-08T16:56:02Z,33749879001,1,Hourly OHLCV bars,0.587000000,clickhouse-client --time
+ClickHouse Cloud,12,12,2026-08-08T17:56:02Z,36853722010,1,Hourly OHLCV bars,1.080000000,clickhouse-client --time
+ClickHouse Cloud,13,13,2026-08-08T18:56:02Z,39940404643,1,Hourly OHLCV bars,0.728000000,clickhouse-client --time
+ClickHouse Cloud,14,14,2026-08-08T19:56:02Z,43039194322,1,Hourly OHLCV bars,0.927000000,clickhouse-client --time
+ClickHouse Cloud,15,15,2026-08-08T20:56:02Z,46111116140,1,Hourly OHLCV bars,0.829000000,clickhouse-client --time
+ClickHouse Cloud,16,16,2026-08-08T21:56:02Z,49175866023,1,Hourly OHLCV bars,0.878000000,clickhouse-client --time
+ClickHouse Cloud,17,17,2026-08-08T22:56:02Z,52443266481,1,Hourly OHLCV bars,0.657000000,clickhouse-client --time
+ClickHouse Cloud,18,18,2026-08-08T23:56:02Z,55419548257,1,Hourly OHLCV bars,0.692000000,clickhouse-client --time
+ClickHouse Cloud,19,19,2026-08-09T00:56:02Z,58512627462,1,Hourly OHLCV bars,0.854000000,clickhouse-client --time
+ClickHouse Cloud,20,20,2026-08-09T01:56:02Z,61372336571,1,Hourly OHLCV bars,0.900000000,clickhouse-client --time
+ClickHouse Cloud,21,21,2026-08-09T02:56:02Z,64300511639,1,Hourly OHLCV bars,0.749000000,clickhouse-client --time
+ClickHouse Cloud,22,22,2026-08-09T03:56:02Z,67296751626,1,Hourly OHLCV bars,0.740000000,clickhouse-client --time
+ClickHouse Cloud,23,23,2026-08-09T04:56:02Z,70171105615,1,Hourly OHLCV bars,1.133000000,clickhouse-client --time
+ClickHouse Cloud,24,24,2026-08-09T05:56:02Z,73014746623,1,Hourly OHLCV bars,0.796000000,clickhouse-client --time
+ClickHouse Cloud,25,25,2026-08-09T06:56:02Z,75968034150,1,Hourly OHLCV bars,0.809000000,clickhouse-client --time
+ClickHouse Cloud,26,26,2026-08-09T07:56:02Z,78744711237,1,Hourly OHLCV bars,0.871000000,clickhouse-client --time
+ClickHouse Cloud,27,27,2026-08-09T08:56:02Z,81363815092,1,Hourly OHLCV bars,0.772000000,clickhouse-client --time
+ClickHouse Cloud,28,28,2026-08-09T09:56:02Z,83951753947,1,Hourly OHLCV bars,1.039000000,clickhouse-client --time
+ClickHouse Cloud,29,29,2026-08-09T10:56:02Z,87063780214,1,Hourly OHLCV bars,1.180000000,clickhouse-client --time
+ClickHouse Cloud,30,30,2026-08-09T11:56:02Z,90313224986,1,Hourly OHLCV bars,0.810000000,clickhouse-client --time
+ClickHouse Cloud,31,31,2026-08-09T12:56:02Z,93296187953,1,Hourly OHLCV bars,1.012000000,clickhouse-client --time
+ClickHouse Cloud,32,32,2026-08-09T13:56:02Z,96365836441,1,Hourly OHLCV bars,0.834000000,clickhouse-client --time
+ClickHouse Cloud,33,33,2026-08-09T14:56:02Z,99569689379,1,Hourly OHLCV bars,0.978000000,clickhouse-client --time
+BigQuery,1,1,2026-08-10T15:24:41.101Z,5232720,2,Risk & liquidity (B7),1.088000000,statistics.finalExecutionDurationMs
+BigQuery,2,2,2026-08-10T16:24:41.101Z,3604604487,2,Risk & liquidity (B7),2.228000000,statistics.finalExecutionDurationMs
+BigQuery,3,3,2026-08-10T17:24:41.101Z,7208681892,2,Risk & liquidity (B7),3.413000000,statistics.finalExecutionDurationMs
+BigQuery,4,4,2026-08-10T18:24:41.101Z,10810687044,2,Risk & liquidity (B7),3.556000000,statistics.finalExecutionDurationMs
+BigQuery,5,5,2026-08-10T19:24:41.101Z,14404336229,2,Risk & liquidity (B7),3.542000000,statistics.finalExecutionDurationMs
+BigQuery,6,6,2026-08-10T20:24:41.101Z,18008545549,2,Risk & liquidity (B7),2.787000000,statistics.finalExecutionDurationMs
+BigQuery,7,7,2026-08-10T21:24:41.101Z,21601183337,2,Risk & liquidity (B7),3.112000000,statistics.finalExecutionDurationMs
+BigQuery,8,8,2026-08-10T22:24:41.101Z,25206685539,2,Risk & liquidity (B7),2.971000000,statistics.finalExecutionDurationMs
+BigQuery,9,9,2026-08-10T23:24:41.101Z,28801641121,2,Risk & liquidity (B7),3.069000000,statistics.finalExecutionDurationMs
+BigQuery,10,10,2026-08-11T00:24:41.101Z,32408058443,2,Risk & liquidity (B7),2.929000000,statistics.finalExecutionDurationMs
+BigQuery,11,11,2026-08-11T01:24:41.101Z,36003582107,2,Risk & liquidity (B7),2.964000000,statistics.finalExecutionDurationMs
+BigQuery,12,12,2026-08-11T02:24:41.101Z,39606099320,2,Risk & liquidity (B7),3.382000000,statistics.finalExecutionDurationMs
+BigQuery,13,13,2026-08-11T03:24:41.101Z,43199914240,2,Risk & liquidity (B7),4.110000000,statistics.finalExecutionDurationMs
+BigQuery,14,14,2026-08-11T04:24:41.101Z,46805853812,2,Risk & liquidity (B7),3.985000000,statistics.finalExecutionDurationMs
+BigQuery,15,15,2026-08-11T05:24:41.101Z,50401430353,2,Risk & liquidity (B7),3.257000000,statistics.finalExecutionDurationMs
+BigQuery,16,16,2026-08-11T06:24:41.101Z,53996988224,2,Risk & liquidity (B7),3.308000000,statistics.finalExecutionDurationMs
+BigQuery,17,17,2026-08-11T07:24:41.101Z,57603715749,2,Risk & liquidity (B7),3.205000000,statistics.finalExecutionDurationMs
+BigQuery,18,18,2026-08-11T08:24:41.101Z,61199564057,2,Risk & liquidity (B7),2.648000000,statistics.finalExecutionDurationMs
+BigQuery,19,19,2026-08-11T09:24:41.101Z,64793072681,2,Risk & liquidity (B7),3.575000000,statistics.finalExecutionDurationMs
+BigQuery,20,20,2026-08-11T10:24:41.101Z,68395308517,2,Risk & liquidity (B7),2.704000000,statistics.finalExecutionDurationMs
+BigQuery,21,21,2026-08-11T11:24:41.101Z,71987342393,2,Risk & liquidity (B7),3.515000000,statistics.finalExecutionDurationMs
+BigQuery,22,22,2026-08-11T12:24:41.101Z,75577981475,2,Risk & liquidity (B7),3.256000000,statistics.finalExecutionDurationMs
+BigQuery,23,23,2026-08-11T13:24:41.101Z,79170037334,2,Risk & liquidity (B7),3.205000000,statistics.finalExecutionDurationMs
+BigQuery,24,24,2026-08-11T14:24:41.101Z,82761715116,2,Risk & liquidity (B7),2.942000000,statistics.finalExecutionDurationMs
+BigQuery,25,25,2026-08-11T15:24:41.101Z,86354594018,2,Risk & liquidity (B7),3.778000000,statistics.finalExecutionDurationMs
+BigQuery,26,26,2026-08-11T16:24:41.101Z,89952672588,2,Risk & liquidity (B7),2.907000000,statistics.finalExecutionDurationMs
+BigQuery,27,27,2026-08-11T17:24:41.101Z,93548598329,2,Risk & liquidity (B7),3.319000000,statistics.finalExecutionDurationMs
+BigQuery,28,28,2026-08-11T18:24:41.101Z,97155331056,2,Risk & liquidity (B7),4.775000000,statistics.finalExecutionDurationMs
+ClickHouse Cloud,2,2,2026-08-08T07:56:02Z,3742528876,2,Risk & liquidity (B7),0.421000000,clickhouse-client --time
+ClickHouse Cloud,3,3,2026-08-08T08:56:02Z,7149139248,2,Risk & liquidity (B7),0.307000000,clickhouse-client --time
+ClickHouse Cloud,4,4,2026-08-08T09:56:02Z,10451300014,2,Risk & liquidity (B7),0.322000000,clickhouse-client --time
+ClickHouse Cloud,5,5,2026-08-08T10:56:02Z,13693746344,2,Risk & liquidity (B7),0.428000000,clickhouse-client --time
+ClickHouse Cloud,6,6,2026-08-08T11:56:02Z,17207612605,2,Risk & liquidity (B7),0.334000000,clickhouse-client --time
+ClickHouse Cloud,7,7,2026-08-08T12:56:02Z,20600910656,2,Risk & liquidity (B7),0.510000000,clickhouse-client --time
+ClickHouse Cloud,8,8,2026-08-08T13:56:02Z,23847648964,2,Risk & liquidity (B7),0.597000000,clickhouse-client --time
+ClickHouse Cloud,9,9,2026-08-08T14:56:02Z,27120394813,2,Risk & liquidity (B7),0.455000000,clickhouse-client --time
+ClickHouse Cloud,10,10,2026-08-08T15:56:02Z,30468775164,2,Risk & liquidity (B7),0.483000000,clickhouse-client --time
+ClickHouse Cloud,11,11,2026-08-08T16:56:02Z,33749879001,2,Risk & liquidity (B7),0.450000000,clickhouse-client --time
+ClickHouse Cloud,12,12,2026-08-08T17:56:02Z,36853722010,2,Risk & liquidity (B7),0.580000000,clickhouse-client --time
+ClickHouse Cloud,13,13,2026-08-08T18:56:02Z,39940404643,2,Risk & liquidity (B7),0.426000000,clickhouse-client --time
+ClickHouse Cloud,14,14,2026-08-08T19:56:02Z,43039194322,2,Risk & liquidity (B7),0.584000000,clickhouse-client --time
+ClickHouse Cloud,15,15,2026-08-08T20:56:02Z,46111116140,2,Risk & liquidity (B7),0.596000000,clickhouse-client --time
+ClickHouse Cloud,16,16,2026-08-08T21:56:02Z,49175866023,2,Risk & liquidity (B7),0.576000000,clickhouse-client --time
+ClickHouse Cloud,17,17,2026-08-08T22:56:02Z,52443266481,2,Risk & liquidity (B7),0.538000000,clickhouse-client --time
+ClickHouse Cloud,18,18,2026-08-08T23:56:02Z,55419548257,2,Risk & liquidity (B7),0.463000000,clickhouse-client --time
+ClickHouse Cloud,19,19,2026-08-09T00:56:02Z,58512627462,2,Risk & liquidity (B7),0.667000000,clickhouse-client --time
+ClickHouse Cloud,20,20,2026-08-09T01:56:02Z,61372336571,2,Risk & liquidity (B7),0.670000000,clickhouse-client --time
+ClickHouse Cloud,21,21,2026-08-09T02:56:02Z,64300511639,2,Risk & liquidity (B7),0.603000000,clickhouse-client --time
+ClickHouse Cloud,22,22,2026-08-09T03:56:02Z,67296751626,2,Risk & liquidity (B7),0.637000000,clickhouse-client --time
+ClickHouse Cloud,23,23,2026-08-09T04:56:02Z,70171105615,2,Risk & liquidity (B7),0.661000000,clickhouse-client --time
+ClickHouse Cloud,24,24,2026-08-09T05:56:02Z,73014746623,2,Risk & liquidity (B7),0.686000000,clickhouse-client --time
+ClickHouse Cloud,25,25,2026-08-09T06:56:02Z,75968034150,2,Risk & liquidity (B7),0.704000000,clickhouse-client --time
+ClickHouse Cloud,26,26,2026-08-09T07:56:02Z,78744711237,2,Risk & liquidity (B7),0.728000000,clickhouse-client --time
+ClickHouse Cloud,27,27,2026-08-09T08:56:02Z,81363815092,2,Risk & liquidity (B7),0.735000000,clickhouse-client --time
+ClickHouse Cloud,28,28,2026-08-09T09:56:02Z,83951753947,2,Risk & liquidity (B7),0.778000000,clickhouse-client --time
+ClickHouse Cloud,29,29,2026-08-09T10:56:02Z,87063780214,2,Risk & liquidity (B7),0.811000000,clickhouse-client --time
+ClickHouse Cloud,30,30,2026-08-09T11:56:02Z,90313224986,2,Risk & liquidity (B7),0.722000000,clickhouse-client --time
+ClickHouse Cloud,31,31,2026-08-09T12:56:02Z,93296187953,2,Risk & liquidity (B7),0.835000000,clickhouse-client --time
+ClickHouse Cloud,32,32,2026-08-09T13:56:02Z,96365836441,2,Risk & liquidity (B7),0.700000000,clickhouse-client --time
+ClickHouse Cloud,33,33,2026-08-09T14:56:02Z,99569689379,2,Risk & liquidity (B7),0.843000000,clickhouse-client --time

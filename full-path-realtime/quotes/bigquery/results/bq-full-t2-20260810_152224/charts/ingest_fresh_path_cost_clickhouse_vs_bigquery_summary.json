@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "chart": "complete_ingest_and_background_fresh_path_cost",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11,
+      5.2
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true
+  },
+  "pricing_tier": "Enterprise",
+  "pricing_region": "us",
+  "scope": {
+    "included": [
+      "write ingestion",
+      "sorting/merges/incremental MV bundled in ClickHouse write service",
+      "BigQuery automatic MV refresh",
+      "BigQuery automatic reclustering at zero separate charge"
+    ],
+    "excluded": [
+      "storage",
+      "dashboard queries",
+      "drill-down queries",
+      "BigQuery query-time delta merge"
+    ]
+  },
+  "systems": {
+    "clickhouse": {
+      "rows_ingested": 113217743918,
+      "duration_hours": 36.75,
+      "bundled_write_service_cost_usd": 28.68705,
+      "total_cost_usd": 28.68705
+    },
+    "bigquery": {
+      "provider_successful_rows": 113172471254,
+      "storage_write_api_cost_usd": 241.06846172,
+      "enterprise_mv_refresh_cost_usd": 2.0194428,
+      "on_demand_mv_refresh_cost_usd": 23.52057695,
+      "automatic_reclustering_separate_cost_usd": 0,
+      "capacity_total_cost_usd": 243.08790452,
+      "on_demand_total_cost_usd": 264.58903867
+    }
+  },
+  "row_scope_reconciliation": {
+    "clickhouse_rows": 113217743918,
+    "bigquery_provider_successful_rows": 113172471254,
+    "absolute_difference_rows": 45272664,
+    "difference_as_pct_of_clickhouse": 0.03998725149724724
+  },
+  "sources": {
+    "clickhouse_cost": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+      "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+    },
+    "bigquery_ingest_cost": {
+      "path": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/ingest.json",
+      "sha256": "f1b088b66e2fad8533cf761c866e02b20fc99660f89127c7325b5c240307fc7f"
+    },
+    "bigquery_mv_refresh_cost": {
+      "path": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/mv_refresh.json",
+      "sha256": "26361f233e10f2a3dd75b4e095ed47c0e5bf5b732cd52e72db2862234e684964"
+    },
+    "bigquery_serverless_pricing": {
+      "path": "quotes/bigquery/costs/pricings/serverless.json",
+      "sha256": "a19ffd21d5196192c89d64a89a05ed968ad792a300f66080f21cc39644f0c0b7"
+    },
+    "bigquery_write_api_pricing": {
+      "path": "quotes/bigquery/costs/pricings/storage_write_api.json",
+      "sha256": "6537f0d626dff8c0b141b64ca6f39ad0597ba8f507f3f63df2e097e1c1e4212f"
+    }
+  },
+  "rendering": {
+    "png": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/ingest_fresh_path_cost_clickhouse_vs_bigquery.png",
+    "svg": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/ingest_fresh_path_cost_clickhouse_vs_bigquery.svg",
+    "total_label_placement": "directly_after_bar_end; Capacity anchored to its internal endpoint",
+    "maximum_bar_width_axis_fraction": 0.72
+  }
+}

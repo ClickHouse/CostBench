@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "system": "BigQuery",
+  "component": "dashboard",
+  "region": "us",
+  "run_id": "bq-full-t2-20260810_152224",
+  "source_path": "quotes/bigquery/results/bq-full-t2-20260810_152224/mv",
+  "pricing_file": "quotes/bigquery/costs/pricings/serverless.json",
+  "iterations_included": 190,
+  "first_iteration_started_at": "2026-08-10T15:24:39.579Z",
+  "last_iteration_finished_at": "2026-08-11T22:54:46.835Z",
+  "query_jobs": 760,
+  "failed_jobs": 0,
+  "cache_hits": 0,
+  "missing_billed_bytes": 0,
+  "missing_slot_seconds": 0,
+  "total_runtime_seconds": 2751.868000000003,
+  "total_bytes_processed": 3684807781732,
+  "total_bytes_billed": 3685211963392,
+  "total_billed_gib": 3432.12109375,
+  "total_billed_slot_sec": 257734.97800000006,
+  "costs": [
+    {
+      "tier": "Standard",
+      "compute_model": "capacity",
+      "pricing_variant": "default",
+      "billing_period": "hourly",
+      "usage_metric": "billed_slot_sec",
+      "billed_slot_sec": 257734.97800000006,
+      "price_usd": 0.04,
+      "price_unit": "slot_hour",
+      "price_unit_seconds": 3600,
+      "total_compute_cost_usd": 2.86372198
+    },
+    {
+      "tier": "Enterprise",
+      "compute_model": "capacity",
+      "pricing_variant": "default",
+      "billing_period": "hourly",
+      "usage_metric": "billed_slot_sec",
+      "billed_slot_sec": 257734.97800000006,
+      "price_usd": 0.06,
+      "price_unit": "slot_hour",
+      "price_unit_seconds": 3600,
+      "total_compute_cost_usd": 4.29558297
+    },
+    {
+      "tier": "Enterprise Plus",
+      "compute_model": "capacity",
+      "pricing_variant": "default",
+      "billing_period": "hourly",
+      "usage_metric": "billed_slot_sec",
+      "billed_slot_sec": 257734.97800000006,
+      "price_usd": 0.10,
+      "price_unit": "slot_hour",
+      "price_unit_seconds": 3600,
+      "total_compute_cost_usd": 7.15930494
+    },
+    {
+      "tier": "OnDemand",
+      "compute_model": "on_demand",
+      "billing_period": "monthly",
+      "usage_metric": "billed_bytes",
+      "billed_bytes": 3685211963392,
+      "price_usd": 6.25,
+      "price_unit": "tebibyte_scanned",
+      "price_unit_bytes": 1099511627776,
+      "total_compute_cost_usd": 20.94800472
+    }
+  ],
+  "sources": [
+    "https://cloud.google.com/bigquery/pricing#capacity_compute_analysis_pricing",
+    "https://cloud.google.com/bigquery/pricing#storage-pricing",
+    "https://docs.cloud.google.com/bigquery/docs/information-schema-table-storage"
+  ]
+}

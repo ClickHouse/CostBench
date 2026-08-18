@@ -1,0 +1,15 @@
+{
+  "service": "bigquery_storage_write_api",
+  "provider": "gcp",
+  "currency": "USD",
+  "version": "2026-08-11",
+  "sources": [
+    "https://cloud.google.com/bigquery/pricing#data_ingestion_pricing"
+  ],
+  "pricing": {
+    "price_usd": 0.025,
+    "price_unit": "gibibyte_ingested",
+    "price_unit_bytes": 1073741824,
+    "notes": "Storage Write API list price applied to WRITE_API_TIMELINE successful total_input_bytes."
+  }
+}

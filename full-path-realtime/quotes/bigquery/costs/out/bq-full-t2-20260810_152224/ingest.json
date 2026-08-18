@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "system": "BigQuery",
+  "component": "storage_write_api_ingest",
+  "source_file": "quotes/bigquery/results/bq-full-t2-20260810_152224/evidence/write_api_timeline.jsonl",
+  "pricing_file": "quotes/bigquery/costs/pricings/storage_write_api.json",
+  "successful_minute_buckets": 1889,
+  "successful_requests": 865298,
+  "successful_rows": 113172471254,
+  "total_input_bytes": 10353811591736,
+  "total_input_gib": 9642.738468699157,
+  "non_ok": {
+    "minute_buckets": 5,
+    "requests": 8,
+    "rows": 8,
+    "by_error_code": [
+      {
+        "error_code": "ALREADY_EXISTS",
+        "minute_buckets": 5,
+        "requests": 8,
+        "rows": 8,
+        "input_bytes": 95744848
+      }
+    ]
+  },
+  "pricing": {
+    "compute_model": "storage_write_api",
+    "price_usd": 0.025,
+    "price_unit": "gibibyte_ingested",
+    "price_unit_bytes": 1073741824,
+    "total_cost_usd": 241.06846172
+  },
+  "sources": [
+    "https://cloud.google.com/bigquery/pricing#data_ingestion_pricing"
+  ]
+}

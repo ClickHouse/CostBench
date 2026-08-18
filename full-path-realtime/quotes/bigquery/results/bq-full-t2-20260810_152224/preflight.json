@@ -1,0 +1,116 @@
+{
+  "dataset": "quotes_full_t2_20260810_152224",
+  "location": "US",
+  "offline": {
+    "cache_policy": "runner forces QueryJobConfig(use_query_cache=False)",
+    "create_statement_count": 2,
+    "dashboard_query_count": 4,
+    "drilldown_query_count": 2,
+    "errors": []
+  },
+  "online": {
+    "dataset_location": "US",
+    "dry_runs": [
+      {
+        "cache_disabled": true,
+        "estimated_bytes_processed": 0,
+        "query_number": 1
+      },
+      {
+        "cache_disabled": true,
+        "estimated_bytes_processed": 0,
+        "query_number": 2
+      },
+      {
+        "cache_disabled": true,
+        "estimated_bytes_processed": 0,
+        "query_number": 3
+      },
+      {
+        "cache_disabled": true,
+        "estimated_bytes_processed": 0,
+        "query_number": 4
+      },
+      {
+        "cache_disabled": true,
+        "estimated_bytes_processed": 0,
+        "query_number": 5
+      },
+      {
+        "cache_disabled": true,
+        "estimated_bytes_processed": 0,
+        "query_number": 6
+      }
+    ],
+    "mv_enable_refresh": true,
+    "mv_last_refresh_time": null,
+    "mv_refresh_interval_sec": 60.0,
+    "raw_clustering_fields": [
+      "sym",
+      "t"
+    ],
+    "raw_schema": [
+      [
+        "sym",
+        "STRING",
+        "NULLABLE"
+      ],
+      [
+        "bx",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "bp",
+        "FLOAT64",
+        "NULLABLE"
+      ],
+      [
+        "bs",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "ax",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "ap",
+        "FLOAT64",
+        "NULLABLE"
+      ],
+      [
+        "as",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "c",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "i",
+        "INT64",
+        "REPEATED"
+      ],
+      [
+        "t",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "q",
+        "INT64",
+        "NULLABLE"
+      ],
+      [
+        "z",
+        "INT64",
+        "NULLABLE"
+      ]
+    ]
+  },
+  "project": "pmm-project-377716"
+}

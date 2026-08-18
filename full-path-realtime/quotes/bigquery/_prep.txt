@@ -1,0 +1,119 @@
+# BigQuery benchmark host: one-time initialization (Ubuntu)
+
+## 1. Install host tools
+
+```bash
+sudo apt-get update
+sudo apt-get install -y python3-venv jq tmux
+```
+
+Install Google Cloud CLI if `gcloud` and `bq` are not already available:
+
+```bash
+wget --continue --progress=dot:giga \
+  https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
+tar -xf google-cloud-cli-linux-x86_64.tar.gz
+./google-cloud-sdk/install.sh
+source ~/.bashrc
+gcloud init
+```
+
+## 2. Create the benchmark Python environment
+
+Use Python 3.10 or newer; Python 3.11 or 3.12 is preferred.
+
+```bash
+cd ~/bigquery
+python3 --version
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+python3 preflight.py
+```
+
+## 3. Authenticate and select the run environment
+
+Use Application Default Credentials. Do not copy a service-account key into
+this repository.
+
+```bash
+gcloud auth application-default login
+gcloud auth application-default set-quota-project YOUR_BILLING_PROJECT
+
+export GOOGLE_CLOUD_PROJECT=YOUR_PROJECT
+export BQ_LOCATION=US
+export BQ_DATASET=quotes_streaming_t1
+export BQ_RUN_ID=bq_t1
+export BQ_USER_EMAIL=YOUR_USER_EMAIL
+
+gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+gcloud auth list --filter=status:ACTIVE --format='value(account)'
+gcloud services enable \
+  bigquery.googleapis.com \
+  bigquerystorage.googleapis.com \
+  --project "$GOOGLE_CLOUD_PROJECT"
+```
+
+The dataset location is fixed at creation. `US` is a multi-region and has the
+higher aggregate Write API throughput quota; use another location only when it
+is the deliberate benchmark choice and place the ingestion host accordingly.
+
+## 4. Initialize project-wide evidence permissions
+
+These roles are separate from dataset access:
+
+- `roles/bigquery.user`: create query jobs and the fresh benchmark dataset;
+- `roles/bigquery.resourceViewer`: read all project jobs and automatic MV
+  refresh jobs from `JOBS_BY_PROJECT`;
+- `roles/bigquery.metadataViewer`: read provider-side ingestion metrics from
+  `WRITE_API_TIMELINE_BY_PROJECT`.
+
+An administrator can grant them to the ADC user:
+
+```bash
+gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+  --member="user:$BQ_USER_EMAIL" \
+  --role="roles/bigquery.user" \
+  --condition=None
+gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+  --member="user:$BQ_USER_EMAIL" \
+  --role="roles/bigquery.resourceViewer" \
+  --condition=None
+gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+  --member="user:$BQ_USER_EMAIL" \
+  --role="roles/bigquery.metadataViewer" \
+  --condition=None
+```
+
+`--condition=None` adds an unconditional binding when the project IAM policy
+already contains conditional bindings. For a service account, use
+`--member="serviceAccount:SERVICE_ACCOUNT_EMAIL"` instead.
+
+Storage Write API also requires `bigquery.tables.updateData`, normally supplied
+by `roles/bigquery.dataEditor` or `roles/bigquery.dataOwner` on the dataset. A
+user who creates the fresh dataset through `setup.py` becomes its owner. If the
+dataset is pre-created by someone else, grant one of those dataset roles before
+ingestion.
+
+## 5. Create and validate the BigQuery objects
+
+```bash
+python3 setup.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --run-id "$BQ_RUN_ID"
+
+python3 preflight.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --online \
+  --output results_t1/preflight.json
+```
+
+Run `SMOKE_TEST.md` once to validate the complete mechanics, review `TUNING.md`
+for the selected ingest settings, and then follow `REAL_RUN.md` for the exact
+fresh-run and four-terminal sequence. Use `_commands.txt` for the final
+correctness capture and provider-system-table evidence export.

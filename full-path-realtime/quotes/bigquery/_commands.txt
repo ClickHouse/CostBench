@@ -1,0 +1,254 @@
+==================== SUMMARY ====================
+Acknowledged:  113,219,565,734/113,219,565,734 rows
+Duration:      113276.8s
+Average:       999,495 rows/s
+Retries:       45
+Errors:        0
+Summary:       /home/ubuntu/bigquery/results_t2/bq-full-t2-20260810_152224/ingest/ingest_summary.json
+=================================================
+
+
+
+
+# BigQuery full T2 run — exact command sequence
+#
+# One-time installation, authentication, and IAM preparation are documented in
+# README.md and SMOKE_TEST.md. For a fresh measured run, follow these numbered
+# steps in order. REAL_RUN.md contains the same sequence with explanations.
+
+# =============================================================================
+# 0. Setup shell — create the fresh run
+# =============================================================================
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+
+pgrep -af '[i]ngest_parquet_rows.py'
+
+# The pgrep command must return no ingester. Then create the run identity.
+export GOOGLE_CLOUD_PROJECT=pmm-project-377716
+export BQ_LOCATION=US
+export BQ_STAMP="$(date -u +%Y%m%d_%H%M%S)"
+export BQ_DATASET="quotes_full_t2_${BQ_STAMP}"
+export BQ_RUN_ID="bq-full-t2-${BQ_STAMP}"
+export BQ_RESULTS="$PWD/results_t2/$BQ_RUN_ID"
+export SOURCE_HOST_REGION=us-east-2
+export BQ_PRICING_MODEL=on_demand
+
+mkdir -p "$BQ_RESULTS"
+export BQ_RUN_ENV="$BQ_RESULTS/run.env"
+
+printf 'export GOOGLE_CLOUD_PROJECT=%q\nexport BQ_LOCATION=%q\nexport BQ_DATASET=%q\nexport BQ_RUN_ID=%q\nexport BQ_RESULTS=%q\nexport SOURCE_HOST_REGION=%q\nexport BQ_PRICING_MODEL=%q\n' \
+  "$GOOGLE_CLOUD_PROJECT" \
+  "$BQ_LOCATION" \
+  "$BQ_DATASET" \
+  "$BQ_RUN_ID" \
+  "$BQ_RESULTS" \
+  "$SOURCE_HOST_REGION" \
+  "$BQ_PRICING_MODEL" \
+  > "$BQ_RUN_ENV"
+
+ln -sfn "$BQ_RUN_ENV" \
+  /home/ubuntu/bigquery/results_t2/current.env
+
+python3 setup.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --run-id "$BQ_RUN_ID"
+
+python3 preflight.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --online \
+  --output "$BQ_RESULTS/preflight.json"
+
+jq -e \
+  '(.offline.errors // []) == [] and (.online.errors // []) == []' \
+  "$BQ_RESULTS/preflight.json"
+
+printf 'BQ_DATASET=%s\nBQ_RUN_ID=%s\nBQ_RESULTS=%s\n' \
+  "$BQ_DATASET" "$BQ_RUN_ID" "$BQ_RESULTS"
+
+# =============================================================================
+# 1. Terminal 1 — ingest
+# =============================================================================
+tmux new -s bq_t2_ingest
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+python3 ingest_parquet_rows.py \
+  --dir ~/data/stockhouse \
+  --pattern '*.parquet' \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --table quotes \
+  --create-sql create.sql \
+  --parallel 40 \
+  --target-eps 1000000 \
+  --batch-size 131000 \
+  --max-request-bytes 16000000 \
+  --metrics-interval 10 \
+  --memory-trim-interval 60 \
+  --min-system-available-gib 16 \
+  --quiet-worker-logs \
+  --output-dir "$BQ_RESULTS/ingest" \
+  --progress-file "$BQ_RESULTS/ingest/ingest_progress.json" \
+  --run-id "$BQ_RUN_ID"
+
+# Wait for the first boxed status, then detach with Ctrl-B followed by D.
+
+# =============================================================================
+# 2. Terminal 2 — dashboard queries every ten minutes
+# =============================================================================
+tmux new -s bq_t2_dashboard
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+./run_dashboard.sh \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --output-dir "$BQ_RESULTS/mv" \
+  --progress-file "$BQ_RESULTS/ingest/ingest_progress.json" \
+  --run-id "$BQ_RUN_ID" \
+  "BigQuery (GCP)" "serverless" "serverless" "full T2 final" 0
+
+# Wait for the first four results, then detach with Ctrl-B followed by D.
+
+# =============================================================================
+# 3. Terminal 3 — drill-down queries every hour
+# =============================================================================
+tmux new -s bq_t2_drilldown
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+./run_drilldown.sh \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --output-dir "$BQ_RESULTS/raw" \
+  --progress-file "$BQ_RESULTS/ingest/ingest_progress.json" \
+  --run-id "$BQ_RUN_ID" \
+  "BigQuery (GCP)" "serverless" "serverless" "full T2 final" 0
+
+# Wait for the first two results, then detach with Ctrl-B followed by D.
+
+# =============================================================================
+# 4. Terminal 4 — MV refresh-watermark monitor every minute
+# =============================================================================
+tmux new -s bq_t2_freshness
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+python3 monitor_mv.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --progress-file "$BQ_RESULTS/ingest/ingest_progress.json" \
+  --output-dir "$BQ_RESULTS/freshness" \
+  --run-id "$BQ_RUN_ID"
+
+# Wait for the first sample, then detach with Ctrl-B followed by D.
+
+# =============================================================================
+# 5. Check the run after about five minutes
+# =============================================================================
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+tmux ls
+pgrep -af '[i]ngest_parquet_rows.py'
+
+jq '{
+  acknowledged_rows,
+  expected_input_rows,
+  elapsed_sec,
+  average_ack_rows_per_sec,
+  active_workers,
+  append_requests,
+  retries,
+  recovered_already_exists_appends,
+  recovered_already_exists_rows,
+  recovered_server_row_count_appends,
+  recovered_server_row_count_rows,
+  rate_limiter,
+  memory: (.memory | {
+    process_rss_bytes,
+    system_available_bytes,
+    arrow_allocated_bytes,
+    trim_attempts,
+    trim_reclaimed_rss_bytes,
+    last_trim_duration_sec
+  }),
+  errors
+}' "$BQ_RESULTS/ingest/ingest_progress.json"
+
+# =============================================================================
+# 6. Finish the measurement and collect final evidence
+# =============================================================================
+# When ingest completes, leave the query runners alive until each records one
+# scheduled iteration at the final raw-row count. Then stop dashboard,
+# drill-down, and freshness with Ctrl-C in their tmux sessions.
+
+tmux attach -t bq_t2_dashboard
+tmux attach -t bq_t2_drilldown
+tmux attach -t bq_t2_freshness
+
+# Immediately after the measured workloads stop, use a normal shell:
+cd /home/ubuntu/bigquery
+source .venv/bin/activate
+source /home/ubuntu/bigquery/results_t2/current.env
+
+printf 'run=%s\ndataset=%s\nresults=%s\n' \
+  "$BQ_RUN_ID" "$BQ_DATASET" "$BQ_RESULTS"
+
+export BQ_EVIDENCE_SINCE="$(
+  date -u \
+    -d "$(jq -r '.started_at' "$BQ_RESULTS/ingest/ingest_progress.json") - 1 minute" \
+    +%Y-%m-%dT%H:%M:00Z
+)"
+export BQ_EVIDENCE_UNTIL="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+printf 'since=%s\nuntil=%s\n' \
+  "$BQ_EVIDENCE_SINCE" "$BQ_EVIDENCE_UNTIL"
+
+python3 collect_evidence.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --since "$BQ_EVIDENCE_SINCE" \
+  --until "$BQ_EVIDENCE_UNTIL" \
+  --run-id "$BQ_RUN_ID" \
+  --output-dir "$BQ_RESULTS/evidence"
+
+jq '.errors' "$BQ_RESULTS/evidence/evidence_summary.json"
+test -s "$BQ_RESULTS/evidence/query_and_mv_jobs.jsonl"
+test -s "$BQ_RESULTS/evidence/write_api_timeline.jsonl"
+test -s "$BQ_RESULTS/evidence/table_storage.jsonl"
+
+jq -s '{
+  minute_buckets: length,
+  total_requests: (map(.total_requests) | add),
+  successful_rows:
+    (map(select(.error_code == "OK") | .total_rows) | add // 0),
+  successful_input_bytes:
+    (map(select(.error_code == "OK") | .total_input_bytes) | add // 0),
+  already_exists_requests:
+    (map(select(.error_code == "ALREADY_EXISTS") | .total_requests) | add // 0),
+  unexpected_error_buckets:
+    (map(select(.error_code != "OK" and .error_code != "ALREADY_EXISTS")) | length)
+}' "$BQ_RESULTS/evidence/write_api_timeline.jsonl"
+
+python3 capture_query_results.py \
+  --project "$GOOGLE_CLOUD_PROJECT" \
+  --dataset "$BQ_DATASET" \
+  --location "$BQ_LOCATION" \
+  --run-id "$BQ_RUN_ID" \
+  --output-dir "$BQ_RESULTS/validation"

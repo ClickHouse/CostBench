@@ -1,0 +1,1437 @@
+system,source_line,iteration,observed_at,raw_rows,query_number,query_name,latency_sec,runtime_source
+BigQuery,1,1,2026-08-10T15:24:39.579Z,5232720,1,Single-symbol summary,0.900000000,statistics.finalExecutionDurationMs
+BigQuery,2,2,2026-08-10T15:34:39.579Z,599669712,1,Single-symbol summary,3.839000000,statistics.finalExecutionDurationMs
+BigQuery,3,3,2026-08-10T15:44:39.579Z,1204153604,1,Single-symbol summary,3.169000000,statistics.finalExecutionDurationMs
+BigQuery,4,4,2026-08-10T15:54:39.579Z,1798945157,1,Single-symbol summary,3.175000000,statistics.finalExecutionDurationMs
+BigQuery,5,5,2026-08-10T16:04:39.579Z,2404139754,1,Single-symbol summary,5.556000000,statistics.finalExecutionDurationMs
+BigQuery,6,6,2026-08-10T16:14:39.579Z,2999571237,1,Single-symbol summary,3.714000000,statistics.finalExecutionDurationMs
+BigQuery,7,7,2026-08-10T16:24:39.579Z,3604604487,1,Single-symbol summary,4.659000000,statistics.finalExecutionDurationMs
+BigQuery,8,8,2026-08-10T16:34:39.579Z,4200630784,1,Single-symbol summary,4.704000000,statistics.finalExecutionDurationMs
+BigQuery,9,9,2026-08-10T16:44:39.579Z,4806321958,1,Single-symbol summary,3.732000000,statistics.finalExecutionDurationMs
+BigQuery,10,10,2026-08-10T16:54:39.579Z,5401780675,1,Single-symbol summary,3.463000000,statistics.finalExecutionDurationMs
+BigQuery,11,11,2026-08-10T17:04:39.579Z,6006834385,1,Single-symbol summary,4.268000000,statistics.finalExecutionDurationMs
+BigQuery,12,12,2026-08-10T17:14:39.579Z,6603040177,1,Single-symbol summary,3.462000000,statistics.finalExecutionDurationMs
+BigQuery,13,13,2026-08-10T17:24:39.579Z,7198608906,1,Single-symbol summary,4.174000000,statistics.finalExecutionDurationMs
+BigQuery,14,14,2026-08-10T17:34:39.579Z,7804165428,1,Single-symbol summary,3.748000000,statistics.finalExecutionDurationMs
+BigQuery,15,15,2026-08-10T17:44:39.579Z,8398706590,1,Single-symbol summary,4.635000000,statistics.finalExecutionDurationMs
+BigQuery,16,16,2026-08-10T17:54:39.579Z,9004585989,1,Single-symbol summary,3.899000000,statistics.finalExecutionDurationMs
+BigQuery,17,17,2026-08-10T18:04:39.579Z,9600096783,1,Single-symbol summary,4.287000000,statistics.finalExecutionDurationMs
+BigQuery,18,18,2026-08-10T18:14:39.579Z,10205456446,1,Single-symbol summary,4.444000000,statistics.finalExecutionDurationMs
+BigQuery,19,19,2026-08-10T18:24:39.579Z,10800483240,1,Single-symbol summary,3.907000000,statistics.finalExecutionDurationMs
+BigQuery,20,20,2026-08-10T18:34:39.579Z,11406693852,1,Single-symbol summary,6.185000000,statistics.finalExecutionDurationMs
+BigQuery,21,21,2026-08-10T18:44:39.579Z,12001571093,1,Single-symbol summary,3.583000000,statistics.finalExecutionDurationMs
+BigQuery,22,22,2026-08-10T18:54:39.579Z,12597271666,1,Single-symbol summary,3.244000000,statistics.finalExecutionDurationMs
+BigQuery,23,23,2026-08-10T19:04:39.579Z,13203448934,1,Single-symbol summary,4.286000000,statistics.finalExecutionDurationMs
+BigQuery,24,24,2026-08-10T19:14:39.579Z,13798518071,1,Single-symbol summary,3.582000000,statistics.finalExecutionDurationMs
+BigQuery,25,25,2026-08-10T19:24:39.579Z,14404336229,1,Single-symbol summary,3.556000000,statistics.finalExecutionDurationMs
+BigQuery,26,26,2026-08-10T19:34:39.579Z,14999241228,1,Single-symbol summary,3.537000000,statistics.finalExecutionDurationMs
+BigQuery,27,27,2026-08-10T19:44:39.579Z,15605550950,1,Single-symbol summary,3.342000000,statistics.finalExecutionDurationMs
+BigQuery,28,28,2026-08-10T19:54:39.579Z,16200947974,1,Single-symbol summary,4.110000000,statistics.finalExecutionDurationMs
+BigQuery,29,29,2026-08-10T20:04:39.579Z,16807146979,1,Single-symbol summary,3.972000000,statistics.finalExecutionDurationMs
+BigQuery,30,30,2026-08-10T20:14:39.579Z,17402555707,1,Single-symbol summary,3.745000000,statistics.finalExecutionDurationMs
+BigQuery,31,31,2026-08-10T20:24:39.579Z,17998995835,1,Single-symbol summary,2.930000000,statistics.finalExecutionDurationMs
+BigQuery,32,32,2026-08-10T20:34:39.579Z,18604029085,1,Single-symbol summary,3.429000000,statistics.finalExecutionDurationMs
+BigQuery,33,33,2026-08-10T20:44:39.579Z,19199653116,1,Single-symbol summary,3.033000000,statistics.finalExecutionDurationMs
+BigQuery,34,34,2026-08-10T20:54:39.579Z,19805409379,1,Single-symbol summary,3.603000000,statistics.finalExecutionDurationMs
+BigQuery,35,35,2026-08-10T21:04:39.579Z,20400542570,1,Single-symbol summary,3.722000000,statistics.finalExecutionDurationMs
+BigQuery,36,36,2026-08-10T21:14:39.579Z,21006667534,1,Single-symbol summary,3.236000000,statistics.finalExecutionDurationMs
+BigQuery,37,37,2026-08-10T21:24:39.579Z,21601183337,1,Single-symbol summary,3.303000000,statistics.finalExecutionDurationMs
+BigQuery,38,38,2026-08-10T21:34:39.579Z,22206993122,1,Single-symbol summary,4.014000000,statistics.finalExecutionDurationMs
+BigQuery,39,39,2026-08-10T21:44:39.579Z,22802655256,1,Single-symbol summary,3.264000000,statistics.finalExecutionDurationMs
+BigQuery,40,40,2026-08-10T21:54:39.579Z,23398904314,1,Single-symbol summary,3.812000000,statistics.finalExecutionDurationMs
+BigQuery,41,41,2026-08-10T22:04:39.579Z,24004847021,1,Single-symbol summary,4.761000000,statistics.finalExecutionDurationMs
+BigQuery,42,42,2026-08-10T22:14:39.579Z,24600068921,1,Single-symbol summary,3.482000000,statistics.finalExecutionDurationMs
+BigQuery,43,43,2026-08-10T22:24:39.579Z,25206685539,1,Single-symbol summary,3.197000000,statistics.finalExecutionDurationMs
+BigQuery,44,44,2026-08-10T22:34:39.579Z,25802727686,1,Single-symbol summary,2.914000000,statistics.finalExecutionDurationMs
+BigQuery,45,45,2026-08-10T22:44:39.579Z,26398352066,1,Single-symbol summary,3.264000000,statistics.finalExecutionDurationMs
+BigQuery,46,46,2026-08-10T22:54:39.579Z,27004194883,1,Single-symbol summary,3.171000000,statistics.finalExecutionDurationMs
+BigQuery,47,47,2026-08-10T23:04:39.579Z,27599591934,1,Single-symbol summary,4.323000000,statistics.finalExecutionDurationMs
+BigQuery,48,48,2026-08-10T23:14:39.579Z,28205634313,1,Single-symbol summary,2.838000000,statistics.finalExecutionDurationMs
+BigQuery,49,49,2026-08-10T23:24:39.579Z,28801641121,1,Single-symbol summary,3.344000000,statistics.finalExecutionDurationMs
+BigQuery,50,50,2026-08-10T23:34:39.579Z,29397415634,1,Single-symbol summary,3.077000000,statistics.finalExecutionDurationMs
+BigQuery,51,51,2026-08-10T23:44:39.579Z,30003608628,1,Single-symbol summary,3.169000000,statistics.finalExecutionDurationMs
+BigQuery,52,52,2026-08-10T23:54:39.579Z,30600069441,1,Single-symbol summary,2.940000000,statistics.finalExecutionDurationMs
+BigQuery,53,53,2026-08-11T00:04:39.579Z,31205495145,1,Single-symbol summary,4.151000000,statistics.finalExecutionDurationMs
+BigQuery,54,54,2026-08-11T00:14:39.579Z,31801399689,1,Single-symbol summary,3.521000000,statistics.finalExecutionDurationMs
+BigQuery,55,55,2026-08-11T00:24:39.579Z,32398116275,1,Single-symbol summary,3.483000000,statistics.finalExecutionDurationMs
+BigQuery,56,56,2026-08-11T00:34:39.579Z,33004071572,1,Single-symbol summary,3.704000000,statistics.finalExecutionDurationMs
+BigQuery,57,57,2026-08-11T00:44:39.579Z,33600190081,1,Single-symbol summary,3.214000000,statistics.finalExecutionDurationMs
+BigQuery,58,58,2026-08-11T00:54:39.579Z,34206081915,1,Single-symbol summary,2.816000000,statistics.finalExecutionDurationMs
+BigQuery,59,59,2026-08-11T01:04:39.579Z,34801233262,1,Single-symbol summary,2.761000000,statistics.finalExecutionDurationMs
+BigQuery,60,60,2026-08-11T01:14:39.579Z,35407029166,1,Single-symbol summary,3.319000000,statistics.finalExecutionDurationMs
+BigQuery,61,61,2026-08-11T01:24:39.579Z,36003582107,1,Single-symbol summary,2.896000000,statistics.finalExecutionDurationMs
+BigQuery,62,62,2026-08-11T01:34:39.579Z,36598508182,1,Single-symbol summary,3.407000000,statistics.finalExecutionDurationMs
+BigQuery,63,63,2026-08-11T01:44:39.579Z,37204082523,1,Single-symbol summary,3.216000000,statistics.finalExecutionDurationMs
+BigQuery,64,64,2026-08-11T01:54:39.579Z,37800379174,1,Single-symbol summary,2.739000000,statistics.finalExecutionDurationMs
+BigQuery,65,65,2026-08-11T02:04:39.579Z,38405927027,1,Single-symbol summary,4.179000000,statistics.finalExecutionDurationMs
+BigQuery,66,66,2026-08-11T02:14:39.579Z,39001327706,1,Single-symbol summary,3.849000000,statistics.finalExecutionDurationMs
+BigQuery,67,67,2026-08-11T02:24:39.579Z,39595633880,1,Single-symbol summary,3.842000000,statistics.finalExecutionDurationMs
+BigQuery,68,68,2026-08-11T02:34:39.579Z,40200374281,1,Single-symbol summary,3.470000000,statistics.finalExecutionDurationMs
+BigQuery,69,69,2026-08-11T02:44:39.579Z,40796294375,1,Single-symbol summary,3.617000000,statistics.finalExecutionDurationMs
+BigQuery,70,70,2026-08-11T02:54:39.579Z,41402385196,1,Single-symbol summary,3.791000000,statistics.finalExecutionDurationMs
+BigQuery,71,71,2026-08-11T03:04:39.579Z,41997868732,1,Single-symbol summary,3.823000000,statistics.finalExecutionDurationMs
+BigQuery,72,72,2026-08-11T03:14:39.579Z,42603772573,1,Single-symbol summary,2.911000000,statistics.finalExecutionDurationMs
+BigQuery,73,73,2026-08-11T03:24:39.579Z,43199914240,1,Single-symbol summary,3.087000000,statistics.finalExecutionDurationMs
+BigQuery,74,74,2026-08-11T03:34:39.579Z,43796089229,1,Single-symbol summary,3.022000000,statistics.finalExecutionDurationMs
+BigQuery,75,75,2026-08-11T03:44:39.579Z,44401549734,1,Single-symbol summary,3.275000000,statistics.finalExecutionDurationMs
+BigQuery,76,76,2026-08-11T03:54:39.579Z,44997483458,1,Single-symbol summary,3.733000000,statistics.finalExecutionDurationMs
+BigQuery,77,77,2026-08-11T04:04:39.579Z,45604478978,1,Single-symbol summary,3.322000000,statistics.finalExecutionDurationMs
+BigQuery,78,78,2026-08-11T04:14:39.579Z,46199581562,1,Single-symbol summary,3.740000000,statistics.finalExecutionDurationMs
+BigQuery,79,79,2026-08-11T04:24:39.579Z,46795809862,1,Single-symbol summary,3.660000000,statistics.finalExecutionDurationMs
+BigQuery,80,80,2026-08-11T04:34:39.579Z,47401662866,1,Single-symbol summary,3.475000000,statistics.finalExecutionDurationMs
+BigQuery,81,81,2026-08-11T04:44:39.579Z,47998689882,1,Single-symbol summary,3.468000000,statistics.finalExecutionDurationMs
+BigQuery,82,82,2026-08-11T04:54:39.579Z,48604116999,1,Single-symbol summary,3.440000000,statistics.finalExecutionDurationMs
+BigQuery,83,83,2026-08-11T05:04:39.579Z,49199731353,1,Single-symbol summary,3.709000000,statistics.finalExecutionDurationMs
+BigQuery,84,84,2026-08-11T05:14:39.579Z,49795200731,1,Single-symbol summary,3.729000000,statistics.finalExecutionDurationMs
+BigQuery,85,85,2026-08-11T05:24:39.579Z,50401430353,1,Single-symbol summary,3.455000000,statistics.finalExecutionDurationMs
+BigQuery,86,86,2026-08-11T05:34:39.579Z,50997115484,1,Single-symbol summary,3.111000000,statistics.finalExecutionDurationMs
+BigQuery,87,87,2026-08-11T05:44:39.579Z,51603339256,1,Single-symbol summary,4.429000000,statistics.finalExecutionDurationMs
+BigQuery,88,88,2026-08-11T05:54:39.579Z,52199110365,1,Single-symbol summary,3.734000000,statistics.finalExecutionDurationMs
+BigQuery,89,89,2026-08-11T06:04:39.579Z,52794070629,1,Single-symbol summary,3.635000000,statistics.finalExecutionDurationMs
+BigQuery,90,90,2026-08-11T06:14:39.579Z,53400358386,1,Single-symbol summary,2.977000000,statistics.finalExecutionDurationMs
+BigQuery,91,91,2026-08-11T06:24:39.579Z,53996988224,1,Single-symbol summary,3.308000000,statistics.finalExecutionDurationMs
+BigQuery,92,92,2026-08-11T06:34:39.579Z,54603361265,1,Single-symbol summary,3.227000000,statistics.finalExecutionDurationMs
+BigQuery,93,93,2026-08-11T06:44:39.579Z,55199779471,1,Single-symbol summary,3.570000000,statistics.finalExecutionDurationMs
+BigQuery,94,94,2026-08-11T06:54:39.579Z,55795624829,1,Single-symbol summary,3.422000000,statistics.finalExecutionDurationMs
+BigQuery,95,95,2026-08-11T07:04:39.579Z,56401181351,1,Single-symbol summary,3.337000000,statistics.finalExecutionDurationMs
+BigQuery,96,96,2026-08-11T07:14:39.579Z,56997628105,1,Single-symbol summary,3.964000000,statistics.finalExecutionDurationMs
+BigQuery,97,97,2026-08-11T07:24:39.579Z,57593250309,1,Single-symbol summary,3.179000000,statistics.finalExecutionDurationMs
+BigQuery,98,98,2026-08-11T07:34:39.579Z,58199490624,1,Single-symbol summary,3.714000000,statistics.finalExecutionDurationMs
+BigQuery,99,99,2026-08-11T07:44:39.579Z,58795901440,1,Single-symbol summary,3.623000000,statistics.finalExecutionDurationMs
+BigQuery,100,100,2026-08-11T07:54:39.579Z,59401622999,1,Single-symbol summary,3.640000000,statistics.finalExecutionDurationMs
+BigQuery,101,101,2026-08-11T08:04:39.579Z,59998313547,1,Single-symbol summary,3.713000000,statistics.finalExecutionDurationMs
+BigQuery,102,102,2026-08-11T08:14:39.579Z,60593666265,1,Single-symbol summary,2.950000000,statistics.finalExecutionDurationMs
+BigQuery,103,103,2026-08-11T08:24:39.579Z,61199564057,1,Single-symbol summary,3.584000000,statistics.finalExecutionDurationMs
+BigQuery,104,104,2026-08-11T08:34:39.579Z,61795448255,1,Single-symbol summary,3.482000000,statistics.finalExecutionDurationMs
+BigQuery,105,105,2026-08-11T08:44:39.579Z,62390940934,1,Single-symbol summary,2.885000000,statistics.finalExecutionDurationMs
+BigQuery,106,106,2026-08-11T08:54:39.579Z,62997805260,1,Single-symbol summary,3.929000000,statistics.finalExecutionDurationMs
+BigQuery,107,107,2026-08-11T09:04:39.579Z,63592256087,1,Single-symbol summary,4.217000000,statistics.finalExecutionDurationMs
+BigQuery,108,108,2026-08-11T09:14:39.579Z,64197589145,1,Single-symbol summary,4.854000000,statistics.finalExecutionDurationMs
+BigQuery,109,109,2026-08-11T09:24:39.579Z,64793072681,1,Single-symbol summary,4.104000000,statistics.finalExecutionDurationMs
+BigQuery,110,110,2026-08-11T09:34:39.579Z,65388044598,1,Single-symbol summary,4.091000000,statistics.finalExecutionDurationMs
+BigQuery,111,111,2026-08-11T09:44:39.579Z,65994164426,1,Single-symbol summary,3.051000000,statistics.finalExecutionDurationMs
+BigQuery,112,112,2026-08-11T09:54:39.579Z,66590125293,1,Single-symbol summary,3.123000000,statistics.finalExecutionDurationMs
+BigQuery,113,113,2026-08-11T10:04:39.579Z,67194687348,1,Single-symbol summary,3.702000000,statistics.finalExecutionDurationMs
+BigQuery,114,114,2026-08-11T10:14:39.579Z,67789162648,1,Single-symbol summary,3.490000000,statistics.finalExecutionDurationMs
+BigQuery,115,115,2026-08-11T10:24:39.579Z,68385889621,1,Single-symbol summary,2.875000000,statistics.finalExecutionDurationMs
+BigQuery,116,116,2026-08-11T10:34:39.579Z,68990654754,1,Single-symbol summary,3.105000000,statistics.finalExecutionDurationMs
+BigQuery,117,117,2026-08-11T10:44:39.579Z,69586595245,1,Single-symbol summary,3.382000000,statistics.finalExecutionDurationMs
+BigQuery,118,118,2026-08-11T10:54:39.579Z,70181947963,1,Single-symbol summary,3.392000000,statistics.finalExecutionDurationMs
+BigQuery,119,119,2026-08-11T11:04:39.579Z,70786952988,1,Single-symbol summary,3.347000000,statistics.finalExecutionDurationMs
+BigQuery,120,120,2026-08-11T11:14:39.579Z,71381571380,1,Single-symbol summary,3.868000000,statistics.finalExecutionDurationMs
+BigQuery,121,121,2026-08-11T11:24:39.579Z,71987342393,1,Single-symbol summary,4.226000000,statistics.finalExecutionDurationMs
+BigQuery,122,122,2026-08-11T11:34:39.579Z,72582825929,1,Single-symbol summary,4.114000000,statistics.finalExecutionDurationMs
+BigQuery,123,123,2026-08-11T11:44:39.579Z,73177660123,1,Single-symbol summary,4.153000000,statistics.finalExecutionDurationMs
+BigQuery,124,124,2026-08-11T11:54:39.579Z,73782641795,1,Single-symbol summary,3.099000000,statistics.finalExecutionDurationMs
+BigQuery,125,125,2026-08-11T12:04:39.579Z,74377938858,1,Single-symbol summary,2.941000000,statistics.finalExecutionDurationMs
+BigQuery,126,126,2026-08-11T12:14:39.579Z,74982628757,1,Single-symbol summary,3.078000000,statistics.finalExecutionDurationMs
+BigQuery,127,127,2026-08-11T12:24:39.579Z,75577981475,1,Single-symbol summary,3.136000000,statistics.finalExecutionDurationMs
+BigQuery,128,128,2026-08-11T12:34:39.579Z,76173291864,1,Single-symbol summary,3.370000000,statistics.finalExecutionDurationMs
+BigQuery,129,129,2026-08-11T12:44:39.579Z,76777893607,1,Single-symbol summary,3.822000000,statistics.finalExecutionDurationMs
+BigQuery,130,130,2026-08-11T12:54:39.579Z,77372955611,1,Single-symbol summary,3.229000000,statistics.finalExecutionDurationMs
+BigQuery,131,131,2026-08-11T13:04:39.579Z,77978642951,1,Single-symbol summary,3.475000000,statistics.finalExecutionDurationMs
+BigQuery,132,132,2026-08-11T13:14:39.579Z,78572993475,1,Single-symbol summary,3.779000000,statistics.finalExecutionDurationMs
+BigQuery,133,133,2026-08-11T13:24:39.579Z,79170037334,1,Single-symbol summary,3.089000000,statistics.finalExecutionDurationMs
+BigQuery,134,134,2026-08-11T13:34:39.579Z,79767221504,1,Single-symbol summary,4.343000000,statistics.finalExecutionDurationMs
+BigQuery,135,135,2026-08-11T13:44:39.579Z,80362814944,1,Single-symbol summary,3.180000000,statistics.finalExecutionDurationMs
+BigQuery,136,136,2026-08-11T13:54:39.579Z,80957551411,1,Single-symbol summary,2.744000000,statistics.finalExecutionDurationMs
+BigQuery,137,137,2026-08-11T14:04:39.579Z,81563124178,1,Single-symbol summary,3.392000000,statistics.finalExecutionDurationMs
+BigQuery,138,138,2026-08-11T14:14:39.579Z,82159036590,1,Single-symbol summary,3.242000000,statistics.finalExecutionDurationMs
+BigQuery,139,139,2026-08-11T14:24:39.579Z,82761715116,1,Single-symbol summary,3.886000000,statistics.finalExecutionDurationMs
+BigQuery,140,140,2026-08-11T14:34:39.579Z,83356722509,1,Single-symbol summary,3.354000000,statistics.finalExecutionDurationMs
+BigQuery,141,141,2026-08-11T14:44:39.579Z,83952456673,1,Single-symbol summary,4.080000000,statistics.finalExecutionDurationMs
+BigQuery,142,142,2026-08-11T14:54:39.579Z,84558774276,1,Single-symbol summary,4.252000000,statistics.finalExecutionDurationMs
+BigQuery,143,143,2026-08-11T15:04:39.579Z,85153080450,1,Single-symbol summary,4.605000000,statistics.finalExecutionDurationMs
+BigQuery,144,144,2026-08-11T15:14:39.579Z,85748630590,1,Single-symbol summary,2.966000000,statistics.finalExecutionDurationMs
+BigQuery,145,145,2026-08-11T15:24:39.579Z,86354594018,1,Single-symbol summary,3.276000000,statistics.finalExecutionDurationMs
+BigQuery,146,146,2026-08-11T15:34:39.579Z,86950287826,1,Single-symbol summary,3.158000000,statistics.finalExecutionDurationMs
+BigQuery,147,147,2026-08-11T15:44:39.579Z,87546429181,1,Single-symbol summary,3.394000000,statistics.finalExecutionDurationMs
+BigQuery,148,148,2026-08-11T15:54:39.579Z,88153549997,1,Single-symbol summary,3.337000000,statistics.finalExecutionDurationMs
+BigQuery,149,149,2026-08-11T16:04:39.579Z,88749556805,1,Single-symbol summary,3.167000000,statistics.finalExecutionDurationMs
+BigQuery,150,150,2026-08-11T16:14:39.579Z,89346074656,1,Single-symbol summary,3.817000000,statistics.finalExecutionDurationMs
+BigQuery,151,151,2026-08-11T16:24:39.579Z,89952672588,1,Single-symbol summary,3.334000000,statistics.finalExecutionDurationMs
+BigQuery,152,152,2026-08-11T16:34:39.579Z,90547693478,1,Single-symbol summary,3.981000000,statistics.finalExecutionDurationMs
+BigQuery,153,153,2026-08-11T16:44:39.579Z,91154749774,1,Single-symbol summary,4.661000000,statistics.finalExecutionDurationMs
+BigQuery,154,154,2026-08-11T16:54:39.579Z,91751279854,1,Single-symbol summary,3.382000000,statistics.finalExecutionDurationMs
+BigQuery,155,155,2026-08-11T17:04:39.579Z,92346120006,1,Single-symbol summary,4.836000000,statistics.finalExecutionDurationMs
+BigQuery,156,156,2026-08-11T17:14:39.579Z,92951947412,1,Single-symbol summary,3.901000000,statistics.finalExecutionDurationMs
+BigQuery,157,157,2026-08-11T17:24:39.579Z,93548598329,1,Single-symbol summary,3.736000000,statistics.finalExecutionDurationMs
+BigQuery,158,158,2026-08-11T17:34:39.579Z,94154137006,1,Single-symbol summary,3.186000000,statistics.finalExecutionDurationMs
+BigQuery,159,159,2026-08-11T17:44:39.579Z,94750489021,1,Single-symbol summary,3.427000000,statistics.finalExecutionDurationMs
+BigQuery,160,160,2026-08-11T17:54:39.579Z,95346365011,1,Single-symbol summary,3.016000000,statistics.finalExecutionDurationMs
+BigQuery,161,161,2026-08-11T18:04:39.579Z,95952538048,1,Single-symbol summary,3.516000000,statistics.finalExecutionDurationMs
+BigQuery,162,162,2026-08-11T18:14:39.579Z,96548490823,1,Single-symbol summary,3.636000000,statistics.finalExecutionDurationMs
+BigQuery,163,163,2026-08-11T18:24:39.579Z,97155331056,1,Single-symbol summary,3.892000000,statistics.finalExecutionDurationMs
+BigQuery,164,164,2026-08-11T18:34:39.579Z,97751631895,1,Single-symbol summary,3.559000000,statistics.finalExecutionDurationMs
+BigQuery,165,165,2026-08-11T18:44:39.579Z,98347800336,1,Single-symbol summary,3.228000000,statistics.finalExecutionDurationMs
+BigQuery,166,166,2026-08-11T18:54:39.579Z,98954665038,1,Single-symbol summary,3.739000000,statistics.finalExecutionDurationMs
+BigQuery,167,167,2026-08-11T19:04:39.579Z,99551267495,1,Single-symbol summary,3.292000000,statistics.finalExecutionDurationMs
+ClickHouse Cloud,2,2,2026-08-08T07:05:59Z,724786266,1,Single-symbol summary,0.006000000,clickhouse-client --time
+ClickHouse Cloud,3,3,2026-08-08T07:15:59Z,1370669828,1,Single-symbol summary,0.041000000,clickhouse-client --time
+ClickHouse Cloud,4,4,2026-08-08T07:25:59Z,1975682003,1,Single-symbol summary,0.006000000,clickhouse-client --time
+ClickHouse Cloud,5,5,2026-08-08T07:35:59Z,2574084882,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,6,6,2026-08-08T07:45:59Z,3146910669,1,Single-symbol summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,7,7,2026-08-08T07:55:59Z,3738865972,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,8,8,2026-08-08T08:05:59Z,4293755746,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,9,9,2026-08-08T08:15:59Z,4891042750,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,10,10,2026-08-08T08:25:59Z,5469535309,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,11,11,2026-08-08T08:35:59Z,6010532017,1,Single-symbol summary,0.006000000,clickhouse-client --time
+ClickHouse Cloud,12,12,2026-08-08T08:45:59Z,6539371357,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,13,13,2026-08-08T08:55:59Z,7146131616,1,Single-symbol summary,0.006000000,clickhouse-client --time
+ClickHouse Cloud,14,14,2026-08-08T09:05:59Z,7727462172,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,15,15,2026-08-08T09:15:59Z,8305203448,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,16,16,2026-08-08T09:25:59Z,8807164173,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,17,17,2026-08-08T09:35:59Z,9395201523,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,18,18,2026-08-08T09:45:59Z,9911918805,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,19,19,2026-08-08T09:55:59Z,10448957290,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,20,20,2026-08-08T10:05:59Z,10999409964,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,21,21,2026-08-08T10:15:59Z,11495758638,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,22,22,2026-08-08T10:25:59Z,12058435469,1,Single-symbol summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,23,23,2026-08-08T10:35:59Z,12574526062,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,24,24,2026-08-08T10:45:59Z,13130688854,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,25,25,2026-08-08T10:55:59Z,13690901348,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,26,26,2026-08-08T11:05:59Z,14280804947,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,27,27,2026-08-08T11:15:59Z,14876856126,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,28,28,2026-08-08T11:25:59Z,15470256866,1,Single-symbol summary,0.087000000,clickhouse-client --time
+ClickHouse Cloud,29,29,2026-08-08T11:35:59Z,16058779354,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,30,30,2026-08-08T11:45:59Z,16604006353,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,31,31,2026-08-08T11:55:59Z,17204550973,1,Single-symbol summary,0.006000000,clickhouse-client --time
+ClickHouse Cloud,32,32,2026-08-08T12:05:59Z,17758468213,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,33,33,2026-08-08T12:15:59Z,18360002425,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,34,34,2026-08-08T12:25:59Z,18930505218,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,35,35,2026-08-08T12:35:59Z,19498533079,1,Single-symbol summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,36,36,2026-08-08T12:45:59Z,20030972521,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,37,37,2026-08-08T12:55:59Z,20598954386,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,38,38,2026-08-08T13:05:59Z,21177624388,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,39,39,2026-08-08T13:15:59Z,21690449123,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,40,40,2026-08-08T13:25:59Z,22225814642,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,41,41,2026-08-08T13:35:59Z,22769842666,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,42,42,2026-08-08T13:45:59Z,23288685490,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,43,43,2026-08-08T13:55:59Z,23844225514,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,44,44,2026-08-08T14:05:59Z,24360433073,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,45,45,2026-08-08T14:15:59Z,24937313823,1,Single-symbol summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,46,46,2026-08-08T14:25:59Z,25492435118,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,47,47,2026-08-08T14:35:59Z,26047358918,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,48,48,2026-08-08T14:45:59Z,26583320264,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,49,49,2026-08-08T14:55:59Z,27117466999,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,50,50,2026-08-08T15:05:59Z,27681375912,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,51,51,2026-08-08T15:15:59Z,28239125449,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,52,52,2026-08-08T15:25:59Z,28773516979,1,Single-symbol summary,0.111000000,clickhouse-client --time
+ClickHouse Cloud,53,53,2026-08-08T15:35:59Z,29346127706,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,54,54,2026-08-08T15:45:59Z,29890137150,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,55,55,2026-08-08T15:55:59Z,30465667350,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,56,56,2026-08-08T16:05:59Z,31018228497,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,57,57,2026-08-08T16:15:59Z,31588088259,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,58,58,2026-08-08T16:25:59Z,32144496083,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,59,59,2026-08-08T16:35:59Z,32651953244,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,60,60,2026-08-08T16:45:59Z,33183996050,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,61,61,2026-08-08T16:55:59Z,33748476003,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,62,62,2026-08-08T17:05:59Z,34249264401,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,63,63,2026-08-08T17:15:59Z,34764613132,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,64,64,2026-08-08T17:25:59Z,35300178406,1,Single-symbol summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,65,65,2026-08-08T17:35:59Z,35804053385,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,66,66,2026-08-08T17:45:59Z,36352821706,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,67,67,2026-08-08T17:55:59Z,36850964650,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,68,68,2026-08-08T18:05:59Z,37331880801,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,69,69,2026-08-08T18:15:59Z,37851506740,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,70,70,2026-08-08T18:25:59Z,38333894855,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,71,71,2026-08-08T18:35:59Z,38903981063,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,72,72,2026-08-08T18:45:59Z,39403630784,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,73,73,2026-08-08T18:55:59Z,39938729827,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,74,74,2026-08-08T19:05:59Z,40455322866,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,75,75,2026-08-08T19:15:59Z,40983472025,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,76,76,2026-08-08T19:25:59Z,41461994932,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,77,77,2026-08-08T19:35:59Z,41986954384,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,78,78,2026-08-08T19:45:59Z,42504704257,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,79,79,2026-08-08T19:55:59Z,43037353870,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,80,80,2026-08-08T20:05:59Z,43568180819,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,81,81,2026-08-08T20:15:59Z,44075896295,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,82,82,2026-08-08T20:25:59Z,44585275116,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,83,83,2026-08-08T20:35:59Z,45119401562,1,Single-symbol summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,84,84,2026-08-08T20:45:59Z,45608868518,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,85,85,2026-08-08T20:55:59Z,46108257326,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,86,86,2026-08-08T21:05:59Z,46607144697,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,87,87,2026-08-08T21:15:59Z,47127220430,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,88,88,2026-08-08T21:25:59Z,47630286458,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,89,89,2026-08-08T21:35:59Z,48152769396,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,90,90,2026-08-08T21:45:59Z,48651039753,1,Single-symbol summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,91,91,2026-08-08T21:55:59Z,49173608481,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,92,92,2026-08-08T22:05:59Z,49691385785,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,93,93,2026-08-08T22:15:59Z,50238320035,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,94,94,2026-08-08T22:25:59Z,50788829774,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,95,95,2026-08-08T22:35:59Z,51325118756,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,96,96,2026-08-08T22:45:59Z,51886771408,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,97,97,2026-08-08T22:55:59Z,52441318029,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,98,98,2026-08-08T23:05:59Z,52920335727,1,Single-symbol summary,0.035000000,clickhouse-client --time
+ClickHouse Cloud,99,99,2026-08-08T23:15:59Z,53408601648,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,100,100,2026-08-08T23:25:59Z,53910086618,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,101,101,2026-08-08T23:35:59Z,54424699241,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,102,102,2026-08-08T23:45:59Z,54899250491,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,103,103,2026-08-08T23:55:59Z,55416633625,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,104,104,2026-08-09T00:05:59Z,55944840077,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,105,105,2026-08-09T00:15:59Z,56450202011,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,106,106,2026-08-09T00:25:59Z,56976658135,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,107,107,2026-08-09T00:35:59Z,57502590981,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,108,108,2026-08-09T00:45:59Z,58017492696,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,109,109,2026-08-09T00:55:59Z,58509450012,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,110,110,2026-08-09T01:05:59Z,59010783142,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,111,111,2026-08-09T01:15:59Z,59503489949,1,Single-symbol summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,112,112,2026-08-09T01:25:59Z,59972983401,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,113,113,2026-08-09T01:35:59Z,60442237749,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,114,114,2026-08-09T01:45:59Z,60904448195,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,115,115,2026-08-09T01:55:59Z,61370139665,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,116,116,2026-08-09T02:05:59Z,61872097967,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,117,117,2026-08-09T02:15:59Z,62362523974,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,118,118,2026-08-09T02:25:59Z,62852767644,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,119,119,2026-08-09T02:35:59Z,63303274836,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,120,120,2026-08-09T02:45:59Z,63813706871,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,121,121,2026-08-09T02:55:59Z,64297816643,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,122,122,2026-08-09T03:05:59Z,64830505943,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,123,123,2026-08-09T03:15:59Z,65325007686,1,Single-symbol summary,0.006000000,clickhouse-client --time
+ClickHouse Cloud,124,124,2026-08-09T03:25:59Z,65803792964,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,125,125,2026-08-09T03:35:59Z,66304040996,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,126,126,2026-08-09T03:45:59Z,66813762801,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,127,127,2026-08-09T03:55:59Z,67293866994,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,128,128,2026-08-09T04:05:59Z,67748504407,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,129,129,2026-08-09T04:15:59Z,68201006429,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,130,130,2026-08-09T04:25:59Z,68684069442,1,Single-symbol summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,131,131,2026-08-09T04:35:59Z,69181831398,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,132,132,2026-08-09T04:45:59Z,69676432303,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,133,133,2026-08-09T04:55:59Z,70168596073,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,134,134,2026-08-09T05:05:59Z,70659299166,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,135,135,2026-08-09T05:15:59Z,71156738966,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,136,136,2026-08-09T05:25:59Z,71624709770,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,137,137,2026-08-09T05:35:59Z,72091825703,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,138,138,2026-08-09T05:45:59Z,72547878251,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,139,139,2026-08-09T05:55:59Z,73013213443,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,140,140,2026-08-09T06:05:59Z,73476437585,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,141,141,2026-08-09T06:15:59Z,73987325693,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,142,142,2026-08-09T06:25:59Z,74486757162,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,143,143,2026-08-09T06:35:59Z,74995355831,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,144,144,2026-08-09T06:45:59Z,75466940903,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,145,145,2026-08-09T06:55:59Z,75964855518,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,146,146,2026-08-09T07:05:59Z,76430868234,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,147,147,2026-08-09T07:15:59Z,76885010641,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,148,148,2026-08-09T07:25:59Z,77350951993,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,149,149,2026-08-09T07:35:59Z,77850423857,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,150,150,2026-08-09T07:45:59Z,78316136469,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,151,151,2026-08-09T07:55:59Z,78743691693,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,152,152,2026-08-09T08:05:59Z,79106273696,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,153,153,2026-08-09T08:15:59Z,79558355522,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,154,154,2026-08-09T08:25:59Z,80034599414,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,155,155,2026-08-09T08:35:59Z,80503603294,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,156,156,2026-08-09T08:45:59Z,80949316423,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,157,157,2026-08-09T08:55:59Z,81360968914,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,158,158,2026-08-09T09:05:59Z,81786894322,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,159,159,2026-08-09T09:15:59Z,82193904360,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,160,160,2026-08-09T09:25:59Z,82614022776,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,161,161,2026-08-09T09:35:59Z,83038964951,1,Single-symbol summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,162,162,2026-08-09T09:45:59Z,83491097777,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,163,163,2026-08-09T09:55:59Z,83949333223,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,164,164,2026-08-09T10:05:59Z,84454230067,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,165,165,2026-08-09T10:15:59Z,84942338016,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,166,166,2026-08-09T10:25:59Z,85486320046,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,167,167,2026-08-09T10:35:59Z,86027059928,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,168,168,2026-08-09T10:45:59Z,86536377584,1,Single-symbol summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,169,169,2026-08-09T10:55:59Z,87060073492,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,170,170,2026-08-09T11:05:59Z,87633622969,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,171,171,2026-08-09T11:15:59Z,88183458683,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,172,172,2026-08-09T11:25:59Z,88722660479,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,173,173,2026-08-09T11:35:59Z,89252600968,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,174,174,2026-08-09T11:45:59Z,89771307204,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,175,175,2026-08-09T11:55:59Z,90310361990,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,176,176,2026-08-09T12:05:59Z,90786625328,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,177,177,2026-08-09T12:15:59Z,91318721092,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,178,178,2026-08-09T12:25:59Z,91841644344,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,179,179,2026-08-09T12:35:59Z,92330582028,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,180,180,2026-08-09T12:45:59Z,92808126794,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,181,181,2026-08-09T12:55:59Z,93292685867,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,182,182,2026-08-09T13:05:59Z,93798216437,1,Single-symbol summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,183,183,2026-08-09T13:15:59Z,94324820860,1,Single-symbol summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,184,184,2026-08-09T13:25:59Z,94869720583,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,185,185,2026-08-09T13:35:59Z,95368092163,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,186,186,2026-08-09T13:45:59Z,95854521730,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,187,187,2026-08-09T13:55:59Z,96363475717,1,Single-symbol summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,188,188,2026-08-09T14:05:59Z,96870245467,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,189,189,2026-08-09T14:15:59Z,97440595296,1,Single-symbol summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,190,190,2026-08-09T14:25:59Z,97990299109,1,Single-symbol summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,191,191,2026-08-09T14:35:59Z,98531195718,1,Single-symbol summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,192,192,2026-08-09T14:45:59Z,99080355059,1,Single-symbol summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,193,193,2026-08-09T14:55:59Z,99566521565,1,Single-symbol summary,0.007000000,clickhouse-client --time
+BigQuery,1,1,2026-08-10T15:24:39.579Z,5232720,2,Watchlist summary,1.233000000,statistics.finalExecutionDurationMs
+BigQuery,2,2,2026-08-10T15:34:39.579Z,599669712,2,Watchlist summary,3.054000000,statistics.finalExecutionDurationMs
+BigQuery,3,3,2026-08-10T15:44:39.579Z,1204153604,2,Watchlist summary,3.765000000,statistics.finalExecutionDurationMs
+BigQuery,4,4,2026-08-10T15:54:39.579Z,1798945157,2,Watchlist summary,3.222000000,statistics.finalExecutionDurationMs
+BigQuery,5,5,2026-08-10T16:04:39.579Z,2404139754,2,Watchlist summary,4.617000000,statistics.finalExecutionDurationMs
+BigQuery,6,6,2026-08-10T16:14:39.579Z,2999571237,2,Watchlist summary,4.690000000,statistics.finalExecutionDurationMs
+BigQuery,7,7,2026-08-10T16:24:39.579Z,3604604487,2,Watchlist summary,3.128000000,statistics.finalExecutionDurationMs
+BigQuery,8,8,2026-08-10T16:34:39.579Z,4200630784,2,Watchlist summary,4.153000000,statistics.finalExecutionDurationMs
+BigQuery,9,9,2026-08-10T16:44:39.579Z,4806321958,2,Watchlist summary,3.616000000,statistics.finalExecutionDurationMs
+BigQuery,10,10,2026-08-10T16:54:39.579Z,5401780675,2,Watchlist summary,2.925000000,statistics.finalExecutionDurationMs
+BigQuery,11,11,2026-08-10T17:04:39.579Z,6006834385,2,Watchlist summary,3.773000000,statistics.finalExecutionDurationMs
+BigQuery,12,12,2026-08-10T17:14:39.579Z,6603040177,2,Watchlist summary,3.385000000,statistics.finalExecutionDurationMs
+BigQuery,13,13,2026-08-10T17:24:39.579Z,7198608906,2,Watchlist summary,4.059000000,statistics.finalExecutionDurationMs
+BigQuery,14,14,2026-08-10T17:34:39.579Z,7804165428,2,Watchlist summary,3.728000000,statistics.finalExecutionDurationMs
+BigQuery,15,15,2026-08-10T17:44:39.579Z,8398706590,2,Watchlist summary,2.969000000,statistics.finalExecutionDurationMs
+BigQuery,16,16,2026-08-10T17:54:39.579Z,9004585989,2,Watchlist summary,4.213000000,statistics.finalExecutionDurationMs
+BigQuery,17,17,2026-08-10T18:04:39.579Z,9600096783,2,Watchlist summary,4.317000000,statistics.finalExecutionDurationMs
+BigQuery,18,18,2026-08-10T18:14:39.579Z,10205456446,2,Watchlist summary,3.774000000,statistics.finalExecutionDurationMs
+BigQuery,19,19,2026-08-10T18:24:39.579Z,10800483240,2,Watchlist summary,4.116000000,statistics.finalExecutionDurationMs
+BigQuery,20,20,2026-08-10T18:34:39.579Z,11406693852,2,Watchlist summary,4.007000000,statistics.finalExecutionDurationMs
+BigQuery,21,21,2026-08-10T18:44:39.579Z,12001571093,2,Watchlist summary,3.005000000,statistics.finalExecutionDurationMs
+BigQuery,22,22,2026-08-10T18:54:39.579Z,12597271666,2,Watchlist summary,2.994000000,statistics.finalExecutionDurationMs
+BigQuery,23,23,2026-08-10T19:04:39.579Z,13203448934,2,Watchlist summary,3.648000000,statistics.finalExecutionDurationMs
+BigQuery,24,24,2026-08-10T19:14:39.579Z,13798518071,2,Watchlist summary,3.323000000,statistics.finalExecutionDurationMs
+BigQuery,25,25,2026-08-10T19:24:39.579Z,14404336229,2,Watchlist summary,3.144000000,statistics.finalExecutionDurationMs
+BigQuery,26,26,2026-08-10T19:34:39.579Z,14999241228,2,Watchlist summary,3.330000000,statistics.finalExecutionDurationMs
+BigQuery,27,27,2026-08-10T19:44:39.579Z,15605550950,2,Watchlist summary,2.610000000,statistics.finalExecutionDurationMs
+BigQuery,28,28,2026-08-10T19:54:39.579Z,16200947974,2,Watchlist summary,3.959000000,statistics.finalExecutionDurationMs
+BigQuery,29,29,2026-08-10T20:04:39.579Z,16807146979,2,Watchlist summary,3.805000000,statistics.finalExecutionDurationMs
+BigQuery,30,30,2026-08-10T20:14:39.579Z,17402555707,2,Watchlist summary,4.040000000,statistics.finalExecutionDurationMs
+BigQuery,31,31,2026-08-10T20:24:39.579Z,17998995835,2,Watchlist summary,2.945000000,statistics.finalExecutionDurationMs
+BigQuery,32,32,2026-08-10T20:34:39.579Z,18604029085,2,Watchlist summary,3.238000000,statistics.finalExecutionDurationMs
+BigQuery,33,33,2026-08-10T20:44:39.579Z,19199653116,2,Watchlist summary,2.967000000,statistics.finalExecutionDurationMs
+BigQuery,34,34,2026-08-10T20:54:39.579Z,19805409379,2,Watchlist summary,3.285000000,statistics.finalExecutionDurationMs
+BigQuery,35,35,2026-08-10T21:04:39.579Z,20400542570,2,Watchlist summary,3.713000000,statistics.finalExecutionDurationMs
+BigQuery,36,36,2026-08-10T21:14:39.579Z,21006667534,2,Watchlist summary,3.090000000,statistics.finalExecutionDurationMs
+BigQuery,37,37,2026-08-10T21:24:39.579Z,21601183337,2,Watchlist summary,3.242000000,statistics.finalExecutionDurationMs
+BigQuery,38,38,2026-08-10T21:34:39.579Z,22206993122,2,Watchlist summary,3.964000000,statistics.finalExecutionDurationMs
+BigQuery,39,39,2026-08-10T21:44:39.579Z,22802655256,2,Watchlist summary,3.478000000,statistics.finalExecutionDurationMs
+BigQuery,40,40,2026-08-10T21:54:39.579Z,23398904314,2,Watchlist summary,3.836000000,statistics.finalExecutionDurationMs
+BigQuery,41,41,2026-08-10T22:04:39.579Z,24004847021,2,Watchlist summary,4.210000000,statistics.finalExecutionDurationMs
+BigQuery,42,42,2026-08-10T22:14:39.579Z,24600068921,2,Watchlist summary,3.382000000,statistics.finalExecutionDurationMs
+BigQuery,43,43,2026-08-10T22:24:39.579Z,25206685539,2,Watchlist summary,3.175000000,statistics.finalExecutionDurationMs
+BigQuery,44,44,2026-08-10T22:34:39.579Z,25802727686,2,Watchlist summary,2.672000000,statistics.finalExecutionDurationMs
+BigQuery,45,45,2026-08-10T22:44:39.579Z,26398352066,2,Watchlist summary,2.863000000,statistics.finalExecutionDurationMs
+BigQuery,46,46,2026-08-10T22:54:39.579Z,27004194883,2,Watchlist summary,2.955000000,statistics.finalExecutionDurationMs
+BigQuery,47,47,2026-08-10T23:04:39.579Z,27599591934,2,Watchlist summary,3.404000000,statistics.finalExecutionDurationMs
+BigQuery,48,48,2026-08-10T23:14:39.579Z,28205634313,2,Watchlist summary,2.796000000,statistics.finalExecutionDurationMs
+BigQuery,49,49,2026-08-10T23:24:39.579Z,28801641121,2,Watchlist summary,3.043000000,statistics.finalExecutionDurationMs
+BigQuery,50,50,2026-08-10T23:34:39.579Z,29397415634,2,Watchlist summary,2.770000000,statistics.finalExecutionDurationMs
+BigQuery,51,51,2026-08-10T23:44:39.579Z,30003608628,2,Watchlist summary,3.278000000,statistics.finalExecutionDurationMs
+BigQuery,52,52,2026-08-10T23:54:39.579Z,30600069441,2,Watchlist summary,3.053000000,statistics.finalExecutionDurationMs
+BigQuery,53,53,2026-08-11T00:04:39.579Z,31205495145,2,Watchlist summary,3.700000000,statistics.finalExecutionDurationMs
+BigQuery,54,54,2026-08-11T00:14:39.579Z,31801399689,2,Watchlist summary,3.813000000,statistics.finalExecutionDurationMs
+BigQuery,55,55,2026-08-11T00:24:39.579Z,32398116275,2,Watchlist summary,3.835000000,statistics.finalExecutionDurationMs
+BigQuery,56,56,2026-08-11T00:34:39.579Z,33004071572,2,Watchlist summary,3.521000000,statistics.finalExecutionDurationMs
+BigQuery,57,57,2026-08-11T00:44:39.579Z,33600190081,2,Watchlist summary,3.022000000,statistics.finalExecutionDurationMs
+BigQuery,58,58,2026-08-11T00:54:39.579Z,34206081915,2,Watchlist summary,3.319000000,statistics.finalExecutionDurationMs
+BigQuery,59,59,2026-08-11T01:04:39.579Z,34801233262,2,Watchlist summary,2.637000000,statistics.finalExecutionDurationMs
+BigQuery,60,60,2026-08-11T01:14:39.579Z,35407029166,2,Watchlist summary,3.619000000,statistics.finalExecutionDurationMs
+BigQuery,61,61,2026-08-11T01:24:39.579Z,36003582107,2,Watchlist summary,3.056000000,statistics.finalExecutionDurationMs
+BigQuery,62,62,2026-08-11T01:34:39.579Z,36598508182,2,Watchlist summary,3.504000000,statistics.finalExecutionDurationMs
+BigQuery,63,63,2026-08-11T01:44:39.579Z,37204082523,2,Watchlist summary,4.541000000,statistics.finalExecutionDurationMs
+BigQuery,64,64,2026-08-11T01:54:39.579Z,37800379174,2,Watchlist summary,3.317000000,statistics.finalExecutionDurationMs
+BigQuery,65,65,2026-08-11T02:04:39.579Z,38405927027,2,Watchlist summary,4.680000000,statistics.finalExecutionDurationMs
+BigQuery,66,66,2026-08-11T02:14:39.579Z,39001327706,2,Watchlist summary,4.139000000,statistics.finalExecutionDurationMs
+BigQuery,67,67,2026-08-11T02:24:39.579Z,39595633880,2,Watchlist summary,3.051000000,statistics.finalExecutionDurationMs
+BigQuery,68,68,2026-08-11T02:34:39.579Z,40200374281,2,Watchlist summary,3.025000000,statistics.finalExecutionDurationMs
+BigQuery,69,69,2026-08-11T02:44:39.579Z,40796294375,2,Watchlist summary,3.210000000,statistics.finalExecutionDurationMs
+BigQuery,70,70,2026-08-11T02:54:39.579Z,41402385196,2,Watchlist summary,3.665000000,statistics.finalExecutionDurationMs
+BigQuery,71,71,2026-08-11T03:04:39.579Z,41997868732,2,Watchlist summary,3.206000000,statistics.finalExecutionDurationMs
+BigQuery,72,72,2026-08-11T03:14:39.579Z,42603772573,2,Watchlist summary,2.908000000,statistics.finalExecutionDurationMs
+BigQuery,73,73,2026-08-11T03:24:39.579Z,43199914240,2,Watchlist summary,2.736000000,statistics.finalExecutionDurationMs
+BigQuery,74,74,2026-08-11T03:34:39.579Z,43796089229,2,Watchlist summary,2.717000000,statistics.finalExecutionDurationMs
+BigQuery,75,75,2026-08-11T03:44:39.579Z,44401549734,2,Watchlist summary,3.675000000,statistics.finalExecutionDurationMs
+BigQuery,76,76,2026-08-11T03:54:39.579Z,44997483458,2,Watchlist summary,3.735000000,statistics.finalExecutionDurationMs
+BigQuery,77,77,2026-08-11T04:04:39.579Z,45604478978,2,Watchlist summary,3.558000000,statistics.finalExecutionDurationMs
+BigQuery,78,78,2026-08-11T04:14:39.579Z,46199581562,2,Watchlist summary,2.746000000,statistics.finalExecutionDurationMs
+BigQuery,79,79,2026-08-11T04:24:39.579Z,46795809862,2,Watchlist summary,3.318000000,statistics.finalExecutionDurationMs
+BigQuery,80,80,2026-08-11T04:34:39.579Z,47401662866,2,Watchlist summary,2.882000000,statistics.finalExecutionDurationMs
+BigQuery,81,81,2026-08-11T04:44:39.579Z,47998689882,2,Watchlist summary,2.831000000,statistics.finalExecutionDurationMs
+BigQuery,82,82,2026-08-11T04:54:39.579Z,48604116999,2,Watchlist summary,2.832000000,statistics.finalExecutionDurationMs
+BigQuery,83,83,2026-08-11T05:04:39.579Z,49199731353,2,Watchlist summary,3.563000000,statistics.finalExecutionDurationMs
+BigQuery,84,84,2026-08-11T05:14:39.579Z,49795200731,2,Watchlist summary,2.887000000,statistics.finalExecutionDurationMs
+BigQuery,85,85,2026-08-11T05:24:39.579Z,50401430353,2,Watchlist summary,3.352000000,statistics.finalExecutionDurationMs
+BigQuery,86,86,2026-08-11T05:34:39.579Z,50997115484,2,Watchlist summary,3.228000000,statistics.finalExecutionDurationMs
+BigQuery,87,87,2026-08-11T05:44:39.579Z,51603339256,2,Watchlist summary,3.490000000,statistics.finalExecutionDurationMs
+BigQuery,88,88,2026-08-11T05:54:39.579Z,52199110365,2,Watchlist summary,4.490000000,statistics.finalExecutionDurationMs
+BigQuery,89,89,2026-08-11T06:04:39.579Z,52794070629,2,Watchlist summary,3.381000000,statistics.finalExecutionDurationMs
+BigQuery,90,90,2026-08-11T06:14:39.579Z,53400358386,2,Watchlist summary,2.851000000,statistics.finalExecutionDurationMs
+BigQuery,91,91,2026-08-11T06:24:39.579Z,53996988224,2,Watchlist summary,3.008000000,statistics.finalExecutionDurationMs
+BigQuery,92,92,2026-08-11T06:34:39.579Z,54603361265,2,Watchlist summary,2.888000000,statistics.finalExecutionDurationMs
+BigQuery,93,93,2026-08-11T06:44:39.579Z,55199779471,2,Watchlist summary,2.712000000,statistics.finalExecutionDurationMs
+BigQuery,94,94,2026-08-11T06:54:39.579Z,55795624829,2,Watchlist summary,2.940000000,statistics.finalExecutionDurationMs
+BigQuery,95,95,2026-08-11T07:04:39.579Z,56401181351,2,Watchlist summary,2.940000000,statistics.finalExecutionDurationMs
+BigQuery,96,96,2026-08-11T07:14:39.579Z,56997628105,2,Watchlist summary,3.741000000,statistics.finalExecutionDurationMs
+BigQuery,97,97,2026-08-11T07:24:39.579Z,57593250309,2,Watchlist summary,3.228000000,statistics.finalExecutionDurationMs
+BigQuery,98,98,2026-08-11T07:34:39.579Z,58199490624,2,Watchlist summary,3.392000000,statistics.finalExecutionDurationMs
+BigQuery,99,99,2026-08-11T07:44:39.579Z,58795901440,2,Watchlist summary,4.361000000,statistics.finalExecutionDurationMs
+BigQuery,100,100,2026-08-11T07:54:39.579Z,59401622999,2,Watchlist summary,4.785000000,statistics.finalExecutionDurationMs
+BigQuery,101,101,2026-08-11T08:04:39.579Z,59998313547,2,Watchlist summary,3.622000000,statistics.finalExecutionDurationMs
+BigQuery,102,102,2026-08-11T08:14:39.579Z,60593666265,2,Watchlist summary,3.517000000,statistics.finalExecutionDurationMs
+BigQuery,103,103,2026-08-11T08:24:39.579Z,61199564057,2,Watchlist summary,3.247000000,statistics.finalExecutionDurationMs
+BigQuery,104,104,2026-08-11T08:34:39.579Z,61795448255,2,Watchlist summary,3.122000000,statistics.finalExecutionDurationMs
+BigQuery,105,105,2026-08-11T08:44:39.579Z,62390940934,2,Watchlist summary,2.804000000,statistics.finalExecutionDurationMs
+BigQuery,106,106,2026-08-11T08:54:39.579Z,62997805260,2,Watchlist summary,3.570000000,statistics.finalExecutionDurationMs
+BigQuery,107,107,2026-08-11T09:04:39.579Z,63592256087,2,Watchlist summary,4.063000000,statistics.finalExecutionDurationMs
+BigQuery,108,108,2026-08-11T09:14:39.579Z,64197589145,2,Watchlist summary,4.026000000,statistics.finalExecutionDurationMs
+BigQuery,109,109,2026-08-11T09:24:39.579Z,64793072681,2,Watchlist summary,4.076000000,statistics.finalExecutionDurationMs
+BigQuery,110,110,2026-08-11T09:34:39.579Z,65388044598,2,Watchlist summary,3.615000000,statistics.finalExecutionDurationMs
+BigQuery,111,111,2026-08-11T09:44:39.579Z,65994164426,2,Watchlist summary,2.887000000,statistics.finalExecutionDurationMs
+BigQuery,112,112,2026-08-11T09:54:39.579Z,66590125293,2,Watchlist summary,2.516000000,statistics.finalExecutionDurationMs
+BigQuery,113,113,2026-08-11T10:04:39.579Z,67194687348,2,Watchlist summary,3.569000000,statistics.finalExecutionDurationMs
+BigQuery,114,114,2026-08-11T10:14:39.579Z,67789162648,2,Watchlist summary,2.940000000,statistics.finalExecutionDurationMs
+BigQuery,115,115,2026-08-11T10:24:39.579Z,68385889621,2,Watchlist summary,3.043000000,statistics.finalExecutionDurationMs
+BigQuery,116,116,2026-08-11T10:34:39.579Z,68990654754,2,Watchlist summary,3.729000000,statistics.finalExecutionDurationMs
+BigQuery,117,117,2026-08-11T10:44:39.579Z,69586595245,2,Watchlist summary,2.918000000,statistics.finalExecutionDurationMs
+BigQuery,118,118,2026-08-11T10:54:39.579Z,70181947963,2,Watchlist summary,3.325000000,statistics.finalExecutionDurationMs
+BigQuery,119,119,2026-08-11T11:04:39.579Z,70786952988,2,Watchlist summary,3.737000000,statistics.finalExecutionDurationMs
+BigQuery,120,120,2026-08-11T11:14:39.579Z,71381571380,2,Watchlist summary,2.799000000,statistics.finalExecutionDurationMs
+BigQuery,121,121,2026-08-11T11:24:39.579Z,71987342393,2,Watchlist summary,4.310000000,statistics.finalExecutionDurationMs
+BigQuery,122,122,2026-08-11T11:34:39.579Z,72582825929,2,Watchlist summary,2.948000000,statistics.finalExecutionDurationMs
+BigQuery,123,123,2026-08-11T11:44:39.579Z,73177660123,2,Watchlist summary,3.301000000,statistics.finalExecutionDurationMs
+BigQuery,124,124,2026-08-11T11:54:39.579Z,73782641795,2,Watchlist summary,2.811000000,statistics.finalExecutionDurationMs
+BigQuery,125,125,2026-08-11T12:04:39.579Z,74377938858,2,Watchlist summary,2.802000000,statistics.finalExecutionDurationMs
+BigQuery,126,126,2026-08-11T12:14:39.579Z,74982628757,2,Watchlist summary,3.366000000,statistics.finalExecutionDurationMs
+BigQuery,127,127,2026-08-11T12:24:39.579Z,75577981475,2,Watchlist summary,2.679000000,statistics.finalExecutionDurationMs
+BigQuery,128,128,2026-08-11T12:34:39.579Z,76173291864,2,Watchlist summary,2.932000000,statistics.finalExecutionDurationMs
+BigQuery,129,129,2026-08-11T12:44:39.579Z,76777893607,2,Watchlist summary,2.725000000,statistics.finalExecutionDurationMs
+BigQuery,130,130,2026-08-11T12:54:39.579Z,77372955611,2,Watchlist summary,3.044000000,statistics.finalExecutionDurationMs
+BigQuery,131,131,2026-08-11T13:04:39.579Z,77978642951,2,Watchlist summary,3.305000000,statistics.finalExecutionDurationMs
+BigQuery,132,132,2026-08-11T13:14:39.579Z,78572993475,2,Watchlist summary,3.448000000,statistics.finalExecutionDurationMs
+BigQuery,133,133,2026-08-11T13:24:39.579Z,79170037334,2,Watchlist summary,2.957000000,statistics.finalExecutionDurationMs
+BigQuery,134,134,2026-08-11T13:34:39.579Z,79767221504,2,Watchlist summary,4.286000000,statistics.finalExecutionDurationMs
+BigQuery,135,135,2026-08-11T13:44:39.579Z,80362814944,2,Watchlist summary,3.224000000,statistics.finalExecutionDurationMs
+BigQuery,136,136,2026-08-11T13:54:39.579Z,80957551411,2,Watchlist summary,2.938000000,statistics.finalExecutionDurationMs
+BigQuery,137,137,2026-08-11T14:04:39.579Z,81563124178,2,Watchlist summary,3.531000000,statistics.finalExecutionDurationMs
+BigQuery,138,138,2026-08-11T14:14:39.579Z,82159036590,2,Watchlist summary,2.845000000,statistics.finalExecutionDurationMs
+BigQuery,139,139,2026-08-11T14:24:39.579Z,82761715116,2,Watchlist summary,3.417000000,statistics.finalExecutionDurationMs
+BigQuery,140,140,2026-08-11T14:34:39.579Z,83356722509,2,Watchlist summary,3.521000000,statistics.finalExecutionDurationMs
+BigQuery,141,141,2026-08-11T14:44:39.579Z,83952456673,2,Watchlist summary,2.881000000,statistics.finalExecutionDurationMs
+BigQuery,142,142,2026-08-11T14:54:39.579Z,84558774276,2,Watchlist summary,4.794000000,statistics.finalExecutionDurationMs
+BigQuery,143,143,2026-08-11T15:04:39.579Z,85153080450,2,Watchlist summary,5.254000000,statistics.finalExecutionDurationMs
+BigQuery,144,144,2026-08-11T15:14:39.579Z,85748630590,2,Watchlist summary,2.963000000,statistics.finalExecutionDurationMs
+BigQuery,145,145,2026-08-11T15:24:39.579Z,86354594018,2,Watchlist summary,3.505000000,statistics.finalExecutionDurationMs
+BigQuery,146,146,2026-08-11T15:34:39.579Z,86950287826,2,Watchlist summary,3.251000000,statistics.finalExecutionDurationMs
+BigQuery,147,147,2026-08-11T15:44:39.579Z,87546429181,2,Watchlist summary,2.748000000,statistics.finalExecutionDurationMs
+BigQuery,148,148,2026-08-11T15:54:39.579Z,88153549997,2,Watchlist summary,4.004000000,statistics.finalExecutionDurationMs
+BigQuery,149,149,2026-08-11T16:04:39.579Z,88749556805,2,Watchlist summary,3.916000000,statistics.finalExecutionDurationMs
+BigQuery,150,150,2026-08-11T16:14:39.579Z,89346074656,2,Watchlist summary,3.398000000,statistics.finalExecutionDurationMs
+BigQuery,151,151,2026-08-11T16:24:39.579Z,89952672588,2,Watchlist summary,3.073000000,statistics.finalExecutionDurationMs
+BigQuery,152,152,2026-08-11T16:34:39.579Z,90547693478,2,Watchlist summary,3.812000000,statistics.finalExecutionDurationMs
+BigQuery,153,153,2026-08-11T16:44:39.579Z,91154749774,2,Watchlist summary,3.734000000,statistics.finalExecutionDurationMs
+BigQuery,154,154,2026-08-11T16:54:39.579Z,91751279854,2,Watchlist summary,3.141000000,statistics.finalExecutionDurationMs
+BigQuery,155,155,2026-08-11T17:04:39.579Z,92346120006,2,Watchlist summary,4.228000000,statistics.finalExecutionDurationMs
+BigQuery,156,156,2026-08-11T17:14:39.579Z,92951947412,2,Watchlist summary,3.832000000,statistics.finalExecutionDurationMs
+BigQuery,157,157,2026-08-11T17:24:39.579Z,93548598329,2,Watchlist summary,3.090000000,statistics.finalExecutionDurationMs
+BigQuery,158,158,2026-08-11T17:34:39.579Z,94154137006,2,Watchlist summary,3.408000000,statistics.finalExecutionDurationMs
+BigQuery,159,159,2026-08-11T17:44:39.579Z,94750489021,2,Watchlist summary,3.300000000,statistics.finalExecutionDurationMs
+BigQuery,160,160,2026-08-11T17:54:39.579Z,95346365011,2,Watchlist summary,3.183000000,statistics.finalExecutionDurationMs
+BigQuery,161,161,2026-08-11T18:04:39.579Z,95952538048,2,Watchlist summary,3.603000000,statistics.finalExecutionDurationMs
+BigQuery,162,162,2026-08-11T18:14:39.579Z,96548490823,2,Watchlist summary,3.262000000,statistics.finalExecutionDurationMs
+BigQuery,163,163,2026-08-11T18:24:39.579Z,97155331056,2,Watchlist summary,3.268000000,statistics.finalExecutionDurationMs
+BigQuery,164,164,2026-08-11T18:34:39.579Z,97751631895,2,Watchlist summary,3.652000000,statistics.finalExecutionDurationMs
+BigQuery,165,165,2026-08-11T18:44:39.579Z,98347800336,2,Watchlist summary,3.406000000,statistics.finalExecutionDurationMs
+BigQuery,166,166,2026-08-11T18:54:39.579Z,98954665038,2,Watchlist summary,4.084000000,statistics.finalExecutionDurationMs
+BigQuery,167,167,2026-08-11T19:04:39.579Z,99551267495,2,Watchlist summary,3.554000000,statistics.finalExecutionDurationMs
+ClickHouse Cloud,2,2,2026-08-08T07:05:59Z,724786266,2,Watchlist summary,0.005000000,clickhouse-client --time
+ClickHouse Cloud,3,3,2026-08-08T07:15:59Z,1370669828,2,Watchlist summary,0.007000000,clickhouse-client --time
+ClickHouse Cloud,4,4,2026-08-08T07:25:59Z,1975682003,2,Watchlist summary,0.033000000,clickhouse-client --time
+ClickHouse Cloud,5,5,2026-08-08T07:35:59Z,2574084882,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,6,6,2026-08-08T07:45:59Z,3146910669,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,7,7,2026-08-08T07:55:59Z,3738865972,2,Watchlist summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,8,8,2026-08-08T08:05:59Z,4293755746,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,9,9,2026-08-08T08:15:59Z,4891042750,2,Watchlist summary,0.008000000,clickhouse-client --time
+ClickHouse Cloud,10,10,2026-08-08T08:25:59Z,5469535309,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,11,11,2026-08-08T08:35:59Z,6010532017,2,Watchlist summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,12,12,2026-08-08T08:45:59Z,6539371357,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,13,13,2026-08-08T08:55:59Z,7146131616,2,Watchlist summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,14,14,2026-08-08T09:05:59Z,7727462172,2,Watchlist summary,0.009000000,clickhouse-client --time
+ClickHouse Cloud,15,15,2026-08-08T09:15:59Z,8305203448,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,16,16,2026-08-08T09:25:59Z,8807164173,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,17,17,2026-08-08T09:35:59Z,9395201523,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,18,18,2026-08-08T09:45:59Z,9911918805,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,19,19,2026-08-08T09:55:59Z,10448957290,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,20,20,2026-08-08T10:05:59Z,10999409964,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,21,21,2026-08-08T10:15:59Z,11495758638,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,22,22,2026-08-08T10:25:59Z,12058435469,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,23,23,2026-08-08T10:35:59Z,12574526062,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,24,24,2026-08-08T10:45:59Z,13130688854,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,25,25,2026-08-08T10:55:59Z,13690901348,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,26,26,2026-08-08T11:05:59Z,14280804947,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,27,27,2026-08-08T11:15:59Z,14876856126,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,28,28,2026-08-08T11:25:59Z,15470256866,2,Watchlist summary,0.080000000,clickhouse-client --time
+ClickHouse Cloud,29,29,2026-08-08T11:35:59Z,16058779354,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,30,30,2026-08-08T11:45:59Z,16604006353,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,31,31,2026-08-08T11:55:59Z,17204550973,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,32,32,2026-08-08T12:05:59Z,17758468213,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,33,33,2026-08-08T12:15:59Z,18360002425,2,Watchlist summary,0.010000000,clickhouse-client --time
+ClickHouse Cloud,34,34,2026-08-08T12:25:59Z,18930505218,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,35,35,2026-08-08T12:35:59Z,19498533079,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,36,36,2026-08-08T12:45:59Z,20030972521,2,Watchlist summary,0.104000000,clickhouse-client --time
+ClickHouse Cloud,37,37,2026-08-08T12:55:59Z,20598954386,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,38,38,2026-08-08T13:05:59Z,21177624388,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,39,39,2026-08-08T13:15:59Z,21690449123,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,40,40,2026-08-08T13:25:59Z,22225814642,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,41,41,2026-08-08T13:35:59Z,22769842666,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,42,42,2026-08-08T13:45:59Z,23288685490,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,43,43,2026-08-08T13:55:59Z,23844225514,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,44,44,2026-08-08T14:05:59Z,24360433073,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,45,45,2026-08-08T14:15:59Z,24937313823,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,46,46,2026-08-08T14:25:59Z,25492435118,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,47,47,2026-08-08T14:35:59Z,26047358918,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,48,48,2026-08-08T14:45:59Z,26583320264,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,49,49,2026-08-08T14:55:59Z,27117466999,2,Watchlist summary,0.019000000,clickhouse-client --time
+ClickHouse Cloud,50,50,2026-08-08T15:05:59Z,27681375912,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,51,51,2026-08-08T15:15:59Z,28239125449,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,52,52,2026-08-08T15:25:59Z,28773516979,2,Watchlist summary,0.090000000,clickhouse-client --time
+ClickHouse Cloud,53,53,2026-08-08T15:35:59Z,29346127706,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,54,54,2026-08-08T15:45:59Z,29890137150,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,55,55,2026-08-08T15:55:59Z,30465667350,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,56,56,2026-08-08T16:05:59Z,31018228497,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,57,57,2026-08-08T16:15:59Z,31588088259,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,58,58,2026-08-08T16:25:59Z,32144496083,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,59,59,2026-08-08T16:35:59Z,32651953244,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,60,60,2026-08-08T16:45:59Z,33183996050,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,61,61,2026-08-08T16:55:59Z,33748476003,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,62,62,2026-08-08T17:05:59Z,34249264401,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,63,63,2026-08-08T17:15:59Z,34764613132,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,64,64,2026-08-08T17:25:59Z,35300178406,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,65,65,2026-08-08T17:35:59Z,35804053385,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,66,66,2026-08-08T17:45:59Z,36352821706,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,67,67,2026-08-08T17:55:59Z,36850964650,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,68,68,2026-08-08T18:05:59Z,37331880801,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,69,69,2026-08-08T18:15:59Z,37851506740,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,70,70,2026-08-08T18:25:59Z,38333894855,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,71,71,2026-08-08T18:35:59Z,38903981063,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,72,72,2026-08-08T18:45:59Z,39403630784,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,73,73,2026-08-08T18:55:59Z,39938729827,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,74,74,2026-08-08T19:05:59Z,40455322866,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,75,75,2026-08-08T19:15:59Z,40983472025,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,76,76,2026-08-08T19:25:59Z,41461994932,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,77,77,2026-08-08T19:35:59Z,41986954384,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,78,78,2026-08-08T19:45:59Z,42504704257,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,79,79,2026-08-08T19:55:59Z,43037353870,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,80,80,2026-08-08T20:05:59Z,43568180819,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,81,81,2026-08-08T20:15:59Z,44075896295,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,82,82,2026-08-08T20:25:59Z,44585275116,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,83,83,2026-08-08T20:35:59Z,45119401562,2,Watchlist summary,0.025000000,clickhouse-client --time
+ClickHouse Cloud,84,84,2026-08-08T20:45:59Z,45608868518,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,85,85,2026-08-08T20:55:59Z,46108257326,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,86,86,2026-08-08T21:05:59Z,46607144697,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,87,87,2026-08-08T21:15:59Z,47127220430,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,88,88,2026-08-08T21:25:59Z,47630286458,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,89,89,2026-08-08T21:35:59Z,48152769396,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,90,90,2026-08-08T21:45:59Z,48651039753,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,91,91,2026-08-08T21:55:59Z,49173608481,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,92,92,2026-08-08T22:05:59Z,49691385785,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,93,93,2026-08-08T22:15:59Z,50238320035,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,94,94,2026-08-08T22:25:59Z,50788829774,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,95,95,2026-08-08T22:35:59Z,51325118756,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,96,96,2026-08-08T22:45:59Z,51886771408,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,97,97,2026-08-08T22:55:59Z,52441318029,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,98,98,2026-08-08T23:05:59Z,52920335727,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,99,99,2026-08-08T23:15:59Z,53408601648,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,100,100,2026-08-08T23:25:59Z,53910086618,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,101,101,2026-08-08T23:35:59Z,54424699241,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,102,102,2026-08-08T23:45:59Z,54899250491,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,103,103,2026-08-08T23:55:59Z,55416633625,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,104,104,2026-08-09T00:05:59Z,55944840077,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,105,105,2026-08-09T00:15:59Z,56450202011,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,106,106,2026-08-09T00:25:59Z,56976658135,2,Watchlist summary,0.019000000,clickhouse-client --time
+ClickHouse Cloud,107,107,2026-08-09T00:35:59Z,57502590981,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,108,108,2026-08-09T00:45:59Z,58017492696,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,109,109,2026-08-09T00:55:59Z,58509450012,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,110,110,2026-08-09T01:05:59Z,59010783142,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,111,111,2026-08-09T01:15:59Z,59503489949,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,112,112,2026-08-09T01:25:59Z,59972983401,2,Watchlist summary,0.018000000,clickhouse-client --time
+ClickHouse Cloud,113,113,2026-08-09T01:35:59Z,60442237749,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,114,114,2026-08-09T01:45:59Z,60904448195,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,115,115,2026-08-09T01:55:59Z,61370139665,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,116,116,2026-08-09T02:05:59Z,61872097967,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,117,117,2026-08-09T02:15:59Z,62362523974,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,118,118,2026-08-09T02:25:59Z,62852767644,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,119,119,2026-08-09T02:35:59Z,63303274836,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,120,120,2026-08-09T02:45:59Z,63813706871,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,121,121,2026-08-09T02:55:59Z,64297816643,2,Watchlist summary,0.043000000,clickhouse-client --time
+ClickHouse Cloud,122,122,2026-08-09T03:05:59Z,64830505943,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,123,123,2026-08-09T03:15:59Z,65325007686,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,124,124,2026-08-09T03:25:59Z,65803792964,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,125,125,2026-08-09T03:35:59Z,66304040996,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,126,126,2026-08-09T03:45:59Z,66813762801,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,127,127,2026-08-09T03:55:59Z,67293866994,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,128,128,2026-08-09T04:05:59Z,67748504407,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,129,129,2026-08-09T04:15:59Z,68201006429,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,130,130,2026-08-09T04:25:59Z,68684069442,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,131,131,2026-08-09T04:35:59Z,69181831398,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,132,132,2026-08-09T04:45:59Z,69676432303,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,133,133,2026-08-09T04:55:59Z,70168596073,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,134,134,2026-08-09T05:05:59Z,70659299166,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,135,135,2026-08-09T05:15:59Z,71156738966,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,136,136,2026-08-09T05:25:59Z,71624709770,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,137,137,2026-08-09T05:35:59Z,72091825703,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,138,138,2026-08-09T05:45:59Z,72547878251,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,139,139,2026-08-09T05:55:59Z,73013213443,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,140,140,2026-08-09T06:05:59Z,73476437585,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,141,141,2026-08-09T06:15:59Z,73987325693,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,142,142,2026-08-09T06:25:59Z,74486757162,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,143,143,2026-08-09T06:35:59Z,74995355831,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,144,144,2026-08-09T06:45:59Z,75466940903,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,145,145,2026-08-09T06:55:59Z,75964855518,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,146,146,2026-08-09T07:05:59Z,76430868234,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,147,147,2026-08-09T07:15:59Z,76885010641,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,148,148,2026-08-09T07:25:59Z,77350951993,2,Watchlist summary,0.011000000,clickhouse-client --time
+ClickHouse Cloud,149,149,2026-08-09T07:35:59Z,77850423857,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,150,150,2026-08-09T07:45:59Z,78316136469,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,151,151,2026-08-09T07:55:59Z,78743691693,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,152,152,2026-08-09T08:05:59Z,79106273696,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,153,153,2026-08-09T08:15:59Z,79558355522,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,154,154,2026-08-09T08:25:59Z,80034599414,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,155,155,2026-08-09T08:35:59Z,80503603294,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,156,156,2026-08-09T08:45:59Z,80949316423,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,157,157,2026-08-09T08:55:59Z,81360968914,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,158,158,2026-08-09T09:05:59Z,81786894322,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,159,159,2026-08-09T09:15:59Z,82193904360,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,160,160,2026-08-09T09:25:59Z,82614022776,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,161,161,2026-08-09T09:35:59Z,83038964951,2,Watchlist summary,0.019000000,clickhouse-client --time
+ClickHouse Cloud,162,162,2026-08-09T09:45:59Z,83491097777,2,Watchlist summary,0.018000000,clickhouse-client --time
+ClickHouse Cloud,163,163,2026-08-09T09:55:59Z,83949333223,2,Watchlist summary,0.019000000,clickhouse-client --time
+ClickHouse Cloud,164,164,2026-08-09T10:05:59Z,84454230067,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,165,165,2026-08-09T10:15:59Z,84942338016,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,166,166,2026-08-09T10:25:59Z,85486320046,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,167,167,2026-08-09T10:35:59Z,86027059928,2,Watchlist summary,0.019000000,clickhouse-client --time
+ClickHouse Cloud,168,168,2026-08-09T10:45:59Z,86536377584,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,169,169,2026-08-09T10:55:59Z,87060073492,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,170,170,2026-08-09T11:05:59Z,87633622969,2,Watchlist summary,0.015000000,clickhouse-client --time
+ClickHouse Cloud,171,171,2026-08-09T11:15:59Z,88183458683,2,Watchlist summary,0.018000000,clickhouse-client --time
+ClickHouse Cloud,172,172,2026-08-09T11:25:59Z,88722660479,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,173,173,2026-08-09T11:35:59Z,89252600968,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,174,174,2026-08-09T11:45:59Z,89771307204,2,Watchlist summary,0.014000000,clickhouse-client --time
+ClickHouse Cloud,175,175,2026-08-09T11:55:59Z,90310361990,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,176,176,2026-08-09T12:05:59Z,90786625328,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,177,177,2026-08-09T12:15:59Z,91318721092,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,178,178,2026-08-09T12:25:59Z,91841644344,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,179,179,2026-08-09T12:35:59Z,92330582028,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,180,180,2026-08-09T12:45:59Z,92808126794,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,181,181,2026-08-09T12:55:59Z,93292685867,2,Watchlist summary,0.012000000,clickhouse-client --time
+ClickHouse Cloud,182,182,2026-08-09T13:05:59Z,93798216437,2,Watchlist summary,0.016000000,clickhouse-client --time
+ClickHouse Cloud,183,183,2026-08-09T13:15:59Z,94324820860,2,Watchlist summary,0.017000000,clickhouse-client --time
+ClickHouse Cloud,184,184,2026-08-09T13:25:59Z,94869720583,2,Watchlist summary,0.020000000,clickhouse-client --time
+ClickHouse Cloud,185,185,2026-08-09T13:35:59Z,95368092163,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,186,186,2026-08-09T13:45:59Z,95854521730,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,187,187,2026-08-09T13:55:59Z,96363475717,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,188,188,2026-08-09T14:05:59Z,96870245467,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,189,189,2026-08-09T14:15:59Z,97440595296,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,190,190,2026-08-09T14:25:59Z,97990299109,2,Watchlist summary,0.019000000,clickhouse-client --time
+ClickHouse Cloud,191,191,2026-08-09T14:35:59Z,98531195718,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,192,192,2026-08-09T14:45:59Z,99080355059,2,Watchlist summary,0.013000000,clickhouse-client --time
+ClickHouse Cloud,193,193,2026-08-09T14:55:59Z,99566521565,2,Watchlist summary,0.013000000,clickhouse-client --time
+BigQuery,1,1,2026-08-10T15:24:39.579Z,5232720,3,Top movers,1.515000000,statistics.finalExecutionDurationMs
+BigQuery,2,2,2026-08-10T15:34:39.579Z,599669712,3,Top movers,3.363000000,statistics.finalExecutionDurationMs
+BigQuery,3,3,2026-08-10T15:44:39.579Z,1204153604,3,Top movers,3.149000000,statistics.finalExecutionDurationMs
+BigQuery,4,4,2026-08-10T15:54:39.579Z,1798945157,3,Top movers,3.656000000,statistics.finalExecutionDurationMs
+BigQuery,5,5,2026-08-10T16:04:39.579Z,2404139754,3,Top movers,4.835000000,statistics.finalExecutionDurationMs
+BigQuery,6,6,2026-08-10T16:14:39.579Z,2999571237,3,Top movers,3.978000000,statistics.finalExecutionDurationMs
+BigQuery,7,7,2026-08-10T16:24:39.579Z,3604604487,3,Top movers,2.400000000,statistics.finalExecutionDurationMs
+BigQuery,8,8,2026-08-10T16:34:39.579Z,4200630784,3,Top movers,3.939000000,statistics.finalExecutionDurationMs
+BigQuery,9,9,2026-08-10T16:44:39.579Z,4806321958,3,Top movers,3.840000000,statistics.finalExecutionDurationMs
+BigQuery,10,10,2026-08-10T16:54:39.579Z,5401780675,3,Top movers,4.921000000,statistics.finalExecutionDurationMs
+BigQuery,11,11,2026-08-10T17:04:39.579Z,6006834385,3,Top movers,3.794000000,statistics.finalExecutionDurationMs
+BigQuery,12,12,2026-08-10T17:14:39.579Z,6603040177,3,Top movers,3.028000000,statistics.finalExecutionDurationMs
+BigQuery,13,13,2026-08-10T17:24:39.579Z,7198608906,3,Top movers,4.048000000,statistics.finalExecutionDurationMs
+BigQuery,14,14,2026-08-10T17:34:39.579Z,7804165428,3,Top movers,3.880000000,statistics.finalExecutionDurationMs
+BigQuery,15,15,2026-08-10T17:44:39.579Z,8398706590,3,Top movers,3.120000000,statistics.finalExecutionDurationMs
+BigQuery,16,16,2026-08-10T17:54:39.579Z,9004585989,3,Top movers,3.509000000,statistics.finalExecutionDurationMs
+BigQuery,17,17,2026-08-10T18:04:39.579Z,9600096783,3,Top movers,4.215000000,statistics.finalExecutionDurationMs
+BigQuery,18,18,2026-08-10T18:14:39.579Z,10205456446,3,Top movers,4.455000000,statistics.finalExecutionDurationMs
+BigQuery,19,19,2026-08-10T18:24:39.579Z,10800483240,3,Top movers,3.396000000,statistics.finalExecutionDurationMs
+BigQuery,20,20,2026-08-10T18:34:39.579Z,11406693852,3,Top movers,3.822000000,statistics.finalExecutionDurationMs
+BigQuery,21,21,2026-08-10T18:44:39.579Z,12001571093,3,Top movers,3.083000000,statistics.finalExecutionDurationMs
+BigQuery,22,22,2026-08-10T18:54:39.579Z,12597271666,3,Top movers,3.072000000,statistics.finalExecutionDurationMs
+BigQuery,23,23,2026-08-10T19:04:39.579Z,13203448934,3,Top movers,3.114000000,statistics.finalExecutionDurationMs
+BigQuery,24,24,2026-08-10T19:14:39.579Z,13798518071,3,Top movers,3.249000000,statistics.finalExecutionDurationMs
+BigQuery,25,25,2026-08-10T19:24:39.579Z,14404336229,3,Top movers,2.978000000,statistics.finalExecutionDurationMs
+BigQuery,26,26,2026-08-10T19:34:39.579Z,14999241228,3,Top movers,3.037000000,statistics.finalExecutionDurationMs
+BigQuery,27,27,2026-08-10T19:44:39.579Z,15605550950,3,Top movers,3.175000000,statistics.finalExecutionDurationMs
+BigQuery,28,28,2026-08-10T19:54:39.579Z,16200947974,3,Top movers,4.980000000,statistics.finalExecutionDurationMs
+BigQuery,29,29,2026-08-10T20:04:39.579Z,16807146979,3,Top movers,3.482000000,statistics.finalExecutionDurationMs
+BigQuery,30,30,2026-08-10T20:14:39.579Z,17402555707,3,Top movers,2.970000000,statistics.finalExecutionDurationMs
+BigQuery,31,31,2026-08-10T20:24:39.579Z,17998995835,3,Top movers,2.921000000,statistics.finalExecutionDurationMs
+BigQuery,32,32,2026-08-10T20:34:39.579Z,18604029085,3,Top movers,2.674000000,statistics.finalExecutionDurationMs
+BigQuery,33,33,2026-08-10T20:44:39.579Z,19199653116,3,Top movers,2.837000000,statistics.finalExecutionDurationMs
+BigQuery,34,34,2026-08-10T20:54:39.579Z,19805409379,3,Top movers,3.162000000,statistics.finalExecutionDurationMs
+BigQuery,35,35,2026-08-10T21:04:39.579Z,20400542570,3,Top movers,3.323000000,statistics.finalExecutionDurationMs
+BigQuery,36,36,2026-08-10T21:14:39.579Z,21006667534,3,Top movers,3.068000000,statistics.finalExecutionDurationMs
+BigQuery,37,37,2026-08-10T21:24:39.579Z,21601183337,3,Top movers,2.860000000,statistics.finalExecutionDurationMs
+BigQuery,38,38,2026-08-10T21:34:39.579Z,22206993122,3,Top movers,3.867000000,statistics.finalExecutionDurationMs
+BigQuery,39,39,2026-08-10T21:44:39.579Z,22802655256,3,Top movers,3.586000000,statistics.finalExecutionDurationMs
+BigQuery,40,40,2026-08-10T21:54:39.579Z,23398904314,3,Top movers,3.794000000,statistics.finalExecutionDurationMs
+BigQuery,41,41,2026-08-10T22:04:39.579Z,24004847021,3,Top movers,4.120000000,statistics.finalExecutionDurationMs
+BigQuery,42,42,2026-08-10T22:14:39.579Z,24600068921,3,Top movers,3.012000000,statistics.finalExecutionDurationMs
+BigQuery,43,43,2026-08-10T22:24:39.579Z,25206685539,3,Top movers,3.279000000,statistics.finalExecutionDurationMs
+BigQuery,44,44,2026-08-10T22:34:39.579Z,25802727686,3,Top movers,2.622000000,statistics.finalExecutionDurationMs
+BigQuery,45,45,2026-08-10T22:44:39.579Z,26398352066,3,Top movers,2.765000000,statistics.finalExecutionDurationMs
+BigQuery,46,46,2026-08-10T22:54:39.579Z,27004194883,3,Top movers,3.096000000,statistics.finalExecutionDurationMs
+BigQuery,47,47,2026-08-10T23:04:39.579Z,27599591934,3,Top movers,3.058000000,statistics.finalExecutionDurationMs
+BigQuery,48,48,2026-08-10T23:14:39.579Z,28205634313,3,Top movers,3.008000000,statistics.finalExecutionDurationMs
+BigQuery,49,49,2026-08-10T23:24:39.579Z,28801641121,3,Top movers,3.404000000,statistics.finalExecutionDurationMs
+BigQuery,50,50,2026-08-10T23:34:39.579Z,29397415634,3,Top movers,2.605000000,statistics.finalExecutionDurationMs
+BigQuery,51,51,2026-08-10T23:44:39.579Z,30003608628,3,Top movers,3.833000000,statistics.finalExecutionDurationMs
+BigQuery,52,52,2026-08-10T23:54:39.579Z,30600069441,3,Top movers,3.206000000,statistics.finalExecutionDurationMs
+BigQuery,53,53,2026-08-11T00:04:39.579Z,31205495145,3,Top movers,3.651000000,statistics.finalExecutionDurationMs
+BigQuery,54,54,2026-08-11T00:14:39.579Z,31801399689,3,Top movers,3.542000000,statistics.finalExecutionDurationMs
+BigQuery,55,55,2026-08-11T00:24:39.579Z,32398116275,3,Top movers,3.638000000,statistics.finalExecutionDurationMs
+BigQuery,56,56,2026-08-11T00:34:39.579Z,33004071572,3,Top movers,3.114000000,statistics.finalExecutionDurationMs
+BigQuery,57,57,2026-08-11T00:44:39.579Z,33600190081,3,Top movers,2.740000000,statistics.finalExecutionDurationMs
+BigQuery,58,58,2026-08-11T00:54:39.579Z,34206081915,3,Top movers,2.817000000,statistics.finalExecutionDurationMs
+BigQuery,59,59,2026-08-11T01:04:39.579Z,34801233262,3,Top movers,2.625000000,statistics.finalExecutionDurationMs
+BigQuery,60,60,2026-08-11T01:14:39.579Z,35407029166,3,Top movers,3.186000000,statistics.finalExecutionDurationMs
+BigQuery,61,61,2026-08-11T01:24:39.579Z,36003582107,3,Top movers,2.583000000,statistics.finalExecutionDurationMs
+BigQuery,62,62,2026-08-11T01:34:39.579Z,36598508182,3,Top movers,3.712000000,statistics.finalExecutionDurationMs
+BigQuery,63,63,2026-08-11T01:44:39.579Z,37204082523,3,Top movers,3.853000000,statistics.finalExecutionDurationMs
+BigQuery,64,64,2026-08-11T01:54:39.579Z,37800379174,3,Top movers,3.252000000,statistics.finalExecutionDurationMs
+BigQuery,65,65,2026-08-11T02:04:39.579Z,38405927027,3,Top movers,4.405000000,statistics.finalExecutionDurationMs
+BigQuery,66,66,2026-08-11T02:14:39.579Z,39001327706,3,Top movers,5.055000000,statistics.finalExecutionDurationMs
+BigQuery,67,67,2026-08-11T02:24:39.579Z,39595633880,3,Top movers,3.857000000,statistics.finalExecutionDurationMs
+BigQuery,68,68,2026-08-11T02:34:39.579Z,40200374281,3,Top movers,2.994000000,statistics.finalExecutionDurationMs
+BigQuery,69,69,2026-08-11T02:44:39.579Z,40796294375,3,Top movers,2.822000000,statistics.finalExecutionDurationMs
+BigQuery,70,70,2026-08-11T02:54:39.579Z,41402385196,3,Top movers,3.410000000,statistics.finalExecutionDurationMs
+BigQuery,71,71,2026-08-11T03:04:39.579Z,41997868732,3,Top movers,3.631000000,statistics.finalExecutionDurationMs
+BigQuery,72,72,2026-08-11T03:14:39.579Z,42603772573,3,Top movers,3.296000000,statistics.finalExecutionDurationMs
+BigQuery,73,73,2026-08-11T03:24:39.579Z,43199914240,3,Top movers,2.969000000,statistics.finalExecutionDurationMs
+BigQuery,74,74,2026-08-11T03:34:39.579Z,43796089229,3,Top movers,3.241000000,statistics.finalExecutionDurationMs
+BigQuery,75,75,2026-08-11T03:44:39.579Z,44401549734,3,Top movers,3.628000000,statistics.finalExecutionDurationMs
+BigQuery,76,76,2026-08-11T03:54:39.579Z,44997483458,3,Top movers,3.839000000,statistics.finalExecutionDurationMs
+BigQuery,77,77,2026-08-11T04:04:39.579Z,45604478978,3,Top movers,4.408000000,statistics.finalExecutionDurationMs
+BigQuery,78,78,2026-08-11T04:14:39.579Z,46199581562,3,Top movers,3.146000000,statistics.finalExecutionDurationMs
+BigQuery,79,79,2026-08-11T04:24:39.579Z,46795809862,3,Top movers,2.642000000,statistics.finalExecutionDurationMs
+BigQuery,80,80,2026-08-11T04:34:39.579Z,47401662866,3,Top movers,3.253000000,statistics.finalExecutionDurationMs
+BigQuery,81,81,2026-08-11T04:44:39.579Z,47998689882,3,Top movers,3.452000000,statistics.finalExecutionDurationMs
+BigQuery,82,82,2026-08-11T04:54:39.579Z,48604116999,3,Top movers,3.079000000,statistics.finalExecutionDurationMs
+BigQuery,83,83,2026-08-11T05:04:39.579Z,49199731353,3,Top movers,2.954000000,statistics.finalExecutionDurationMs
+BigQuery,84,84,2026-08-11T05:14:39.579Z,49795200731,3,Top movers,2.972000000,statistics.finalExecutionDurationMs
+BigQuery,85,85,2026-08-11T05:24:39.579Z,50401430353,3,Top movers,3.279000000,statistics.finalExecutionDurationMs
+BigQuery,86,86,2026-08-11T05:34:39.579Z,50997115484,3,Top movers,2.813000000,statistics.finalExecutionDurationMs
+BigQuery,87,87,2026-08-11T05:44:39.579Z,51603339256,3,Top movers,3.807000000,statistics.finalExecutionDurationMs
+BigQuery,88,88,2026-08-11T05:54:39.579Z,52199110365,3,Top movers,4.102000000,statistics.finalExecutionDurationMs
+BigQuery,89,89,2026-08-11T06:04:39.579Z,52794070629,3,Top movers,3.194000000,statistics.finalExecutionDurationMs
+BigQuery,90,90,2026-08-11T06:14:39.579Z,53400358386,3,Top movers,2.966000000,statistics.finalExecutionDurationMs
+BigQuery,91,91,2026-08-11T06:24:39.579Z,53996988224,3,Top movers,3.188000000,statistics.finalExecutionDurationMs
+BigQuery,92,92,2026-08-11T06:34:39.579Z,54603361265,3,Top movers,3.723000000,statistics.finalExecutionDurationMs
+BigQuery,93,93,2026-08-11T06:44:39.579Z,55199779471,3,Top movers,2.899000000,statistics.finalExecutionDurationMs
+BigQuery,94,94,2026-08-11T06:54:39.579Z,55795624829,3,Top movers,3.026000000,statistics.finalExecutionDurationMs
+BigQuery,95,95,2026-08-11T07:04:39.579Z,56401181351,3,Top movers,3.226000000,statistics.finalExecutionDurationMs
+BigQuery,96,96,2026-08-11T07:14:39.579Z,56997628105,3,Top movers,3.052000000,statistics.finalExecutionDurationMs
+BigQuery,97,97,2026-08-11T07:24:39.579Z,57593250309,3,Top movers,3.064000000,statistics.finalExecutionDurationMs
+BigQuery,98,98,2026-08-11T07:34:39.579Z,58199490624,3,Top movers,4.086000000,statistics.finalExecutionDurationMs
+BigQuery,99,99,2026-08-11T07:44:39.579Z,58795901440,3,Top movers,4.446000000,statistics.finalExecutionDurationMs
+BigQuery,100,100,2026-08-11T07:54:39.579Z,59401622999,3,Top movers,3.838000000,statistics.finalExecutionDurationMs
+BigQuery,101,101,2026-08-11T08:04:39.579Z,59998313547,3,Top movers,3.364000000,statistics.finalExecutionDurationMs
+BigQuery,102,102,2026-08-11T08:14:39.579Z,60593666265,3,Top movers,3.182000000,statistics.finalExecutionDurationMs
+BigQuery,103,103,2026-08-11T08:24:39.579Z,61199564057,3,Top movers,3.116000000,statistics.finalExecutionDurationMs
+BigQuery,104,104,2026-08-11T08:34:39.579Z,61795448255,3,Top movers,2.686000000,statistics.finalExecutionDurationMs
+BigQuery,105,105,2026-08-11T08:44:39.579Z,62390940934,3,Top movers,2.949000000,statistics.finalExecutionDurationMs
+BigQuery,106,106,2026-08-11T08:54:39.579Z,62997805260,3,Top movers,4.600000000,statistics.finalExecutionDurationMs
+BigQuery,107,107,2026-08-11T09:04:39.579Z,63592256087,3,Top movers,4.255000000,statistics.finalExecutionDurationMs
+BigQuery,108,108,2026-08-11T09:14:39.579Z,64197589145,3,Top movers,4.967000000,statistics.finalExecutionDurationMs
+BigQuery,109,109,2026-08-11T09:24:39.579Z,64793072681,3,Top movers,3.788000000,statistics.finalExecutionDurationMs
+BigQuery,110,110,2026-08-11T09:34:39.579Z,65388044598,3,Top movers,3.095000000,statistics.finalExecutionDurationMs
+BigQuery,111,111,2026-08-11T09:44:39.579Z,65994164426,3,Top movers,2.977000000,statistics.finalExecutionDurationMs
+BigQuery,112,112,2026-08-11T09:54:39.579Z,66590125293,3,Top movers,2.568000000,statistics.finalExecutionDurationMs
+BigQuery,113,113,2026-08-11T10:04:39.579Z,67194687348,3,Top movers,3.506000000,statistics.finalExecutionDurationMs
+BigQuery,114,114,2026-08-11T10:14:39.579Z,67789162648,3,Top movers,3.072000000,statistics.finalExecutionDurationMs
+BigQuery,115,115,2026-08-11T10:24:39.579Z,68385889621,3,Top movers,2.906000000,statistics.finalExecutionDurationMs
+BigQuery,116,116,2026-08-11T10:34:39.579Z,68990654754,3,Top movers,3.246000000,statistics.finalExecutionDurationMs
+BigQuery,117,117,2026-08-11T10:44:39.579Z,69586595245,3,Top movers,3.371000000,statistics.finalExecutionDurationMs
+BigQuery,118,118,2026-08-11T10:54:39.579Z,70181947963,3,Top movers,3.096000000,statistics.finalExecutionDurationMs
+BigQuery,119,119,2026-08-11T11:04:39.579Z,70786952988,3,Top movers,3.198000000,statistics.finalExecutionDurationMs
+BigQuery,120,120,2026-08-11T11:14:39.579Z,71381571380,3,Top movers,3.304000000,statistics.finalExecutionDurationMs
+BigQuery,121,121,2026-08-11T11:24:39.579Z,71987342393,3,Top movers,3.111000000,statistics.finalExecutionDurationMs
+BigQuery,122,122,2026-08-11T11:34:39.579Z,72582825929,3,Top movers,5.120000000,statistics.finalExecutionDurationMs
+BigQuery,123,123,2026-08-11T11:44:39.579Z,73177660123,3,Top movers,3.259000000,statistics.finalExecutionDurationMs
+BigQuery,124,124,2026-08-11T11:54:39.579Z,73782641795,3,Top movers,3.544000000,statistics.finalExecutionDurationMs
+BigQuery,125,125,2026-08-11T12:04:39.579Z,74377938858,3,Top movers,2.917000000,statistics.finalExecutionDurationMs
+BigQuery,126,126,2026-08-11T12:14:39.579Z,74982628757,3,Top movers,3.032000000,statistics.finalExecutionDurationMs
+BigQuery,127,127,2026-08-11T12:24:39.579Z,75577981475,3,Top movers,3.018000000,statistics.finalExecutionDurationMs
+BigQuery,128,128,2026-08-11T12:34:39.579Z,76173291864,3,Top movers,3.171000000,statistics.finalExecutionDurationMs
+BigQuery,129,129,2026-08-11T12:44:39.579Z,76777893607,3,Top movers,2.961000000,statistics.finalExecutionDurationMs
+BigQuery,130,130,2026-08-11T12:54:39.579Z,77372955611,3,Top movers,3.078000000,statistics.finalExecutionDurationMs
+BigQuery,131,131,2026-08-11T13:04:39.579Z,77978642951,3,Top movers,3.213000000,statistics.finalExecutionDurationMs
+BigQuery,132,132,2026-08-11T13:14:39.579Z,78572993475,3,Top movers,3.937000000,statistics.finalExecutionDurationMs
+BigQuery,133,133,2026-08-11T13:24:39.579Z,79170037334,3,Top movers,3.291000000,statistics.finalExecutionDurationMs
+BigQuery,134,134,2026-08-11T13:34:39.579Z,79767221504,3,Top movers,4.389000000,statistics.finalExecutionDurationMs
+BigQuery,135,135,2026-08-11T13:44:39.579Z,80362814944,3,Top movers,3.091000000,statistics.finalExecutionDurationMs
+BigQuery,136,136,2026-08-11T13:54:39.579Z,80957551411,3,Top movers,2.736000000,statistics.finalExecutionDurationMs
+BigQuery,137,137,2026-08-11T14:04:39.579Z,81563124178,3,Top movers,3.792000000,statistics.finalExecutionDurationMs
+BigQuery,138,138,2026-08-11T14:14:39.579Z,82159036590,3,Top movers,3.460000000,statistics.finalExecutionDurationMs
+BigQuery,139,139,2026-08-11T14:24:39.579Z,82761715116,3,Top movers,3.379000000,statistics.finalExecutionDurationMs
+BigQuery,140,140,2026-08-11T14:34:39.579Z,83356722509,3,Top movers,3.428000000,statistics.finalExecutionDurationMs
+BigQuery,141,141,2026-08-11T14:44:39.579Z,83952456673,3,Top movers,3.161000000,statistics.finalExecutionDurationMs
+BigQuery,142,142,2026-08-11T14:54:39.579Z,84558774276,3,Top movers,5.788000000,statistics.finalExecutionDurationMs
+BigQuery,143,143,2026-08-11T15:04:39.579Z,85153080450,3,Top movers,4.546000000,statistics.finalExecutionDurationMs
+BigQuery,144,144,2026-08-11T15:14:39.579Z,85748630590,3,Top movers,2.941000000,statistics.finalExecutionDurationMs
+BigQuery,145,145,2026-08-11T15:24:39.579Z,86354594018,3,Top movers,3.058000000,statistics.finalExecutionDurationMs
+BigQuery,146,146,2026-08-11T15:34:39.579Z,86950287826,3,Top movers,3.005000000,statistics.finalExecutionDurationMs
+BigQuery,147,147,2026-08-11T15:44:39.579Z,87546429181,3,Top movers,3.317000000,statistics.finalExecutionDurationMs
+BigQuery,148,148,2026-08-11T15:54:39.579Z,88153549997,3,Top movers,3.403000000,statistics.finalExecutionDurationMs
+BigQuery,149,149,2026-08-11T16:04:39.579Z,88749556805,3,Top movers,3.362000000,statistics.finalExecutionDurationMs
+BigQuery,150,150,2026-08-11T16:14:39.579Z,89346074656,3,Top movers,4.321000000,statistics.finalExecutionDurationMs
+BigQuery,151,151,2026-08-11T16:24:39.579Z,89952672588,3,Top movers,2.905000000,statistics.finalExecutionDurationMs
+BigQuery,152,152,2026-08-11T16:34:39.579Z,90547693478,3,Top movers,3.001000000,statistics.finalExecutionDurationMs
+BigQuery,153,153,2026-08-11T16:44:39.579Z,91154749774,3,Top movers,3.881000000,statistics.finalExecutionDurationMs
+BigQuery,154,154,2026-08-11T16:54:39.579Z,91751279854,3,Top movers,3.163000000,statistics.finalExecutionDurationMs
+BigQuery,155,155,2026-08-11T17:04:39.579Z,92346120006,3,Top movers,4.667000000,statistics.finalExecutionDurationMs
+BigQuery,156,156,2026-08-11T17:14:39.579Z,92951947412,3,Top movers,3.594000000,statistics.finalExecutionDurationMs
+BigQuery,157,157,2026-08-11T17:24:39.579Z,93548598329,3,Top movers,4.092000000,statistics.finalExecutionDurationMs
+BigQuery,158,158,2026-08-11T17:34:39.579Z,94154137006,3,Top movers,3.422000000,statistics.finalExecutionDurationMs
+BigQuery,159,159,2026-08-11T17:44:39.579Z,94750489021,3,Top movers,3.348000000,statistics.finalExecutionDurationMs
+BigQuery,160,160,2026-08-11T17:54:39.579Z,95346365011,3,Top movers,2.886000000,statistics.finalExecutionDurationMs
+BigQuery,161,161,2026-08-11T18:04:39.579Z,95952538048,3,Top movers,3.272000000,statistics.finalExecutionDurationMs
+BigQuery,162,162,2026-08-11T18:14:39.579Z,96548490823,3,Top movers,3.254000000,statistics.finalExecutionDurationMs
+BigQuery,163,163,2026-08-11T18:24:39.579Z,97155331056,3,Top movers,3.073000000,statistics.finalExecutionDurationMs
+BigQuery,164,164,2026-08-11T18:34:39.579Z,97751631895,3,Top movers,3.149000000,statistics.finalExecutionDurationMs
+BigQuery,165,165,2026-08-11T18:44:39.579Z,98347800336,3,Top movers,3.833000000,statistics.finalExecutionDurationMs
+BigQuery,166,166,2026-08-11T18:54:39.579Z,98954665038,3,Top movers,3.324000000,statistics.finalExecutionDurationMs
+BigQuery,167,167,2026-08-11T19:04:39.579Z,99551267495,3,Top movers,3.769000000,statistics.finalExecutionDurationMs
+ClickHouse Cloud,2,2,2026-08-08T07:05:59Z,724786266,3,Top movers,0.006000000,clickhouse-client --time
+ClickHouse Cloud,3,3,2026-08-08T07:15:59Z,1370669828,3,Top movers,0.009000000,clickhouse-client --time
+ClickHouse Cloud,4,4,2026-08-08T07:25:59Z,1975682003,3,Top movers,0.045000000,clickhouse-client --time
+ClickHouse Cloud,5,5,2026-08-08T07:35:59Z,2574084882,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,6,6,2026-08-08T07:45:59Z,3146910669,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,7,7,2026-08-08T07:55:59Z,3738865972,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,8,8,2026-08-08T08:05:59Z,4293755746,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,9,9,2026-08-08T08:15:59Z,4891042750,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,10,10,2026-08-08T08:25:59Z,5469535309,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,11,11,2026-08-08T08:35:59Z,6010532017,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,12,12,2026-08-08T08:45:59Z,6539371357,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,13,13,2026-08-08T08:55:59Z,7146131616,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,14,14,2026-08-08T09:05:59Z,7727462172,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,15,15,2026-08-08T09:15:59Z,8305203448,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,16,16,2026-08-08T09:25:59Z,8807164173,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,17,17,2026-08-08T09:35:59Z,9395201523,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,18,18,2026-08-08T09:45:59Z,9911918805,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,19,19,2026-08-08T09:55:59Z,10448957290,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,20,20,2026-08-08T10:05:59Z,10999409964,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,21,21,2026-08-08T10:15:59Z,11495758638,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,22,22,2026-08-08T10:25:59Z,12058435469,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,23,23,2026-08-08T10:35:59Z,12574526062,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,24,24,2026-08-08T10:45:59Z,13130688854,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,25,25,2026-08-08T10:55:59Z,13690901348,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,26,26,2026-08-08T11:05:59Z,14280804947,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,27,27,2026-08-08T11:15:59Z,14876856126,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,28,28,2026-08-08T11:25:59Z,15470256866,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,29,29,2026-08-08T11:35:59Z,16058779354,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,30,30,2026-08-08T11:45:59Z,16604006353,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,31,31,2026-08-08T11:55:59Z,17204550973,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,32,32,2026-08-08T12:05:59Z,17758468213,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,33,33,2026-08-08T12:15:59Z,18360002425,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,34,34,2026-08-08T12:25:59Z,18930505218,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,35,35,2026-08-08T12:35:59Z,19498533079,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,36,36,2026-08-08T12:45:59Z,20030972521,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,37,37,2026-08-08T12:55:59Z,20598954386,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,38,38,2026-08-08T13:05:59Z,21177624388,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,39,39,2026-08-08T13:15:59Z,21690449123,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,40,40,2026-08-08T13:25:59Z,22225814642,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,41,41,2026-08-08T13:35:59Z,22769842666,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,42,42,2026-08-08T13:45:59Z,23288685490,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,43,43,2026-08-08T13:55:59Z,23844225514,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,44,44,2026-08-08T14:05:59Z,24360433073,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,45,45,2026-08-08T14:15:59Z,24937313823,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,46,46,2026-08-08T14:25:59Z,25492435118,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,47,47,2026-08-08T14:35:59Z,26047358918,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,48,48,2026-08-08T14:45:59Z,26583320264,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,49,49,2026-08-08T14:55:59Z,27117466999,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,50,50,2026-08-08T15:05:59Z,27681375912,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,51,51,2026-08-08T15:15:59Z,28239125449,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,52,52,2026-08-08T15:25:59Z,28773516979,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,53,53,2026-08-08T15:35:59Z,29346127706,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,54,54,2026-08-08T15:45:59Z,29890137150,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,55,55,2026-08-08T15:55:59Z,30465667350,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,56,56,2026-08-08T16:05:59Z,31018228497,3,Top movers,0.011000000,clickhouse-client --time
+ClickHouse Cloud,57,57,2026-08-08T16:15:59Z,31588088259,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,58,58,2026-08-08T16:25:59Z,32144496083,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,59,59,2026-08-08T16:35:59Z,32651953244,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,60,60,2026-08-08T16:45:59Z,33183996050,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,61,61,2026-08-08T16:55:59Z,33748476003,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,62,62,2026-08-08T17:05:59Z,34249264401,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,63,63,2026-08-08T17:15:59Z,34764613132,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,64,64,2026-08-08T17:25:59Z,35300178406,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,65,65,2026-08-08T17:35:59Z,35804053385,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,66,66,2026-08-08T17:45:59Z,36352821706,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,67,67,2026-08-08T17:55:59Z,36850964650,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,68,68,2026-08-08T18:05:59Z,37331880801,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,69,69,2026-08-08T18:15:59Z,37851506740,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,70,70,2026-08-08T18:25:59Z,38333894855,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,71,71,2026-08-08T18:35:59Z,38903981063,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,72,72,2026-08-08T18:45:59Z,39403630784,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,73,73,2026-08-08T18:55:59Z,39938729827,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,74,74,2026-08-08T19:05:59Z,40455322866,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,75,75,2026-08-08T19:15:59Z,40983472025,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,76,76,2026-08-08T19:25:59Z,41461994932,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,77,77,2026-08-08T19:35:59Z,41986954384,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,78,78,2026-08-08T19:45:59Z,42504704257,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,79,79,2026-08-08T19:55:59Z,43037353870,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,80,80,2026-08-08T20:05:59Z,43568180819,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,81,81,2026-08-08T20:15:59Z,44075896295,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,82,82,2026-08-08T20:25:59Z,44585275116,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,83,83,2026-08-08T20:35:59Z,45119401562,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,84,84,2026-08-08T20:45:59Z,45608868518,3,Top movers,0.012000000,clickhouse-client --time
+ClickHouse Cloud,85,85,2026-08-08T20:55:59Z,46108257326,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,86,86,2026-08-08T21:05:59Z,46607144697,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,87,87,2026-08-08T21:15:59Z,47127220430,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,88,88,2026-08-08T21:25:59Z,47630286458,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,89,89,2026-08-08T21:35:59Z,48152769396,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,90,90,2026-08-08T21:45:59Z,48651039753,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,91,91,2026-08-08T21:55:59Z,49173608481,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,92,92,2026-08-08T22:05:59Z,49691385785,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,93,93,2026-08-08T22:15:59Z,50238320035,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,94,94,2026-08-08T22:25:59Z,50788829774,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,95,95,2026-08-08T22:35:59Z,51325118756,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,96,96,2026-08-08T22:45:59Z,51886771408,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,97,97,2026-08-08T22:55:59Z,52441318029,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,98,98,2026-08-08T23:05:59Z,52920335727,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,99,99,2026-08-08T23:15:59Z,53408601648,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,100,100,2026-08-08T23:25:59Z,53910086618,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,101,101,2026-08-08T23:35:59Z,54424699241,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,102,102,2026-08-08T23:45:59Z,54899250491,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,103,103,2026-08-08T23:55:59Z,55416633625,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,104,104,2026-08-09T00:05:59Z,55944840077,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,105,105,2026-08-09T00:15:59Z,56450202011,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,106,106,2026-08-09T00:25:59Z,56976658135,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,107,107,2026-08-09T00:35:59Z,57502590981,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,108,108,2026-08-09T00:45:59Z,58017492696,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,109,109,2026-08-09T00:55:59Z,58509450012,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,110,110,2026-08-09T01:05:59Z,59010783142,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,111,111,2026-08-09T01:15:59Z,59503489949,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,112,112,2026-08-09T01:25:59Z,59972983401,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,113,113,2026-08-09T01:35:59Z,60442237749,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,114,114,2026-08-09T01:45:59Z,60904448195,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,115,115,2026-08-09T01:55:59Z,61370139665,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,116,116,2026-08-09T02:05:59Z,61872097967,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,117,117,2026-08-09T02:15:59Z,62362523974,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,118,118,2026-08-09T02:25:59Z,62852767644,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,119,119,2026-08-09T02:35:59Z,63303274836,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,120,120,2026-08-09T02:45:59Z,63813706871,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,121,121,2026-08-09T02:55:59Z,64297816643,3,Top movers,0.021000000,clickhouse-client --time
+ClickHouse Cloud,122,122,2026-08-09T03:05:59Z,64830505943,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,123,123,2026-08-09T03:15:59Z,65325007686,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,124,124,2026-08-09T03:25:59Z,65803792964,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,125,125,2026-08-09T03:35:59Z,66304040996,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,126,126,2026-08-09T03:45:59Z,66813762801,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,127,127,2026-08-09T03:55:59Z,67293866994,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,128,128,2026-08-09T04:05:59Z,67748504407,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,129,129,2026-08-09T04:15:59Z,68201006429,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,130,130,2026-08-09T04:25:59Z,68684069442,3,Top movers,0.013000000,clickhouse-client --time
+ClickHouse Cloud,131,131,2026-08-09T04:35:59Z,69181831398,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,132,132,2026-08-09T04:45:59Z,69676432303,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,133,133,2026-08-09T04:55:59Z,70168596073,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,134,134,2026-08-09T05:05:59Z,70659299166,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,135,135,2026-08-09T05:15:59Z,71156738966,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,136,136,2026-08-09T05:25:59Z,71624709770,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,137,137,2026-08-09T05:35:59Z,72091825703,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,138,138,2026-08-09T05:45:59Z,72547878251,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,139,139,2026-08-09T05:55:59Z,73013213443,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,140,140,2026-08-09T06:05:59Z,73476437585,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,141,141,2026-08-09T06:15:59Z,73987325693,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,142,142,2026-08-09T06:25:59Z,74486757162,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,143,143,2026-08-09T06:35:59Z,74995355831,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,144,144,2026-08-09T06:45:59Z,75466940903,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,145,145,2026-08-09T06:55:59Z,75964855518,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,146,146,2026-08-09T07:05:59Z,76430868234,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,147,147,2026-08-09T07:15:59Z,76885010641,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,148,148,2026-08-09T07:25:59Z,77350951993,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,149,149,2026-08-09T07:35:59Z,77850423857,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,150,150,2026-08-09T07:45:59Z,78316136469,3,Top movers,0.014000000,clickhouse-client --time
+ClickHouse Cloud,151,151,2026-08-09T07:55:59Z,78743691693,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,152,152,2026-08-09T08:05:59Z,79106273696,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,153,153,2026-08-09T08:15:59Z,79558355522,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,154,154,2026-08-09T08:25:59Z,80034599414,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,155,155,2026-08-09T08:35:59Z,80503603294,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,156,156,2026-08-09T08:45:59Z,80949316423,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,157,157,2026-08-09T08:55:59Z,81360968914,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,158,158,2026-08-09T09:05:59Z,81786894322,3,Top movers,0.015000000,clickhouse-client --time
+ClickHouse Cloud,159,159,2026-08-09T09:15:59Z,82193904360,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,160,160,2026-08-09T09:25:59Z,82614022776,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,161,161,2026-08-09T09:35:59Z,83038964951,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,162,162,2026-08-09T09:45:59Z,83491097777,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,163,163,2026-08-09T09:55:59Z,83949333223,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,164,164,2026-08-09T10:05:59Z,84454230067,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,165,165,2026-08-09T10:15:59Z,84942338016,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,166,166,2026-08-09T10:25:59Z,85486320046,3,Top movers,0.016000000,clickhouse-client --time
+ClickHouse Cloud,167,167,2026-08-09T10:35:59Z,86027059928,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,168,168,2026-08-09T10:45:59Z,86536377584,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,169,169,2026-08-09T10:55:59Z,87060073492,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,170,170,2026-08-09T11:05:59Z,87633622969,3,Top movers,0.017000000,clickhouse-client --time
+ClickHouse Cloud,171,171,2026-08-09T11:15:59Z,88183458683,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,172,172,2026-08-09T11:25:59Z,88722660479,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,173,173,2026-08-09T11:35:59Z,89252600968,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,174,174,2026-08-09T11:45:59Z,89771307204,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,175,175,2026-08-09T11:55:59Z,90310361990,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,176,176,2026-08-09T12:05:59Z,90786625328,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,177,177,2026-08-09T12:15:59Z,91318721092,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,178,178,2026-08-09T12:25:59Z,91841644344,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,179,179,2026-08-09T12:35:59Z,92330582028,3,Top movers,0.020000000,clickhouse-client --time
+ClickHouse Cloud,180,180,2026-08-09T12:45:59Z,92808126794,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,181,181,2026-08-09T12:55:59Z,93292685867,3,Top movers,0.020000000,clickhouse-client --time
+ClickHouse Cloud,182,182,2026-08-09T13:05:59Z,93798216437,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,183,183,2026-08-09T13:15:59Z,94324820860,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,184,184,2026-08-09T13:25:59Z,94869720583,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,185,185,2026-08-09T13:35:59Z,95368092163,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,186,186,2026-08-09T13:45:59Z,95854521730,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,187,187,2026-08-09T13:55:59Z,96363475717,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,188,188,2026-08-09T14:05:59Z,96870245467,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,189,189,2026-08-09T14:15:59Z,97440595296,3,Top movers,0.019000000,clickhouse-client --time
+ClickHouse Cloud,190,190,2026-08-09T14:25:59Z,97990299109,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,191,191,2026-08-09T14:35:59Z,98531195718,3,Top movers,0.018000000,clickhouse-client --time
+ClickHouse Cloud,192,192,2026-08-09T14:45:59Z,99080355059,3,Top movers,0.020000000,clickhouse-client --time
+ClickHouse Cloud,193,193,2026-08-09T14:55:59Z,99566521565,3,Top movers,0.018000000,clickhouse-client --time
+BigQuery,1,1,2026-08-10T15:24:39.579Z,5232720,4,Daily activity,1.915000000,statistics.finalExecutionDurationMs
+BigQuery,2,2,2026-08-10T15:34:39.579Z,599669712,4,Daily activity,4.475000000,statistics.finalExecutionDurationMs
+BigQuery,3,3,2026-08-10T15:44:39.579Z,1204153604,4,Daily activity,4.118000000,statistics.finalExecutionDurationMs
+BigQuery,4,4,2026-08-10T15:54:39.579Z,1798945157,4,Daily activity,4.175000000,statistics.finalExecutionDurationMs
+BigQuery,5,5,2026-08-10T16:04:39.579Z,2404139754,4,Daily activity,6.559000000,statistics.finalExecutionDurationMs
+BigQuery,6,6,2026-08-10T16:14:39.579Z,2999571237,4,Daily activity,5.038000000,statistics.finalExecutionDurationMs
+BigQuery,7,7,2026-08-10T16:24:39.579Z,3604604487,4,Daily activity,4.363000000,statistics.finalExecutionDurationMs
+BigQuery,8,8,2026-08-10T16:34:39.579Z,4200630784,4,Daily activity,5.737000000,statistics.finalExecutionDurationMs
+BigQuery,9,9,2026-08-10T16:44:39.579Z,4806321958,4,Daily activity,4.869000000,statistics.finalExecutionDurationMs
+BigQuery,10,10,2026-08-10T16:54:39.579Z,5401780675,4,Daily activity,4.955000000,statistics.finalExecutionDurationMs
+BigQuery,11,11,2026-08-10T17:04:39.579Z,6006834385,4,Daily activity,4.504000000,statistics.finalExecutionDurationMs
+BigQuery,12,12,2026-08-10T17:14:39.579Z,6603040177,4,Daily activity,4.182000000,statistics.finalExecutionDurationMs
+BigQuery,13,13,2026-08-10T17:24:39.579Z,7198608906,4,Daily activity,5.168000000,statistics.finalExecutionDurationMs
+BigQuery,14,14,2026-08-10T17:34:39.579Z,7804165428,4,Daily activity,4.250000000,statistics.finalExecutionDurationMs
+BigQuery,15,15,2026-08-10T17:44:39.579Z,8398706590,4,Daily activity,3.867000000,statistics.finalExecutionDurationMs
+BigQuery,16,16,2026-08-10T17:54:39.579Z,9004585989,4,Daily activity,5.128000000,statistics.finalExecutionDurationMs
+BigQuery,17,17,2026-08-10T18:04:39.579Z,9600096783,4,Daily activity,6.339000000,statistics.finalExecutionDurationMs
+BigQuery,18,18,2026-08-10T18:14:39.579Z,10205456446,4,Daily activity,3.875000000,statistics.finalExecutionDurationMs
+BigQuery,19,19,2026-08-10T18:24:39.579Z,10800483240,4,Daily activity,4.686000000,statistics.finalExecutionDurationMs
+BigQuery,20,20,2026-08-10T18:34:39.579Z,11406693852,4,Daily activity,5.290000000,statistics.finalExecutionDurationMs
+BigQuery,21,21,2026-08-10T18:44:39.579Z,12001571093,4,Daily activity,3.831000000,statistics.finalExecutionDurationMs
+BigQuery,22,22,2026-08-10T18:54:39.579Z,12597271666,4,Daily activity,3.295000000,statistics.finalExecutionDurationMs
+BigQuery,23,23,2026-08-10T19:04:39.579Z,13203448934,4,Daily activity,3.854000000,statistics.finalExecutionDurationMs
+BigQuery,24,24,2026-08-10T19:14:39.579Z,13798518071,4,Daily activity,4.019000000,statistics.finalExecutionDurationMs
+BigQuery,25,25,2026-08-10T19:24:39.579Z,14404336229,4,Daily activity,4.093000000,statistics.finalExecutionDurationMs
+BigQuery,26,26,2026-08-10T19:34:39.579Z,14999241228,4,Daily activity,3.856000000,statistics.finalExecutionDurationMs
+BigQuery,27,27,2026-08-10T19:44:39.579Z,15605550950,4,Daily activity,3.595000000,statistics.finalExecutionDurationMs
+BigQuery,28,28,2026-08-10T19:54:39.579Z,16200947974,4,Daily activity,4.391000000,statistics.finalExecutionDurationMs
+BigQuery,29,29,2026-08-10T20:04:39.579Z,16807146979,4,Daily activity,4.347000000,statistics.finalExecutionDurationMs
+BigQuery,30,30,2026-08-10T20:14:39.579Z,17402555707,4,Daily activity,3.906000000,statistics.finalExecutionDurationMs
+BigQuery,31,31,2026-08-10T20:24:39.579Z,17998995835,4,Daily activity,3.677000000,statistics.finalExecutionDurationMs
+BigQuery,32,32,2026-08-10T20:34:39.579Z,18604029085,4,Daily activity,4.114000000,statistics.finalExecutionDurationMs
+BigQuery,33,33,2026-08-10T20:44:39.579Z,19199653116,4,Daily activity,3.539000000,statistics.finalExecutionDurationMs
+BigQuery,34,34,2026-08-10T20:54:39.579Z,19805409379,4,Daily activity,3.707000000,statistics.finalExecutionDurationMs
+BigQuery,35,35,2026-08-10T21:04:39.579Z,20400542570,4,Daily activity,3.228000000,statistics.finalExecutionDurationMs
+BigQuery,36,36,2026-08-10T21:14:39.579Z,21006667534,4,Daily activity,3.711000000,statistics.finalExecutionDurationMs
+BigQuery,37,37,2026-08-10T21:24:39.579Z,21601183337,4,Daily activity,3.451000000,statistics.finalExecutionDurationMs
+BigQuery,38,38,2026-08-10T21:34:39.579Z,22206993122,4,Daily activity,4.738000000,statistics.finalExecutionDurationMs
+BigQuery,39,39,2026-08-10T21:44:39.579Z,22802655256,4,Daily activity,4.249000000,statistics.finalExecutionDurationMs
+BigQuery,40,40,2026-08-10T21:54:39.579Z,23398904314,4,Daily activity,3.575000000,statistics.finalExecutionDurationMs
+BigQuery,41,41,2026-08-10T22:04:39.579Z,24004847021,4,Daily activity,4.980000000,statistics.finalExecutionDurationMs
+BigQuery,42,42,2026-08-10T22:14:39.579Z,24600068921,4,Daily activity,3.830000000,statistics.finalExecutionDurationMs
+BigQuery,43,43,2026-08-10T22:24:39.579Z,25206685539,4,Daily activity,3.506000000,statistics.finalExecutionDurationMs
+BigQuery,44,44,2026-08-10T22:34:39.579Z,25802727686,4,Daily activity,3.300000000,statistics.finalExecutionDurationMs
+BigQuery,45,45,2026-08-10T22:44:39.579Z,26398352066,4,Daily activity,3.177000000,statistics.finalExecutionDurationMs
+BigQuery,46,46,2026-08-10T22:54:39.579Z,27004194883,4,Daily activity,3.084000000,statistics.finalExecutionDurationMs
+BigQuery,47,47,2026-08-10T23:04:39.579Z,27599591934,4,Daily activity,3.658000000,statistics.finalExecutionDurationMs
+BigQuery,48,48,2026-08-10T23:14:39.579Z,28205634313,4,Daily activity,3.076000000,statistics.finalExecutionDurationMs
+BigQuery,49,49,2026-08-10T23:24:39.579Z,28801641121,4,Daily activity,3.814000000,statistics.finalExecutionDurationMs
+BigQuery,50,50,2026-08-10T23:34:39.579Z,29397415634,4,Daily activity,3.075000000,statistics.finalExecutionDurationMs
+BigQuery,51,51,2026-08-10T23:44:39.579Z,30003608628,4,Daily activity,3.686000000,statistics.finalExecutionDurationMs
+BigQuery,52,52,2026-08-10T23:54:39.579Z,30600069441,4,Daily activity,3.465000000,statistics.finalExecutionDurationMs
+BigQuery,53,53,2026-08-11T00:04:39.579Z,31205495145,4,Daily activity,3.932000000,statistics.finalExecutionDurationMs
+BigQuery,54,54,2026-08-11T00:14:39.579Z,31801399689,4,Daily activity,4.604000000,statistics.finalExecutionDurationMs
+BigQuery,55,55,2026-08-11T00:24:39.579Z,32398116275,4,Daily activity,4.980000000,statistics.finalExecutionDurationMs
+BigQuery,56,56,2026-08-11T00:34:39.579Z,33004071572,4,Daily activity,4.405000000,statistics.finalExecutionDurationMs
+BigQuery,57,57,2026-08-11T00:44:39.579Z,33600190081,4,Daily activity,4.732000000,statistics.finalExecutionDurationMs
+BigQuery,58,58,2026-08-11T00:54:39.579Z,34206081915,4,Daily activity,3.190000000,statistics.finalExecutionDurationMs
+BigQuery,59,59,2026-08-11T01:04:39.579Z,34801233262,4,Daily activity,4.351000000,statistics.finalExecutionDurationMs
+BigQuery,60,60,2026-08-11T01:14:39.579Z,35407029166,4,Daily activity,3.838000000,statistics.finalExecutionDurationMs
+BigQuery,61,61,2026-08-11T01:24:39.579Z,36003582107,4,Daily activity,3.348000000,statistics.finalExecutionDurationMs
+BigQuery,62,62,2026-08-11T01:34:39.579Z,36598508182,4,Daily activity,4.535000000,statistics.finalExecutionDurationMs
+BigQuery,63,63,2026-08-11T01:44:39.579Z,37204082523,4,Daily activity,6.459000000,statistics.finalExecutionDurationMs
+BigQuery,64,64,2026-08-11T01:54:39.579Z,37800379174,4,Daily activity,3.649000000,statistics.finalExecutionDurationMs
+BigQuery,65,65,2026-08-11T02:04:39.579Z,38405927027,4,Daily activity,5.273000000,statistics.finalExecutionDurationMs
+BigQuery,66,66,2026-08-11T02:14:39.579Z,39001327706,4,Daily activity,5.312000000,statistics.finalExecutionDurationMs
+BigQuery,67,67,2026-08-11T02:24:39.579Z,39595633880,4,Daily activity,3.782000000,statistics.finalExecutionDurationMs
+BigQuery,68,68,2026-08-11T02:34:39.579Z,40200374281,4,Daily activity,3.638000000,statistics.finalExecutionDurationMs
+BigQuery,69,69,2026-08-11T02:44:39.579Z,40796294375,4,Daily activity,3.393000000,statistics.finalExecutionDurationMs
+BigQuery,70,70,2026-08-11T02:54:39.579Z,41402385196,4,Daily activity,4.001000000,statistics.finalExecutionDurationMs
+BigQuery,71,71,2026-08-11T03:04:39.579Z,41997868732,4,Daily activity,4.163000000,statistics.finalExecutionDurationMs
+BigQuery,72,72,2026-08-11T03:14:39.579Z,42603772573,4,Daily activity,3.451000000,statistics.finalExecutionDurationMs
+BigQuery,73,73,2026-08-11T03:24:39.579Z,43199914240,4,Daily activity,3.526000000,statistics.finalExecutionDurationMs
+BigQuery,74,74,2026-08-11T03:34:39.579Z,43796089229,4,Daily activity,3.317000000,statistics.finalExecutionDurationMs
+BigQuery,75,75,2026-08-11T03:44:39.579Z,44401549734,4,Daily activity,5.110000000,statistics.finalExecutionDurationMs
+BigQuery,76,76,2026-08-11T03:54:39.579Z,44997483458,4,Daily activity,3.916000000,statistics.finalExecutionDurationMs
+BigQuery,77,77,2026-08-11T04:04:39.579Z,45604478978,4,Daily activity,4.866000000,statistics.finalExecutionDurationMs
+BigQuery,78,78,2026-08-11T04:14:39.579Z,46199581562,4,Daily activity,3.921000000,statistics.finalExecutionDurationMs
+BigQuery,79,79,2026-08-11T04:24:39.579Z,46795809862,4,Daily activity,4.612000000,statistics.finalExecutionDurationMs
+BigQuery,80,80,2026-08-11T04:34:39.579Z,47401662866,4,Daily activity,3.176000000,statistics.finalExecutionDurationMs
+BigQuery,81,81,2026-08-11T04:44:39.579Z,47998689882,4,Daily activity,3.457000000,statistics.finalExecutionDurationMs
+BigQuery,82,82,2026-08-11T04:54:39.579Z,48604116999,4,Daily activity,3.628000000,statistics.finalExecutionDurationMs
+BigQuery,83,83,2026-08-11T05:04:39.579Z,49199731353,4,Daily activity,4.074000000,statistics.finalExecutionDurationMs
+BigQuery,84,84,2026-08-11T05:14:39.579Z,49795200731,4,Daily activity,3.248000000,statistics.finalExecutionDurationMs
+BigQuery,85,85,2026-08-11T05:24:39.579Z,50401430353,4,Daily activity,4.195000000,statistics.finalExecutionDurationMs
+BigQuery,86,86,2026-08-11T05:34:39.579Z,50997115484,4,Daily activity,3.612000000,statistics.finalExecutionDurationMs
+BigQuery,87,87,2026-08-11T05:44:39.579Z,51603339256,4,Daily activity,4.263000000,statistics.finalExecutionDurationMs
+BigQuery,88,88,2026-08-11T05:54:39.579Z,52199110365,4,Daily activity,6.019000000,statistics.finalExecutionDurationMs
+BigQuery,89,89,2026-08-11T06:04:39.579Z,52794070629,4,Daily activity,3.822000000,statistics.finalExecutionDurationMs
+BigQuery,90,90,2026-08-11T06:14:39.579Z,53400358386,4,Daily activity,4.150000000,statistics.finalExecutionDurationMs
+BigQuery,91,91,2026-08-11T06:24:39.579Z,53996988224,4,Daily activity,3.123000000,statistics.finalExecutionDurationMs
+BigQuery,92,92,2026-08-11T06:34:39.579Z,54603361265,4,Daily activity,3.922000000,statistics.finalExecutionDurationMs
+BigQuery,93,93,2026-08-11T06:44:39.579Z,55199779471,4,Daily activity,3.303000000,statistics.finalExecutionDurationMs
+BigQuery,94,94,2026-08-11T06:54:39.579Z,55795624829,4,Daily activity,3.665000000,statistics.finalExecutionDurationMs
+BigQuery,95,95,2026-08-11T07:04:39.579Z,56401181351,4,Daily activity,3.957000000,statistics.finalExecutionDurationMs
+BigQuery,96,96,2026-08-11T07:14:39.579Z,56997628105,4,Daily activity,3.565000000,statistics.finalExecutionDurationMs
+BigQuery,97,97,2026-08-11T07:24:39.579Z,57593250309,4,Daily activity,3.650000000,statistics.finalExecutionDurationMs
+BigQuery,98,98,2026-08-11T07:34:39.579Z,58199490624,4,Daily activity,3.998000000,statistics.finalExecutionDurationMs
+BigQuery,99,99,2026-08-11T07:44:39.579Z,58795901440,4,Daily activity,4.085000000,statistics.finalExecutionDurationMs
+BigQuery,100,100,2026-08-11T07:54:39.579Z,59401622999,4,Daily activity,4.660000000,statistics.finalExecutionDurationMs
+BigQuery,101,101,2026-08-11T08:04:39.579Z,59998313547,4,Daily activity,4.317000000,statistics.finalExecutionDurationMs
+BigQuery,102,102,2026-08-11T08:14:39.579Z,60593666265,4,Daily activity,3.400000000,statistics.finalExecutionDurationMs
+BigQuery,103,103,2026-08-11T08:24:39.579Z,61199564057,4,Daily activity,3.845000000,statistics.finalExecutionDurationMs
+BigQuery,104,104,2026-08-11T08:34:39.579Z,61795448255,4,Daily activity,3.527000000,statistics.finalExecutionDurationMs
+BigQuery,105,105,2026-08-11T08:44:39.579Z,62390940934,4,Daily activity,3.369000000,statistics.finalExecutionDurationMs
+BigQuery,106,106,2026-08-11T08:54:39.579Z,62997805260,4,Daily activity,4.616000000,statistics.finalExecutionDurationMs
+BigQuery,107,107,2026-08-11T09:04:39.579Z,63592256087,4,Daily activity,4.969000000,statistics.finalExecutionDurationMs
+BigQuery,108,108,2026-08-11T09:14:39.579Z,64197589145,4,Daily activity,6.740000000,statistics.finalExecutionDurationMs
+BigQuery,109,109,2026-08-11T09:24:39.579Z,64793072681,4,Daily activity,4.935000000,statistics.finalExecutionDurationMs
+BigQuery,110,110,2026-08-11T09:34:39.579Z,65388044598,4,Daily activity,3.776000000,statistics.finalExecutionDurationMs
+BigQuery,111,111,2026-08-11T09:44:39.579Z,65994164426,4,Daily activity,3.737000000,statistics.finalExecutionDurationMs
+BigQuery,112,112,2026-08-11T09:54:39.579Z,66590125293,4,Daily activity,3.857000000,statistics.finalExecutionDurationMs
+BigQuery,113,113,2026-08-11T10:04:39.579Z,67194687348,4,Daily activity,3.815000000,statistics.finalExecutionDurationMs
+BigQuery,114,114,2026-08-11T10:14:39.579Z,67789162648,4,Daily activity,3.313000000,statistics.finalExecutionDurationMs
+BigQuery,115,115,2026-08-11T10:24:39.579Z,68385889621,4,Daily activity,3.162000000,statistics.finalExecutionDurationMs
+BigQuery,116,116,2026-08-11T10:34:39.579Z,68990654754,4,Daily activity,3.376000000,statistics.finalExecutionDurationMs
+BigQuery,117,117,2026-08-11T10:44:39.579Z,69586595245,4,Daily activity,4.262000000,statistics.finalExecutionDurationMs
+BigQuery,118,118,2026-08-11T10:54:39.579Z,70181947963,4,Daily activity,3.359000000,statistics.finalExecutionDurationMs
+BigQuery,119,119,2026-08-11T11:04:39.579Z,70786952988,4,Daily activity,5.019000000,statistics.finalExecutionDurationMs
+BigQuery,120,120,2026-08-11T11:14:39.579Z,71381571380,4,Daily activity,4.012000000,statistics.finalExecutionDurationMs
+BigQuery,121,121,2026-08-11T11:24:39.579Z,71987342393,4,Daily activity,5.248000000,statistics.finalExecutionDurationMs
+BigQuery,122,122,2026-08-11T11:34:39.579Z,72582825929,4,Daily activity,4.697000000,statistics.finalExecutionDurationMs
+BigQuery,123,123,2026-08-11T11:44:39.579Z,73177660123,4,Daily activity,4.474000000,statistics.finalExecutionDurationMs
+BigQuery,124,124,2026-08-11T11:54:39.579Z,73782641795,4,Daily activity,4.220000000,statistics.finalExecutionDurationMs
+BigQuery,125,125,2026-08-11T12:04:39.579Z,74377938858,4,Daily activity,4.276000000,statistics.finalExecutionDurationMs
+BigQuery,126,126,2026-08-11T12:14:39.579Z,74982628757,4,Daily activity,3.786000000,statistics.finalExecutionDurationMs
+BigQuery,127,127,2026-08-11T12:24:39.579Z,75577981475,4,Daily activity,3.451000000,statistics.finalExecutionDurationMs
+BigQuery,128,128,2026-08-11T12:34:39.579Z,76173291864,4,Daily activity,3.460000000,statistics.finalExecutionDurationMs
+BigQuery,129,129,2026-08-11T12:44:39.579Z,76777893607,4,Daily activity,3.167000000,statistics.finalExecutionDurationMs
+BigQuery,130,130,2026-08-11T12:54:39.579Z,77372955611,4,Daily activity,3.363000000,statistics.finalExecutionDurationMs
+BigQuery,131,131,2026-08-11T13:04:39.579Z,77978642951,4,Daily activity,3.733000000,statistics.finalExecutionDurationMs
+BigQuery,132,132,2026-08-11T13:14:39.579Z,78572993475,4,Daily activity,3.577000000,statistics.finalExecutionDurationMs
+BigQuery,133,133,2026-08-11T13:24:39.579Z,79170037334,4,Daily activity,4.384000000,statistics.finalExecutionDurationMs
+BigQuery,134,134,2026-08-11T13:34:39.579Z,79767221504,4,Daily activity,5.385000000,statistics.finalExecutionDurationMs
+BigQuery,135,135,2026-08-11T13:44:39.579Z,80362814944,4,Daily activity,3.698000000,statistics.finalExecutionDurationMs
+BigQuery,136,136,2026-08-11T13:54:39.579Z,80957551411,4,Daily activity,3.350000000,statistics.finalExecutionDurationMs
+BigQuery,137,137,2026-08-11T14:04:39.579Z,81563124178,4,Daily activity,4.584000000,statistics.finalExecutionDurationMs
+BigQuery,138,138,2026-08-11T14:14:39.579Z,82159036590,4,Daily activity,3.789000000,statistics.finalExecutionDurationMs
+BigQuery,139,139,2026-08-11T14:24:39.579Z,82761715116,4,Daily activity,4.191000000,statistics.finalExecutionDurationMs
+BigQuery,140,140,2026-08-11T14:34:39.579Z,83356722509,4,Daily activity,4.541000000,statistics.finalExecutionDurationMs
+BigQuery,141,141,2026-08-11T14:44:39.579Z,83952456673,4,Daily activity,3.608000000,statistics.finalExecutionDurationMs
+BigQuery,142,142,2026-08-11T14:54:39.579Z,84558774276,4,Daily activity,4.264000000,statistics.finalExecutionDurationMs
+BigQuery,143,143,2026-08-11T15:04:39.579Z,85153080450,4,Daily activity,4.578000000,statistics.finalExecutionDurationMs
+BigQuery,144,144,2026-08-11T15:14:39.579Z,85748630590,4,Daily activity,4.016000000,statistics.finalExecutionDurationMs
+BigQuery,145,145,2026-08-11T15:24:39.579Z,86354594018,4,Daily activity,4.906000000,statistics.finalExecutionDurationMs
+BigQuery,146,146,2026-08-11T15:34:39.579Z,86950287826,4,Daily activity,3.791000000,statistics.finalExecutionDurationMs
+BigQuery,147,147,2026-08-11T15:44:39.579Z,87546429181,4,Daily activity,3.553000000,statistics.finalExecutionDurationMs
+BigQuery,148,148,2026-08-11T15:54:39.579Z,88153549997,4,Daily activity,4.269000000,statistics.finalExecutionDurationMs
+BigQuery,149,149,2026-08-11T16:04:39.579Z,88749556805,4,Daily activity,4.268000000,statistics.finalExecutionDurationMs
+BigQuery,150,150,2026-08-11T16:14:39.579Z,89346074656,4,Daily activity,4.952000000,statistics.finalExecutionDurationMs
+BigQuery,151,151,2026-08-11T16:24:39.579Z,89952672588,4,Daily activity,3.819000000,statistics.finalExecutionDurationMs
+BigQuery,152,152,2026-08-11T16:34:39.579Z,90547693478,4,Daily activity,4.104000000,statistics.finalExecutionDurationMs
+BigQuery,153,153,2026-08-11T16:44:39.579Z,91154749774,4,Daily activity,5.226000000,statistics.finalExecutionDurationMs
+BigQuery,154,154,2026-08-11T16:54:39.579Z,91751279854,4,Daily activity,4.316000000,statistics.finalExecutionDurationMs
+BigQuery,155,155,2026-08-11T17:04:39.579Z,92346120006,4,Daily activity,5.409000000,statistics.finalExecutionDurationMs
+BigQuery,156,156,2026-08-11T17:14:39.579Z,92951947412,4,Daily activity,4.686000000,statistics.finalExecutionDurationMs
+BigQuery,157,157,2026-08-11T17:24:39.579Z,93548598329,4,Daily activity,6.932000000,statistics.finalExecutionDurationMs
+BigQuery,158,158,2026-08-11T17:34:39.579Z,94154137006,4,Daily activity,4.096000000,statistics.finalExecutionDurationMs
+BigQuery,159,159,2026-08-11T17:44:39.579Z,94750489021,4,Daily activity,3.432000000,statistics.finalExecutionDurationMs
+BigQuery,160,160,2026-08-11T17:54:39.579Z,95346365011,4,Daily activity,3.614000000,statistics.finalExecutionDurationMs
+BigQuery,161,161,2026-08-11T18:04:39.579Z,95952538048,4,Daily activity,4.675000000,statistics.finalExecutionDurationMs
+BigQuery,162,162,2026-08-11T18:14:39.579Z,96548490823,4,Daily activity,3.607000000,statistics.finalExecutionDurationMs
+BigQuery,163,163,2026-08-11T18:24:39.579Z,97155331056,4,Daily activity,3.560000000,statistics.finalExecutionDurationMs
+BigQuery,164,164,2026-08-11T18:34:39.579Z,97751631895,4,Daily activity,4.055000000,statistics.finalExecutionDurationMs
+BigQuery,165,165,2026-08-11T18:44:39.579Z,98347800336,4,Daily activity,5.064000000,statistics.finalExecutionDurationMs
+BigQuery,166,166,2026-08-11T18:54:39.579Z,98954665038,4,Daily activity,5.426000000,statistics.finalExecutionDurationMs
+BigQuery,167,167,2026-08-11T19:04:39.579Z,99551267495,4,Daily activity,4.510000000,statistics.finalExecutionDurationMs
+ClickHouse Cloud,2,2,2026-08-08T07:05:59Z,724786266,4,Daily activity,0.006000000,clickhouse-client --time
+ClickHouse Cloud,3,3,2026-08-08T07:15:59Z,1370669828,4,Daily activity,0.006000000,clickhouse-client --time
+ClickHouse Cloud,4,4,2026-08-08T07:25:59Z,1975682003,4,Daily activity,0.025000000,clickhouse-client --time
+ClickHouse Cloud,5,5,2026-08-08T07:35:59Z,2574084882,4,Daily activity,0.008000000,clickhouse-client --time
+ClickHouse Cloud,6,6,2026-08-08T07:45:59Z,3146910669,4,Daily activity,0.008000000,clickhouse-client --time
+ClickHouse Cloud,7,7,2026-08-08T07:55:59Z,3738865972,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,8,8,2026-08-08T08:05:59Z,4293755746,4,Daily activity,0.009000000,clickhouse-client --time
+ClickHouse Cloud,9,9,2026-08-08T08:15:59Z,4891042750,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,10,10,2026-08-08T08:25:59Z,5469535309,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,11,11,2026-08-08T08:35:59Z,6010532017,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,12,12,2026-08-08T08:45:59Z,6539371357,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,13,13,2026-08-08T08:55:59Z,7146131616,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,14,14,2026-08-08T09:05:59Z,7727462172,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,15,15,2026-08-08T09:15:59Z,8305203448,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,16,16,2026-08-08T09:25:59Z,8807164173,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,17,17,2026-08-08T09:35:59Z,9395201523,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,18,18,2026-08-08T09:45:59Z,9911918805,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,19,19,2026-08-08T09:55:59Z,10448957290,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,20,20,2026-08-08T10:05:59Z,10999409964,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,21,21,2026-08-08T10:15:59Z,11495758638,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,22,22,2026-08-08T10:25:59Z,12058435469,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,23,23,2026-08-08T10:35:59Z,12574526062,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,24,24,2026-08-08T10:45:59Z,13130688854,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,25,25,2026-08-08T10:55:59Z,13690901348,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,26,26,2026-08-08T11:05:59Z,14280804947,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,27,27,2026-08-08T11:15:59Z,14876856126,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,28,28,2026-08-08T11:25:59Z,15470256866,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,29,29,2026-08-08T11:35:59Z,16058779354,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,30,30,2026-08-08T11:45:59Z,16604006353,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,31,31,2026-08-08T11:55:59Z,17204550973,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,32,32,2026-08-08T12:05:59Z,17758468213,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,33,33,2026-08-08T12:15:59Z,18360002425,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,34,34,2026-08-08T12:25:59Z,18930505218,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,35,35,2026-08-08T12:35:59Z,19498533079,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,36,36,2026-08-08T12:45:59Z,20030972521,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,37,37,2026-08-08T12:55:59Z,20598954386,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,38,38,2026-08-08T13:05:59Z,21177624388,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,39,39,2026-08-08T13:15:59Z,21690449123,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,40,40,2026-08-08T13:25:59Z,22225814642,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,41,41,2026-08-08T13:35:59Z,22769842666,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,42,42,2026-08-08T13:45:59Z,23288685490,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,43,43,2026-08-08T13:55:59Z,23844225514,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,44,44,2026-08-08T14:05:59Z,24360433073,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,45,45,2026-08-08T14:15:59Z,24937313823,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,46,46,2026-08-08T14:25:59Z,25492435118,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,47,47,2026-08-08T14:35:59Z,26047358918,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,48,48,2026-08-08T14:45:59Z,26583320264,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,49,49,2026-08-08T14:55:59Z,27117466999,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,50,50,2026-08-08T15:05:59Z,27681375912,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,51,51,2026-08-08T15:15:59Z,28239125449,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,52,52,2026-08-08T15:25:59Z,28773516979,4,Daily activity,0.043000000,clickhouse-client --time
+ClickHouse Cloud,53,53,2026-08-08T15:35:59Z,29346127706,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,54,54,2026-08-08T15:45:59Z,29890137150,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,55,55,2026-08-08T15:55:59Z,30465667350,4,Daily activity,0.010000000,clickhouse-client --time
+ClickHouse Cloud,56,56,2026-08-08T16:05:59Z,31018228497,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,57,57,2026-08-08T16:15:59Z,31588088259,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,58,58,2026-08-08T16:25:59Z,32144496083,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,59,59,2026-08-08T16:35:59Z,32651953244,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,60,60,2026-08-08T16:45:59Z,33183996050,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,61,61,2026-08-08T16:55:59Z,33748476003,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,62,62,2026-08-08T17:05:59Z,34249264401,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,63,63,2026-08-08T17:15:59Z,34764613132,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,64,64,2026-08-08T17:25:59Z,35300178406,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,65,65,2026-08-08T17:35:59Z,35804053385,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,66,66,2026-08-08T17:45:59Z,36352821706,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,67,67,2026-08-08T17:55:59Z,36850964650,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,68,68,2026-08-08T18:05:59Z,37331880801,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,69,69,2026-08-08T18:15:59Z,37851506740,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,70,70,2026-08-08T18:25:59Z,38333894855,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,71,71,2026-08-08T18:35:59Z,38903981063,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,72,72,2026-08-08T18:45:59Z,39403630784,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,73,73,2026-08-08T18:55:59Z,39938729827,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,74,74,2026-08-08T19:05:59Z,40455322866,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,75,75,2026-08-08T19:15:59Z,40983472025,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,76,76,2026-08-08T19:25:59Z,41461994932,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,77,77,2026-08-08T19:35:59Z,41986954384,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,78,78,2026-08-08T19:45:59Z,42504704257,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,79,79,2026-08-08T19:55:59Z,43037353870,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,80,80,2026-08-08T20:05:59Z,43568180819,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,81,81,2026-08-08T20:15:59Z,44075896295,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,82,82,2026-08-08T20:25:59Z,44585275116,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,83,83,2026-08-08T20:35:59Z,45119401562,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,84,84,2026-08-08T20:45:59Z,45608868518,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,85,85,2026-08-08T20:55:59Z,46108257326,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,86,86,2026-08-08T21:05:59Z,46607144697,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,87,87,2026-08-08T21:15:59Z,47127220430,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,88,88,2026-08-08T21:25:59Z,47630286458,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,89,89,2026-08-08T21:35:59Z,48152769396,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,90,90,2026-08-08T21:45:59Z,48651039753,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,91,91,2026-08-08T21:55:59Z,49173608481,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,92,92,2026-08-08T22:05:59Z,49691385785,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,93,93,2026-08-08T22:15:59Z,50238320035,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,94,94,2026-08-08T22:25:59Z,50788829774,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,95,95,2026-08-08T22:35:59Z,51325118756,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,96,96,2026-08-08T22:45:59Z,51886771408,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,97,97,2026-08-08T22:55:59Z,52441318029,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,98,98,2026-08-08T23:05:59Z,52920335727,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,99,99,2026-08-08T23:15:59Z,53408601648,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,100,100,2026-08-08T23:25:59Z,53910086618,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,101,101,2026-08-08T23:35:59Z,54424699241,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,102,102,2026-08-08T23:45:59Z,54899250491,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,103,103,2026-08-08T23:55:59Z,55416633625,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,104,104,2026-08-09T00:05:59Z,55944840077,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,105,105,2026-08-09T00:15:59Z,56450202011,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,106,106,2026-08-09T00:25:59Z,56976658135,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,107,107,2026-08-09T00:35:59Z,57502590981,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,108,108,2026-08-09T00:45:59Z,58017492696,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,109,109,2026-08-09T00:55:59Z,58509450012,4,Daily activity,0.011000000,clickhouse-client --time
+ClickHouse Cloud,110,110,2026-08-09T01:05:59Z,59010783142,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,111,111,2026-08-09T01:15:59Z,59503489949,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,112,112,2026-08-09T01:25:59Z,59972983401,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,113,113,2026-08-09T01:35:59Z,60442237749,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,114,114,2026-08-09T01:45:59Z,60904448195,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,115,115,2026-08-09T01:55:59Z,61370139665,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,116,116,2026-08-09T02:05:59Z,61872097967,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,117,117,2026-08-09T02:15:59Z,62362523974,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,118,118,2026-08-09T02:25:59Z,62852767644,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,119,119,2026-08-09T02:35:59Z,63303274836,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,120,120,2026-08-09T02:45:59Z,63813706871,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,121,121,2026-08-09T02:55:59Z,64297816643,4,Daily activity,0.025000000,clickhouse-client --time
+ClickHouse Cloud,122,122,2026-08-09T03:05:59Z,64830505943,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,123,123,2026-08-09T03:15:59Z,65325007686,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,124,124,2026-08-09T03:25:59Z,65803792964,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,125,125,2026-08-09T03:35:59Z,66304040996,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,126,126,2026-08-09T03:45:59Z,66813762801,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,127,127,2026-08-09T03:55:59Z,67293866994,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,128,128,2026-08-09T04:05:59Z,67748504407,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,129,129,2026-08-09T04:15:59Z,68201006429,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,130,130,2026-08-09T04:25:59Z,68684069442,4,Daily activity,0.018000000,clickhouse-client --time
+ClickHouse Cloud,131,131,2026-08-09T04:35:59Z,69181831398,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,132,132,2026-08-09T04:45:59Z,69676432303,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,133,133,2026-08-09T04:55:59Z,70168596073,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,134,134,2026-08-09T05:05:59Z,70659299166,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,135,135,2026-08-09T05:15:59Z,71156738966,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,136,136,2026-08-09T05:25:59Z,71624709770,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,137,137,2026-08-09T05:35:59Z,72091825703,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,138,138,2026-08-09T05:45:59Z,72547878251,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,139,139,2026-08-09T05:55:59Z,73013213443,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,140,140,2026-08-09T06:05:59Z,73476437585,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,141,141,2026-08-09T06:15:59Z,73987325693,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,142,142,2026-08-09T06:25:59Z,74486757162,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,143,143,2026-08-09T06:35:59Z,74995355831,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,144,144,2026-08-09T06:45:59Z,75466940903,4,Daily activity,0.012000000,clickhouse-client --time
+ClickHouse Cloud,145,145,2026-08-09T06:55:59Z,75964855518,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,146,146,2026-08-09T07:05:59Z,76430868234,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,147,147,2026-08-09T07:15:59Z,76885010641,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,148,148,2026-08-09T07:25:59Z,77350951993,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,149,149,2026-08-09T07:35:59Z,77850423857,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,150,150,2026-08-09T07:45:59Z,78316136469,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,151,151,2026-08-09T07:55:59Z,78743691693,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,152,152,2026-08-09T08:05:59Z,79106273696,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,153,153,2026-08-09T08:15:59Z,79558355522,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,154,154,2026-08-09T08:25:59Z,80034599414,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,155,155,2026-08-09T08:35:59Z,80503603294,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,156,156,2026-08-09T08:45:59Z,80949316423,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,157,157,2026-08-09T08:55:59Z,81360968914,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,158,158,2026-08-09T09:05:59Z,81786894322,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,159,159,2026-08-09T09:15:59Z,82193904360,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,160,160,2026-08-09T09:25:59Z,82614022776,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,161,161,2026-08-09T09:35:59Z,83038964951,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,162,162,2026-08-09T09:45:59Z,83491097777,4,Daily activity,0.013000000,clickhouse-client --time
+ClickHouse Cloud,163,163,2026-08-09T09:55:59Z,83949333223,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,164,164,2026-08-09T10:05:59Z,84454230067,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,165,165,2026-08-09T10:15:59Z,84942338016,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,166,166,2026-08-09T10:25:59Z,85486320046,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,167,167,2026-08-09T10:35:59Z,86027059928,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,168,168,2026-08-09T10:45:59Z,86536377584,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,169,169,2026-08-09T10:55:59Z,87060073492,4,Daily activity,0.014000000,clickhouse-client --time
+ClickHouse Cloud,170,170,2026-08-09T11:05:59Z,87633622969,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,171,171,2026-08-09T11:15:59Z,88183458683,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,172,172,2026-08-09T11:25:59Z,88722660479,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,173,173,2026-08-09T11:35:59Z,89252600968,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,174,174,2026-08-09T11:45:59Z,89771307204,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,175,175,2026-08-09T11:55:59Z,90310361990,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,176,176,2026-08-09T12:05:59Z,90786625328,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,177,177,2026-08-09T12:15:59Z,91318721092,4,Daily activity,0.018000000,clickhouse-client --time
+ClickHouse Cloud,178,178,2026-08-09T12:25:59Z,91841644344,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,179,179,2026-08-09T12:35:59Z,92330582028,4,Daily activity,0.027000000,clickhouse-client --time
+ClickHouse Cloud,180,180,2026-08-09T12:45:59Z,92808126794,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,181,181,2026-08-09T12:55:59Z,93292685867,4,Daily activity,0.018000000,clickhouse-client --time
+ClickHouse Cloud,182,182,2026-08-09T13:05:59Z,93798216437,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,183,183,2026-08-09T13:15:59Z,94324820860,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,184,184,2026-08-09T13:25:59Z,94869720583,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,185,185,2026-08-09T13:35:59Z,95368092163,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,186,186,2026-08-09T13:45:59Z,95854521730,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,187,187,2026-08-09T13:55:59Z,96363475717,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,188,188,2026-08-09T14:05:59Z,96870245467,4,Daily activity,0.016000000,clickhouse-client --time
+ClickHouse Cloud,189,189,2026-08-09T14:15:59Z,97440595296,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,190,190,2026-08-09T14:25:59Z,97990299109,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,191,191,2026-08-09T14:35:59Z,98531195718,4,Daily activity,0.015000000,clickhouse-client --time
+ClickHouse Cloud,192,192,2026-08-09T14:45:59Z,99080355059,4,Daily activity,0.017000000,clickhouse-client --time
+ClickHouse Cloud,193,193,2026-08-09T14:55:59Z,99566521565,4,Daily activity,0.015000000,clickhouse-client --time

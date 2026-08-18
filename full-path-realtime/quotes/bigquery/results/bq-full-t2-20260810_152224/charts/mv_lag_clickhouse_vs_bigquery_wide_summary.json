@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "chart": "clickhouse_vs_bigquery_mv_lag",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "run_id": "bq-full-t2-20260810_152224",
+  "source": {
+    "freshness_jsonl": "quotes/bigquery/results/bq-full-t2-20260810_152224/freshness/mv_freshness_20260810T152442Z.jsonl",
+    "freshness_sha256": "567256c07d7e1e4deadcd1df3dcbf189dce9580a8fe1c1a8d96b2346cce6ef5d",
+    "ingest_summary_json": "quotes/bigquery/results/bq-full-t2-20260810_152224/ingest/ingest_summary.json",
+    "ingest_summary_sha256": "6c0f35ef7ccd71d23c1980cc9321e751f3850207a273f1c72260ea529e7b50ea"
+  },
+  "selection": {
+    "definition": "active observations through and including the first observation at the complete ingest row count",
+    "final_ingest_rows": 113219565734,
+    "source_records": 2330,
+    "active_records_included": 1889,
+    "post_ingestion_records_excluded": 441,
+    "active_endpoint": {
+      "source_line": 1889,
+      "iteration": 1889,
+      "observed_at": "2026-08-11T22:52:42.721Z",
+      "base_table_rows": 113219565734,
+      "lag_seconds": 171.95041,
+      "lag_minutes": 2.8658401666666666,
+      "refresh_watermark": "2026-08-11T22:49:50.771Z"
+    }
+  },
+  "series": {
+    "clickhouse": {
+      "source": "synthetic benchmark-semantic baseline",
+      "lag_seconds": 0
+    },
+    "bigquery": {
+      "source": "watermark_lag_sec",
+      "active_source_samples": 1889,
+      "plotted_samples": 359,
+      "plotted_average_lag_seconds": 291.68214430083566,
+      "plotted_average_lag_minutes": 4.861369071680595,
+      "plotted_maximum": {
+        "source_line": 735,
+        "iteration": 735,
+        "observed_at": "2026-08-11T03:38:42.721Z",
+        "base_table_rows": 44048175515,
+        "lag_seconds": 365.985399,
+        "lag_minutes": 6.09975665,
+        "refresh_watermark": "2026-08-11T03:32:36.736Z"
+      },
+      "peak": {
+        "source_line": 7,
+        "iteration": 7,
+        "observed_at": "2026-08-10T15:30:42.721Z",
+        "base_table_rows": 367598580,
+        "lag_seconds": 481.375401,
+        "lag_minutes": 8.022923350000001,
+        "refresh_watermark": "2026-08-10T15:22:41.346Z"
+      }
+    }
+  },
+  "rendering": {
+    "aggregation": {
+      "method": "one measured maximum per fully observed refresh-watermark cycle",
+      "boundary_cycles_excluded": 2,
+      "boundary_cycle_reason": "first cycle began before monitoring; last cycle continued past the active-ingestion endpoint",
+      "raw_line_visible": false
+    },
+    "x_axis": "ingest_acknowledged_rows",
+    "y_axis": "watermark_lag_sec / 60",
+    "png": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/mv_lag_clickhouse_vs_bigquery_wide.png",
+    "svg": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/mv_lag_clickhouse_vs_bigquery_wide.svg",
+    "plotted_data_csv": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/mv_lag_clickhouse_vs_bigquery_wide_data.csv"
+  }
+}

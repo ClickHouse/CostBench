@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "chart": "matched_active_ingestion_accumulated_query_runtime_and_modeled_cost",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "background_color": "#161614",
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "pricing": {
+    "clickhouse": "Enterprise normalized runtime allocation",
+    "bigquery_capacity": "Enterprise normalized billed-slot-second allocation",
+    "bigquery_on_demand": "gross modeled billed-byte cost",
+    "bigquery_models_are_alternatives": true
+  },
+  "workloads": {
+    "dashboard": {
+      "clickhouse": {
+        "iterations": 190,
+        "query_jobs": 760,
+        "runtime_sec": 10.324,
+        "enterprise_cost_usd": 0.00895,
+        "component": "dashboard"
+      },
+      "bigquery": {
+        "iterations": 190,
+        "query_jobs": 760,
+        "runtime_sec": 2751.868000000003,
+        "capacity_cost_usd": 4.29558297,
+        "on_demand_cost_usd": 20.94800472,
+        "billed_slot_sec": 257734.97800000006,
+        "billed_bytes": 3685211963392
+      }
+    },
+    "drilldown": {
+      "clickhouse": {
+        "iterations": 33,
+        "query_jobs": 66,
+        "runtime_sec": 47.962,
+        "enterprise_cost_usd": 0.0416,
+        "component": "drilldown"
+      },
+      "bigquery": {
+        "iterations": 33,
+        "query_jobs": 66,
+        "runtime_sec": 209.51800000000006,
+        "capacity_cost_usd": 0.45264198,
+        "on_demand_cost_usd": 3.85683775,
+        "billed_slot_sec": 27158.518999999993,
+        "billed_bytes": 678502072320
+      }
+    },
+    "combined": {
+      "clickhouse": {
+        "dashboard_iterations": 190,
+        "drilldown_iterations": 33,
+        "query_jobs": 826,
+        "runtime_sec": 58.286,
+        "enterprise_cost_usd": 0.05055
+      },
+      "bigquery": {
+        "dashboard_iterations": 190,
+        "drilldown_iterations": 33,
+        "query_jobs": 826,
+        "runtime_sec": 2961.386000000003,
+        "capacity_cost_usd": 4.74822495,
+        "on_demand_cost_usd": 24.80484247,
+        "billed_slot_sec": 284893.49700000003,
+        "billed_bytes": 4363714035712
+      }
+    }
+  },
+  "sources": {
+    "clickhouse_dashboard_cost": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/bigquery/dashboard.json",
+      "sha256": "24c5c15fda0eeae264c3a724a121cd715dccbfea35c369ea73dc7038d4127495"
+    },
+    "clickhouse_drilldown_cost": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/bigquery/drilldown.json",
+      "sha256": "86f1139a3f13a83c80ce42d71096ccc624c941572fa9ea7d8e902db8653961a9"
+    },
+    "bigquery_dashboard_cost": {
+      "path": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/dashboard.json",
+      "sha256": "b32193b4970b310ef1b5234d1932edb6784056199c6b444465be287b2e5cd1ff"
+    },
+    "bigquery_drilldown_cost": {
+      "path": "quotes/bigquery/costs/out/bq-full-t2-20260810_152224/drilldown.json",
+      "sha256": "f2bb8faf9f4096d8f2590162d07e5cd206cc224b234b381e25371414f872df49"
+    },
+    "bigquery_serverless_pricing": {
+      "path": "quotes/bigquery/costs/pricings/serverless.json",
+      "sha256": "a19ffd21d5196192c89d64a89a05ed968ad792a300f66080f21cc39644f0c0b7"
+    }
+  },
+  "rendering": {
+    "png": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/query_runtime_cost_clickhouse_vs_bigquery_wide.png",
+    "svg": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/query_runtime_cost_clickhouse_vs_bigquery_wide.svg"
+  }
+}

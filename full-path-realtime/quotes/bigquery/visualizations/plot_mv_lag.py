@@ -28,10 +28,8 @@ from typing import Any
 import matplotlib
 import matplotlib.font_manager as font_manager
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-
 from _layout import configure_figure, resolve_layout, save_figure, write_json
-
+from matplotlib.ticker import FuncFormatter
 
 GRID_COLOR = "#4A4A4A"
 CLICKHOUSE_COLOR = "#FDFF88"
