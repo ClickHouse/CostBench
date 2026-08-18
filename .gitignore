@@ -139,3 +139,11 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 .DS_Store
+
+# Local credentials must never enter the repository. Keep the broad suffix
+# rule so provider-specific copies are protected as well as `_credentials.txt`.
+**/*_credentials.txt
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
