@@ -11,7 +11,7 @@ ClickHouse Cloud, Snowflake, Google BigQuery, and Amazon Redshift Serverless.
 > continuous ingest, maintenance of query-ready structures, freshness, and query serving while that
 > work remains active.
 
-![The five stages of full-path cost-performance](docs/images/full-path-cost-performance-stages.gif)
+![The five stages of full-path cost-performance](docs/images/five_stages_full_path_cost_performance_1280x850.gif)
 
 ## Start here
 
