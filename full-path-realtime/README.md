@@ -44,8 +44,3 @@ fail-closed global manifest and charts
 
 For the complete commands and accepted evidence roots, continue with the
 [quotes benchmark README](quotes/README.md).
-
-## Repository safety
-
-Never commit credentials or provider exports containing secrets. Every `*_credentials.txt` path is
-ignored, and `scripts/check_repository_hygiene.py` enforces the same rule for tracked content.
