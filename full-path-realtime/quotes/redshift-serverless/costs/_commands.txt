@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+FULL_PATH_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+cd "$FULL_PATH_ROOT"
+
+RS_ROOT="quotes/redshift-serverless"
+RS_COSTS="$RS_ROOT/costs"
+RS_RESULTS="$RS_ROOT/results/t2"
+RS_OUT="$RS_COSTS/out/t2"
+CH_COSTS="quotes/clickhouse-cloud/costs"
+CH_MATCHED="$CH_COSTS/out_t2/matched/redshift_run_20260812"
+ALLOCATION="$RS_RESULTS/billed_per_query_reader.csv"
+
+mkdir -p "$RS_OUT"
+
+# Redshift is the reference. Its accepted active windows contain 190 dashboard
+# observations and 33 drill-down observations, including the first completed-
+# dataset observation. No live SYS_SERVERLESS_USAGE query is required here.
+python3 "$RS_COSTS/summarize_queries.py" \
+  "$RS_RESULTS/dashboard_20260812T165356Z.jsonl" \
+  "$RS_OUT/dashboard.json" \
+  --iterations 190 \
+  --allocation-csv "$ALLOCATION"
+
+python3 "$RS_COSTS/summarize_queries.py" \
+  "$RS_RESULTS/drilldown_super_20260812T165356Z.jsonl" \
+  "$RS_OUT/drilldown_super.json" \
+  --iterations 33 \
+  --allocation-csv "$ALLOCATION"
+
+python3 "$RS_COSTS/summarize_queries.py" \
+  "$RS_RESULTS/drilldown_typed_20260812T165356Z.jsonl" \
+  "$RS_OUT/drilldown_typed.json" \
+  --iterations 33 \
+  --allocation-csv "$ALLOCATION"
+
+# One shared writer + MSK path. It is reused by both read alternatives and is
+# never divided or charged twice. Client cross-AZ and RMS are excluded.
+python3 "$RS_COSTS/summarize_fresh_path.py" "$RS_OUT/fresh_data_path.json"
+
+python3 "$RS_COSTS/combine_full_path.py" \
+  --variant super \
+  --clickhouse-dashboard "$CH_MATCHED/dashboard.json" \
+  --clickhouse-drilldown "$CH_MATCHED/drilldown_super.json" \
+  --redshift-dashboard "$RS_OUT/dashboard.json" \
+  --redshift-drilldown "$RS_OUT/drilldown_super.json" \
+  --clickhouse-fresh-path "$CH_COSTS/out_t2/ingest.json" \
+  --redshift-fresh-path "$RS_OUT/fresh_data_path.json" \
+  --output "$RS_OUT/full_path_super.json"
+
+python3 "$RS_COSTS/combine_full_path.py" \
+  --variant typed \
+  --clickhouse-dashboard "$CH_MATCHED/dashboard.json" \
+  --clickhouse-drilldown "$CH_MATCHED/drilldown_typed.json" \
+  --redshift-dashboard "$RS_OUT/dashboard.json" \
+  --redshift-drilldown "$RS_OUT/drilldown_typed.json" \
+  --clickhouse-fresh-path "$CH_COSTS/out_t2/ingest.json" \
+  --redshift-fresh-path "$RS_OUT/fresh_data_path.json" \
+  --output "$RS_OUT/full_path_typed.json"

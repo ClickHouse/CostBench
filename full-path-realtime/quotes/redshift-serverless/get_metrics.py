@@ -7,9 +7,10 @@ and lag-monitor don't capture. Modeled on the prior query-side-only benchmark's 
 Both source views are HISTORIZED (retained a few days), so unlike SYS_STREAM_SCAN_STATES this can be
 pulled AFTER the run — give it the run's [--since, --until] window.
 
-Reports, over the window:
-  * RPU cost:  SUM(charged_seconds) -> RPU-hours -> $ at --price $/RPU-hour, from SYS_SERVERLESS_USAGE
-               (also compute_seconds = actual RPU-seconds used, and max compute_capacity reached).
+Reports, over the window as an optional post-run audit:
+  * Workgroup usage: compute_seconds, charged_seconds, and max compute_capacity from
+    SYS_SERVERLESS_USAGE. The published T2 query-cost pipeline does NOT depend on this pull: it
+    consumes the committed hourly allocation embedded in the JSONL results and CSV evidence.
   * Query timing summary: count + median elapsed/compile/exec (µs->s) from SYS_QUERY_HISTORY,
                optionally filtered to the dashboard/drilldown reads by --query-like.
 
@@ -18,12 +19,12 @@ RUN IT ONCE PER WORKGROUP. Serverless bills RPU-seconds per workgroup, and T2 us
   * READER  (cb-quotes-rt-reader-wg) dashboard + drilldown queries over the datashare
 Point RS_HOST at each in turn; the two RPU numbers are separate published lines.
 
-  Redshift T2 total = writer RPU-seconds + reader RPU-seconds + Redshift Managed Storage
-                      + MSK broker-hours + MSK storage + client cross-AZ transfer
+  Redshift T2 fresh-data path = declared writer capacity x producer uptime
+                                + MSK broker-hours + MSK storage
 
 Per-MV refresh counts/durations/incremental-vs-full are reported (mv_refreshes) but NOT per-MV
 dollars: billing is aggregated per workgroup per minute while ingest and both refreshes overlap,
-so the writer's total charged_seconds is the authoritative ingestion+maintenance cost.
+so the writer is represented by one shared capacity-time path, not decomposed per operation.
 
 Auth/env: same as runner_redshift.py (RS_HOST/RS_PORT/RS_DB/RS_USER/RS_PASSWORD).
   python get_metrics.py --since '2026-08-10 14:00:00' --until '2026-08-10 18:00:00' --price 0.375
@@ -48,25 +49,27 @@ def main():
     ap.add_argument("--since", required=True, help="window start, e.g. '2026-08-10 14:00:00' (UTC)")
     ap.add_argument("--until", default="", help="window end (default: now)")
     # Redshift Serverless price is region-specific — VERIFY for eu-west-2 before trusting the $.
-    ap.add_argument("--price", type=float, default=0.375, help="$ per RPU-hour (verify per region)")
+    ap.add_argument("--price", type=float, default=0.467, help="$ per RPU-hour (eu-west-2)")
     ap.add_argument("--query-like", default="quotes_daily",
                     help="substring to filter the read queries in SYS_QUERY_HISTORY")
     ap.add_argument("--schema", default="public", help="schema holding quotes_raw / quotes_daily (MVs)")
-    ap.add_argument("--storage-price", type=float, default=0.024,
-                    help="$ per GB-month of Redshift Managed Storage (verify per region)")
+    ap.add_argument("--storage-price", type=float, default=0.025,
+                    help="$ per GB-month of Redshift Managed Storage (eu-west-2; evidence only)")
     # MSK cost is not in any SQL view — computed from the cluster spec x uptime. Defaults match our
     # cluster (3x kafka.m7g.xlarge, 500GB/broker). KEY: inter-broker (cross-AZ) REPLICATION is FREE on
     # MSK provisioned (AWS MSK FAQ) — only CLIENT cross-AZ (producer/consumer) is billed (~$0.01/GB,
     # tiny at ~30 MB/s). So broker-hours + storage dominate. VERIFY eu-west-2 prices before trusting $.
     ap.add_argument("--msk-hours", type=float, default=0.0, help="hours the MSK cluster was up (0 -> skip)")
     ap.add_argument("--msk-brokers", type=int, default=3)
-    ap.add_argument("--msk-broker-price", type=float, default=0.408,
-                    help="$ per broker-hour (kafka.m7g.xlarge; sheet us-east-1 0.408, verify eu-west-2)")
+    ap.add_argument("--msk-broker-price", type=float, default=0.47175,
+                    help="$ per broker-hour (kafka.m7g.xlarge; eu-west-2)")
     ap.add_argument("--msk-storage-gb", type=float, default=1500.0, help="total MSK EBS GB (3x500)")
-    ap.add_argument("--msk-storage-price", type=float, default=0.10, help="$ per GB-month MSK storage")
+    ap.add_argument("--msk-storage-price", type=float, default=0.116, help="$ per GB-month MSK storage (eu-west-2)")
     ap.add_argument("--msk-xaz-gb", type=float, default=0.0,
                     help="client cross-AZ GB (producer+consumer) over the run; replication is free; 0 -> skip")
     ap.add_argument("--msk-xaz-price", type=float, default=0.01, help="$ per GB client cross-AZ transfer")
+    ap.add_argument("--include-client-cross-az", action="store_true",
+                    help="opt in to client cross-AZ; excluded by the CostBench comparison contract")
     args = ap.parse_args()
     until = args.until or "now"
 
@@ -141,17 +144,19 @@ def main():
     # mode that would invalidate the design at 113B rows, so it must be visible in the output.
     # NOTE: we deliberately do NOT split $ per MV — Serverless bills per workgroup at one-minute
     # granularity while ingest and both refreshes overlap, so a per-MV dollar figure would be fiction.
-    # The authoritative maintenance+ingest cost is the writer's total charged_seconds above.
+    # Do not split the writer into per-MV dollars. Published fresh-path cost uses the declared
+    # writer capacity-time model; this view remains an optional usage audit.
     refreshes = {}
     try:
         cur.execute(
             "SELECT TRIM(mv_name), COALESCE(TRIM(refresh_type),'unknown'), COUNT(*), "
             "       SUM(CASE WHEN status ILIKE '%%success%%' THEN 1 ELSE 0 END), "
-            "       AVG(duration)/1e6, MAX(duration)/1e6, SUM(duration)/1e6 "
+            "       AVG(duration)/1e6, MAX(duration)/1e6, SUM(duration)/1e6, "
+            "       SUM(CASE WHEN POSITION('incrementally' IN LOWER(status)) > 0 THEN 1 ELSE 0 END) "
             "FROM SYS_MV_REFRESH_HISTORY "
             "WHERE start_time >= %s AND start_time <= %s "
             "GROUP BY 1, 2 ORDER BY 1, 2", (args.since, until))
-        for mv, rtype, n, ok, avg_s, max_s, tot_s in cur.fetchall():
+        for mv, rtype, n, ok, avg_s, max_s, tot_s, incremental in cur.fetchall():
             entry = refreshes.setdefault(str(mv).strip(), {"by_type": {}, "total": 0, "succeeded": 0,
                                                            "total_seconds": 0.0})
             entry["by_type"][str(rtype).strip()] = {
@@ -159,6 +164,7 @@ def main():
                 "succeeded": int(ok or 0),
                 "avg_seconds": round(float(avg_s), 3) if avg_s is not None else None,
                 "max_seconds": round(float(max_s), 3) if max_s is not None else None,
+                "incremental": int(incremental or 0),
             }
             entry["total"] += int(n)
             entry["succeeded"] += int(ok or 0)
@@ -166,7 +172,8 @@ def main():
         for mv, e in refreshes.items():
             e["failed"] = e["total"] - e["succeeded"]
             # the acceptance signal, surfaced explicitly rather than buried in by_type
-            e["all_incremental"] = all("incremental" in t.lower() for t in e["by_type"])
+            e["incremental"] = sum(int(item["incremental"]) for item in e["by_type"].values())
+            e["all_incremental"] = e["incremental"] == e["total"]
     except Exception as exc:
         refreshes = {"error": str(exc)[:200]}
 
@@ -179,14 +186,16 @@ def main():
     if args.msk_hours > 0:
         broker_cost = args.msk_brokers * args.msk_broker_price * args.msk_hours
         storage_cost = args.msk_storage_gb * args.msk_storage_price * (args.msk_hours / 730.0)  # GB-month prorated
-        xaz_cost = args.msk_xaz_gb * args.msk_xaz_price  # client cross-AZ only; replication is free
+        xaz_cost = args.msk_xaz_gb * args.msk_xaz_price if args.include_client_cross_az else 0.0
         out["msk"] = {
             "hours_up": args.msk_hours, "brokers": args.msk_brokers,
             "broker_cost_usd": round(broker_cost, 2),
             "storage_cost_usd": round(storage_cost, 2),
             "client_xaz_cost_usd": round(xaz_cost, 2),
+            "client_xaz_included": args.include_client_cross_az,
+            "client_xaz_gb_supplied": args.msk_xaz_gb,
             "msk_total_usd": round(broker_cost + storage_cost + xaz_cost, 2),
-            "note": "broker-hours + storage + CLIENT cross-AZ; inter-broker replication is free; verify vs Cost Explorer",
+            "note": "CostBench includes broker-hours + storage; client cross-AZ is excluded unless explicitly opted in; inter-broker replication is free",
         }
 
     print(json.dumps(out, indent=2))

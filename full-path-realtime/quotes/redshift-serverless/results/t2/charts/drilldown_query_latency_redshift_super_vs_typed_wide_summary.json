@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "chart": "drilldown_query_latency_pairwise",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "selection": {
+    "max_rows_inclusive": 100000000000,
+    "smoothing": null,
+    "outliers_excluded": 0
+  },
+  "sources": {
+    "left": {
+      "path": "quotes/redshift-serverless/results/t2/drilldown_super_20260812T165356Z.jsonl",
+      "sha256": "687b53c3897a70a9e321e1df76e3263e94f030fd5c170f8f1df6a9c07d17fa4d",
+      "load": {
+        "read": 40,
+        "selected": 27,
+        "zero_excluded": 1,
+        "above_cap_excluded": 12
+      }
+    },
+    "right": {
+      "path": "quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl",
+      "sha256": "7f7661a8ade070164556d2a6ad5c18839321831258b97e9deb6ed45a2195f02d",
+      "load": {
+        "read": 40,
+        "selected": 27,
+        "zero_excluded": 1,
+        "above_cap_excluded": 12
+      }
+    },
+    "left_cost": {
+      "path": "quotes/redshift-serverless/costs/out/t2/drilldown_super.json",
+      "sha256": "641befe57b33edc9ecc7dde2b0a3e71a3af3cc52389202ed9e64d91785930a3b"
+    },
+    "right_cost": {
+      "path": "quotes/redshift-serverless/costs/out/t2/drilldown_typed.json",
+      "sha256": "6db77bbaefcebd4f5c3e5f5dcb4092617abe1b19ee371c6247d9f0b3fe4df06f"
+    }
+  },
+  "reports": {
+    "left_q1": {
+      "observations": 27,
+      "median_sec": 95.675033,
+      "maximum_sec": 446.004491
+    },
+    "right_q1": {
+      "observations": 27,
+      "median_sec": 96.422819,
+      "maximum_sec": 234.741752
+    },
+    "left_q2": {
+      "observations": 27,
+      "median_sec": 48.927087,
+      "maximum_sec": 128.659521
+    },
+    "right_q2": {
+      "observations": 27,
+      "median_sec": 276.683712,
+      "maximum_sec": 383.183353
+    }
+  },
+  "matched_totals_ratios": {
+    "runtime_ratio": 2.1087480894616144,
+    "cost_ratio": 2.054439847885123
+  },
+  "outputs": {
+    "png": "quotes/redshift-serverless/results/t2/charts/drilldown_query_latency_redshift_super_vs_typed_wide.png",
+    "svg": "quotes/redshift-serverless/results/t2/charts/drilldown_query_latency_redshift_super_vs_typed_wide.svg",
+    "csv": "quotes/redshift-serverless/results/t2/charts/drilldown_query_latency_redshift_super_vs_typed_wide_data.csv"
+  }
+}

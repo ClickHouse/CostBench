@@ -1,10 +1,9 @@
 # Real-time quotes benchmark — Amazon Redshift Serverless (design notes)
 
-**Status (2026-08-06): pivoted to Amazon MSK.** Redshift Serverless is live (workgroup
-`cb-quotes-rt-wg`, eu-west-2); MSK is authored in `infra/msk.tf` but **not yet applied**. The
-self-managed single-broker Kafka path is retired — see the pivot note below. Networking is proven and
-the producer hit **~1.45M EPS** into Kafka (dry-run). `RUNBOOK.md` → **Status** holds the live IDs,
-endpoints, and resume steps.
+**Status (2026-08-14): T2 completed.** The run ingested **113,219,565,734 rows** at an observed
+average **999,933 rows/s** through the production MSK path. The committed results, hourly reader
+allocation, reproducible cost summaries, pairwise charts, and global charts are under `results/t2/`,
+`costs/out/t2/`, and `visualizations/`.
 
 **Implemented source: Amazon MSK** (provisioned, `TLS_PLAINTEXT`, unauthenticated) — producer → MSK
 **plaintext :9092**, Redshift → MSK **TLS :9094** (`AUTHENTICATION none`). This is the AWS-recommended
@@ -57,8 +56,9 @@ children directly on the streaming MV lets them be scheduled, measured and coste
 
 **Why both a SUPER and a typed read path:** querying the SUPER payload directly is not comparable to
 Snowflake's typed `QUOTES_IT` or ClickHouse's typed table, so the benchmark runs the *same* drilldown
-logic against both and reports the difference. Measured 2026-08-12 on 571.9M quiesced rows, identical
-results, typed **1.7–2.3× faster** than live SUPER navigation.
+logic against both and reports the difference. A small 571.9M-row characterization favored typed
+columns, but the complete active-ingestion run reversed that result: typed was **2.11× slower in
+accumulated runtime overall**. Q1 was nearly equal (1.01× cumulative); typed Q2 was 4.42× slower.
 
 ## Best practices (AWS-supported)
 
@@ -107,7 +107,7 @@ MSK — so MSK is the recommended source for the benchmark's ~1M EPS rate. ([MSK
 | Storage                          | Redshift Managed Storage (`SVV_TABLE_INFO`)                             |
 | Snowpipe + IMV credits           | **writer** RPU-seconds (ingest + both refreshes)                        |
 | Read compute                     | **reader** RPU-seconds                                                  |
-| Cost                             | writer RPU + reader RPU + RMS **+ MSK** (a line the push-SDK vendors lack) |
+| Cost                             | one shared writer-capacity + MSK path; hourly allocated reader query cost |
 
 `DISTSTYLE EVEN` is deliberate: `DISTKEY(sym)` would place every row of one symbol on a single slice,
 making the single-symbol drilldown effectively single-slice. The sort key supplies the pruning while
@@ -123,17 +123,17 @@ datashare objects — so the read-runners execute from the in-VPC producer box.
 - **No interactive-warehouse 5s statement cap** → the Snowflake "timeout → fallback" story has no
   Redshift analog; the Redshift comparison is Serverless latency + concurrency scaling under load.
 - **Freshness is refresh-cadence-driven**, not a continuous background service.
-- **Extra cost line:** MSK/Kinesis (shard/partition-hours + payload) that the push-SDK vendors don't carry.
+- **Extra cost line:** MSK provisioned broker-hours + storage that the push-SDK vendors do not carry.
 
 ## Answers to the original open questions (measured, not assumed)
 
 | Question | Answer (as of 2026-08-12) |
 |---|---|
-| MSK sizing for ~1M EPS | **3× `kafka.m7g.xlarge`, 3 AZ, RF=3, 6 partitions.** Measured ingress **~28.5 MB/s compressed** at ~999K EPS (lz4 ≈ 4.8:1, ~138 B/row raw) — ~40% of the 3-broker ingest entitlement. AWS's sizing sheet says 9 brokers, but that assumes 100 MB/s *uncompressed*. |
-| Serverless RPU floor | Writer keeps up with **1M EPS at the 128 RPU base**: per-partition offset lag **0**, freshness ~6–9 s, never touched the 256 max. Reader starts at 32 RPU with `max = base`. |
+| MSK sizing for ~1M EPS | **3× `kafka.m7g.xlarge`, 3 AZ, RF=3, 24 partitions.** Measured ingress **~28.5 MB/s compressed** at ~999K EPS (lz4 ≈ 4.8:1, ~138 B/row raw). |
+| Serverless RPU floor | Writer keeps up with **1M EPS at 128 RPU, base=max**: per-partition offset lag **0**, active streaming freshness median 5 s. Reader is 32 RPU, `max = base`. |
 | Does the rollup refresh incrementally? | **Yes** — both children report *"updated MV incrementally"*. Keep to COUNT/SUM/MIN/MAX and bucket the day with `DATE_TRUNC` (a `::date` cast risks the mutable-date-time rule that forces full recompute). Typed refresh: 74 s initial build → **17.6 s incremental** under load, 0.4 s quiesced. |
 | Freshness metric | `SYS_STREAM_SCAN_STATES` (`lag_from_latest`, `max_latency_s`) — **point-in-time, must be sampled live**; `monitor_lag.py` writes it to `lag_*.jsonl`. Rollup freshness = that lag + the child's cadence. |
-| Cost attribution | Two workgroups = two RPU lines (`SYS_SERVERLESS_USAGE` per workgroup) + RMS + MSK. Per-MV refresh counts/durations/incremental-vs-full are reported, but **not per-MV dollars** — Serverless bills per workgroup per minute while ingest and refreshes overlap. |
+| Cost attribution | Writer: 128 RPU × full 113,227-second producer uptime. MSK: broker-hours + prorated storage. This **one shared fresh path** is reused by both read variants. Reader queries: committed hourly `compute_seconds` allocated by statement elapsed share. Client cross-AZ and RMS are excluded from the main comparison. |
 
 ## Implementation (built)
 
@@ -143,13 +143,15 @@ datashare objects — so the read-runners execute from the in-VPC producer box.
 - `produce_quotes.py` — MSK producer (~1M EPS, 16 procs, lz4)
 - `monitor_lag.py` — freshness sampler **+** independent single-flight refresh controller
 - `runner_redshift.py` — read-runner, `--role dashboard|drilldown_super|drilldown_typed`
-- `get_metrics.py` — RPU cost, read timings, storage, per-MV refresh summary, MSK cost
+- `costs/` — reproducible London pricing, hourly-allocation query summaries, shared fresh-path cost, and pairwise full-path summaries
+- `get_metrics.py` — optional post-run usage/storage/refresh audit; not required to regenerate published query costs
+- `visualizations/` — Redshift pairwise, representation, freshness, fresh-path, and full-path renderers
 - `infra/` — terraform: MSK, writer workgroup, reader namespace/workgroup
 
 See `PIPELINE.md` for the verified data flow, `ARCHITECTURE.md` for rationale + reviewer questions,
 `RUNBOOK.md` for how to run it.
-The read-side runner output format and the `_viz` charts already support a `Redshift` vendor, so those
-are reused.
+The global manifest includes one Redshift dashboard series, separate SUPER and typed drill-down
+series, one shared fresh-path bar, and two read-path score alternatives.
 
 ## Sources
 

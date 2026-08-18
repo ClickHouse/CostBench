@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "effective_date": "2026-08-14",
+  "provider": "aws",
+  "region": "eu-west-2",
+  "currency": "USD",
+  "redshift_serverless": {
+    "rpu_hour_usd": 0.467,
+    "managed_storage_gb_month_usd": 0.025,
+    "billing_note": "RPU price is used for normalized query allocation and the declared writer capacity-time model. Managed storage is retained as evidence but excluded from the benchmark fresh-data-path total."
+  },
+  "msk_provisioned": {
+    "broker_instance": "kafka.m7g.xlarge",
+    "broker_hour_usd": 0.47175,
+    "storage_gb_month_usd": 0.116,
+    "billing_note": "The benchmark includes provisioned broker-hours and prorated broker storage. Client cross-AZ transfer is excluded by benchmark-owner policy; inter-broker transfer within the regional cluster is not charged."
+  },
+  "month_hours": 730,
+  "sources": [
+    "https://aws.amazon.com/redshift/pricing/",
+    "https://aws.amazon.com/msk/pricing/",
+    "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRedshift/current/eu-west-2/index.json",
+    "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonMSK/current/eu-west-2/index.json"
+  ]
+}

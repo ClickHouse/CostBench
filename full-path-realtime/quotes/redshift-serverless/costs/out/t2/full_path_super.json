@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "chart": "full_path_cost_performance_clickhouse_vs_redshift",
+  "redshift_read_variant": "super",
+  "formula": "(complete-ingest fresh-data-path cost + matched query cost) \u00d7 accumulated matched query runtime",
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "runtime_sec": 58.122,
+      "fresh_data_path_cost": 28.68705,
+      "query_cost": 0.050409999999999996,
+      "total_cost": 28.73746,
+      "score": 1670.2786501199998,
+      "relative_to_clickhouse": 1.0
+    },
+    {
+      "label": "Redshift \u00b7 SUPER",
+      "runtime_sec": 6093.541947,
+      "fresh_data_path_cost": 1932.0805603262938,
+      "query_cost": 24.967476034,
+      "total_cost": 1957.0480363602937,
+      "score": 11925354.30185543,
+      "relative_to_clickhouse": 7139.739408749949
+    }
+  ],
+  "shared_redshift_fresh_data_path": {
+    "schema_version": 1,
+    "system": "Redshift Serverless",
+    "scope": "complete-ingest fresh-data path",
+    "rows_ingested": 113219565734,
+    "window": {
+      "start": "2026-08-12T16:53:56Z",
+      "end": "2026-08-14T00:21:03Z",
+      "duration_seconds": 113227.0,
+      "duration_hours": 31.451944444444443,
+      "basis": "producer start through producer DONE line (113,219,565,734 rows in 113,227 seconds)"
+    },
+    "shared_path_contract": {
+      "shared_between_read_variants": true,
+      "read_variants": [
+        "dashboard + SUPER drill-down",
+        "dashboard + typed drill-down"
+      ],
+      "attribution": "The writer and MSK path is charged once, reused unchanged by both counterfactual read-path comparisons, and never split or doubled."
+    },
+    "components": {
+      "writer_workgroup": {
+        "base_rpu": 128,
+        "capacity_time_rpu_seconds": 14493056.0,
+        "rpu_hour_rate_usd": 0.467,
+        "cost_usd": 1880.0714311111112,
+        "model": "declared base capacity multiplied by full producer uptime"
+      },
+      "msk": {
+        "brokers": 3,
+        "broker_instance": "kafka.m7g.xlarge",
+        "partitions": 24,
+        "storage_gb_per_broker": 500,
+        "total_storage_gb": 1500,
+        "broker_hour_rate_usd": 0.47175,
+        "storage_gb_month_rate_usd": 0.116,
+        "broker_cost_usd": 44.512364375,
+        "storage_cost_usd": 7.4967648401826485,
+        "inter_broker_transfer_cost_usd": 0.0,
+        "client_cross_az_cost_usd": 0.0,
+        "client_cross_az_included": false,
+        "total_cost_usd": 52.00912921518265
+      }
+    },
+    "total_cost_usd": 1932.0805603262938,
+    "excluded": {
+      "redshift_managed_storage": "Final storage snapshot is not time-integrated and is excluded from the main fresh-data-path comparison.",
+      "client_cross_az_transfer": "Excluded by benchmark-owner policy, consistently with other systems.",
+      "reader_queries": "Reported separately from committed hourly allocation evidence."
+    },
+    "pricing": {
+      "path": "quotes/redshift-serverless/costs/pricing_eu-west-2.json",
+      "sha256": "34382fd66b283b6d0dcecd09243ee6db3ac8b27996e31e98c0d96f177e599d19",
+      "region": "eu-west-2",
+      "effective_date": "2026-08-14",
+      "sources": [
+        "https://aws.amazon.com/redshift/pricing/",
+        "https://aws.amazon.com/msk/pricing/",
+        "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRedshift/current/eu-west-2/index.json",
+        "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonMSK/current/eu-west-2/index.json"
+      ]
+    }
+  },
+  "redshift_query_cost_contract": {
+    "source_usage_metric": "SYS_SERVERLESS_USAGE.compute_seconds",
+    "bucket": "hour",
+    "allocation_driver": "statement elapsed_time / total statement elapsed_time in the statement start-hour",
+    "runner_field": "billed_times (historical name; values are allocated compute RPU-seconds)",
+    "interpretation": "normalized query-cost allocation, not a literal invoice reconstruction",
+    "live_sys_serverless_usage_dependency": false,
+    "input_mode": "committed JSONL allocation populated post hoc from the committed hourly allocation artifact"
+  },
+  "matching": {
+    "dashboard_iterations": 190,
+    "dashboard_queries_per_iteration": 4,
+    "drilldown_iterations": 33,
+    "drilldown_queries_per_iteration": 2
+  },
+  "sources": {
+    "clickhouse_dashboard": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/redshift_run_20260812/dashboard.json",
+      "sha256": "fb7563ef8c32e36e614a62fff3c1050e08bc43a0d60c79f9993fa34fbc88eecb"
+    },
+    "clickhouse_drilldown": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/redshift_run_20260812/drilldown_super.json",
+      "sha256": "a2db312090267d9d70a845e2a19c04e31b98fe24f8fd37fefcdb70924c8ec7a3"
+    },
+    "redshift_dashboard": {
+      "path": "quotes/redshift-serverless/costs/out/t2/dashboard.json",
+      "sha256": "40d7975d1c8f3b07c760bafb0c27e938ff7708d7e7e35948e50a3e95a76e49ff"
+    },
+    "redshift_drilldown": {
+      "path": "quotes/redshift-serverless/costs/out/t2/drilldown_super.json",
+      "sha256": "641befe57b33edc9ecc7dde2b0a3e71a3af3cc52389202ed9e64d91785930a3b"
+    },
+    "clickhouse_fresh_path": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+      "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+    },
+    "redshift_fresh_path": {
+      "path": "quotes/redshift-serverless/costs/out/t2/fresh_data_path.json",
+      "sha256": "c77ae92ca2e9fa3f4491383fbba3e02589afbc0d4ea1da2f9590f0297b263cfa"
+    }
+  }
+}

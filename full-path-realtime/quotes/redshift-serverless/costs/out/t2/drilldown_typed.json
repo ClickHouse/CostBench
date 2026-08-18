@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "source_file": "quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl",
+  "source_sha256": "7f7661a8ade070164556d2a6ad5c18839321831258b97e9deb6ed45a2195f02d",
+  "system": "redshift",
+  "machine": "Redshift Serverless w128r32",
+  "cluster_size": "w128/r32",
+  "iterations_included": 33,
+  "queries_per_iteration": 2,
+  "query_jobs": 66,
+  "total_runtime_seconds": 11325.390167,
+  "total_compilation_seconds": 4.286887,
+  "total_execution_seconds": 11183.617161,
+  "allocated_compute_rpu_seconds": 348605.528,
+  "costs": [
+    {
+      "tier": "Standard",
+      "price_usd": 0.467,
+      "price_unit": "RPU-hour",
+      "allocated_compute_rpu_seconds": 348605.528,
+      "total_compute_cost_usd": 45.221883771
+    }
+  ],
+  "usage_allocation_contract": {
+    "source_usage_metric": "SYS_SERVERLESS_USAGE.compute_seconds",
+    "bucket": "hour",
+    "allocation_driver": "statement elapsed_time / total statement elapsed_time in the statement start-hour",
+    "runner_field": "billed_times (historical name; values are allocated compute RPU-seconds)",
+    "interpretation": "normalized query-cost allocation, not a literal invoice reconstruction",
+    "live_sys_serverless_usage_dependency": false,
+    "input_mode": "committed JSONL allocation populated post hoc from the committed hourly allocation artifact"
+  },
+  "pricing": {
+    "path": "quotes/redshift-serverless/costs/pricing_eu-west-2.json",
+    "sha256": "34382fd66b283b6d0dcecd09243ee6db3ac8b27996e31e98c0d96f177e599d19",
+    "region": "eu-west-2",
+    "effective_date": "2026-08-14"
+  },
+  "allocation_evidence": {
+    "path": "quotes/redshift-serverless/results/t2/billed_per_query_reader.csv",
+    "sha256": "da7350b3a9367071169a670a41883a3582f6117240592f153ad463473490862d",
+    "statement_rows": 3578,
+    "total_allocated_compute_rpu_seconds": 579523.9999999994,
+    "historical_column_name": "billed_rpu_seconds"
+  }
+}

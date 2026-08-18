@@ -145,8 +145,7 @@ def _query_timings(cur, qid, tries=5, delay=0.8):
 
 
 def time_query(cur, query):
-    """Run one query once; return (result, compile_s, exec_s). result = server-side elapsed_time
-    (seconds), or None on error. Never raises."""
+    """Run once; return (elapsed_s, compile_s, exec_s, query_id). Never raises."""
     try:
         cur.execute(query)
         try:
@@ -157,10 +156,10 @@ def time_query(cur, query):
         qid = cur.fetchone()[0]
     except Exception as exc:
         print(f"  QUERY ERROR: {exc}", file=sys.stderr, flush=True)
-        return (None, None, None)
+        return (None, None, None, None)
     if qid is None or int(qid) < 0:
-        return (None, None, None)
-    return _query_timings(cur, qid)
+        return (None, None, None, None)
+    return (*_query_timings(cur, qid), int(qid))
 
 
 def scalar_query(cur, query):
@@ -287,6 +286,7 @@ def main(argv=None):
                     "result": [[None] for _ in range(n)],
                     "compilation_time": [[None] for _ in range(n)],
                     "execution_time": [[None] for _ in range(n)],
+                    "query_ids": [None for _ in range(n)],
                 })
             if con is not None:
                 try: con.close()
@@ -302,10 +302,11 @@ def main(argv=None):
                 for t in targets:
                     n = len(t["queries"])
                     role_start = _now_iso()
-                    result, compile_times, exec_times = [], [], []
+                    result, compile_times, exec_times, query_ids = [], [], [], []
                     for i, q in enumerate(t["queries"]):
-                        d, c, e = time_query(cur, q)
+                        d, c, e, query_id = time_query(cur, q)
                         result.append([d]); compile_times.append([c]); exec_times.append([e])
+                        query_ids.append(query_id)
                         fmt = lambda v: "null" if v is None else v
                         label = f"{t['role']} q{i + 1}/{n}" if len(targets) > 1 else f"q{i + 1}/{n}"
                         print(f"  {label}: {fmt(d)}s  (compile {fmt(c)}s, exec {fmt(e)}s)",
@@ -317,7 +318,7 @@ def main(argv=None):
                         "cluster_size": args.cluster_size,
                         "comment": t["comment"], "tags": TAGS,
                         "result": result, "compilation_time": compile_times,
-                        "execution_time": exec_times,
+                        "execution_time": exec_times, "query_ids": query_ids,
                     })
             finally:
                 try: cur.close()

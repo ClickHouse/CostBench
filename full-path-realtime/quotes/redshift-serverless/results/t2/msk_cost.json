@@ -1,15 +1,16 @@
 {
   "_README": [
-    "MSK cost attributable to THIS RUN (31.4h window), not the cluster's lifetime.",
-    "Broker-hours and EBS are deterministic from the cluster spec x uptime.",
-    "Cross-AZ is an ESTIMATE with stated assumptions -- it is the only uncertain line.",
-    "KEY: inter-broker (replication) cross-AZ traffic is FREE on MSK provisioned (AWS MSK FAQ:",
-    "  'you will not be charged for data transfer within the cluster in a Region, including data",
-    "  transfer between brokers'). Only CLIENT traffic crossing an AZ is billed. The AWS MSK Sizing",
-    "  sheet's large 'Cross-AZ Data Transfer' line counts the free replication traffic and overstates cost.",
-    "Prices are us-east-1 reference; eu-west-2 runs 10-25% higher. Cost Explorer is authoritative."
+    "MSK cost attributable to the complete T2 producer window, not the cluster lifetime.",
+    "The benchmark includes provisioned broker-hours and prorated broker storage.",
+    "Client cross-AZ transfer is excluded by benchmark-owner policy, consistently with other systems.",
+    "Inter-broker transfer within the regional MSK cluster is not charged."
   ],
-  "window_hours": 31.44,
+  "window": {
+    "start": "2026-08-12T16:53:56Z",
+    "end_producer_done": "2026-08-14T00:21:03Z",
+    "seconds": 113227,
+    "hours": 31.451944444444443
+  },
   "measured": {
     "rows": 113219565734,
     "compressed_bytes_in_per_second": 28500000.0,
@@ -23,32 +24,31 @@
     "partitions": 24,
     "replication_factor": 3
   },
+  "pricing": {
+    "region": "eu-west-2",
+    "effective_date": "2026-08-14",
+    "broker_hour_usd": 0.47175,
+    "storage_gb_month_usd": 0.116,
+    "month_hours": 730
+  },
   "cost_usd": {
     "broker_hours": {
-      "value": 38.48,
-      "basis": "3 x $0.408/hr x 31.44h",
-      "certainty": "deterministic"
+      "value": 44.512364375,
+      "basis": "3 brokers x $0.47175/broker-hour x 31.451944 hours"
     },
     "ebs_storage": {
-      "value": 6.46,
-      "basis": "1500 GB x $0.1/GB-mo prorated",
-      "certainty": "deterministic"
+      "value": 7.4967648401826485,
+      "basis": "1,500 GB x $0.116/GB-month x 31.451944/730"
     },
     "inter_broker_replication": {
       "value": 0.0,
-      "basis": "FREE on MSK provisioned",
-      "certainty": "documented"
+      "basis": "not charged within the regional provisioned MSK cluster"
     },
     "client_cross_az": {
-      "value": 43.0,
-      "basis": "~4,300 GB (2/3 of 3,225 GB produce + same for consume) x $0.01/GB",
-      "certainty": "ESTIMATE - assumes 2/3 of client traffic crosses an AZ; rack-aware consumption could cut the consume half"
+      "value": 0.0,
+      "included": false,
+      "basis": "excluded by benchmark-owner policy"
     },
-    "total_estimate": 87.94
-  },
-  "context": {
-    "redshift_writer_usd": 1514.11,
-    "redshift_reader_usd": 68.37,
-    "msk_share_of_redshift_total_pct": 5.3
+    "total": 52.00912921518265
   }
 }

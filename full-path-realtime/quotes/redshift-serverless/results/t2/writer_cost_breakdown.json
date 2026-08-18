@@ -1,29 +1,34 @@
 {
   "_README": [
-    "WRITER (ingest) cost for the T2 run. Read the two sections differently:",
-    "authoritative_cost = what AWS bills. The workgroup ran at base capacity continuously for the",
-    "  whole run (metered RPU-seconds = 100.3% of wall-clock x base RPU), so the writer cost is simply",
-    "  base_rpu x duration. It is NOT decomposable per operation: removing a refresh would not have",
-    "  lowered the bill unless it let the workgroup idle or allowed a lower base capacity.",
-    "activity_share = an ESTIMATE of what the writer was busy doing, attributing metered RPU-seconds",
-    "  to statements in proportion to elapsed time (same method as query-side-only/get_metrics.sh).",
-    "  Two caveats: (1) ~2.59 statements were in flight on average, so this splits a fixed pot among",
-    "  overlapping work rather than measuring marginal cost; (2) shares sum to 1 by construction, so any",
-    "  RPU spent on work not visible in SYS_QUERY_HISTORY (e.g. vacuum/autonomics) is forced onto the",
-    "  visible statements. "
+    "Writer fresh-data-path cost for the T2 run.",
+    "The benchmark model charges the declared 128-RPU writer for the full producer uptime.",
+    "This path includes streaming ingestion and maintenance of both child MVs and is shared once",
+    "by the SUPER and typed read alternatives. It is not decomposed or duplicated per alternative.",
+    "The observed usage audit and activity shares are diagnostic evidence, not the chart cost model."
   ],
   "window": {
-    "start": "2026-08-12 16:53:56",
-    "end_ingest_complete": "2026-08-14 00:20:03",
-    "wall_clock_seconds": 113167.0
+    "start": "2026-08-12T16:53:56Z",
+    "end_producer_done": "2026-08-14T00:21:03Z",
+    "wall_clock_seconds": 113227,
+    "wall_clock_hours": 31.451944444444443,
+    "rows": 113219565734,
+    "basis": "producer log: DONE after 113,227 seconds"
   },
-  "authoritative_cost": {
-    "base_rpu": 128.0,
-    "max_rpu": 128.0,
-    "metered_rpu_seconds": 14535501,
-    "metered_rpu_hours": 4037.6,
+  "capacity_time_model": {
+    "base_rpu": 128,
+    "max_rpu": 128,
+    "capacity_time_rpu_seconds": 14493056,
+    "capacity_time_rpu_hours": 4025.848888888889,
+    "price_per_rpu_hour_usd": 0.467,
+    "cost_usd": 1880.0714311111112,
+    "region": "eu-west-2",
+    "shared_between_read_variants": true
+  },
+  "observed_usage_audit": {
+    "window_end": "2026-08-14T00:20:03Z",
+    "metered_compute_rpu_seconds": 14535501,
     "capacity_time_utilisation_pct": 100.3,
-    "note": "billed continuously at base capacity; ingest never allowed the workgroup to idle"
+    "interpretation": "audit of the historical usage extraction; not used by the reproducible capacity-time summarizer"
   },
   "concurrency": {
     "sum_statement_elapsed_seconds": 294075,
@@ -34,43 +39,43 @@
       "statements": 24893,
       "elapsed_seconds": 93767,
       "share_of_activity_pct": 31.9,
-      "est_rpu_seconds": 4634429,
+      "allocated_rpu_seconds": 4634429
     },
     "REFRESH quotes_typed": {
       "statements": 2844,
       "elapsed_seconds": 75448,
       "share_of_activity_pct": 25.7,
-      "est_rpu_seconds": 3728961
+      "allocated_rpu_seconds": 3728961
     },
     "REFRESH quotes_daily": {
       "statements": 1883,
       "elapsed_seconds": 63655,
       "share_of_activity_pct": 21.6,
-      "est_rpu_seconds": 3145405
+      "allocated_rpu_seconds": 3145405
     },
     "other SELECT": {
       "statements": 11358,
       "elapsed_seconds": 47753,
       "share_of_activity_pct": 16.2,
-      "est_rpu_seconds": 2361156
+      "allocated_rpu_seconds": 2361156
     },
     "telemetry (controller)": {
       "statements": 4727,
       "elapsed_seconds": 13400,
       "share_of_activity_pct": 4.6,
-      "est_rpu_seconds": 663036
+      "allocated_rpu_seconds": 663036
     },
     "telemetry (freshness probe)": {
       "statements": 1883,
       "elapsed_seconds": 51,
       "share_of_activity_pct": 0.0,
-      "est_rpu_seconds": 2513
+      "allocated_rpu_seconds": 2513
     },
     "other (OTHER)": {
       "statements": 3,
       "elapsed_seconds": 0,
       "share_of_activity_pct": 0.0,
-      "est_rpu_seconds": 1
+      "allocated_rpu_seconds": 1
     }
   }
 }

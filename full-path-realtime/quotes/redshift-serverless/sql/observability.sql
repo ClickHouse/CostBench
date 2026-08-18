@@ -116,10 +116,11 @@ FROM SYS_QUERY_HISTORY WHERE query_id = pg_last_query_id();
 -- #############################################################################
 -- SECTION 3 — POST-RUN COST (get_metrics.py). Run ONCE PER WORKGROUP.
 -- Serverless bills RPU-seconds per workgroup, so writer and reader are separate lines:
---   Redshift T2 total = writer RPU + reader RPU + RMS + MSK broker-hours + MSK storage + client cross-AZ
+--   Published T2 model = shared writer capacity-time + MSK broker-hours/storage + allocated reader queries
+--   Client cross-AZ and RMS are retained as scope notes but excluded from the main comparison.
 -- #############################################################################
 
--- 3.1  Metered compute -> the authoritative per-workgroup RPU total
+-- 3.1  Metered compute -> optional per-workgroup usage audit
 --      (feeds writer_cost_breakdown.json; the per-statement detail is 4.6)
 --      compute_seconds = RPU-seconds actually used; charged_seconds = what is billed.
 SELECT COALESCE(SUM(compute_seconds), 0) AS compute_seconds,
@@ -274,15 +275,15 @@ FROM sys_query_history
 WHERE start_time BETWEEN :T0 AND :T1
   AND POSITION('costbench:refresh' IN query_text) > 0;
 
--- 4.6  Per-statement billed RPU-seconds -> billed_per_query_{reader,writer}_full.csv
+-- 4.6  Per-statement allocated compute RPU-seconds -> billed_per_query_{reader,writer}_full.csv
 --      Same method as query-side-only/redshift-serverless/.../get_metrics.sh:
 --          share        = statement elapsed_time / SUM(elapsed_time) in the bucket
---          billed_rpu_s = bucket compute_seconds * share
+--          allocated_compute_rpu_s = bucket compute_seconds * share
 --      The share denominator covers EVERY statement in the bucket, so shares sum to 1 and nothing is
 --      over-attributed. Hourly buckets here (the ClickBench run used daily, because there queries ran
 --      serially with nothing else on the workgroup).
---      MEANINGFUL ON THE READER: reads are the only workload and it idles between them (~20%
---      utilisation), so "$0.89 per risk/B7 query" is a real marginal cost.
+--      MEANINGFUL AS A NORMALIZED ALLOCATION ON THE READER: reads are the only user workload and it
+--      idles between them. This remains an allocation, not a literal invoice reconstruction.
 --      NOT A MARGINAL COST ON THE WRITER: it was saturated (see 3.2) and ~2.59 statements were in
 --      flight on average, so this splits a FIXED pot. Read it as share of activity, and note that
 --      shares summing to 1 forces any invisible work (vacuum/autonomics) onto visible statements.
@@ -311,7 +312,7 @@ SELECT q.query_id, q.start_time, q.query_type,
        q.queue_time::FLOAT8 / 1e6     AS queue_s,
        u.rpu,
        q.elapsed_time::FLOAT8 / NULLIF(q.bucket_elapsed, 0)                      AS share_of_bucket,
-       u.compute_seconds * (q.elapsed_time::FLOAT8 / NULLIF(q.bucket_elapsed, 0)) AS billed_rpu_seconds,
+       u.compute_seconds * (q.elapsed_time::FLOAT8 / NULLIF(q.bucket_elapsed, 0)) AS allocated_compute_rpu_seconds,
        q.query_text
 FROM q JOIN usage u ON u.bucket = q.bucket
 ORDER BY q.start_time;
@@ -340,7 +341,7 @@ SELECT COUNT(*) FROM shared_public.quotes_daily;
 -- sections 3 and 4.6; the lines below have no system view behind them.
 -- #############################################################################
 
--- 6.1  MSK THROUGHPUT (the input to the cross-AZ estimate) — CloudWatch, not SQL.
+-- 6.1  MSK THROUGHPUT — CloudWatch, not SQL. Client cross-AZ is excluded from CostBench.
 --      DEFAULT-level (free) metrics, summed across brokers:
 --        MessagesInPerSec  -> EPS into MSK                       (dimensions: Cluster Name, Broker ID)
 --        BytesInPerSec     -> COMPRESSED bytes/s from clients     (+ Topic dimension)
@@ -360,28 +361,24 @@ SELECT COUNT(*) FROM shared_public.quotes_daily;
 --      Computed from cluster spec x uptime; there is no system view. Reproduce with get_metrics.py:
 --
 --        RS_HOST=<writer> python get_metrics.py --since :T0 --until :T1 \
---            --msk-hours 31.44 --msk-brokers 3 --msk-broker-price 0.408 \
---            --msk-storage-gb 1500 --msk-storage-price 0.10 \
---            --msk-xaz-gb 4300 --msk-xaz-price 0.01
+--            --msk-hours 31.451944 --msk-brokers 3 --msk-broker-price 0.47175 \
+--            --msk-storage-gb 1500 --msk-storage-price 0.116
 --
 --      Lines, and how much to trust each:
---        broker-hours   3 x $0.408/hr x 31.44h        = $38.48   deterministic
---        EBS            1500 GB x $0.10/GB-mo prorated = $6.46   deterministic
+--        broker-hours   3 x $0.47175/hr x 31.451944h     = $44.51   deterministic
+--        EBS            1500 GB x $0.116/GB-mo prorated  = $7.50   deterministic
 --        replication    inter-broker cross-AZ          = $0.00   FREE on MSK provisioned (MSK FAQ:
 --                       "not charged for data transfer within the cluster in a Region, including
 --                       data transfer between brokers"). The Sizing sheet's big cross-AZ line counts
 --                       this free traffic and overstates cost by orders of magnitude.
---        client x-AZ    ~4,300 GB x $0.01/GB          = $43.00   ESTIMATE. Assumes ~2/3 of client
---                       traffic leaves its AZ (producer in ONE az, brokers across three; same again
---                       for the consumer). If rack-aware consumption keeps Redshift's reads in-AZ this
---                       halves to ~$21. Co-locating the producer in a broker AZ would cut the other half.
---        TOTAL                                        ~ $88     = 5.3% of the Redshift T2 total.
+--        client x-AZ    excluded by benchmark-owner policy       = $0.00
+--        TOTAL                                                 = $52.01
 --
---      --msk-xaz-gb is derived from 6.1:  BytesInPerSec x run_seconds / 1e9 x (2/3) x 2.
+--      Cross-AZ telemetry may be retained for diagnostics but is not a cost input here.
 
--- 6.3  AUTHORITATIVE billed cost (what AWS actually charged) — Cost Explorer, needs AWS creds.
---      Everything above is spec x uptime with us-east-1 REFERENCE prices; eu-west-2 runs 10-25%
---      higher, so treat the Redshift and MSK figures as ~10-25% low until checked here.
+-- 6.3  Invoice audit (not used by the normalized CostBench model) — Cost Explorer, needs AWS creds.
+--      The reproducible summaries use explicit eu-west-2 prices captured in
+--      costs/pricing_eu-west-2.json. Cost Explorer can still audit the account-level invoice.
 --
 --        aws ce get-cost-and-usage --region us-east-1 \
 --          --time-period Start=2026-08-12,End=2026-08-15 --granularity DAILY \

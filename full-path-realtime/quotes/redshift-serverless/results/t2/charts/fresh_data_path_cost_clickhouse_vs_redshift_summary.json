@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "chart": "complete_ingest_fresh_data_path_cost_clickhouse_vs_redshift",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11.5,
+      5.6
+    ],
+    "data_and_math_unchanged": true
+  },
+  "costs": {
+    "clickhouse": {
+      "total_usd": 28.68705
+    },
+    "redshift": {
+      "writer_usd": 1880.0714311111112,
+      "msk_usd": 52.00912921518265,
+      "total_usd": 1932.0805603262938
+    }
+  },
+  "contract": {
+    "redshift_path_shared_between_variants": true,
+    "client_cross_az_included": false,
+    "redshift_managed_storage_included": false
+  },
+  "sources": {
+    "clickhouse": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+      "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+    },
+    "redshift": {
+      "path": "quotes/redshift-serverless/costs/out/t2/fresh_data_path.json",
+      "sha256": "c77ae92ca2e9fa3f4491383fbba3e02589afbc0d4ea1da2f9590f0297b263cfa"
+    }
+  },
+  "outputs": {
+    "png": "quotes/redshift-serverless/results/t2/charts/fresh_data_path_cost_clickhouse_vs_redshift.png",
+    "svg": "quotes/redshift-serverless/results/t2/charts/fresh_data_path_cost_clickhouse_vs_redshift.svg"
+  }
+}

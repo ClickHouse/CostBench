@@ -12,7 +12,7 @@ we attribute to Redshift is fair and right-sized** — it's a cost line the othe
  producer EC2                Amazon MSK (provisioned)        Redshift Serverless — WRITER workgroup
  ┌──────────────────┐  :9092 ┌──────────────────────┐ :9094 ┌──────────────────────────────────────┐
  │ produce_quotes.py│ ─────▶ │ topic `quotes`       │ ────▶ │ EXTERNAL SCHEMA kafka (TLS,AUTH none)│
- │ 16 procs, ~1M EPS│  plain │ 6 partitions, RF=3   │  TLS  │        ▼                             │
+ │ 16 procs, ~1M EPS│  plain │ 24 partitions, RF=3  │  TLS  │        ▼                             │
  └──────────────────┘        │ 3× kafka.m7g.xlarge  │       │ quotes_streamed  streaming MV, SUPER │
                              │ retention capped     │       │                  AUTO REFRESH YES    │
                              └──────────────────────┘       │       ╱          ╲                   │
@@ -48,7 +48,7 @@ we attribute to Redshift is fair and right-sized** — it's a cost line the othe
 - **The SUPER-vs-typed comparison is a deliberate result:** the same drilldown logic runs against
   the live `SUPER` payload *and* the typed projection, so the cost of semi-structured access is
   measured rather than assumed.
-- **Sizing:** writer base **128 RPU / max 256 RPU** (measured: keeps up with 1M EPS at the 128
+- **Sizing:** writer base **128 RPU / max 128 RPU** for the measured run (keeps up with 1M EPS at 128
   floor, offset lag 0, ~6–9 s freshness); reader **32 RPU, max = base** during characterization;
   MSK 3× `kafka.m7g.xlarge` (Graviton; 3 AZ, RF=3), EBS 500 GB/broker.
 
@@ -89,16 +89,12 @@ and that broker is a genuine cost of running Redshift in real time.
 
 ## Cost accounting (what we publish)
 
-Total Redshift real-time cost = **Redshift Serverless RPU-seconds** (streaming-MV refresh + rollup
-refresh + read queries, from `SYS_SERVERLESS_USAGE`) **+ MSK broker-hours + MSK/RMS storage**. We
-**report the MSK line separately** so readers see the breakdown and can judge it — we don't fold it in
-silently. **Inter-broker cross-AZ replication is free on MSK provisioned** (per the AWS MSK FAQ:
-"you will not be charged for data transfer within the cluster in a Region, including data transfer
-between brokers"), so the MSK line is essentially **broker-hours + EBS storage + a small client
-cross-AZ charge** (~$0.01/GB for producer/consumer traffic that crosses an AZ — on the order of ~$25
-for a full run at our throughput). At 3× `kafka.m7g.xlarge` (Graviton) that's ~**$1.22/hr of brokers**
-+ storage; over a multi-hour run it's a material fraction of the total and the main thing that makes
-Redshift's real-time cost structure different from the push-SDK vendors'.
+The published fresh-data-path model is **128 writer RPU × producer uptime + MSK broker-hours +
+prorated MSK storage**. It is one shared write path for both read representations and is never split
+or doubled. Query cost is separate: the committed hourly reader `compute_seconds` allocation is
+distributed by each statement's elapsed share of its start-hour. This is normalized query cost, not
+a literal invoice reconstruction. Client cross-AZ is excluded by benchmark-owner policy, and the
+final RMS snapshot is retained as evidence but excluded because it is not time-integrated.
 
 ## Operational notes that shaped the design (both hit during bring-up)
 
@@ -168,13 +164,11 @@ compressed `SUPER` payload plus `sym`/`t`.
    entitlement). Fair, or should we size differently?
 3. **Auth realism:** we use MSK **unauthenticated TLS** (`AUTHENTICATION none`). Representative, or
    should a published benchmark use IAM auth? (Cost-neutral; realism only.)
-4. **Redshift Serverless sizing:** base 128 / max 256 RPU for ingest + reads. **Measured 2026-08-12:**
-   at the **128 RPU floor** the streaming MV **fully keeps up with 1M EPS — offset lag 0 across all 6
-   partitions, ~6–9 s freshness**, consuming ~989K rows/s vs the ~1.00M/s producer (never touched the
-   256 max). Reasonable, or is keep-up achievable at a lower (cheaper) floor for a fairer cost?
-5. **Anything in the cost model we're under-counting** (client cross-AZ transfer, RMS, concurrency
-   scaling)? We treat inter-broker replication as free (per the MSK FAQ) and count only *client*
-   cross-AZ — is that the right read of MSK billing?
+4. **Redshift Serverless sizing:** base=max 128 RPU for the measured writer and base=max 32 RPU for
+   the reader. At 128 RPU the streaming MV kept up with 1M EPS with offset lag 0 across 24 partitions.
+   Could a lower writer floor sustain the same complete pipeline and freshness?
+5. **Cost-model scope:** client cross-AZ and RMS are explicitly excluded from the main comparison.
+   Is there any required standing component beyond writer uptime + MSK uptime that should be surfaced?
 6. **Sort-key maintenance (see the section above).** Should the rerun enable extra autonomics compute,
    and is there anything else that would let automatic sort keep pace with 1M-row/s ingest — or is a
    periodic explicit `VACUUM SORT` window the honest answer for a table growing this fast? Also worth

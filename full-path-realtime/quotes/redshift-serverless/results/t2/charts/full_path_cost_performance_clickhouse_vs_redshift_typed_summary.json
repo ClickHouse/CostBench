@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "chart": "full_path_cost_performance_clickhouse_vs_redshift",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      11,
+      4.8
+    ],
+    "data_and_math_unchanged": true
+  },
+  "source": "quotes/redshift-serverless/costs/out/t2/full_path_typed.json",
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "runtime_sec": 58.122,
+      "fresh_data_path_cost": 28.68705,
+      "query_cost": 0.050409999999999996,
+      "total_cost": 28.73746,
+      "score": 1670.2786501199998,
+      "relative_to_clickhouse": 1.0
+    },
+    {
+      "label": "Redshift \u00b7 Typed",
+      "runtime_sec": 12048.262083,
+      "fresh_data_path_cost": 1932.0805603262938,
+      "query_cost": 48.177576974000004,
+      "total_cost": 1980.2581373002938,
+      "score": 23858669.03018734,
+      "relative_to_clickhouse": 14284.24474471564
+    }
+  ],
+  "query_cost_display": "total",
+  "score_scale": "log10 relative to ClickHouse",
+  "baseline_bar_width": 0,
+  "outputs": {
+    "png": "quotes/redshift-serverless/results/t2/charts/full_path_cost_performance_clickhouse_vs_redshift_typed.png",
+    "svg": "quotes/redshift-serverless/results/t2/charts/full_path_cost_performance_clickhouse_vs_redshift_typed.svg"
+  }
+}

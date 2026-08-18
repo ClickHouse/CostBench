@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "chart": "redshift_preaggregate_mv_freshness",
+  "layout": {
+    "variant": "default",
+    "figure_inches": [
+      12,
+      4.8
+    ],
+    "data_and_math_unchanged": true
+  },
+  "active_endpoint": "2026-08-14T00:21:56Z",
+  "final_rows": 113219565734,
+  "contract": {
+    "object": "quotes_daily persisted pre-aggregate MV",
+    "source": "quotes_streamed streaming MV",
+    "metric": "Kafka event watermark to persisted pre-aggregate MV",
+    "plotted_field": "child_freshness_s",
+    "lag_file_use": "row-count timeline and active-ingestion endpoint only; streaming lag is not plotted"
+  },
+  "selection": {
+    "first_nonmonotonic_lag_sample_excluded": true,
+    "post_ingestion_daily_refreshes_excluded": 463,
+    "display_smoothing": "centered 5-observation rolling median"
+  },
+  "statistics": {
+    "Pre-aggregate MV": {
+      "observations": 1884,
+      "median_seconds": 46.0,
+      "p95_seconds": 53.0,
+      "maximum_seconds": 79.0
+    }
+  },
+  "sources": {
+    "lag": {
+      "path": "quotes/redshift-serverless/results/t2/lag_20260812T165356Z.jsonl",
+      "sha256": "7e104aedf8531b0ce77ab57d5e30d33479d545f267393ffd996ee085ca8bc71f"
+    },
+    "refresh": {
+      "path": "quotes/redshift-serverless/results/t2/refresh_20260812T165356Z.jsonl",
+      "sha256": "ce8e38d8d4549904f6a24e28e5688fa548d20b7401cd26d792c4455648e25ce7"
+    }
+  },
+  "outputs": {
+    "png": "quotes/redshift-serverless/results/t2/charts/redshift_freshness.png",
+    "svg": "quotes/redshift-serverless/results/t2/charts/redshift_freshness.svg"
+  }
+}
