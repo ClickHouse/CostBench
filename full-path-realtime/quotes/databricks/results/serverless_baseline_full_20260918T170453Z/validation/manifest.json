@@ -1,0 +1,196 @@
+{
+  "artifact_count": 31,
+  "artifacts": [
+    {
+      "path": "evidence/clustering_status.json",
+      "sha256": "1fb8526e95462201241bc29de6d5eabd1fb8db376f241db9d36164d20ec3d13f",
+      "size_bytes": 11339
+    },
+    {
+      "path": "evidence/mv_refresh_summary.json",
+      "sha256": "184681cb5a26c8686202b80c921ff15934e77617b0575814f0c0eb64b035b2dc",
+      "size_bytes": 445
+    },
+    {
+      "path": "evidence/provider_reconciliation.json",
+      "sha256": "a17675c0587568471df8fffd7b155c66dfc5199ea7f0140aced1aee0f37e7d9a",
+      "size_bytes": 1646
+    },
+    {
+      "path": "freshness/freshness_progress.json",
+      "sha256": "0a61f117c775365325ee1bc1ad4ba4f81de190bd71a8ae825ef665b018706873",
+      "size_bytes": 1750
+    },
+    {
+      "path": "freshness/mv_freshness_20260918T170453Z.jsonl",
+      "sha256": "7e0593e012379c314030fe76ae3b9ab2a1b65495beff395967d452ee653e1f6e",
+      "size_bytes": 3129406
+    },
+    {
+      "path": "ingest/ingest_metrics.jsonl",
+      "sha256": "4cf781aef4e829c1763c77282356d2c8d6e62dfd6f6b1d85305dbf2010ba59b5",
+      "size_bytes": 2590969
+    },
+    {
+      "path": "ingest/ingest_progress.json",
+      "sha256": "73eb3af7dd735f10126a228180ff254418771687c137212a60832df1eab82eec",
+      "size_bytes": 16010
+    },
+    {
+      "path": "ingest/ingest_summary.json",
+      "sha256": "776bb4bdd58aaafff891d632e749988410584a9dbf35e819fca5e5568fb8e407",
+      "size_bytes": 17094
+    },
+    {
+      "path": "ingest/source_hashes_post_run.json",
+      "sha256": "7df0e5acab5f0436f7f3d8a9ae719e754f76efb13d342bf7185c3a28c0979b13",
+      "size_bytes": 45869
+    },
+    {
+      "path": "ingest/streams/worker-01-arrow.json",
+      "sha256": "1bf1473fb7f63b7e59c71109b0c465709ac3ccd0ab3b1ed3e92fb2b725f56f9a",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-02-arrow.json",
+      "sha256": "effac13ddb0c92fb858336c51099afa1985d3154e0a29b3f8c31aefc37c18bcb",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-03-arrow.json",
+      "sha256": "6ff05d89d8b6accae5b8d8b9bd99189663c16741d30d86aa34ac58c4469ce1dd",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-04-arrow.json",
+      "sha256": "c82ca638bd2f2bc7231c067a1461ca592eb636199cac2c656eda636db3f8b868",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-05-arrow.json",
+      "sha256": "eb8d9e5da3d4695e0368496206eb3b216fceb5e42a99bd8553ee211d9775d22b",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-06-arrow.json",
+      "sha256": "2ee0c06bb59dbfb8e233962e0e82e769f2d6ab36485c428ddb329f990c53b1be",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-07-arrow.json",
+      "sha256": "6edf73201fc59b54f5a6798f597f2d7ae10ce3c22d7c3f7e1ecfd9d048ee212a",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-08-arrow.json",
+      "sha256": "6e952f74095a5807ba4a17bafc7029556a47f669e4079f417d388645fbd65ae8",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-09-arrow.json",
+      "sha256": "e57d0e70d9ed91b49033e805e50f7bd89bf37428d57bf26b27487c6b377431ac",
+      "size_bytes": 226
+    },
+    {
+      "path": "ingest/streams/worker-10-arrow.json",
+      "sha256": "45c75718839d0f3225e5ee1160ec4e6d632fba2dbbdbc3d2e41d33ba45b77521",
+      "size_bytes": 227
+    },
+    {
+      "path": "ingest/streams/worker-11-arrow.json",
+      "sha256": "4be0da243148237bacbb3c529d88ea4c289dc56d7dfe43ac5540850c9983bc15",
+      "size_bytes": 227
+    },
+    {
+      "path": "ingest/streams/worker-12-arrow.json",
+      "sha256": "b8ef90c46685ef47b88fd37413708509ff221dd170ccdb9b7bcf19fdb7f92d30",
+      "size_bytes": 227
+    },
+    {
+      "path": "ingest/streams/worker-13-arrow.json",
+      "sha256": "f36045602e13c383453bf460b9123ebb5d2e08d86197ad28a0decfacf00a1229",
+      "size_bytes": 227
+    },
+    {
+      "path": "ingest/streams/worker-14-arrow.json",
+      "sha256": "ac06029725733b0828a2bd4c44b7b5ea07dd844e40f16fb7fbc018c0cd35848a",
+      "size_bytes": 227
+    },
+    {
+      "path": "ingest/streams/worker-15-arrow.json",
+      "sha256": "4b34f878353a0469684600bc313613904f572942a58ba1760c6d4fa18363105e",
+      "size_bytes": 227
+    },
+    {
+      "path": "ingest/streams/worker-16-arrow.json",
+      "sha256": "f3d10ca6bc207496feb0dac6752897d806b65cd2f926b1a8d8fa7bd642d7863d",
+      "size_bytes": 227
+    },
+    {
+      "path": "mv/dashboard_20260918T170453Z.jsonl",
+      "sha256": "b97164940fed258796695511ce46356cffc7b2910d598f6936c5fdf0cee2add7",
+      "size_bytes": 690695
+    },
+    {
+      "path": "raw/drilldown_20260918T170453Z.jsonl",
+      "sha256": "99b9abcea27603515d0f82594b42e6d39ef0dd7dd77088a1c7fe69953657e212",
+      "size_bytes": 108433
+    },
+    {
+      "path": "run_context.json",
+      "sha256": "0cc6fea57545442c1c95bebb01c393c6690ebf43c34091d58ff48b8acf9c8bca",
+      "size_bytes": 1464
+    },
+    {
+      "path": "validation/preflight.json",
+      "sha256": "c7ec0aa5a3a5253b8bfcf612b1eae93ada787b92c99f9dfad21f1a4f7de2bb3b",
+      "size_bytes": 16787
+    },
+    {
+      "path": "validation/query_context.json",
+      "sha256": "c183df149fe5f7c1a07e7b707e7d36f0a71b02bfea851ab55b3c4406fd048753",
+      "size_bytes": 989
+    },
+    {
+      "path": "validation/validation_report_settled_20260921T092624Z.json",
+      "sha256": "a82934d0d86a380da1740135f9dd10ecaf93e456cd2f801b1c3e3c53ed146a14",
+      "size_bytes": 613706
+    }
+  ],
+  "generated_at": "2026-09-21T21:39:40.551Z",
+  "result_size_bytes": 7250225,
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "runtime_state": {
+    "files_excluded": [
+      "source_manifest.json",
+      "ingest_events.jsonl",
+      "full query audit JSONL",
+      "raw provider exports",
+      "process logs"
+    ],
+    "included_in_results": false
+  },
+  "sanitization": {
+    "metrics_changed": false,
+    "profile": "public",
+    "redacted_classes": [
+      "workspace and endpoint coordinates",
+      "warehouse identifiers and names",
+      "service-principal and user identity",
+      "S3 and managed-storage locations",
+      "producer-local absolute paths"
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "excluded_files": [],
+    "hash_validation_file_count": 193,
+    "hash_validation_status": "complete",
+    "manifest_sha256": "8b0dbdc8b1ab83dd5ed5b71a14d6f1ca916f3c6805afe72a7415963f9fafa5dc",
+    "quotes_0_parquet_included": false,
+    "selected_file_count": 193,
+    "selected_row_group_count": 865579,
+    "total_rows": 113219565734
+  },
+  "status": "settled"
+}

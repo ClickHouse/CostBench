@@ -1,0 +1,6 @@
+.venv-runner/
+.venv-zerobus/
+.local-runs/
+
+
+*.log
