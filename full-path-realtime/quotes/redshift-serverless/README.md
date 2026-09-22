@@ -130,10 +130,10 @@ datashare objects — so the read-runners execute from the in-VPC producer box.
 | Question | Answer (as of 2026-08-12) |
 |---|---|
 | MSK sizing for ~1M EPS | **3× `kafka.m7g.xlarge`, 3 AZ, RF=3, 24 partitions.** Measured ingress **~28.5 MB/s compressed** at ~999K EPS (lz4 ≈ 4.8:1, ~138 B/row raw). |
-| Serverless RPU floor | Writer keeps up with **1M EPS at 128 RPU, base=max**: per-partition offset lag **0**, active streaming freshness median 5 s. Reader is 32 RPU, `max = base`. |
+| Serverless RPU floor | Subsequent characterization found **32 RPU** was the minimum writer capacity that still sustained **1M EPS** with 5-second median lag; 16 RPU fell behind. The original long run was captured at 128 RPU. Reader is 32 RPU, `max = base`. |
 | Does the rollup refresh incrementally? | **Yes** — both children report *"updated MV incrementally"*. Keep to COUNT/SUM/MIN/MAX and bucket the day with `DATE_TRUNC` (a `::date` cast risks the mutable-date-time rule that forces full recompute). Typed refresh: 74 s initial build → **17.6 s incremental** under load, 0.4 s quiesced. |
 | Freshness metric | `SYS_STREAM_SCAN_STATES` (`lag_from_latest`, `max_latency_s`) — **point-in-time, must be sampled live**; `monitor_lag.py` writes it to `lag_*.jsonl`. Rollup freshness = that lag + the child's cadence. |
-| Cost attribution | Writer: 128 RPU × full 113,227-second producer uptime. MSK: broker-hours + prorated storage. This **one shared fresh path** is reused by both read variants. Reader queries: committed hourly `compute_seconds` allocated by statement elapsed share. Client cross-AZ and RMS are excluded from the main comparison. |
+| Cost attribution | Writer: an explicit, owner-directed **32-active-RPU assumption** × the full 113,227-second producer uptime. MSK: broker-hours + prorated storage. This **one shared fresh path** is reused by both read variants. The assumption is not represented as original-run billing evidence. Reader queries: committed hourly `compute_seconds` allocated by statement elapsed share. Client cross-AZ and RMS are excluded from the main comparison. |
 
 ## Implementation (built)
 

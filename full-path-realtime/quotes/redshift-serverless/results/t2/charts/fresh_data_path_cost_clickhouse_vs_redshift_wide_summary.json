@@ -23,9 +23,9 @@
       "total_usd": 28.68705
     },
     "redshift": {
-      "writer_usd": 1880.0714311111112,
+      "writer_usd": 470.0178577777778,
       "msk_usd": 52.00912921518265,
-      "total_usd": 1932.0805603262938
+      "total_usd": 522.0269869929605
     }
   },
   "contract": {
@@ -40,7 +40,7 @@
     },
     "redshift": {
       "path": "quotes/redshift-serverless/costs/out/t2/fresh_data_path.json",
-      "sha256": "c77ae92ca2e9fa3f4491383fbba3e02589afbc0d4ea1da2f9590f0297b263cfa"
+      "sha256": "0c891e3040ee9d22b7b7f3c56ebc81b3b500113aec8ab504189752f4cec654db"
     }
   },
   "outputs": {

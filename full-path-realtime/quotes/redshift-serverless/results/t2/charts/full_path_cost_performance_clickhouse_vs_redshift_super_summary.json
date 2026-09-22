@@ -23,11 +23,11 @@
     {
       "label": "Redshift \u00b7 SUPER",
       "runtime_sec": 6093.541947,
-      "fresh_data_path_cost": 1932.0805603262938,
+      "fresh_data_path_cost": 522.0269869929605,
       "query_cost": 24.967476034,
-      "total_cost": 1957.0480363602937,
-      "score": 11925354.30185543,
-      "relative_to_clickhouse": 7139.739408749949
+      "total_cost": 546.9944630269605,
+      "score": 3333133.705231524,
+      "relative_to_clickhouse": 1995.5554751250984
     }
   ],
   "query_cost_display": "total",

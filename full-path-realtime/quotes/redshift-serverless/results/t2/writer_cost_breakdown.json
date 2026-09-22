@@ -1,7 +1,8 @@
 {
   "_README": [
     "Writer fresh-data-path cost for the T2 run.",
-    "The benchmark model charges the declared 128-RPU writer for the full producer uptime.",
+    "The accepted benchmark scenario assumes 32 active writer RPUs for the full producer uptime.",
+    "This is an owner-directed model informed by later capacity characterization, not original-run charged_seconds.",
     "This path includes streaming ingestion and maintenance of both child MVs and is shared once",
     "by the SUPER and typed read alternatives. It is not decomposed or duplicated per alternative.",
     "The observed usage audit and activity shares are diagnostic evidence, not the chart cost model."
@@ -15,20 +16,22 @@
     "basis": "producer log: DONE after 113,227 seconds"
   },
   "capacity_time_model": {
-    "base_rpu": 128,
-    "max_rpu": 128,
-    "capacity_time_rpu_seconds": 14493056,
-    "capacity_time_rpu_hours": 4025.848888888889,
+    "assumed_active_rpu": 32,
+    "capacity_time_rpu_seconds": 3623264,
+    "capacity_time_rpu_hours": 1006.4622222222222,
     "price_per_rpu_hour_usd": 0.467,
-    "cost_usd": 1880.0714311111112,
+    "cost_usd": 470.0178577777778,
     "region": "eu-west-2",
-    "shared_between_read_variants": true
+    "shared_between_read_variants": true,
+    "evidence_scope": "benchmark-owner-directed modeling assumption; not a reconstruction of the original run's charged_seconds"
   },
   "observed_usage_audit": {
     "window_end": "2026-08-14T00:20:03Z",
+    "original_run_configured_rpu": 128,
     "metered_compute_rpu_seconds": 14535501,
+    "original_run_capacity_time_rpu_seconds": 14493056,
     "capacity_time_utilisation_pct": 100.3,
-    "interpretation": "audit of the historical usage extraction; not used by the reproducible capacity-time summarizer"
+    "interpretation": "diagnostic audit of the original 128-RPU run; not used by the accepted 32-RPU capacity-time assumption"
   },
   "concurrency": {
     "sum_statement_elapsed_seconds": 294075,

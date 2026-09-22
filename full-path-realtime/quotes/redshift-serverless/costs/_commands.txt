@@ -12,6 +12,7 @@ RS_OUT="$RS_COSTS/out/t2"
 CH_COSTS="quotes/clickhouse-cloud/costs"
 CH_MATCHED="$CH_COSTS/out_t2/matched/redshift_run_20260812"
 ALLOCATION="$RS_RESULTS/billed_per_query_reader.csv"
+WRITER_CAPACITY_ASSUMPTION="$RS_COSTS/writer_capacity_assumption.json"
 
 mkdir -p "$RS_OUT"
 
@@ -37,8 +38,11 @@ python3 "$RS_COSTS/summarize_queries.py" \
   --allocation-csv "$ALLOCATION"
 
 # One shared writer + MSK path. It is reused by both read alternatives and is
-# never divided or charged twice. Client cross-AZ and RMS are excluded.
-python3 "$RS_COSTS/summarize_fresh_path.py" "$RS_OUT/fresh_data_path.json"
+# never divided or charged twice. The writer uses the accepted, hash-tracked
+# 32-RPU modeling assumption; this is not a reconstruction of charged_seconds.
+# Client cross-AZ and RMS are excluded.
+python3 "$RS_COSTS/summarize_fresh_path.py" "$RS_OUT/fresh_data_path.json" \
+  --writer-capacity-assumption "$WRITER_CAPACITY_ASSUMPTION"
 
 python3 "$RS_COSTS/combine_full_path.py" \
   --variant super \

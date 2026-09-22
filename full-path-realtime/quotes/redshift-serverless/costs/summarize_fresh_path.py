@@ -25,13 +25,27 @@ def parse_time(value: str) -> datetime:
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
 
+def load_capacity_assumption(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("system") != "Redshift Serverless":
+        raise ValueError("writer-capacity assumption must name Redshift Serverless")
+    if payload.get("component") != "producer workgroup":
+        raise ValueError("writer-capacity assumption must target the producer workgroup")
+    rpu = payload.get("assumed_active_rpu")
+    if isinstance(rpu, bool) or not isinstance(rpu, (int, float)) or float(rpu) <= 0:
+        raise ValueError("writer-capacity assumption requires positive assumed_active_rpu")
+    if "not a reconstruction" not in str(payload.get("evidence_scope", "")):
+        raise ValueError("writer-capacity assumption must disclose its non-billing evidence scope")
+    return payload
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--start", default="2026-08-12T16:53:56Z")
     parser.add_argument("--end", default="2026-08-14T00:21:03Z")
     parser.add_argument("--rows", type=int, default=113_219_565_734)
-    parser.add_argument("--writer-rpu", type=float, default=128)
+    parser.add_argument("--writer-capacity-assumption", type=Path, required=True)
     parser.add_argument("--msk-brokers", type=int, default=3)
     parser.add_argument("--msk-storage-gb-per-broker", type=float, default=500)
     parser.add_argument("--msk-partitions", type=int, default=24)
@@ -46,18 +60,21 @@ def main() -> int:
     duration_seconds = (end - start).total_seconds()
     if duration_seconds <= 0:
         raise ValueError("--end must be after --start")
-    if args.rows <= 0 or args.writer_rpu <= 0 or args.msk_brokers <= 0:
-        raise ValueError("rows, writer RPU, and broker count must be positive")
+    if args.rows <= 0 or args.msk_brokers <= 0:
+        raise ValueError("rows and broker count must be positive")
 
     pricing_path = args.pricing.expanduser().resolve()
     pricing = json.loads(pricing_path.read_text(encoding="utf-8"))
+    assumption_path = args.writer_capacity_assumption.expanduser().resolve()
+    assumption = load_capacity_assumption(assumption_path)
+    writer_rpu = float(assumption["assumed_active_rpu"])
     hours = duration_seconds / 3600
     redshift_rate = float(pricing["redshift_serverless"]["rpu_hour_usd"])
     broker_rate = float(pricing["msk_provisioned"]["broker_hour_usd"])
     storage_rate = float(pricing["msk_provisioned"]["storage_gb_month_usd"])
     month_hours = float(pricing["month_hours"])
 
-    writer_rpu_seconds = args.writer_rpu * duration_seconds
+    writer_rpu_seconds = writer_rpu * duration_seconds
     writer_cost = writer_rpu_seconds / 3600 * redshift_rate
     broker_cost = args.msk_brokers * hours * broker_rate
     total_storage_gb = args.msk_brokers * args.msk_storage_gb_per_broker
@@ -65,7 +82,7 @@ def main() -> int:
     msk_total = broker_cost + storage_cost
     total = writer_cost + msk_total
     payload: dict[str, Any] = {
-        "schema_version": 1,
+        "schema_version": 2,
         "system": "Redshift Serverless",
         "scope": "complete-ingest fresh-data path",
         "rows_ingested": args.rows,
@@ -81,13 +98,19 @@ def main() -> int:
             "read_variants": ["dashboard + SUPER drill-down", "dashboard + typed drill-down"],
             "attribution": "The writer and MSK path is charged once, reused unchanged by both counterfactual read-path comparisons, and never split or doubled.",
         },
+        "writer_capacity_assumption": {
+            "path": portable_path(assumption_path),
+            "sha256": sha256(assumption_path),
+            **assumption,
+        },
         "components": {
             "writer_workgroup": {
-                "base_rpu": args.writer_rpu,
+                "assumed_active_rpu": writer_rpu,
                 "capacity_time_rpu_seconds": writer_rpu_seconds,
                 "rpu_hour_rate_usd": redshift_rate,
                 "cost_usd": writer_cost,
-                "model": "declared base capacity multiplied by full producer uptime",
+                "model": assumption["cost_model"],
+                "evidence_scope": assumption["evidence_scope"],
             },
             "msk": {
                 "brokers": args.msk_brokers,

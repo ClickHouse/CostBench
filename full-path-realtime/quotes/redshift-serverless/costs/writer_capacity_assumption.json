@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "system": "Redshift Serverless",
+  "component": "producer workgroup",
+  "assumed_active_rpu": 32,
+  "cost_model": "assumed active capacity multiplied by complete producer uptime",
+  "evidence_scope": "benchmark-owner-directed modeling assumption; not a reconstruction of the original run's charged_seconds",
+  "basis": "Subsequent capacity characterization reported that 32 RPU sustained the 1 million events/second target with a 5-second median lag, while 16 RPU did not keep up.",
+  "accepted_on": "2026-08-17",
+  "applies_to": "the shared Redshift writer plus MSK complete-ingest fresh-data path used unchanged by the SUPER and typed read alternatives"
+}
