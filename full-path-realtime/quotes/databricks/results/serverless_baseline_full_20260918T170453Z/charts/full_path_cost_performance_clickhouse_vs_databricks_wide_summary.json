@@ -1,0 +1,84 @@
+{
+  "sources": {
+    "full_path": {
+      "path": "quotes/databricks/costs/out/serverless_20260918/full_path.json",
+      "sha256": "b62e33021a8a15aedeee53a714db561b227f7ff07db5f782213b95033c962b1f"
+    },
+    "fresh_path": {
+      "path": "quotes/databricks/costs/out/serverless_20260918/fresh_data_path.json",
+      "sha256": "f0ce663e9eeda1b2b12f81ffd8d178d75049a38eac26d1b5ecb316e3b9625de1"
+    }
+  },
+  "status": "complete",
+  "comparison_scope": {
+    "schema_version": 1,
+    "run_id": "serverless_baseline_full_20260918T170453Z",
+    "comparison": "real-time analytics during active ingestion",
+    "authority": "benchmark owner-defined scope",
+    "preparation_window": {
+      "since": "2026-09-18T17:04:53.000Z",
+      "until": "2026-09-20T00:33:42.627Z",
+      "end_exclusive": true
+    },
+    "query_selection": {
+      "dashboard_iterations": 189,
+      "drilldown_iterations": 32
+    },
+    "included_components": [
+      "zerobus",
+      "mv_refresh",
+      "clustering",
+      "matched_dashboard_queries",
+      "matched_drilldown_queries"
+    ],
+    "post_ingestion_work_included": false
+  },
+  "missing_components": [],
+  "note": "Includes ingestion, maintenance and matched query cost.",
+  "caveats": [
+    "Zerobus and MV refresh use signed, prorated DBUs at checked-in public list rates; no second allocation",
+    "Predictive Optimization uses ESTIMATED_DBU",
+    "Normalized query costs are separate; no invoice reconstruction"
+  ],
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "runtime_sec": 56.385999999999996,
+      "query_cost": 0.0489,
+      "fresh_path_cost": 28.68705,
+      "total_cost": 28.73595,
+      "cost_runtime_product": 1620.3052767,
+      "relative_to_clickhouse": 1.0,
+      "displayed_fresh_path_cost_usd": 28.68705,
+      "displayed_total_cost_usd": 28.73595,
+      "displayed_cost_runtime_product": 1620.3052767,
+      "cost_complete": true,
+      "displayed_relative_to_clickhouse": 1.0
+    },
+    {
+      "label": "Databricks Serverless SQL",
+      "runtime_sec": 1746.166,
+      "query_cost": 2.6483517666666665,
+      "fresh_path_cost": 695.604750434355,
+      "total_cost": 698.2531022010216,
+      "cost_runtime_product": 1219265.8264579491,
+      "relative_to_clickhouse": 752.4914249129466,
+      "displayed_fresh_path_cost_usd": 695.604750434355,
+      "displayed_total_cost_usd": 698.2531022010216,
+      "displayed_cost_runtime_product": 1219265.8264579491,
+      "cost_complete": true,
+      "displayed_relative_to_clickhouse": 752.4914249129466
+    }
+  ],
+  "schema_version": 1,
+  "chart": "full_path_cost_performance_clickhouse_vs_databricks",
+  "layout": {
+    "variant": "wide",
+    "data_and_math_unchanged": true
+  },
+  "outputs": {
+    "png": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_performance_clickhouse_vs_databricks_wide.png",
+    "svg": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_performance_clickhouse_vs_databricks_wide.svg",
+    "csv": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_performance_clickhouse_vs_databricks_wide_data.csv"
+  }
+}

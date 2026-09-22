@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "status": "ready",
+  "missing_components": [],
+  "full_path_cost_complete": true,
+  "allocation_status": "complete_for_real_time_window",
+  "comparison_scope": {
+    "schema_version": 1,
+    "run_id": "serverless_baseline_full_20260918T170453Z",
+    "comparison": "real-time analytics during active ingestion",
+    "authority": "benchmark owner-defined scope",
+    "preparation_window": {
+      "since": "2026-09-18T17:04:53.000Z",
+      "until": "2026-09-20T00:33:42.627Z",
+      "end_exclusive": true
+    },
+    "query_selection": {
+      "dashboard_iterations": 189,
+      "drilldown_iterations": 32
+    },
+    "included_components": [
+      "zerobus",
+      "mv_refresh",
+      "clustering",
+      "matched_dashboard_queries",
+      "matched_drilldown_queries"
+    ],
+    "post_ingestion_work_included": false
+  },
+  "note": "All cost components integrated for the accepted real-time benchmark window."
+}

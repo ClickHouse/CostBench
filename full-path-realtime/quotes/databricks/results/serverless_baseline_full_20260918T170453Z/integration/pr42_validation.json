@@ -1,0 +1,74 @@
+{
+  "package_artifacts_verified": 34,
+  "existing_query_and_unrelated_files_unchanged": 108,
+  "databricks_tests_passed": 109,
+  "cost_chart_variants": 14,
+  "standard_wide_data_pairs_equal": 7,
+  "wide_dimensions": [
+    5156,
+    2900
+  ],
+  "wide_transparent_header_pixels": 560,
+  "no_catchup_or_provisional_chart_labels": true,
+  "databricks_present_in_all_global_cost_charts": true,
+  "chart_summaries": [
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_cost_components_summary.json",
+      "sha256": "55d8f091c15b1f7babea3bd392a3f418d27c52c843a4c97f92fb629aaf8c7444"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_cost_components_wide_summary.json",
+      "sha256": "058d96c623b7275e17a673d216e9b8e16e8530e7ecf72293b971df7102097d9f"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/fresh_data_path_cost_clickhouse_vs_databricks_summary.json",
+      "sha256": "40cd688061272b34ddd015be68c230040213daebfd881d7e1eceaab68c33ef76"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/fresh_data_path_cost_clickhouse_vs_databricks_wide_summary.json",
+      "sha256": "8e64ba0c1c785616cff74d182129bf30ec9a92908f6188f941a25b24c1615f89"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_performance_clickhouse_vs_databricks_summary.json",
+      "sha256": "5d6152a6020e8137d7ca638a8b6fbf5e776335ecd55ed6c125c9bfca7cad7a88"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_performance_clickhouse_vs_databricks_wide_summary.json",
+      "sha256": "10ee844dc331ba708591680985e8a05182fd13a8335a3f851b59fb0fc6eff8c0"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_vs_query_runtime_clickhouse_vs_databricks_summary.json",
+      "sha256": "3ff4216934438e6ee77183ed90a086b36519fddc19bc5a0304820306ca5cb1fe"
+    },
+    {
+      "path": "full-path-realtime/quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/full_path_cost_vs_query_runtime_clickhouse_vs_databricks_wide_summary.json",
+      "sha256": "c96345a14d8b8046e1ade478da1f7de4d38e9c613e817546f047d31350b05b6a"
+    },
+    {
+      "path": "full-path-realtime/quotes/global/results/charts/ingest_fresh_path_cost_all_systems_summary.json",
+      "sha256": "8fc6d347afe9acdd7a41e56fa57a546d485b531e1fea8dd2de94d49352588d18"
+    },
+    {
+      "path": "full-path-realtime/quotes/global/results/charts/ingest_fresh_path_cost_all_systems_wide_summary.json",
+      "sha256": "271699896c21c417af64454738fb8475f5114d620bdc5741f472136346001940"
+    },
+    {
+      "path": "full-path-realtime/quotes/global/results/charts/full_path_cost_performance_all_systems_summary.json",
+      "sha256": "54104091cf9a497addd97625ecd3f857f65ba7a091a23dd563a585cba8cab7aa"
+    },
+    {
+      "path": "full-path-realtime/quotes/global/results/charts/full_path_cost_performance_all_systems_wide_summary.json",
+      "sha256": "de4daa2abdb12164a113b928fb020da502e5a385075a0812f203dfcaae9183ea"
+    },
+    {
+      "path": "full-path-realtime/quotes/global/results/charts/full_path_cost_vs_query_runtime_all_systems_summary.json",
+      "sha256": "adbb53df5d2631f0aaf5f7d6d033459a1b1e0ae46e2929c9ace71e5f6d6acd07"
+    },
+    {
+      "path": "full-path-realtime/quotes/global/results/charts/full_path_cost_vs_query_runtime_all_systems_wide_summary.json",
+      "sha256": "ad4e7d984d704e7334be7e2713b80391a7a7b7d6e424fc596dafec22edc68df2"
+    }
+  ],
+  "scope": "Accepted active-ingestion real-time comparison",
+  "status": "complete"
+}

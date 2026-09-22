@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Full September serverless run. Public Premium list tariffs; normalized query cost.
+DB="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT="$(cd "$DB/../.." && pwd)"
+RUN="$DB/results/serverless_baseline_full_20260918T170453Z"
+OUT="$DB/costs/out/serverless_20260918"
+CH="$ROOT/quotes/clickhouse-cloud"
+MATCH="$CH/results_t2/matched/databricks_serverless_20260918"
+CH_OUT="$CH/costs/out_t2/matched/databricks_serverless_20260918"
+mkdir -p "$OUT" "$CH_OUT"
+# Costs-only refresh validates and reuses the accepted query selections/summaries.
+if [[ "${ALLOCATIONS_ONLY:-0}" == 1 ]]; then
+  "${UV:-uv}" run --python 3.12 python "$DB/integrate_september.py" refresh-inputs
+else
+# uv supplies Python >=3.10 for the shared matcher; stdlib-only pricing scripts.
+"${UV:-uv}" run --python 3.12 python "$DB/integrate_september.py" prepare
+bash "$DB/costs/summarize_queries.sh" "$RUN/mv/dashboard_20260918T170453Z.jsonl" "$DB/costs/pricings/sql_serverless_compute.json" "$OUT/dashboard.json" --cloud aws --region eu-west-1 --plan premium --iterations 189
+bash "$DB/costs/summarize_queries.sh" "$RUN/raw/drilldown_20260918T170453Z.jsonl" "$DB/costs/pricings/sql_serverless_compute.json" "$OUT/drilldown.json" --cloud aws --region eu-west-1 --plan premium --iterations 32
+# Entire matched files: no second iteration slice. Retain accepted CH full-ingest cost.
+bash "$CH/costs/summarize_queries.sh" "$MATCH/dashboard_active_matched_to_databricks.jsonl" "$CH_OUT/dashboard.json"
+bash "$CH/costs/summarize_queries.sh" "$MATCH/drilldown_active_matched_to_databricks.jsonl" "$CH_OUT/drilldown.json"
+fi
+bash "$DB/costs/summarize_zerobus.sh" "$RUN/ingest/zerobus_ingest_allocation.csv" "$DB/costs/pricings/zerobus_ingest.json" "$OUT/zerobus.json"
+bash "$DB/costs/summarize_clustering.sh" "$RUN/ingest/predictive_optimization_allocation.csv" "$DB/costs/pricings/serverless_maintenance.json" "$OUT/clustering.json"
+bash "$DB/costs/summarize_mv_refresh.sh" "$RUN/freshness/mv_refresh_allocation.csv" "$DB/costs/pricings/serverless_maintenance.json" "$OUT/mv_refresh.json"
+python3 "$DB/costs/summarize_components.py" assemble "$OUT"
+"${UV:-uv}" run --python 3.12 python "$DB/integrate_september.py" refresh-inputs
+"${UV:-uv}" run --python 3.12 python "$DB/integrate_september.py" finalize

@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "status": "complete",
+  "missing_components": [],
+  "comparison_scope": {
+    "schema_version": 1,
+    "run_id": "serverless_baseline_full_20260918T170453Z",
+    "comparison": "real-time analytics during active ingestion",
+    "authority": "benchmark owner-defined scope",
+    "preparation_window": {
+      "since": "2026-09-18T17:04:53.000Z",
+      "until": "2026-09-20T00:33:42.627Z",
+      "end_exclusive": true
+    },
+    "query_selection": {
+      "dashboard_iterations": 189,
+      "drilldown_iterations": 32
+    },
+    "included_components": [
+      "zerobus",
+      "mv_refresh",
+      "clustering",
+      "matched_dashboard_queries",
+      "matched_drilldown_queries"
+    ],
+    "post_ingestion_work_included": false
+  },
+  "scope_source": {
+    "path": "quotes/databricks/costs/scopes/serverless_20260918.json",
+    "sha256": "fcb45742354d21a3801cb7ac8cc1c5c8ab1eca92168d0b5e529e96e2147c9394"
+  },
+  "allocated_window_plus_matched_queries_usd": 698.2531022010216,
+  "rows": [
+    {
+      "label": "ClickHouse",
+      "runtime_sec": 56.385999999999996,
+      "query_cost": 0.0489,
+      "fresh_path_cost": 28.68705,
+      "total_cost": 28.73595,
+      "cost_runtime_product": 1620.3052767,
+      "relative_to_clickhouse": 1.0
+    },
+    {
+      "label": "Databricks Serverless SQL",
+      "runtime_sec": 1746.166,
+      "query_cost": 2.6483517666666665,
+      "fresh_path_cost": 695.604750434355,
+      "total_cost": 698.2531022010216,
+      "cost_runtime_product": 1219265.8264579491,
+      "relative_to_clickhouse": 752.4914249129466
+    }
+  ],
+  "sources": {
+    "ClickHouse_dashboard": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/databricks_serverless_20260918/dashboard.json",
+      "sha256": "ea8e835c58c9d7e99ab0f83d4b3ffa02bec292bb1edb004ae61c2bf4053c6387"
+    },
+    "ClickHouse_drilldown": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/databricks_serverless_20260918/drilldown.json",
+      "sha256": "68a5251de2a7b6eb10159e1f8ae3c408fe85688f0aaeb426fc26f89744b92b59"
+    },
+    "ClickHouse_fresh_path": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
+      "sha256": "6273b75ad99251d297e696dce3a7ce5aeca6d22beb715c41a67f3b1d6bf810b1"
+    },
+    "Databricks Serverless SQL_dashboard": {
+      "path": "quotes/databricks/costs/out/serverless_20260918/dashboard.json",
+      "sha256": "106aef7bcdcd275bd850e5171bcb18bff91670e59e670137020fe4079d5f1308"
+    },
+    "Databricks Serverless SQL_drilldown": {
+      "path": "quotes/databricks/costs/out/serverless_20260918/drilldown.json",
+      "sha256": "5e4fc9486014073da6609effbf4eb0081fb1e4347d226379397a28bfe58d2484"
+    },
+    "Databricks Serverless SQL_fresh_path": {
+      "path": "quotes/databricks/costs/out/serverless_20260918/fresh_data_path.json",
+      "sha256": "f0ce663e9eeda1b2b12f81ffd8d178d75049a38eac26d1b5ecb316e3b9625de1"
+    }
+  },
+  "matching_manifest": {
+    "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/integration/manifest.json",
+    "sha256": "52378066bfbdc46285569a4f0a08aabcdafd077e9281ff5e5777a067e5ca3ded"
+  },
+  "formula": "(real-time fresh-data-path USD + matched query USD) * matched query runtime seconds",
+  "cost_model": "normalized queries + allocated DBUs and estimated maintenance at public list rates",
+  "scope_exclusions": [
+    "producer VM",
+    "object storage capacity/requests",
+    "network",
+    "control SQL",
+    "query warehouse idle/minimum billing",
+    "warm-window reads"
+  ]
+}

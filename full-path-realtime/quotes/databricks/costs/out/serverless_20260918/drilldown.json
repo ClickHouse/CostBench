@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "source_file": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/raw/drilldown_20260918T170453Z.jsonl",
+  "source": {
+    "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/raw/drilldown_20260918T170453Z.jsonl",
+    "sha256": "99b9abcea27603515d0f82594b42e6d39ef0dd7dd77088a1c7fe69953657e212"
+  },
+  "pricing_source": {
+    "path": "quotes/databricks/costs/pricings/sql_serverless_compute.json",
+    "sha256": "0ede879fc42bb3a63ef1b6583af24e7bf62c3afeee5e5f307922bb19f10360a9"
+  },
+  "system": "Databricks (AWS)",
+  "version": "4.2.0 0000000000000000000000000000000000000000",
+  "warehouse_size": "X-Small",
+  "cloud": "aws",
+  "region": "eu-west-1",
+  "plan": "premium",
+  "cost_model": "normalized_runtime_list_price",
+  "runtime_source": "runner result: provider Query History total duration; includes compilation; excludes result fetch",
+  "scope_note": "Accepted prefix; idle, minimum billing and other warehouse activity excluded. Public list pricing, not invoice allocation.",
+  "iterations_included": 32,
+  "queries_per_iteration": 2,
+  "query_jobs": 64,
+  "total_runtime_seconds": 1133.002,
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "last_sampled_raw_rows": 111648774193,
+  "raw_rows_source": "producer_progress.logical_raw_rows",
+  "costs": [
+    {
+      "tier": "premium",
+      "warehouse_size": "X-Small",
+      "dbu_per_hour": 6.0,
+      "dbu_price_per_hour": 0.91,
+      "total_compute_cost_usd": 1.7183863666666666
+    }
+  ]
+}

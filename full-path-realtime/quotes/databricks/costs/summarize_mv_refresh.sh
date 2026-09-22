@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# September JSON/CSV adapter; legacy Markdown handling remains below.
+if [[ "${1:-}" == *.json || "${1:-}" == *.csv ]]; then
+  exec "${PYTHON:-python3}" "$(dirname "$0")/summarize_components.py" mv_refresh "$@"
+fi
+
 # ---------------------------------------------
 # Summarize Databricks MV refresh cost from a
 # system.billing.usage markdown export.
