@@ -206,6 +206,27 @@ After each observation, the monitor atomically replaces this file with the
 latest compact sample. It is a current-state snapshot, not an aggregate over
 the JSONL history.
 
+## `freshness/mv_refresh_allocation.csv`
+
+**How data was collected**
+
+- Exact SQL: query 1 in `export_allocation_details.sql`.
+- Direct sources: `system.billing.usage` and
+  `system.billing.list_prices`.
+- Attribution: UC catalog/schema/table metadata is used to discover every
+  `dlt_pipeline_id` for the target MV; all rows for those pipeline IDs are then
+  included, including rows whose UC table fields are null.
+- Allocation: billing intervals are clipped to
+  `[run_start, producer_finished)` and `usage_quantity` is prorated by exact
+  microsecond overlap using `DECIMAL(38, 18)`.
+- Cost: each detailed allocated DBU line is joined to the one effective list
+  price covering its complete source billing interval.
+
+The CSV contains one billing allocation line per provider usage record. It is
+not redundant with freshness JSONL: freshness records MV data lag and refresh
+watermarks, while this file records refresh billing DBUs and list cost over
+time. Public packaging pseudonymizes billing record and pipeline IDs.
+
 ## `ingest/ingest_metrics.jsonl`
 
 **How data was collected**
@@ -294,6 +315,41 @@ close and inspection succeeded, unacknowledged batch/row counts, persisted
 diagnostic artifacts, and inspection errors. The file exists even on a worker
 failure so that ambiguous durability is visible.
 
+## `ingest/zerobus_ingest_allocation.csv`
+
+**How data was collected**
+
+- Exact SQL: query 3 in `export_allocation_details.sql`.
+- Direct source: `system.billing.usage`.
+- Attribution:
+  `product_features.lakeflow_connect.zerobus_request_type = 'GRPC'` plus the
+  raw table's Unity Catalog table ID.
+- Allocation: DBU intervals are clipped to
+  `[run_start, producer_finished)` and prorated by exact microsecond overlap
+  using `DECIMAL(38, 18)`.
+
+The CSV contains one signed billing line per interval, with source and
+benchmark-allocated DBUs. It is not redundant with ingest metrics or provider
+reconciliation: those contain row/byte throughput and durability, not billed
+DBUs. Public packaging pseudonymizes billing record and table IDs.
+
+## `ingest/predictive_optimization_allocation.csv`
+
+**How data was collected**
+
+- Exact SQL: query 2 in `export_allocation_details.sql`.
+- Direct source:
+  `system.storage.predictive_optimization_operations_history`.
+- Filter: target catalog/schema/raw/MV names and operation intervals
+  overlapping `[run_start, producer_finished)`.
+- Values: operation type/status, start/end, provider operation metrics, and
+  `usage_quantity` reported in `ESTIMATED_DBU`.
+
+This CSV is the sole packaged operation-level Predictive Optimization detail.
+The compact clustering JSON retains table configuration and operation
+summaries/counts but no longer duplicates the operation array. Public
+packaging pseudonymizes metastore and operation IDs.
+
 ## `evidence/provider_reconciliation.json`
 
 **How data was collected**
@@ -352,8 +408,10 @@ file reports type counts, class counts, and the derived full-refresh count.
 
 The file keeps table format/location metadata, clustering columns, relevant
 Delta features and properties, compression settings, configured/effective
-Predictive Optimization state, operation summaries, and the count of
-clustering/optimize operations. It does not inspect table contents.
+Predictive Optimization state, aggregate operation summaries, and the count
+of clustering/optimize operations. Detailed operation rows live only in
+`ingest/predictive_optimization_allocation.csv`. It does not inspect table
+contents.
 
 ## `validation/preflight.json`
 

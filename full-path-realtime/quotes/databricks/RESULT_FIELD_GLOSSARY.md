@@ -171,6 +171,27 @@ The progress file is the latest snapshot; each JSONL line has the same shape.
 - `statement_ids.zerobus_ingest`, `statement_ids.raw_history`, `statement_ids.mv_events`: provider evidence statements.
 - `errors[]`: shared `error_entry` objects.
 
+## `freshness/mv_refresh_allocation.csv`
+
+- `usage_start_time`, `usage_end_time`: complete provider billing interval.
+- `allocated_start`, `allocated_end`: interval clipped to the benchmark's
+  active-ingestion window.
+- `record_id`: pseudonymized billing-record identifier.
+- `record_type`: `ORIGINAL`, `RETRACTION`, or `RESTATEMENT`; quantities retain
+  their provider-exported sign.
+- `pipeline_id`: pseudonymized MV pipeline identifier.
+- `catalog_name`, `schema_name`, `table_name`: optional UC table attribution.
+  They can be null even when the pipeline ID is present.
+- `billing_origin_product`, `sku_name`: provider billing classification and
+  SKU.
+- `source_dbu`: DBUs for the complete source billing interval.
+- `allocated_dbu`: exact prorated DBUs within the benchmark window.
+- `currency_code`, `price_per_dbu`: effective list-price currency and unit
+  price.
+- `cost`: `allocated_dbu * price_per_dbu`.
+- `custom_tags`: provider custom-tag map.
+- `ingestion_date`: date the billing row entered the billing system.
+
 ## `ingest/ingest_metrics.jsonl`
 
 Each line is one compact producer metrics snapshot.
@@ -265,6 +286,34 @@ This pattern contains every field defined for `ingest/ingest_progress.json` plus
 - `artifacts[]`: preserved unacknowledged Arrow batches using the artifact fields under `stream_status`.
 - `inspection_error`: optional redacted inspection failure.
 
+## `ingest/zerobus_ingest_allocation.csv`
+
+- `usage_start_time`, `usage_end_time`: complete provider billing interval.
+- `allocated_start`, `allocated_end`: interval clipped to active ingestion.
+- `record_id`: pseudonymized billing-record identifier.
+- `record_type`: signed billing record type.
+- `table_id`: pseudonymized Unity Catalog target table ID.
+- `zerobus_request_type`: protocol/request attribution, such as `GRPC`.
+- `billing_origin_product`, `sku_name`: provider billing product and SKU.
+- `source_dbu`: DBUs for the complete billing interval.
+- `allocated_dbu`: exact prorated DBUs within the benchmark window.
+- `custom_tags`: provider custom-tag map.
+- `ingestion_date`: billing ingestion date.
+
+## `ingest/predictive_optimization_allocation.csv`
+
+- `metastore_name`: pseudonymized metastore identifier.
+- `catalog_name`, `schema_name`, `table_name`: operation target.
+- `operation_id`: pseudonymized operation identifier.
+- `operation_type`: operation class, such as `CLUSTERING` or `ANALYZE`.
+- `operation_status`: provider operation outcome.
+- `start_time`, `end_time`: operation interval.
+- `usage_unit`: provider unit, `ESTIMATED_DBU` for this source.
+- `estimated_dbu`: provider-estimated operation DBUs; not authoritative billed
+  DBUs.
+- `operation_metrics`: provider JSON metrics such as files/bytes scanned,
+  removed, or clustered.
+
 ## `evidence/provider_reconciliation.json`
 
 - `schema_version`, `run_id`, `collected_at`: schema revision, correlated run identifier, and collection time.
@@ -300,10 +349,9 @@ This pattern contains every field defined for `ingest/ingest_progress.json` plus
 - `predictive_optimization.summary.operation_count`, `predictive_optimization.summary.operation_counts_by_type.{type}`: operation totals.
 - `predictive_optimization.summary.usage_by_unit.{unit}`: usage quantity by provider unit.
 - `predictive_optimization.clustering_operation_count`: clustering-class operation count.
-- `predictive_optimization.operations[]`: compact provider operations.
-- `operations[].table_name`, `operations[].operation_id`, `operations[].operation_type`, `operations[].operation_status`: operation identity and status.
-- `operations[].start_time`, `operations[].end_time`, `operations[].usage_unit`, `operations[].usage_quantity`: operation bounds and usage.
-- `operations[].operation_metrics.{metric}`: decoded provider metric map.
+
+Detailed operation rows are stored only in
+`ingest/predictive_optimization_allocation.csv`.
 
 ## `validation/preflight.json`
 
