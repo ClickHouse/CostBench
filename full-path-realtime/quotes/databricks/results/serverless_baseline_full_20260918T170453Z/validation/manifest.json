@@ -1,10 +1,10 @@
 {
-  "artifact_count": 31,
+  "artifact_count": 34,
   "artifacts": [
     {
       "path": "evidence/clustering_status.json",
-      "sha256": "1fb8526e95462201241bc29de6d5eabd1fb8db376f241db9d36164d20ec3d13f",
-      "size_bytes": 11339
+      "sha256": "245dde29a7be89c081674fe820d61f7f0b78b83b29547e5ccc9ea7e599b03fcc",
+      "size_bytes": 2639
     },
     {
       "path": "evidence/mv_refresh_summary.json",
@@ -27,6 +27,11 @@
       "size_bytes": 3129406
     },
     {
+      "path": "freshness/mv_refresh_allocation.csv",
+      "sha256": "f2147e76bb379ebb26bd84608ee99d2fb9a187a8098a069e5bb5611c766a68db",
+      "size_bytes": 1122595
+    },
+    {
       "path": "ingest/ingest_metrics.jsonl",
       "sha256": "4cf781aef4e829c1763c77282356d2c8d6e62dfd6f6b1d85305dbf2010ba59b5",
       "size_bytes": 2590969
@@ -40,6 +45,11 @@
       "path": "ingest/ingest_summary.json",
       "sha256": "776bb4bdd58aaafff891d632e749988410584a9dbf35e819fca5e5568fb8e407",
       "size_bytes": 17094
+    },
+    {
+      "path": "ingest/predictive_optimization_allocation.csv",
+      "sha256": "91656e13b872fa64e0ee0b12c1a214bb52836703159330a94c283a5c1a5c0c5b",
+      "size_bytes": 5448
     },
     {
       "path": "ingest/source_hashes_post_run.json",
@@ -127,6 +137,11 @@
       "size_bytes": 227
     },
     {
+      "path": "ingest/zerobus_ingest_allocation.csv",
+      "sha256": "5288be110892f92feb541ceee921f60543293c5e913db0a8ebf4ec8e01886bf9",
+      "size_bytes": 53004
+    },
+    {
       "path": "mv/dashboard_20260918T170453Z.jsonl",
       "sha256": "b97164940fed258796695511ce46356cffc7b2910d598f6936c5fdf0cee2add7",
       "size_bytes": 690695
@@ -158,7 +173,7 @@
     }
   ],
   "generated_at": "2026-09-21T21:39:40.551Z",
-  "result_size_bytes": 7250225,
+  "result_size_bytes": 8422572,
   "run_id": "serverless_baseline_full_20260918T170453Z",
   "runtime_state": {
     "files_excluded": [
@@ -178,7 +193,8 @@
       "warehouse identifiers and names",
       "service-principal and user identity",
       "S3 and managed-storage locations",
-      "producer-local absolute paths"
+      "producer-local absolute paths",
+      "provider billing, pipeline, table, metastore, and operation identifiers"
     ]
   },
   "schema_version": 1,

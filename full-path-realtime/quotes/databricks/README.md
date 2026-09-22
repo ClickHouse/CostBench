@@ -190,6 +190,8 @@ substitute for the producer's file hashes and canonical task manifest.
   catalog and schema are administrator prerequisites.
 - `queries_mv.sql`: the four canonical dashboard statements in fixed order.
 - `queries_raw.sql`: the two canonical drill-down statements in fixed order.
+- `export_allocation_details.sql`: detailed non-aggregated MV refresh,
+  Predictive Optimization, and Zerobus allocation exports.
 - `dbx_common.py`: standard-library REST, SQL rendering/splitting, bounded
   result retrieval, atomic evidence writes, configuration, and redaction.
 - `apply_ddl.py`: standard-library destructive-confirmation wrapper that
