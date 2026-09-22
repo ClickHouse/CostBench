@@ -1,0 +1,10 @@
+{
+  "artifacts": [],
+  "close_succeeded": true,
+  "inspected_at": "2026-09-20T00:33:41.997Z",
+  "stream": "worker-07-arrow",
+  "unacked_batches": 0,
+  "unacked_inspection_succeeded": true,
+  "unacked_rows": 0,
+  "worker": 7
+}

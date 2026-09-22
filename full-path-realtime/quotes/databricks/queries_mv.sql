@@ -20,7 +20,7 @@ SELECT
     sum(spread_sum) / sum(n_quotes)  AS avg_spread,
     sum(bs_sum)                      AS total_bid_volume,
     sum(as_sum)                      AS total_ask_volume
-FROM workspace.benchmarking.quotes_daily
+FROM __CATALOG__.__SCHEMA__.__MV_TABLE__
 WHERE sym = 'AAPL';
 
 -- -----------------------------------------------------------------------------
@@ -35,7 +35,7 @@ SELECT
     min(bp_min)                      AS lowest_bid,
     max(bp_max)                      AS highest_bid,
     sum(spread_sum) / sum(n_quotes)  AS avg_spread
-FROM workspace.benchmarking.quotes_daily
+FROM __CATALOG__.__SCHEMA__.__MV_TABLE__
 WHERE sym IN ('AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'NVDA', 'NFLX')
 GROUP BY sym
 ORDER BY total_quotes DESC;
@@ -48,7 +48,7 @@ ORDER BY total_quotes DESC;
 SELECT
     sym,
     (max(bp_max) - min(bp_min)) / min(bp_min) * 100 AS pct_range
-FROM workspace.benchmarking.quotes_daily
+FROM __CATALOG__.__SCHEMA__.__MV_TABLE__
 GROUP BY sym
 ORDER BY abs(pct_range) DESC
 LIMIT 20;
@@ -62,6 +62,6 @@ SELECT
     sum(n_quotes)                    AS total_quotes,
     sum(bs_sum) + sum(as_sum)        AS total_volume,
     sum(spread_sum) / sum(n_quotes)  AS avg_spread
-FROM workspace.benchmarking.quotes_daily
+FROM __CATALOG__.__SCHEMA__.__MV_TABLE__
 GROUP BY day
 ORDER BY day;

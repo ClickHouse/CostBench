@@ -1,0 +1,60 @@
+{
+  "collected_at": "2026-09-21T09:33:06.725Z",
+  "collection_window": {
+    "duration_seconds": 124129.353,
+    "since": "2026-09-18T17:04:53.000Z",
+    "until": "2026-09-20T03:33:42.353Z"
+  },
+  "complete": true,
+  "optional_dataset_errors": [],
+  "provider_committed_bytes": 8270494036080,
+  "provider_committed_records": 113219565734,
+  "provider_errors": 0,
+  "required_dataset_completeness": {
+    "complete": true,
+    "failed": [],
+    "required": [
+      "zerobus_ingest_summary",
+      "zerobus_ingest_by_minute_stream",
+      "mv_event_log",
+      "query_history",
+      "warehouse_events",
+      "warehouse_config_snapshots",
+      "predictive_optimization_operations",
+      "raw_table_detail",
+      "mv_table_detail",
+      "raw_table_history",
+      "uc_table_metadata",
+      "billing_usage",
+      "billing_list_prices"
+    ],
+    "succeeded": [
+      "zerobus_ingest_summary",
+      "zerobus_ingest_by_minute_stream",
+      "mv_event_log",
+      "query_history",
+      "warehouse_events",
+      "warehouse_config_snapshots",
+      "predictive_optimization_operations",
+      "raw_table_detail",
+      "mv_table_detail",
+      "raw_table_history",
+      "uc_table_metadata",
+      "billing_usage",
+      "billing_list_prices"
+    ]
+  },
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "schema_version": 1,
+  "table_num_rows": {
+    "materialized_view": null,
+    "raw": null
+  },
+  "zerobus_ingest_bounds": {
+    "max_commit_time": "2026-09-20T00:33:47.215Z",
+    "max_commit_version": "21510",
+    "min_commit_time": "2026-09-18T17:06:45.177Z",
+    "min_commit_version": "1"
+  },
+  "zerobus_stream_error_count": 0
+}

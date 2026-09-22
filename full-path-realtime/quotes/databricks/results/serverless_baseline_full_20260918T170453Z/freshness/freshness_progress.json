@@ -1,0 +1,46 @@
+{
+  "age_semantics": "These are observational ages from the sample time to provider timestamps; they are not exact per-record ingestion or materialized-view lag.",
+  "client_durable_rows": 113219565734,
+  "errors": [],
+  "iteration": 2068,
+  "latest_commit_time": "2026-09-20T00:33:47.215Z",
+  "latest_commit_version": 21510,
+  "latest_successful_refresh": {
+    "finished_at": "2026-09-20T00:36:23.999Z",
+    "maintenance_class": "incremental",
+    "maintenance_type": "MAINTENANCE_TYPE_GROUP_AGGREGATE",
+    "output_rows": null,
+    "planned_at": "2026-09-20T00:36:08.467Z",
+    "source_snapshot": {
+      "change_size_bytes": 560141672,
+      "changed_files": 17,
+      "changed_rows": 83409885,
+      "delta_version": null,
+      "full_size_bytes": 718123347536,
+      "num_files": 14710,
+      "num_rows": 113219565734,
+      "table_name": "`costbench`.`rt_full_serverless_baseline_r3_20260918`.`quotes`"
+    },
+    "update_id": "89a3a757-6c69-476c-906b-8ff1b9ffe27c"
+  },
+  "mv_refresh_age_sec": 10638.354735,
+  "mv_rows": null,
+  "mv_rows_behind": 0,
+  "mv_source_rows": 113219565734,
+  "observed_at": "2026-09-20T03:33:42.353Z",
+  "producer_progress_age_sec": 10799.726735,
+  "provider_committed_bytes": 8270494036080,
+  "provider_committed_rows": 113219565734,
+  "provider_error_count": 0,
+  "raw_commit_age_sec": 10795.138735,
+  "raw_delta_timestamp": "2026-09-20T00:33:48.000Z",
+  "raw_delta_version": "21510",
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "schema_version": 1,
+  "statement_ids": {
+    "mv_events": "01f1b4a4-32c8-1ac5-a764-d4673f130c1e",
+    "raw_history": "01f1b4a4-3218-10ca-bf85-8f6267322336",
+    "zerobus_ingest": "01f1b4a4-13bf-15aa-8509-d6400e6013a8"
+  },
+  "updated_at": "2026-09-20T03:34:35.320Z"
+}

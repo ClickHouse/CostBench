@@ -1,0 +1,451 @@
+{
+  "config": {
+    "catalog": "costbench",
+    "cloud": "aws",
+    "control_warehouse_id": "<control-warehouse-id>",
+    "host": "https://<databricks-workspace-host>",
+    "mv_table": "quotes_daily",
+    "raw_table": "quotes",
+    "region": "eu-west-1",
+    "rt_warehouse_id": "<query-warehouse-id>",
+    "schema": "rt_full_serverless_baseline_r3_20260918",
+    "workspace_id": "<databricks-workspace-id>",
+    "zerobus_endpoint": "https://<zerobus-endpoint>"
+  },
+  "generated_at": "2026-09-18T17:05:06.764Z",
+  "mode": "online",
+  "offline": {
+    "config_validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "credentials": {
+      "oauth_client_credentials_complete": true,
+      "oauth_client_id_configured": true,
+      "oauth_client_secret_configured": "***REDACTED***",
+      "pat_configured": false
+    },
+    "ddl_contract": {
+      "create_materialized_view_found": true,
+      "file": "<benchmark-runner-root>/create.sql"
+    },
+    "errors": [],
+    "packages": {
+      "databricks.sdk": {
+        "available": true,
+        "distribution": "databricks-sdk",
+        "environment": "runner",
+        "interpreter": "<benchmark-runner-root>/.venv-runner/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "OAuth M2M authentication for SQL connector runners",
+        "version": "0.133.0"
+      },
+      "databricks.sql": {
+        "available": true,
+        "distribution": "databricks-sql-connector",
+        "environment": "runner",
+        "interpreter": "<benchmark-runner-root>/.venv-runner/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "Lakehouse//RT Statement Execution API runners",
+        "version": "4.5.0"
+      },
+      "pyarrow": {
+        "available": true,
+        "distribution": "pyarrow",
+        "environment": "zerobus",
+        "interpreter": "<benchmark-runner-root>/.venv-zerobus/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "Parquet ingestion",
+        "version": "21.0.0"
+      },
+      "zerobus.sdk": {
+        "available": true,
+        "distribution": "databricks-zerobus-ingest-sdk",
+        "environment": "zerobus",
+        "interpreter": "<benchmark-runner-root>/.venv-zerobus/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "Zerobus ingestion",
+        "version": "1.8.0"
+      }
+    },
+    "query_contract": {
+      "actual": {
+        "dashboard": 4,
+        "drilldown": 2
+      },
+      "expected": {
+        "dashboard": 4,
+        "drilldown": 2
+      },
+      "files": {
+        "dashboard": "<benchmark-runner-root>/queries_mv.sql",
+        "drilldown": "<benchmark-runner-root>/queries_raw.sql"
+      }
+    },
+    "status": "ok",
+    "warnings": []
+  },
+  "online": {
+    "authentication": {
+      "mode": "oauth-client-credentials",
+      "status": "configured"
+    },
+    "catalog_storage": {
+      "name": "costbench",
+      "storage_root": "s3://<redacted-bucket>/<redacted-path>"
+    },
+    "config_validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "credentials": {
+      "oauth_client_credentials_complete": true,
+      "oauth_client_id_configured": true,
+      "oauth_client_secret_configured": "***REDACTED***",
+      "pat_configured": false
+    },
+    "errors": [],
+    "lakehouse_rt_type": {
+      "reason": "This run intentionally uses the Serverless SQL baseline.",
+      "statement_execution_succeeded": true,
+      "status": "not_applicable",
+      "warehouse_api_signal": "PRO"
+    },
+    "materialized_view_create_compatibility": {
+      "incrementalizable": true,
+      "method": "EXPLAIN CREATE MATERIALIZED VIEW",
+      "rows": [
+        {
+          "plan": "== Incremental Update Eligibility ==\nThe Materialized View can be incrementally refreshed.\n\n== Detailed Incrementalization Info ==\nNo issues detected.\n\n== Physical Plan ==\nExecute CreateMaterializedViewCommand\n   +- CreateMaterializedViewCommand `costbench`.`rt_full_serverless_baseline_r3_20260918`.`quotes_daily`, [spark.internal.materialized_view.refresh_policy=IncrementalStrict], SELECT\n    sym,\n    date_add(\n        DATE '1970-01-01',\n        CAST(\n            floor(\n                CAST(t AS DECIMAL(20, 0))\n                / CAST(86400000 AS DECIMAL(20, 0))\n            ) AS INT\n        )\n    )               AS day,\n    count(*)        AS n_quotes,\n    min(bp)         AS bp_min,\n    max(bp)         AS bp_max,\n    min(ap)         AS ap_min,\n    max(ap)         AS ap_max,\n    sum(bs)         AS bs_sum,\n    sum(`as`)       AS as_sum,\n    sum(ap - bp)    AS spread_sum\nFROM `costbench`.`rt_full_serverless_baseline_r3_20260918`.quotes\nGROUP BY sym, day, 'Aggregate [sym#14274, 'day], [sym#14274, date_add(1970-01-01, cast(FLOOR((cast(t#14283L as decimal(20,0)) / cast(86400000 as decimal(20,0)))) as int)) AS day#14247, count(1) AS n_quotes#14248L, min(bp#14276) AS bp_min#14249, max(bp#14276) AS bp_max#14250, min(ap#14279) AS ap_min#14251, max(ap#14279) AS ap_max#14252, sum(bs#14277L) AS bs_sum#14253L, sum(as#14280L) AS as_sum#14254L, sum((ap#14279 - bp#14276)) AS spread_sum#14255], false, false, PersistedView, true, false, [cluster_by(sym, day)], false, Trigger(Some(60)), CREATE MATERIALIZED VIEW `costbench`.`rt_full_serverless_baseline_r3_20260918`.quotes_daily\nUSING DELTA\nCLUSTER BY (sym, day)\nREFRESH POLICY INCREMENTAL STRICT\nTRIGGER ON UPDATE AT MOST EVERY INTERVAL 1 MINUTE\nAS SELECT\n    sym,\n    date_add(\n        DATE '1970-01-01',\n        CAST(\n            floor(\n                CAST(t AS DECIMAL(20, 0))\n                / CAST(86400000 AS DECIMAL(20, 0))\n            ) AS INT\n        )\n    )               AS day,\n    count(*)        AS n_quotes,\n    min(bp)         AS bp_min,\n    max(bp)         AS bp_max,\n    min(ap)         AS ap_min,\n    max(ap)         AS ap_max,\n    sum(bs)         AS bs_sum,\n    sum(`as`)       AS as_sum,\n    sum(ap - bp)    AS spread_sum\nFROM `costbench`.`rt_full_serverless_baseline_r3_20260918`.quotes\nGROUP BY sym, day\n\n\n== Photon Explanation ==\nCommands are not directly photonized. They must be run to determine if they can be Photon-ized. If this message appears on an executed command, please check the next Job to ascertain if the resulting plan was Photon-ized."
+        }
+      ],
+      "statement_id": "01f1b383-1d70-14ba-974c-f56442759df0",
+      "status": "ok",
+      "warehouse_id": "<control-warehouse-id>"
+    },
+    "metastore": {
+      "cloud": "aws",
+      "metastore_id": "<metastore-id>",
+      "region": "eu-west-1",
+      "storage_root_configured": false
+    },
+    "packages": {
+      "databricks.sdk": {
+        "available": true,
+        "distribution": "databricks-sdk",
+        "environment": "runner",
+        "interpreter": "<benchmark-runner-root>/.venv-runner/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "OAuth M2M authentication for SQL connector runners",
+        "version": "0.133.0"
+      },
+      "databricks.sql": {
+        "available": true,
+        "distribution": "databricks-sql-connector",
+        "environment": "runner",
+        "interpreter": "<benchmark-runner-root>/.venv-runner/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "Lakehouse//RT Statement Execution API runners",
+        "version": "4.5.0"
+      },
+      "pyarrow": {
+        "available": true,
+        "distribution": "pyarrow",
+        "environment": "zerobus",
+        "interpreter": "<benchmark-runner-root>/.venv-zerobus/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "Parquet ingestion",
+        "version": "21.0.0"
+      },
+      "zerobus.sdk": {
+        "available": true,
+        "distribution": "databricks-zerobus-ingest-sdk",
+        "environment": "zerobus",
+        "interpreter": "<benchmark-runner-root>/.venv-zerobus/bin/python",
+        "online_required": true,
+        "probe_error": null,
+        "required_for": "Zerobus ingestion",
+        "version": "1.8.0"
+      }
+    },
+    "predictive_optimization": {
+      "materialized_view": {
+        "configured_value": "ENABLE",
+        "effective_value": "ENABLE",
+        "effectively_enabled": true,
+        "inherited_from_name": null,
+        "inherited_from_type": null,
+        "source": "Unity Catalog Tables API",
+        "status": "ok"
+      },
+      "raw": {
+        "configured_value": "INHERIT",
+        "effective_value": "ENABLE",
+        "effectively_enabled": true,
+        "inherited_from_name": "costbench",
+        "inherited_from_type": "CATALOG",
+        "source": "Unity Catalog Tables API",
+        "status": "ok"
+      },
+      "status": "ok"
+    },
+    "query_compatibility": {
+      "method": "EXPLAIN FORMATTED (compiles without running benchmark scans)",
+      "queries": [
+        {
+          "query_number": 1,
+          "statement_id": "01f1b383-222c-1825-93e6-31d90b8e550d",
+          "status": "ok",
+          "workload": "dashboard"
+        },
+        {
+          "query_number": 2,
+          "statement_id": "01f1b383-2411-1e24-aa6d-375e16bcdd9a",
+          "status": "ok",
+          "workload": "dashboard"
+        },
+        {
+          "query_number": 3,
+          "statement_id": "01f1b383-24ad-1453-a732-1c2fd3e51ada",
+          "status": "ok",
+          "workload": "dashboard"
+        },
+        {
+          "query_number": 4,
+          "statement_id": "01f1b383-252d-15d1-b556-8fb2189ec9c6",
+          "status": "ok",
+          "workload": "dashboard"
+        },
+        {
+          "query_number": 1,
+          "statement_id": "01f1b383-25b8-10b2-b3db-c343e89b6aba",
+          "status": "ok",
+          "workload": "drilldown"
+        },
+        {
+          "query_number": 2,
+          "statement_id": "01f1b383-2654-16ec-881c-6e8e8be515da",
+          "status": "ok",
+          "workload": "drilldown"
+        }
+      ]
+    },
+    "query_history_api": {
+      "statement_id": null,
+      "status": "ok",
+      "status_value": "FINISHED",
+      "warehouse_id": "<query-warehouse-id>"
+    },
+    "query_warehouse_mode": "serverless-baseline",
+    "statement_execution_on_rt": {
+      "rows": [
+        {
+          "current_catalog": "costbench",
+          "current_schema": "rt_full_serverless_baseline_r3_20260918",
+          "preflight_ok": "1"
+        }
+      ],
+      "statement_id": "01f1b383-1993-1f66-ae95-2e01bf3edc49",
+      "status": "ok"
+    },
+    "status": "warning",
+    "system_table_permission": {
+      "statement_id": "01f1b383-26fb-1d6a-8dce-cefe47c020fe",
+      "status": "ok",
+      "table": "system.query.history"
+    },
+    "tables": {
+      "materialized_view": {
+        "errors": [],
+        "metadata": {
+          "catalog_name": "costbench",
+          "created_at": 1789750598448,
+          "full_name": "costbench.rt_full_serverless_baseline_r3_20260918.quotes_daily",
+          "name": "quotes_daily",
+          "schema_name": "rt_full_serverless_baseline_r3_20260918",
+          "table_type": "MATERIALIZED_VIEW",
+          "updated_at": 1789750609714
+        },
+        "status": "ok"
+      },
+      "raw": {
+        "errors": [],
+        "metadata": {
+          "catalog_name": "costbench",
+          "created_at": 1789750578604,
+          "data_source_format": "DELTA",
+          "full_name": "costbench.rt_full_serverless_baseline_r3_20260918.quotes",
+          "name": "quotes",
+          "schema_name": "rt_full_serverless_baseline_r3_20260918",
+          "storage_location": "s3://<redacted-bucket>/<redacted-path>",
+          "table_type": "MANAGED",
+          "updated_at": 1789750579092
+        },
+        "status": "ok"
+      },
+      "raw_storage_assumption": {
+        "catalog_managed_storage_configured": true,
+        "metastore_default_storage_configured": false,
+        "raw_storage_location_configured": true,
+        "status": "ok",
+        "uses_catalog_managed_storage": true,
+        "uses_metastore_default_storage": false
+      }
+    },
+    "target_contract": {
+      "checks": {
+        "mv_clustering": true,
+        "mv_incremental_strict": true,
+        "mv_one_minute_update_trigger": true,
+        "mv_owner": true,
+        "mv_predictive_optimization": true,
+        "raw_change_data_feed": true,
+        "raw_clustering": true,
+        "raw_created_once": true,
+        "raw_deletion_vectors": true,
+        "raw_format_delta": true,
+        "raw_only_version_zero": true,
+        "raw_row_tracking": true,
+        "raw_zero_active_bytes": true,
+        "raw_zero_active_files": true
+      },
+      "errors": [],
+      "method": "Unity Catalog metadata plus DESCRIBE metadata statements",
+      "observed": {
+        "materialized_view": {
+          "clustering_columns": [
+            "sym",
+            "day"
+          ],
+          "owner": "<service-principal-application-id>",
+          "predictive_optimization": "ENABLE",
+          "refresh_policy": "IncrementalStrict",
+          "refresh_schedule": "TRIGGER ON UPDATE AT MOST EVERY INTERVAL 60 SECOND"
+        },
+        "raw": {
+          "clustering_columns": [
+            "sym",
+            "t"
+          ],
+          "format": "delta",
+          "history_operations": [
+            "CREATE TABLE"
+          ],
+          "history_versions": [
+            0
+          ],
+          "num_files": "0",
+          "size_in_bytes": "0",
+          "source_features": {
+            "delta.enableChangeDataFeed": "true",
+            "delta.enableDeletionVectors": "true",
+            "delta.enableRowTracking": "true"
+          }
+        }
+      },
+      "statements": {
+        "mv_metadata": {
+          "row_count": 1,
+          "statement_id": "01f1b383-2cdf-1369-9aec-6f3d41e15b27"
+        },
+        "raw_detail": {
+          "row_count": 1,
+          "statement_id": "01f1b383-2a1f-1749-b12f-0dba1c9d53fc"
+        },
+        "raw_history": {
+          "row_count": 1,
+          "statement_id": "01f1b383-2ac5-16f0-adbf-8c3562310b0d"
+        }
+      },
+      "status": "ok"
+    },
+    "warehouses": {
+      "control": {
+        "metadata": {
+          "auto_stop_mins": 10,
+          "cluster_size": "2X-Small",
+          "creator_name": "<benchmark-admin-principal>",
+          "enable_serverless_compute": true,
+          "id": "<control-warehouse-id>",
+          "max_num_clusters": 1,
+          "min_num_clusters": 1,
+          "name": "<control-warehouse-name>",
+          "state": "STOPPED",
+          "warehouse_type": "PRO"
+        },
+        "status": "ok"
+      },
+      "lakehouse_rt": {
+        "metadata": {
+          "auto_stop_mins": 80,
+          "cluster_size": "X-Small",
+          "creator_name": "<benchmark-admin-principal>",
+          "enable_serverless_compute": true,
+          "id": "<query-warehouse-id>",
+          "max_num_clusters": 1,
+          "min_num_clusters": 1,
+          "name": "<query-warehouse-name>",
+          "state": "STOPPED",
+          "warehouse_type": "PRO"
+        },
+        "status": "ok"
+      }
+    },
+    "warnings": [
+      "workspace warehouse configuration was unavailable: DatabricksApiError: Databricks API GET /api/2.0/sql/config/warehouses returned HTTP 403: {'error_code': 'PERMISSION_DENIED', 'message': '<service-principal-application-id> is not authorized to perform this action. Please contact your administrator.', 'details': [{'@type': 'type.googleapis.com/google.rpc.RequestInfo', 'request_id': '4e6eae9b-0931-4afe-aafc-e6b7e05cd8b9', 'serving_data': ''}]}"
+    ],
+    "zerobus_endpoint": {
+      "status": "ok",
+      "tls": {
+        "hostname": "<databricks-workspace-id>.zerobus.eu-west-1.cloud.databricks.com",
+        "latency_ms": 13.1,
+        "port": 443,
+        "tls_version": "TLSv1.3"
+      },
+      "url": "https://<zerobus-endpoint>"
+    },
+    "zerobus_service_principal": {
+      "required_privileges": [
+        {
+          "object_full_path": "costbench",
+          "object_type": "CATALOG",
+          "privileges": [
+            "USE CATALOG"
+          ],
+          "type": "unity_catalog_privileges"
+        },
+        {
+          "object_full_path": "costbench.rt_full_serverless_baseline_r3_20260918",
+          "object_type": "SCHEMA",
+          "privileges": [
+            "USE SCHEMA"
+          ],
+          "type": "unity_catalog_privileges"
+        },
+        {
+          "object_full_path": "costbench.rt_full_serverless_baseline_r3_20260918.quotes",
+          "object_type": "TABLE",
+          "privileges": [
+            "SELECT",
+            "MODIFY"
+          ],
+          "type": "unity_catalog_privileges"
+        }
+      ],
+      "scoped_oauth_token_acquired": true,
+      "status": "ok"
+    }
+  },
+  "summary": {
+    "error_count": 0,
+    "status": "warning",
+    "warning_count": 1
+  }
+}

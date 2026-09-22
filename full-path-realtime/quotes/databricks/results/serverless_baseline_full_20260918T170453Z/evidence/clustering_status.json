@@ -1,0 +1,313 @@
+{
+  "collected_at": "2026-09-21T09:33:06.725Z",
+  "collection_window": {
+    "duration_seconds": 124129.353,
+    "since": "2026-09-18T17:04:53.000Z",
+    "until": "2026-09-20T03:33:42.353Z"
+  },
+  "predictive_optimization": {
+    "clustering_operation_count": 12,
+    "operations": [
+      {
+        "end_time": "2026-09-18T18:08:27.023Z",
+        "operation_id": "b9608877-833b-4669-b147-81c4856ea541",
+        "operation_metrics": {
+          "amount_of_scanned_bytes": "2250815",
+          "number_of_scanned_files": "1",
+          "staleness_percentage_reduced": "100"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "ANALYZE",
+        "start_time": "2026-09-18T18:08:26.240Z",
+        "table_name": "quotes_daily",
+        "usage_quantity": "0.003850426071963021",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-18T18:09:54.953Z",
+        "operation_id": "c056a74d-866a-436f-939d-75c789129106",
+        "operation_metrics": {
+          "amount_of_scanned_bytes": "23351937778",
+          "number_of_scanned_files": "734",
+          "staleness_percentage_reduced": "100"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "ANALYZE",
+        "start_time": "2026-09-18T18:08:28.910Z",
+        "table_name": "quotes",
+        "usage_quantity": "0.423119042796825300",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-18T18:25:50.593Z",
+        "operation_id": "8b9c95d7-87ed-4891-a2d8-6f49d8185595",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "26994492817",
+          "amount_of_data_removed_bytes": "29149309984",
+          "number_of_clustered_files": "477",
+          "number_of_removed_files": "915"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-18T18:12:31.256Z",
+        "table_name": "quotes",
+        "usage_quantity": "4.402446913333334000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-18T23:02:42.961Z",
+        "operation_id": "68fbc7b0-90af-42d8-af0d-b922341856fd",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "317207281404",
+          "amount_of_data_removed_bytes": "269238046522",
+          "number_of_clustered_files": "4274",
+          "number_of_removed_files": "4439"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-18T22:39:28.812Z",
+        "table_name": "quotes",
+        "usage_quantity": "24.988888520000000000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T03:39:52.295Z",
+        "operation_id": "cf1147d0-e3c5-4a50-bdc3-088d7b003579",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "22798576",
+          "amount_of_data_removed_bytes": "25380240",
+          "number_of_clustered_files": "1",
+          "number_of_removed_files": "4"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T03:39:35.086Z",
+        "table_name": "quotes_daily",
+        "usage_quantity": "0.315890972198273800",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T03:57:05.276Z",
+        "operation_id": "3351e7d7-2684-41b2-84af-756454189a41",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "145497616557",
+          "amount_of_data_removed_bytes": "133966273581",
+          "number_of_clustered_files": "2000",
+          "number_of_removed_files": "3596"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T03:39:56.603Z",
+        "table_name": "quotes",
+        "usage_quantity": "18.882475102801727000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T08:11:33.405Z",
+        "operation_id": "91733356-5a24-40d7-b0d0-476c76504012",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "32014286",
+          "amount_of_data_removed_bytes": "34004475",
+          "number_of_clustered_files": "1",
+          "number_of_removed_files": "3"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T08:11:17.606Z",
+        "table_name": "quotes_daily",
+        "usage_quantity": "0.329653282424341660",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T08:37:22.640Z",
+        "operation_id": "a48ac109-cc32-487d-94e5-a9ffb3e8806f",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "267422169692",
+          "amount_of_data_removed_bytes": "276499979984",
+          "number_of_clustered_files": "4681",
+          "number_of_removed_files": "5328"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T08:11:37.860Z",
+        "table_name": "quotes",
+        "usage_quantity": "32.232533554242330000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T13:12:12.036Z",
+        "operation_id": "3d2997cf-f3cd-480a-994b-d60dde6ac068",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "41943376",
+          "amount_of_data_removed_bytes": "44078922",
+          "number_of_clustered_files": "1",
+          "number_of_removed_files": "3"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T13:11:57.346Z",
+        "table_name": "quotes_daily",
+        "usage_quantity": "0.300876639921395130",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T13:31:24.061Z",
+        "operation_id": "097c744a-ecdd-4bf4-98e5-5b2c6d758fb9",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "157791579022",
+          "amount_of_data_removed_bytes": "176794584575",
+          "number_of_clustered_files": "3054",
+          "number_of_removed_files": "4299"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T13:12:16.482Z",
+        "table_name": "quotes",
+        "usage_quantity": "23.504405280078604000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T18:26:58.023Z",
+        "operation_id": "190d843c-ff32-4a59-bc66-242326ad4834",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "125249697405",
+          "amount_of_data_removed_bytes": "142872069851",
+          "number_of_clustered_files": "2481",
+          "number_of_removed_files": "3916"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T18:09:30.144Z",
+        "table_name": "quotes",
+        "usage_quantity": "26.533541081666666000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T19:12:34.289Z",
+        "operation_id": "6d6d14b4-4124-42fa-8b94-9560fd7219bd",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "12854402",
+          "amount_of_data_removed_bytes": "14226315",
+          "number_of_clustered_files": "1",
+          "number_of_removed_files": "3"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T19:12:20.196Z",
+        "table_name": "quotes_daily",
+        "usage_quantity": "0.147797944999999960",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T22:57:24.884Z",
+        "operation_id": "e78e6798-303c-4da7-86bd-a9287fac6851",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "108366869957",
+          "amount_of_data_removed_bytes": "126296032157",
+          "number_of_clustered_files": "2231",
+          "number_of_removed_files": "3482"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T22:39:32.372Z",
+        "table_name": "quotes",
+        "usage_quantity": "19.642641795000000000",
+        "usage_unit": "ESTIMATED_DBU"
+      },
+      {
+        "end_time": "2026-09-19T23:40:05.709Z",
+        "operation_id": "c59d63ba-e231-4c72-b3e7-0c3e7c4183c0",
+        "operation_metrics": {
+          "amount_of_clustered_data_bytes": "22789394",
+          "amount_of_data_removed_bytes": "24818725",
+          "number_of_clustered_files": "1",
+          "number_of_removed_files": "3"
+        },
+        "operation_status": "SUCCESSFUL",
+        "operation_type": "CLUSTERING",
+        "start_time": "2026-09-19T23:39:50.823Z",
+        "table_name": "quotes_daily",
+        "usage_quantity": "0.153180498333333400",
+        "usage_unit": "ESTIMATED_DBU"
+      }
+    ],
+    "preflight_status": "ok",
+    "summary": {
+      "operation_count": 14,
+      "operation_counts_by_type": {
+        "ANALYZE": 2,
+        "CLUSTERING": 12
+      },
+      "usage_by_unit": {
+        "ESTIMATED_DBU": "151.861301053868793271"
+      }
+    }
+  },
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "schema_version": 1,
+  "tables": {
+    "materialized_view": {
+      "catalog": "costbench",
+      "cluster_by_auto": null,
+      "clustering_columns": [
+        "sym",
+        "day"
+      ],
+      "effective_predictive_optimization_flag": "ENABLE",
+      "enable_predictive_optimization": "ENABLE",
+      "format": null,
+      "location": "s3://<redacted-bucket>/<redacted-path>",
+      "name": "quotes_daily",
+      "num_files": null,
+      "partition_columns": null,
+      "predictive_optimization_effectively_enabled": true,
+      "properties": {
+        "clusteringColumns": "[[\"sym\"],[\"day\"]]",
+        "delta.enableChangeDataFeed": "true",
+        "delta.enableDeletionVectors": "true",
+        "delta.enableRowTracking": "true",
+        "delta.feature.clustering": "supported",
+        "delta.parquet.compression.codec": "zstd"
+      },
+      "schema": "rt_full_serverless_baseline_r3_20260918",
+      "size_in_bytes": null,
+      "table_features": null,
+      "type": "MANAGED"
+    },
+    "raw": {
+      "catalog": null,
+      "cluster_by_auto": "false",
+      "clustering_columns": [
+        "sym",
+        "t"
+      ],
+      "effective_predictive_optimization_flag": "ENABLE",
+      "enable_predictive_optimization": "INHERIT",
+      "format": "delta",
+      "location": "s3://<redacted-bucket>/<redacted-path>",
+      "name": "costbench.rt_full_serverless_baseline_r3_20260918.quotes",
+      "num_files": "14348",
+      "partition_columns": [],
+      "predictive_optimization_effectively_enabled": true,
+      "properties": {
+        "delta.enableChangeDataFeed": "true",
+        "delta.enableDeletionVectors": "true",
+        "delta.enableRowTracking": "true",
+        "delta.parquet.compression.codec": "zstd"
+      },
+      "schema": null,
+      "size_in_bytes": "707457705990",
+      "table_features": [
+        "appendOnly",
+        "changeDataFeed",
+        "clustering",
+        "deletionVectors",
+        "domainMetadata",
+        "invariants",
+        "rowTracking",
+        "v2Checkpoint"
+      ],
+      "type": null
+    }
+  }
+}

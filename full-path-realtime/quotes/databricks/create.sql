@@ -1,7 +1,9 @@
-DROP TABLE IF EXISTS workspace.benchmarking.quotes;
-DROP MATERIALIZED VIEW IF EXISTS workspace.benchmarking.quotes_daily;
+-- The catalog and schema, including their explicit non-default managed storage
+-- location, are administrator prerequisites. Render the placeholders before use.
+DROP MATERIALIZED VIEW IF EXISTS __CATALOG__.__SCHEMA__.quotes_daily;
+DROP TABLE IF EXISTS __CATALOG__.__SCHEMA__.quotes;
 
-CREATE TABLE workspace.benchmarking.quotes (
+CREATE TABLE __CATALOG__.__SCHEMA__.quotes (
     sym         STRING,
     bx          SMALLINT,
     bp          DOUBLE,
@@ -18,16 +20,27 @@ CREATE TABLE workspace.benchmarking.quotes (
 USING DELTA
 CLUSTER BY (sym, t)
 TBLPROPERTIES (
-    delta.enableRowTracking    = true,
-    delta.enableChangeDataFeed = true
+    'delta.enableDeletionVectors' = 'true',
+    'delta.enableRowTracking' = 'true',
+    'delta.enableChangeDataFeed' = 'true'
 );
 
-CREATE OR REPLACE MATERIALIZED VIEW workspace.benchmarking.quotes_daily
+CREATE MATERIALIZED VIEW __CATALOG__.__SCHEMA__.quotes_daily
+USING DELTA
 CLUSTER BY (sym, day)
-TRIGGER ON UPDATE
+REFRESH POLICY INCREMENTAL STRICT
+TRIGGER ON UPDATE AT MOST EVERY INTERVAL 1 MINUTE
 AS SELECT
     sym,
-    to_date(from_unixtime(t / 1000)) AS day,
+    date_add(
+        DATE '1970-01-01',
+        CAST(
+            floor(
+                CAST(t AS DECIMAL(20, 0))
+                / CAST(86400000 AS DECIMAL(20, 0))
+            ) AS INT
+        )
+    )               AS day,
     count(*)        AS n_quotes,
     min(bp)         AS bp_min,
     max(bp)         AS bp_max,
@@ -36,5 +49,5 @@ AS SELECT
     sum(bs)         AS bs_sum,
     sum(`as`)       AS as_sum,
     sum(ap - bp)    AS spread_sum
-FROM workspace.benchmarking.quotes
+FROM __CATALOG__.__SCHEMA__.quotes
 GROUP BY sym, day;

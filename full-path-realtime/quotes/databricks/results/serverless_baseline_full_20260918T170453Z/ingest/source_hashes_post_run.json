@@ -1,0 +1,1362 @@
+{
+  "file_count": 193,
+  "files": [
+    {
+      "file_ordinal": 0,
+      "mtime_ns": 1780510184000000000,
+      "path": "quotes_2025-10-16.parquet",
+      "sha256": "ded70cb2089bdacbda55e954eb01bc9dac18321dbcb98a080c6a43f4113d3571",
+      "size_bytes": 4587244682
+    },
+    {
+      "file_ordinal": 1,
+      "mtime_ns": 1780510419000000000,
+      "path": "quotes_2025-10-17.parquet",
+      "sha256": "3a6c1b76ce84e671bee00ca6edecd62fcfe03fc918fa557a44ef5356786e1957",
+      "size_bytes": 4714096612
+    },
+    {
+      "file_ordinal": 2,
+      "mtime_ns": 1780510666000000000,
+      "path": "quotes_2025-10-18.parquet",
+      "sha256": "49157d941edf850975c3fa3e64025782994c9516669900e404d77ca84e4abb5a",
+      "size_bytes": 144565
+    },
+    {
+      "file_ordinal": 4,
+      "mtime_ns": 1780510729000000000,
+      "path": "quotes_2025-10-20.parquet",
+      "sha256": "a0a9dd9ca5198768319bc4b4fc961a6875261ab6c28d47093863dc5c2acff2d8",
+      "size_bytes": 3737488170
+    },
+    {
+      "file_ordinal": 5,
+      "mtime_ns": 1780510936000000000,
+      "path": "quotes_2025-10-21.parquet",
+      "sha256": "bed2725013edde33a473ec41ea0e8253bf253133587395fd58b736997ca99b99",
+      "size_bytes": 3932264294
+    },
+    {
+      "file_ordinal": 6,
+      "mtime_ns": 1780511154000000000,
+      "path": "quotes_2025-10-22.parquet",
+      "sha256": "23fe57cff15d5f3af26e3c1bedfa798a7990267e05d38af82ed05c161ca0870f",
+      "size_bytes": 4442751817
+    },
+    {
+      "file_ordinal": 7,
+      "mtime_ns": 1780511396000000000,
+      "path": "quotes_2025-10-23.parquet",
+      "sha256": "b32e4911c2d65e7159f6f649a8ce2737efe2698a001c31a9b9282ef9267fb221",
+      "size_bytes": 3904896892
+    },
+    {
+      "file_ordinal": 8,
+      "mtime_ns": 1780511614000000000,
+      "path": "quotes_2025-10-24.parquet",
+      "sha256": "5a7d50895c312ceb8781a1ede776066785ed226c5c3b6c6e5e07e6f0efc56c08",
+      "size_bytes": 3817158030
+    },
+    {
+      "file_ordinal": 9,
+      "mtime_ns": 1780511836000000000,
+      "path": "quotes_2025-10-25.parquet",
+      "sha256": "eff4375678219ceffd065744779a619bf11d8c21621265d61915f047b8ae6f70",
+      "size_bytes": 149433
+    },
+    {
+      "file_ordinal": 11,
+      "mtime_ns": 1780511891000000000,
+      "path": "quotes_2025-10-27.parquet",
+      "sha256": "b7db84aa0b45031eb98d76ec326a394810b65efae7070669a5737aea1d1f63c1",
+      "size_bytes": 3744397605
+    },
+    {
+      "file_ordinal": 12,
+      "mtime_ns": 1780512102000000000,
+      "path": "quotes_2025-10-28.parquet",
+      "sha256": "e8f7b84d4c8cffe1950779cb4ebe30869b5ef2a16484906f463c96275016d312",
+      "size_bytes": 4338104205
+    },
+    {
+      "file_ordinal": 13,
+      "mtime_ns": 1780512301000000000,
+      "path": "quotes_2025-10-29.parquet",
+      "sha256": "9a8bb9e45be538896f96a2e68d3a2699739123f0c1ce52d473c9069f8519008d",
+      "size_bytes": 4019116257
+    },
+    {
+      "file_ordinal": 14,
+      "mtime_ns": 1780512525000000000,
+      "path": "quotes_2025-10-30.parquet",
+      "sha256": "5326c01ed02ebc98cd1b64e7d88eec6924749bde832a4d06d588600301f7eb39",
+      "size_bytes": 4224532353
+    },
+    {
+      "file_ordinal": 15,
+      "mtime_ns": 1780512750000000000,
+      "path": "quotes_2025-10-31.parquet",
+      "sha256": "fa1369d21e65347e6ec87411acfb9d9779ea7e0ccb6d1b4c79bdc5c1bfb911e2",
+      "size_bytes": 3978068267
+    },
+    {
+      "file_ordinal": 16,
+      "mtime_ns": 1780512969000000000,
+      "path": "quotes_2025-11-01.parquet",
+      "sha256": "890286bbfa29400a18acc1340cbcdea22ee12c07d38f2927bc59ede552c5a19f",
+      "size_bytes": 148686
+    },
+    {
+      "file_ordinal": 18,
+      "mtime_ns": 1780513024000000000,
+      "path": "quotes_2025-11-03.parquet",
+      "sha256": "ddb55b141d1e1dc13b5695c3e8b1cbf00c78ec7391cb05fb9f95f4c44d99bda5",
+      "size_bytes": 4234230675
+    },
+    {
+      "file_ordinal": 19,
+      "mtime_ns": 1780513261000000000,
+      "path": "quotes_2025-11-04.parquet",
+      "sha256": "67c0c3eebbebdf245dd209ccbf889065a79ef4df592fa9c172959e86bd63c409",
+      "size_bytes": 4512163904
+    },
+    {
+      "file_ordinal": 20,
+      "mtime_ns": 1780513502000000000,
+      "path": "quotes_2025-11-05.parquet",
+      "sha256": "7c5f319510596bbd40845d5bbef5d8894bdf558a234eddfafc7692787f438e5b",
+      "size_bytes": 4416908519
+    },
+    {
+      "file_ordinal": 21,
+      "mtime_ns": 1780513698000000000,
+      "path": "quotes_2025-11-06.parquet",
+      "sha256": "20876ffbd8ca24e296830537013c3d0b042b8c84f2c2f64547a910e68f9788db",
+      "size_bytes": 4466379627
+    },
+    {
+      "file_ordinal": 22,
+      "mtime_ns": 1780513943000000000,
+      "path": "quotes_2025-11-07.parquet",
+      "sha256": "c8d8e724fce6ac4214ecfd7287d8c96f9c17acd92493b27c6b4fc0d8d09eb54d",
+      "size_bytes": 4384111832
+    },
+    {
+      "file_ordinal": 23,
+      "mtime_ns": 1780514176000000000,
+      "path": "quotes_2025-11-08.parquet",
+      "sha256": "687d4d49a46e686a08851a1c0477916097f18a727122df30428e094910522e04",
+      "size_bytes": 2993334
+    },
+    {
+      "file_ordinal": 25,
+      "mtime_ns": 1780514233000000000,
+      "path": "quotes_2025-11-10.parquet",
+      "sha256": "1fa5b02e73288b2a0dc3148987921494900d2f28f9a88a666d9409a9afdbca66",
+      "size_bytes": 4196194920
+    },
+    {
+      "file_ordinal": 26,
+      "mtime_ns": 1780514462000000000,
+      "path": "quotes_2025-11-11.parquet",
+      "sha256": "b0ee1522a081131c2b9e0dd48eeb416da4a2d29e122a6898e42da9aba38160b0",
+      "size_bytes": 4154636287
+    },
+    {
+      "file_ordinal": 27,
+      "mtime_ns": 1780514679000000000,
+      "path": "quotes_2025-11-12.parquet",
+      "sha256": "82c0d748ff517a57a9aef7021b6d8052a161648d4e4cf50d7fba2527b2136911",
+      "size_bytes": 4006791899
+    },
+    {
+      "file_ordinal": 28,
+      "mtime_ns": 1780514900000000000,
+      "path": "quotes_2025-11-13.parquet",
+      "sha256": "b168b166d67655f55c03f6abe9a075f1a20523fe30320822bf0cd68dedd3dd11",
+      "size_bytes": 3826670784
+    },
+    {
+      "file_ordinal": 29,
+      "mtime_ns": 1780515121000000000,
+      "path": "quotes_2025-11-14.parquet",
+      "sha256": "09fe4080054e7da39ae094e85a49ab1b625e566510d3f943de0612139f2d552e",
+      "size_bytes": 4268251511
+    },
+    {
+      "file_ordinal": 30,
+      "mtime_ns": 1780515356000000000,
+      "path": "quotes_2025-11-15.parquet",
+      "sha256": "fb34c692363fcd1248b0418b945048543b45b29a1e6db22c7271fa1f6471d6df",
+      "size_bytes": 4386228
+    },
+    {
+      "file_ordinal": 32,
+      "mtime_ns": 1780515418000000000,
+      "path": "quotes_2025-11-17.parquet",
+      "sha256": "75e21d05d9b806466af356c5180bb154e98ebd40fe8444a4166d5f6e55befd68",
+      "size_bytes": 4054222872
+    },
+    {
+      "file_ordinal": 33,
+      "mtime_ns": 1780515635000000000,
+      "path": "quotes_2025-11-18.parquet",
+      "sha256": "a7c66a605c619dfe2eebbd8c0d708ea3d9280f3d9305a8c7d7f0c87fae9b78a2",
+      "size_bytes": 4253219150
+    },
+    {
+      "file_ordinal": 34,
+      "mtime_ns": 1780515849000000000,
+      "path": "quotes_2025-11-19.parquet",
+      "sha256": "1ac2b38a36e74c978985e51952ca8291191ea907f3322ea1c141b41c772e4d8b",
+      "size_bytes": 4418291015
+    },
+    {
+      "file_ordinal": 35,
+      "mtime_ns": 1780516051000000000,
+      "path": "quotes_2025-11-20.parquet",
+      "sha256": "c60aaf871513f23dc9cf973d6d0e20999c231ae7b5796a81c084e4bf9681f858",
+      "size_bytes": 4149686031
+    },
+    {
+      "file_ordinal": 36,
+      "mtime_ns": 1780516259000000000,
+      "path": "quotes_2025-11-21.parquet",
+      "sha256": "604ebbe8f5f20fcdf2fd82248890b6ddbfedf50c1b2e3eabf2cb636f222282fd",
+      "size_bytes": 4631662688
+    },
+    {
+      "file_ordinal": 37,
+      "mtime_ns": 1780516501000000000,
+      "path": "quotes_2025-11-22.parquet",
+      "sha256": "a0cfc83fb06b302d1a58f0d535d9908832eebba62be47221b1717c14a061504d",
+      "size_bytes": 4956125
+    },
+    {
+      "file_ordinal": 39,
+      "mtime_ns": 1780516573000000000,
+      "path": "quotes_2025-11-24.parquet",
+      "sha256": "8adc7d33daaa877ba338cc896eccee8a228abd0b87e0d89d57fdfbc13a3bed08",
+      "size_bytes": 4398819590
+    },
+    {
+      "file_ordinal": 40,
+      "mtime_ns": 1780516802000000000,
+      "path": "quotes_2025-11-25.parquet",
+      "sha256": "74300365e2723e14dd13a325dece89c1f61206ddbe48360e8a0f4d1ace388dbb",
+      "size_bytes": 4363236099
+    },
+    {
+      "file_ordinal": 41,
+      "mtime_ns": 1780516987000000000,
+      "path": "quotes_2025-11-26.parquet",
+      "sha256": "e0ccf6720abb488f6ffa93a8d49eb3b2bf5e1d1f421822932c29b83c12707fb1",
+      "size_bytes": 4154618220
+    },
+    {
+      "file_ordinal": 42,
+      "mtime_ns": 1780517201000000000,
+      "path": "quotes_2025-11-27.parquet",
+      "sha256": "d46c55522239a97bc26c610a8b5ce0fc286065fe996a2c21e74b471ccf23d78b",
+      "size_bytes": 5039508
+    },
+    {
+      "file_ordinal": 43,
+      "mtime_ns": 1780517233000000000,
+      "path": "quotes_2025-11-28.parquet",
+      "sha256": "632f8aae9ecf0764afb229f86e9efe6de16327238d9f5a20d027b123b52b2244",
+      "size_bytes": 2031264546
+    },
+    {
+      "file_ordinal": 46,
+      "mtime_ns": 1780517401000000000,
+      "path": "quotes_2025-12-01.parquet",
+      "sha256": "1097a8b7807049d58bd2dcdb7d1b8116443da493430c088daa5c5650a9699aa4",
+      "size_bytes": 4077589189
+    },
+    {
+      "file_ordinal": 47,
+      "mtime_ns": 1780517581000000000,
+      "path": "quotes_2025-12-02.parquet",
+      "sha256": "7da24741ee07c10b710f49163840c7583757055f7a5819265f2ceabe5873b09e",
+      "size_bytes": 4230168185
+    },
+    {
+      "file_ordinal": 48,
+      "mtime_ns": 1780517802000000000,
+      "path": "quotes_2025-12-03.parquet",
+      "sha256": "e39300d783d4df8195acb8fa0623e7ae571c2061cb051058c4873cb588549e10",
+      "size_bytes": 3928201904
+    },
+    {
+      "file_ordinal": 49,
+      "mtime_ns": 1780518033000000000,
+      "path": "quotes_2025-12-04.parquet",
+      "sha256": "3530a7380cfb05f99bb4954c1f9bd58eefd204b12be9ebaee4c4968af2733712",
+      "size_bytes": 4169029530
+    },
+    {
+      "file_ordinal": 50,
+      "mtime_ns": 1780518257000000000,
+      "path": "quotes_2025-12-05.parquet",
+      "sha256": "84b5cbffc6cf92455f071f70ae76cfffc8ea13c0774d01edbff45799b7a66ca9",
+      "size_bytes": 4056568737
+    },
+    {
+      "file_ordinal": 51,
+      "mtime_ns": 1780518468000000000,
+      "path": "quotes_2025-12-06.parquet",
+      "sha256": "062fcad157d620e9f2a640fd86caa644ae9ca26e2da85069b239b5ad8ab9b2ef",
+      "size_bytes": 2616124
+    },
+    {
+      "file_ordinal": 53,
+      "mtime_ns": 1780518533000000000,
+      "path": "quotes_2025-12-08.parquet",
+      "sha256": "baf1936126b96302500d6a88044cb99989d6ae958800811ee1f51e215d004d27",
+      "size_bytes": 4229029680
+    },
+    {
+      "file_ordinal": 54,
+      "mtime_ns": 1780518769000000000,
+      "path": "quotes_2025-12-09.parquet",
+      "sha256": "e5c789a4fc4043ef5bb49af7b7bc6e71e04d35d2a34a7d119d50539c15f81af2",
+      "size_bytes": 4082828665
+    },
+    {
+      "file_ordinal": 55,
+      "mtime_ns": 1780518993000000000,
+      "path": "quotes_2025-12-10.parquet",
+      "sha256": "c4642e4b9296ce18961d1afc75646086a3d80051f240ed622a1c41e5536ab8c7",
+      "size_bytes": 4320449689
+    },
+    {
+      "file_ordinal": 56,
+      "mtime_ns": 1780519196000000000,
+      "path": "quotes_2025-12-11.parquet",
+      "sha256": "c7dd70cf25624d9b34f0c19c68a5744e366b05886e73b58e6d25ad88fc03a329",
+      "size_bytes": 4517697533
+    },
+    {
+      "file_ordinal": 57,
+      "mtime_ns": 1780519463000000000,
+      "path": "quotes_2025-12-12.parquet",
+      "sha256": "be67516153796d0d4cd671aae732cfcb7fdcdce347ca65ea4690ecc011ac04c6",
+      "size_bytes": 4612873615
+    },
+    {
+      "file_ordinal": 58,
+      "mtime_ns": 1780519714000000000,
+      "path": "quotes_2025-12-13.parquet",
+      "sha256": "6e1ca4500416181bd8b671f7290b669d3cd981f288b353a4e81d7b5d0781b087",
+      "size_bytes": 2376899
+    },
+    {
+      "file_ordinal": 60,
+      "mtime_ns": 1780519776000000000,
+      "path": "quotes_2025-12-15.parquet",
+      "sha256": "53d8003122483d0dc71141fadfe0c7479db8a056bf16f93e2a28faec06e8d00e",
+      "size_bytes": 4607982717
+    },
+    {
+      "file_ordinal": 61,
+      "mtime_ns": 1780520043000000000,
+      "path": "quotes_2025-12-16.parquet",
+      "sha256": "214625b228f5849535cdfd3dfbb72ab3280c28fe9429cab2917a3093b50cf051",
+      "size_bytes": 4599571541
+    },
+    {
+      "file_ordinal": 62,
+      "mtime_ns": 1780520286000000000,
+      "path": "quotes_2025-12-17.parquet",
+      "sha256": "568cafd1777bb4a21b1190660fdc1eb81be37b68c30f29acbc5c5751b3576693",
+      "size_bytes": 4500516429
+    },
+    {
+      "file_ordinal": 63,
+      "mtime_ns": 1780520537000000000,
+      "path": "quotes_2025-12-18.parquet",
+      "sha256": "8a96f5df464027c481d77ade81fa8dd552e3c6bde36237aa6f1372d189b45053",
+      "size_bytes": 3904611241
+    },
+    {
+      "file_ordinal": 64,
+      "mtime_ns": 1780520751000000000,
+      "path": "quotes_2025-12-19.parquet",
+      "sha256": "f8cf28435d648b471d444e8f7d2a0fd20dfdc032c59f56ea86e857684b3adf79",
+      "size_bytes": 4247361807
+    },
+    {
+      "file_ordinal": 65,
+      "mtime_ns": 1780520991000000000,
+      "path": "quotes_2025-12-20.parquet",
+      "sha256": "83d4f89fc7a3ea79fb95d74e8159de5e1c4f90f0ec76f6487d2232f7afeb0a3a",
+      "size_bytes": 2150867
+    },
+    {
+      "file_ordinal": 67,
+      "mtime_ns": 1780521060000000000,
+      "path": "quotes_2025-12-22.parquet",
+      "sha256": "6a73407f130c02234bb984155e243f708f2777f666dc8ae9574f2bfa5b27a899",
+      "size_bytes": 3651134005
+    },
+    {
+      "file_ordinal": 68,
+      "mtime_ns": 1780521262000000000,
+      "path": "quotes_2025-12-23.parquet",
+      "sha256": "576365b9ad491975894631b12b4384404a9c41df650c0037f8126a3ea1b4ef09",
+      "size_bytes": 3325595443
+    },
+    {
+      "file_ordinal": 69,
+      "mtime_ns": 1780521445000000000,
+      "path": "quotes_2025-12-24.parquet",
+      "sha256": "be42e02902c692b0ebd0d174558ed14106b5df96c5ecfc97b41bd0e580b30673",
+      "size_bytes": 1899638499
+    },
+    {
+      "file_ordinal": 71,
+      "mtime_ns": 1780521577000000000,
+      "path": "quotes_2025-12-26.parquet",
+      "sha256": "5cdb4bcccb19f27e9235add5386dbcff078f82b38bba0ee9990aee0b8d21b61e",
+      "size_bytes": 3074429283
+    },
+    {
+      "file_ordinal": 72,
+      "mtime_ns": 1780521746000000000,
+      "path": "quotes_2025-12-27.parquet",
+      "sha256": "f0a2ea4164fb038f8bb99db2c1277d3fde976e8bbd235f5cb907a9b4f28a755e",
+      "size_bytes": 1535564
+    },
+    {
+      "file_ordinal": 74,
+      "mtime_ns": 1780521792000000000,
+      "path": "quotes_2025-12-29.parquet",
+      "sha256": "b3d0a7d759d74a23895acc26ef6bc8b75c524b8d6f1cae8ecc264640ae396c76",
+      "size_bytes": 3528715313
+    },
+    {
+      "file_ordinal": 75,
+      "mtime_ns": 1780521977000000000,
+      "path": "quotes_2025-12-30.parquet",
+      "sha256": "3bac7b5ad4594d13d8aa44e583ad210688c549cd478239ac90609687ab5d6a88",
+      "size_bytes": 3211422955
+    },
+    {
+      "file_ordinal": 76,
+      "mtime_ns": 1780522155000000000,
+      "path": "quotes_2025-12-31.parquet",
+      "sha256": "4d2df96108d083ff1d206fe5cc4bbf34c332019f830273e5691bbc193c69ceb4",
+      "size_bytes": 3425416114
+    },
+    {
+      "file_ordinal": 77,
+      "mtime_ns": 1780522353000000000,
+      "path": "quotes_2026-01-01.parquet",
+      "sha256": "0b8ef88a88dae4b2c6fe36ec7d9f168bbdbd86dab93dc76c867a6f25fb9a5ed5",
+      "size_bytes": 2423564
+    },
+    {
+      "file_ordinal": 78,
+      "mtime_ns": 1780522387000000000,
+      "path": "quotes_2026-01-02.parquet",
+      "sha256": "a7f4a6c613b047204033a7b32b090746b2a9358680acb74e7ba4b6a77b5b1163",
+      "size_bytes": 4436769910
+    },
+    {
+      "file_ordinal": 79,
+      "mtime_ns": 1780522619000000000,
+      "path": "quotes_2026-01-03.parquet",
+      "sha256": "d2a3a934f069c6534e28bef7900b7b57586f845602ca15b9ccddc986b7b10e11",
+      "size_bytes": 2529422
+    },
+    {
+      "file_ordinal": 81,
+      "mtime_ns": 1780522666000000000,
+      "path": "quotes_2026-01-05.parquet",
+      "sha256": "170305b675ae3eabdc71bd69171225f6983fd94ca8bce505bc5ac6d12f0f3a5b",
+      "size_bytes": 3921682161
+    },
+    {
+      "file_ordinal": 82,
+      "mtime_ns": 1780522872000000000,
+      "path": "quotes_2026-01-06.parquet",
+      "sha256": "8e72e0fba32717f5dee947f4a61a5915ba77ae7a29f9007e3fa31ac4c636b199",
+      "size_bytes": 4018430610
+    },
+    {
+      "file_ordinal": 83,
+      "mtime_ns": 1780523080000000000,
+      "path": "quotes_2026-01-07.parquet",
+      "sha256": "3e46037fdb0dacc64eff88a3b438e82c5bbd88e254cf73355e873a7094eafb1e",
+      "size_bytes": 3984970747
+    },
+    {
+      "file_ordinal": 84,
+      "mtime_ns": 1780523295000000000,
+      "path": "quotes_2026-01-08.parquet",
+      "sha256": "7ab241d920460a8dfa02a303c8ad2edc2bf6242c000a665999369a088e6a3b81",
+      "size_bytes": 3949145911
+    },
+    {
+      "file_ordinal": 85,
+      "mtime_ns": 1780523514000000000,
+      "path": "quotes_2026-01-09.parquet",
+      "sha256": "440589a130ac665a52542542acc06da4e152bf8a351050e971d6a81d2a69d86f",
+      "size_bytes": 3807379993
+    },
+    {
+      "file_ordinal": 86,
+      "mtime_ns": 1780523727000000000,
+      "path": "quotes_2026-01-10.parquet",
+      "sha256": "93f57291987a2912c4d481ecba307cdee471dc30818517957775a7df7e769c65",
+      "size_bytes": 2476472
+    },
+    {
+      "file_ordinal": 88,
+      "mtime_ns": 1780523774000000000,
+      "path": "quotes_2026-01-12.parquet",
+      "sha256": "ee2755ae9beb75bfeb438c246707d83299947995aaf5b09910ad0738b684abe3",
+      "size_bytes": 2593500640
+    },
+    {
+      "file_ordinal": 89,
+      "mtime_ns": 1780523915000000000,
+      "path": "quotes_2026-01-13.parquet",
+      "sha256": "c05496fdbb21c3c53e91053da669b43ae5127177403eb4ca189cd87d3e9f4eca",
+      "size_bytes": 4103699171
+    },
+    {
+      "file_ordinal": 90,
+      "mtime_ns": 1780524118000000000,
+      "path": "quotes_2026-01-14.parquet",
+      "sha256": "b3f5f1a496a3cc00608e5739c56da87e3cdd7c077b74d76f6ddc4ca8e408578d",
+      "size_bytes": 4174248488
+    },
+    {
+      "file_ordinal": 91,
+      "mtime_ns": 1780524326000000000,
+      "path": "quotes_2026-01-15.parquet",
+      "sha256": "40c016da691915888c1331c9b6a33f268020cc2a90603c2774c665f8bfdf7675",
+      "size_bytes": 4110961763
+    },
+    {
+      "file_ordinal": 92,
+      "mtime_ns": 1780524563000000000,
+      "path": "quotes_2026-01-16.parquet",
+      "sha256": "e9f5a8a7bf58bced600a98c8113f0850c6c94d8f6c97861a9e8cdefab0b46448",
+      "size_bytes": 4121587289
+    },
+    {
+      "file_ordinal": 93,
+      "mtime_ns": 1780524763000000000,
+      "path": "quotes_2026-01-17.parquet",
+      "sha256": "3c2dacec2a4e39be653cd03851fc772748b85a68aae817488189b60ca6e6ed2d",
+      "size_bytes": 3623428
+    },
+    {
+      "file_ordinal": 96,
+      "mtime_ns": 1780524832000000000,
+      "path": "quotes_2026-01-20.parquet",
+      "sha256": "ff96adeb88de44013a7c509d5c07d6d3fbc0d107d791cc0386aad16154e4fcc1",
+      "size_bytes": 4086403567
+    },
+    {
+      "file_ordinal": 97,
+      "mtime_ns": 1780525048000000000,
+      "path": "quotes_2026-01-21.parquet",
+      "sha256": "44d7644040ffffb13ad62a61e653c7847d1538bacc40eca4d661e2df94fa598a",
+      "size_bytes": 4382471257
+    },
+    {
+      "file_ordinal": 98,
+      "mtime_ns": 1780525283000000000,
+      "path": "quotes_2026-01-22.parquet",
+      "sha256": "9f00ea4100e63adeb3430a3872523928a19d72df6558e7748d2bdf6f1df4ea2c",
+      "size_bytes": 4368216107
+    },
+    {
+      "file_ordinal": 99,
+      "mtime_ns": 1780525505000000000,
+      "path": "quotes_2026-01-23.parquet",
+      "sha256": "94d7aadefdd01bcc1bc5df738df91b0be7706cbb52ae523072fe1b318514adab",
+      "size_bytes": 4254435706
+    },
+    {
+      "file_ordinal": 100,
+      "mtime_ns": 1780525727000000000,
+      "path": "quotes_2026-01-24.parquet",
+      "sha256": "6e1ee541192f0beb405ef7e3fd84ceb6b3ceb184f2656e5334b5a0e326a6b5fc",
+      "size_bytes": 2793424
+    },
+    {
+      "file_ordinal": 102,
+      "mtime_ns": 1780525794000000000,
+      "path": "quotes_2026-01-26.parquet",
+      "sha256": "3b841280fa58a71fa04e01364a963011268d51e6d0290b511ce31d6b4d5ac5c5",
+      "size_bytes": 4387499734
+    },
+    {
+      "file_ordinal": 103,
+      "mtime_ns": 1780526068000000000,
+      "path": "quotes_2026-01-27.parquet",
+      "sha256": "e34704b1230f1e2bf42c0615b6fec3df2199cc44d71867200e56b85e9cfbb721",
+      "size_bytes": 4161174952
+    },
+    {
+      "file_ordinal": 104,
+      "mtime_ns": 1780526314000000000,
+      "path": "quotes_2026-01-28.parquet",
+      "sha256": "fcc30d93ce77b02d9cb3dbdb843172e2b8f8c1855eef0f4a4e4648764024956b",
+      "size_bytes": 4434206234
+    },
+    {
+      "file_ordinal": 105,
+      "mtime_ns": 1780526553000000000,
+      "path": "quotes_2026-01-29.parquet",
+      "sha256": "8a0824207e35bf32c5deb77b0dbeb1c0b8c8be82efd47e6a5c442122cc669087",
+      "size_bytes": 4393133447
+    },
+    {
+      "file_ordinal": 106,
+      "mtime_ns": 1780526745000000000,
+      "path": "quotes_2026-01-30.parquet",
+      "sha256": "656986385850a3c950096527791033a68dd64ba63ac534433d9d86f9f9bab54f",
+      "size_bytes": 4436289106
+    },
+    {
+      "file_ordinal": 107,
+      "mtime_ns": 1780526955000000000,
+      "path": "quotes_2026-01-31.parquet",
+      "sha256": "db568476fcc12e4f3469b14e51a45c49208366278d3bd8174e2e9d9f503bb3a1",
+      "size_bytes": 2945583
+    },
+    {
+      "file_ordinal": 109,
+      "mtime_ns": 1780567518000000000,
+      "path": "quotes_2026-02-02.parquet",
+      "sha256": "418ab0aa53eff8db27b099515fb4e20bbd189b063c62899d82776a0a6bdcff46",
+      "size_bytes": 4374740516
+    },
+    {
+      "file_ordinal": 110,
+      "mtime_ns": 1780567769000000000,
+      "path": "quotes_2026-02-03.parquet",
+      "sha256": "2c37c1f911d1956a004ce13aa0b902e7165bb5c34f2dacb3cda6657cecd7d458",
+      "size_bytes": 4464909367
+    },
+    {
+      "file_ordinal": 111,
+      "mtime_ns": 1780567997000000000,
+      "path": "quotes_2026-02-04.parquet",
+      "sha256": "d909bbe3f3544fa6dce6fed195006a1371d1b383dcf944172963a34cad02e990",
+      "size_bytes": 4178720192
+    },
+    {
+      "file_ordinal": 112,
+      "mtime_ns": 1780568210000000000,
+      "path": "quotes_2026-02-05.parquet",
+      "sha256": "ed056066dfbab915eae4f5d642292ba9c00b0a137684f4f57fb3731f8b366fba",
+      "size_bytes": 4571024173
+    },
+    {
+      "file_ordinal": 113,
+      "mtime_ns": 1780568456000000000,
+      "path": "quotes_2026-02-06.parquet",
+      "sha256": "60bed643e2443bcf76b44c603d8e8ba567ea1cd14c02ad89e660ced47d65bc4a",
+      "size_bytes": 4562061231
+    },
+    {
+      "file_ordinal": 114,
+      "mtime_ns": 1780568708000000000,
+      "path": "quotes_2026-02-07.parquet",
+      "sha256": "a701ad2ea0877a717c4caffa9aea8cc0f5185ebd2eb097959eac4e37b48bd6a1",
+      "size_bytes": 5870944
+    },
+    {
+      "file_ordinal": 116,
+      "mtime_ns": 1780568753000000000,
+      "path": "quotes_2026-02-09.parquet",
+      "sha256": "36f782b3de5cb1690b3a15b8033f76bd325d3848eb28a3bc8761e5c02419ddcd",
+      "size_bytes": 4265708969
+    },
+    {
+      "file_ordinal": 117,
+      "mtime_ns": 1780568979000000000,
+      "path": "quotes_2026-02-10.parquet",
+      "sha256": "701b9ea08bc9de6a03e2ab657cbc180eee6864c005a2a8b3f777b005f7f289b5",
+      "size_bytes": 4253934221
+    },
+    {
+      "file_ordinal": 118,
+      "mtime_ns": 1780569201000000000,
+      "path": "quotes_2026-02-11.parquet",
+      "sha256": "02ee58cd397890d09ef58cd98f56ace11fee20de62b4a3e7a5e3ccbbc8f20769",
+      "size_bytes": 4248511010
+    },
+    {
+      "file_ordinal": 119,
+      "mtime_ns": 1780569425000000000,
+      "path": "quotes_2026-02-12.parquet",
+      "sha256": "af222ca8ebafc622dfbf1fd112afa7b6a9cae76153be8a8ca326c8dc5aa0e4fb",
+      "size_bytes": 4163934284
+    },
+    {
+      "file_ordinal": 120,
+      "mtime_ns": 1780569635000000000,
+      "path": "quotes_2026-02-13.parquet",
+      "sha256": "49f25726db52d82dc88f34c2004b87787224f1b44acb0005de3ffd93db121f74",
+      "size_bytes": 4383147817
+    },
+    {
+      "file_ordinal": 121,
+      "mtime_ns": 1780569853000000000,
+      "path": "quotes_2026-02-14.parquet",
+      "sha256": "be9dd10783810a9d8135cf96876033c83105583bbc2f6e044b2517da9d7032e3",
+      "size_bytes": 2843112
+    },
+    {
+      "file_ordinal": 124,
+      "mtime_ns": 1780569935000000000,
+      "path": "quotes_2026-02-17.parquet",
+      "sha256": "51541b311fa7d0d948be585fcbfb673fd7227ae7801ff5277e75bec5cba19909",
+      "size_bytes": 4234008756
+    },
+    {
+      "file_ordinal": 125,
+      "mtime_ns": 1780570154000000000,
+      "path": "quotes_2026-02-18.parquet",
+      "sha256": "a8d975e45475a4891feb176ac5013a7df04f0e3e8d28f5a2e4eefbc5ec924ba0",
+      "size_bytes": 4021693862
+    },
+    {
+      "file_ordinal": 126,
+      "mtime_ns": 1780570358000000000,
+      "path": "quotes_2026-02-19.parquet",
+      "sha256": "9abf8684d80c50d0e14e9389b404effaf9ba7a60ed0c109e04853b9cea33b511",
+      "size_bytes": 4127883060
+    },
+    {
+      "file_ordinal": 127,
+      "mtime_ns": 1780570572000000000,
+      "path": "quotes_2026-02-20.parquet",
+      "sha256": "c49425ed8edf43764dcabbfab72a48274042a8e7c4d9ac367c13e40a64bf7b10",
+      "size_bytes": 3972074386
+    },
+    {
+      "file_ordinal": 128,
+      "mtime_ns": 1780570776000000000,
+      "path": "quotes_2026-02-21.parquet",
+      "sha256": "b6e324b0e1d1da0096079f443a27653a1c3184ff0a0a4d03135c165b8842815e",
+      "size_bytes": 2333039
+    },
+    {
+      "file_ordinal": 130,
+      "mtime_ns": 1780570841000000000,
+      "path": "quotes_2026-02-23.parquet",
+      "sha256": "81f0fca97c0bb4ebc5f4f2abc725c8cd0c57da6155c29c9b3c671b9f16c89648",
+      "size_bytes": 4232831163
+    },
+    {
+      "file_ordinal": 131,
+      "mtime_ns": 1780571100000000000,
+      "path": "quotes_2026-02-24.parquet",
+      "sha256": "5aa49455a5795add5efa01c1d13f0191f0c39b8ebe8f6cb1903289c859dcb277",
+      "size_bytes": 4241188415
+    },
+    {
+      "file_ordinal": 132,
+      "mtime_ns": 1780571351000000000,
+      "path": "quotes_2026-02-25.parquet",
+      "sha256": "1d5866b5fe003e91391e3f0c7d9f8feff8a68ec18bebc8d39ede27997ccdf4c1",
+      "size_bytes": 3872431808
+    },
+    {
+      "file_ordinal": 133,
+      "mtime_ns": 1780571549000000000,
+      "path": "quotes_2026-02-26.parquet",
+      "sha256": "7908dd20b485e4dcb8384c66d8dd115fa9cfc89d7ac5296eaa03dfd452b83999",
+      "size_bytes": 4163628835
+    },
+    {
+      "file_ordinal": 134,
+      "mtime_ns": 1780571755000000000,
+      "path": "quotes_2026-02-27.parquet",
+      "sha256": "de44125823931a74b1fc60aedb4a8a86fe1b376f4c1a2936252bb5ef40ed8223",
+      "size_bytes": 4290974534
+    },
+    {
+      "file_ordinal": 135,
+      "mtime_ns": 1780571972000000000,
+      "path": "quotes_2026-02-28.parquet",
+      "sha256": "a77e13defa02fbb85c8996e6a493a39bfe7209dbd7acc988d330ce528d8ec297",
+      "size_bytes": 2940300
+    },
+    {
+      "file_ordinal": 137,
+      "mtime_ns": 1780572025000000000,
+      "path": "quotes_2026-03-02.parquet",
+      "sha256": "4b4e0454d4be82b6237e81b087d45959cf979b27725b50e81d408ae6cfab5de6",
+      "size_bytes": 4207991865
+    },
+    {
+      "file_ordinal": 138,
+      "mtime_ns": 1780572247000000000,
+      "path": "quotes_2026-03-03.parquet",
+      "sha256": "83c038c909a00048376ee5ad496aabfd89d700145f7206ae490508bfbdede23b",
+      "size_bytes": 4644759537
+    },
+    {
+      "file_ordinal": 139,
+      "mtime_ns": 1780572566000000000,
+      "path": "quotes_2026-03-04.parquet",
+      "sha256": "69aadcba44fd7e693c43f2f1429f58e69c73fa350f6e44115561992686977a19",
+      "size_bytes": 4601759185
+    },
+    {
+      "file_ordinal": 140,
+      "mtime_ns": 1780572846000000000,
+      "path": "quotes_2026-03-05.parquet",
+      "sha256": "660a7dce65cfbbc7669a249589c00107267255d1081123d11c3d2f7cd2c0623d",
+      "size_bytes": 4616731036
+    },
+    {
+      "file_ordinal": 141,
+      "mtime_ns": 1780573095000000000,
+      "path": "quotes_2026-03-06.parquet",
+      "sha256": "4a95c16361b756cb9636c578e3891c541417e5b62df22cf1834cb42a7ec8c82f",
+      "size_bytes": 4697955421
+    },
+    {
+      "file_ordinal": 142,
+      "mtime_ns": 1780573366000000000,
+      "path": "quotes_2026-03-07.parquet",
+      "sha256": "3c316f04a107b5c23100d2b8aa1548126001e34ad18588f3f7332546e05090b7",
+      "size_bytes": 2802285
+    },
+    {
+      "file_ordinal": 144,
+      "mtime_ns": 1780573444000000000,
+      "path": "quotes_2026-03-09.parquet",
+      "sha256": "cd20deb10a6a33f2b5bab67c15253d887c3fb20d86715890a929e8b497f2236e",
+      "size_bytes": 4840137466
+    },
+    {
+      "file_ordinal": 145,
+      "mtime_ns": 1780573766000000000,
+      "path": "quotes_2026-03-10.parquet",
+      "sha256": "bea1727fc4fef4a5348721a183e377d25fb33b41f68ab277a157b68ed4795760",
+      "size_bytes": 4782157894
+    },
+    {
+      "file_ordinal": 146,
+      "mtime_ns": 1780574081000000000,
+      "path": "quotes_2026-03-11.parquet",
+      "sha256": "4b2e7c18ee2d5a4af149f9c55488e9024984c850e2955e4b1b5781256abe9e28",
+      "size_bytes": 4776810994
+    },
+    {
+      "file_ordinal": 147,
+      "mtime_ns": 1780574373000000000,
+      "path": "quotes_2026-03-12.parquet",
+      "sha256": "87955e470ba31aa404a31e5ea6f7578a643d90c5b547ae504167671e0ee65cb2",
+      "size_bytes": 4781996818
+    },
+    {
+      "file_ordinal": 148,
+      "mtime_ns": 1780584023000000000,
+      "path": "quotes_2026-03-13.parquet",
+      "sha256": "2906645f4555c1dd2df11d6ff6c895e8c344269348e9699690f5bc09d40075e8",
+      "size_bytes": 4774191338
+    },
+    {
+      "file_ordinal": 149,
+      "mtime_ns": 1780584259000000000,
+      "path": "quotes_2026-03-14.parquet",
+      "sha256": "ad398759d40a664de08bce658a41b08a23ac29d53bd3bdaf2cd98d5a2064bd75",
+      "size_bytes": 134154
+    },
+    {
+      "file_ordinal": 151,
+      "mtime_ns": 1780584321000000000,
+      "path": "quotes_2026-03-16.parquet",
+      "sha256": "c18fdf2a3e91fd6f03d0cb28ae78d6698b1669e7ebe6f1d6b870f0b2665cc4a1",
+      "size_bytes": 4638853372
+    },
+    {
+      "file_ordinal": 152,
+      "mtime_ns": 1780584539000000000,
+      "path": "quotes_2026-03-17.parquet",
+      "sha256": "1c7bd00c307fbfa3330085f9b3ccd182ba928afbbf069ad012299ae532ea89e3",
+      "size_bytes": 4699349595
+    },
+    {
+      "file_ordinal": 153,
+      "mtime_ns": 1780584807000000000,
+      "path": "quotes_2026-03-18.parquet",
+      "sha256": "8e55ad4477a0c9e36417d85e9e83e60fbde821fed89cb97ee46643f768912050",
+      "size_bytes": 4897878783
+    },
+    {
+      "file_ordinal": 154,
+      "mtime_ns": 1780590997000000000,
+      "path": "quotes_2026-03-19.parquet",
+      "sha256": "ec27b6832a5bd930be20e534cacadf36f5c0e49a0b15775b2e145b904ee56a71",
+      "size_bytes": 4745610878
+    },
+    {
+      "file_ordinal": 155,
+      "mtime_ns": 1780591249000000000,
+      "path": "quotes_2026-03-20.parquet",
+      "sha256": "926b4bd9b7c22b6083f3ba044fbb366df5ed411b0020eb9a957646f8f606bd5a",
+      "size_bytes": 4289049698
+    },
+    {
+      "file_ordinal": 156,
+      "mtime_ns": 1780591463000000000,
+      "path": "quotes_2026-03-21.parquet",
+      "sha256": "aab6dabd61859904621382cf90a48309bcf0f165afe1b4c184661c11eb30042f",
+      "size_bytes": 135815
+    },
+    {
+      "file_ordinal": 158,
+      "mtime_ns": 1780591521000000000,
+      "path": "quotes_2026-03-23.parquet",
+      "sha256": "ff0f99f1d159381e8e6c45c255cc3140375cdef47e264de7ac72d127ee3917f5",
+      "size_bytes": 5068708062
+    },
+    {
+      "file_ordinal": 159,
+      "mtime_ns": 1780591791000000000,
+      "path": "quotes_2026-03-24.parquet",
+      "sha256": "a908d954206b3cad72563a53e6622875b402dad4edf57b25d33fdb12383f4c2f",
+      "size_bytes": 4476901594
+    },
+    {
+      "file_ordinal": 160,
+      "mtime_ns": 1780592062000000000,
+      "path": "quotes_2026-03-25.parquet",
+      "sha256": "5eb302a3a3fa27b89ce425aeb78af092ca568164007bb5a35edacf1936e10420",
+      "size_bytes": 4779972067
+    },
+    {
+      "file_ordinal": 161,
+      "mtime_ns": 1780592305000000000,
+      "path": "quotes_2026-03-26.parquet",
+      "sha256": "250771fde7a59a70bb99385cb2e32b2c3805781da6fa1d00f4230aadebcff8d0",
+      "size_bytes": 5237870736
+    },
+    {
+      "file_ordinal": 162,
+      "mtime_ns": 1780592583000000000,
+      "path": "quotes_2026-03-27.parquet",
+      "sha256": "5ca456be2f583324645c02eec28a01eddcf8a254806168f24391578e363fbf26",
+      "size_bytes": 5046313952
+    },
+    {
+      "file_ordinal": 163,
+      "mtime_ns": 1780592850000000000,
+      "path": "quotes_2026-03-28.parquet",
+      "sha256": "7742d4413f382d360b58bcc0d53006d9336f5f2d642454d23fc7be53a933b4d4",
+      "size_bytes": 137293
+    },
+    {
+      "file_ordinal": 165,
+      "mtime_ns": 1780592904000000000,
+      "path": "quotes_2026-03-30.parquet",
+      "sha256": "74de5ed9ec8ae549581ae2500b8928fb2afcf45a57081a07ba581840f62ad13a",
+      "size_bytes": 4297640071
+    },
+    {
+      "file_ordinal": 166,
+      "mtime_ns": 1780593151000000000,
+      "path": "quotes_2026-03-31.parquet",
+      "sha256": "75b8b5b5398efa6cf24fa941fe4f8592bb2f7a70cd81b32e5d7120aea0c94c41",
+      "size_bytes": 4637310042
+    },
+    {
+      "file_ordinal": 167,
+      "mtime_ns": 1780593394000000000,
+      "path": "quotes_2026-04-01.parquet",
+      "sha256": "8e44de05a326737eea9530ba266b2f1e087ceeaec583627e346a610f54bc0bc5",
+      "size_bytes": 4639023087
+    },
+    {
+      "file_ordinal": 168,
+      "mtime_ns": 1780593650000000000,
+      "path": "quotes_2026-04-02.parquet",
+      "sha256": "e8cfe9b0b5e76ba4789bca4c69f9580902fe3e1e0bab9263eb152dd7acbd70d9",
+      "size_bytes": 4572500385
+    },
+    {
+      "file_ordinal": 169,
+      "mtime_ns": 1780593868000000000,
+      "path": "quotes_2026-04-03.parquet",
+      "sha256": "dcbf0b89d6ee91726e56fa42d0a559d44a91c5b0cc558a62c639673b972274b6",
+      "size_bytes": 147334
+    },
+    {
+      "file_ordinal": 172,
+      "mtime_ns": 1780593942000000000,
+      "path": "quotes_2026-04-06.parquet",
+      "sha256": "a0832770ee4fc9a7e25051b22cba6f3ab34b023a2032148b63a1cdff40dc27c1",
+      "size_bytes": 4478901573
+    },
+    {
+      "file_ordinal": 173,
+      "mtime_ns": 1780594169000000000,
+      "path": "quotes_2026-04-07.parquet",
+      "sha256": "ab638b53a16da3fe7ff3c68c414b870568cb46894ef8b86e453d2720728a3d44",
+      "size_bytes": 4925972719
+    },
+    {
+      "file_ordinal": 174,
+      "mtime_ns": 1780594417000000000,
+      "path": "quotes_2026-04-08.parquet",
+      "sha256": "f13bbc446881202bee41b71b769f6a20843857ff5666d3663fa175fe06f671f6",
+      "size_bytes": 4645768585
+    },
+    {
+      "file_ordinal": 175,
+      "mtime_ns": 1780594666000000000,
+      "path": "quotes_2026-04-09.parquet",
+      "sha256": "c49d40507e2f7a29172f8c30e3c4d9e9370b25e23d06458fdae4096d7d915a97",
+      "size_bytes": 4578238776
+    },
+    {
+      "file_ordinal": 176,
+      "mtime_ns": 1780594912000000000,
+      "path": "quotes_2026-04-10.parquet",
+      "sha256": "e6f2c4f9d6d79285289840d807cd9480bb2557313a8a542cc71375f15b4ce6b6",
+      "size_bytes": 4368245937
+    },
+    {
+      "file_ordinal": 177,
+      "mtime_ns": 1780595139000000000,
+      "path": "quotes_2026-04-11.parquet",
+      "sha256": "d2bd5ed5cf0831f2e1586d257ab1e4949f559921dcc8a53ef1cdb3fee75045df",
+      "size_bytes": 142754
+    },
+    {
+      "file_ordinal": 179,
+      "mtime_ns": 1780595187000000000,
+      "path": "quotes_2026-04-13.parquet",
+      "sha256": "c88300a9f5edb94838eef927277e3d5bc1beb1347e58b124ec6e8252f8b0aae5",
+      "size_bytes": 4391749087
+    },
+    {
+      "file_ordinal": 180,
+      "mtime_ns": 1780643555000000000,
+      "path": "quotes_2026-04-14.parquet",
+      "sha256": "61f09bcf3d87bbbbd458c948e64a578c62cc977dcc083a9d7b333824fd4d7793",
+      "size_bytes": 4369211772
+    },
+    {
+      "file_ordinal": 181,
+      "mtime_ns": 1780643821000000000,
+      "path": "quotes_2026-04-15.parquet",
+      "sha256": "7b176dc81e99e0942115235ae1f12d907d74f5a9c7a956d6ddab50486846fd1b",
+      "size_bytes": 4544116145
+    },
+    {
+      "file_ordinal": 182,
+      "mtime_ns": 1780644078000000000,
+      "path": "quotes_2026-04-16.parquet",
+      "sha256": "717910674184b84f00d06825842976da11f7962252ac606ff2b1503c3cc7e578",
+      "size_bytes": 4623893768
+    },
+    {
+      "file_ordinal": 183,
+      "mtime_ns": 1780644323000000000,
+      "path": "quotes_2026-04-17.parquet",
+      "sha256": "3af94c38287f930057749d23609bef84db501f21bf093a00a8b3ef51e5967822",
+      "size_bytes": 4788759414
+    },
+    {
+      "file_ordinal": 184,
+      "mtime_ns": 1780644569000000000,
+      "path": "quotes_2026-04-18.parquet",
+      "sha256": "197b030f898a2699ed497787c34ab5a6d25d8cd74cb5911c71e5d60b2e53ef27",
+      "size_bytes": 137505
+    },
+    {
+      "file_ordinal": 186,
+      "mtime_ns": 1780645208000000000,
+      "path": "quotes_2026-04-20.parquet",
+      "sha256": "60b25e212c618be4b361689d570f516f4937e66f7ef3e59fe90a831639ab50c7",
+      "size_bytes": 4429530177
+    },
+    {
+      "file_ordinal": 187,
+      "mtime_ns": 1780645439000000000,
+      "path": "quotes_2026-04-21.parquet",
+      "sha256": "e1d8e2c448071a31f4217c4f7b73b54a5c4cdcf8fa484ac1cf609dff93d84720",
+      "size_bytes": 4602820250
+    },
+    {
+      "file_ordinal": 188,
+      "mtime_ns": 1780645685000000000,
+      "path": "quotes_2026-04-22.parquet",
+      "sha256": "832790c4e9d1da1e4987a0dc6183f7e8a551844a682ff729c5a9ec96ffdd54c5",
+      "size_bytes": 4468978340
+    },
+    {
+      "file_ordinal": 189,
+      "mtime_ns": 1780645943000000000,
+      "path": "quotes_2026-04-23.parquet",
+      "sha256": "dedb154003e0a7b9bed031c204cb89f49adc77b812800e8fb2e0be747775a85c",
+      "size_bytes": 4675497982
+    },
+    {
+      "file_ordinal": 190,
+      "mtime_ns": 1780646187000000000,
+      "path": "quotes_2026-04-24.parquet",
+      "sha256": "92b088fa8afb6d454885f21142040c28dd6068d2d4de94597ae5c9be58dc9497",
+      "size_bytes": 4641259205
+    },
+    {
+      "file_ordinal": 191,
+      "mtime_ns": 1780646434000000000,
+      "path": "quotes_2026-04-25.parquet",
+      "sha256": "b5893930bb6536577bf16c6d4692d8b90afe29b53655339b7bca2f0fe6fec4b7",
+      "size_bytes": 151114
+    },
+    {
+      "file_ordinal": 193,
+      "mtime_ns": 1780646492000000000,
+      "path": "quotes_2026-04-27.parquet",
+      "sha256": "40f59d97cd660b39e4ca9a088a3c900dbe0ae12da3410fd09558f63b4a0c62ff",
+      "size_bytes": 4263282252
+    },
+    {
+      "file_ordinal": 194,
+      "mtime_ns": 1780646714000000000,
+      "path": "quotes_2026-04-28.parquet",
+      "sha256": "f30dcfd7a27e47de53c8a9d9029875fea2504d6e275438a5ea3ed4e792700332",
+      "size_bytes": 4595500456
+    },
+    {
+      "file_ordinal": 195,
+      "mtime_ns": 1780646954000000000,
+      "path": "quotes_2026-04-29.parquet",
+      "sha256": "2ffa19b1fe80f91d161d47563d22927e814f4abe3aa2103b2f286120c9c97d58",
+      "size_bytes": 4551230990
+    },
+    {
+      "file_ordinal": 196,
+      "mtime_ns": 1780647195000000000,
+      "path": "quotes_2026-04-30.parquet",
+      "sha256": "c907fe4ad83beea794209c18703d42abc9ef07f97d86092695d0b946f91c79bc",
+      "size_bytes": 4695246755
+    },
+    {
+      "file_ordinal": 197,
+      "mtime_ns": 1780647447000000000,
+      "path": "quotes_2026-05-01.parquet",
+      "sha256": "bf895f94442c76567a90355f864ffcddde2ce10cdcff006bda10710b611cb51a",
+      "size_bytes": 4429865875
+    },
+    {
+      "file_ordinal": 198,
+      "mtime_ns": 1780647677000000000,
+      "path": "quotes_2026-05-02.parquet",
+      "sha256": "fd3c5901564bd95e16f00d628bf5a6a346297b2ce6534c957a16cebd140fb000",
+      "size_bytes": 149869
+    },
+    {
+      "file_ordinal": 200,
+      "mtime_ns": 1780647735000000000,
+      "path": "quotes_2026-05-04.parquet",
+      "sha256": "27dbdbc81e24477294581628b474b2bda71e8f9367068a8a7c0ad3ccdae71716",
+      "size_bytes": 4631772207
+    },
+    {
+      "file_ordinal": 201,
+      "mtime_ns": 1780647981000000000,
+      "path": "quotes_2026-05-05.parquet",
+      "sha256": "c3eb5dfd92fecd13d223213caad999c9b8b01fd3a1e287f91e97c4f298ee8576",
+      "size_bytes": 4251072749
+    },
+    {
+      "file_ordinal": 202,
+      "mtime_ns": 1780648205000000000,
+      "path": "quotes_2026-05-06.parquet",
+      "sha256": "1fb3ace5125fe70c3af7dbd1e01bfe1cd388914150d8eb39b76baeec7660c2ae",
+      "size_bytes": 4673043195
+    },
+    {
+      "file_ordinal": 203,
+      "mtime_ns": 1780648441000000000,
+      "path": "quotes_2026-05-07.parquet",
+      "sha256": "2bab638b72fcc5941510b6ff6644c15a90569ac43427addc3d453a634a673d44",
+      "size_bytes": 4647074890
+    },
+    {
+      "file_ordinal": 204,
+      "mtime_ns": 1780648712000000000,
+      "path": "quotes_2026-05-08.parquet",
+      "sha256": "051e181c9989d8c72a8bd793fe196faf96b5b37ccf51e9db7664099f83598cad",
+      "size_bytes": 4513022005
+    },
+    {
+      "file_ordinal": 205,
+      "mtime_ns": 1780648942000000000,
+      "path": "quotes_2026-05-09.parquet",
+      "sha256": "1c1c8f654d112a06a91652b788165e121c0654abca9d09b39c9531de3f6db1b3",
+      "size_bytes": 147507
+    },
+    {
+      "file_ordinal": 207,
+      "mtime_ns": 1780648993000000000,
+      "path": "quotes_2026-05-11.parquet",
+      "sha256": "bf48d004aabc18ab4582ca9307014a62be830f75176d34c62812bbcd0061fcb4",
+      "size_bytes": 4422435240
+    },
+    {
+      "file_ordinal": 208,
+      "mtime_ns": 1780649219000000000,
+      "path": "quotes_2026-05-12.parquet",
+      "sha256": "ddd2b0b3736baf77f82bbcec2d5562c716e38e8fb5dce74cc6bd560522b576fb",
+      "size_bytes": 4568313486
+    },
+    {
+      "file_ordinal": 209,
+      "mtime_ns": 1780649461000000000,
+      "path": "quotes_2026-05-13.parquet",
+      "sha256": "a1bd2f9e974ca9e8951f8f216a7527ae90a3b2e57fb11263dd0e1ad450c7b60a",
+      "size_bytes": 4607194332
+    },
+    {
+      "file_ordinal": 210,
+      "mtime_ns": 1780649700000000000,
+      "path": "quotes_2026-05-14.parquet",
+      "sha256": "d180bd1f4afd0764cfad319cd9888fdd13fc38c9d7d03df53c7e8dd89a8d78d4",
+      "size_bytes": 4333906845
+    },
+    {
+      "file_ordinal": 211,
+      "mtime_ns": 1780649943000000000,
+      "path": "quotes_2026-05-15.parquet",
+      "sha256": "15a75255e6464dac1d0a99a592b5d401c2d7879a48c96b4f4655528b7b35a72a",
+      "size_bytes": 4565624547
+    },
+    {
+      "file_ordinal": 212,
+      "mtime_ns": 1780650180000000000,
+      "path": "quotes_2026-05-16.parquet",
+      "sha256": "43583e08c585f54e78dadb0ce3445a8e07e3c5dcb523d4bba05c22821a08df31",
+      "size_bytes": 162138
+    },
+    {
+      "file_ordinal": 214,
+      "mtime_ns": 1780650244000000000,
+      "path": "quotes_2026-05-18.parquet",
+      "sha256": "04a0267f09ed1762ece7e9d9c528a235c8c8f29b66098b1ef3e98a216e1d3de5",
+      "size_bytes": 4452901898
+    },
+    {
+      "file_ordinal": 215,
+      "mtime_ns": 1780650512000000000,
+      "path": "quotes_2026-05-19.parquet",
+      "sha256": "2608367d2d89cad002f0496c9949499923761163f24b44cdca08812b54945e0b",
+      "size_bytes": 4497106115
+    },
+    {
+      "file_ordinal": 216,
+      "mtime_ns": 1780650757000000000,
+      "path": "quotes_2026-05-20.parquet",
+      "sha256": "1104454acd0f8d6e64acc36f368794dd1cdb6f1f176ebe4bf91a924ff7a3c7c0",
+      "size_bytes": 4509470018
+    },
+    {
+      "file_ordinal": 217,
+      "mtime_ns": 1780651001000000000,
+      "path": "quotes_2026-05-21.parquet",
+      "sha256": "c77238efad5b4a2fd6f27258fbc4dd825ff6054996fa21cb3dbf5cbc2b5284df",
+      "size_bytes": 4558003270
+    },
+    {
+      "file_ordinal": 218,
+      "mtime_ns": 1780651248000000000,
+      "path": "quotes_2026-05-22.parquet",
+      "sha256": "a44ad7f31b66ee218f99741b8b452f567c15dcbc62d944dab50948482f7490be",
+      "size_bytes": 4502461080
+    },
+    {
+      "file_ordinal": 219,
+      "mtime_ns": 1780651470000000000,
+      "path": "quotes_2026-05-23.parquet",
+      "sha256": "e86bcf38ac0d4b07a2b8e71a9e79cc8c061a41749253c2b050958b3d381ddb84",
+      "size_bytes": 153686
+    },
+    {
+      "file_ordinal": 222,
+      "mtime_ns": 1780651544000000000,
+      "path": "quotes_2026-05-26.parquet",
+      "sha256": "eaf1b68e966c425fd0e85a20add6014680b876f77de3dfc70f66b4c2b6dbe3e0",
+      "size_bytes": 4236830663
+    },
+    {
+      "file_ordinal": 223,
+      "mtime_ns": 1780651770000000000,
+      "path": "quotes_2026-05-27.parquet",
+      "sha256": "e7621485c1488eeb327d4ceee0cf2b69df1852172198046293e232d34b26d501",
+      "size_bytes": 4476458795
+    },
+    {
+      "file_ordinal": 224,
+      "mtime_ns": 1780652041000000000,
+      "path": "quotes_2026-05-28.parquet",
+      "sha256": "549562b9e044a429e51937e7faa957b522ad417ce7d114a4be0554f3ce9291ae",
+      "size_bytes": 4260695402
+    },
+    {
+      "file_ordinal": 225,
+      "mtime_ns": 1780652286000000000,
+      "path": "quotes_2026-05-29.parquet",
+      "sha256": "0cbd039be61b05e562b2700b15128bdbce7559b46d1ca5b01576c8149f9b53f3",
+      "size_bytes": 4178447169
+    },
+    {
+      "file_ordinal": 226,
+      "mtime_ns": 1780652517000000000,
+      "path": "quotes_2026-05-30.parquet",
+      "sha256": "0b2f874e1f1547582fa31b26fa83d23fa515866236e69243316b65714185dc94",
+      "size_bytes": 158207
+    },
+    {
+      "file_ordinal": 228,
+      "mtime_ns": 1780652576000000000,
+      "path": "quotes_2026-06-01.parquet",
+      "sha256": "ffb93095a61e6838d07d254a6d4f60d59be3657e990ae1ed060b475fa136f064",
+      "size_bytes": 4192177042
+    },
+    {
+      "file_ordinal": 229,
+      "mtime_ns": 1780652815000000000,
+      "path": "quotes_2026-06-02.parquet",
+      "sha256": "570978003ace503ef7651838a7af1f5de289c0b7efac68465c1459904b0ab880",
+      "size_bytes": 4299722336
+    },
+    {
+      "file_ordinal": 230,
+      "mtime_ns": 1780653050000000000,
+      "path": "quotes_2026-06-03.parquet",
+      "sha256": "6c9164c901d1cb5ef87dcdcfb3c2a2a694e8b32c8fdf8aafd95eddb5272f427e",
+      "size_bytes": 4512026244
+    },
+    {
+      "file_ordinal": 231,
+      "mtime_ns": 1780653310000000000,
+      "path": "quotes_2026-06-04.parquet",
+      "sha256": "dcca379b2b1bcd7b3fe7252c361121ba5595797238fd7e976e8c9f8238af598a",
+      "size_bytes": 4550411113
+    }
+  ],
+  "generated_at": "2026-09-20T04:58:53.253Z",
+  "schema_version": 1,
+  "source_manifest_path": "<runtime-state-root>/source_manifest.json",
+  "source_manifest_sha256": "f2c80675dae29a1793c00244ec81ddc5e6ba5e234d9b53165afa077f1a2d845e",
+  "status": "complete",
+  "total_size_bytes": 683633475676
+}

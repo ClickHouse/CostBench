@@ -1,0 +1,1 @@
+databricks-zerobus-ingest-sdk[arrow]==1.8.0

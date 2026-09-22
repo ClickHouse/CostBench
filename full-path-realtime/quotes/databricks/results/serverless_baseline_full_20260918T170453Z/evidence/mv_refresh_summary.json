@@ -1,0 +1,17 @@
+{
+  "collected_at": "2026-09-21T09:33:06.725Z",
+  "collection_window": {
+    "duration_seconds": 124129.353,
+    "since": "2026-09-18T17:04:53.000Z",
+    "until": "2026-09-20T03:33:42.353Z"
+  },
+  "full_refresh_count": 0,
+  "maintenance_class_counts": {
+    "incremental": 1028
+  },
+  "maintenance_type_counts": {
+    "MAINTENANCE_TYPE_GROUP_AGGREGATE": 1028
+  },
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "schema_version": 1
+}
