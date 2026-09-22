@@ -7,7 +7,7 @@
   "redshift_serverless": {
     "rpu_hour_usd": 0.467,
     "managed_storage_gb_month_usd": 0.025,
-    "billing_note": "RPU price is used for normalized query allocation and the declared writer capacity-time model. Managed storage is retained as evidence but excluded from the benchmark fresh-data-path total."
+    "billing_note": "RPU price is used for normalized query allocation and the separately declared writer capacity-time assumption. Managed storage is retained as evidence but excluded from the benchmark fresh-data-path total."
   },
   "msk_provisioned": {
     "broker_instance": "kafka.m7g.xlarge",

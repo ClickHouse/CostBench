@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+DB="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT="$(cd "$DB/../.." && pwd)"
+RUN="$DB/results/serverless_baseline_full_20260918T170453Z"
+OUT="$RUN/charts"
+CH="$ROOT/quotes/clickhouse-cloud"
+CH_COST="$CH/costs/out_t2/matched/databricks_serverless_20260918"
+DB_COST="$DB/costs/out/serverless_20260918"
+# COSTS_ONLY=1 reuses query/freshness charts when only allocations change.
+"${UV:-uv}" run --python 3.12 python "$DB/integrate_september.py" finalize
+export CHART_BACKGROUND_COLOR="${CHART_BACKGROUND_COLOR:-#161614}"
+for mode in standard wide; do
+  [[ "${WIDE_ONLY:-0}" == 1 && "$mode" == standard ]] && continue
+  extra=""; [[ "$mode" == wide ]] && extra="--wide"
+  if [[ "${COSTS_ONLY:-0}" != 1 ]]; then
+  "${UV:-uv}" run "$DB/visualizations/plot_query_latency.py" --workload aggregate --left "$CH/results_t2/mv/dashboard_20260808T065559Z.jsonl" --right "$RUN/mv/dashboard_20260918T170453Z.jsonl" --left-cost "$CH_COST/dashboard.json" --right-cost "$DB_COST/dashboard.json" --right-label "Databricks SQL" --right-color '#FF3621' --right-tier premium --output-dir "$OUT" --basename aggregate_query_latency_clickhouse_vs_databricks $extra
+  "${UV:-uv}" run "$DB/visualizations/plot_query_latency.py" --workload drilldown --left "$CH/results_t2/raw/drilldown_20260808T065602Z.jsonl" --right "$RUN/raw/drilldown_20260918T170453Z.jsonl" --left-cost "$CH_COST/drilldown.json" --right-cost "$DB_COST/drilldown.json" --right-label "Databricks SQL" --right-color '#FF3621' --right-tier premium --output-dir "$OUT" --basename drilldown_query_latency_clickhouse_vs_databricks $extra
+  fi
+  kinds="components fullpath"
+  [[ "${COSTS_ONLY:-0}" != 1 ]] && kinds="freshness $kinds"
+  for kind in $kinds; do
+    "${UV:-uv}" run "$DB/visualizations/plot_september.py" --kind "$kind" --output-dir "$OUT" $extra
+  done
+done

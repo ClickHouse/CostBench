@@ -1,0 +1,25 @@
+{
+  "provider": "databricks",
+  "currency": "USD",
+  "retrieved_on": "2026-09-22",
+  "pricing": [
+    {
+      "cloud": "aws",
+      "region": "eu-west-1",
+      "plan": "premium",
+      "dbu_price_per_dbu": 0.39,
+      "services": [
+        "mv_refresh",
+        "predictive_optimization"
+      ],
+      "source_urls": [
+        "https://www.databricks.com/product/pricing/lakeflow-pipelines",
+        "https://www.databricks.com/product/pricing/lakeflow-jobs"
+      ],
+      "billing_basis": "Jobs / pipelines serverless DBUs, includes infrastructure; no SQL warehouse rate",
+      "sku_names": [
+        "PREMIUM_JOBS_SERVERLESS_COMPUTE_EUROPE_IRELAND"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "chart": "aggregate_query_latency_pairwise",
+  "layout": {
+    "variant": "wide",
+    "figure_inches": [
+      17.186666666666667,
+      9.666666666666666
+    ],
+    "data_and_math_unchanged": true,
+    "pixel_dimensions": [
+      5156,
+      2900
+    ],
+    "transparent_canvas": true,
+    "header_safe_area_pixels": 560,
+    "chart_stage": "subtle",
+    "chart_stage_color": "#1C1C1A",
+    "chart_stage_border_color": "#343431"
+  },
+  "selection": {
+    "max_rows_inclusive": 100000000000,
+    "smoothing": null,
+    "outliers_excluded": 0
+  },
+  "sources": {
+    "left": {
+      "path": "quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl",
+      "sha256": "0fbfd6c089fc9e5ef4af88199db2bc08acc6f538a56d2be50a55a06d5765e960",
+      "load": {
+        "read": 286,
+        "selected": 192,
+        "zero_excluded": 1,
+        "above_cap_excluded": 93
+      }
+    },
+    "right": {
+      "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/mv/dashboard_20260918T170453Z.jsonl",
+      "sha256": "b97164940fed258796695511ce46356cffc7b2910d598f6936c5fdf0cee2add7",
+      "load": {
+        "read": 207,
+        "selected": 167,
+        "zero_excluded": 0,
+        "above_cap_excluded": 40
+      }
+    },
+    "left_cost": {
+      "path": "quotes/clickhouse-cloud/costs/out_t2/matched/databricks_serverless_20260918/dashboard.json",
+      "sha256": "ea8e835c58c9d7e99ab0f83d4b3ffa02bec292bb1edb004ae61c2bf4053c6387"
+    },
+    "right_cost": {
+      "path": "quotes/databricks/costs/out/serverless_20260918/dashboard.json",
+      "sha256": "106aef7bcdcd275bd850e5171bcb18bff91670e59e670137020fe4079d5f1308"
+    }
+  },
+  "reports": {
+    "left_q1": {
+      "observations": 192,
+      "median_sec": 0.01,
+      "maximum_sec": 0.111
+    },
+    "right_q1": {
+      "observations": 167,
+      "median_sec": 1.016,
+      "maximum_sec": 5.299
+    },
+    "left_q2": {
+      "observations": 192,
+      "median_sec": 0.013,
+      "maximum_sec": 0.104
+    },
+    "right_q2": {
+      "observations": 167,
+      "median_sec": 0.684,
+      "maximum_sec": 1.138
+    },
+    "left_q3": {
+      "observations": 192,
+      "median_sec": 0.014,
+      "maximum_sec": 0.045
+    },
+    "right_q3": {
+      "observations": 167,
+      "median_sec": 0.747,
+      "maximum_sec": 1.442
+    },
+    "left_q4": {
+      "observations": 192,
+      "median_sec": 0.012,
+      "maximum_sec": 0.043
+    },
+    "right_q4": {
+      "observations": 167,
+      "median_sec": 0.797,
+      "maximum_sec": 1.968
+    }
+  },
+  "matched_totals_ratios": {
+    "runtime_ratio": 59.46121024049651,
+    "cost_ratio": 104.02297539149887
+  },
+  "outputs": {
+    "png": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/aggregate_query_latency_clickhouse_vs_databricks_wide.png",
+    "svg": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/aggregate_query_latency_clickhouse_vs_databricks_wide.svg",
+    "csv": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/aggregate_query_latency_clickhouse_vs_databricks_wide_data.csv"
+  },
+  "databricks_contract": {
+    "runtime_source": "provider Query History total duration, compilation included, fetch excluded",
+    "raw_rows_source": "producer durability progress",
+    "cost_window": "189 dashboard / 32 drilldown accepted samples through their workload-specific H",
+    "plot_window": "own original timelines through 100B; plotted window differs from accumulated cost window",
+    "result_cache": "disabled; compact source evidence validated before cost generation",
+    "warehouse": "Serverless SQL X-Small, one cluster, eu-west-1",
+    "cost_model": "normalized runtime times public list compute rate"
+  }
+}

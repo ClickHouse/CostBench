@@ -32,7 +32,7 @@
   },
   "pricing": {
     "path": "quotes/redshift-serverless/costs/pricing_eu-west-2.json",
-    "sha256": "34382fd66b283b6d0dcecd09243ee6db3ac8b27996e31e98c0d96f177e599d19",
+    "sha256": "4330e2860c37528f0e6249f87d770294c6ecc0460bc935cecadb4496a3cbd962",
     "region": "eu-west-2",
     "effective_date": "2026-08-14"
   },

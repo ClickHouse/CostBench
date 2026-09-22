@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "freshness": {
+      "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/freshness/mv_freshness_20260918T170453Z.jsonl",
+      "sha256": "7e0593e012379c314030fe76ae3b9ab2a1b65495beff395967d452ee653e1f6e"
+    }
+  },
+  "semantics": "Row difference and observational refresh age are separate metrics. No conversion of age into raw-to-MV time lag. Parallel ingestion means row counts do not identify exact rows.",
+  "accepted_samples": 1887,
+  "negative_row_gap_samples": 0,
+  "maximum_rows_behind": 176030970,
+  "maximum_refresh_age_sec": 137.617717,
+  "final_completed_refresh": {
+    "finished_at": "2026-09-20T00:36:23.999Z",
+    "output_rows": null,
+    "maintenance_type": "MAINTENANCE_TYPE_GROUP_AGGREGATE",
+    "maintenance_class": "incremental",
+    "planned_at": "2026-09-20T00:36:08.467Z",
+    "source_snapshot": {
+      "table_name": "`costbench`.`rt_full_serverless_baseline_r3_20260918`.`quotes`",
+      "num_rows": 113219565734,
+      "num_files": 14710,
+      "full_size_bytes": 718123347536,
+      "changed_rows": 83409885,
+      "changed_files": 17,
+      "change_size_bytes": 560141672,
+      "delta_version": null
+    },
+    "update_id": "89a3a757-6c69-476c-906b-8ff1b9ffe27c"
+  },
+  "final_rows": 113219565734,
+  "schema_version": 1,
+  "chart": "databricks_freshness",
+  "layout": {
+    "variant": "standard",
+    "data_and_math_unchanged": true
+  },
+  "outputs": {
+    "png": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_freshness.png",
+    "svg": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_freshness.svg",
+    "csv": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_freshness_data.csv"
+  }
+}

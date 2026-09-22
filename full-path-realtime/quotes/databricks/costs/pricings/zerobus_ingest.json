@@ -1,0 +1,28 @@
+{
+  "provider": "databricks",
+  "service": "zerobus_ingest",
+  "currency": "USD",
+  "retrieved_on": "2026-09-22",
+  "pricing": [
+    {
+      "cloud": "aws",
+      "region": "eu-west-1",
+      "plan": "premium",
+      "displayed_usd_per_gb": 0.056,
+      "dbu_per_gb": 0.143,
+      "dbu_price_per_dbu": 0.39,
+      "usd_per_gb": 0.05577,
+      "bytes_per_gb": 1000000000,
+      "unit_status": "model_assumption_decimal_GB",
+      "unit_note": "Public Zerobus pricing labels GB without a byte divisor. Decimal GB is an explicit model assumption; output also includes the 2^30-byte sensitivity. The networking GB definition is not assumed to define ingestion billing.",
+      "quantity_basis": "Provider system.lakeflow.zerobus_ingest committed_bytes; run IPC compression NONE. Provider bytes are a volume proxy, not a billing export.",
+      "includes_compute": true,
+      "source_url": "https://www.databricks.com/product/pricing/lakeflow-connect",
+      "rate_calculation": "0.143 DBU/GB * 0.39 USD/DBU; pricing card rounds to $0.056/GB",
+      "price_basis": "Public list tariff verified 2026-09-22; not a historical invoice reconstruction",
+      "sku_names": [
+        "PREMIUM_JOBS_SERVERLESS_COMPUTE_EUROPE_IRELAND"
+      ]
+    }
+  ]
+}

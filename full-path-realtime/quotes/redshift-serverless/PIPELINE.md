@@ -84,11 +84,13 @@ EC2 producer  --1M EPS-->  MSK topic `quotes`
 ## Freshness & cost pointers
 - **Freshness**: `SYS_STREAM_SCAN_STATES` is point-in-time — `monitor_lag.py` samples it live into
   `lag_*.jsonl`. Rollup freshness = streaming auto-refresh lag + the child's own cadence.
-- **Cost**: `costs/_commands.txt` consumes committed evidence. The writer is 128 RPU × the full
-  113,227-second producer uptime; MSK is broker-hours + prorated storage. That one fresh path is
-  shared by both read alternatives. Query cost uses the committed hourly reader allocation embedded
-  in `billed_times`; no live or minute-level `SYS_SERVERLESS_USAGE` pull is required. Client cross-AZ
-  and RMS are excluded from the main comparison.
+- **Cost**: `costs/_commands.txt` consumes committed evidence plus the hash-tracked
+  `costs/writer_capacity_assumption.json`. The accepted scenario uses 32 active writer RPU × the
+  full 113,227-second producer uptime; MSK is broker-hours + prorated storage. This is an explicit
+  capacity assumption informed by later characterization, not original-run `charged_seconds`.
+  That one fresh path is shared by both read alternatives. Query cost uses the committed hourly
+  reader allocation embedded in `billed_times`; no live or minute-level `SYS_SERVERLESS_USAGE` pull
+  is required. Client cross-AZ and RMS are excluded from the main comparison.
 
 DDL: `sql/setup_streaming.sql`. Datashare: `sql/setup_datashare.sql`. Rationale + reviewer
 questions: `ARCHITECTURE.md`.

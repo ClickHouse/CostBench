@@ -19,12 +19,13 @@
       "ClickHouse Cloud",
       "Snowflake",
       "BigQuery",
-      "Redshift Serverless"
+      "Redshift Serverless",
+      "Databricks Serverless SQL"
     ]
   },
   "manifest": {
     "path": "quotes/global/visualizations/manifest.json",
-    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+    "sha256": "7f746e45b6348669c2fc241e310f368293b168d10732f94bef6ed41d7c0f1acb"
   },
   "sources": {
     "clickhouse": {
@@ -96,6 +97,24 @@
         ],
         "machines": [
           "Redshift Serverless w128r32"
+        ]
+      }
+    },
+    "databricks": {
+      "runner_jsonl": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/integration/dashboard_accepted.jsonl",
+      "runner_sha256": "0e77c75163eefa53823426b40127933f266f2b20f27e707432b0b6a85362d281",
+      "queries": "quotes/databricks/queries_mv.sql",
+      "queries_sha256": "37f7e0180b1e5335dc6d888f5216dd6964a567a5fcdac3e05e22f4d9047d70ea",
+      "load": {
+        "records_read": 189,
+        "records_selected": 167,
+        "zero_row_records_excluded": 0,
+        "records_above_cap_excluded": 22,
+        "systems": [
+          "Databricks (AWS)"
+        ],
+        "machines": [
+          "Databricks SQL warehouse"
         ]
       }
     }
@@ -183,6 +202,27 @@
         "median_sec": 2.4785395,
         "p95_sec": 5.159606,
         "maximum_sec": 6.350603
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "databricks_q1": {
+      "raw_stats": {
+        "observations": 167,
+        "average_sec": 1.152808383233533,
+        "median_sec": 1.016,
+        "p95_sec": 1.944,
+        "maximum_sec": 5.299
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 167,
+        "average_sec": 1.152808383233533,
+        "median_sec": 1.016,
+        "p95_sec": 1.944,
+        "maximum_sec": 5.299
       },
       "outlier_policy": {
         "applied": false,
@@ -279,6 +319,27 @@
         "excluded": 0
       }
     },
+    "databricks_q2": {
+      "raw_stats": {
+        "observations": 167,
+        "average_sec": 0.6356766467065869,
+        "median_sec": 0.684,
+        "p95_sec": 0.88,
+        "maximum_sec": 1.138
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 167,
+        "average_sec": 0.6356766467065869,
+        "median_sec": 0.684,
+        "p95_sec": 0.88,
+        "maximum_sec": 1.138
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
     "clickhouse_q3": {
       "raw_stats": {
         "observations": 192,
@@ -368,6 +429,27 @@
         "excluded": 0
       }
     },
+    "databricks_q3": {
+      "raw_stats": {
+        "observations": 167,
+        "average_sec": 0.6650239520958083,
+        "median_sec": 0.747,
+        "p95_sec": 1.002,
+        "maximum_sec": 1.442
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 167,
+        "average_sec": 0.6650239520958083,
+        "median_sec": 0.747,
+        "p95_sec": 1.002,
+        "maximum_sec": 1.442
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
     "clickhouse_q4": {
       "raw_stats": {
         "observations": 192,
@@ -450,6 +532,27 @@
         "median_sec": 0.4759,
         "p95_sec": 0.815929,
         "maximum_sec": 1.915645
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "databricks_q4": {
+      "raw_stats": {
+        "observations": 167,
+        "average_sec": 0.7525688622754492,
+        "median_sec": 0.797,
+        "p95_sec": 1.319,
+        "maximum_sec": 1.968
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 167,
+        "average_sec": 0.7525688622754492,
+        "median_sec": 0.797,
+        "p95_sec": 1.319,
+        "maximum_sec": 1.968
       },
       "outlier_policy": {
         "applied": false,

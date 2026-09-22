@@ -16,15 +16,15 @@
     {
       "label": "Redshift \u00b7 Typed",
       "runtime_sec": 12048.262083,
-      "fresh_data_path_cost": 1932.0805603262938,
+      "fresh_data_path_cost": 522.0269869929605,
       "query_cost": 48.177576974000004,
-      "total_cost": 1980.2581373002938,
-      "score": 23858669.03018734,
-      "relative_to_clickhouse": 14284.24474471564
+      "total_cost": 570.2045639669604,
+      "score": 6869974.027596678,
+      "relative_to_clickhouse": 4113.070610764922
     }
   ],
   "shared_redshift_fresh_data_path": {
-    "schema_version": 1,
+    "schema_version": 2,
     "system": "Redshift Serverless",
     "scope": "complete-ingest fresh-data path",
     "rows_ingested": 113219565734,
@@ -43,13 +43,27 @@
       ],
       "attribution": "The writer and MSK path is charged once, reused unchanged by both counterfactual read-path comparisons, and never split or doubled."
     },
+    "writer_capacity_assumption": {
+      "path": "quotes/redshift-serverless/costs/writer_capacity_assumption.json",
+      "sha256": "2a047705751e9556755aeceed8f5cd607a53051660ace1a08d966f44eb25717b",
+      "schema_version": 1,
+      "system": "Redshift Serverless",
+      "component": "producer workgroup",
+      "assumed_active_rpu": 32,
+      "cost_model": "assumed active capacity multiplied by complete producer uptime",
+      "evidence_scope": "benchmark-owner-directed modeling assumption; not a reconstruction of the original run's charged_seconds",
+      "basis": "Subsequent capacity characterization reported that 32 RPU sustained the 1 million events/second target with a 5-second median lag, while 16 RPU did not keep up.",
+      "accepted_on": "2026-08-17",
+      "applies_to": "the shared Redshift writer plus MSK complete-ingest fresh-data path used unchanged by the SUPER and typed read alternatives"
+    },
     "components": {
       "writer_workgroup": {
-        "base_rpu": 128,
-        "capacity_time_rpu_seconds": 14493056.0,
+        "assumed_active_rpu": 32.0,
+        "capacity_time_rpu_seconds": 3623264.0,
         "rpu_hour_rate_usd": 0.467,
-        "cost_usd": 1880.0714311111112,
-        "model": "declared base capacity multiplied by full producer uptime"
+        "cost_usd": 470.0178577777778,
+        "model": "assumed active capacity multiplied by complete producer uptime",
+        "evidence_scope": "benchmark-owner-directed modeling assumption; not a reconstruction of the original run's charged_seconds"
       },
       "msk": {
         "brokers": 3,
@@ -67,7 +81,7 @@
         "total_cost_usd": 52.00912921518265
       }
     },
-    "total_cost_usd": 1932.0805603262938,
+    "total_cost_usd": 522.0269869929605,
     "excluded": {
       "redshift_managed_storage": "Final storage snapshot is not time-integrated and is excluded from the main fresh-data-path comparison.",
       "client_cross_az_transfer": "Excluded by benchmark-owner policy, consistently with other systems.",
@@ -75,7 +89,7 @@
     },
     "pricing": {
       "path": "quotes/redshift-serverless/costs/pricing_eu-west-2.json",
-      "sha256": "34382fd66b283b6d0dcecd09243ee6db3ac8b27996e31e98c0d96f177e599d19",
+      "sha256": "4330e2860c37528f0e6249f87d770294c6ecc0460bc935cecadb4496a3cbd962",
       "region": "eu-west-2",
       "effective_date": "2026-08-14",
       "sources": [
@@ -112,11 +126,11 @@
     },
     "redshift_dashboard": {
       "path": "quotes/redshift-serverless/costs/out/t2/dashboard.json",
-      "sha256": "40d7975d1c8f3b07c760bafb0c27e938ff7708d7e7e35948e50a3e95a76e49ff"
+      "sha256": "a381c05d307328d01386549875dc9fc57d087af12615eb48dec17f36bb235e70"
     },
     "redshift_drilldown": {
       "path": "quotes/redshift-serverless/costs/out/t2/drilldown_typed.json",
-      "sha256": "6db77bbaefcebd4f5c3e5f5dcb4092617abe1b19ee371c6247d9f0b3fe4df06f"
+      "sha256": "9e2ce67115655a8831666266da4c530235017283c77af7cbaaf1e082b76f3d21"
     },
     "clickhouse_fresh_path": {
       "path": "quotes/clickhouse-cloud/costs/out_t2/ingest.json",
@@ -124,7 +138,7 @@
     },
     "redshift_fresh_path": {
       "path": "quotes/redshift-serverless/costs/out/t2/fresh_data_path.json",
-      "sha256": "c77ae92ca2e9fa3f4491383fbba3e02589afbc0d4ea1da2f9590f0297b263cfa"
+      "sha256": "0c891e3040ee9d22b7b7f3c56ebc81b3b500113aec8ab504189752f4cec654db"
     }
   }
 }

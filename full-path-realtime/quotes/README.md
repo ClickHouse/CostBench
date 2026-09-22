@@ -1,7 +1,7 @@
 # Full-path real-time quotes benchmark
 
 This is the current accepted CostBench study for continuous real-time analytics. It compares
-ClickHouse Cloud, Snowflake, Google BigQuery, and Amazon Redshift Serverless over the same NBBO-style
+ClickHouse Cloud, Snowflake, Google BigQuery, Amazon Redshift Serverless, and Databricks Serverless SQL over the same NBBO-style
 quotes workload while ingest, derived-data maintenance, dashboard queries, and drill-down queries
 are all active.
 
@@ -19,11 +19,11 @@ provenance summary states a different accepted pairwise window.
 | Query serving | Isolated read compute where the provider supports it |
 | Dashboard workload | Four aggregate queries on a fixed schedule |
 | Drill-down workload | Two raw-data queries on a fixed schedule |
-| Progress axis | Observed base-table row count, never assumed iteration equivalence |
-| Freshness | Persisted derived-data lag; query-time delta correction is disclosed separately |
+| Progress axis | Observed row progress, never assumed iteration equivalence; Databricks uses provider-committed producer progress |
+| Freshness | Raw-to-pre-aggregated lag; query-time delta correction is disclosed separately. Databricks reports row-watermark gap and completed-refresh age separately. |
 | Full-path score | `(fresh-data-path cost + matched query cost) × accumulated query runtime` |
 
-Lower score is better. Snowflake, BigQuery, and Redshift each use an accepted ClickHouse-matched
+Lower score is better. Snowflake, BigQuery, Redshift, and Databricks each use an accepted ClickHouse-matched
 active-ingestion window. Global relative scores reuse those pairwise results; they are not a new
 cross-provider match.
 
@@ -39,14 +39,18 @@ Snowflake and Redshift freeze their accepted pairwise counts in their command no
 | Snowflake | [`snowflake/README.md`](snowflake/README.md) | [`results/t2/`](snowflake/results/t2/) | [`results/t2/charts/run14/`](snowflake/results/t2/charts/run14/) |
 | BigQuery | [`bigquery/README.md`](bigquery/README.md) | [`results/bq-full-t2-20260810_152224/`](bigquery/results/bq-full-t2-20260810_152224/) | [`costs/out/bq-full-t2-20260810_152224/`](bigquery/costs/out/bq-full-t2-20260810_152224/) |
 | Redshift Serverless | [`redshift-serverless/README.md`](redshift-serverless/README.md) | [`results/t2/`](redshift-serverless/results/t2/) | [`costs/out/t2/`](redshift-serverless/costs/out/t2/) |
+| Databricks Serverless SQL | [`SEPTEMBER_INTEGRATION.md`](databricks/SEPTEMBER_INTEGRATION.md) | [`September full run`](databricks/results/serverless_baseline_full_20260918T170453Z/) | [`costs/out/serverless_20260918/`](databricks/costs/out/serverless_20260918/) |
 | Global synthesis | [`global/visualizations/`](global/visualizations/) | Provider sources above | [`global/results/charts/`](global/results/charts/) |
 
-The Databricks directory contains earlier ingest work and remains useful implementation evidence,
-but Databricks is not included in the current accepted global full-path chart manifest.
+Databricks uses the accepted 189 dashboard and 32 drill-down observations, with preparation costs
+from the September allocation exports through producer completion. Its refresh-age and row-watermark
+measurements are not substituted into the global raw-to-pre-aggregated time-lag chart.
+Redshift writer cost uses the explicit [32-RPU capacity assumption](redshift-serverless/costs/writer_capacity_assumption.json);
+the original long-run measurements remain unchanged.
 
 ## Reproduce reconciliation, cost, and charts
 
-Run commands from any directory; maintained command notebooks relocate to their own repository root.
+Run these paths from the repository root; executable command notebooks resolve their own inputs.
 Provider credentials must remain in ignored local files or environment variables.
 
 1. Rebuild pairwise row-progress matches:
@@ -66,6 +70,7 @@ Provider credentials must remain in ignored local files or environment variables
    less full-path-realtime/quotes/bigquery/costs/_commands.txt
 
    bash full-path-realtime/quotes/redshift-serverless/costs/_commands.txt
+   bash full-path-realtime/quotes/databricks/costs/_commands_september.txt
    ```
 
 3. Rebuild every maintained pairwise chart suite:
@@ -74,6 +79,7 @@ Provider credentials must remain in ignored local files or environment variables
    bash full-path-realtime/quotes/snowflake/visualizations/_commands.txt
    bash full-path-realtime/quotes/bigquery/visualizations/_commands.txt
    bash full-path-realtime/quotes/redshift-serverless/visualizations/_commands.txt
+   bash full-path-realtime/quotes/databricks/visualizations/_commands.txt
    ```
 
 4. Rebuild the global synthesis last:

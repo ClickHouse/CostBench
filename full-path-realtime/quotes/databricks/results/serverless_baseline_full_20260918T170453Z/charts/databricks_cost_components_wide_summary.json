@@ -1,0 +1,26 @@
+{
+  "source": {
+    "path": "quotes/databricks/costs/out/serverless_20260918/fresh_data_path.json",
+    "sha256": "f0ce663e9eeda1b2b12f81ffd8d178d75049a38eac26d1b5ecb316e3b9625de1"
+  },
+  "status": "complete_modeled",
+  "known_components_subtotal_usd": 695.604750434355,
+  "total_cost_usd": 695.604750434355,
+  "missing_components": [],
+  "caveats": [
+    "Zerobus and MV refresh use signed, prorated DBUs at checked-in public list rates; no second allocation",
+    "Predictive Optimization uses ESTIMATED_DBU",
+    "Normalized query costs are separate; no invoice reconstruction"
+  ],
+  "schema_version": 1,
+  "chart": "databricks_cost_components",
+  "layout": {
+    "variant": "wide",
+    "data_and_math_unchanged": true
+  },
+  "outputs": {
+    "png": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_cost_components_wide.png",
+    "svg": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_cost_components_wide.svg",
+    "csv": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/charts/databricks_cost_components_wide_data.csv"
+  }
+}

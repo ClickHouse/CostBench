@@ -41,7 +41,7 @@
     },
     "right_cost": {
       "path": "quotes/redshift-serverless/costs/out/t2/drilldown_typed.json",
-      "sha256": "6db77bbaefcebd4f5c3e5f5dcb4092617abe1b19ee371c6247d9f0b3fe4df06f"
+      "sha256": "9e2ce67115655a8831666266da4c530235017283c77af7cbaaf1e082b76f3d21"
     }
   },
   "reports": {

@@ -118,7 +118,7 @@ orchestrator starts:
 4. the two-query drill-down runner;
 5. three additional hours of post-ingest queries;
 6. final MV catch-up;
-7. post-window hashing of all 232 source files;
+7. post-window hashing of all selected source files (193 in the completed September package);
 8. provider evidence collection; and
 9. an initial cost summary.
 

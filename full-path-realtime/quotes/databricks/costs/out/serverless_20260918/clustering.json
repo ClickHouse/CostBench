@@ -1,0 +1,124 @@
+{
+  "schema_version": 2,
+  "component": "clustering",
+  "run_id": "serverless_baseline_full_20260918T170453Z",
+  "source": {
+    "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/ingest/predictive_optimization_allocation.csv",
+    "sha256": "91656e13b872fa64e0ee0b12c1a214bb52836703159330a94c283a5c1a5c0c5b"
+  },
+  "context_source": {
+    "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/run_context.json",
+    "sha256": "0cc6fea57545442c1c95bebb01c393c6690ebf43c34091d58ff48b8acf9c8bca"
+  },
+  "package_manifest": {
+    "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/validation/manifest.json",
+    "sha256": "51b521ad465a0fdc635c271e87746d4fb93521dd34dfc6605c6475d0894a8fb2"
+  },
+  "pricing_source": {
+    "path": "quotes/databricks/costs/pricings/serverless_maintenance.json",
+    "sha256": "f43f8c899ed9dce1941531168fd166ad0b2dabdbf93ed654c87c003037aef540"
+  },
+  "pricing": {
+    "cloud": "aws",
+    "region": "eu-west-1",
+    "plan": "premium",
+    "dbu_price_per_dbu": 0.39,
+    "services": [
+      "mv_refresh",
+      "predictive_optimization"
+    ],
+    "source_urls": [
+      "https://www.databricks.com/product/pricing/lakeflow-pipelines",
+      "https://www.databricks.com/product/pricing/lakeflow-jobs"
+    ],
+    "billing_basis": "Jobs / pipelines serverless DBUs, includes infrastructure; no SQL warehouse rate",
+    "sku_names": [
+      "PREMIUM_JOBS_SERVERLESS_COMPUTE_EUROPE_IRELAND"
+    ]
+  },
+  "currency": "USD",
+  "allocation_window": {
+    "since": "2026-09-18T17:04:53.000Z",
+    "until": "2026-09-20T00:33:42.627Z",
+    "end_exclusive": true
+  },
+  "cost_model": "allocated_usage_times_checked_in_public_list_rate",
+  "status": "estimated",
+  "full_dataset_rows": 113219565734,
+  "scope": "Ingestion and maintenance during the accepted real-time benchmark window",
+  "comparison_scope": {
+    "schema_version": 1,
+    "run_id": "serverless_baseline_full_20260918T170453Z",
+    "comparison": "real-time analytics during active ingestion",
+    "authority": "benchmark owner-defined scope",
+    "preparation_window": {
+      "since": "2026-09-18T17:04:53.000Z",
+      "until": "2026-09-20T00:33:42.627Z",
+      "end_exclusive": true
+    },
+    "query_selection": {
+      "dashboard_iterations": 189,
+      "drilldown_iterations": 32
+    },
+    "included_components": [
+      "zerobus",
+      "mv_refresh",
+      "clustering",
+      "matched_dashboard_queries",
+      "matched_drilldown_queries"
+    ],
+    "post_ingestion_work_included": false
+  },
+  "scope_source": {
+    "path": "quotes/databricks/costs/scopes/serverless_20260918.json",
+    "sha256": "fcb45742354d21a3801cb7ac8cc1c5c8ab1eca92168d0b5e529e96e2147c9394"
+  },
+  "usage_unit": "ESTIMATED_DBU",
+  "operations": 14,
+  "operation_ids": [
+    "predictive-operation-001",
+    "predictive-operation-002",
+    "predictive-operation-003",
+    "predictive-operation-004",
+    "predictive-operation-005",
+    "predictive-operation-006",
+    "predictive-operation-007",
+    "predictive-operation-008",
+    "predictive-operation-009",
+    "predictive-operation-010",
+    "predictive-operation-011",
+    "predictive-operation-012",
+    "predictive-operation-013",
+    "predictive-operation-014"
+  ],
+  "reconciliation_source": {
+    "path": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/evidence/clustering_status.json",
+    "sha256": "245dde29a7be89c081674fe820d61f7f0b78b83b29547e5ccc9ea7e599b03fcc"
+  },
+  "breakdown": [
+    {
+      "table_operation": "quotes/ANALYZE",
+      "dbu": 0.4231190427968253,
+      "cost_usd": 0.16501642669076186
+    },
+    {
+      "table_operation": "quotes/CLUSTERING",
+      "dbu": 150.18693224712266,
+      "cost_usd": 58.57290357637784
+    },
+    {
+      "table_operation": "quotes_daily/ANALYZE",
+      "dbu": 0.003850426071963021,
+      "cost_usd": 0.0015016661680655782
+    },
+    {
+      "table_operation": "quotes_daily/CLUSTERING",
+      "dbu": 1.247399337877344,
+      "cost_usd": 0.48648574177216414
+    }
+  ],
+  "total_dbu": 151.8613010538688,
+  "total_dbu_decimal": "151.861301053868793271",
+  "total_cost_usd": 59.225907411008826,
+  "total_cost_usd_decimal": "59.22590741100882937569"
+}

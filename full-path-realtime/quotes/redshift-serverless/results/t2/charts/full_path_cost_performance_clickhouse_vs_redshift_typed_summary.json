@@ -23,11 +23,11 @@
     {
       "label": "Redshift \u00b7 Typed",
       "runtime_sec": 12048.262083,
-      "fresh_data_path_cost": 1932.0805603262938,
+      "fresh_data_path_cost": 522.0269869929605,
       "query_cost": 48.177576974000004,
-      "total_cost": 1980.2581373002938,
-      "score": 23858669.03018734,
-      "relative_to_clickhouse": 14284.24474471564
+      "total_cost": 570.2045639669604,
+      "score": 6869974.027596678,
+      "relative_to_clickhouse": 4113.070610764922
     }
   ],
   "query_cost_display": "total",

@@ -8,12 +8,20 @@ This directory contains the current Databricks implementation of the
    managed Delta table;
 3. a strict-incremental Delta materialized view maintains the dashboard
    summary; and
-4. Lakehouse//RT serves the measured reads through Reyden. Four dashboard
+4. Serverless SQL X-Small serves the completed September baseline. Four dashboard
    queries read the materialized view and two drill-down queries read the raw
    table.
 
-Zerobus is the write path; Reyden is the Lakehouse//RT read path. This is not
-the old SQL `INSERT` implementation.
+Zerobus is the write path. Lakehouse//RT remains a future serving comparison.
+The completed run uses Serverless SQL.
+
+The September full-run integration is documented in
+[SEPTEMBER_INTEGRATION.md](SEPTEMBER_INTEGRATION.md). It uses the established
+measured quantities → checked-in pricing → cost-summary scripts workflow.
+**PR #42 allocations are integrated for the real-time benchmark window.**
+All preparation components and matched query costs are priced. Full-path cost
+is $698.25310220.
+The existing `costs/mv_refresh.json` is a June summary.
 
 ### Why this architecture
 
@@ -34,12 +42,14 @@ layers.
 
 ## Status and release-stage disclosure
 
-No online Databricks benchmark result exists for this implementation. The
-same-region producer and explicit Unity Catalog managed storage are prepared,
-and source staging is in progress. Lakehouse//RT is not yet available in the
-workspace, so qualification and the 113,219,565,734-row run have not been
-executed. Repository history, `results/`, old JSONL/Markdown files, and legacy
-scripts are not accepted evidence for this path.
+The completed Serverless SQL baseline is
+`results/serverless_baseline_full_20260918T170453Z`, with 113,219,565,734 rows
+and exact final row reconciliation. Its supplied validation passed. CostBench
+integration prices PR #42
+Zerobus, MV-refresh, and Predictive Optimization allocations through producer
+completion, following the owner-defined real-time cost scope. Earlier June results and qualification runs are excluded from this
+integration. Lakehouse//RT has no accepted full-run result here; the remaining
+Lakehouse//RT setup and execution instructions describe that future path.
 
 As documented in September 2026, Lakehouse//RT, Zerobus Arrow Flight, Zerobus
 writes into liquid-clustered tables, and materialized-view `REFRESH POLICY` are
@@ -132,7 +142,7 @@ new `rt_full_<run_id>` schema, which qualification must never touch.
 Create separate virtual environments for the checked-in dependency sets:
 
 ```sh
-cd /Users/lio/Clickhouse/CostBench/full-path-realtime/quotes/databricks
+cd "$(git rev-parse --show-toplevel)/full-path-realtime/quotes/databricks"
 python3.12 -m venv .venv-runner
 python3.12 -m venv .venv-zerobus
 .venv-runner/bin/python -m pip install -r requirements-runner.txt
@@ -321,6 +331,16 @@ physical cache state rather than calling the run cache-free.
 
 ## Cost boundary and subledgers
 
+For September CostBench integration, run `costs/_commands_september.txt` as
+documented in [SEPTEMBER_INTEGRATION.md](SEPTEMBER_INTEGRATION.md). Normalized
+query cost and measured write/maintenance quantities use checked-in regional
+public pricing. Preparation cost is $695.60475043, and full-path cost including
+the matched queries is $698.25310220. Use `ALLOCATIONS_ONLY=1` for a cost-only refresh
+that validates and preserves the accepted query selections.
+
+The broader provider-billing workflow below is a separate accounting model;
+its generated ledger is not a prerequisite for the CostBench pricing scripts.
+
 Use one declared UTC window. Preserve resource usage before applying any price:
 producer compute/storage reads/network egress; Zerobus ingest; managed raw
 Delta storage and maintenance; materialized-view refresh compute and storage;
@@ -358,7 +378,7 @@ run cost summary and final validation only against the settled collection.
 Run the complete offline suite without credentials:
 
 ```sh
-cd /Users/lio/Clickhouse/CostBench/full-path-realtime/quotes/databricks
+cd "$(git rev-parse --show-toplevel)/full-path-realtime/quotes/databricks"
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 -m py_compile \
   apply_ddl.py collect_evidence.py dbx_common.py ingest_zerobus.py \

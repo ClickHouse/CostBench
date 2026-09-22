@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
+from _databricks import load as load_databricks
 from _common import (
     MUTED,
     WHITE,
@@ -102,6 +103,8 @@ def rounded_bar(
 def main() -> int:
     args = parse_args()
     manifest, manifest_path = load_manifest(args.manifest)
+    db = load_databricks(manifest, "fresh")
+    db_total = db["payload"]["total_cost_usd"] if db else None
     config = manifest["fresh_path_cost"]
     sf_path = resolve_source(config["snowflake_pairwise_summary"])
     bq_path = resolve_source(config["bigquery_pairwise_summary"])
@@ -195,7 +198,7 @@ def main() -> int:
         provider: manifest["providers"][provider]["color"]
         for provider in ("clickhouse", "snowflake", "bigquery", "redshift")
     }
-    maximum = max(ch_total, sf_total, bq_capacity_total, bq_on_demand_total, rs_total)
+    maximum = max(ch_total, sf_total, bq_capacity_total, bq_on_demand_total, rs_total, db_total or 0)
     basename, figure_size, layout = resolve_layout(
         args.basename,
         args.wide,
@@ -224,7 +227,12 @@ def main() -> int:
         "redshift": 0.29,
         "bigquery": 0.04,
     }
-    label_y_offset = 0.105
+    if db:
+        rows = {"clickhouse": .81, "snowflake": .62, "redshift": .43, "bigquery": .24, "databricks": .05}
+        bar_height = .065
+        system_fontsize = 23 if args.wide else 17
+        detail_fontsize = 12 if args.wide else 9
+    label_y_offset = 0.09 if db else 0.105
 
     for provider, label, y_offset in (
         ("clickhouse", "ClickHouse", label_y_offset),
@@ -385,6 +393,17 @@ def main() -> int:
         va="center",
     )
 
+    if db:
+        y = rows["databricks"]
+        axis.text(left, y + label_y_offset, "Databricks Serverless SQL", color="#FF3621", fontsize=system_fontsize, fontweight="bold", va="center")
+        if db_total is None:
+            axis.text(left, y + bar_height / 2, "Total unavailable · MV-refresh DBUs missing", color=MUTED, fontsize=total_fontsize, va="center")
+        else:
+            width = full_width * db_total / maximum
+            rounded_bar(axis, left, y, width, bar_height, "#FF3621")
+            axis.text(left + width + value_gap, y + bar_height / 2, money(db_total), color=WHITE, fontsize=total_fontsize, va="center")
+        axis.text(left, y - .04, "Zerobus ingestion + MV refresh + estimated Predictive Optimization", color=MUTED, fontsize=detail_fontsize, va="center")
+
     if args.wide:
         fig.subplots_adjust(left=0.055, right=0.945, bottom=0.060, top=0.755)
     else:
@@ -447,6 +466,12 @@ def main() -> int:
             "source_pair": "ClickHouse vs Redshift; shared by SUPER and typed read alternatives",
         },
     ]
+    if db:
+        components = db["payload"]["components"]
+        data_rows.append({"label": db["label"], "pricing_model": "allocated DBUs + estimated maintenance; incomplete" if db_total is None else "allocated DBUs + estimated maintenance", "fresh_path_cost_usd": db_total, "ingestion_cost_usd": components["zerobus"]["total_cost_usd"], "mv_maintenance_cost_usd": components["mv_refresh"]["total_cost_usd"], "layout_maintenance_cost_usd": components["clustering"]["total_cost_usd"], "bundled_write_service_cost_usd": "", "source_pair": "ClickHouse vs Databricks September"})
+    for r in data_rows:
+        r["displayed_cost_usd"] = r["fresh_path_cost_usd"]
+        r["cost_complete"] = r["fresh_path_cost_usd"] is not None
     required_labels = validate_required_labels(
         manifest, "fresh_path_cost", (row["label"] for row in data_rows)
     )
@@ -469,6 +494,7 @@ def main() -> int:
                 "total_label_placement": "directly after each bar; BigQuery alternatives share one compact endpoint label",
                 "maximum_bar_width_axis_fraction": full_width,
             },
+            "databricks": db,
             "systems": {
                 "clickhouse": {
                     "bundled_write_service_cost_usd": ch_total,

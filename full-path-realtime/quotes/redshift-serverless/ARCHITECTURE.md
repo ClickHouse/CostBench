@@ -48,9 +48,11 @@ we attribute to Redshift is fair and right-sized** — it's a cost line the othe
 - **The SUPER-vs-typed comparison is a deliberate result:** the same drilldown logic runs against
   the live `SUPER` payload *and* the typed projection, so the cost of semi-structured access is
   measured rather than assumed.
-- **Sizing:** writer base **128 RPU / max 128 RPU** for the measured run (keeps up with 1M EPS at 128
-  floor, offset lag 0, ~6–9 s freshness); reader **32 RPU, max = base** during characterization;
-  MSK 3× `kafka.m7g.xlarge` (Graviton; 3 AZ, RF=3), EBS 500 GB/broker.
+- **Sizing:** the original long-run telemetry was captured at a **128-RPU writer**. Subsequent
+  characterization found **32 RPU** was the minimum that still sustained 1M EPS with 5-second
+  median lag, while 16 RPU fell behind. The accepted cost scenario therefore assumes **32 active
+  writer RPUs** for the complete producer window. The reader remains **32 RPU, max = base**; MSK is
+  3× `kafka.m7g.xlarge` (Graviton; 3 AZ, RF=3), EBS 500 GB/broker.
 
 ## Why MSK (and not a push API, and not a local broker)
 
@@ -89,12 +91,14 @@ and that broker is a genuine cost of running Redshift in real time.
 
 ## Cost accounting (what we publish)
 
-The published fresh-data-path model is **128 writer RPU × producer uptime + MSK broker-hours +
-prorated MSK storage**. It is one shared write path for both read representations and is never split
-or doubled. Query cost is separate: the committed hourly reader `compute_seconds` allocation is
-distributed by each statement's elapsed share of its start-hour. This is normalized query cost, not
-a literal invoice reconstruction. Client cross-AZ is excluded by benchmark-owner policy, and the
-final RMS snapshot is retained as evidence but excluded because it is not time-integrated.
+The published fresh-data-path model is **assumed 32 active writer RPU × producer uptime + MSK
+broker-hours + prorated MSK storage**. The assumption is stored and hashed separately from the
+original run telemetry; it is not presented as a reconstruction of `charged_seconds`. It is one
+shared write path for both read representations and is never split or doubled. Query cost is
+separate: the committed hourly reader `compute_seconds` allocation is distributed by each
+statement's elapsed share of its start-hour. This is normalized query cost, not a literal invoice
+reconstruction. Client cross-AZ is excluded by benchmark-owner policy, and the final RMS snapshot is
+retained as evidence but excluded because it is not time-integrated.
 
 ## Operational notes that shaped the design (both hit during bring-up)
 

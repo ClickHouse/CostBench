@@ -338,8 +338,11 @@ def main() -> int:
     if args.wide:
         fig.subplots_adjust(left=.080, right=.965, bottom=.120, top=.745)
     else:
-        fig.tight_layout()
+        fig.tight_layout(rect=(0, .055, 1, 1))
     output = args.output_dir.expanduser().resolve()
+    unavailable = manifest.get("unavailable_providers", {}).get("mv_lag", {})
+    if unavailable:
+        fig.text(.5, .03, "Databricks: separate row-gap / refresh-age chart; no comparable time-lag measurement", ha="center", color="#FF3621", fontsize=11 if args.wide else 8)
     png, svg = save_figure(fig, output, basename, args.dpi, wide=args.wide)
     plt.close(fig)
 
@@ -365,6 +368,7 @@ def main() -> int:
         "schema_version": 1,
         "chart": "global_persisted_mv_refresh_lag",
         "layout": layout,
+        "unavailable_providers": unavailable,
         "contract": {
             "metric": "Persisted MV refresh lag, not query-answer freshness",
             "clickhouse": "0 by ingest-time incremental MV design",

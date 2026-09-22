@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "system": "Redshift Serverless",
   "scope": "complete-ingest fresh-data path",
   "rows_ingested": 113219565734,
@@ -18,13 +18,27 @@
     ],
     "attribution": "The writer and MSK path is charged once, reused unchanged by both counterfactual read-path comparisons, and never split or doubled."
   },
+  "writer_capacity_assumption": {
+    "path": "quotes/redshift-serverless/costs/writer_capacity_assumption.json",
+    "sha256": "2a047705751e9556755aeceed8f5cd607a53051660ace1a08d966f44eb25717b",
+    "schema_version": 1,
+    "system": "Redshift Serverless",
+    "component": "producer workgroup",
+    "assumed_active_rpu": 32,
+    "cost_model": "assumed active capacity multiplied by complete producer uptime",
+    "evidence_scope": "benchmark-owner-directed modeling assumption; not a reconstruction of the original run's charged_seconds",
+    "basis": "Subsequent capacity characterization reported that 32 RPU sustained the 1 million events/second target with a 5-second median lag, while 16 RPU did not keep up.",
+    "accepted_on": "2026-08-17",
+    "applies_to": "the shared Redshift writer plus MSK complete-ingest fresh-data path used unchanged by the SUPER and typed read alternatives"
+  },
   "components": {
     "writer_workgroup": {
-      "base_rpu": 128,
-      "capacity_time_rpu_seconds": 14493056.0,
+      "assumed_active_rpu": 32.0,
+      "capacity_time_rpu_seconds": 3623264.0,
       "rpu_hour_rate_usd": 0.467,
-      "cost_usd": 1880.0714311111112,
-      "model": "declared base capacity multiplied by full producer uptime"
+      "cost_usd": 470.0178577777778,
+      "model": "assumed active capacity multiplied by complete producer uptime",
+      "evidence_scope": "benchmark-owner-directed modeling assumption; not a reconstruction of the original run's charged_seconds"
     },
     "msk": {
       "brokers": 3,
@@ -42,7 +56,7 @@
       "total_cost_usd": 52.00912921518265
     }
   },
-  "total_cost_usd": 1932.0805603262938,
+  "total_cost_usd": 522.0269869929605,
   "excluded": {
     "redshift_managed_storage": "Final storage snapshot is not time-integrated and is excluded from the main fresh-data-path comparison.",
     "client_cross_az_transfer": "Excluded by benchmark-owner policy, consistently with other systems.",
@@ -50,7 +64,7 @@
   },
   "pricing": {
     "path": "quotes/redshift-serverless/costs/pricing_eu-west-2.json",
-    "sha256": "34382fd66b283b6d0dcecd09243ee6db3ac8b27996e31e98c0d96f177e599d19",
+    "sha256": "4330e2860c37528f0e6249f87d770294c6ecc0460bc935cecadb4496a3cbd962",
     "region": "eu-west-2",
     "effective_date": "2026-08-14",
     "sources": [

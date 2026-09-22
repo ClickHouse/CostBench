@@ -1,0 +1,3 @@
+label,runtime_sec,query_cost,fresh_path_cost,total_cost,cost_runtime_product,relative_to_clickhouse,displayed_fresh_path_cost_usd,displayed_total_cost_usd,displayed_cost_runtime_product,cost_complete,displayed_relative_to_clickhouse
+ClickHouse,56.385999999999996,0.0489,28.68705,28.73595,1620.3052767,1.0,28.68705,28.73595,1620.3052767,True,1.0
+Databricks Serverless SQL,1746.166,2.6483517666666665,695.604750434355,698.2531022010216,1219265.8264579491,752.4914249129466,695.604750434355,698.2531022010216,1219265.8264579491,True,752.4914249129466

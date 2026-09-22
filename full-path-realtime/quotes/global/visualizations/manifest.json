@@ -6,14 +6,16 @@
       "ClickHouse Cloud",
       "Snowflake",
       "BigQuery",
-      "Redshift Serverless"
+      "Redshift Serverless",
+      "Databricks Serverless SQL"
     ],
     "drilldown_query_latency": [
       "ClickHouse Cloud",
       "Snowflake",
       "BigQuery",
       "Redshift · SUPER",
-      "Redshift · Typed"
+      "Redshift · Typed",
+      "Databricks Serverless SQL"
     ],
     "mv_lag": [
       "ClickHouse Cloud",
@@ -26,7 +28,8 @@
       "Snowflake",
       "BigQuery · Capacity",
       "BigQuery · On-demand",
-      "Redshift Serverless"
+      "Redshift Serverless",
+      "Databricks Serverless SQL"
     ],
     "full_path_cost_performance": [
       "ClickHouse",
@@ -34,7 +37,8 @@
       "BigQuery · Capacity",
       "BigQuery · On-demand",
       "Redshift · SUPER",
-      "Redshift · Typed"
+      "Redshift · Typed",
+      "Databricks Serverless SQL"
     ],
     "full_path_cost_vs_query_runtime": [
       "ClickHouse",
@@ -42,7 +46,8 @@
       "BigQuery · Capacity",
       "BigQuery · On-demand",
       "Redshift · SUPER",
-      "Redshift · Typed"
+      "Redshift · Typed",
+      "Databricks Serverless SQL"
     ]
   },
   "providers": {
@@ -95,6 +100,15 @@
       "color": "#E76F00",
       "drilldown": "quotes/redshift-serverless/results/t2/drilldown_typed_20260812T165356Z.jsonl",
       "drilldown_queries": "quotes/redshift-serverless/sql/queries_drilldown_typed.sql"
+    },
+    "databricks": {
+      "label": "Databricks Serverless SQL",
+      "color": "#FF3621",
+      "aggregate": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/integration/dashboard_accepted.jsonl",
+      "aggregate_queries": "quotes/databricks/queries_mv.sql",
+      "drilldown": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/integration/drilldown_accepted.jsonl",
+      "drilldown_queries": "quotes/databricks/queries_raw.sql",
+      "integration_manifest": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/integration/manifest.json"
     }
   },
   "fresh_path_cost": {
@@ -107,5 +121,14 @@
     "bigquery_pairwise_summary": "quotes/bigquery/results/bq-full-t2-20260810_152224/charts/full_path_cost_performance_clickhouse_vs_bigquery_summary.json",
     "redshift_super_summary": "quotes/redshift-serverless/costs/out/t2/full_path_super.json",
     "redshift_typed_summary": "quotes/redshift-serverless/costs/out/t2/full_path_typed.json"
+  },
+  "unavailable_providers": {
+    "mv_lag": {
+      "Databricks Serverless SQL": "Compact data measures non-atomic row-watermark gap and refresh age, not comparable raw-to-MV time lag. See run-specific freshness chart."
+    }
+  },
+  "databricks_integration": {
+    "full_path_summary": "quotes/databricks/costs/out/serverless_20260918/full_path.json",
+    "fresh_path_summary": "quotes/databricks/costs/out/serverless_20260918/fresh_data_path.json"
   }
 }

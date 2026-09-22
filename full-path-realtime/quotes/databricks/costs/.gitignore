@@ -1,0 +1,6 @@
+# Keep the September summaries consumed by the checked-in chart manifest.
+!out/
+out/*
+!out/serverless_20260918/
+out/serverless_20260918/*
+!out/serverless_20260918/*.json

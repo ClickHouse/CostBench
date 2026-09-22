@@ -3,8 +3,14 @@
 This file is the provider-specific contract for the Databricks implementation
 of the quotes full-path real-time analytics benchmark. The repository-level
 `../README.md` remains the accepted cross-provider contract and operating
-guide. Databricks is not part of the current accepted global result set; a run
-is publishable only after it passes every gate below.
+guide. The September Serverless SQL baseline is included in the accepted global
+result set; a future run is publishable after it passes the applicable gates. The completed
+September Serverless SQL baseline and its CostBench normalized pricing contract
+are specified in [SEPTEMBER_INTEGRATION.md](SEPTEMBER_INTEGRATION.md).
+PR #42 allocations are fully integrated, including MV refresh. The accepted
+real-time cost window ends at producer completion; post-ingestion activity is
+outside this comparison. The scoped full-path total is $698.25310220.
+Lakehouse//RT-specific requirements below govern a future Lakehouse//RT run.
 
 ## Workload identity
 

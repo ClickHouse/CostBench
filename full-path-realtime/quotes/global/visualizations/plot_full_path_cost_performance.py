@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib.pyplot as plt
+from _databricks import load as load_databricks, unavailable_note
 from _common import (
     MUTED,
     WHITE,
@@ -95,6 +96,7 @@ def rounded_bar(
 def main() -> int:
     args = parse_args()
     manifest, manifest_path = load_manifest(args.manifest)
+    db = load_databricks(manifest, "full")
     config = manifest["cost_performance"]
     sf_path = resolve_source(config["snowflake_pairwise_summary"])
     bq_path = resolve_source(config["bigquery_pairwise_summary"])
@@ -151,8 +153,12 @@ def main() -> int:
             "accepted_values": row(rs_typed, "Redshift · Typed"),
         },
     ]
+    if db and db["available"]:
+        value = next(r for r in db["payload"]["rows"] if r["label"] == db["label"])
+        rows.append({"label": db["label"], "relative": value["relative_to_clickhouse"], "color": "#FF3621", "source_pair": "ClickHouse vs Databricks September matched window", "accepted_values": value})
+    rendered_labels = [r["label"] for r in rows] + ([db["label"]] if db and not db["available"] else [])
     required_labels = validate_required_labels(
-        manifest, "full_path_cost_performance", (row["label"] for row in rows)
+        manifest, "full_path_cost_performance", rendered_labels
     )
     widths = [math.log10(float(item["relative"])) for item in rows]
     maximum_width = max(widths)
@@ -227,9 +233,10 @@ def main() -> int:
         )
     else:
         fig.tight_layout(
-            rect=(0, .055 if args.query_cost_display == "attribution" else .01, 1, 1)
+            rect=(0, .055 if args.query_cost_display == "attribution" else .07, 1, 1)
         )
     output = args.output_dir.expanduser().resolve()
+    unavailable_note(fig, db, args.wide)
     png, svg = save_figure(fig, output, basename, args.dpi, wide=args.wide)
     plt.close(fig)
 
@@ -243,6 +250,7 @@ def main() -> int:
         "schema_version": 1,
         "chart": "global_full_path_cost_performance",
         "layout": layout,
+        "databricks": db,
         "presentation": {
             "query_cost_display": args.query_cost_display,
             "cost_attribution_visible_on_chart": (
