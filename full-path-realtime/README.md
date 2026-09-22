@@ -8,7 +8,7 @@ latency under active ingestion, and the cost of keeping the path live.
 
 | Workload | Status | Scope |
 |---|---|---|
-| [Quotes](quotes/) | Current accepted multi-provider study | ClickHouse Cloud, Snowflake, BigQuery, and Redshift Serverless at roughly 1M events/s and 100B+ rows |
+| [Quotes](quotes/) | Current accepted multi-provider study | ClickHouse Cloud, Snowflake, BigQuery, Redshift Serverless, and Databricks Serverless SQL at roughly 1M events/s and 100B+ rows |
 | [Hits](hits/) | Workload implementation | Web analytics data; not part of the current accepted global quotes synthesis |
 
 ## Common benchmark contract
@@ -20,7 +20,8 @@ latency under active ingestion, and the cost of keeping the path live.
 - Fresh-data-path cost covers the provider-specific components required to ingest and maintain the
   query-ready state for the complete run.
 - Query cost is reported for the accepted active-ingestion comparison window.
-- Persisted materialized-view lag is kept distinct from query-time freshness correction.
+- Pre-aggregation lag is kept distinct from query-time freshness correction. Databricks row-watermark
+  gap and completed-refresh age are reported separately from comparable time-lag series.
 - Source data, cost inputs, filters, smoothing, exclusions, and chart geometry are disclosed in
   machine-readable summaries.
 

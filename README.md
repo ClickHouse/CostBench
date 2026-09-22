@@ -4,7 +4,7 @@
 
 CostBench measures the work and cost required to make continuously arriving data query-ready and
 serve analytical queries over it. The current full-path quotes study includes accepted runs for
-ClickHouse Cloud, Snowflake, Google BigQuery, and Amazon Redshift Serverless.
+ClickHouse Cloud, Snowflake, Google BigQuery, Amazon Redshift Serverless, and Databricks Serverless SQL.
 
 > [!NOTE]
 > A static query benchmark starts after data has been loaded and prepared. CostBench also measures
@@ -36,7 +36,7 @@ The published evidence covers:
 
 - ingest progress and successful row counts;
 - raw and aggregate query latency during active ingestion;
-- persisted materialized-view freshness;
+- pre-aggregation freshness and provider-specific freshness evidence;
 - complete fresh-data-path and matched query cost;
 - provider configuration and pricing assumptions;
 - source JSONL, reconciled windows, generated CSV, SVG, PNG, and provenance summaries.
@@ -53,6 +53,7 @@ serverless ingestion services, or a required broker layer.
 | Snowflake | [`results/t2/`](full-path-realtime/quotes/snowflake/results/t2/) | Accepted Run14 with normalized mixed-rate query attribution |
 | BigQuery | [`bq-full-t2-20260810_152224/`](full-path-realtime/quotes/bigquery/results/bq-full-t2-20260810_152224/) | Accepted T2 with Capacity and On-demand alternatives |
 | Redshift Serverless | [`results/t2/`](full-path-realtime/quotes/redshift-serverless/results/t2/) | Accepted T2 with SUPER and typed read alternatives |
+| Databricks Serverless SQL | [`September full-run integration`](full-path-realtime/quotes/databricks/SEPTEMBER_INTEGRATION.md) | Accepted 189/32 matched observations with allocated ingestion and maintenance costs |
 
 The global score is:
 
