@@ -3,5 +3,6 @@ ClickHouse,1.0,pairwise baselines
 BigQuery · Capacity,438.17226989390656,ClickHouse vs BigQuery matched window
 BigQuery · On-demand,511.6460383064147,ClickHouse vs BigQuery matched window
 Snowflake,412.1032631656578,ClickHouse vs Snowflake matched window
-Redshift · SUPER,7139.739408749949,ClickHouse vs Redshift SUPER matched window
-Redshift · Typed,14284.24474471564,ClickHouse vs Redshift typed matched window
+Redshift · SUPER,1995.5554751250984,ClickHouse vs Redshift SUPER matched window
+Redshift · Typed,4113.070610764922,ClickHouse vs Redshift typed matched window
+Databricks Serverless SQL,752.4914249129466,ClickHouse vs Databricks September matched window

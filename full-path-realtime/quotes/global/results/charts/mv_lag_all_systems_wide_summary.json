@@ -19,6 +19,9 @@
     "chart_stage_color": "#1C1C1A",
     "chart_stage_border_color": "#343431"
   },
+  "unavailable_providers": {
+    "Databricks Serverless SQL": "Compact data measures non-atomic row-watermark gap and refresh age, not comparable raw-to-MV time lag. See run-specific freshness chart."
+  },
   "contract": {
     "metric": "Persisted MV refresh lag, not query-answer freshness",
     "clickhouse": "0 by ingest-time incremental MV design",
@@ -36,7 +39,7 @@
   },
   "manifest": {
     "path": "quotes/global/visualizations/manifest.json",
-    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+    "sha256": "7f746e45b6348669c2fc241e310f368293b168d10732f94bef6ed41d7c0f1acb"
   },
   "sources": {
     "snowflake_freshness": {

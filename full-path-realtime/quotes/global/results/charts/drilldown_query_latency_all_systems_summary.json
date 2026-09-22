@@ -20,12 +20,13 @@
       "Snowflake",
       "BigQuery",
       "Redshift \u00b7 SUPER",
-      "Redshift \u00b7 Typed"
+      "Redshift \u00b7 Typed",
+      "Databricks Serverless SQL"
     ]
   },
   "manifest": {
     "path": "quotes/global/visualizations/manifest.json",
-    "sha256": "f0132c4fe23eb045fd8b5a291db1bd54b80a7a4e769a4d6dd4309b17ce079c8b"
+    "sha256": "7f746e45b6348669c2fc241e310f368293b168d10732f94bef6ed41d7c0f1acb"
   },
   "sources": {
     "clickhouse": {
@@ -115,6 +116,24 @@
         ],
         "machines": [
           "Redshift Serverless w128r32"
+        ]
+      }
+    },
+    "databricks": {
+      "runner_jsonl": "quotes/databricks/results/serverless_baseline_full_20260918T170453Z/integration/drilldown_accepted.jsonl",
+      "runner_sha256": "46b628624ba4b6a6bf3f9a92d53374bf2d96756594379e2007be5b943597ce75",
+      "queries": "quotes/databricks/queries_raw.sql",
+      "queries_sha256": "8cb5436e468da55473e28d447fdaeac68731fb43cb69af4f56040bfc723bfa23",
+      "load": {
+        "records_read": 32,
+        "records_selected": 28,
+        "zero_row_records_excluded": 0,
+        "records_above_cap_excluded": 4,
+        "systems": [
+          "Databricks (AWS)"
+        ],
+        "machines": [
+          "Databricks SQL warehouse"
         ]
       }
     }
@@ -225,6 +244,27 @@
         "excluded": 0
       }
     },
+    "databricks_q1": {
+      "raw_stats": {
+        "observations": 28,
+        "average_sec": 18.938035714285714,
+        "median_sec": 17.197,
+        "p95_sec": 33.798,
+        "maximum_sec": 56.901
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 28,
+        "average_sec": 18.938035714285714,
+        "median_sec": 17.197,
+        "p95_sec": 33.798,
+        "maximum_sec": 56.901
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
     "clickhouse_q2": {
       "raw_stats": {
         "observations": 32,
@@ -323,6 +363,27 @@
         "median_sec": 276.683712,
         "p95_sec": 373.736032,
         "maximum_sec": 383.183353
+      },
+      "outlier_policy": {
+        "applied": false,
+        "reason": "no configured filter",
+        "excluded": 0
+      }
+    },
+    "databricks_q2": {
+      "raw_stats": {
+        "observations": 28,
+        "average_sec": 16.55692857142857,
+        "median_sec": 13.0215,
+        "p95_sec": 39.814,
+        "maximum_sec": 42.73
+      },
+      "plotted_stats_before_display_smoothing": {
+        "observations": 28,
+        "average_sec": 16.55692857142857,
+        "median_sec": 13.0215,
+        "p95_sec": 39.814,
+        "maximum_sec": 42.73
       },
       "outlier_policy": {
         "applied": false,

@@ -111,11 +111,18 @@ def load_points(
             for job in jobs:
                 if job.get("error") is not None or job.get("cache_hit") is not False:
                     raise ValueError(f"invalid BigQuery query evidence at {path}:{line}")
+        if provider == "databricks":
+            if record.get("cache_hit") != [[False] for _ in query_names] or record.get("query_errors") != [[] for _ in query_names]:
+                raise ValueError(f"invalid Databricks cache/error evidence at {path}:{line}")
         selected += 1
         for index, query_name in enumerate(query_names):
             latency = scalar_trial(results[index], f"{path}:{line}:q{index + 1}")
             source = "clickhouse-client --time"
             if provider == "snowflake":
+                source = "runner result (end-to-end)"
+            elif provider == "databricks":
+                source = "provider Query History total duration; includes compilation; excludes fetch"
+            elif provider.startswith("redshift"):
                 source = "runner result (end-to-end)"
             elif provider == "bigquery":
                 job = jobs[index]
@@ -297,17 +304,17 @@ def main() -> int:
             f"{snowflake_label} · outliers excluded"
         )
     fig.legend(
-        legend_handles, legend_labels, loc="upper center", ncol=min(5, len(legend_labels)),
+        legend_handles, legend_labels, loc="upper center", ncol=3 if len(legend_labels) > 5 else len(legend_labels),
         facecolor=plot_background, edgecolor=GRID, labelcolor="white", fontsize=legend_fontsize,
         bbox_to_anchor=(.5, .777 if args.wide else 1.005), framealpha=.9,
     )
     if args.wide:
         fig.subplots_adjust(
-            left=.090, right=.965, bottom=.095, top=.690,
+            left=.090, right=.965, bottom=.095, top=.650 if len(legend_labels) > 5 else .690,
             wspace=.105, hspace=.250,
         )
     else:
-        fig.tight_layout(rect=(0, 0, 1, .93))
+        fig.tight_layout(rect=(0, 0, 1, .85 if len(legend_labels) > 5 else .93))
     png, svg = save_figure(fig, output, basename, args.dpi, wide=args.wide)
     plt.close(fig)
 
