@@ -1,0 +1,4 @@
+"metric","minimum","maximum","hosts","samples"
+"CGroupMaxCPU",16,16,1,132301
+"CGroupMemoryTotal",68719476736,68719476736,1,132301
+"OSMemoryTotal",265462120448,265462120448,1,132301

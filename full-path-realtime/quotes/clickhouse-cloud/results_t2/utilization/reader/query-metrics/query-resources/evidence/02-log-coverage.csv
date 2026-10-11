@@ -1,0 +1,7 @@
+"kind","detail","extra","samples","first","last"
+"schema","asynchronous_metric_log","metric, event_date, event_time",0,"",""
+"schema","asynchronous_metric_log_1","metric, event_date, event_time",0,"",""
+"schema","metric_log","event_date, event_time",0,"",""
+"schema","metric_log_1","event_date, event_time",0,"",""
+"schema","metric_log_2","event_date, event_time",0,"",""
+"coverage","c-tanaws-ce-98-server-utdp2w1-0.c-tanaws-ce-98-server-headless.ns-tanaws-ce-98.svc.cluster.local","",132338,"2026-08-08 06:55:56","2026-08-09 19:40:57"

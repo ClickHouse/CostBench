@@ -1,6 +1,14 @@
 # Reader query metrics
 
-Measurements behind Blog 6 visual 11a, **Data processing throughput and CPU efficiency**. The four panels use the August 8–9, 2026 ClickHouse run while the raw dataset grows to **113,217,743,918 quotes**. The reader service had one node with 16 CPUs and 64 GiB; the benchmark database was `quotes_async_t4` (the historical results directory remains `results_t2`).
+Original numeric extraction behind Blog 6 reader visuals **11a and 11b**. The measurements use the August 8–9, 2026 ClickHouse run while the raw dataset grows to **113,217,743,918 quotes**. The reader service had one node with 16 CPUs and 64 GiB; the benchmark database was `quotes_async_t4` (the historical results directory remains `results_t2`).
+
+## Current blog values and resource band
+
+Use [query-resources/](query-resources/README.md) for the current two-panel layouts and their **Resource utilization during query execution** bands. It includes extraction SQL/results, all 958 matched per-query memory peaks, CPU during execution with headroom, shared Gaussian display smoothing, exact 11a/11b payloads and a dependency-free reproducer. These calculations exclude the idle gaps in the query schedule and preserve the original 16-vCPU / 64-GiB setup.
+
+The tables and adapters below retain the original four-panel extraction as frozen evidence. Their byte-rate and CPU-rate CSVs are inputs to the current display adapter; the older median-smoothed latency payload is preserved for traceability, rather than used as the current blog curve.
+
+## Frozen original extraction
 
 | Position | Panel | Download | Calculation for one scheduled iteration |
 | --- | --- | --- | --- |

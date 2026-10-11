@@ -1,0 +1,24 @@
+[
+  {
+    "id": "11a",
+    "view": "processing",
+    "stem": "11a_read-service-metrics",
+    "title": "ClickHouse processes gigabytes per second on a single query node",
+    "metricTitles": {
+      "throughput": "Data processing throughput",
+      "efficiency": "Data throughput per CPU core"
+    },
+    "contextCaption": "Where we measure: query compute"
+  },
+  {
+    "id": "11b",
+    "view": "latency",
+    "stem": "11b_query-latency-throughput",
+    "title": "Fast answers over 113 billion quotes with CPU headroom",
+    "metricTitles": {
+      "latency": "Query latency",
+      "coverage": "Effective aggregation throughput"
+    },
+    "contextCaption": "Where we measure: query compute"
+  }
+]

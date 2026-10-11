@@ -1,7 +1,7 @@
 # ClickHouse Cloud reader utilization (async-insert run)
 
 For measurements during individual query executions, see
-[Query throughput, CPU efficiency and latency](query-metrics/). That directory contains the SQL,
+[Query throughput, CPU efficiency and latency](query-metrics/), including the current [query-execution CPU/headroom and per-query peak memory data](query-metrics/query-resources/). That directory contains the SQL,
 recorded result CSVs, metric definitions, and a reproducible data adapter for
 the August run. Service-wide averages below include the gaps between scheduled
 queries and should not be interpreted as cores used while a query is executing.
