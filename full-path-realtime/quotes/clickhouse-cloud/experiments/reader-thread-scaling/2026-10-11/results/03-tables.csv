@@ -1,0 +1,6 @@
+"database","name","engine","total_rows","total_bytes","sorting_key","primary_key","partition_key"
+"quotes_async_t4","quotes","SharedMergeTree",113217743918,427131175214,"sym, t","sym, t",""
+"quotes_async_t4","quotes_daily","SharedAggregatingMergeTree",1860254,62305995,"sym, day","sym, day",""
+"system","query_log","MergeTree",132591,19803083,"event_date, event_time","event_date, event_time","toYYYYMM(event_date)"
+"system","query_log_1","MergeTree",152899,23063148,"event_date, event_time","event_date, event_time","toYYYYMM(event_date)"
+"system","query_log_2","MergeTree",1301239,167950321,"event_date, event_time","event_date, event_time","toYYYYMM(event_date)"

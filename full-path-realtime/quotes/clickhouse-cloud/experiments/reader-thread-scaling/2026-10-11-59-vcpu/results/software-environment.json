@@ -1,0 +1,7 @@
+{
+  "collection_python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "analysis_python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "plotting_python": "3.12.14",
+  "matplotlib": "3.11.2",
+  "platform": "darwin"
+}

@@ -1,0 +1,23 @@
+{
+  "source_git_commit": "60c196e69c1151f22c12344cee6c473f4f1516da",
+  "files": [
+    {
+      "role": "query definitions",
+      "source": "full-path-realtime/quotes/clickhouse-cloud/queries_raw.sql",
+      "sha256": "44f8199cc3b18ff091324789918535a3d1c5f8f5ba99939bf02df7433d5ad29b",
+      "copied_to": "queries/queries_raw.sql"
+    },
+    {
+      "role": "query definitions",
+      "source": "full-path-realtime/quotes/clickhouse-cloud/queries_mv.sql",
+      "sha256": "e31042b3aec1882f293f57ec103eda7953d947fdb47607ee11a6fb6f31a4d108",
+      "copied_to": "queries/queries_mv.sql"
+    },
+    {
+      "role": "schema",
+      "source": "full-path-realtime/quotes/clickhouse-cloud/create.sql",
+      "sha256": "dbee456c09815b81b74c4cd2c7cde7e6e7325e2decc3d1b09672550bf75a5e3c",
+      "copied_to": "queries/create.sql"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+(Expression)
+ExpressionTransform × 8
+  (Limit)
+  Limit 8 → 8
+    (Aggregating)
+    Resize 8 → 8
+      AggregatingTransform × 8
+        (Expression)
+        ExpressionTransform × 8
+          (Expression)
+          ExpressionTransform × 8
+            (ReadFromMergeTree)
+            MergeTreeSelect(pool: ReadPool, algorithm: Thread) × 8 0 → 1

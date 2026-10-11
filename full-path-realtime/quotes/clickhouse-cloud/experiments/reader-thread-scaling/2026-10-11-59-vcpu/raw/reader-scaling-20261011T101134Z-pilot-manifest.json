@@ -1,0 +1,210 @@
+{
+  "run_id": "reader-scaling-20261011T101134Z-pilot",
+  "phase": "pilot",
+  "started_at_utc": "20261011T101134Z",
+  "dataset": "quotes_async_t4",
+  "threads": [
+    2,
+    4,
+    8,
+    16,
+    30,
+    59
+  ],
+  "rounds": 1,
+  "trials": 36,
+  "seed": 6112026,
+  "schedule": "sequential, interleaved randomized thread limits; rotated query order; no query overlap",
+  "cache": "result cache explicitly disabled; underlying data and query-condition caches allowed warm",
+  "changes": "max_threads only between treatments; settings and data otherwise fixed",
+  "query_source_hashes": {
+    "D1": "5b3f1e3a050156769f72a11a6092f6e26e35cde5b4a6f2950035020eed9cab7f",
+    "D2": "ee475f442f6851b02219a02a6704afa63ec96d63e444bd11f83b2b7505246849",
+    "A1": "a6e184f6e6b3942c30af6da5449b99d3304b6c49ade8666d09219db7b5a0b04d",
+    "A2": "d8fb1b588abe4bc91088897d5e7155975d928dac30c794dceecebc651dea3bdd",
+    "A3": "12a35deccc28e3ad52d6d3e6b4c3a8075acf39d36bc2ac3175517cb6773da951",
+    "A4": "7a6bd09352e9ce096340f8a0fb2fa4d645c7f12a8702a06e56dced20ecc5a21e"
+  },
+  "plan": [
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 8
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 4
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 30
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 2
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 59
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 16
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 30
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 59
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 2
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 4
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 16
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 8
+    },
+    {
+      "round": 1,
+      "query": "A1",
+      "max_threads": 59
+    },
+    {
+      "round": 1,
+      "query": "A1",
+      "max_threads": 4
+    },
+    {
+      "round": 1,
+      "query": "A1",
+      "max_threads": 8
+    },
+    {
+      "round": 1,
+      "query": "A1",
+      "max_threads": 30
+    },
+    {
+      "round": 1,
+      "query": "A1",
+      "max_threads": 16
+    },
+    {
+      "round": 1,
+      "query": "A1",
+      "max_threads": 2
+    },
+    {
+      "round": 1,
+      "query": "A2",
+      "max_threads": 4
+    },
+    {
+      "round": 1,
+      "query": "A2",
+      "max_threads": 16
+    },
+    {
+      "round": 1,
+      "query": "A2",
+      "max_threads": 59
+    },
+    {
+      "round": 1,
+      "query": "A2",
+      "max_threads": 2
+    },
+    {
+      "round": 1,
+      "query": "A2",
+      "max_threads": 30
+    },
+    {
+      "round": 1,
+      "query": "A2",
+      "max_threads": 8
+    },
+    {
+      "round": 1,
+      "query": "A3",
+      "max_threads": 2
+    },
+    {
+      "round": 1,
+      "query": "A3",
+      "max_threads": 16
+    },
+    {
+      "round": 1,
+      "query": "A3",
+      "max_threads": 30
+    },
+    {
+      "round": 1,
+      "query": "A3",
+      "max_threads": 4
+    },
+    {
+      "round": 1,
+      "query": "A3",
+      "max_threads": 8
+    },
+    {
+      "round": 1,
+      "query": "A3",
+      "max_threads": 59
+    },
+    {
+      "round": 1,
+      "query": "A4",
+      "max_threads": 4
+    },
+    {
+      "round": 1,
+      "query": "A4",
+      "max_threads": 8
+    },
+    {
+      "round": 1,
+      "query": "A4",
+      "max_threads": 2
+    },
+    {
+      "round": 1,
+      "query": "A4",
+      "max_threads": 16
+    },
+    {
+      "round": 1,
+      "query": "A4",
+      "max_threads": 30
+    },
+    {
+      "round": 1,
+      "query": "A4",
+      "max_threads": 59
+    }
+  ]
+}

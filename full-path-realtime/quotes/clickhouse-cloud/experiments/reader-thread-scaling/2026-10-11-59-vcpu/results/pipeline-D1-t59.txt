@@ -1,0 +1,21 @@
+(Expression)
+ExpressionTransform
+  (Limit)
+  Limit
+    (Sorting)
+    MergingSortedTransform 59 → 1
+      MergeSortingTransform × 59
+        LimitsCheckingTransform × 59
+          PartialSortingTransform × 59
+            (Expression)
+            ExpressionTransform × 59
+              (Aggregating)
+              Resize × 2 30 → 30
+                AggregatingTransform × 59
+                  StrictResize × 2 30 → 30
+                    (Expression)
+                    ExpressionTransform × 59
+                      (Expression)
+                      ExpressionTransform × 59
+                        (ReadFromMergeTree)
+                        MergeTreeSelect(pool: ReadPool, algorithm: Thread) × 59 0 → 1

@@ -1,0 +1,1 @@
+SELECT version() AS version,timezone() AS timezone,hostName() AS hostname,now64(6,'UTC') AS now_utc LIMIT 1 SETTINGS max_threads=2,max_execution_time=30,timeout_before_checking_execution_speed=0,max_rows_to_read=1000000000,max_bytes_to_read=100000000000,skip_unavailable_shards=0 FORMAT CSVWithNames

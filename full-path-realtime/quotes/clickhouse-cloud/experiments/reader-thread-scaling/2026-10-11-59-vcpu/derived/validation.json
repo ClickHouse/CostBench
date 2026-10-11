@@ -1,0 +1,31 @@
+{
+  "total_trials": 504,
+  "measured_trials": 432,
+  "pilot_trials": 36,
+  "warmup_trials": 36,
+  "measured_window_start_utc": "2026-10-11 10:13:31.317108",
+  "measured_window_end_utc": "2026-10-11 10:20:34.280989",
+  "hosts": [
+    "c-tanaws-ce-98-server-kbwf0p0-0.c-tanaws-ce-98-server-headless.ns-tanaws-ce-98.svc.cluster.local"
+  ],
+  "failures": 0,
+  "missing_logs": 0,
+  "duplicate_logs": 0,
+  "result_cache_reads": 0,
+  "measured_page_cache_misses": 0,
+  "measured_object_storage_read_bytes": 0,
+  "all_thread_caps_confirmed_in_query_log": true,
+  "all_http_rows_and_bytes_match_query_log": true,
+  "all_result_row_counts_below_limit": true,
+  "outliers_removed": 0,
+  "measured_trials_without_cpu_counters": 34,
+  "caveat": "Bootstrap interval measures repeat variation in this session, not portability to other hosts or datasets.",
+  "active_parts_unchanged": true,
+  "node_and_version_unchanged": true,
+  "capacity_after_vCPUs": 59.0,
+  "capacity_after_GiB": 236.0,
+  "capacity_constant_in_async_metric_log": true,
+  "other_initial_queries": 1026,
+  "other_query_cpu_s": 33.93343499999999,
+  "background_merge_tasks_max_sampled": 2
+}

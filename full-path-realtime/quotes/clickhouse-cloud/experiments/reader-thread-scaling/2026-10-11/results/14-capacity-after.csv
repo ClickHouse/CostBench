@@ -1,0 +1,7 @@
+"metric","value"
+"CGroupMaxCPU",16
+"CGroupMemoryTotal",68719476736
+"CGroupMemoryUsed",6351726496
+"CGroupMemoryUsedWithoutPageCache",3428850105
+"MemoryResident",7158325248
+"OSMemoryTotal",265462054912

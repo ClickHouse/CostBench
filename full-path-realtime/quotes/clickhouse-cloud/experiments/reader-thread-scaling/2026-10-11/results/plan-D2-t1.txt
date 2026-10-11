@@ -1,0 +1,15 @@
+Expression ((Project names + Projection))
+  Limit (preliminary LIMIT)
+    Aggregating
+      Expression (Before GROUP BY)
+        Expression ((WHERE + Change column names to column identifiers))
+          ReadFromMergeTree (quotes_async_t4.quotes)
+          Indexes:
+            PrimaryKey
+              Keys:
+                sym
+              Condition: (sym in ['AAPL', 'AAPL'])
+              Parts: 8/8
+              Granules: 10916/13830989
+              Search Algorithm: binary search
+            Ranges: 8
