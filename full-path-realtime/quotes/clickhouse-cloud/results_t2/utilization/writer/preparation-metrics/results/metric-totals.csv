@@ -1,0 +1,2 @@
+"samples","hosts","first_utc","last_utc","sorting_elapsed_us","merging_elapsed_us","writer_rows","writer_blocks","already_sorted_blocks","os_cpu_us","aggregating_sorted_ms","external_sort_compressed_bytes","external_aggregation_compressed_bytes"
+"264690","2","2026-08-08 06:55:56","2026-08-09 19:40:57","120962826766","1455971246","115799590671","700455","150534","423375685959","2382768","0","0"

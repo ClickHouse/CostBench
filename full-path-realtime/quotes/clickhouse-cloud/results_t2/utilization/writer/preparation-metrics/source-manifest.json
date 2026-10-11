@@ -1,0 +1,4151 @@
+{
+  "format_version": 1,
+  "sources": {
+    "fields": {
+      "query": "queries/00-fields.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/fields.csv",
+          "columns": [
+            "table",
+            "name",
+            "type",
+            "comment"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "string"
+          ],
+          "rows": 247,
+          "sha256": "dcfc8ed595c6298b1646759a3718f996192ab63bdbb6f120b4cc564495650f13"
+        }
+      ],
+      "original_result_sha256": "80c6920018b23c256e73eb67223f820f7ed211472a53423a1455dfa78ee73480",
+      "omitted_column_indexes": []
+    },
+    "coverage": {
+      "query": "queries/01-coverage.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/coverage.csv",
+          "columns": [
+            "hostname",
+            "first_sample",
+            "last_sample",
+            "samples",
+            "inserted_rows",
+            "inserted_bytes",
+            "async_rows",
+            "async_bytes",
+            "cpu_us",
+            "user_cpu_us",
+            "system_cpu_us",
+            "merge_bytes",
+            "delayed_inserts",
+            "rejected_inserts"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "7a9d80834de7dbd7219e8c6920e839d7d300df84646e83596df3318fd449a023"
+        }
+      ],
+      "original_result_sha256": "be8da2f19398273c98c2b4bfdf4619d0d9a5a8cbf2b5f942083d9080ca00d780",
+      "omitted_column_indexes": []
+    },
+    "part-summary": {
+      "query": "queries/02-part-summary.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/part-summary.csv",
+          "columns": [
+            "table",
+            "event_type",
+            "records",
+            "unique_parts",
+            "rows",
+            "bytes",
+            "read_bytes",
+            "first_record",
+            "last_record"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 8,
+          "sha256": "44179f7b6e38fd20965a53a523ae0e117f449d3fa02e3790c608ad65d857c673"
+        }
+      ],
+      "original_result_sha256": "6932d84466aa260f928d584a27ee47dad44beffcac2a8bf7f0f28cdad4fb9211",
+      "omitted_column_indexes": []
+    },
+    "metric-series": {
+      "query": "queries/03-metric-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/metric-series.csv",
+          "columns": [
+            "t",
+            "samples",
+            "async_rows",
+            "async_bytes",
+            "inserted_rows",
+            "inserted_bytes",
+            "cpu_us",
+            "user_cpu_us",
+            "system_cpu_us",
+            "merge_rows",
+            "merge_bytes",
+            "delayed",
+            "rejected"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 446,
+          "sha256": "cbb9bb78b8c4e7277e9f5a4e5f4df139d652fd7da9c1ef59bb7058c605e545fa"
+        }
+      ],
+      "original_result_sha256": "434cc07511409c60cc1de597e045591af14cec27b28571fccd8a242eae9ba6d7",
+      "omitted_column_indexes": []
+    },
+    "newpart-series": {
+      "query": "queries/04-newpart-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/newpart-series.csv",
+          "columns": [
+            "t",
+            "table",
+            "parts",
+            "rows",
+            "bytes",
+            "compressed_bytes"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 886,
+          "sha256": "cbc30673bab52faabfbc3f4cba8b9af6818f12d6b6d7d334377a01b8bdc7fc80"
+        }
+      ],
+      "original_result_sha256": "de9cd780610d2d5cd85d0a960236ea43f721a98fcec4864594f3976b0f027ef5",
+      "omitted_column_indexes": []
+    },
+    "part-metric-names": {
+      "query": "queries/05-part-metric-names.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/part-metric-names.csv",
+          "columns": [
+            "metric",
+            "value"
+          ],
+          "cell_encoding": [
+            "string",
+            "json"
+          ],
+          "rows": 3,
+          "sha256": "bab077109d6b41e42eb2e7f707d365b225c7b65665d3793e468ea0fbdb2caf71"
+        }
+      ],
+      "original_result_sha256": "b227e542dfeaa65d762d780070c974823f3fa2406ebba3a28e4db7a146f4b627",
+      "omitted_column_indexes": []
+    },
+    "active-metric-series": {
+      "query": "queries/06-active-metric-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/active-metric-series.csv",
+          "columns": [
+            "bucket_unix",
+            "samples",
+            "async_rows",
+            "async_bytes",
+            "inserted_rows_all_tables",
+            "inserted_bytes_all_tables",
+            "os_cpu_us",
+            "user_cpu_us",
+            "system_cpu_us",
+            "merged_rows",
+            "merged_uncompressed_bytes",
+            "delayed_inserts",
+            "rejected_inserts"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 442,
+          "sha256": "968613a57117e09c750cd3aae4a45332b193a286ff89a54a752380fa0400e9d5"
+        }
+      ],
+      "original_result_sha256": "cf7d6236a7cd5bad1667f25372546e2c000ec9db41677d19d6faf9a486fad893",
+      "omitted_column_indexes": []
+    },
+    "active-parts-series": {
+      "query": "queries/07-active-parts-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/active-parts-series.csv",
+          "columns": [
+            "bucket_unix",
+            "max_parts",
+            "average_parts",
+            "minimum_parts",
+            "samples"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 442,
+          "sha256": "63499eeae35582480ece49fc2d7424ec660a247af21a2e7ce7be7432f1078d08"
+        }
+      ],
+      "original_result_sha256": "65f936a37c523ba1991bd762f35b146c3ba0743279215211cd80aec60536c0ea",
+      "omitted_column_indexes": []
+    },
+    "active-newpart-series": {
+      "query": "queries/08-active-newpart-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/active-newpart-series.csv",
+          "columns": [
+            "bucket_unix",
+            "table",
+            "new_parts",
+            "rows",
+            "uncompressed_bytes",
+            "compressed_bytes"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 884,
+          "sha256": "1f7aea591df5d849e8eda97ba9eb841181e98a54945d6bd5d9e1007e53ac1775"
+        }
+      ],
+      "original_result_sha256": "465cc1db61fac33be016e6ef4ae42ce96d4599d294471f096b02d5fb38ddfc18",
+      "omitted_column_indexes": []
+    },
+    "preparation-fields": {
+      "query": "queries/09-preparation-fields.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/preparation-fields.csv",
+          "columns": [
+            "table",
+            "name",
+            "type",
+            "comment"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "string"
+          ],
+          "rows": 1927,
+          "sha256": "a9a2668a266e38774f6d712eb47dda9c19dece3334718fed4a66ab9e22a85c4b"
+        }
+      ],
+      "original_result_sha256": "f1987c19ae43d9afd6bed0636d551d05120805dcfd1e0664ccbeae0918789774",
+      "omitted_column_indexes": []
+    },
+    "sample-log-coverage": {
+      "query": "queries/10a-preparation-log-sample-coverage.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/sample-log-coverage.csv",
+          "columns": [
+            "source",
+            "records",
+            "hosts",
+            "earliest",
+            "latest"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 4,
+          "sha256": "b4d37e8641484f48f6e4f8471dad660b5e29f0a16587f06a5a0f34abeb28338f"
+        }
+      ],
+      "original_result_sha256": "36cd409948807ec5c4dc340d63a9db483fd9d54b06f8536c64c43258d3b4d1c2",
+      "omitted_column_indexes": []
+    },
+    "log-metadata": {
+      "query": "queries/11-preparation-log-metadata.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/log-metadata.csv",
+          "columns": [
+            "name",
+            "total_rows",
+            "sorting_key",
+            "partition_key"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 47,
+          "sha256": "1a6a979b2a71ce4417267e278bee10720e978b372ec72db558519fd6c6f308c0"
+        }
+      ],
+      "original_result_sha256": "321e7ccd9f8a9f61da187f5ae8e66a9a18f6ae7f5a77add596286927510fb292",
+      "omitted_column_indexes": []
+    },
+    "view-sample": {
+      "query": "queries/12-preparation-view-sample.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/view-sample.csv",
+          "columns": [
+            "view_name",
+            "view_target",
+            "status",
+            "executions",
+            "hosts",
+            "read_rows",
+            "written_rows",
+            "view_ms",
+            "cpu_us",
+            "os_cpu_us",
+            "sort_us",
+            "with_cpu",
+            "profile_keys"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 1,
+          "sha256": "9483726efe46bdfb3799e68959d5a5e5067f957cd8d207d8b3f1d535f141cc79"
+        }
+      ],
+      "original_result_sha256": "d361e709f7e5223a9ece79d2100840a2995c92709eef37888ea1c466d6cb94b5",
+      "omitted_column_indexes": [
+        12,
+        13
+      ]
+    },
+    "processors-sample": {
+      "query": "queries/13-preparation-processors-sample.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/processors-sample.csv",
+          "columns": [
+            "name",
+            "records",
+            "queries",
+            "elapsed_us",
+            "input_wait_us",
+            "output_wait_us",
+            "input_rows",
+            "output_rows"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 69,
+          "sha256": "107cdbd21741d048c243ff2b36f63122b9c667f72dee79de1662fb7da35d42b0"
+        }
+      ],
+      "original_result_sha256": "9b8a272ab0b365e444f1f99a4b9e9e42f37cc3c2028315c5d487b5a3c730781d",
+      "omitted_column_indexes": [
+        8
+      ]
+    },
+    "metric-totals": {
+      "query": "queries/14-preparation-metric-totals.sql",
+      "shape": "single_row",
+      "tables": [
+        {
+          "path": "results/metric-totals.csv",
+          "columns": [
+            "samples",
+            "hosts",
+            "first_utc",
+            "last_utc",
+            "sorting_elapsed_us",
+            "merging_elapsed_us",
+            "writer_rows",
+            "writer_blocks",
+            "already_sorted_blocks",
+            "os_cpu_us",
+            "aggregating_sorted_ms",
+            "external_sort_compressed_bytes",
+            "external_aggregation_compressed_bytes"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 1,
+          "sha256": "6226f6762a1f1cc646c8bab67ebffb77529d153a9c12dbf2a28e6d4e0b25a2d1"
+        }
+      ],
+      "original_result_sha256": "a88719b916e1d29985046c3b63702b809ebfa7df2a31402dab36d35bf3c50d1d",
+      "omitted_column_indexes": []
+    },
+    "parts-sample": {
+      "query": "queries/15-preparation-parts-sample.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/parts-sample.csv",
+          "columns": [
+            "table",
+            "event_type",
+            "records",
+            "parts",
+            "rows",
+            "cpu_us",
+            "sort_us",
+            "merge_us",
+            "duration_ms",
+            "profile_keys"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 8,
+          "sha256": "3c3d205c33467758959f1d14f45c780c1bbde943869ebd55342c1dbd8bb92757"
+        }
+      ],
+      "original_result_sha256": "96fab8343b2002992ec195fcb81b09db5d6526a48fd6f419f32a2de98b7daaec",
+      "omitted_column_indexes": []
+    },
+    "profiler-metadata": {
+      "query": "queries/16-preparation-profiler-metadata.sql",
+      "shape": "sections",
+      "tables": [
+        {
+          "path": "results/profiler-metadata-tables.csv",
+          "columns": [
+            "name",
+            "total_rows",
+            "sorting_key",
+            "partition_key"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 16,
+          "sha256": "794d5d7d7c4746e733981c8f8d46c04753949a03ec2e225dcdd3dea7efea3a94"
+        },
+        {
+          "path": "results/profiler-metadata-columns.csv",
+          "columns": [
+            "table",
+            "name",
+            "type",
+            "comment"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "string"
+          ],
+          "rows": 416,
+          "sha256": "02200ed8a01d3181811bc33363a272347940f5ce735eeff3658cc09ad054fcc7"
+        }
+      ],
+      "original_result_sha256": "eb8dda2539758ba0c8e3f64e8593f733fc1869901f5965a6607bb99087509f9c",
+      "omitted_column_indexes": []
+    },
+    "view-run": {
+      "query": "queries/17-preparation-view-run.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/view-run.csv",
+          "columns": [
+            "view_name",
+            "view_target",
+            "status",
+            "executions",
+            "hosts",
+            "read_rows",
+            "written_rows",
+            "view_ms",
+            "cpu_us",
+            "os_cpu_us",
+            "sort_us",
+            "with_cpu",
+            "profile_keys"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "5d1a1fae381c6269658acd860c0d1c2a1ec34fb56566d192e68ff1bde048c6b7"
+        }
+      ],
+      "original_result_sha256": "9026758e6dbfab7bf4006572b78b3de4a0bab46d6cc33d5a255509a5ffb807f6",
+      "omitted_column_indexes": [
+        12,
+        13
+      ]
+    },
+    "trace-sample": {
+      "query": "queries/18-preparation-trace-sample.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/trace-sample.csv",
+          "columns": [
+            "trace_type",
+            "thread_name",
+            "records",
+            "hosts",
+            "symbolized",
+            "queries",
+            "versions",
+            "example_symbols"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 92,
+          "sha256": "6cf4f0e7776d4bfabbd1c36b1dc8dd61ce03dbb92304acf2af5e13125b100bc7"
+        }
+      ],
+      "original_result_sha256": "dd0c29f0e1ccf92de64a1e9ad26ed53f49ee875f59f0691a6a0ef60a543e8095",
+      "omitted_column_indexes": [
+        7
+      ]
+    },
+    "cpu-stacks-sample": {
+      "query": "queries/19-preparation-cpu-stack-sample.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stacks-sample.csv",
+          "columns": [
+            "samples",
+            "hosts",
+            "thread_names",
+            "stack"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 149,
+          "sha256": "e0e922cbd6c13fe4b91332770b781bfaccd55f34c1b9612533bd60feea24a4dd"
+        }
+      ],
+      "original_result_sha256": "9548eea9b9b45b4c622cfc6d55c83f51fd73e47d3e23415fcd3f0a908b06db90",
+      "omitted_column_indexes": []
+    },
+    "table-and-settings": {
+      "query": "queries/20-preparation-table-and-profiler-settings.sql",
+      "shape": "sections",
+      "tables": [
+        {
+          "path": "results/table-and-settings-tables.csv",
+          "columns": [
+            "name",
+            "uuid"
+          ],
+          "cell_encoding": [
+            "string",
+            "string"
+          ],
+          "rows": 3,
+          "sha256": "eda822c73724cfe6e78354448540ee7331f2e52737131d72b696398ea8a13590"
+        },
+        {
+          "path": "results/table-and-settings-settings.csv",
+          "columns": [
+            "name",
+            "value",
+            "changed"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json"
+          ],
+          "rows": 5,
+          "sha256": "59c48d3a1dc530797647ff49a4c9505675d68b963f3c2a7cfbb77ac6aa591f79"
+        }
+      ],
+      "original_result_sha256": "c17c07c77f9823111d513683663e8c848efcad8d740f2d8f87bd153bd46fe081",
+      "omitted_column_indexes": []
+    },
+    "view-series": {
+      "query": "queries/21-preparation-view-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/view-series.csv",
+          "columns": [
+            "t",
+            "executions",
+            "rows_in",
+            "rows_out",
+            "view_ms",
+            "cpu_us",
+            "sort_us",
+            "merge_us",
+            "real_us",
+            "peak_memory"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 442,
+          "sha256": "ee5f555b136464a5e8a469013c55f15a90de0a4cc7e5b4f1f589ac1affbfda0e"
+        }
+      ],
+      "original_result_sha256": "bac95fff9eeaad73568af8048bd966664738ffa22758aab430c5d85e2ddd541b",
+      "omitted_column_indexes": []
+    },
+    "newpart-timing-series": {
+      "query": "queries/22-preparation-newpart-timing-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/newpart-timing-series.csv",
+          "columns": [
+            "t",
+            "table",
+            "parts",
+            "rows",
+            "bytes",
+            "compressed_bytes",
+            "sort_us",
+            "merge_us",
+            "duration_ms"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 884,
+          "sha256": "4631f4eeecf113af5f146cd3ffb76616b4b40c52f50f897171f23f3e565e4c35"
+        }
+      ],
+      "original_result_sha256": "4857972c4c9d2bccd9392c75a4786751e5bca08131c95be139f7113208001cf4",
+      "omitted_column_indexes": []
+    },
+    "historical-settings": {
+      "query": "queries/23-preparation-historical-profiler-settings.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/historical-settings.csv",
+          "columns": [
+            "type",
+            "query_kind",
+            "records",
+            "cpu_periods",
+            "real_periods",
+            "processor_settings"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "94a68ba6fc3a129426b71325f2b3bb544e79e09eaf017e8f7d033a78061ee055"
+        }
+      ],
+      "original_result_sha256": "bf12684b3bf91f3d18f2ccb674cc9d8ae51253e98b87f551cc345196f943cca2",
+      "omitted_column_indexes": [
+        6
+      ]
+    },
+    "flush-cpu-sample": {
+      "query": "queries/25-preparation-flush-cpu-sample.sql",
+      "shape": "single_row",
+      "tables": [
+        {
+          "path": "results/flush-cpu-sample.csv",
+          "columns": [
+            "executions",
+            "hosts",
+            "cpu_us",
+            "os_cpu_us",
+            "real_us",
+            "elapsed_ms",
+            "written_rows",
+            "sorting_elapsed_us",
+            "elapsed_ms_quantiles_50_95_99"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 1,
+          "sha256": "8eeb955dbb16a05b97ca8444e7cb2ede82f0b49c66fc1ba6c38c0ea97cb50e57"
+        }
+      ],
+      "original_result_sha256": "e38faad5a8bd8315a46260ae0d8c5d35146298bb86909d198edb027c9854f54b",
+      "omitted_column_indexes": []
+    },
+    "merge-series": {
+      "query": "queries/26-preparation-merge-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/merge-series.csv",
+          "columns": [
+            "t",
+            "table",
+            "merges",
+            "rows",
+            "read_rows",
+            "read_bytes",
+            "output_bytes",
+            "output_uncompressed_bytes",
+            "cpu_us",
+            "duration_ms",
+            "peak_memory"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 884,
+          "sha256": "7c51216ea832a02fdf17a826a8bd1f92ae3d3082f604cfe1a937df96ed97e7ca"
+        }
+      ],
+      "original_result_sha256": "d469a39175d430270380a432f37c0982410f91c1b90c8adaad88a9bd0892eefa",
+      "omitted_column_indexes": []
+    },
+    "merge-consolidation-series": {
+      "query": "queries/28-preparation-merge-consolidation-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/merge-consolidation-series.csv",
+          "columns": [
+            "t",
+            "table",
+            "merges",
+            "input_parts",
+            "rows",
+            "read_rows",
+            "read_bytes",
+            "output_bytes",
+            "output_uncompressed_bytes",
+            "cpu_us",
+            "duration_ms",
+            "peak_memory"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 884,
+          "sha256": "45ffb131a01cb63867eb189f1c2e98ae4f66dfe3c696c84c241b4642eaa51f90"
+        }
+      ],
+      "original_result_sha256": "43ce67ca00af042874a2666af774cebd544ecce01c0a9f6f6a97ec023db5d9d5",
+      "omitted_column_indexes": []
+    },
+    "part-integrity": {
+      "query": "queries/29-preparation-part-integrity.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/part-integrity.csv",
+          "columns": [
+            "table",
+            "event_type",
+            "records",
+            "unique_parts",
+            "hosts"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 4,
+          "sha256": "7494a956ca95dd4cc9a26a9c3bfca935e17158e72bd1737d8d80b17e13531c5d"
+        }
+      ],
+      "original_result_sha256": "fef3623cbda54e2840f2f02f19fdb9f496558389933efc12859ba8e5b52f19bd",
+      "omitted_column_indexes": []
+    },
+    "before-run-parts": {
+      "query": "queries/30-preparation-before-run-parts.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/before-run-parts.csv",
+          "columns": [
+            "table",
+            "event_type",
+            "records",
+            "rows",
+            "input_parts",
+            "first_event",
+            "last_event"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 4,
+          "sha256": "7c9d358658bf503d0b94865d47b0e996de79f84caf28d22d013c3710ae8f69fa"
+        }
+      ],
+      "original_result_sha256": "d4465ee63accb4594b9c4d8b8339385844ca2d29956706e4473ccc1abf0c8ad2",
+      "omitted_column_indexes": []
+    },
+    "current-part-snapshot": {
+      "query": "queries/31-preparation-current-part-snapshot.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/current-part-snapshot.csv",
+          "columns": [
+            "table",
+            "parts",
+            "rows",
+            "uncompressed_bytes",
+            "compressed_bytes",
+            "on_disk_bytes",
+            "last_modified"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "string"
+          ],
+          "rows": 2,
+          "sha256": "81d731be6f7aaf5a69cfc65909cd4db05419bf7c7d77179fc57ef8d39914c015"
+        }
+      ],
+      "original_result_sha256": "7c6924a96367953b673b69f705d5531000b9fd1a2a956dc45170c594a2a718b3",
+      "omitted_column_indexes": []
+    },
+    "summary-coverage-snapshot": {
+      "query": "queries/32-preparation-summary-coverage-snapshot.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/summary-coverage-snapshot.csv",
+          "columns": [
+            "host",
+            "rows",
+            "represented_quotes"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "0d0d4ad75781c27f56d77ccd812447d208261de0dea04fa781b00d926500800e"
+        }
+      ],
+      "original_result_sha256": "b1528181ec9d37e5b856f5b3f883a625533a1039f990b1b638cc7df88926f7be",
+      "omitted_column_indexes": []
+    },
+    "after-run-merges": {
+      "query": "queries/33-preparation-after-run-merges.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/after-run-merges.csv",
+          "columns": [
+            "table",
+            "event_type",
+            "records",
+            "input_parts",
+            "rows",
+            "rows_read",
+            "first_event",
+            "last_event"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 1,
+          "sha256": "82e6a35dc623f4d68a48d2109435bdcbb6ee326edf210cd48ca34a003f87ad2f"
+        }
+      ],
+      "original_result_sha256": "f1499d04396bb56b7a6c90c57a82c9e97b3840f8efcaed18d3d6a959f75fcd83",
+      "omitted_column_indexes": []
+    },
+    "before-run-table-identities": {
+      "query": "queries/34-preparation-before-run-table-identities.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/before-run-table-identities.csv",
+          "columns": [
+            "table",
+            "uuid",
+            "records",
+            "rows"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "7e00a477509255a6d6f30219c3fd33c3820de9603ed03701472d25552686857f"
+        }
+      ],
+      "original_result_sha256": "dc13213a1db2733c0b8c975fca93c9ea3facec3c2343d5b0d885da6259bd86a9",
+      "omitted_column_indexes": []
+    },
+    "part-operation-types": {
+      "query": "queries/37-preparation-part-operation-types.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/part-operation-types.csv",
+          "columns": [
+            "table",
+            "event_type",
+            "records",
+            "errors",
+            "rows"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 8,
+          "sha256": "35b57f38a86274d44f05c97f70088d2ca0b43a4a2a48843cb04bfca13aec0946"
+        }
+      ],
+      "original_result_sha256": "25ae624535c78a758e48f10d813a7cc75081afb8d05df12877cde3d317c48c8a",
+      "omitted_column_indexes": []
+    },
+    "memory-discovery": {
+      "query": "queries/38-memory-discovery.sql",
+      "shape": "sections",
+      "tables": [
+        {
+          "path": "results/memory-discovery-tables.csv",
+          "columns": [
+            "name",
+            "sorting_key",
+            "partition_key",
+            "total_rows"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "356ea552be9aa04e3809a2848dc319aedfdb4d89eb26b18c26a8675b4669ab95"
+        },
+        {
+          "path": "results/memory-discovery-columns.csv",
+          "columns": [
+            "table",
+            "name",
+            "type",
+            "comment"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "string"
+          ],
+          "rows": 5,
+          "sha256": "9c97b396c46e59d75dc656cc00ce25909548b4993c21cb7fc5d5341e8738596f"
+        },
+        {
+          "path": "results/memory-discovery-metrics.csv",
+          "columns": [
+            "metric",
+            "value",
+            "description"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "string"
+          ],
+          "rows": 30,
+          "sha256": "1c43f3e9312e5f372b0b6fab1ae09e16581a9afe963b37eef30a1b5cccb5ae53"
+        }
+      ],
+      "original_result_sha256": "e2ef20de6c93fa19296b9ff27b2bb3ae9c5f901bf73ce91ba1084edbd8935ca6",
+      "omitted_column_indexes": []
+    },
+    "memory-coverage-sample": {
+      "query": "queries/39-memory-coverage-sample.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/memory-coverage-sample.csv",
+          "columns": [
+            "hostname",
+            "metric",
+            "samples",
+            "first",
+            "last",
+            "min_value",
+            "max_value"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "json",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 8,
+          "sha256": "165208352d00eb4d46ed9230e63663b1f7f90526a3565998cc41065783d991ff"
+        }
+      ],
+      "original_result_sha256": "9395c250e72ef9698ecdb9521059ee19a654a736cf4608306299d8daf4f8d4a1",
+      "omitted_column_indexes": []
+    },
+    "memory-dashboard-definition": {
+      "query": "queries/40-memory-dashboard-definition.sql",
+      "shape": "sections",
+      "tables": [
+        {
+          "path": "results/memory-dashboard-definition-columns.csv",
+          "columns": [
+            "table",
+            "name",
+            "type",
+            "comment"
+          ],
+          "cell_encoding": [
+            "string",
+            "string",
+            "string",
+            "string"
+          ],
+          "rows": 4,
+          "sha256": "630ec08a9e430ba7b6e5cf8e87b672a66cbb6b0344e40151d0960e352c497055"
+        },
+        {
+          "path": "results/memory-dashboard-definition-metrics.csv",
+          "columns": [
+            "metric",
+            "description"
+          ],
+          "cell_encoding": [
+            "string",
+            "string"
+          ],
+          "rows": 1,
+          "sha256": "ebb2f861cecdf383900645052da4dee00f72abd00b2698dfa36c0b8d1b294126"
+        }
+      ],
+      "original_result_sha256": "ca1dbd76a65612e0d7a6c69560fdf9d85e4ef6c309b4d11b4bdbf3c51c3e1026",
+      "omitted_column_indexes": []
+    },
+    "memory-dashboard-series": {
+      "query": "queries/41-memory-dashboard-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/memory-dashboard-series.csv",
+          "columns": [
+            "t",
+            "timestamps",
+            "log_samples",
+            "min_hosts",
+            "max_hosts",
+            "memory_byte_samples",
+            "min_memory_bytes",
+            "max_memory_bytes"
+          ],
+          "cell_encoding": [
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 442,
+          "sha256": "ce0c1ec69454e62edb31f4b67ccf6690d4eede157d4257aa0426b5d0617ce36a"
+        }
+      ],
+      "original_result_sha256": "136edf1fa52a6771a77662507e6912a4a47949779041933f4521b673dcba2b9e",
+      "omitted_column_indexes": []
+    },
+    "memory-node-series": {
+      "query": "queries/42-memory-node-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/memory-node-series.csv",
+          "columns": [
+            "t",
+            "hostname",
+            "timestamps",
+            "log_samples",
+            "memory_byte_samples",
+            "min_memory_bytes",
+            "max_memory_bytes",
+            "max_samples_per_second",
+            "first",
+            "last"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "string",
+            "string"
+          ],
+          "rows": 884,
+          "sha256": "2b5e2a36b9ebc424fd7d99f89249a34e6cecd2399b293ae69f3a2935d7dafcac"
+        }
+      ],
+      "original_result_sha256": "05b5149842bf5e1fc8777d097d71cf49ea93ca19225f801628232d4909854b8d",
+      "omitted_column_indexes": []
+    },
+    "memory-capacity-check": {
+      "query": "queries/43-memory-capacity-check.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/memory-capacity-check.csv",
+          "columns": [
+            "hostname",
+            "samples",
+            "first",
+            "last",
+            "min_bytes",
+            "max_bytes"
+          ],
+          "cell_encoding": [
+            "string",
+            "json",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 2,
+          "sha256": "3b478e3242ca5ef27ba8589984b7479f3cef7cbc9d03773216c99b5709569a55"
+        }
+      ],
+      "original_result_sha256": "d2661f813d90dfad8319e35e756bb7bbeb37fe892d3eac12301fcdef679a509b",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-00": {
+      "query": "queries/24-00-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-00.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "b5c0a2ee6190322dcfe33fcd72e03e1a85573440edf8bd4920406025cacac9db"
+        }
+      ],
+      "original_result_sha256": "a1e6ef2f8e5a8d9042d0b687967d633b3d9e2d57c8d0af5b3293458f9aa911b3",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-00": {
+      "query": "queries/24c-00-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-00.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "b5c0a2ee6190322dcfe33fcd72e03e1a85573440edf8bd4920406025cacac9db"
+        }
+      ],
+      "original_result_sha256": "a1e6ef2f8e5a8d9042d0b687967d633b3d9e2d57c8d0af5b3293458f9aa911b3",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-01": {
+      "query": "queries/24-01-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-01.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "b2d54a938ec80d9cb65a8bd36f09d146c2bc9842bdb0dbf771e64194ff181685"
+        }
+      ],
+      "original_result_sha256": "1fa28af7341ac4e149e90947d20906efff6203017775da7ee498fcb1dc937b4b",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-01": {
+      "query": "queries/24c-01-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-01.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "b2d54a938ec80d9cb65a8bd36f09d146c2bc9842bdb0dbf771e64194ff181685"
+        }
+      ],
+      "original_result_sha256": "1fa28af7341ac4e149e90947d20906efff6203017775da7ee498fcb1dc937b4b",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-02": {
+      "query": "queries/24-02-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-02.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "593c2ccbc346ec3c19b148acb92dc3efbe52ee9e85487975af6de43ec3c2f53d"
+        }
+      ],
+      "original_result_sha256": "d097900bda6343a18f2296b1a610b538cf3126c59ab0f0d33a7ecd706047a5df",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-02": {
+      "query": "queries/24c-02-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-02.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "593c2ccbc346ec3c19b148acb92dc3efbe52ee9e85487975af6de43ec3c2f53d"
+        }
+      ],
+      "original_result_sha256": "d097900bda6343a18f2296b1a610b538cf3126c59ab0f0d33a7ecd706047a5df",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-03": {
+      "query": "queries/24-03-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-03.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "c9902a02afd8ed42d89ce647213b5af8205e86b45088c23bfe307fb4083fcc64"
+        }
+      ],
+      "original_result_sha256": "710fe5e7f232236138bd997db87c6d1c4a8600ad25a600af0f5d8d5315dee53d",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-03": {
+      "query": "queries/24c-03-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-03.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "c9902a02afd8ed42d89ce647213b5af8205e86b45088c23bfe307fb4083fcc64"
+        }
+      ],
+      "original_result_sha256": "710fe5e7f232236138bd997db87c6d1c4a8600ad25a600af0f5d8d5315dee53d",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-04": {
+      "query": "queries/24-04-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-04.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "5ae78d4439c1e00c12118e3ceb90e444dad06ca61885b85f823dcd40213efaf0"
+        }
+      ],
+      "original_result_sha256": "1ec9a35564b3c28b4ddd86a1c502a25a490ba7075f361b5c8ababa689d7700ed",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-04": {
+      "query": "queries/24c-04-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-04.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "5ae78d4439c1e00c12118e3ceb90e444dad06ca61885b85f823dcd40213efaf0"
+        }
+      ],
+      "original_result_sha256": "1ec9a35564b3c28b4ddd86a1c502a25a490ba7075f361b5c8ababa689d7700ed",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-05": {
+      "query": "queries/24-05-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-05.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "782bf05aa773b9e346a34cf6ccc96bc3a1f6cd12c8751c24dd650ec4736feacb"
+        }
+      ],
+      "original_result_sha256": "8bfd2597cd40050a1661942d1bd6c8a49706d4b0b419d92031b17775dc22fd2e",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-05": {
+      "query": "queries/24c-05-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-05.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "782bf05aa773b9e346a34cf6ccc96bc3a1f6cd12c8751c24dd650ec4736feacb"
+        }
+      ],
+      "original_result_sha256": "8bfd2597cd40050a1661942d1bd6c8a49706d4b0b419d92031b17775dc22fd2e",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-06": {
+      "query": "queries/24-06-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-06.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "8c16482bb39a406e51518fdfe2dea011501e8fbd1b9a5d576a279f2f9531a37f"
+        }
+      ],
+      "original_result_sha256": "c475f5ca3b346dd046b9d4cff64ee5a067d0b87a56b62de5bcda543bdc40eaa0",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-06": {
+      "query": "queries/24c-06-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-06.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "8c16482bb39a406e51518fdfe2dea011501e8fbd1b9a5d576a279f2f9531a37f"
+        }
+      ],
+      "original_result_sha256": "c475f5ca3b346dd046b9d4cff64ee5a067d0b87a56b62de5bcda543bdc40eaa0",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-07": {
+      "query": "queries/24-07-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-07.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "2119565a67b645327e95047290c12b4e1d80fa3f56ce7d81fd188f6cd1779d91"
+        }
+      ],
+      "original_result_sha256": "72f85dbf99efbde9b134ea034e17d5c8abbd15face4c1c98f1353a810c18723f",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-07": {
+      "query": "queries/24c-07-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-07.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "2119565a67b645327e95047290c12b4e1d80fa3f56ce7d81fd188f6cd1779d91"
+        }
+      ],
+      "original_result_sha256": "72f85dbf99efbde9b134ea034e17d5c8abbd15face4c1c98f1353a810c18723f",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-08": {
+      "query": "queries/24-08-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-08.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "2ee13877cd4cfc391ca13cc28eb1840b3ccedd07ef4257125611a26cda037747"
+        }
+      ],
+      "original_result_sha256": "39185d9a53ea035665bf5e4c47774cc34999591fd575df08f85cb6c61f57131c",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-08": {
+      "query": "queries/24c-08-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-08.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 108,
+          "sha256": "2ee13877cd4cfc391ca13cc28eb1840b3ccedd07ef4257125611a26cda037747"
+        }
+      ],
+      "original_result_sha256": "39185d9a53ea035665bf5e4c47774cc34999591fd575df08f85cb6c61f57131c",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-chunk-09": {
+      "query": "queries/24-09-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-chunk-09.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 35,
+          "sha256": "ab621c61a9fd0c23a7c2e0f869203b1964bba707f2c22a7adf1e11e7e0c12eac"
+        }
+      ],
+      "original_result_sha256": "98e6ef86614767b6d39a7fdbd59c04f2a3add36a48ed1bf47464447908884697",
+      "omitted_column_indexes": []
+    },
+    "cpu-stage-audit-09": {
+      "query": "queries/24c-09-preparation-cpu-stage-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/cpu-stage-audit-09.csv",
+          "columns": [
+            "t",
+            "scope",
+            "stage",
+            "hostname",
+            "samples",
+            "symbolized"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "string",
+            "string",
+            "json",
+            "json"
+          ],
+          "rows": 35,
+          "sha256": "ab621c61a9fd0c23a7c2e0f869203b1964bba707f2c22a7adf1e11e7e0c12eac"
+        }
+      ],
+      "original_result_sha256": "98e6ef86614767b6d39a7fdbd59c04f2a3add36a48ed1bf47464447908884697",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-00": {
+      "query": "queries/27b-00-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-00.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "a46e11817b779cba3a0a5716cae9ebdb77204b8a872b7dbd3ac95f4ddda8b2ce"
+        }
+      ],
+      "original_result_sha256": "a56f2eba76c37fe2311895570170d3254e8836c2f66326575b8d018c241f0f62",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-01": {
+      "query": "queries/27b-01-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-01.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "c26656f733562f3007c130307b70699c27f2182764d3ea2b345818c2bf429705"
+        }
+      ],
+      "original_result_sha256": "2d89bd7dbb7bd5cdbb68654a577474d9564c3aeb8e3f6801c9d0b85fce129670",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-02": {
+      "query": "queries/27b-02-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-02.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "7c511177d85577d27adf264704fc7487df26aafeb430dcdba2c1b617f229a2a4"
+        }
+      ],
+      "original_result_sha256": "0a9d591137009b287be83374654a987ae4774937377367d395c7ba0ab745e22c",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-03": {
+      "query": "queries/27b-03-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-03.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "6545e9511f98f81ba72299fa200ea9cbefd7cf9d955d3ad3e9e495a3b097c6e0"
+        }
+      ],
+      "original_result_sha256": "1ca7f19ca2194575f08c8eaa796a187870d36dad42447e9256fdc0cd566264e2",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-04": {
+      "query": "queries/27b-04-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-04.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "d0d1fabb458bc18944198807ae362f304911eac479f690b593a5365fc5aa1970"
+        }
+      ],
+      "original_result_sha256": "c79031d446a9cfde646854973e4736bf6bd58ea2cb45d19795a4bc22d823c0b4",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-05": {
+      "query": "queries/27b-05-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-05.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "55dd2e8b9b507b40ab898f13c602f8f736f939e7657602cedd0042cf70c2cf0c"
+        }
+      ],
+      "original_result_sha256": "40b5c21c5993df9463b8a4344802cf0b2638ecdae3acfa303018a517c106c52c",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-06": {
+      "query": "queries/27b-06-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-06.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "6db3f386bd8905139defcaa4af1fa9ba6cf627d173d3f9c302fd2e4a416527de"
+        }
+      ],
+      "original_result_sha256": "0b0440311628079a43232c9554d545486d3d44bad5c803d62d101dbde1b0f48d",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-07": {
+      "query": "queries/27b-07-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-07.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "18ac738a9f71ed288fc2f4935a94442e26778ebe509070ea3d2d495e83a4fa47"
+        }
+      ],
+      "original_result_sha256": "2719edcc0484f7c668c7779bd32e1340c13d3d55bc8a4043e108c7cd4cc4b409",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-08": {
+      "query": "queries/27b-08-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-08.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "7390e5d3db8e7c17a2bb77f75cc2e706b09187aa131c384b2b8b685bc84570c5"
+        }
+      ],
+      "original_result_sha256": "9135d79dc6cb9e82287b85ed15dd8a778a141c2e584e1374f739b153fec3bff1",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-09": {
+      "query": "queries/27b-09-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-09.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "39bc35a630dae2ca277d894f39c41ba9d47227a2cf3de6f7a1abfcd309faf31a"
+        }
+      ],
+      "original_result_sha256": "c9828b9df87ff21b78cee08b0bc9612710d025ec378e252c3def74f10ce846df",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-10": {
+      "query": "queries/27b-10-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-10.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "01fa6b969180d1a22e339fc246b51a7bb5dfdccf44be9d3897048b14afbfcf3a"
+        }
+      ],
+      "original_result_sha256": "1b90441dc363cb6d90d33171eaff9998668031d2ae45a4344c6a843e5a411fd0",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-11": {
+      "query": "queries/27b-11-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-11.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "772593f6206d570947359cd3732fabce709934d3f4cee4298095de8d7cbdb761"
+        }
+      ],
+      "original_result_sha256": "52dd29cdd510fae162739717e56b57c60b1b731bc526065f3cc15f8842222b99",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-12": {
+      "query": "queries/27b-12-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-12.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "1d05befc50c866177e5adcf87b3e171d4b2665fe5f2d3f68ed000d0e512d8c4b"
+        }
+      ],
+      "original_result_sha256": "31f495166d003467f8f21360b7ae8f7bd73da0ae26f621ab42be52487316a19a",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-13": {
+      "query": "queries/27b-13-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-13.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "7249fdeceac7c143fcc1bbb04601c58b1d6cba2a41c090a04247f9e5d48dc4f5"
+        }
+      ],
+      "original_result_sha256": "2bfd1119128c849ab07095a6c7428144c25b668403ef431b1e89e78e1dc9a5d4",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-14": {
+      "query": "queries/27b-14-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-14.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "155fd1c57c23b0b16f1f1cb4444d2c11025e9a1e075c5cdbe2d0563f12866d6f"
+        }
+      ],
+      "original_result_sha256": "d1bbdc994bf3fd00a6de8973239357c2e0eecf390415c9f580e115aa66fc1b7c",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-15": {
+      "query": "queries/27b-15-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-15.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "4601ada6f567f425a4b7c5014d4f2015a0f0fffbd7d33586ab6d60b06dad5f85"
+        }
+      ],
+      "original_result_sha256": "25a0c929f9e0763acc55af8bc2a504a9191884082aa719900565ce177558d62c",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-16": {
+      "query": "queries/27b-16-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-16.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "ec7b651e1674bb085a9bac8045e49350cb0971ec996b164eaf41f15738caa6bf"
+        }
+      ],
+      "original_result_sha256": "23db616a0a720b6e3d390826b2ec0ef1ea73f43a2fd3995ad592b01c572f2a30",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-17": {
+      "query": "queries/27b-17-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-17.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "a5ae56353be52c980caaf90d80164335bd38377b7538ba247cf7b208c41b3682"
+        }
+      ],
+      "original_result_sha256": "6a3a4d533613d4cd9feaa3df773126a238ff35736545eb19930615d9404f00a8",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-18": {
+      "query": "queries/27b-18-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-18.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "62c876825572425d6d596e2700d71aaac290ea602d6801279ed4565753a60e24"
+        }
+      ],
+      "original_result_sha256": "b96af90ed9917a8b49e663ce05dc692ffe1ce29d7be52de1e5287ff76d30f1ae",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-19": {
+      "query": "queries/27b-19-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-19.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "70d74215722c1516da27f65828ffcb6d040c2b5099b5c95782208947a28dc1fa"
+        }
+      ],
+      "original_result_sha256": "f0ffc2fcfef09e319dabc982b43e877884bcd1baca8ddca1d69df192806849fa",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-20": {
+      "query": "queries/27b-20-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-20.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "326829c5d52576fbc27dd14deeb13f16d62d3231853caa0b4fdc13770fb130a6"
+        }
+      ],
+      "original_result_sha256": "9b2abbd2539ae302e978e784d115e1650c44b678dcb55cd19b3001d52108bbf2",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-21": {
+      "query": "queries/27b-21-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-21.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "0e5f6006ec0e90d9a2683790897590d1b7157ec19db6a3347c9cde9b007a75e1"
+        }
+      ],
+      "original_result_sha256": "92290eba932d14bee5c24a02a824fc9c996dbc0a2f247ce45953c49a2885a573",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-22": {
+      "query": "queries/27b-22-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-22.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "a019b0f68ead84a5b9f31980fd07103d5fe52e1fcba8397df4fef1dc74bf1011"
+        }
+      ],
+      "original_result_sha256": "3718ad489f5e2096b6fe4bea2626f221a7722c7f267e98f303aec722901a6d90",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-23": {
+      "query": "queries/27b-23-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-23.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "ecc2a8dfc23e58c8a27363284b5fbc8e80ced8097847a78f0e4ae3291f754291"
+        }
+      ],
+      "original_result_sha256": "cca6162f5a73848cb55a472d7d79063b45b2eb539dc8abdd2488c2b0fe6afe2f",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-24": {
+      "query": "queries/27b-24-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-24.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "ffe2d1ecc7c5ae09790712df055bc6e469cb0cfa9ca39a6d1c2bc2ca6ebd6bd5"
+        }
+      ],
+      "original_result_sha256": "b401d5c8382b7cfda539ef023170c321daac1bdc3512b8458978ea020555d323",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-25": {
+      "query": "queries/27b-25-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-25.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "2b6908e4dbfe77011fa29511dccf0d96225b96ebd4bdaa9d1ba684ded7d67941"
+        }
+      ],
+      "original_result_sha256": "aa449d436a71467fe23fe9d70e09ab29dc6778a0f2357e219e184f0f0c7d3dff",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-26": {
+      "query": "queries/27b-26-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-26.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "28ac9b84df85413ec694e86925e6ca1a779a831b494c3f132b60ea586abf215b"
+        }
+      ],
+      "original_result_sha256": "36f157a25e18fd45ad96287f67de63b97f602b6d8ac6cdc1ef6fb9e2f521fdb1",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-27": {
+      "query": "queries/27b-27-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-27.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "529a4beba03f78c624a8af0a128cea4320eb34ee15a58404a7f1df80cae5f4ec"
+        }
+      ],
+      "original_result_sha256": "46111839c8df0b552e8b4ec715926b93a9cfd66de5b28b18bc253951b53d934a",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-28": {
+      "query": "queries/27b-28-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-28.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "fd814c2c140c4b1412e06d2a129fa2b5e78265772e46393a2aa23981acf42341"
+        }
+      ],
+      "original_result_sha256": "def7b0774c7322bb2c069a9224091e12e3add90a8a23bca8459a96d69fdf6f48",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-29": {
+      "query": "queries/27b-29-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-29.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "1bcb610dff1f24fac777349096c80a827fc68fbc592cb1961408c37cfb171e04"
+        }
+      ],
+      "original_result_sha256": "46f5789f97a0418144c35cf1c290bad530f0e21b0cd531049e8cd81cc4ebd8ad",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-30": {
+      "query": "queries/27b-30-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-30.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "8e7413aca136a8165f70f5d59a405d569d3566e72e4a1910f7a6488caa8eb50b"
+        }
+      ],
+      "original_result_sha256": "7bdcc724a2f672512a05f8cf0e96a372397bb5a423fa5af3f1770fe6f8aff6dc",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-31": {
+      "query": "queries/27b-31-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-31.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "a2dbd362941fcaffd1600a1eb33e46ba8a3f9db8c4d663630001742faa7d084f"
+        }
+      ],
+      "original_result_sha256": "2aae917cbf74de8492ae2198a583ee60ea216564de5bde68c0d73c5e061c6ac5",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-32": {
+      "query": "queries/27b-32-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-32.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "ccd8f37c21ef0d4748d334809b990bf062976fcfab938c559d9f3a6fad71711a"
+        }
+      ],
+      "original_result_sha256": "1fcadf9b442914a5f0fcad5ba9bcd7cfd2b82693231b3f8957c39c824ed658bb",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-33": {
+      "query": "queries/27b-33-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-33.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "ed0cc6de0f062297a0f2fa53bc9369b836da059025af8955ce597dc1218d63e2"
+        }
+      ],
+      "original_result_sha256": "2dadddd6b6beadbeb3f694178113fbcf9e230f4557218219a4e16e8798c14803",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-34": {
+      "query": "queries/27b-34-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-34.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "87c50a6ba529d22b6404708192bafd9d0c0e65bfda4fce07d7bdd144ab1b2abe"
+        }
+      ],
+      "original_result_sha256": "e9f24e30945e7a6a3b2d08edd1e897fa8055c5e56f6d3a917a616abd1b32efdb",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-35": {
+      "query": "queries/27b-35-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-35.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "9f74c25c8e48f0d46d1f511025737e8ad707e964a2ddae3f6820843adb89f3cd"
+        }
+      ],
+      "original_result_sha256": "93d934e6e22fc39a81f33d4b5c8c606496ef76c5215339c484d1dcf3f247e473",
+      "omitted_column_indexes": []
+    },
+    "flush-cpu-hour-36": {
+      "query": "queries/27b-36-preparation-flush-cpu-series.sql",
+      "shape": "rows",
+      "tables": [
+        {
+          "path": "results/flush-cpu-hour-36.csv",
+          "columns": [
+            "t",
+            "host",
+            "executions",
+            "cpu_us",
+            "os_cpu_us",
+            "elapsed_ms",
+            "read_rows",
+            "written_rows",
+            "sorting_us"
+          ],
+          "cell_encoding": [
+            "json",
+            "string",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json",
+            "json"
+          ],
+          "rows": 6,
+          "sha256": "ee4977de36ff90234e0aee85ff41d9ee0117820a56bd22773ea45207812f1c1d"
+        }
+      ],
+      "original_result_sha256": "a7bcf932d55c46e988dc8c53997d8599c91d2dba4545a01cc93b1e8a60610399",
+      "omitted_column_indexes": []
+    }
+  },
+  "queries": {
+    "queries/00-fields.sql": {
+      "status": "retained_result",
+      "source": "fields",
+      "result_files": [
+        "results/fields.csv"
+      ],
+      "sha256": "601a8ae40c68f07f93d1f41aba5751178f6a1f6634a165f656d9cb0c77a257dd"
+    },
+    "queries/01-coverage.sql": {
+      "status": "retained_result",
+      "source": "coverage",
+      "result_files": [
+        "results/coverage.csv"
+      ],
+      "sha256": "942fee5de462e6b15fba4083156abc12b9334cb0951be23234423f0f6043b7d3"
+    },
+    "queries/02-part-summary.sql": {
+      "status": "retained_result",
+      "source": "part-summary",
+      "result_files": [
+        "results/part-summary.csv"
+      ],
+      "sha256": "deb8c551b618828d4e7358f0854de8787e1d51c4ba44b1580714f3f4b6b59634"
+    },
+    "queries/03-metric-series.sql": {
+      "status": "retained_result",
+      "source": "metric-series",
+      "result_files": [
+        "results/metric-series.csv"
+      ],
+      "sha256": "e189acb279fda9eb9a1183e2375bd87d7c57b5ae94d02d7bca177e6760da6197"
+    },
+    "queries/04-newpart-series.sql": {
+      "status": "retained_result",
+      "source": "newpart-series",
+      "result_files": [
+        "results/newpart-series.csv"
+      ],
+      "sha256": "55dc7c33c29103a3325850f67d3cd7196b00ebf96190059567bf576cd4225660"
+    },
+    "queries/05-part-metric-names.sql": {
+      "status": "retained_result",
+      "source": "part-metric-names",
+      "result_files": [
+        "results/part-metric-names.csv"
+      ],
+      "sha256": "bcec006b868bfd592ccfe90d9b9de2dbf1c4432c81112d7c0a53e2cdf6df40f8"
+    },
+    "queries/06-active-metric-series.sql": {
+      "status": "retained_result",
+      "source": "active-metric-series",
+      "result_files": [
+        "results/active-metric-series.csv"
+      ],
+      "sha256": "6ea0aefc2f5865a8e806a0f08300817510cef22c296049e23f65e4ab74e67fde"
+    },
+    "queries/07-active-parts-series.sql": {
+      "status": "retained_result",
+      "source": "active-parts-series",
+      "result_files": [
+        "results/active-parts-series.csv"
+      ],
+      "sha256": "999f1a4f8354a29a32c399fbd41e52659b8cd61ff6495c1fdbf7cbe2e7367747"
+    },
+    "queries/08-active-newpart-series.sql": {
+      "status": "retained_result",
+      "source": "active-newpart-series",
+      "result_files": [
+        "results/active-newpart-series.csv"
+      ],
+      "sha256": "894b169951f72c44e59bd07657daae588a8f268c4b107ccea2f05e3cb3a092ae"
+    },
+    "queries/09-preparation-fields.sql": {
+      "status": "retained_result",
+      "source": "preparation-fields",
+      "result_files": [
+        "results/preparation-fields.csv"
+      ],
+      "sha256": "c905dbe50f316fc6708e05fc39cf652725302f206faa6d91b32f1a8b2a74a60a"
+    },
+    "queries/10a-preparation-log-sample-coverage.sql": {
+      "status": "retained_result",
+      "source": "sample-log-coverage",
+      "result_files": [
+        "results/sample-log-coverage.csv"
+      ],
+      "sha256": "e0f87b9f8a6c2368d41730d3adbe863ad05a8d26307fde05719168531a67130b"
+    },
+    "queries/11-preparation-log-metadata.sql": {
+      "status": "retained_result",
+      "source": "log-metadata",
+      "result_files": [
+        "results/log-metadata.csv"
+      ],
+      "sha256": "d94a9bccc887fc27527c3062ce336a94eb65fd142f4e3a642c542c155e6cdd25"
+    },
+    "queries/12-preparation-view-sample.sql": {
+      "status": "retained_result",
+      "source": "view-sample",
+      "result_files": [
+        "results/view-sample.csv"
+      ],
+      "sha256": "5a81f59f34e27373733e732fc39bc95bcf8a027e657c5a13b4be6d3bb64f8b2a"
+    },
+    "queries/13-preparation-processors-sample.sql": {
+      "status": "retained_result",
+      "source": "processors-sample",
+      "result_files": [
+        "results/processors-sample.csv"
+      ],
+      "sha256": "1be7099a5b92df2a02246b5958fda29296a879f825ee3e5768d6212ae70b2343"
+    },
+    "queries/14-preparation-metric-totals.sql": {
+      "status": "retained_result",
+      "source": "metric-totals",
+      "result_files": [
+        "results/metric-totals.csv"
+      ],
+      "sha256": "268036b00603556c9251c711f996b3bfe95b6bc505c5f3a4d340d65ae9d28835"
+    },
+    "queries/15-preparation-parts-sample.sql": {
+      "status": "retained_result",
+      "source": "parts-sample",
+      "result_files": [
+        "results/parts-sample.csv"
+      ],
+      "sha256": "0df0d9c3ebbf176b19326185f4a5fd6c5bdd2d3cd2ea12205c2308fb236cf489"
+    },
+    "queries/16-preparation-profiler-metadata.sql": {
+      "status": "retained_result",
+      "source": "profiler-metadata",
+      "result_files": [
+        "results/profiler-metadata-tables.csv",
+        "results/profiler-metadata-columns.csv"
+      ],
+      "sha256": "b85284b00f1e2e78d60b539349a34f68225bbcbe3723fb9702a913589fb4814a"
+    },
+    "queries/17-preparation-view-run.sql": {
+      "status": "retained_result",
+      "source": "view-run",
+      "result_files": [
+        "results/view-run.csv"
+      ],
+      "sha256": "a50b72ed7d09d060fae2510626f8458877100ed2ce193fbadf60984db168379b"
+    },
+    "queries/18-preparation-trace-sample.sql": {
+      "status": "retained_result",
+      "source": "trace-sample",
+      "result_files": [
+        "results/trace-sample.csv"
+      ],
+      "sha256": "33394c7c825d9906e2b05b57befeae07d8152903086b0745a08bee1d46d95cf4"
+    },
+    "queries/19-preparation-cpu-stack-sample.sql": {
+      "status": "retained_result",
+      "source": "cpu-stacks-sample",
+      "result_files": [
+        "results/cpu-stacks-sample.csv"
+      ],
+      "sha256": "3868fe5491fdd641d9b560ffe8a63b3b547e41d99987ae77188daf79cbcf7e48"
+    },
+    "queries/20-preparation-table-and-profiler-settings.sql": {
+      "status": "retained_result",
+      "source": "table-and-settings",
+      "result_files": [
+        "results/table-and-settings-tables.csv",
+        "results/table-and-settings-settings.csv"
+      ],
+      "sha256": "b8ef4d5ca1c253b08152fe81de14fcaa5718d3033f40c36c879b146960d99b68"
+    },
+    "queries/21-preparation-view-series.sql": {
+      "status": "retained_result",
+      "source": "view-series",
+      "result_files": [
+        "results/view-series.csv"
+      ],
+      "sha256": "a408900ba67c9e69fa418cf4ff79df0d81251108b509ca5269f2004e7c2ffe73"
+    },
+    "queries/22-preparation-newpart-timing-series.sql": {
+      "status": "retained_result",
+      "source": "newpart-timing-series",
+      "result_files": [
+        "results/newpart-timing-series.csv"
+      ],
+      "sha256": "2edd4a78119c37f0f09fd996db1afb3ca5d0370c5b452efe95ff930389fa84b7"
+    },
+    "queries/23-preparation-historical-profiler-settings.sql": {
+      "status": "retained_result",
+      "source": "historical-settings",
+      "result_files": [
+        "results/historical-settings.csv"
+      ],
+      "sha256": "243929c2b6c5473dd05acb6f1066b8352647134cec4039dc8e65f72901fef133"
+    },
+    "queries/25-preparation-flush-cpu-sample.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-sample",
+      "result_files": [
+        "results/flush-cpu-sample.csv"
+      ],
+      "sha256": "db4fdd96524dfa66fea9022c667c577af1bacc310fc9d6a80bdd43f1c3da5619"
+    },
+    "queries/26-preparation-merge-series.sql": {
+      "status": "retained_result",
+      "source": "merge-series",
+      "result_files": [
+        "results/merge-series.csv"
+      ],
+      "sha256": "8dfa4386cd5439c31c8c3bf3952d25ed9eca880f3652712a3e9839a481bf3d43"
+    },
+    "queries/28-preparation-merge-consolidation-series.sql": {
+      "status": "retained_result",
+      "source": "merge-consolidation-series",
+      "result_files": [
+        "results/merge-consolidation-series.csv"
+      ],
+      "sha256": "bb2d532cf6d0b2b335662bfd5caee6686078d4395c26763fec46b338bec22d8b"
+    },
+    "queries/29-preparation-part-integrity.sql": {
+      "status": "retained_result",
+      "source": "part-integrity",
+      "result_files": [
+        "results/part-integrity.csv"
+      ],
+      "sha256": "16f3674f14168c60d3111c91448415e0c3dcc4503e8d44cc78c56547454d0710"
+    },
+    "queries/30-preparation-before-run-parts.sql": {
+      "status": "retained_result",
+      "source": "before-run-parts",
+      "result_files": [
+        "results/before-run-parts.csv"
+      ],
+      "sha256": "30d584c4794a0d3e8a30c5d23e3516e099bc793b516e9251c93746ab526aa672"
+    },
+    "queries/31-preparation-current-part-snapshot.sql": {
+      "status": "retained_result",
+      "source": "current-part-snapshot",
+      "result_files": [
+        "results/current-part-snapshot.csv"
+      ],
+      "sha256": "97f1dac36fa98467ebe9b8db877a3b6f0e0b9acc1e75a9efcda1c1f225d4b38a"
+    },
+    "queries/32-preparation-summary-coverage-snapshot.sql": {
+      "status": "retained_result",
+      "source": "summary-coverage-snapshot",
+      "result_files": [
+        "results/summary-coverage-snapshot.csv"
+      ],
+      "sha256": "7b20e9df13935aaf0bf1d8cded81b4b75ff9e5d32918e2cdcfa9df760ab18674"
+    },
+    "queries/33-preparation-after-run-merges.sql": {
+      "status": "retained_result",
+      "source": "after-run-merges",
+      "result_files": [
+        "results/after-run-merges.csv"
+      ],
+      "sha256": "6b6a3636a9869eaae3813ee5fdb88a174ee5e56384d655c570046de54e25dcf2"
+    },
+    "queries/34-preparation-before-run-table-identities.sql": {
+      "status": "retained_result",
+      "source": "before-run-table-identities",
+      "result_files": [
+        "results/before-run-table-identities.csv"
+      ],
+      "sha256": "2e4fca28c1398e0425db35252676fdeaa45ddc071eab6b714743d83824c1ebce"
+    },
+    "queries/37-preparation-part-operation-types.sql": {
+      "status": "retained_result",
+      "source": "part-operation-types",
+      "result_files": [
+        "results/part-operation-types.csv"
+      ],
+      "sha256": "2afc3eb22bf9b8dbc97ece4809638343d54f27c0f1483745ea353417ac3cd619"
+    },
+    "queries/38-memory-discovery.sql": {
+      "status": "retained_result",
+      "source": "memory-discovery",
+      "result_files": [
+        "results/memory-discovery-tables.csv",
+        "results/memory-discovery-columns.csv",
+        "results/memory-discovery-metrics.csv"
+      ],
+      "sha256": "703e931c0483ffaa9530afe36e3f18889593810db9f126a8b1b2f33530dadb62"
+    },
+    "queries/39-memory-coverage-sample.sql": {
+      "status": "retained_result",
+      "source": "memory-coverage-sample",
+      "result_files": [
+        "results/memory-coverage-sample.csv"
+      ],
+      "sha256": "88cfb8fd009711996fbf84e24595c3e106ac8252e139f0ce55c714534c6cb4b6"
+    },
+    "queries/40-memory-dashboard-definition.sql": {
+      "status": "retained_result",
+      "source": "memory-dashboard-definition",
+      "result_files": [
+        "results/memory-dashboard-definition-columns.csv",
+        "results/memory-dashboard-definition-metrics.csv"
+      ],
+      "sha256": "e2ca4c15359b9dd883d75884d3c4d38b491cc57ef7ad88d1e8bb48072a2d5b86"
+    },
+    "queries/41-memory-dashboard-series.sql": {
+      "status": "retained_result",
+      "source": "memory-dashboard-series",
+      "result_files": [
+        "results/memory-dashboard-series.csv"
+      ],
+      "sha256": "7257ee914fa9d595cf7d10bea569582e853cc78c9e2d88c340132b240a59202b"
+    },
+    "queries/42-memory-node-series.sql": {
+      "status": "retained_result",
+      "source": "memory-node-series",
+      "result_files": [
+        "results/memory-node-series.csv"
+      ],
+      "sha256": "fb63d95c75d3a1307ee069f9b3605c16ba0d8a09f44bdad51bd1b8c81ed1695c"
+    },
+    "queries/43-memory-capacity-check.sql": {
+      "status": "retained_result",
+      "source": "memory-capacity-check",
+      "result_files": [
+        "results/memory-capacity-check.csv"
+      ],
+      "sha256": "ef295a309d75b9ac88fc3cda95a15b0af603775d5f1292531b61d2ae1e75cf27"
+    },
+    "queries/24-00-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-00",
+      "result_files": [
+        "results/cpu-stage-chunk-00.csv"
+      ],
+      "sha256": "5abb1a1f965ff40c57105c2cb25c5ae160ebb175e5ec9591cf489951f5073341"
+    },
+    "queries/24c-00-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-00",
+      "result_files": [
+        "results/cpu-stage-audit-00.csv"
+      ],
+      "sha256": "dac673d8d9a000efdf18ca9cddc7e8b8e1e24c66afb0a86ae1b2bd11d9111a39"
+    },
+    "queries/24-01-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-01",
+      "result_files": [
+        "results/cpu-stage-chunk-01.csv"
+      ],
+      "sha256": "15a1a041f2ea7921cd8ce0de771a7772b2d82725c5c98e7cff8b434a65471b64"
+    },
+    "queries/24c-01-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-01",
+      "result_files": [
+        "results/cpu-stage-audit-01.csv"
+      ],
+      "sha256": "ae24fe3b059172b236725a973344cc738924f4770bc605592c1179685d085d7a"
+    },
+    "queries/24-02-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-02",
+      "result_files": [
+        "results/cpu-stage-chunk-02.csv"
+      ],
+      "sha256": "913cc7d8d06ce126fde7de68eadf6bbabd693844678b787e962ec1d79771255b"
+    },
+    "queries/24c-02-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-02",
+      "result_files": [
+        "results/cpu-stage-audit-02.csv"
+      ],
+      "sha256": "099064d4d15f06196f6c03b5bf4ff222b20c2c993b904d61a21139d667dcefdd"
+    },
+    "queries/24-03-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-03",
+      "result_files": [
+        "results/cpu-stage-chunk-03.csv"
+      ],
+      "sha256": "15fbce956b855d5da48158eb09ced9e8eb9cde7e3a76c6e133df28f172143539"
+    },
+    "queries/24c-03-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-03",
+      "result_files": [
+        "results/cpu-stage-audit-03.csv"
+      ],
+      "sha256": "0b52f299be0312e8f48f7578fe86fe3aef971be579634c39c32d61417de54b1e"
+    },
+    "queries/24-04-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-04",
+      "result_files": [
+        "results/cpu-stage-chunk-04.csv"
+      ],
+      "sha256": "d0f7ec97709979939f8d80918a49399bbd58fa6c182d9cbe67944ae8d22a3b23"
+    },
+    "queries/24c-04-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-04",
+      "result_files": [
+        "results/cpu-stage-audit-04.csv"
+      ],
+      "sha256": "d2533de5306fa96dd97cd9f50cadffa37c165966caa8a43c8d189dc77a506a71"
+    },
+    "queries/24-05-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-05",
+      "result_files": [
+        "results/cpu-stage-chunk-05.csv"
+      ],
+      "sha256": "214df5cfb642004dc0fe764b207f78e3510b904fae1153f71b29482d6e8e40bd"
+    },
+    "queries/24c-05-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-05",
+      "result_files": [
+        "results/cpu-stage-audit-05.csv"
+      ],
+      "sha256": "27972a8513518bdb75ed9c5b1cf6771c720dabf51632749eb6bc955e7ff4f3e7"
+    },
+    "queries/24-06-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-06",
+      "result_files": [
+        "results/cpu-stage-chunk-06.csv"
+      ],
+      "sha256": "ddceb81ce68ef849171a5d28e158f6ed6067260306c18ec8a92a68600ccfe992"
+    },
+    "queries/24c-06-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-06",
+      "result_files": [
+        "results/cpu-stage-audit-06.csv"
+      ],
+      "sha256": "c1df73d87590da66697db37683f420437da49b5bb251dbcaf3ba4caab715dcd7"
+    },
+    "queries/24-07-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-07",
+      "result_files": [
+        "results/cpu-stage-chunk-07.csv"
+      ],
+      "sha256": "aa2af1695f7f14b50fd3cf181c20fea20d6954a1b90ef10af3ef1d0c2709c095"
+    },
+    "queries/24c-07-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-07",
+      "result_files": [
+        "results/cpu-stage-audit-07.csv"
+      ],
+      "sha256": "aa46db47d228c631480b233efbd2d9d83f9eb8ee473094cc9f6cea1f0a64281a"
+    },
+    "queries/24-08-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-08",
+      "result_files": [
+        "results/cpu-stage-chunk-08.csv"
+      ],
+      "sha256": "708b835f22010c221af1dac8ac2eade833f408ce95f50064474904be1e72ec37"
+    },
+    "queries/24c-08-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-08",
+      "result_files": [
+        "results/cpu-stage-audit-08.csv"
+      ],
+      "sha256": "a5f9d5ccd2fc977a5171f395726ac4cf885788e6ac9bd84160ca7ae531d4fa37"
+    },
+    "queries/24-09-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-chunk-09",
+      "result_files": [
+        "results/cpu-stage-chunk-09.csv"
+      ],
+      "sha256": "3adf6d46584e8ba02e0f6f5ba5aeec9748ee0c7e4e2a3520d4e75b1c2995d97a"
+    },
+    "queries/24c-09-preparation-cpu-stage-series.sql": {
+      "status": "retained_result",
+      "source": "cpu-stage-audit-09",
+      "result_files": [
+        "results/cpu-stage-audit-09.csv"
+      ],
+      "sha256": "4d3185bedbbf348ed4728098cbafdfae78604e5836f900615e05cd95ef5a318e"
+    },
+    "queries/27b-00-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-00",
+      "result_files": [
+        "results/flush-cpu-hour-00.csv"
+      ],
+      "sha256": "722b23286ed7213ab7b2f5d45016c6dacd32e39cb3c16cbc88d6b45b0e19cff5"
+    },
+    "queries/27b-01-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-01",
+      "result_files": [
+        "results/flush-cpu-hour-01.csv"
+      ],
+      "sha256": "311d1ad56db15905ed7351078df5b32c9b462725ab7addf0e04beeabda10467d"
+    },
+    "queries/27b-02-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-02",
+      "result_files": [
+        "results/flush-cpu-hour-02.csv"
+      ],
+      "sha256": "16e743aa8a8cc1a610ee130076f20c7de684d468f60e72b964d1929e2c26a468"
+    },
+    "queries/27b-03-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-03",
+      "result_files": [
+        "results/flush-cpu-hour-03.csv"
+      ],
+      "sha256": "242c69bd7280cb03ef64f00dd7602948ee7057ea7321b779bdc106f7a910b120"
+    },
+    "queries/27b-04-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-04",
+      "result_files": [
+        "results/flush-cpu-hour-04.csv"
+      ],
+      "sha256": "4ce3cb3e971481b1e1a93ac9e91790875ae9f5b01993263ad427fb2760e9607a"
+    },
+    "queries/27b-05-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-05",
+      "result_files": [
+        "results/flush-cpu-hour-05.csv"
+      ],
+      "sha256": "19ea5c8574139b62f1ad52929620f20cc28b5b20851c832bd73d3b51e60d7c87"
+    },
+    "queries/27b-06-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-06",
+      "result_files": [
+        "results/flush-cpu-hour-06.csv"
+      ],
+      "sha256": "d7e64cd817a26d947ae85937367ac6c1f6f11a9cd9f14ff102ffbaea80763e6b"
+    },
+    "queries/27b-07-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-07",
+      "result_files": [
+        "results/flush-cpu-hour-07.csv"
+      ],
+      "sha256": "72e80088ec4df96366f9b7c82bc3d528140517583eaba2f4c63632f22aa91c7e"
+    },
+    "queries/27b-08-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-08",
+      "result_files": [
+        "results/flush-cpu-hour-08.csv"
+      ],
+      "sha256": "af81a3d71d4b5de59726ec7c890017b68343c240981130c4848f424250c25b4c"
+    },
+    "queries/27b-09-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-09",
+      "result_files": [
+        "results/flush-cpu-hour-09.csv"
+      ],
+      "sha256": "9daf99df39f9895c6fb2bf287e38c3f8ddfc6e83fbd7eadd80342d9d87c4a84f"
+    },
+    "queries/27b-10-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-10",
+      "result_files": [
+        "results/flush-cpu-hour-10.csv"
+      ],
+      "sha256": "faf273e605f8187d119660c77c81dcfd34aba7079080d535a48ab456483597e3"
+    },
+    "queries/27b-11-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-11",
+      "result_files": [
+        "results/flush-cpu-hour-11.csv"
+      ],
+      "sha256": "289cdc1b68ce41dfd0d7370b7026a6066a76cb610cb5f2bae5c9f7b9392fe220"
+    },
+    "queries/27b-12-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-12",
+      "result_files": [
+        "results/flush-cpu-hour-12.csv"
+      ],
+      "sha256": "3f161c3e8cefe66b37c01e3a2c8ba7e4118e55bd24784ed0fa958b100046819c"
+    },
+    "queries/27b-13-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-13",
+      "result_files": [
+        "results/flush-cpu-hour-13.csv"
+      ],
+      "sha256": "d1875f1817129c4b137377d51628aa99f3116e1cca26b98391c1e8a4cb113ea7"
+    },
+    "queries/27b-14-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-14",
+      "result_files": [
+        "results/flush-cpu-hour-14.csv"
+      ],
+      "sha256": "f180be714a9f3e713c10f029f1f4f5a794fee9c5303624beecece324f5269c6d"
+    },
+    "queries/27b-15-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-15",
+      "result_files": [
+        "results/flush-cpu-hour-15.csv"
+      ],
+      "sha256": "ed4a57b81c79ef40781b41d75e58feff36cf9297b45530d61f837800214a4b7d"
+    },
+    "queries/27b-16-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-16",
+      "result_files": [
+        "results/flush-cpu-hour-16.csv"
+      ],
+      "sha256": "faabee0cd28e4c9caad25e789e2d05e203d0bda0b7372930b450c9f093400199"
+    },
+    "queries/27b-17-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-17",
+      "result_files": [
+        "results/flush-cpu-hour-17.csv"
+      ],
+      "sha256": "422e5acb93e94151494a350869782cfbece7d95077fa8d5c77a026756f5bdfd3"
+    },
+    "queries/27b-18-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-18",
+      "result_files": [
+        "results/flush-cpu-hour-18.csv"
+      ],
+      "sha256": "2ff4fdec05ce5650cb2b0bcfa3a1b6791235558c5ed014ca3fb6d47e9880d591"
+    },
+    "queries/27b-19-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-19",
+      "result_files": [
+        "results/flush-cpu-hour-19.csv"
+      ],
+      "sha256": "7e76b5489b83e4761ef1f7f5a46c9690cf393310b684be1faf44472715c8a9c6"
+    },
+    "queries/27b-20-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-20",
+      "result_files": [
+        "results/flush-cpu-hour-20.csv"
+      ],
+      "sha256": "30ffd6ae6f3da7660359bf4d8c40c3855047affb9abdc3a8361c4075299ef002"
+    },
+    "queries/27b-21-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-21",
+      "result_files": [
+        "results/flush-cpu-hour-21.csv"
+      ],
+      "sha256": "6ee4edfb5b088d63940da819db03b9ad68ec9d1e1387dff2cd931ced4d0ccf9e"
+    },
+    "queries/27b-22-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-22",
+      "result_files": [
+        "results/flush-cpu-hour-22.csv"
+      ],
+      "sha256": "92abee1ce0e6395dc4deea0e6c09fd5765497e47db9aed67c4a2e5d1af03eed4"
+    },
+    "queries/27b-23-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-23",
+      "result_files": [
+        "results/flush-cpu-hour-23.csv"
+      ],
+      "sha256": "6d34c18d467a2d01012641ce1af92a868046f0f9e6d6e3a17c6145aa2d1c84ac"
+    },
+    "queries/27b-24-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-24",
+      "result_files": [
+        "results/flush-cpu-hour-24.csv"
+      ],
+      "sha256": "087cb6e6a2f1a097e6e6c305086dda6cdf6b2e4410b2abe956890371ab024c79"
+    },
+    "queries/27b-25-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-25",
+      "result_files": [
+        "results/flush-cpu-hour-25.csv"
+      ],
+      "sha256": "7700d879698f16aa12ab785fbd9efca8515bfd9af6d27c1992e1d543f4201510"
+    },
+    "queries/27b-26-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-26",
+      "result_files": [
+        "results/flush-cpu-hour-26.csv"
+      ],
+      "sha256": "da019f2d5a9cd0fe9b682d66aa58bf5eabf5b5c388a6e801b5177977b5497c43"
+    },
+    "queries/27b-27-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-27",
+      "result_files": [
+        "results/flush-cpu-hour-27.csv"
+      ],
+      "sha256": "9139f16278649e5374544800c89100c439893beb2271cf4cbec341f8967fe099"
+    },
+    "queries/27b-28-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-28",
+      "result_files": [
+        "results/flush-cpu-hour-28.csv"
+      ],
+      "sha256": "feca5bbed506240f8cdecb72c301a4d43883be74a09855aa6417a90d93154f43"
+    },
+    "queries/27b-29-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-29",
+      "result_files": [
+        "results/flush-cpu-hour-29.csv"
+      ],
+      "sha256": "a4187af21a744fa811a5f7620000f65a1c225c59ae4f6310931aa1872a12dd67"
+    },
+    "queries/27b-30-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-30",
+      "result_files": [
+        "results/flush-cpu-hour-30.csv"
+      ],
+      "sha256": "f4651c46c63e09632c6a1aba0c661fbbf480dc13305bc5c87cb2b01dcfde5ae4"
+    },
+    "queries/27b-31-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-31",
+      "result_files": [
+        "results/flush-cpu-hour-31.csv"
+      ],
+      "sha256": "5e6d5eb23240bd35d005c6c897fd57592b1eaf39f492bf3928fa60ae6d0efbb5"
+    },
+    "queries/27b-32-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-32",
+      "result_files": [
+        "results/flush-cpu-hour-32.csv"
+      ],
+      "sha256": "2b5ebd9b6ddf4d42a7179d20fa969c02fbf50a533a5323ddd8a41ff213dcc0f2"
+    },
+    "queries/27b-33-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-33",
+      "result_files": [
+        "results/flush-cpu-hour-33.csv"
+      ],
+      "sha256": "da36705093ffcca869213d433fce942875919558d3506c36d79287b9c79e8dac"
+    },
+    "queries/27b-34-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-34",
+      "result_files": [
+        "results/flush-cpu-hour-34.csv"
+      ],
+      "sha256": "c040a028540e2dcc8437517e526edaa5881021924186a351a3664c6202eaae11"
+    },
+    "queries/27b-35-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-35",
+      "result_files": [
+        "results/flush-cpu-hour-35.csv"
+      ],
+      "sha256": "f4a0385c95ee904a80a278a8b1954303ae79afc0fda99f0241462184cd8d6477"
+    },
+    "queries/27b-36-preparation-flush-cpu-series.sql": {
+      "status": "retained_result",
+      "source": "flush-cpu-hour-36",
+      "result_files": [
+        "results/flush-cpu-hour-36.csv"
+      ],
+      "sha256": "d5a5774a2089b7a6df600c2af360de8414959c7380bf5fb3410254541d3714db"
+    },
+    "queries/10-preparation-log-coverage.sql": {
+      "status": "no_retained_result",
+      "reason": "Superseded diagnostic extraction; no accepted result is retained.",
+      "sha256": "88ad8b2ffdfb41baa865711bfbabc67643f9d1c9364732d420fc79744043ca6e"
+    },
+    "queries/27-00-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "0123cc4f941157d08df05eb6e9f7bfd5a938323ee43c53689859031d31d591e1"
+    },
+    "queries/27-01-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "c155af2294fdeb40f3630f274a36e2ae59089b1f85a1964b92b14c2d915268d8"
+    },
+    "queries/27-02-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "e0b2544523cea005839cfa9367f2744eefe056584865d7efa14e53dbae823afd"
+    },
+    "queries/27-03-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "76c32e12724a48fe857ffd39b2e961b9fe06d589e64b92976b6277ae335ca23c"
+    },
+    "queries/27-04-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "cb3986a120449ca50bce09576e569e919c50221fb485a6be1a6923be8a0eabf4"
+    },
+    "queries/27-05-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "882d7f560a78f662d2dcb35fdea4b9aee19a99d441fdf73ea26da9611b8aaa7b"
+    },
+    "queries/27-06-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "24e27b9d4c7d67e389962170b12aaefecde1f3246873aacd9819a1a8898a2867"
+    },
+    "queries/27-07-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "690778d7e4aad967daa78c64322da1fe734d064f8ad7405447ed2e5af2aaf9b3"
+    },
+    "queries/27-08-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "a6e5211f992547a0be12dc64c006ab9427c2eece8dffe473a9d45f597d9cf2e3"
+    },
+    "queries/27-09-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "77d4d2b7d70ce33ee94b6b9d673703242e8bfdb41fc10e3a7d05606fecc0bbfb"
+    },
+    "queries/27-10-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "cd5b3d7f574a63ed1b36820e30c891438e385e76228329bf1b0c19402c4099fe"
+    },
+    "queries/27-11-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "6f7872bb733fd0f5cbc531d0ce73340f567222f18082bdb5460dd953110ea8be"
+    },
+    "queries/27-12-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "e7c31ce30255a5e440cb5e2ebe5d2a18aa3db486fabf7412866102e9f8178619"
+    },
+    "queries/27-13-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "dba25e371797e7b9c3b114ffad91bff05d12a7df9b3f6746089ea2d7f899c140"
+    },
+    "queries/27-14-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "33e04ecbb01b7a8d7dda9e0cca32403908dd6ee41deb0a1c0d09cbfae16d4ee6"
+    },
+    "queries/27-15-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "285b41dc4cd67436be9d6b4d3b94b0a9c513756867b94895d37853b7789a724e"
+    },
+    "queries/27-16-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "c6908f408091b8ed7fd03e38c9c836a0fccb911fe3c87c02775b9b5000ce6456"
+    },
+    "queries/27-17-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "7c6ba5213038358fddf3303755923c3299c5ce779f277a56b594689ed5a6f153"
+    },
+    "queries/27-18-preparation-flush-cpu-series.sql": {
+      "status": "no_retained_result",
+      "reason": "Two-hour query-log chunks were replaced by the retained one-hour 27b chunks; not used.",
+      "sha256": "9d83863038a7f290c72f0aa48f8063e930e38ca69eefe6aa192d677a9c0e10c3"
+    },
+    "queries/35-preparation-cutoff-parts-from-lineage.sql": {
+      "status": "no_retained_result",
+      "reason": "Full part-name lineage diagnostic exceeded the unchanged scan guard; not used in any figure.",
+      "sha256": "2dbe62640d2915ded1b805b21aa8e6656589c4bed252bca830e1c9613979f485"
+    },
+    "queries/35b-preparation-cutoff-summary-lineage.sql": {
+      "status": "no_retained_result",
+      "reason": "Full part-name lineage diagnostic exceeded the unchanged scan guard; not used in any figure.",
+      "sha256": "c4b72d431eb032caf428874cb73859a7d9dd8cf94726d3f5a01f545c149cdb15"
+    },
+    "queries/36-preparation-merge-row-flow.sql": {
+      "status": "no_retained_result",
+      "reason": "Superseded diagnostic extraction; no accepted result is retained.",
+      "sha256": "3aaf77d949685902ff035a28a6177c409e9e5528b45ee8b4063f3ea7e10f6565"
+    },
+    "queries/diagnostics/42-memory-node-series-alias.sql": {
+      "status": "no_retained_result",
+      "reason": "Alias-resolution error; replaced by 42-memory-node-series.sql. No result.",
+      "sha256": "a27930a065f7eff88c4148170d06e00cc9ccf9306c3a48ba5b9f0c3954ddab64"
+    }
+  },
+  "sanitization": {
+    "hosts": "Stable writer-node-1 / writer-node-2 aliases across exports; both nodes retained.",
+    "omitted_columns": [
+      "view-run and view-sample: query_ids, example_query",
+      "processors-sample and trace-sample: example_query_id",
+      "historical-settings: example_query"
+    ],
+    "numeric_values": "All retained numeric counters and timestamps unchanged. Array cells are JSON encoded."
+  }
+}

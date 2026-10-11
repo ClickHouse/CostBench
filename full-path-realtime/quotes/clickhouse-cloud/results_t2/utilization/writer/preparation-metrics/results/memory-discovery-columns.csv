@@ -1,0 +1,6 @@
+"table","name","type","comment"
+"asynchronous_metric_log","hostname","LowCardinality(String)","Hostname of the server executing the query."
+"asynchronous_metric_log","event_date","Date","Event date."
+"asynchronous_metric_log","event_time","DateTime","Event time."
+"asynchronous_metric_log","metric","LowCardinality(String)","Metric name."
+"asynchronous_metric_log","value","Float64","Metric value."

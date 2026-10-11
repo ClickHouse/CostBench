@@ -1,0 +1,184 @@
+{
+  "run_start_utc": "2026-08-08 06:55:56",
+  "run_end_utc": "2026-08-09 19:40:58",
+  "nodes": 2,
+  "cpu_cores_per_node": 2,
+  "total_cpu_cores": 4,
+  "query_max_threads": 2,
+  "raw_quotes_ingested": 113217743918,
+  "wall_seconds": 132302,
+  "mean_raw_quotes_per_second": 855752.3236081087,
+  "raw_new_part_uncompressed_bytes": 7078124834556,
+  "raw_new_part_size_bytes": 491197194829,
+  "raw_initial_part_compression_factor": 14.409945555613566,
+  "raw_initial_part_disk_reduction_percent": 93.06034852012027,
+  "initial_mv_summary_rows": 1366093459,
+  "initial_mv_row_reduction_factor": 82.87701194388048,
+  "initial_mv_row_reduction_percent": 98.79339279186713,
+  "cutoff_summary_rows_from_part_counters": 1887532,
+  "cutoff_row_reduction_factor_from_part_counters": 59981.893773456555,
+  "summary_rows_removed_by_active_window_merges": 1364205927,
+  "successful_flushes": 256268,
+  "recorded_ingestion_cpu_seconds": 135144.445574,
+  "recorded_ingestion_cpu_ms_per_million_quotes": 1193.6684206662944,
+  "recorded_materialized_view_cpu_seconds": 8493.010495,
+  "recorded_materialized_view_cpu_ms_per_million_quotes": 75.01483602385873,
+  "recorded_sorting_elapsed_seconds": 120887.719078,
+  "recorded_sorting_elapsed_ms_per_million_quotes": 1067.7453453369917,
+  "ingestion_cpu_samples": 126567,
+  "sample_counts": {
+    "Parsing": 73745,
+    "Sorting": 23672,
+    "Pre-aggregation": 3870,
+    "Compression": 11489,
+    "Other ingestion": 13791
+  },
+  "estimated_stage_cpu_seconds": {
+    "Parsing": 78752.91111118162,
+    "Sorting": 25275.59664604496,
+    "Pre-aggregation": 4129.948626890212,
+    "Compression": 12263.678249677134,
+    "Other ingestion": 14722.310940206047
+  },
+  "estimated_stage_share_percent": {
+    "Parsing": 58.27313936336325,
+    "Sorting": 18.70265295676173,
+    "Pre-aggregation": 3.0559514372559304,
+    "Compression": 9.074496696915306,
+    "Other ingestion": 10.893759545703759
+  },
+  "estimated_stage_cpu_ms_per_million_quotes": {
+    "Parsing": 695.5880623113267,
+    "Sorting": 223.24766217167576,
+    "Pre-aggregation": 36.47792725742179,
+    "Compression": 108.31940140548399,
+    "Other ingestion": 130.03536752038576
+  },
+  "background_merges": 98132,
+  "merge_input_parts": 610574,
+  "replacement_parts": 98132,
+  "net_parts_removed_by_merges": 512442,
+  "new_raw_and_summary_parts": 512536,
+  "merge_input_parts_per_second": 4.615002040785476,
+  "replacement_parts_per_second": 0.7417272603588759,
+  "net_parts_removed_per_second": 3.8732747804265997,
+  "new_parts_per_second": 3.8739852761107163,
+  "mean_merge_fan_in": 6.221966331064281,
+  "part_event_net_growth_during_window": 94,
+  "recorded_benchmark_merge_cpu_seconds": 221949.956038,
+  "recorded_summary_table_merge_cpu_seconds": 2282.565639,
+  "max_recorded_raw_merge_memory_bytes": 746228415,
+  "max_recorded_summary_merge_memory_bytes": 403986761,
+  "recorded_writer_service_cpu_seconds": 423375.68595899997,
+  "mean_writer_service_cores": 3.2000701875935356,
+  "max_active_parts_per_partition": 125,
+  "mean_total_processing_mb_s": 437.63399065172104,
+  "mean_total_processing_mb_per_cpu_second": 136.75762248853152,
+  "delayed_insert_counter": 0,
+  "rejected_insert_counter": 0,
+  "pre_run_parts_activity": [
+    [
+      "quotes",
+      "NewPart",
+      51,
+      38105766,
+      0,
+      "2026-08-08 06:54:20",
+      "2026-08-08 06:54:44"
+    ],
+    [
+      "quotes",
+      "MergeParts",
+      8,
+      61731006,
+      56,
+      "2026-08-08 06:54:27",
+      "2026-08-08 06:54:57"
+    ],
+    [
+      "quotes_daily",
+      "NewPart",
+      51,
+      202606,
+      0,
+      "2026-08-08 06:54:20",
+      "2026-08-08 06:54:44"
+    ],
+    [
+      "quotes_daily",
+      "MergeParts",
+      10,
+      77200,
+      60,
+      "2026-08-08 06:54:25",
+      "2026-08-08 06:54:44"
+    ]
+  ],
+  "recorded_benchmark_cpu_accounting_remainder_seconds": 66281.28434699995,
+  "recorded_mv_execution_and_summary_merge_cpu_share_percent": 2.5451570535024812,
+  "current_storage_snapshot": [
+    [
+      "quotes",
+      8,
+      113217743918,
+      8885968166458,
+      426709566600,
+      427131175214,
+      "2026-10-10 13:45:28"
+    ],
+    [
+      "quotes_daily",
+      2,
+      1860254,
+      174413601,
+      62295048,
+      62305995,
+      "2026-10-10 13:43:25"
+    ]
+  ],
+  "current_snapshot_raw_data_compression_factor": 20.82439406564268,
+  "current_snapshot_row_reduction_factor": 60861.44360823844,
+  "current_snapshot_summary_coverage": [
+    [
+      "writer-node-1",
+      1860254,
+      113217743918
+    ],
+    [
+      "writer-node-2",
+      1860254,
+      113217743918
+    ]
+  ],
+  "after_run_merges": [
+    [
+      "quotes",
+      "MergeParts",
+      12,
+      91,
+      45370578297,
+      45370578297,
+      "2026-08-09 19:40:58",
+      "2026-08-09 21:46:42"
+    ]
+  ],
+  "before_run_table_identities": [
+    [
+      "quotes",
+      "afb4b883-4bd8-4466-a9de-3e492ff967be",
+      51,
+      38105766
+    ],
+    [
+      "quotes_daily",
+      "76eb0c6b-653a-43b2-8ead-fe06687442d6",
+      51,
+      202606
+    ]
+  ],
+  "whole_service_cpu_share_percent": {
+    "Benchmark ingestion": 31.92069125743029,
+    "Benchmark background merges": 52.42387869658953,
+    "Other / unmatched service work": 15.655430045980177
+  }
+}

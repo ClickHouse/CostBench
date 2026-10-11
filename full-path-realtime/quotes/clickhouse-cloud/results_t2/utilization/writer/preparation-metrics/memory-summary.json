@@ -1,0 +1,19 @@
+{
+  "nodes": 2,
+  "available_memory_bytes": 17179869184,
+  "mean_memory_usage_gib": 12.130216888412523,
+  "mean_utilization_percent": 75.81385555257827,
+  "dashboard_exact_mean_gib": 12.136164739884896,
+  "node_aggregation_difference_percent": -0.04900931719248325,
+  "last_display": {
+    "progress": 1.0,
+    "rows_ingested": 113217743918,
+    "memory_usage_bytes": 13350620355.275997,
+    "available_memory_bytes": 17179869184,
+    "memory_usage_gib": 12.433734121989456,
+    "utilization_percent": 77.7108382624341
+  },
+  "buckets": 442,
+  "source_log_samples": 264690,
+  "distinct_host_seconds": 249438
+}

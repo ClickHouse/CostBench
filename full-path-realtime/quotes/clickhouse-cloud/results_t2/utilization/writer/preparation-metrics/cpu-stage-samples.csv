@@ -1,0 +1,1008 @@
+bucket_unix,scope,stage,hostname,cpu_samples,symbolized_samples
+1786170600,Background merges,Background merges,writer-node-1,107,107
+1786170600,Background merges,Background merges,writer-node-2,125,125
+1786170600,Ingestion,Compression,writer-node-1,18,18
+1786170600,Ingestion,Compression,writer-node-2,8,8
+1786170600,Ingestion,Other ingestion,writer-node-1,25,25
+1786170600,Ingestion,Other ingestion,writer-node-2,12,12
+1786170600,Ingestion,Parsing,writer-node-1,107,107
+1786170600,Ingestion,Parsing,writer-node-2,88,88
+1786170600,Ingestion,Pre-aggregation,writer-node-1,7,7
+1786170600,Ingestion,Pre-aggregation,writer-node-2,4,4
+1786170600,Ingestion,Sorting,writer-node-1,43,43
+1786170600,Ingestion,Sorting,writer-node-2,36,36
+1786172400,Background merges,Background merges,writer-node-1,1588,1588
+1786172400,Background merges,Background merges,writer-node-2,1160,1160
+1786172400,Ingestion,Compression,writer-node-1,109,109
+1786172400,Ingestion,Compression,writer-node-2,103,103
+1786172400,Ingestion,Other ingestion,writer-node-1,91,91
+1786172400,Ingestion,Other ingestion,writer-node-2,127,127
+1786172400,Ingestion,Parsing,writer-node-1,530,530
+1786172400,Ingestion,Parsing,writer-node-2,684,684
+1786172400,Ingestion,Pre-aggregation,writer-node-1,21,21
+1786172400,Ingestion,Pre-aggregation,writer-node-2,25,25
+1786172400,Ingestion,Sorting,writer-node-1,167,167
+1786172400,Ingestion,Sorting,writer-node-2,226,226
+1786174200,Background merges,Background merges,writer-node-1,1464,1464
+1786174200,Background merges,Background merges,writer-node-2,1165,1165
+1786174200,Ingestion,Compression,writer-node-1,74,74
+1786174200,Ingestion,Compression,writer-node-2,82,82
+1786174200,Ingestion,Other ingestion,writer-node-1,93,93
+1786174200,Ingestion,Other ingestion,writer-node-2,103,103
+1786174200,Ingestion,Parsing,writer-node-1,518,518
+1786174200,Ingestion,Parsing,writer-node-2,610,610
+1786174200,Ingestion,Pre-aggregation,writer-node-1,18,18
+1786174200,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786174200,Ingestion,Sorting,writer-node-1,138,138
+1786174200,Ingestion,Sorting,writer-node-2,213,213
+1786176000,Background merges,Background merges,writer-node-1,1530,1530
+1786176000,Background merges,Background merges,writer-node-2,1329,1329
+1786176000,Ingestion,Compression,writer-node-1,104,104
+1786176000,Ingestion,Compression,writer-node-2,99,99
+1786176000,Ingestion,Other ingestion,writer-node-1,86,86
+1786176000,Ingestion,Other ingestion,writer-node-2,126,126
+1786176000,Ingestion,Parsing,writer-node-1,509,509
+1786176000,Ingestion,Parsing,writer-node-2,598,598
+1786176000,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786176000,Ingestion,Pre-aggregation,writer-node-2,35,35
+1786176000,Ingestion,Sorting,writer-node-1,164,164
+1786176000,Ingestion,Sorting,writer-node-2,216,216
+1786177800,Background merges,Background merges,writer-node-1,1517,1517
+1786177800,Background merges,Background merges,writer-node-2,1423,1423
+1786177800,Ingestion,Compression,writer-node-1,88,88
+1786177800,Ingestion,Compression,writer-node-2,96,96
+1786177800,Ingestion,Other ingestion,writer-node-1,101,101
+1786177800,Ingestion,Other ingestion,writer-node-2,91,91
+1786177800,Ingestion,Parsing,writer-node-1,509,509
+1786177800,Ingestion,Parsing,writer-node-2,595,595
+1786177800,Ingestion,Pre-aggregation,writer-node-1,27,27
+1786177800,Ingestion,Pre-aggregation,writer-node-2,40,40
+1786177800,Ingestion,Sorting,writer-node-1,146,146
+1786177800,Ingestion,Sorting,writer-node-2,207,207
+1786179600,Background merges,Background merges,writer-node-1,1261,1261
+1786179600,Background merges,Background merges,writer-node-2,1659,1659
+1786179600,Ingestion,Compression,writer-node-1,99,99
+1786179600,Ingestion,Compression,writer-node-2,58,58
+1786179600,Ingestion,Other ingestion,writer-node-1,124,124
+1786179600,Ingestion,Other ingestion,writer-node-2,89,89
+1786179600,Ingestion,Parsing,writer-node-1,589,589
+1786179600,Ingestion,Parsing,writer-node-2,477,477
+1786179600,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786179600,Ingestion,Pre-aggregation,writer-node-2,23,23
+1786179600,Ingestion,Sorting,writer-node-1,205,205
+1786179600,Ingestion,Sorting,writer-node-2,127,127
+1786181400,Background merges,Background merges,writer-node-1,1328,1328
+1786181400,Background merges,Background merges,writer-node-2,1718,1718
+1786181400,Ingestion,Compression,writer-node-1,85,85
+1786181400,Ingestion,Compression,writer-node-2,68,68
+1786181400,Ingestion,Other ingestion,writer-node-1,109,109
+1786181400,Ingestion,Other ingestion,writer-node-2,93,93
+1786181400,Ingestion,Parsing,writer-node-1,626,626
+1786181400,Ingestion,Parsing,writer-node-2,484,484
+1786181400,Ingestion,Pre-aggregation,writer-node-1,31,31
+1786181400,Ingestion,Pre-aggregation,writer-node-2,21,21
+1786181400,Ingestion,Sorting,writer-node-1,174,174
+1786181400,Ingestion,Sorting,writer-node-2,150,150
+1786183200,Background merges,Background merges,writer-node-1,1365,1365
+1786183200,Background merges,Background merges,writer-node-2,1722,1722
+1786183200,Ingestion,Compression,writer-node-1,93,93
+1786183200,Ingestion,Compression,writer-node-2,70,70
+1786183200,Ingestion,Other ingestion,writer-node-1,94,94
+1786183200,Ingestion,Other ingestion,writer-node-2,92,92
+1786183200,Ingestion,Parsing,writer-node-1,552,552
+1786183200,Ingestion,Parsing,writer-node-2,475,475
+1786183200,Ingestion,Pre-aggregation,writer-node-1,27,27
+1786183200,Ingestion,Pre-aggregation,writer-node-2,31,31
+1786183200,Ingestion,Sorting,writer-node-1,184,184
+1786183200,Ingestion,Sorting,writer-node-2,155,155
+1786185000,Background merges,Background merges,writer-node-1,1236,1236
+1786185000,Background merges,Background merges,writer-node-2,1415,1415
+1786185000,Ingestion,Compression,writer-node-1,87,87
+1786185000,Ingestion,Compression,writer-node-2,56,56
+1786185000,Ingestion,Other ingestion,writer-node-1,71,71
+1786185000,Ingestion,Other ingestion,writer-node-2,70,70
+1786185000,Ingestion,Parsing,writer-node-1,478,478
+1786185000,Ingestion,Parsing,writer-node-2,423,423
+1786185000,Ingestion,Pre-aggregation,writer-node-1,22,22
+1786185000,Ingestion,Pre-aggregation,writer-node-2,26,26
+1786185000,Ingestion,Sorting,writer-node-1,160,160
+1786185000,Ingestion,Sorting,writer-node-2,153,153
+1786185000,Background merges,Background merges,writer-node-1,158,158
+1786185000,Background merges,Background merges,writer-node-2,160,160
+1786185000,Ingestion,Compression,writer-node-1,19,19
+1786185000,Ingestion,Compression,writer-node-2,18,18
+1786185000,Ingestion,Other ingestion,writer-node-1,19,19
+1786185000,Ingestion,Other ingestion,writer-node-2,15,15
+1786185000,Ingestion,Parsing,writer-node-1,88,88
+1786185000,Ingestion,Parsing,writer-node-2,97,97
+1786185000,Ingestion,Pre-aggregation,writer-node-1,8,8
+1786185000,Ingestion,Pre-aggregation,writer-node-2,4,4
+1786185000,Ingestion,Sorting,writer-node-1,30,30
+1786185000,Ingestion,Sorting,writer-node-2,33,33
+1786186800,Background merges,Background merges,writer-node-1,1373,1373
+1786186800,Background merges,Background merges,writer-node-2,1459,1459
+1786186800,Ingestion,Compression,writer-node-1,100,100
+1786186800,Ingestion,Compression,writer-node-2,69,69
+1786186800,Ingestion,Other ingestion,writer-node-1,105,105
+1786186800,Ingestion,Other ingestion,writer-node-2,110,110
+1786186800,Ingestion,Parsing,writer-node-1,597,597
+1786186800,Ingestion,Parsing,writer-node-2,551,551
+1786186800,Ingestion,Pre-aggregation,writer-node-1,34,34
+1786186800,Ingestion,Pre-aggregation,writer-node-2,30,30
+1786186800,Ingestion,Sorting,writer-node-1,204,204
+1786186800,Ingestion,Sorting,writer-node-2,174,174
+1786188600,Background merges,Background merges,writer-node-1,1377,1377
+1786188600,Background merges,Background merges,writer-node-2,1493,1493
+1786188600,Ingestion,Compression,writer-node-1,85,85
+1786188600,Ingestion,Compression,writer-node-2,65,65
+1786188600,Ingestion,Other ingestion,writer-node-1,121,121
+1786188600,Ingestion,Other ingestion,writer-node-2,106,106
+1786188600,Ingestion,Parsing,writer-node-1,591,591
+1786188600,Ingestion,Parsing,writer-node-2,565,565
+1786188600,Ingestion,Pre-aggregation,writer-node-1,27,27
+1786188600,Ingestion,Pre-aggregation,writer-node-2,19,19
+1786188600,Ingestion,Sorting,writer-node-1,192,192
+1786188600,Ingestion,Sorting,writer-node-2,162,162
+1786190400,Background merges,Background merges,writer-node-1,1449,1449
+1786190400,Background merges,Background merges,writer-node-2,1502,1502
+1786190400,Ingestion,Compression,writer-node-1,92,92
+1786190400,Ingestion,Compression,writer-node-2,93,93
+1786190400,Ingestion,Other ingestion,writer-node-1,114,114
+1786190400,Ingestion,Other ingestion,writer-node-2,102,102
+1786190400,Ingestion,Parsing,writer-node-1,576,576
+1786190400,Ingestion,Parsing,writer-node-2,540,540
+1786190400,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786190400,Ingestion,Pre-aggregation,writer-node-2,26,26
+1786190400,Ingestion,Sorting,writer-node-1,162,162
+1786190400,Ingestion,Sorting,writer-node-2,181,181
+1786192200,Background merges,Background merges,writer-node-1,1562,1562
+1786192200,Background merges,Background merges,writer-node-2,1437,1437
+1786192200,Ingestion,Compression,writer-node-1,85,85
+1786192200,Ingestion,Compression,writer-node-2,95,95
+1786192200,Ingestion,Other ingestion,writer-node-1,107,107
+1786192200,Ingestion,Other ingestion,writer-node-2,102,102
+1786192200,Ingestion,Parsing,writer-node-1,501,501
+1786192200,Ingestion,Parsing,writer-node-2,547,547
+1786192200,Ingestion,Pre-aggregation,writer-node-1,36,36
+1786192200,Ingestion,Pre-aggregation,writer-node-2,27,27
+1786192200,Ingestion,Sorting,writer-node-1,166,166
+1786192200,Ingestion,Sorting,writer-node-2,193,193
+1786194000,Background merges,Background merges,writer-node-1,1456,1456
+1786194000,Background merges,Background merges,writer-node-2,1433,1433
+1786194000,Ingestion,Compression,writer-node-1,72,72
+1786194000,Ingestion,Compression,writer-node-2,76,76
+1786194000,Ingestion,Other ingestion,writer-node-1,93,93
+1786194000,Ingestion,Other ingestion,writer-node-2,88,88
+1786194000,Ingestion,Parsing,writer-node-1,509,509
+1786194000,Ingestion,Parsing,writer-node-2,517,517
+1786194000,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786194000,Ingestion,Pre-aggregation,writer-node-2,33,33
+1786194000,Ingestion,Sorting,writer-node-1,179,179
+1786194000,Ingestion,Sorting,writer-node-2,179,179
+1786195800,Background merges,Background merges,writer-node-1,1433,1433
+1786195800,Background merges,Background merges,writer-node-2,1511,1511
+1786195800,Ingestion,Compression,writer-node-1,91,91
+1786195800,Ingestion,Compression,writer-node-2,83,83
+1786195800,Ingestion,Other ingestion,writer-node-1,92,92
+1786195800,Ingestion,Other ingestion,writer-node-2,94,94
+1786195800,Ingestion,Parsing,writer-node-1,483,483
+1786195800,Ingestion,Parsing,writer-node-2,518,518
+1786195800,Ingestion,Pre-aggregation,writer-node-1,20,20
+1786195800,Ingestion,Pre-aggregation,writer-node-2,17,17
+1786195800,Ingestion,Sorting,writer-node-1,179,179
+1786195800,Ingestion,Sorting,writer-node-2,149,149
+1786197600,Background merges,Background merges,writer-node-1,1441,1441
+1786197600,Background merges,Background merges,writer-node-2,1459,1459
+1786197600,Ingestion,Compression,writer-node-1,85,85
+1786197600,Ingestion,Compression,writer-node-2,86,86
+1786197600,Ingestion,Other ingestion,writer-node-1,82,82
+1786197600,Ingestion,Other ingestion,writer-node-2,100,100
+1786197600,Ingestion,Parsing,writer-node-1,510,510
+1786197600,Ingestion,Parsing,writer-node-2,562,562
+1786197600,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786197600,Ingestion,Pre-aggregation,writer-node-2,26,26
+1786197600,Ingestion,Sorting,writer-node-1,165,165
+1786197600,Ingestion,Sorting,writer-node-2,185,185
+1786199400,Background merges,Background merges,writer-node-1,1249,1249
+1786199400,Background merges,Background merges,writer-node-2,1243,1243
+1786199400,Ingestion,Compression,writer-node-1,68,68
+1786199400,Ingestion,Compression,writer-node-2,61,61
+1786199400,Ingestion,Other ingestion,writer-node-1,105,105
+1786199400,Ingestion,Other ingestion,writer-node-2,79,79
+1786199400,Ingestion,Parsing,writer-node-1,435,435
+1786199400,Ingestion,Parsing,writer-node-2,489,489
+1786199400,Ingestion,Pre-aggregation,writer-node-1,23,23
+1786199400,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786199400,Ingestion,Sorting,writer-node-1,138,138
+1786199400,Ingestion,Sorting,writer-node-2,155,155
+1786199400,Background merges,Background merges,writer-node-1,208,208
+1786199400,Background merges,Background merges,writer-node-2,212,212
+1786199400,Ingestion,Compression,writer-node-1,15,15
+1786199400,Ingestion,Compression,writer-node-2,16,16
+1786199400,Ingestion,Other ingestion,writer-node-1,12,12
+1786199400,Ingestion,Other ingestion,writer-node-2,14,14
+1786199400,Ingestion,Parsing,writer-node-1,56,56
+1786199400,Ingestion,Parsing,writer-node-2,81,81
+1786199400,Ingestion,Pre-aggregation,writer-node-1,5,5
+1786199400,Ingestion,Pre-aggregation,writer-node-2,3,3
+1786199400,Ingestion,Sorting,writer-node-1,21,21
+1786199400,Ingestion,Sorting,writer-node-2,28,28
+1786201200,Background merges,Background merges,writer-node-1,1255,1255
+1786201200,Background merges,Background merges,writer-node-2,1588,1588
+1786201200,Ingestion,Compression,writer-node-1,104,104
+1786201200,Ingestion,Compression,writer-node-2,62,62
+1786201200,Ingestion,Other ingestion,writer-node-1,125,125
+1786201200,Ingestion,Other ingestion,writer-node-2,92,92
+1786201200,Ingestion,Parsing,writer-node-1,595,595
+1786201200,Ingestion,Parsing,writer-node-2,480,480
+1786201200,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786201200,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786201200,Ingestion,Sorting,writer-node-1,190,190
+1786201200,Ingestion,Sorting,writer-node-2,145,145
+1786203000,Background merges,Background merges,writer-node-1,1450,1450
+1786203000,Background merges,Background merges,writer-node-2,1437,1437
+1786203000,Ingestion,Compression,writer-node-1,78,78
+1786203000,Ingestion,Compression,writer-node-2,89,89
+1786203000,Ingestion,Other ingestion,writer-node-1,110,110
+1786203000,Ingestion,Other ingestion,writer-node-2,98,98
+1786203000,Ingestion,Parsing,writer-node-1,594,594
+1786203000,Ingestion,Parsing,writer-node-2,562,562
+1786203000,Ingestion,Pre-aggregation,writer-node-1,30,30
+1786203000,Ingestion,Pre-aggregation,writer-node-2,34,34
+1786203000,Ingestion,Sorting,writer-node-1,175,175
+1786203000,Ingestion,Sorting,writer-node-2,178,178
+1786204800,Background merges,Background merges,writer-node-1,1319,1319
+1786204800,Background merges,Background merges,writer-node-2,1581,1581
+1786204800,Ingestion,Compression,writer-node-1,89,89
+1786204800,Ingestion,Compression,writer-node-2,75,75
+1786204800,Ingestion,Other ingestion,writer-node-1,96,96
+1786204800,Ingestion,Other ingestion,writer-node-2,96,96
+1786204800,Ingestion,Parsing,writer-node-1,611,611
+1786204800,Ingestion,Parsing,writer-node-2,507,507
+1786204800,Ingestion,Pre-aggregation,writer-node-1,20,20
+1786204800,Ingestion,Pre-aggregation,writer-node-2,29,29
+1786204800,Ingestion,Sorting,writer-node-1,213,213
+1786204800,Ingestion,Sorting,writer-node-2,161,161
+1786206600,Background merges,Background merges,writer-node-1,1599,1599
+1786206600,Background merges,Background merges,writer-node-2,1455,1455
+1786206600,Ingestion,Compression,writer-node-1,85,85
+1786206600,Ingestion,Compression,writer-node-2,63,63
+1786206600,Ingestion,Other ingestion,writer-node-1,97,97
+1786206600,Ingestion,Other ingestion,writer-node-2,104,104
+1786206600,Ingestion,Parsing,writer-node-1,492,492
+1786206600,Ingestion,Parsing,writer-node-2,536,536
+1786206600,Ingestion,Pre-aggregation,writer-node-1,32,32
+1786206600,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786206600,Ingestion,Sorting,writer-node-1,147,147
+1786206600,Ingestion,Sorting,writer-node-2,184,184
+1786208400,Background merges,Background merges,writer-node-1,1400,1400
+1786208400,Background merges,Background merges,writer-node-2,1582,1582
+1786208400,Ingestion,Compression,writer-node-1,98,98
+1786208400,Ingestion,Compression,writer-node-2,77,77
+1786208400,Ingestion,Other ingestion,writer-node-1,100,100
+1786208400,Ingestion,Other ingestion,writer-node-2,94,94
+1786208400,Ingestion,Parsing,writer-node-1,532,532
+1786208400,Ingestion,Parsing,writer-node-2,506,506
+1786208400,Ingestion,Pre-aggregation,writer-node-1,38,38
+1786208400,Ingestion,Pre-aggregation,writer-node-2,23,23
+1786208400,Ingestion,Sorting,writer-node-1,167,167
+1786208400,Ingestion,Sorting,writer-node-2,143,143
+1786210200,Background merges,Background merges,writer-node-1,1440,1440
+1786210200,Background merges,Background merges,writer-node-2,1563,1563
+1786210200,Ingestion,Compression,writer-node-1,73,73
+1786210200,Ingestion,Compression,writer-node-2,76,76
+1786210200,Ingestion,Other ingestion,writer-node-1,108,108
+1786210200,Ingestion,Other ingestion,writer-node-2,85,85
+1786210200,Ingestion,Parsing,writer-node-1,517,517
+1786210200,Ingestion,Parsing,writer-node-2,477,477
+1786210200,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786210200,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786210200,Ingestion,Sorting,writer-node-1,148,148
+1786210200,Ingestion,Sorting,writer-node-2,162,162
+1786212000,Background merges,Background merges,writer-node-1,1111,1111
+1786212000,Background merges,Background merges,writer-node-2,1715,1715
+1786212000,Ingestion,Compression,writer-node-1,85,85
+1786212000,Ingestion,Compression,writer-node-2,74,74
+1786212000,Ingestion,Other ingestion,writer-node-1,101,101
+1786212000,Ingestion,Other ingestion,writer-node-2,81,81
+1786212000,Ingestion,Parsing,writer-node-1,556,556
+1786212000,Ingestion,Parsing,writer-node-2,455,455
+1786212000,Ingestion,Pre-aggregation,writer-node-1,23,23
+1786212000,Ingestion,Pre-aggregation,writer-node-2,34,34
+1786212000,Ingestion,Sorting,writer-node-1,164,164
+1786212000,Ingestion,Sorting,writer-node-2,148,148
+1786213800,Background merges,Background merges,writer-node-1,1027,1027
+1786213800,Background merges,Background merges,writer-node-2,1511,1511
+1786213800,Ingestion,Compression,writer-node-1,70,70
+1786213800,Ingestion,Compression,writer-node-2,51,51
+1786213800,Ingestion,Other ingestion,writer-node-1,118,118
+1786213800,Ingestion,Other ingestion,writer-node-2,59,59
+1786213800,Ingestion,Parsing,writer-node-1,508,508
+1786213800,Ingestion,Parsing,writer-node-2,354,354
+1786213800,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786213800,Ingestion,Pre-aggregation,writer-node-2,19,19
+1786213800,Ingestion,Sorting,writer-node-1,161,161
+1786213800,Ingestion,Sorting,writer-node-2,100,100
+1786213800,Background merges,Background merges,writer-node-1,168,168
+1786213800,Background merges,Background merges,writer-node-2,290,290
+1786213800,Ingestion,Compression,writer-node-1,16,16
+1786213800,Ingestion,Compression,writer-node-2,10,10
+1786213800,Ingestion,Other ingestion,writer-node-1,13,13
+1786213800,Ingestion,Other ingestion,writer-node-2,12,12
+1786213800,Ingestion,Parsing,writer-node-1,81,81
+1786213800,Ingestion,Parsing,writer-node-2,53,53
+1786213800,Ingestion,Pre-aggregation,writer-node-1,4,4
+1786213800,Ingestion,Pre-aggregation,writer-node-2,5,5
+1786213800,Ingestion,Sorting,writer-node-1,34,34
+1786213800,Ingestion,Sorting,writer-node-2,16,16
+1786215600,Background merges,Background merges,writer-node-1,1402,1402
+1786215600,Background merges,Background merges,writer-node-2,1439,1439
+1786215600,Ingestion,Compression,writer-node-1,97,97
+1786215600,Ingestion,Compression,writer-node-2,75,75
+1786215600,Ingestion,Other ingestion,writer-node-1,106,106
+1786215600,Ingestion,Other ingestion,writer-node-2,101,101
+1786215600,Ingestion,Parsing,writer-node-1,540,540
+1786215600,Ingestion,Parsing,writer-node-2,462,462
+1786215600,Ingestion,Pre-aggregation,writer-node-1,34,34
+1786215600,Ingestion,Pre-aggregation,writer-node-2,21,21
+1786215600,Ingestion,Sorting,writer-node-1,161,161
+1786215600,Ingestion,Sorting,writer-node-2,156,156
+1786217400,Background merges,Background merges,writer-node-1,1315,1315
+1786217400,Background merges,Background merges,writer-node-2,1612,1612
+1786217400,Ingestion,Compression,writer-node-1,98,98
+1786217400,Ingestion,Compression,writer-node-2,63,63
+1786217400,Ingestion,Other ingestion,writer-node-1,102,102
+1786217400,Ingestion,Other ingestion,writer-node-2,80,80
+1786217400,Ingestion,Parsing,writer-node-1,570,570
+1786217400,Ingestion,Parsing,writer-node-2,480,480
+1786217400,Ingestion,Pre-aggregation,writer-node-1,32,32
+1786217400,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786217400,Ingestion,Sorting,writer-node-1,176,176
+1786217400,Ingestion,Sorting,writer-node-2,151,151
+1786219200,Background merges,Background merges,writer-node-1,1468,1468
+1786219200,Background merges,Background merges,writer-node-2,1488,1488
+1786219200,Ingestion,Compression,writer-node-1,96,96
+1786219200,Ingestion,Compression,writer-node-2,86,86
+1786219200,Ingestion,Other ingestion,writer-node-1,101,101
+1786219200,Ingestion,Other ingestion,writer-node-2,93,93
+1786219200,Ingestion,Parsing,writer-node-1,513,513
+1786219200,Ingestion,Parsing,writer-node-2,523,523
+1786219200,Ingestion,Pre-aggregation,writer-node-1,30,30
+1786219200,Ingestion,Pre-aggregation,writer-node-2,28,28
+1786219200,Ingestion,Sorting,writer-node-1,161,161
+1786219200,Ingestion,Sorting,writer-node-2,180,180
+1786221000,Background merges,Background merges,writer-node-1,1445,1445
+1786221000,Background merges,Background merges,writer-node-2,1611,1611
+1786221000,Ingestion,Compression,writer-node-1,76,76
+1786221000,Ingestion,Compression,writer-node-2,65,65
+1786221000,Ingestion,Other ingestion,writer-node-1,99,99
+1786221000,Ingestion,Other ingestion,writer-node-2,81,81
+1786221000,Ingestion,Parsing,writer-node-1,473,473
+1786221000,Ingestion,Parsing,writer-node-2,517,517
+1786221000,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786221000,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786221000,Ingestion,Sorting,writer-node-1,178,178
+1786221000,Ingestion,Sorting,writer-node-2,142,142
+1786222800,Background merges,Background merges,writer-node-1,1291,1291
+1786222800,Background merges,Background merges,writer-node-2,1524,1524
+1786222800,Ingestion,Compression,writer-node-1,83,83
+1786222800,Ingestion,Compression,writer-node-2,72,72
+1786222800,Ingestion,Other ingestion,writer-node-1,97,97
+1786222800,Ingestion,Other ingestion,writer-node-2,78,78
+1786222800,Ingestion,Parsing,writer-node-1,507,507
+1786222800,Ingestion,Parsing,writer-node-2,463,463
+1786222800,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786222800,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786222800,Ingestion,Sorting,writer-node-1,173,173
+1786222800,Ingestion,Sorting,writer-node-2,150,150
+1786224600,Background merges,Background merges,writer-node-1,1684,1684
+1786224600,Background merges,Background merges,writer-node-2,1444,1444
+1786224600,Ingestion,Compression,writer-node-1,75,75
+1786224600,Ingestion,Compression,writer-node-2,78,78
+1786224600,Ingestion,Other ingestion,writer-node-1,97,97
+1786224600,Ingestion,Other ingestion,writer-node-2,104,104
+1786224600,Ingestion,Parsing,writer-node-1,443,443
+1786224600,Ingestion,Parsing,writer-node-2,505,505
+1786224600,Ingestion,Pre-aggregation,writer-node-1,25,25
+1786224600,Ingestion,Pre-aggregation,writer-node-2,30,30
+1786224600,Ingestion,Sorting,writer-node-1,151,151
+1786224600,Ingestion,Sorting,writer-node-2,166,166
+1786226400,Background merges,Background merges,writer-node-1,1398,1398
+1786226400,Background merges,Background merges,writer-node-2,1528,1528
+1786226400,Ingestion,Compression,writer-node-1,95,95
+1786226400,Ingestion,Compression,writer-node-2,85,85
+1786226400,Ingestion,Other ingestion,writer-node-1,92,92
+1786226400,Ingestion,Other ingestion,writer-node-2,92,92
+1786226400,Ingestion,Parsing,writer-node-1,526,526
+1786226400,Ingestion,Parsing,writer-node-2,540,540
+1786226400,Ingestion,Pre-aggregation,writer-node-1,33,33
+1786226400,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786226400,Ingestion,Sorting,writer-node-1,171,171
+1786226400,Ingestion,Sorting,writer-node-2,164,164
+1786228200,Background merges,Background merges,writer-node-1,1237,1237
+1786228200,Background merges,Background merges,writer-node-2,1272,1272
+1786228200,Ingestion,Compression,writer-node-1,64,64
+1786228200,Ingestion,Compression,writer-node-2,75,75
+1786228200,Ingestion,Other ingestion,writer-node-1,87,87
+1786228200,Ingestion,Other ingestion,writer-node-2,77,77
+1786228200,Ingestion,Parsing,writer-node-1,434,434
+1786228200,Ingestion,Parsing,writer-node-2,488,488
+1786228200,Ingestion,Pre-aggregation,writer-node-1,20,20
+1786228200,Ingestion,Pre-aggregation,writer-node-2,33,33
+1786228200,Ingestion,Sorting,writer-node-1,131,131
+1786228200,Ingestion,Sorting,writer-node-2,159,159
+1786228200,Background merges,Background merges,writer-node-1,228,228
+1786228200,Background merges,Background merges,writer-node-2,171,171
+1786228200,Ingestion,Compression,writer-node-1,8,8
+1786228200,Ingestion,Compression,writer-node-2,12,12
+1786228200,Ingestion,Other ingestion,writer-node-1,6,6
+1786228200,Ingestion,Other ingestion,writer-node-2,12,12
+1786228200,Ingestion,Parsing,writer-node-1,43,43
+1786228200,Ingestion,Parsing,writer-node-2,78,78
+1786228200,Ingestion,Pre-aggregation,writer-node-1,2,2
+1786228200,Ingestion,Pre-aggregation,writer-node-2,2,2
+1786228200,Ingestion,Sorting,writer-node-1,16,16
+1786228200,Ingestion,Sorting,writer-node-2,31,31
+1786230000,Background merges,Background merges,writer-node-1,1591,1591
+1786230000,Background merges,Background merges,writer-node-2,1499,1499
+1786230000,Ingestion,Compression,writer-node-1,73,73
+1786230000,Ingestion,Compression,writer-node-2,95,95
+1786230000,Ingestion,Other ingestion,writer-node-1,84,84
+1786230000,Ingestion,Other ingestion,writer-node-2,79,79
+1786230000,Ingestion,Parsing,writer-node-1,453,453
+1786230000,Ingestion,Parsing,writer-node-2,498,498
+1786230000,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786230000,Ingestion,Pre-aggregation,writer-node-2,15,15
+1786230000,Ingestion,Sorting,writer-node-1,140,140
+1786230000,Ingestion,Sorting,writer-node-2,151,151
+1786231800,Background merges,Background merges,writer-node-1,1329,1329
+1786231800,Background merges,Background merges,writer-node-2,1641,1641
+1786231800,Ingestion,Compression,writer-node-1,81,81
+1786231800,Ingestion,Compression,writer-node-2,72,72
+1786231800,Ingestion,Other ingestion,writer-node-1,117,117
+1786231800,Ingestion,Other ingestion,writer-node-2,82,82
+1786231800,Ingestion,Parsing,writer-node-1,537,537
+1786231800,Ingestion,Parsing,writer-node-2,486,486
+1786231800,Ingestion,Pre-aggregation,writer-node-1,27,27
+1786231800,Ingestion,Pre-aggregation,writer-node-2,30,30
+1786231800,Ingestion,Sorting,writer-node-1,188,188
+1786231800,Ingestion,Sorting,writer-node-2,156,156
+1786233600,Background merges,Background merges,writer-node-1,1824,1824
+1786233600,Background merges,Background merges,writer-node-2,1370,1370
+1786233600,Ingestion,Compression,writer-node-1,74,74
+1786233600,Ingestion,Compression,writer-node-2,84,84
+1786233600,Ingestion,Other ingestion,writer-node-1,74,74
+1786233600,Ingestion,Other ingestion,writer-node-2,102,102
+1786233600,Ingestion,Parsing,writer-node-1,405,405
+1786233600,Ingestion,Parsing,writer-node-2,576,576
+1786233600,Ingestion,Pre-aggregation,writer-node-1,23,23
+1786233600,Ingestion,Pre-aggregation,writer-node-2,33,33
+1786233600,Ingestion,Sorting,writer-node-1,112,112
+1786233600,Ingestion,Sorting,writer-node-2,187,187
+1786235400,Background merges,Background merges,writer-node-1,1611,1611
+1786235400,Background merges,Background merges,writer-node-2,1512,1512
+1786235400,Ingestion,Compression,writer-node-1,76,76
+1786235400,Ingestion,Compression,writer-node-2,75,75
+1786235400,Ingestion,Other ingestion,writer-node-1,96,96
+1786235400,Ingestion,Other ingestion,writer-node-2,92,92
+1786235400,Ingestion,Parsing,writer-node-1,461,461
+1786235400,Ingestion,Parsing,writer-node-2,542,542
+1786235400,Ingestion,Pre-aggregation,writer-node-1,30,30
+1786235400,Ingestion,Pre-aggregation,writer-node-2,27,27
+1786235400,Ingestion,Sorting,writer-node-1,133,133
+1786235400,Ingestion,Sorting,writer-node-2,159,159
+1786237200,Background merges,Background merges,writer-node-1,1819,1819
+1786237200,Background merges,Background merges,writer-node-2,1546,1546
+1786237200,Ingestion,Compression,writer-node-1,65,65
+1786237200,Ingestion,Compression,writer-node-2,91,91
+1786237200,Ingestion,Other ingestion,writer-node-1,73,73
+1786237200,Ingestion,Other ingestion,writer-node-2,98,98
+1786237200,Ingestion,Parsing,writer-node-1,414,414
+1786237200,Ingestion,Parsing,writer-node-2,500,500
+1786237200,Ingestion,Pre-aggregation,writer-node-1,30,30
+1786237200,Ingestion,Pre-aggregation,writer-node-2,32,32
+1786237200,Ingestion,Sorting,writer-node-1,140,140
+1786237200,Ingestion,Sorting,writer-node-2,177,177
+1786239000,Background merges,Background merges,writer-node-1,1573,1573
+1786239000,Background merges,Background merges,writer-node-2,1819,1819
+1786239000,Ingestion,Compression,writer-node-1,93,93
+1786239000,Ingestion,Compression,writer-node-2,64,64
+1786239000,Ingestion,Other ingestion,writer-node-1,91,91
+1786239000,Ingestion,Other ingestion,writer-node-2,65,65
+1786239000,Ingestion,Parsing,writer-node-1,475,475
+1786239000,Ingestion,Parsing,writer-node-2,432,432
+1786239000,Ingestion,Pre-aggregation,writer-node-1,27,27
+1786239000,Ingestion,Pre-aggregation,writer-node-2,14,14
+1786239000,Ingestion,Sorting,writer-node-1,146,146
+1786239000,Ingestion,Sorting,writer-node-2,127,127
+1786240800,Background merges,Background merges,writer-node-1,1620,1620
+1786240800,Background merges,Background merges,writer-node-2,1534,1534
+1786240800,Ingestion,Compression,writer-node-1,71,71
+1786240800,Ingestion,Compression,writer-node-2,72,72
+1786240800,Ingestion,Other ingestion,writer-node-1,96,96
+1786240800,Ingestion,Other ingestion,writer-node-2,76,76
+1786240800,Ingestion,Parsing,writer-node-1,454,454
+1786240800,Ingestion,Parsing,writer-node-2,489,489
+1786240800,Ingestion,Pre-aggregation,writer-node-1,24,24
+1786240800,Ingestion,Pre-aggregation,writer-node-2,25,25
+1786240800,Ingestion,Sorting,writer-node-1,125,125
+1786240800,Ingestion,Sorting,writer-node-2,164,164
+1786242600,Background merges,Background merges,writer-node-1,1712,1712
+1786242600,Background merges,Background merges,writer-node-2,1106,1106
+1786242600,Ingestion,Compression,writer-node-1,57,57
+1786242600,Ingestion,Compression,writer-node-2,84,84
+1786242600,Ingestion,Other ingestion,writer-node-1,50,50
+1786242600,Ingestion,Other ingestion,writer-node-2,95,95
+1786242600,Ingestion,Parsing,writer-node-1,305,305
+1786242600,Ingestion,Parsing,writer-node-2,519,519
+1786242600,Ingestion,Pre-aggregation,writer-node-1,13,13
+1786242600,Ingestion,Pre-aggregation,writer-node-2,38,38
+1786242600,Ingestion,Sorting,writer-node-1,77,77
+1786242600,Ingestion,Sorting,writer-node-2,158,158
+1786242600,Background merges,Background merges,writer-node-1,201,201
+1786242600,Background merges,Background merges,writer-node-2,212,212
+1786242600,Ingestion,Compression,writer-node-1,9,9
+1786242600,Ingestion,Compression,writer-node-2,8,8
+1786242600,Ingestion,Other ingestion,writer-node-1,14,14
+1786242600,Ingestion,Other ingestion,writer-node-2,10,10
+1786242600,Ingestion,Parsing,writer-node-1,68,68
+1786242600,Ingestion,Parsing,writer-node-2,60,60
+1786242600,Ingestion,Pre-aggregation,writer-node-1,4,4
+1786242600,Ingestion,Pre-aggregation,writer-node-2,4,4
+1786242600,Ingestion,Sorting,writer-node-1,28,28
+1786242600,Ingestion,Sorting,writer-node-2,19,19
+1786244400,Background merges,Background merges,writer-node-1,1600,1600
+1786244400,Background merges,Background merges,writer-node-2,1687,1687
+1786244400,Ingestion,Compression,writer-node-1,84,84
+1786244400,Ingestion,Compression,writer-node-2,65,65
+1786244400,Ingestion,Other ingestion,writer-node-1,119,119
+1786244400,Ingestion,Other ingestion,writer-node-2,83,83
+1786244400,Ingestion,Parsing,writer-node-1,536,536
+1786244400,Ingestion,Parsing,writer-node-2,469,469
+1786244400,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786244400,Ingestion,Pre-aggregation,writer-node-2,33,33
+1786244400,Ingestion,Sorting,writer-node-1,154,154
+1786244400,Ingestion,Sorting,writer-node-2,142,142
+1786246200,Background merges,Background merges,writer-node-1,1450,1450
+1786246200,Background merges,Background merges,writer-node-2,1824,1824
+1786246200,Ingestion,Compression,writer-node-1,79,79
+1786246200,Ingestion,Compression,writer-node-2,60,60
+1786246200,Ingestion,Other ingestion,writer-node-1,111,111
+1786246200,Ingestion,Other ingestion,writer-node-2,69,69
+1786246200,Ingestion,Parsing,writer-node-1,529,529
+1786246200,Ingestion,Parsing,writer-node-2,455,455
+1786246200,Ingestion,Pre-aggregation,writer-node-1,30,30
+1786246200,Ingestion,Pre-aggregation,writer-node-2,23,23
+1786246200,Ingestion,Sorting,writer-node-1,159,159
+1786246200,Ingestion,Sorting,writer-node-2,136,136
+1786248000,Background merges,Background merges,writer-node-1,1535,1535
+1786248000,Background merges,Background merges,writer-node-2,1641,1641
+1786248000,Ingestion,Compression,writer-node-1,73,73
+1786248000,Ingestion,Compression,writer-node-2,57,57
+1786248000,Ingestion,Other ingestion,writer-node-1,100,100
+1786248000,Ingestion,Other ingestion,writer-node-2,73,73
+1786248000,Ingestion,Parsing,writer-node-1,481,481
+1786248000,Ingestion,Parsing,writer-node-2,449,449
+1786248000,Ingestion,Pre-aggregation,writer-node-1,16,16
+1786248000,Ingestion,Pre-aggregation,writer-node-2,21,21
+1786248000,Ingestion,Sorting,writer-node-1,145,145
+1786248000,Ingestion,Sorting,writer-node-2,130,130
+1786249800,Background merges,Background merges,writer-node-1,1454,1454
+1786249800,Background merges,Background merges,writer-node-2,1742,1742
+1786249800,Ingestion,Compression,writer-node-1,89,89
+1786249800,Ingestion,Compression,writer-node-2,68,68
+1786249800,Ingestion,Other ingestion,writer-node-1,106,106
+1786249800,Ingestion,Other ingestion,writer-node-2,82,82
+1786249800,Ingestion,Parsing,writer-node-1,519,519
+1786249800,Ingestion,Parsing,writer-node-2,431,431
+1786249800,Ingestion,Pre-aggregation,writer-node-1,24,24
+1786249800,Ingestion,Pre-aggregation,writer-node-2,12,12
+1786249800,Ingestion,Sorting,writer-node-1,157,157
+1786249800,Ingestion,Sorting,writer-node-2,134,134
+1786251600,Background merges,Background merges,writer-node-1,1827,1827
+1786251600,Background merges,Background merges,writer-node-2,1400,1400
+1786251600,Ingestion,Compression,writer-node-1,48,48
+1786251600,Ingestion,Compression,writer-node-2,90,90
+1786251600,Ingestion,Other ingestion,writer-node-1,83,83
+1786251600,Ingestion,Other ingestion,writer-node-2,110,110
+1786251600,Ingestion,Parsing,writer-node-1,347,347
+1786251600,Ingestion,Parsing,writer-node-2,579,579
+1786251600,Ingestion,Pre-aggregation,writer-node-1,15,15
+1786251600,Ingestion,Pre-aggregation,writer-node-2,23,23
+1786251600,Ingestion,Sorting,writer-node-1,121,121
+1786251600,Ingestion,Sorting,writer-node-2,178,178
+1786253400,Background merges,Background merges,writer-node-1,1602,1602
+1786253400,Background merges,Background merges,writer-node-2,1630,1630
+1786253400,Ingestion,Compression,writer-node-1,63,63
+1786253400,Ingestion,Compression,writer-node-2,62,62
+1786253400,Ingestion,Other ingestion,writer-node-1,76,76
+1786253400,Ingestion,Other ingestion,writer-node-2,91,91
+1786253400,Ingestion,Parsing,writer-node-1,449,449
+1786253400,Ingestion,Parsing,writer-node-2,474,474
+1786253400,Ingestion,Pre-aggregation,writer-node-1,19,19
+1786253400,Ingestion,Pre-aggregation,writer-node-2,19,19
+1786253400,Ingestion,Sorting,writer-node-1,141,141
+1786253400,Ingestion,Sorting,writer-node-2,159,159
+1786255200,Background merges,Background merges,writer-node-1,1485,1485
+1786255200,Background merges,Background merges,writer-node-2,1791,1791
+1786255200,Ingestion,Compression,writer-node-1,95,95
+1786255200,Ingestion,Compression,writer-node-2,61,61
+1786255200,Ingestion,Other ingestion,writer-node-1,98,98
+1786255200,Ingestion,Other ingestion,writer-node-2,86,86
+1786255200,Ingestion,Parsing,writer-node-1,545,545
+1786255200,Ingestion,Parsing,writer-node-2,437,437
+1786255200,Ingestion,Pre-aggregation,writer-node-1,26,26
+1786255200,Ingestion,Pre-aggregation,writer-node-2,19,19
+1786255200,Ingestion,Sorting,writer-node-1,170,170
+1786255200,Ingestion,Sorting,writer-node-2,146,146
+1786257000,Background merges,Background merges,writer-node-1,1404,1404
+1786257000,Background merges,Background merges,writer-node-2,1375,1375
+1786257000,Ingestion,Compression,writer-node-1,69,69
+1786257000,Ingestion,Compression,writer-node-2,61,61
+1786257000,Ingestion,Other ingestion,writer-node-1,74,74
+1786257000,Ingestion,Other ingestion,writer-node-2,78,78
+1786257000,Ingestion,Parsing,writer-node-1,403,403
+1786257000,Ingestion,Parsing,writer-node-2,442,442
+1786257000,Ingestion,Pre-aggregation,writer-node-1,17,17
+1786257000,Ingestion,Pre-aggregation,writer-node-2,12,12
+1786257000,Ingestion,Sorting,writer-node-1,139,139
+1786257000,Ingestion,Sorting,writer-node-2,126,126
+1786257000,Background merges,Background merges,writer-node-1,178,178
+1786257000,Background merges,Background merges,writer-node-2,219,219
+1786257000,Ingestion,Compression,writer-node-1,16,16
+1786257000,Ingestion,Compression,writer-node-2,7,7
+1786257000,Ingestion,Other ingestion,writer-node-1,11,11
+1786257000,Ingestion,Other ingestion,writer-node-2,10,10
+1786257000,Ingestion,Parsing,writer-node-1,75,75
+1786257000,Ingestion,Parsing,writer-node-2,48,48
+1786257000,Ingestion,Pre-aggregation,writer-node-1,6,6
+1786257000,Ingestion,Pre-aggregation,writer-node-2,3,3
+1786257000,Ingestion,Sorting,writer-node-1,36,36
+1786257000,Ingestion,Sorting,writer-node-2,19,19
+1786258800,Background merges,Background merges,writer-node-1,1779,1779
+1786258800,Background merges,Background merges,writer-node-2,1562,1562
+1786258800,Ingestion,Compression,writer-node-1,67,67
+1786258800,Ingestion,Compression,writer-node-2,64,64
+1786258800,Ingestion,Other ingestion,writer-node-1,89,89
+1786258800,Ingestion,Other ingestion,writer-node-2,83,83
+1786258800,Ingestion,Parsing,writer-node-1,439,439
+1786258800,Ingestion,Parsing,writer-node-2,484,484
+1786258800,Ingestion,Pre-aggregation,writer-node-1,17,17
+1786258800,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786258800,Ingestion,Sorting,writer-node-1,134,134
+1786258800,Ingestion,Sorting,writer-node-2,147,147
+1786260600,Background merges,Background merges,writer-node-1,1865,1865
+1786260600,Background merges,Background merges,writer-node-2,1467,1467
+1786260600,Ingestion,Compression,writer-node-1,54,54
+1786260600,Ingestion,Compression,writer-node-2,73,73
+1786260600,Ingestion,Other ingestion,writer-node-1,83,83
+1786260600,Ingestion,Other ingestion,writer-node-2,93,93
+1786260600,Ingestion,Parsing,writer-node-1,379,379
+1786260600,Ingestion,Parsing,writer-node-2,518,518
+1786260600,Ingestion,Pre-aggregation,writer-node-1,18,18
+1786260600,Ingestion,Pre-aggregation,writer-node-2,19,19
+1786260600,Ingestion,Sorting,writer-node-1,129,129
+1786260600,Ingestion,Sorting,writer-node-2,164,164
+1786262400,Background merges,Background merges,writer-node-1,1617,1617
+1786262400,Background merges,Background merges,writer-node-2,1829,1829
+1786262400,Ingestion,Compression,writer-node-1,69,69
+1786262400,Ingestion,Compression,writer-node-2,52,52
+1786262400,Ingestion,Other ingestion,writer-node-1,81,81
+1786262400,Ingestion,Other ingestion,writer-node-2,97,97
+1786262400,Ingestion,Parsing,writer-node-1,458,458
+1786262400,Ingestion,Parsing,writer-node-2,412,412
+1786262400,Ingestion,Pre-aggregation,writer-node-1,34,34
+1786262400,Ingestion,Pre-aggregation,writer-node-2,20,20
+1786262400,Ingestion,Sorting,writer-node-1,165,165
+1786262400,Ingestion,Sorting,writer-node-2,136,136
+1786264200,Background merges,Background merges,writer-node-1,1719,1719
+1786264200,Background merges,Background merges,writer-node-2,1614,1614
+1786264200,Ingestion,Compression,writer-node-1,71,71
+1786264200,Ingestion,Compression,writer-node-2,64,64
+1786264200,Ingestion,Other ingestion,writer-node-1,63,63
+1786264200,Ingestion,Other ingestion,writer-node-2,73,73
+1786264200,Ingestion,Parsing,writer-node-1,438,438
+1786264200,Ingestion,Parsing,writer-node-2,433,433
+1786264200,Ingestion,Pre-aggregation,writer-node-1,22,22
+1786264200,Ingestion,Pre-aggregation,writer-node-2,25,25
+1786264200,Ingestion,Sorting,writer-node-1,128,128
+1786264200,Ingestion,Sorting,writer-node-2,128,128
+1786266000,Background merges,Background merges,writer-node-1,1741,1741
+1786266000,Background merges,Background merges,writer-node-2,1607,1607
+1786266000,Ingestion,Compression,writer-node-1,67,67
+1786266000,Ingestion,Compression,writer-node-2,62,62
+1786266000,Ingestion,Other ingestion,writer-node-1,75,75
+1786266000,Ingestion,Other ingestion,writer-node-2,79,79
+1786266000,Ingestion,Parsing,writer-node-1,361,361
+1786266000,Ingestion,Parsing,writer-node-2,436,436
+1786266000,Ingestion,Pre-aggregation,writer-node-1,24,24
+1786266000,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786266000,Ingestion,Sorting,writer-node-1,121,121
+1786266000,Ingestion,Sorting,writer-node-2,122,122
+1786267800,Background merges,Background merges,writer-node-1,1605,1605
+1786267800,Background merges,Background merges,writer-node-2,1637,1637
+1786267800,Ingestion,Compression,writer-node-1,82,82
+1786267800,Ingestion,Compression,writer-node-2,65,65
+1786267800,Ingestion,Other ingestion,writer-node-1,93,93
+1786267800,Ingestion,Other ingestion,writer-node-2,90,90
+1786267800,Ingestion,Parsing,writer-node-1,437,437
+1786267800,Ingestion,Parsing,writer-node-2,461,461
+1786267800,Ingestion,Pre-aggregation,writer-node-1,31,31
+1786267800,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786267800,Ingestion,Sorting,writer-node-1,133,133
+1786267800,Ingestion,Sorting,writer-node-2,145,145
+1786269600,Background merges,Background merges,writer-node-1,1250,1250
+1786269600,Background merges,Background merges,writer-node-2,1772,1772
+1786269600,Ingestion,Compression,writer-node-1,101,101
+1786269600,Ingestion,Compression,writer-node-2,58,58
+1786269600,Ingestion,Other ingestion,writer-node-1,99,99
+1786269600,Ingestion,Other ingestion,writer-node-2,81,81
+1786269600,Ingestion,Parsing,writer-node-1,601,601
+1786269600,Ingestion,Parsing,writer-node-2,449,449
+1786269600,Ingestion,Pre-aggregation,writer-node-1,27,27
+1786269600,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786269600,Ingestion,Sorting,writer-node-1,186,186
+1786269600,Ingestion,Sorting,writer-node-2,125,125
+1786271400,Background merges,Background merges,writer-node-1,1083,1083
+1786271400,Background merges,Background merges,writer-node-2,1542,1542
+1786271400,Ingestion,Compression,writer-node-1,79,79
+1786271400,Ingestion,Compression,writer-node-2,51,51
+1786271400,Ingestion,Other ingestion,writer-node-1,94,94
+1786271400,Ingestion,Other ingestion,writer-node-2,67,67
+1786271400,Ingestion,Parsing,writer-node-1,511,511
+1786271400,Ingestion,Parsing,writer-node-2,369,369
+1786271400,Ingestion,Pre-aggregation,writer-node-1,34,34
+1786271400,Ingestion,Pre-aggregation,writer-node-2,13,13
+1786271400,Ingestion,Sorting,writer-node-1,170,170
+1786271400,Ingestion,Sorting,writer-node-2,108,108
+1786271400,Background merges,Background merges,writer-node-1,166,166
+1786271400,Background merges,Background merges,writer-node-2,171,171
+1786271400,Ingestion,Compression,writer-node-1,9,9
+1786271400,Ingestion,Compression,writer-node-2,12,12
+1786271400,Ingestion,Other ingestion,writer-node-1,23,23
+1786271400,Ingestion,Other ingestion,writer-node-2,15,15
+1786271400,Ingestion,Parsing,writer-node-1,73,73
+1786271400,Ingestion,Parsing,writer-node-2,98,98
+1786271400,Ingestion,Pre-aggregation,writer-node-1,5,5
+1786271400,Ingestion,Pre-aggregation,writer-node-2,8,8
+1786271400,Ingestion,Sorting,writer-node-1,25,25
+1786271400,Ingestion,Sorting,writer-node-2,25,25
+1786273200,Background merges,Background merges,writer-node-1,1448,1448
+1786273200,Background merges,Background merges,writer-node-2,1486,1486
+1786273200,Ingestion,Compression,writer-node-1,74,74
+1786273200,Ingestion,Compression,writer-node-2,86,86
+1786273200,Ingestion,Other ingestion,writer-node-1,103,103
+1786273200,Ingestion,Other ingestion,writer-node-2,108,108
+1786273200,Ingestion,Parsing,writer-node-1,505,505
+1786273200,Ingestion,Parsing,writer-node-2,515,515
+1786273200,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786273200,Ingestion,Pre-aggregation,writer-node-2,30,30
+1786273200,Ingestion,Sorting,writer-node-1,159,159
+1786273200,Ingestion,Sorting,writer-node-2,194,194
+1786275000,Background merges,Background merges,writer-node-1,1378,1378
+1786275000,Background merges,Background merges,writer-node-2,1698,1698
+1786275000,Ingestion,Compression,writer-node-1,81,81
+1786275000,Ingestion,Compression,writer-node-2,80,80
+1786275000,Ingestion,Other ingestion,writer-node-1,99,99
+1786275000,Ingestion,Other ingestion,writer-node-2,74,74
+1786275000,Ingestion,Parsing,writer-node-1,524,524
+1786275000,Ingestion,Parsing,writer-node-2,435,435
+1786275000,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786275000,Ingestion,Pre-aggregation,writer-node-2,21,21
+1786275000,Ingestion,Sorting,writer-node-1,187,187
+1786275000,Ingestion,Sorting,writer-node-2,172,172
+1786276800,Background merges,Background merges,writer-node-1,1466,1466
+1786276800,Background merges,Background merges,writer-node-2,1520,1520
+1786276800,Ingestion,Compression,writer-node-1,82,82
+1786276800,Ingestion,Compression,writer-node-2,72,72
+1786276800,Ingestion,Other ingestion,writer-node-1,99,99
+1786276800,Ingestion,Other ingestion,writer-node-2,94,94
+1786276800,Ingestion,Parsing,writer-node-1,519,519
+1786276800,Ingestion,Parsing,writer-node-2,514,514
+1786276800,Ingestion,Pre-aggregation,writer-node-1,30,30
+1786276800,Ingestion,Pre-aggregation,writer-node-2,39,39
+1786276800,Ingestion,Sorting,writer-node-1,159,159
+1786276800,Ingestion,Sorting,writer-node-2,162,162
+1786278600,Background merges,Background merges,writer-node-1,1505,1505
+1786278600,Background merges,Background merges,writer-node-2,1529,1529
+1786278600,Ingestion,Compression,writer-node-1,67,67
+1786278600,Ingestion,Compression,writer-node-2,73,73
+1786278600,Ingestion,Other ingestion,writer-node-1,84,84
+1786278600,Ingestion,Other ingestion,writer-node-2,100,100
+1786278600,Ingestion,Parsing,writer-node-1,456,456
+1786278600,Ingestion,Parsing,writer-node-2,457,457
+1786278600,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786278600,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786278600,Ingestion,Sorting,writer-node-1,153,153
+1786278600,Ingestion,Sorting,writer-node-2,172,172
+1786280400,Background merges,Background merges,writer-node-1,1539,1539
+1786280400,Background merges,Background merges,writer-node-2,1380,1380
+1786280400,Ingestion,Compression,writer-node-1,72,72
+1786280400,Ingestion,Compression,writer-node-2,82,82
+1786280400,Ingestion,Other ingestion,writer-node-1,79,79
+1786280400,Ingestion,Other ingestion,writer-node-2,84,84
+1786280400,Ingestion,Parsing,writer-node-1,444,444
+1786280400,Ingestion,Parsing,writer-node-2,551,551
+1786280400,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786280400,Ingestion,Pre-aggregation,writer-node-2,22,22
+1786280400,Ingestion,Sorting,writer-node-1,156,156
+1786280400,Ingestion,Sorting,writer-node-2,168,168
+1786282200,Background merges,Background merges,writer-node-1,1706,1706
+1786282200,Background merges,Background merges,writer-node-2,1411,1411
+1786282200,Ingestion,Compression,writer-node-1,78,78
+1786282200,Ingestion,Compression,writer-node-2,82,82
+1786282200,Ingestion,Other ingestion,writer-node-1,72,72
+1786282200,Ingestion,Other ingestion,writer-node-2,94,94
+1786282200,Ingestion,Parsing,writer-node-1,426,426
+1786282200,Ingestion,Parsing,writer-node-2,562,562
+1786282200,Ingestion,Pre-aggregation,writer-node-1,23,23
+1786282200,Ingestion,Pre-aggregation,writer-node-2,21,21
+1786282200,Ingestion,Sorting,writer-node-1,143,143
+1786282200,Ingestion,Sorting,writer-node-2,182,182
+1786284000,Background merges,Background merges,writer-node-1,1332,1332
+1786284000,Background merges,Background merges,writer-node-2,1655,1655
+1786284000,Ingestion,Compression,writer-node-1,86,86
+1786284000,Ingestion,Compression,writer-node-2,67,67
+1786284000,Ingestion,Other ingestion,writer-node-1,114,114
+1786284000,Ingestion,Other ingestion,writer-node-2,100,100
+1786284000,Ingestion,Parsing,writer-node-1,560,560
+1786284000,Ingestion,Parsing,writer-node-2,490,490
+1786284000,Ingestion,Pre-aggregation,writer-node-1,34,34
+1786284000,Ingestion,Pre-aggregation,writer-node-2,31,31
+1786284000,Ingestion,Sorting,writer-node-1,188,188
+1786284000,Ingestion,Sorting,writer-node-2,179,179
+1786285800,Background merges,Background merges,writer-node-1,1362,1362
+1786285800,Background merges,Background merges,writer-node-2,1316,1316
+1786285800,Ingestion,Compression,writer-node-1,65,65
+1786285800,Ingestion,Compression,writer-node-2,63,63
+1786285800,Ingestion,Other ingestion,writer-node-1,94,94
+1786285800,Ingestion,Other ingestion,writer-node-2,93,93
+1786285800,Ingestion,Parsing,writer-node-1,473,473
+1786285800,Ingestion,Parsing,writer-node-2,436,436
+1786285800,Ingestion,Pre-aggregation,writer-node-1,22,22
+1786285800,Ingestion,Pre-aggregation,writer-node-2,28,28
+1786285800,Ingestion,Sorting,writer-node-1,144,144
+1786285800,Ingestion,Sorting,writer-node-2,135,135
+1786285800,Background merges,Background merges,writer-node-1,142,142
+1786285800,Background merges,Background merges,writer-node-2,230,230
+1786285800,Ingestion,Compression,writer-node-1,15,15
+1786285800,Ingestion,Compression,writer-node-2,6,6
+1786285800,Ingestion,Other ingestion,writer-node-1,14,14
+1786285800,Ingestion,Other ingestion,writer-node-2,14,14
+1786285800,Ingestion,Parsing,writer-node-1,92,92
+1786285800,Ingestion,Parsing,writer-node-2,62,62
+1786285800,Ingestion,Pre-aggregation,writer-node-1,7,7
+1786285800,Ingestion,Pre-aggregation,writer-node-2,3,3
+1786285800,Ingestion,Sorting,writer-node-1,33,33
+1786285800,Ingestion,Sorting,writer-node-2,18,18
+1786287600,Background merges,Background merges,writer-node-1,1769,1769
+1786287600,Background merges,Background merges,writer-node-2,1438,1438
+1786287600,Ingestion,Compression,writer-node-1,87,87
+1786287600,Ingestion,Compression,writer-node-2,88,88
+1786287600,Ingestion,Other ingestion,writer-node-1,87,87
+1786287600,Ingestion,Other ingestion,writer-node-2,97,97
+1786287600,Ingestion,Parsing,writer-node-1,437,437
+1786287600,Ingestion,Parsing,writer-node-2,584,584
+1786287600,Ingestion,Pre-aggregation,writer-node-1,34,34
+1786287600,Ingestion,Pre-aggregation,writer-node-2,27,27
+1786287600,Ingestion,Sorting,writer-node-1,142,142
+1786287600,Ingestion,Sorting,writer-node-2,186,186
+1786289400,Background merges,Background merges,writer-node-1,1667,1667
+1786289400,Background merges,Background merges,writer-node-2,1428,1428
+1786289400,Ingestion,Compression,writer-node-1,85,85
+1786289400,Ingestion,Compression,writer-node-2,77,77
+1786289400,Ingestion,Other ingestion,writer-node-1,98,98
+1786289400,Ingestion,Other ingestion,writer-node-2,84,84
+1786289400,Ingestion,Parsing,writer-node-1,451,451
+1786289400,Ingestion,Parsing,writer-node-2,500,500
+1786289400,Ingestion,Pre-aggregation,writer-node-1,35,35
+1786289400,Ingestion,Pre-aggregation,writer-node-2,25,25
+1786289400,Ingestion,Sorting,writer-node-1,151,151
+1786289400,Ingestion,Sorting,writer-node-2,167,167
+1786291200,Background merges,Background merges,writer-node-1,1561,1561
+1786291200,Background merges,Background merges,writer-node-2,1665,1665
+1786291200,Ingestion,Compression,writer-node-1,81,81
+1786291200,Ingestion,Compression,writer-node-2,68,68
+1786291200,Ingestion,Other ingestion,writer-node-1,82,82
+1786291200,Ingestion,Other ingestion,writer-node-2,76,76
+1786291200,Ingestion,Parsing,writer-node-1,470,470
+1786291200,Ingestion,Parsing,writer-node-2,404,404
+1786291200,Ingestion,Pre-aggregation,writer-node-1,22,22
+1786291200,Ingestion,Pre-aggregation,writer-node-2,18,18
+1786291200,Ingestion,Sorting,writer-node-1,152,152
+1786291200,Ingestion,Sorting,writer-node-2,122,122
+1786293000,Background merges,Background merges,writer-node-1,1632,1632
+1786293000,Background merges,Background merges,writer-node-2,1689,1689
+1786293000,Ingestion,Compression,writer-node-1,65,65
+1786293000,Ingestion,Compression,writer-node-2,63,63
+1786293000,Ingestion,Other ingestion,writer-node-1,100,100
+1786293000,Ingestion,Other ingestion,writer-node-2,91,91
+1786293000,Ingestion,Parsing,writer-node-1,486,486
+1786293000,Ingestion,Parsing,writer-node-2,475,475
+1786293000,Ingestion,Pre-aggregation,writer-node-1,23,23
+1786293000,Ingestion,Pre-aggregation,writer-node-2,27,27
+1786293000,Ingestion,Sorting,writer-node-1,144,144
+1786293000,Ingestion,Sorting,writer-node-2,155,155
+1786294800,Background merges,Background merges,writer-node-1,1418,1418
+1786294800,Background merges,Background merges,writer-node-2,1796,1796
+1786294800,Ingestion,Compression,writer-node-1,74,74
+1786294800,Ingestion,Compression,writer-node-2,50,50
+1786294800,Ingestion,Other ingestion,writer-node-1,92,92
+1786294800,Ingestion,Other ingestion,writer-node-2,74,74
+1786294800,Ingestion,Parsing,writer-node-1,460,460
+1786294800,Ingestion,Parsing,writer-node-2,391,391
+1786294800,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786294800,Ingestion,Pre-aggregation,writer-node-2,24,24
+1786294800,Ingestion,Sorting,writer-node-1,150,150
+1786294800,Ingestion,Sorting,writer-node-2,130,130
+1786296600,Background merges,Background merges,writer-node-1,1424,1424
+1786296600,Background merges,Background merges,writer-node-2,1723,1723
+1786296600,Ingestion,Compression,writer-node-1,108,108
+1786296600,Ingestion,Compression,writer-node-2,49,49
+1786296600,Ingestion,Other ingestion,writer-node-1,105,105
+1786296600,Ingestion,Other ingestion,writer-node-2,62,62
+1786296600,Ingestion,Parsing,writer-node-1,474,474
+1786296600,Ingestion,Parsing,writer-node-2,386,386
+1786296600,Ingestion,Pre-aggregation,writer-node-1,28,28
+1786296600,Ingestion,Pre-aggregation,writer-node-2,16,16
+1786296600,Ingestion,Sorting,writer-node-1,162,162
+1786296600,Ingestion,Sorting,writer-node-2,113,113
+1786298400,Background merges,Background merges,writer-node-1,1520,1520
+1786298400,Background merges,Background merges,writer-node-2,1635,1635
+1786298400,Ingestion,Compression,writer-node-1,74,74
+1786298400,Ingestion,Compression,writer-node-2,69,69
+1786298400,Ingestion,Other ingestion,writer-node-1,98,98
+1786298400,Ingestion,Other ingestion,writer-node-2,91,91
+1786298400,Ingestion,Parsing,writer-node-1,504,504
+1786298400,Ingestion,Parsing,writer-node-2,478,478
+1786298400,Ingestion,Pre-aggregation,writer-node-1,29,29
+1786298400,Ingestion,Pre-aggregation,writer-node-2,16,16
+1786298400,Ingestion,Sorting,writer-node-1,172,172
+1786298400,Ingestion,Sorting,writer-node-2,156,156
+1786300200,Background merges,Background merges,writer-node-1,1637,1637
+1786300200,Background merges,Background merges,writer-node-2,1158,1158
+1786300200,Ingestion,Compression,writer-node-1,60,60
+1786300200,Ingestion,Compression,writer-node-2,70,70
+1786300200,Ingestion,Other ingestion,writer-node-1,55,55
+1786300200,Ingestion,Other ingestion,writer-node-2,103,103
+1786300200,Ingestion,Parsing,writer-node-1,345,345
+1786300200,Ingestion,Parsing,writer-node-2,464,464
+1786300200,Ingestion,Pre-aggregation,writer-node-1,20,20
+1786300200,Ingestion,Pre-aggregation,writer-node-2,25,25
+1786300200,Ingestion,Sorting,writer-node-1,108,108
+1786300200,Ingestion,Sorting,writer-node-2,187,187
+1786300200,Background merges,Background merges,writer-node-1,154,154
+1786300200,Background merges,Background merges,writer-node-2,252,252
+1786300200,Ingestion,Compression,writer-node-1,8,8
+1786300200,Ingestion,Compression,writer-node-2,6,6
+1786300200,Ingestion,Other ingestion,writer-node-1,15,15
+1786300200,Ingestion,Other ingestion,writer-node-2,5,5
+1786300200,Ingestion,Parsing,writer-node-1,72,72
+1786300200,Ingestion,Parsing,writer-node-2,36,36
+1786300200,Ingestion,Pre-aggregation,writer-node-1,6,6
+1786300200,Ingestion,Sorting,writer-node-1,35,35
+1786300200,Ingestion,Sorting,writer-node-2,11,11
+1786302000,Background merges,Background merges,writer-node-1,1354,1354
+1786302000,Background merges,Background merges,writer-node-2,1380,1380
+1786302000,Ingestion,Compression,writer-node-1,84,84
+1786302000,Ingestion,Compression,writer-node-2,70,70
+1786302000,Ingestion,Other ingestion,writer-node-1,81,81
+1786302000,Ingestion,Other ingestion,writer-node-2,103,103
+1786302000,Ingestion,Parsing,writer-node-1,487,487
+1786302000,Ingestion,Parsing,writer-node-2,552,552
+1786302000,Ingestion,Pre-aggregation,writer-node-1,31,31
+1786302000,Ingestion,Pre-aggregation,writer-node-2,30,30
+1786302000,Ingestion,Sorting,writer-node-1,171,171
+1786302000,Ingestion,Sorting,writer-node-2,181,181
+1786303800,Background merges,Background merges,writer-node-1,436,436
+1786303800,Background merges,Background merges,writer-node-2,620,620
+1786303800,Ingestion,Compression,writer-node-1,52,52
+1786303800,Ingestion,Compression,writer-node-2,30,30
+1786303800,Ingestion,Other ingestion,writer-node-1,63,63
+1786303800,Ingestion,Other ingestion,writer-node-2,27,27
+1786303800,Ingestion,Parsing,writer-node-1,235,235
+1786303800,Ingestion,Parsing,writer-node-2,148,148
+1786303800,Ingestion,Pre-aggregation,writer-node-1,17,17
+1786303800,Ingestion,Pre-aggregation,writer-node-2,10,10
+1786303800,Ingestion,Sorting,writer-node-1,70,70
+1786303800,Ingestion,Sorting,writer-node-2,41,41

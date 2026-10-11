@@ -1,0 +1,5 @@
+"table","name","type","comment"
+"metric_log","CurrentMetric_MemoryTracking","Int64","Total amount of memory (bytes) allocated by the server."
+"metric_log_1","CurrentMetric_MemoryTracking","Int64","Total amount of memory (bytes) allocated by the server."
+"metric_log_2","CurrentMetric_MemoryTracking","Int64","Total amount of memory (bytes) allocated by the server."
+"metric_log_3","CurrentMetric_MemoryTracking","Int64","Total amount of memory (bytes) allocated by the server."

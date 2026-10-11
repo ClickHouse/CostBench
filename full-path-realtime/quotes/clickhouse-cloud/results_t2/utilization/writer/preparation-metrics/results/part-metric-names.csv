@@ -1,0 +1,4 @@
+"metric","value"
+"MaxPartCountForPartition","15"
+"TotalPartsOfMergeTreeTables","902"
+"TotalPartsOfMergeTreeTablesSystem","864"
