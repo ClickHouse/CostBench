@@ -1,0 +1,76 @@
+"name","value","description"
+"distributed_cache_alignment","0","Only has an effect in ClickHouse Cloud. A setting for testing purposes, do not change it"
+"distributed_cache_bypass_connection_pool","0","Only has an effect in ClickHouse Cloud. Allow to bypass distributed cache connection pool"
+"distributed_cache_connect_backoff_max_ms","50","Only has an effect in ClickHouse Cloud. Maximum backoff milliseconds for distributed cache connection creation."
+"distributed_cache_connect_backoff_min_ms","0","Only has an effect in ClickHouse Cloud. Minimum backoff milliseconds for distributed cache connection creation."
+"distributed_cache_connect_max_tries","5","Only has an effect in ClickHouse Cloud. Number of tries to connect to distributed cache if unsuccessful"
+"distributed_cache_connect_timeout_ms","50","Only has an effect in ClickHouse Cloud. Connection timeout when connecting to distributed cache server."
+"distributed_cache_credentials_refresh_period_seconds","5","Only has an effect in ClickHouse Cloud. A period of credentials refresh."
+"distributed_cache_data_packet_ack_window","5","Only has an effect in ClickHouse Cloud. A window for sending ACK for DataPacket sequence in a single distributed cache read request"
+"distributed_cache_discard_connection_if_unread_data","1","Only has an effect in ClickHouse Cloud. Discard connection if some data is unread."
+"distributed_cache_fetch_metrics_only_from_current_az","1","Only has an effect in ClickHouse Cloud. Fetch metrics only from current availability zone in system.distributed_cache_metrics, system.distributed_cache_events"
+"distributed_cache_file_cache_name","","Only has an effect in ClickHouse Cloud. A setting used only for CI tests - filesystem cache name to use on distributed cache."
+"distributed_cache_log_mode","on_error","Only has an effect in ClickHouse Cloud. Mode for writing to system.distributed_cache_log"
+"distributed_cache_max_unacked_inflight_packets","10","Only has an effect in ClickHouse Cloud. A maximum number of unacknowledged in-flight packets in a single distributed cache read request"
+"distributed_cache_min_bytes_for_seek","0","Only has an effect in ClickHouse Cloud. Minimum number of bytes to do seek in distributed cache."
+"distributed_cache_pool_behaviour_on_limit","wait","Only has an effect in ClickHouse Cloud. Identifies behaviour of distributed cache connection on pool limit reached"
+"distributed_cache_prefer_bigger_buffer_size","0","Only has an effect in ClickHouse Cloud. Same as filesystem_cache_prefer_bigger_buffer_size, but for distributed cache."
+"distributed_cache_read_alignment","0","Obsolete setting, does nothing."
+"distributed_cache_read_only_from_current_az","1","Only has an effect in ClickHouse Cloud. Allow to read only from current availability zone. If disabled, will read from all cache servers in all availability zones."
+"distributed_cache_read_request_max_tries","10","Only has an effect in ClickHouse Cloud. Number of tries to do distributed cache read request if unsuccessful"
+"distributed_cache_receive_response_wait_milliseconds","2000","Only has an effect in ClickHouse Cloud. Wait time in milliseconds to receive data for request from distributed cache"
+"distributed_cache_receive_timeout_milliseconds","1000","Only has an effect in ClickHouse Cloud. Wait time in milliseconds to receive any kind of response from distributed cache
+
+Cloud default value: `20000`."
+"distributed_cache_receive_timeout_ms","3000","Only has an effect in ClickHouse Cloud. Timeout for receiving data from distributed cache server, in milliseconds. If no bytes were received in this interval, the exception is thrown."
+"distributed_cache_registry_show_certificate_and_signature","0","Only has an effect in ClickHouse Cloud. Show the `certificate` and `signature` columns in the `system.distributed_cache_registry` table. By default these columns are empty to keep the output compact; enable this setting to inspect them."
+"distributed_cache_send_timeout_ms","3000","Only has an effect in ClickHouse Cloud. Timeout for sending data to istributed cache server, in milliseconds. If a client needs to send some data but is not able to send any bytes in this interval, the exception is thrown."
+"distributed_cache_tcp_keep_alive_timeout_ms","2900","Only has an effect in ClickHouse Cloud. The time in milliseconds the connection to distributed cache server needs to remain idle before TCP starts sending keepalive probes."
+"distributed_cache_throw_on_error","0","Only has an effect in ClickHouse Cloud. Rethrow exception happened during communication with distributed cache or exception received from distributed cache. Otherwise fallback to skipping distributed cache on error"
+"distributed_cache_use_clients_cache_for_read","1","Only has an effect in ClickHouse Cloud. Use clients cache for read requests."
+"distributed_cache_use_clients_cache_for_write","0","Obsolete setting, does nothing."
+"distributed_cache_wait_connection_from_pool_milliseconds","100","Only has an effect in ClickHouse Cloud. Wait time in milliseconds to receive connection from connection pool if distributed_cache_pool_behaviour_on_limit is wait"
+"distributed_cache_write_request_max_tries","3","Only has an effect in ClickHouse Cloud. Number of tries to do distributed cache write request if unsuccessful"
+"enable_filesystem_cache","0","Use cache for remote filesystem. This setting does not turn on/off cache for disks (must be done via disk config), but allows to bypass cache for some queries if intended"
+"enable_filesystem_cache_log","0","Allows to record the filesystem caching log for each query"
+"enable_filesystem_cache_on_write_operations","0","Enables or disables `write-through` cache. If set to `false`, the `write-through` cache is disabled for write operations. If set to `true`, `write-through` cache is enabled as long as `cache_on_write_operations` is turned on in the server config's cache disk configuration section.
+See [""Using local cache""](/operations/storing-data#using-local-cache) for more details.
+
+Cloud default value: `1`."
+"filesystem_cache_allow_background_download","1","Allow filesystem cache to enqueue background downloads for data read from remote storage. Disable to keep downloads in the foreground for the current query/session."
+"filesystem_cache_boundary_alignment","0","Filesystem cache boundary alignment. This setting is applied only for non-disk read (e.g. for cache of remote table engines / table functions, but not for storage configuration of MergeTree tables). Value 0 means no alignment."
+"filesystem_cache_enable_background_download_during_fetch","1","Only has an effect in ClickHouse Cloud. Wait time to lock cache for space reservation in filesystem cache"
+"filesystem_cache_enable_background_download_for_metadata_files_in_packed_storage","1","Only has an effect in ClickHouse Cloud. Wait time to lock cache for space reservation in filesystem cache"
+"filesystem_cache_max_download_size","137438953472","Max remote filesystem cache size that can be downloaded by a single query"
+"filesystem_cache_name","s3diskWithCache","Filesystem cache name to use for stateless table engines or data lakes"
+"filesystem_cache_prefer_bigger_buffer_size","1","Prefer bigger buffer size if filesystem cache is enabled to avoid writing small file segments which deteriorate cache performance. On the other hand, enabling this setting might increase memory usage."
+"filesystem_cache_reserve_space_wait_lock_timeout_milliseconds","1000","Wait time to lock cache for space reservation in filesystem cache"
+"filesystem_cache_segments_batch_size","20","Limit on size of a single batch of file segments that a read buffer can request from cache. Too low value will lead to excessive requests to cache, too large may slow down eviction from cache"
+"filesystem_cache_skip_download_if_exceeds_per_query_cache_write_limit","1","Skip download from remote filesystem if exceeds query cache size"
+"filesystem_cache_wait_for_concurrent_download_timeout_milliseconds","60000","Maximum time to wait for a file segment which is being downloaded to the filesystem cache by a concurrent query. When the timeout is reached, the read bypasses the filesystem cache for that range and reads directly from remote storage, while the concurrent download continues to fill the cache. Value `0` means do not wait at all: bypass the cache immediately if the needed range is not downloaded yet. Lowering this value bounds the tail latency of cache-hit reads which would otherwise wait for another query's download pace at the cost of additional requests to remote storage."
+"force_read_through_distributed_cache","auto","Only has an effect in ClickHouse Cloud. Overrides the server setting `enable_read_through_distributed_cache` for a single query. `auto` (the default) means to follow the server setting."
+"force_write_through_distributed_cache","auto","Only has an effect in ClickHouse Cloud. Overrides the server setting `enable_write_through_distributed_cache` for a single query. `auto` (the default) means to follow the server setting."
+"page_cache_block_size","1048576","Size of file chunks to store in the userspace page cache, in bytes. All reads that go through the cache will be rounded up to a multiple of this size.
+
+This setting can be adjusted on a per-query level basis, but cache entries with different block sizes cannot be reused. Changing this setting effectively invalidates existing entries in the cache.
+
+A higher value, like 1 MiB is good for high-throughput queries, and a lower value, like 64 KiB is good for low-latency point queries."
+"page_cache_inject_eviction","0","Userspace page cache will sometimes invalidate some pages at random. Intended for testing."
+"page_cache_lookahead_blocks","16","On userspace page cache miss, read up to this many consecutive blocks at once from the underlying storage, if they're also not in the cache. Each block is page_cache_block_size bytes.
+
+A higher value is good for high-throughput queries, while low-latency point queries will work better without readahead."
+"page_cache_max_coalesced_bytes","16777216","When `readBigAt` populates the userspace page cache, consecutive cache misses are coalesced into a single read from the underlying storage. This setting bounds the size of one coalesced read in bytes; longer miss runs are split into multiple reads. It limits transient memory usage of the temporary buffer under parallel cold reads.
+
+A higher value reduces the number of HTTP requests for cold scans on object storage; a lower value reduces peak transient memory."
+"read_from_distributed_cache_if_exists_otherwise_bypass_cache","0","Only has an effect in ClickHouse Cloud. Same as read_from_filesystem_cache_if_exists_otherwise_bypass_cache, but for distributed cache."
+"read_from_filesystem_cache_if_exists_otherwise_bypass_cache","0","Allow to use the filesystem cache in passive mode - benefit from the existing cache entries, but don't put more entries into the cache. If you set this setting for heavy ad-hoc queries and leave it disabled for short real-time queries, this will allows to avoid cache threshing by too heavy queries and to improve the overall system efficiency."
+"read_from_page_cache_if_exists_otherwise_bypass_cache","0","Use userspace page cache in passive mode, similar to read_from_filesystem_cache_if_exists_otherwise_bypass_cache."
+"read_through_distributed_cache","0","User-level setting is deprecated, and it must be defined in the server configuration instead."
+"table_engine_read_through_distributed_cache","0","Only has an effect in ClickHouse Cloud. Allow reading from distributed cache via table engines / table functions (s3, azure, etc)"
+"use_page_cache_for_disks_without_file_cache","0","Use userspace page cache for remote disks that don't have filesystem cache enabled."
+"use_page_cache_for_local_disks","0","Use userspace page cache when reading from local disks. Used for testing, unlikely to improve performance in practice. Requires local_filesystem_read_method = 'pread' or 'read'. Doesn't disable the OS page cache; min_bytes_to_use_direct_io can be used for that. Only affects regular tables, not file() table function or File() table engine."
+"use_page_cache_for_object_storage","0","    Use userspace page cache when reading from object storage table functions (s3, azure, hdfs) and table engines (S3, Azure, HDFS).
+    "
+"use_page_cache_with_distributed_cache","1","Use userspace page cache when distributed cache is used."
+"write_through_distributed_cache","0","User-level setting is deprecated, and it must be defined in the server configuration instead."
+"write_through_distributed_cache_buffer_size","0","Only has an effect in ClickHouse Cloud. Set buffer size for write-through distributed cache. If 0, will use buffer size which would have been used if there was not distributed cache."

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "pilot_trials": 12,
+  "warmup_trials": 12,
+  "measured_trials": 432,
+  "failures": 0,
+  "missing_logs": 0,
+  "outliers_removed": 0,
+  "query_result_cache_hits": 0,
+  "cold_trials_verified_s3_and_no_page_or_distributed_reads": 288,
+  "hot_trials_verified_page_hits_and_no_s3_or_page_misses": 144,
+  "measurement_start_utc": "2026-10-11 10:40:32.547625",
+  "measurement_end_utc": "2026-10-11 10:56:15.048798",
+  "hosts": [
+    "c-tanaws-ce-98-server-kbwf0p0-0.c-tanaws-ce-98-server-headless.ns-tanaws-ce-98.svc.cluster.local"
+  ]
+}

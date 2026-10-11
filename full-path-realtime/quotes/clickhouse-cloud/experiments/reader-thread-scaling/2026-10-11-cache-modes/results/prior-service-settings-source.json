@@ -1,0 +1,5 @@
+{
+  "source": "../2026-10-11-59-vcpu/results/02-settings.csv",
+  "scope": "Earlier same-day settings discovery from the same 59-vCPU service, preserved from the preceding experiment",
+  "sha256": "aa104456376ad02555620b6465896bfafe727b74f3bb0049406a6871c7a540e9"
+}

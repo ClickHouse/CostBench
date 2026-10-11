@@ -1,0 +1,10 @@
+SELECT query_id,hostname,type,query_start_time_microseconds AS started_at_utc,event_time_microseconds AS finished_at_utc,
+query_duration_ms,read_rows,read_bytes,result_rows,result_bytes,memory_usage AS peak_memory_bytes,peak_threads_usage,
+normalized_query_hash,query_cache_usage,exception_code,
+ProfileEvents['UserTimeMicroseconds'] AS user_cpu_us,ProfileEvents['SystemTimeMicroseconds'] AS system_cpu_us,
+ProfileEvents['OSCPUWaitMicroseconds'] AS cpu_wait_us,ProfileEvents['OSIOWaitMicroseconds'] AS io_wait_us,
+toJSONString(ProfileEvents) AS profile_events_json,toJSONString(Settings) AS settings_json
+FROM clusterAllReplicas(default,merge('system','^query_log'))
+WHERE event_date BETWEEN toDate('2026-10-11') AND toDate('2026-10-11') AND event_time>=toDateTime('2026-10-11 10:38:14','UTC')
+AND query_id IN ('reader-cache-20261011T103914Z-pilot-1-D1-t59-hot','reader-cache-20261011T103914Z-pilot-2-D1-t59-cold','reader-cache-20261011T103914Z-pilot-3-D1-t59-filesystem-off','reader-cache-20261011T103914Z-pilot-4-D1-t16-filesystem-off','reader-cache-20261011T103914Z-pilot-5-D1-t16-hot','reader-cache-20261011T103914Z-pilot-6-D1-t16-cold','reader-cache-20261011T103914Z-pilot-7-D2-t16-cold','reader-cache-20261011T103914Z-pilot-8-D2-t16-hot','reader-cache-20261011T103914Z-pilot-9-D2-t16-filesystem-off','reader-cache-20261011T103914Z-pilot-10-D2-t59-cold','reader-cache-20261011T103914Z-pilot-11-D2-t59-filesystem-off','reader-cache-20261011T103914Z-pilot-12-D2-t59-hot') AND is_initial_query=1 AND type IN ('QueryFinish','ExceptionWhileProcessing','ExceptionBeforeStart')
+ORDER BY query_start_time_microseconds LIMIT 2000 SETTINGS max_threads=2,max_execution_time=30,timeout_before_checking_execution_speed=0,max_rows_to_read=1000000000,max_bytes_to_read=100000000000,skip_unavailable_shards=0 FORMAT CSVWithNames

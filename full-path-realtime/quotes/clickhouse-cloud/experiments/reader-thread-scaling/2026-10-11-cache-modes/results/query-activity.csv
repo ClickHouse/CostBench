@@ -1,0 +1,4 @@
+"activity","completed_queries","summed_elapsed_s","summed_cpu_s","peak_threads"
+"cold condition-cache-off experiment",144,248.462,1279.369428,296
+"hot-cold experiment",312,497.977,2718.680775,296
+"other queries",1773,208.753,42.374963,113
