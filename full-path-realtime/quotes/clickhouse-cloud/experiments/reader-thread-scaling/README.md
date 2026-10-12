@@ -1,14 +1,16 @@
 # Read-service CPU scaling experiments
 
-Controlled experiments using the original quotes-benchmark queries against the fixed 113.2B-quote dataset. Visual 11c presents the combined D1/D2 drill-down workload with Hot and Cold cache cases and uses **CPU cores** for its horizontal axis and slider. Query parallelism is controlled with `max_threads`; physical service capacity, memory, server version and node identity are recorded separately.
+Visual numbers follow the current Part 6 article. Existing filenames retain their earlier identifiers so reproduction commands and links stay compatible.
+
+Controlled experiments using the original quotes-benchmark queries against the fixed 113.2B-quote dataset. Visual 18 presents the combined D1/D2 drill-down workload with Hot and Cold cache cases and uses **CPU cores** for its horizontal axis and slider. Query parallelism is controlled with `max_threads`; physical service capacity, memory, server version and node identity are recorded separately.
 
 The live test requires the benchmark raw and maintained summary tables to be loaded first. See the [quotes benchmark contract and implementation](../../../README.md) and the frozen schema in each experiment. Offline analysis needs only the files in this package.
 
-## Current blog selection: 11c
+## Current blog selection: 18
 
-Use the [cache-controlled experiment](2026-10-11-cache-modes/README.md) for 11c: Hot caches and Cold data caches with query-condition caching off, measured at every core point on the same 59-vCPU / 236-GiB node. Its [findings](2026-10-11-cache-modes/REPORT.md), [all cache-case results](2026-10-11-cache-modes/derived/combined-workload.csv), [exact 11c data](2026-10-11-cache-modes/derived/11c-chart-data.json), and [CPU/headroom plus per-query memory peaks](2026-10-11-cache-modes/derived/11c-resource-utilization.csv) are reproducible offline.
+Use the [cache-controlled experiment](2026-10-11-cache-modes/README.md) for 18: Hot caches and Cold data caches with query-condition caching off, measured at every core point on the same 59-vCPU / 236-GiB node. Its [findings](2026-10-11-cache-modes/REPORT.md), [all cache-case results](2026-10-11-cache-modes/derived/combined-workload.csv), [exact 18 data](2026-10-11-cache-modes/derived/11c-chart-data.json), and [CPU/headroom plus per-query memory peaks](2026-10-11-cache-modes/derived/11c-resource-utilization.csv) are reproducible offline.
 
-Earlier exploratory runs below are preserved as separate evidence. They are not spliced into the cache-controlled curves. The throughput-per-core panel in 11c uses consumed CPU seconds, as 11a does; a separate selected-core denominator remains in the CSV.
+Earlier exploratory runs below are preserved as separate evidence. They are not spliced into the cache-controlled curves. The throughput-per-core panel in 18 uses consumed CPU seconds, as 16 does; a separate selected-core denominator remains in the CSV.
 
 ## Earlier completed evidence
 
@@ -29,6 +31,6 @@ Primary weights mirror the original benchmark schedule: D1 and D2 once each, A1â
 
 The evidence includes source SQL, exact treatment SQL, raw HTTP summaries, complete server-query-log CSVs, cache/profile counters, before/after context, derived statistics, offline analysis and plotting code, dependency versions, and SHA-256 hashes. No credentials are included. Keep each completed ledger intact.
 
-The extended analysis also saves an equal-count mix and an explicitly scoped drill-down-only subset. The latter can be expressed in GB/s or in actually processed quotes/s. Index-skipped rows are excluded. The earlier exploratory plots include throughput per selected core. Current 11c uses the consumed-CPU denominator, matching 11a; both are saved explicitly in the cache-controlled CSV.
+The extended analysis also saves an equal-count mix and an explicitly scoped drill-down-only subset. The latter can be expressed in GB/s or in actually processed quotes/s. Index-skipped rows are excluded. The earlier exploratory plots include throughput per selected core. Current 18 uses the consumed-CPU denominator, matching 16; both are saved explicitly in the cache-controlled CSV.
 
 Start with the extended README to reproduce offline. Each folder includes its own exact SQL, raw ledgers, server log CSVs, metadata, scripts, plots and SHA-256 manifest. Live repeat instructions require a new evidence directory so the completed ledgers remain intact. Service credentials are supplied privately through environment variables and are excluded from the package.

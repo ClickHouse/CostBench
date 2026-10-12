@@ -1,5 +1,7 @@
 # Reader CPU scaling with hot and cold data caches
 
+Visual numbers follow the current Part 6 article. Existing filenames retain their earlier identifiers so reproduction commands and links stay compatible.
+
 This experiment measures the original D1 and D2 drill-down queries against the unchanged **113,217,743,918-quote** dataset. It preserves one hot case and two cold cases at **2, 4, 8, 16, 30 and 59 CPU cores**. All points use one fixed **59-vCPU / 236-GiB** ClickHouse Cloud reader; query parallelism changes through `max_threads`. The experiment does not compare six physically resized services.
 
 Start with [the measured findings](REPORT.md), [the 18-point combined CSV](derived/combined-workload.csv), or [every observation](derived/all-trials.csv). [The original queries](queries/queries_raw.sql) and [schema](queries/create.sql) come from the quotes benchmark. The service was running ClickHouse **26.6.1.2292**.
@@ -28,7 +30,7 @@ One query runs at a time. Fixed seeds and complete plans are saved with run IDs 
 
 Both drill-down queries receive equal counts. The combined rate is **total uncompressed bytes / total server execution time**, not an arithmetic average of per-query GB/s. Decimal units are used: GB = 10⁹ bytes and MB = 10⁶ bytes. Client transport time is retained separately and does not enter the rate.
 
-For **Data throughput per CPU core**, use **total bytes / total CPU seconds**, where CPU seconds are summed `UserTimeMicroseconds + SystemTimeMicroseconds`. This is the same normalization used in blog visual 11a. `MB_s_per_selected_core` is also retained in the CSV to make the different denominator explicit. The selected-core setting controls available query parallelism; actual average busy cores are measured separately.
+For **Data throughput per CPU core**, use **total bytes / total CPU seconds**, where CPU seconds are summed `UserTimeMicroseconds + SystemTimeMicroseconds`. This is the same normalization used in blog visual 16. `MB_s_per_selected_core` is also retained in the CSV to make the different denominator explicit. The selected-core setting controls available query parallelism; actual average busy cores are measured separately.
 
 The CSV includes all individual queries, pooled rates, per-query peak memory, average busy cores, latency quartiles, and per-round combined-throughput quartiles. All six points are measured configurations. No numerical smoothing is applied to this experiment.
 
@@ -68,13 +70,13 @@ Allow the final query logs to flush naturally before collecting; if IDs are miss
 
 ## Original Run 2 comparison
 
-The **3.25 GB/s** shown in 11a is a Gaussian-smoothed endpoint from **continuous fresh-data ingestion** in August 2026, on a physically smaller 16-vCPU / 64-GiB reader running ClickHouse 26.4.1.2029. This experiment uses static, settled data and repeated queries on a different service configuration and version. Original Run 2's complete data-cache counters are unavailable. Similar numerical throughput would not establish that its cache state or workload has been reproduced. See the report for the actual 16-core values without forcing them toward that reference.
+The **3.25 GB/s** shown in 16 is a Gaussian-smoothed endpoint from **continuous fresh-data ingestion** in August 2026, on a physically smaller 16-vCPU / 64-GiB reader running ClickHouse 26.4.1.2029. This experiment uses static, settled data and repeated queries on a different service configuration and version. Original Run 2's complete data-cache counters are unavailable. Similar numerical throughput would not establish that its cache state or workload has been reproduced. See the report for the actual 16-core values without forcing them toward that reference.
 
-## Blog visual 11c and its resource band
+## Blog visual 18 and its resource band
 
 The published selection is **Hot caches** plus **Cold · condition cache off**. The condition-cache-on cold case remains available for inspection and is not combined with either selected case. [Exact chart payload](derived/11c-chart-data.json), [resource values](derived/11c-resource-utilization.csv), and [source provenance](derived/11c-source-provenance.json) regenerate with `python3 derive_visual.py`. This uses the measured values from `analyze_cache.py`; it never replaces observations with ideal scaling or combines different physical nodes.
 
-The two panels use pooled uncompressed **GB/s** and **MB/s per consumed CPU core**, matching the denominator in 11a. The CPU resource band divides pooled CPU seconds by pooled execution seconds and the selected N-core budget. It excludes scheduling idle time; it is relative to that budget, rather than measured utilization of six resized physical services. **Headroom** is its complement, without implying a quantified increase in concurrent-query capacity.
+The two panels use pooled uncompressed **GB/s** and **MB/s per consumed CPU core**, matching the denominator in 16. The CPU resource band divides pooled CPU seconds by pooled execution seconds and the selected N-core budget. It excludes scheduling idle time; it is relative to that budget, rather than measured utilization of six resized physical services. **Headroom** is its complement, without implying a quantified increase in concurrent-query capacity.
 
 Memory values are the arithmetic mean of measured per-query peaks for each case/core point. They describe query work, rather than the whole-service cache footprint. The service capacity remains the actual **236 GiB**. The resource CSV saves unrounded percentages and bytes; the visual rounds percentages to integers and memory to one decimal MiB. All six displayed settings are measured: 2, 4, 8, 16, 30, 59. Both horizontal axes use proportional numeric spacing from 2 to 59 cores, with all six settings labeled. The discrete slider remains evenly stepped. Curves connect measured points, and controls/readouts snap to them.
 
