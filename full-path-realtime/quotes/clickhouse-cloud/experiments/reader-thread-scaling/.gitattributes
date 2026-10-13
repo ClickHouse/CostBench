@@ -1,0 +1,3 @@
+# Preserve native CSV evidence and matplotlib SVG formatting.
+*.csv whitespace=cr-at-eol,-blank-at-eol
+*.svg whitespace=-blank-at-eol

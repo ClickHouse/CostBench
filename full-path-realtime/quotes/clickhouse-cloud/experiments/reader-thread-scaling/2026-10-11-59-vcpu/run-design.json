@@ -1,0 +1,29 @@
+{
+  "service_vCPUs": 59,
+  "service_memory_GiB": 236,
+  "core_settings": [
+    2,
+    4,
+    8,
+    16,
+    30,
+    59
+  ],
+  "rounds": 12,
+  "measured_trials": 432,
+  "warmup_rounds": 2,
+  "expected_dataset_rows": 113217743918,
+  "query_mix_weights": {
+    "D1": 1,
+    "D2": 1,
+    "A1": 6,
+    "A2": 6,
+    "A3": 6,
+    "A4": 6
+  },
+  "result_cache": "disabled",
+  "underlying_caches": "warmed",
+  "display_axis": "CPU cores",
+  "baseline_directory": "../2026-10-11",
+  "same_node_for_all_settings": true
+}

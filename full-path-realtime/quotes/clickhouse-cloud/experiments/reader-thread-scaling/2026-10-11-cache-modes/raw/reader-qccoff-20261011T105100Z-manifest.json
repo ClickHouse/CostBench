@@ -1,0 +1,1018 @@
+{
+  "run_id": "reader-qccoff-20261011T105100Z",
+  "phase": "qcc-off",
+  "trials": 144,
+  "rounds": 12,
+  "seed": 6112027,
+  "plan": [
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 1,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 2,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 3,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 4,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 5,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 6,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 7,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 8,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 9,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 10,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 11,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D1",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D1",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D1",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D2",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D2",
+      "max_threads": 30,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D1",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D2",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D2",
+      "max_threads": 8,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D1",
+      "max_threads": 2,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D2",
+      "max_threads": 4,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D1",
+      "max_threads": 16,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    },
+    {
+      "round": 12,
+      "query": "D2",
+      "max_threads": 59,
+      "cache_mode": "cold",
+      "query_condition_cache": 0
+    }
+  ],
+  "scope": "Cold data-cache comparison with query-condition cache explicitly off; no overlapping queries or retries"
+}

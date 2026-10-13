@@ -1,0 +1,22 @@
+"name","value","description"
+"enable_filesystem_cache","0","Use cache for remote filesystem. This setting does not turn on/off cache for disks (must be done via disk config), but allows to bypass cache for some queries if intended"
+"force_read_through_distributed_cache","auto","Only has an effect in ClickHouse Cloud. Overrides the server setting `enable_read_through_distributed_cache` for a single query. `auto` (the default) means to follow the server setting."
+"use_page_cache_with_distributed_cache","1","Use userspace page cache when distributed cache is used."
+"use_query_cache","0","If turned on, `SELECT` queries may utilize the [query cache](../query-cache.md). Parameters [enable_reads_from_query_cache](#enable_reads_from_query_cache)
+and [enable_writes_to_query_cache](#enable_writes_to_query_cache) control in more detail how the cache is used.
+
+Possible values:
+
+- 0 - Disabled
+- 1 - Enabled"
+"use_query_condition_cache","1","Enable the [query condition cache](/operations/query-condition-cache). The cache stores ranges of granules in data parts which do not satisfy the condition in the `WHERE` clause,
+and reuse this information as an ephemeral index for subsequent queries.
+
+Possible values:
+
+- 0 - Disabled
+- 1 - Enabled"
+"use_uncompressed_cache","0","Whether to use a cache of uncompressed blocks. Accepts 0 or 1. By default, 0 (disabled).
+Using the uncompressed cache (only for tables in the MergeTree family) can significantly reduce latency and increase throughput when working with a large number of short queries. Enable this setting for users who send frequent short requests. Also pay attention to the [uncompressed_cache_size](/operations/server-configuration-parameters/settings#uncompressed_cache_size) configuration parameter (only set in the config file) – the size of uncompressed cache blocks. By default, it is 8 GiB. The uncompressed cache is filled in as needed and the least-used data is automatically deleted.
+
+For queries that read at least a somewhat large volume of data (one million rows or more), the uncompressed cache is disabled automatically to save space for truly small queries. This means that you can keep the 'use_uncompressed_cache' setting always set to 1."

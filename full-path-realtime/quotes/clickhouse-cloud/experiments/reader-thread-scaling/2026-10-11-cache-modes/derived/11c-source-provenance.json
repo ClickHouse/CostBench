@@ -1,0 +1,33 @@
+{
+  "id": "11c",
+  "sourcePackage": ".",
+  "ownerSelection": "Hot caches plus Cold data caches with query-condition cache off. The condition-on cold case remains in the source CSV and is not plotted.",
+  "selectedMeasuredQueries": 288,
+  "evidenceMeasuredQueries": 432,
+  "capacity": {
+    "vCPUs": 59,
+    "memoryGiB": 236,
+    "version": "26.6.1.2292"
+  },
+  "fixedDatasetRows": 113217743918,
+  "xAxis": "CPU cores: max_threads varies on one fixed 59-vCPU node. These are not six physical service resizes.",
+  "workload": "Original D1 and D2; equal counts; 12 repeats per query, core point and case; fixed data without ongoing ingestion.",
+  "throughput": "sum(uncompressed read_bytes) / sum(server elapsed_ns); decimal GB/s.",
+  "perCore": "sum(uncompressed read_bytes) / sum(User + System CPU seconds); decimal MB/s/core, matching 11a.",
+  "CPUCapacityBand": "sum(CPU seconds) / sum(server elapsed seconds) / selected N cores. Percentage relative to N-core budget, not measured utilization of a physically resized N-core service.",
+  "memoryBand": "Arithmetic mean of per-query peaks; measured independently by cache case and core point. Memory capacity is the actual 236-GiB service.",
+  "cachePolicy": {
+    "hot": "Filesystem, page and distributed data caches plus query-condition caching enabled.",
+    "cold": "Filesystem, page and distributed data caches bypassed; query-condition caching explicitly off.",
+    "resultCache": "Normal disabled setting, verified no result-cache reads."
+  },
+  "geometry": "Monotone cubic geometry through measured values; slider, markers and readouts snap to six observations. No numerical smoothing, averaging across core points or extrapolation.",
+  "comparisonLimit": "Static-data test on a newer version and larger node; separate from original Run 2 continuous ingestion and its Gaussian display smoothing. Hot and selected Cold cases came from separate sequential measurement blocks.",
+  "files": {
+    "combined-workload.csv": "4597cf1e33e3dd7c82c33df55ed022d90f3322be1e24d2edd7693ba1be721665",
+    "individual-query-summary.csv": "fde322c1606fd136c1ba85b7da1b1bac806af749bd071a15f5fb23312f41ca19",
+    "all-trials.csv": "747dd9770ce160f7133fbadbbf592b94818f4e71baf66951c072fe1f390e57d9",
+    "validation.json": "5ce5653b1226e83db1f7e36a3a7e08a678c26024f6eb0f8900e1c79454aae01f",
+    "context-validation.json": "7b0db03e36e4b3ee210d665cca22195dcf7261b3419f63e578b9720597185e91"
+  }
+}

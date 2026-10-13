@@ -1,0 +1,13 @@
+Expression (Project names)
+  Limit (preliminary LIMIT)
+    Sorting (Sorting for ORDER BY)
+      Expression ((Before ORDER BY + Projection))
+        Aggregating
+          Expression ((Before GROUP BY + Change column names to column identifiers))
+            ReadFromMergeTree (quotes_async_t4.quotes_daily)
+            Indexes:
+              PrimaryKey
+                Condition: true
+                Parts: 2/2
+                Granules: 228/228
+              Ranges: 2

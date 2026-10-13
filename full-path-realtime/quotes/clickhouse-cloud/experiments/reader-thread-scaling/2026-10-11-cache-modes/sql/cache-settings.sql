@@ -1,0 +1,1 @@
+SELECT name,value,description FROM system.settings WHERE name ILIKE '%page_cache%' OR name ILIKE '%distributed_cache%' OR name ILIKE '%filesystem_cache%' ORDER BY name LIMIT 100 SETTINGS max_threads=2,max_execution_time=30,timeout_before_checking_execution_speed=0,max_rows_to_read=1000000000,max_bytes_to_read=100000000000,skip_unavailable_shards=0 FORMAT CSVWithNames

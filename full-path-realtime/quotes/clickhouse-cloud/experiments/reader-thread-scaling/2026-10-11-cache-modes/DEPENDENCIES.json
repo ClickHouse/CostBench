@@ -1,0 +1,5 @@
+{
+  "python": "3.9.6",
+  "analysis_dependencies": "Python standard library",
+  "client": "curl invoked through Python subprocess; credentials via stdin"
+}
