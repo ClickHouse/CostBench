@@ -31,6 +31,10 @@ BigQuery deliberately uses automatic active-window selection: every eligible act
 ClickHouse reference observation is selected and the report records `requested_count: null`.
 Snowflake and Redshift freeze their accepted pairwise counts in their command notebooks.
 
+## Measurements behind Part 6
+
+The [Part 6 measurement index](part6-measurements/README.md) connects the final article visual numbers to the exact measurements, SQL, calculation definitions, and reproduction instructions. It includes the writer and reader resource packages, CPU-core scaling, and the separate horizontal-scaling experiment.
+
 ## Accepted evidence map
 
 | System | Implementation and run notes | Accepted results | Cost and charts |
