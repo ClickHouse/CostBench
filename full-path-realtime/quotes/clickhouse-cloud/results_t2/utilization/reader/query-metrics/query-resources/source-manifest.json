@@ -1,0 +1,82 @@
+[
+  {
+    "path": "evidence/metrics-per-query.csv",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench/full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/metrics-per-query.csv",
+    "sha256": "4280337315e9bd4e9c6ba52fd084edfdcec6d016b2d1891e24f345cd76778c49"
+  },
+  {
+    "path": "evidence/data-processing-throughput.csv",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench/full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/data-processing-throughput.csv",
+    "sha256": "0c69764e38967b6abc54f60acc47bf76568891c3b3c6e3e7592cd9b20b1a86cd"
+  },
+  {
+    "path": "evidence/data-throughput-per-cpu-core.csv",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench/full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/data-throughput-per-cpu-core.csv",
+    "sha256": "2b9a53886fde0a8d5ad631346cb87f1af244d74fae2fbfe4a2842aa25a3e8749"
+  },
+  {
+    "path": "evidence/effective-aggregation-throughput.csv",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench/full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/effective-aggregation-throughput.csv",
+    "sha256": "02374eee080f0f9532a530f85f4b976f6cd3a2da1ab215b9070e9e5b4d81f140"
+  },
+  {
+    "path": "evidence/drilldown_20260808T065602Z.jsonl",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench/full-path-realtime/quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+    "sha256": "fa4033841b2d0596c227b0baacfc666086d41bdcceb9173da9e3c9e699f1f378"
+  },
+  {
+    "path": "evidence/dashboard_20260808T065559Z.jsonl",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench/full-path-realtime/quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl",
+    "sha256": "0fbfd6c089fc9e5ef4af88199db2bc08acc6f538a56d2be50a55a06d5765e960"
+  },
+  {
+    "path": "evidence/active-newpart-series.csv",
+    "origin": "/Users/tomschreiber/Downloads/_github/CostBench-writer-service-metrics/full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/writer/preparation-metrics/results/active-newpart-series.csv",
+    "sha256": "1f7aea591df5d849e8eda97ba9eb841181e98a54945d6bd5d9e1007e53ac1775"
+  },
+  {
+    "path": "evidence/02-log-coverage.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/02-log-coverage.csv",
+    "sha256": "5dcfee38214afaf23f32741768f2908947a2b776fd78959a03b607a80079ca1b"
+  },
+  {
+    "path": "evidence/04-capacity.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/04-capacity.csv",
+    "sha256": "7033d6651a860fe25663bf6f2f16e5b9329b5e6c0fcb0c5cc569f6a3bcaa94ce"
+  },
+  {
+    "path": "evidence/03-resource-series.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/03-resource-series.csv",
+    "sha256": "64da399fdc9ff62df351be7c3e54dbef961523775b86f3b69ba21b06c8e44008"
+  },
+  {
+    "path": "evidence/01-schema.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/01-schema.csv",
+    "sha256": "34581b8ab5b6e2b542b8ae041d6dcb7a29647c281aa0becf13c2b695ee9ad66f"
+  },
+  {
+    "path": "evidence/07-memory-metric-descriptions.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/07-memory-metric-descriptions.csv",
+    "sha256": "515e1d4641b57ce7042f86a515d723b9618bee428f2c703caa64d685d22750ee"
+  },
+  {
+    "path": "evidence/08-memory-cache-check.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/08-memory-cache-check.csv",
+    "sha256": "8795576d9b7422def351bfdb8cf784a7e9b867ab386709259fb11d8905eff536"
+  },
+  {
+    "path": "evidence/09-query-memory-schema.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/09-query-memory-schema.csv",
+    "sha256": "82bb6d9ccc449df66843ec93626c0c91e0fced5e46b66aec65fa23c40ea3171b"
+  },
+  {
+    "path": "evidence/10-query-peak-memory.csv",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/review/2026-10-11-reader-metrics-split/evidence/results/10-query-peak-memory.csv",
+    "sha256": "d783fb8c95cefa104f645f103ad302d63910d776b056e012695aad07759c113f"
+  },
+  {
+    "path": "evidence/prior-chart-data.json",
+    "origin": "/Users/tomschreiber/Documents/clickhouse/_creative/blogs/costbench-the-whole-path/06-why-clickhouse-keeps-winning/blog-visuals/src/read-service-metrics/query-efficiency/chart-data.json",
+    "sha256": "aea72e66f238109360b036992e1ac5f98194df90534486b55988e1980be0f747"
+  }
+]

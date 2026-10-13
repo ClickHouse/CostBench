@@ -1,5 +1,11 @@
 # ClickHouse Cloud reader utilization (async-insert run)
 
+For measurements during individual query executions, see
+[Query throughput, CPU efficiency and latency](query-metrics/), including the current [query-execution CPU/headroom and per-query peak memory data](query-metrics/query-resources/). That directory contains the SQL,
+recorded result CSVs, metric definitions, and a reproducible data adapter for
+the August run. Service-wide averages below include the gaps between scheduled
+queries and should not be interpreted as cores used while a query is executing.
+
 This folder contains utilization screenshots for the ClickHouse Cloud read service used in the Snowpipe Streaming vs. async inserts benchmark run.
 
 The read service was responsible for serving the continuous query workload while fresh data kept arriving in the writer service via asynchronous inserts. It ran separately from ingest, so the read path and write path were isolated from each other.

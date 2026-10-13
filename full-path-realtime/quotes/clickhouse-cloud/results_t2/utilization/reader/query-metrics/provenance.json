@@ -1,0 +1,138 @@
+{
+  "database": "quotes_async_t4",
+  "complete_dataset_rows": 113217743918,
+  "source_query_log": {
+    "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/query-log.csv",
+    "sha256": "584aa0abcecab47e6f0c866503347ccb02d7edf290e78db50f3a9e1fc125944e",
+    "records": 1241
+  },
+  "runner_sources": [
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/raw/drilldown_20260808T065602Z.jsonl",
+      "sha256": "fa4033841b2d0596c227b0baacfc666086d41bdcceb9173da9e3c9e699f1f378",
+      "observations": 48
+    },
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/mv/dashboard_20260808T065559Z.jsonl",
+      "sha256": "0fbfd6c089fc9e5ef4af88199db2bc08acc6f538a56d2be50a55a06d5765e960",
+      "observations": 286
+    }
+  ],
+  "query_hashes": {
+    "A1": "4268017077458496684",
+    "A2": "13116456435110875434",
+    "A3": "16441976537628221706",
+    "A4": "16076059573740575684",
+    "D1": "14900422428945064879",
+    "D2": "4120463799277501782"
+  },
+  "matched_runner_executions": 1240,
+  "active_executions": 958,
+  "active_counts": {
+    "D1": 37,
+    "D2": 37,
+    "A1": 221,
+    "A2": 221,
+    "A3": 221,
+    "A4": 221
+  },
+  "match": "One query of each expected type in [iteration_started_at, +20 seconds).",
+  "active_window": "Positive-row iterations through first full-dataset observation inclusive; later repeats excluded.",
+  "cpu_ms_formula": "(UserTimeMicroseconds + SystemTimeMicroseconds) / 1000",
+  "average_cores_formula": "cpu_ms / query_duration_ms per query; family average is sum(cpu_ms) / sum(query_duration_ms), weighted by elapsed time",
+  "rows_read_formula": "Arithmetic mean of query_log.read_rows across the two or four queries in each iteration",
+  "duration_precision": "Integer milliseconds; average cores are approximate, particularly for very short aggregation queries.",
+  "smoothing": "None",
+  "outlier_exclusions": [],
+  "query_cache_hits": 0,
+  "unmatched_before_runner": [
+    {
+      "benchmark_query": "A1",
+      "started_at_utc": "2026-08-08 06:54:40.809273"
+    }
+  ],
+  "zero_row_baseline": "Retained in query-log.csv, omitted from plotted metrics.",
+  "endpoint": {
+    "drill": {
+      "family": "drill",
+      "iteration": 38,
+      "rows_ingested": 113217743918,
+      "query_count": 2,
+      "cpu_ms_per_query": 8841.8495,
+      "average_cores_per_query": 9.366365995762711,
+      "rows_read_per_query": 89612288,
+      "query_duration_ms": 944
+    },
+    "aggregate": {
+      "family": "aggregate",
+      "iteration": 222,
+      "rows_ingested": 113217743918,
+      "query_count": 4,
+      "cpu_ms_per_query": 93.54299999999999,
+      "average_cores_per_query": 6.929111111111111,
+      "rows_read_per_query": 1005826.75,
+      "query_duration_ms": 13.5
+    }
+  },
+  "accepted_panels": [
+    "Data processing throughput",
+    "Data throughput per CPU core",
+    "Query latency",
+    "Effective aggregation throughput"
+  ],
+  "family_rate_formula": "sum(read_bytes) / sum(query_duration_ms / 1000) per scheduled iteration",
+  "per_core_rate_formula": "sum(read_bytes) / sum((user_cpu_us + system_cpu_us) / 1000000) per scheduled iteration",
+  "per_core_unit": "Bytes per CPU-second; equivalent to bytes/s divided by time-weighted average busy cores. Not divided by 16 provisioned cores.",
+  "effective_aggregation_formula": "2 * runner.raw_rows / ((A3.query_duration_ms + A4.query_duration_ms) / 1000)",
+  "effective_aggregation_scope": "A3 and A4 full-table aggregations only; raw quotes represented by current pre-aggregates. Logical answer coverage, not raw rows scanned or sustained query capacity.",
+  "latency_display": {
+    "source": "runner result[query_number][0], seconds",
+    "family_mean": "Equal mean of independently smoothed query latencies",
+    "median_windows": {
+      "drill": 5,
+      "aggregate": 7
+    },
+    "horizon": "Through 100B rows, median windows use observations in that horizon; beyond 100B, use the full positive-row active window through first complete dataset.",
+    "sampling": "Drill: every observation. Aggregate: every third observation through 100B, always include the last; every observation beyond 100B.",
+    "boundary": "Centered windows shrink at either endpoint.",
+    "outlier_exclusions": []
+  },
+  "sanitization": "Removed query IDs, hostnames and repeated query text; measurements, hashes and UTC timestamps retained.",
+  "profile_validation": {
+    "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/query-log-profile-stats.csv",
+    "sha256": "69cc86955efb5874e980c19cc4c435c304bbaf89669ecfb6e312e1cec3703fdf",
+    "records": 1241,
+    "matched_counter_values_equal": true,
+    "selected_rows_equals_read_rows": true,
+    "selected_bytes_equals_read_bytes": true,
+    "active_max_threads": [
+      16
+    ]
+  },
+  "sql_sources": [
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/queries/00-query-log-fields.sql",
+      "sha256": "2ebb447fb5825aa56894b0a82888edffd3efe9172580a2233ceadcf6dac60d6f"
+    },
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/queries/01-discover-benchmark-queries.sql",
+      "sha256": "927613dba14f187142a082486ed4165f98d39244ac994f8ceb138fd04e347fb5"
+    },
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/queries/02-export-query-log.sql",
+      "sha256": "ca91b27dbd7a981d8d275166bceaf3b599f9584d2a1a68557c4fb911b80114bc"
+    },
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/queries/03-export-profile-stats.sql",
+      "sha256": "120742c85f4eb1a81bc0f02d069cd3687136199d9b272a3268bbb52d6bd9e00e"
+    },
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/queries/benchmark-aggregations.sql",
+      "sha256": "e31042b3aec1882f293f57ec103eda7953d947fdb47607ee11a6fb6f31a4d108"
+    },
+    {
+      "path": "full-path-realtime/quotes/clickhouse-cloud/results_t2/utilization/reader/query-metrics/queries/benchmark-drill-downs.sql",
+      "sha256": "44f8199cc3b18ff091324789918535a3d1c5f8f5ba99939bf02df7433d5ad29b"
+    }
+  ]
+}
