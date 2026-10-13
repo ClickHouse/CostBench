@@ -1,5 +1,7 @@
 # ClickHouse Cloud writer utilization (async-insert run)
 
+For Blog 6 visuals **08aâ€“08d**, see [writer preparation metrics](preparation-metrics/): SQL, source CSVs, exact chart values and dependency-free reproduction code.
+
 This folder contains utilization screenshots for the ClickHouse Cloud write and ordering service used in the Snowpipe Streaming vs. async inserts benchmark run.
 
 The service was responsible for the write side of the benchmark: receiving the continuous stock-quotes stream via **asynchronous inserts**, writing raw data into a sorted `MergeTree` table, maintaining pre-aggregations through incremental materialized views into an `AggregatingMergeTree` table, and keeping both tables query-ready while the read workload ran on a separate service.
@@ -72,7 +74,7 @@ CPU was well utilized but did not saturate. The service had enough work to do â€
 
 ## 6. Memory usage
 
-This chart shows tracked memory usage on the writer service.
+This chart shows memory usage on the writer service.
 
 Memory stayed stable during the run, with normal variation but no sustained upward trend. That indicates the workload was bounded: async insert buffers were flushed continuously, and the service was not accumulating unmerged data or refresh state in memory.
 

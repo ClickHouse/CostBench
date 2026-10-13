@@ -1,0 +1,6 @@
+"name","value","changed"
+"max_threads","2","1"
+"log_processors_profiles","1","1"
+"query_profiler_real_time_period_ns","1000000000","0"
+"query_profiler_cpu_time_period_ns","1000000000","0"
+"log_query_views","1","0"

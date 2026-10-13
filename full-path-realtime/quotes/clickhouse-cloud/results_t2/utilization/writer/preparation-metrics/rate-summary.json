@@ -1,0 +1,22 @@
+{
+  "run_start_utc": "2026-08-08T06:55:56+00:00",
+  "run_end_utc": "2026-08-09T19:40:58+00:00",
+  "raw_rows": 113217743918,
+  "raw_uncompressed_bytes": 7078124834556,
+  "writer_nodes": 2,
+  "cores_per_node": 2,
+  "query_max_threads": 2,
+  "mean_ingest_gb_s": 0.053499756878626174,
+  "ingest_mb_per_cpu_second": 16.71830733152081,
+  "mean_writer_cores": 3.2000701875935356,
+  "mean_merge_gb_s": 0.3841342337730949,
+  "mean_total_processing_gb_s": 0.43763399065172104,
+  "total_processing_mb_per_cpu_second": 136.75762248853152,
+  "mean_inserted_rows_per_second": 855752.3236081087,
+  "max_active_parts_per_partition": 125,
+  "mean_rows_per_new_part": 441794.3087627015,
+  "equivalent_3000_row_batches_per_new_part": 147.26476958756717,
+  "raw_new_part_compression_ratio": 14.409945555613566,
+  "delayed_inserts": 0,
+  "rejected_inserts": 0
+}

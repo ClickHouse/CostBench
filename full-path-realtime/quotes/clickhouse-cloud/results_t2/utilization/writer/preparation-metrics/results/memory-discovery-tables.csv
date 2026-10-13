@@ -1,0 +1,3 @@
+"name","sorting_key","partition_key","total_rows"
+"asynchronous_metric_log","metric, event_date, event_time","toYYYYMM(event_date)","23710838"
+"asynchronous_metric_log_1","metric, event_date, event_time","toYYYYMM(event_date)","819054004"

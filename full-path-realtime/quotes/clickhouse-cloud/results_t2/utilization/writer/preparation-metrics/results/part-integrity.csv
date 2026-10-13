@@ -1,0 +1,5 @@
+"table","event_type","records","unique_parts","hosts"
+"quotes","NewPart","256268","256268","2"
+"quotes","MergeParts","50102","50102","2"
+"quotes_daily","NewPart","256268","256268","2"
+"quotes_daily","MergeParts","48030","48030","2"

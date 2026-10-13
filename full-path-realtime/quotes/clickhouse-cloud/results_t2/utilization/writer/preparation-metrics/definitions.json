@@ -1,0 +1,84 @@
+{
+  "scope": "Blog 6 writer-service visuals 08a\u201308d; two ClickHouse Cloud writer nodes, 2 vCPUs and 8 GiB each.",
+  "run": {
+    "database": "quotes_async_t4",
+    "start_utc": "2026-08-08 06:55:56",
+    "end_utc_exclusive": "2026-08-09 19:40:58",
+    "wall_seconds": 132302,
+    "raw_quotes": 113217743918,
+    "writer_nodes": 2,
+    "vcpus_per_node": 2,
+    "memory_gib_per_node": 8,
+    "historical_results_directory": "results_t2",
+    "query_max_threads_for_extraction": 2
+  },
+  "axes": {
+    "x": "Cumulative raw NewPart rows divided by 113217743918; CPU-stage buckets aggregate raw-row progress over 30 minutes.",
+    "bytes": "Decimal MB/GB/TB; stored size includes initial part metadata.",
+    "memory_capacity": "Binary GiB."
+  },
+  "08a": {
+    "ingestion": "Unique successful raw-table NewPart bytes_uncompressed / actual bucket wall seconds.",
+    "merges": "Whole-service metric_log ProfileEvent_MergedUncompressedBytes / actual bucket wall seconds. Repeated processing included.",
+    "total_processing": "Ingestion bytes + merge bytes; processing work, not unique bytes ingested.",
+    "efficiency": "Same numerator / (ProfileEvent_OSCPUVirtualTimeMicroseconds / 1e6). MB per CPU-second equals MB/s per average busy core.",
+    "cpu_scope": "Whole writer service, including work beyond matched benchmark ingestion and merges."
+  },
+  "08b": {
+    "cpu_total": "Successful AsyncInsertFlush QueryFinish executions joined to successful quotes_daily_mv executions by initial_query_id; UserTimeMicroseconds + SystemTimeMicroseconds. Query completion allowed up to 60 seconds after cutoff, only for IDs matched to in-window MV executions.",
+    "classification": "Mutually exclusive symbolized CPU-trace categories. Precedence: Sorting, Compression, Parsing, Pre-aggregation, Other ingestion. Background-merge scope classified separately and excluded from the ingestion stage breakdown. Compression excludes decompression-only frames.",
+    "allocation": "For each host and 30-minute bucket, recorded ingestion CPU microseconds \u00d7 stage samples / all ingestion samples; sum hosts.",
+    "cpu_work": "Stage CPU microseconds / raw quotes \u00d7 1000 = CPU-ms per million quotes.",
+    "shares": "Stage CPU microseconds / recorded ingestion CPU microseconds \u00d7 100.",
+    "boundaries": [
+      "Sample-based stage allocation is an estimate, not an exact stage timer.",
+      "Pre-aggregation excludes destination sorting and compression.",
+      "Complete view CPU includes view processing and destination writing, and is not pure aggregation.",
+      "Sorting profile counter is elapsed time; it is not added to CPU time.",
+      "Shares use ingestion CPU work, not all service CPU or installed capacity."
+    ]
+  },
+  "08c": {
+    "compression": "Cumulative unique successful raw NewPart bytes_uncompressed / cumulative size_in_bytes; initial stored part writes, not current final storage.",
+    "initial_summary": "MV input/output rows reconcile with unique NewPart rows. Initial output includes partial summary rows.",
+    "maintained_summary": "Cumulative summary NewPart rows + completed MergeParts output rows - completed MergeParts read_rows. This reconstructs maintained rows from part counters; it is not a direct system.parts snapshot.",
+    "assumptions": [
+      "No active-window mutations or part-event errors.",
+      "Part-producing event counts equal unique part-name counts.",
+      "Raw merges preserve row counts.",
+      "Pre-run activity used different table UUIDs.",
+      "Full name-by-name lineage diagnostics exceeded the unchanged scan guard and are not used."
+    ],
+    "displayed_factor": "Raw cumulative quotes / displayed maintained-summary rows; paired values and factor use the same observation.",
+    "later_snapshot": "Current system.parts and summary coverage are supporting October 10 snapshots, kept separate from active-run chart curves. last_modified in the current-part CSV is the part modification time, not export collection time."
+  },
+  "08d": {
+    "merge_throughput": "Whole-service metric_log ProfileEvent_MergedRows / actual bucket wall seconds. Input rows processed by background merges; includes repeated processing and does not count rows eliminated.",
+    "parts": "Five-minute max of service metric MaxPartCountForPartition across both nodes and all metric samples. This is service-wide rather than filtered to one benchmark table.",
+    "part_consolidation": "Supporting MergeParts events are unique by table UUID and part name; merged_from counts inputs; each event produces one replacement. DownloadPart events excluded to avoid replica duplication."
+  },
+  "resources": {
+    "cpu": "Smoothed OSCPUVirtualTimeMicroseconds / smoothed wall seconds / 4 vCPUs. Aggregate average use; no individual core activity is measured.",
+    "memory": "CurrentMetric_MemoryTracking: average snapshots per host/second, average host/seconds in each five-minute bucket, then sum both node means. Both nodes present in every bucket.",
+    "memory_capacity": "CGroupMemoryTotal remains 8 GiB per node, 16 GiB total.",
+    "unused": "Arithmetic complement of each utilization percentage. CPU complement does not establish extra sustainable workload throughput. Memory counter accounts for server allocations; its complement is not an OS free-RAM measurement.",
+    "dashboard_reference": "The retained dashboard-reference export sums snapshots by event_time and averages. Its whole-run mean differs from the node-based calculation by less than 0.05%.",
+    "display_labels": "CPU / Memory; used / unused."
+  },
+  "smoothing": {
+    "method": "Centered positive Gaussian weights",
+    "sigma_seconds": 3600,
+    "radius_seconds": 10800,
+    "boundary": "Truncate at observed endpoints; actual overlapping partial-bucket durations and midpoints.",
+    "rates_and_shares": "Ratios of weighted counters and weighted denominator totals, not averages of per-bucket ratios.",
+    "states": "Maintained summary-row count and maximum parts use duration-weighted means.",
+    "cumulative": "Raw cumulative volumes and initial-part compression factor use actual totals without smoothing. The maintained row-reduction factor divides actual cumulative raw rows by the smoothed maintained state.",
+    "retrospective": "Centered windows include later observations within the historical run.",
+    "excluded_observations": 0
+  },
+  "publication": {
+    "source_csvs": "Source exports retain numeric counters and UTC timestamps. Hostnames use stable writer-node-1 / writer-node-2 aliases. Repeated query text and execution IDs from sample diagnostics are removed. Table UUIDs remain as benchmark table identities.",
+    "manifest": "source-manifest.json maps each SQL query to its CSV results, columns, cell encoding, hashes and extraction status. Queries without retained successful results are explicitly marked and do not feed charts.",
+    "reproduction": "derive.py regenerates every derived CSV, exact chart payload and this provenance using Python standard library only."
+  }
+}

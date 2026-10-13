@@ -1,0 +1,333 @@
+{
+  "08a": {
+    "fullRows": 113217743918,
+    "rowTicks": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "playback": {
+      "durationMs": 15000,
+      "holdMs": 2000
+    },
+    "panels": [
+      {
+        "id": "throughput",
+        "unit": "mb-rate",
+        "axisUnit": "Uncompressed MB/s",
+        "color": "#f7f7f4",
+        "sampled": true,
+        "yMax": 600000000.0,
+        "yTicks": [
+          0,
+          200000000.0,
+          400000000.0,
+          600000000.0
+        ],
+        "footerLabel": "Total",
+        "stacked": [
+          {
+            "id": "ingestion",
+            "label": "Rate-limited ingestion",
+            "color": "#37a6ff"
+          },
+          {
+            "id": "merges",
+            "label": "Background merges",
+            "color": "#b9b0a2"
+          }
+        ],
+        "componentReadouts": true
+      },
+      {
+        "id": "efficiency",
+        "unit": "core-rate",
+        "axisUnit": "Uncompressed MB/s/core",
+        "color": "#f7f7f4",
+        "sampled": true,
+        "yMax": 200000000.0,
+        "yTicks": [
+          0,
+          50000000.0,
+          100000000.0,
+          150000000.0,
+          200000000.0
+        ],
+        "footerLabel": "Total",
+        "stacked": [
+          {
+            "id": "ingestion",
+            "label": "Rate-limited ingestion",
+            "color": "#37a6ff"
+          },
+          {
+            "id": "merges",
+            "label": "Background merges",
+            "color": "#b9b0a2"
+          }
+        ],
+        "componentReadouts": true
+      }
+    ],
+    "cpuCapacity": {
+      "availableCores": 4
+    },
+    "memoryCapacity": {
+      "availableBytes": 17179869184.0,
+      "metric": "CurrentMetric_MemoryTracking"
+    }
+  },
+  "08b": {
+    "fullRows": 113217743918,
+    "rowTicks": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "playback": {
+      "durationMs": 15000,
+      "holdMs": 2000
+    },
+    "panels": [
+      {
+        "id": "cpu-work",
+        "unit": "cpu-work",
+        "axisUnit": "CPU-ms per million quotes",
+        "yMax": 1250,
+        "yTicks": [
+          0,
+          250,
+          500,
+          750,
+          1000,
+          1250
+        ],
+        "color": "#f7f7f4",
+        "footerLabel": "Total",
+        "legend": true,
+        "bandLabels": true,
+        "stacked": [
+          {
+            "id": "parsing",
+            "label": "Parsing",
+            "color": "#e3b56c"
+          },
+          {
+            "id": "sorting",
+            "label": "Sorting",
+            "color": "#eb967e"
+          },
+          {
+            "id": "pre-aggregation",
+            "label": "Pre-aggregation",
+            "color": "#d8a2b7"
+          },
+          {
+            "id": "compression",
+            "label": "Compression",
+            "color": "#bb9be4"
+          },
+          {
+            "id": "other-ingestion",
+            "label": "Other ingestion",
+            "color": "#a2aab9"
+          }
+        ]
+      },
+      {
+        "id": "cpu-share",
+        "unit": "percent",
+        "axisUnit": "% of ingestion CPU work",
+        "yMax": 100,
+        "yTicks": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "color": "#f7f7f4",
+        "footerLabel": "Total",
+        "legend": true,
+        "bandLabels": true,
+        "stacked": [
+          {
+            "id": "parsing",
+            "label": "Parsing",
+            "color": "#e3b56c"
+          },
+          {
+            "id": "sorting",
+            "label": "Sorting",
+            "color": "#eb967e"
+          },
+          {
+            "id": "pre-aggregation",
+            "label": "Pre-aggregation",
+            "color": "#d8a2b7"
+          },
+          {
+            "id": "compression",
+            "label": "Compression",
+            "color": "#bb9be4"
+          },
+          {
+            "id": "other-ingestion",
+            "label": "Other ingestion",
+            "color": "#a2aab9"
+          }
+        ]
+      }
+    ],
+    "cpuCapacity": {
+      "availableCores": 4
+    },
+    "memoryCapacity": {
+      "availableBytes": 17179869184.0,
+      "metric": "CurrentMetric_MemoryTracking"
+    }
+  },
+  "08c": {
+    "fullRows": 113217743918,
+    "rowTicks": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "playback": {
+      "durationMs": 15000,
+      "holdMs": 2000
+    },
+    "panels": [
+      {
+        "id": "compression-volume",
+        "unit": "bytes",
+        "axisUnit": "Uncompressed and stored TB",
+        "yMax": 8000000000000.0,
+        "yTicks": [
+          0,
+          2000000000000.0,
+          4000000000000.0,
+          6000000000000.0,
+          8000000000000.0
+        ],
+        "color": "#37a6ff",
+        "footerLabel": "Total",
+        "series": [
+          {
+            "label": "Uncompressed",
+            "color": "#37a6ff"
+          },
+          {
+            "label": "Stored",
+            "color": "#4ee3ac"
+          }
+        ],
+        "reductionFactor": {
+          "label": "Compression factor",
+          "color": "#d4d2c9"
+        },
+        "metricIcon": "database"
+      },
+      {
+        "id": "maintained-volume",
+        "unit": "rows",
+        "axisUnit": "Raw quotes and maintained summary rows",
+        "yMax": 200000000000.0,
+        "yTicks": [
+          1000.0,
+          100000.0,
+          10000000.0,
+          1000000000.0,
+          100000000000.0
+        ],
+        "color": "#37a6ff",
+        "footerLabel": "Total",
+        "yMin": 1000.0,
+        "series": [
+          {
+            "label": "Raw quotes",
+            "color": "#37a6ff"
+          },
+          {
+            "label": "Summary rows",
+            "color": "#4ee3ac"
+          }
+        ],
+        "reductionFactor": {
+          "label": "Row-reduction factor",
+          "color": "#d4d2c9"
+        },
+        "metricIcon": "database"
+      }
+    ],
+    "cpuCapacity": {
+      "availableCores": 4
+    },
+    "memoryCapacity": {
+      "availableBytes": 17179869184.0,
+      "metric": "CurrentMetric_MemoryTracking"
+    }
+  },
+  "08d": {
+    "fullRows": 113217743918,
+    "rowTicks": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "playback": {
+      "durationMs": 15000,
+      "holdMs": 2000
+    },
+    "panels": [
+      {
+        "id": "merge-throughput",
+        "unit": "rows-rate",
+        "axisUnit": "Million rows/s",
+        "yMax": 8000000.0,
+        "yTicks": [
+          0,
+          2000000.0,
+          4000000.0,
+          6000000.0,
+          8000000.0
+        ],
+        "color": "#b9b0a2",
+        "footerLabel": "Background merging"
+      },
+      {
+        "id": "parts",
+        "unit": "parts",
+        "axisUnit": "Parts per partition",
+        "color": "#4ee3ac",
+        "sampled": true,
+        "yMax": 150,
+        "yTicks": [
+          0,
+          50,
+          100,
+          150
+        ],
+        "footerLabel": "Maximum active parts",
+        "metricIcon": "database"
+      }
+    ],
+    "cpuCapacity": {
+      "availableCores": 4
+    },
+    "memoryCapacity": {
+      "availableBytes": 17179869184.0,
+      "metric": "CurrentMetric_MemoryTracking"
+    }
+  }
+}
